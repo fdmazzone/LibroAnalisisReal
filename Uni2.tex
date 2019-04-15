@@ -1,0 +1,119 @@
+\chapter{Integral de Riemann}
+
+\section{Introducción}
+
+\begin{quotation}
+<< Bernard Riemann recibió su doctorado en 1851, su \emph{Habilitación} en 1854. La habilitación confiere el reconocimiento de la capacidad de crear sustanciales contribuciones en la investigación más allá de la tesis doctoral, y es un prerequisito necesario para ocupar un cargo de profesor en una universidad Alemana. Riemann eligió como tema  de habilitación el problema de las series de Fourier. Su tesis fue titulada \emph{\"Uber die Darstellbarkeit einer Function durch eine trigonometrische Reine} (Sobre la representación de una función por series trigonométricas) y respondía la pregunta:  Cuándo una función definida en el intervalo $(-\pi,\pi)$ puede ser respresentada por la serie trigonométrica $a_0/2+\sum_{n=1}^{\infty}[a_n\cos(nx)+b_n\sen(nx)]$? 
+\marginpar{\includegraphics[scale=.4]{imagenes/Riemann.jpeg}\\
+Bernhard Riemann 1826-1866
+} 
+En este trabajo  es donde hallamos   la Integral de Riemann, introducida en una sección corta antes del nucleo principal de la tesis, como parte del trabajo preparatorio que él necesitó desarrollar antes de abordar el problema de representabilidad por series trigonométricas. >> 
+\end{quotation}
+\begin{flushright}
+ David M. Bressoud\\
+ A Radical Approach to Lebesgue's Theory of Integration.\lectura
+\end{flushright}
+
+
+En este capítulo vamos a desarrollar el concepto de la integral de Riemman. Vamos a exponer la definición de la integral debida a Riemann y la ideada por J. G. Darboux.
+Mostraemos la equivalencia de las dos definiciones y discutiremos las propiedades de la intergal, sus alcances y límites. Preparamos así el camino para la introducción de la integral de Lebesgue. 
+\marginpar{\includegraphics[scale=.6]{imagenes/Darboux.jpg}\\
+Jean G. Darboux  1842-1917
+} 
+
+Debemos advertir \advertencia  al alumno que en este curso dejaremos un poco de lado las cuestiones procedimentales de cómo calcular integrales, aspecto que seguramente abordó en cursos anteriores y del cual nos vamos a valer. Tampoco debe esperar que las actividades prácticas se centren en esa dirección.   Nuestro principal objetivo aquí es discutir la materia conceptual ligada a la integral y cómo es previsible las actividades prácticas estarán orientadas con ese propósito.
+
+
+El concepto de integral encuentra su motivación en diversos problemas. Aparece cuando se busca el centro de masas de un determinado cuerpo, cuando se quieren hallar longitudes de arco, volúmenes, cuando se quiere reconstruir el movimiento de cuerpo conocida su velocidad, etc. La integral es utilizada en incontables otros conceptos matemáticos, como ser el mencionado már arriba relativo a las series de Fourier. 
+
+Quizás el 
+problema más simple donde aparece la integral es el que utilizaremos como motivación para introducirla y es el concepto de área.  Vamos a tratar de reconstruir este concepto desde su base, esto es analizando la noción de área de figuras tan simples como rectángulos, triángulos, etc. 
+
+
+
+\section{Área de figuras elementales planas} 
+
+  
+El cálculo de áreas es necesario en multitud de actividades humanas, por ejemplo con el comercio. La cantidad de muchos productos y servicios se estima en medidas de área, por ejemplo: las telas,  el trabajo de un colocador de pisos,  el precio de la construcción,  el valor de las extensiones de tierra, etc.  
+ 
+ 
+
+
+Por figuras elementales planas nos referimos a rectángulos, triángulos, trapecios, etc. Sin duda el alumno  debe estar  muy familiarizado con las áreas de estas figuras, el área de un rectángulo viene dada por la conocida fórmula $b\times h$, donde $b$ es la base del rectángulo y $h$ su altura.  Ahora bien, ¿Cómo 
+se llega a esta fórmula? Porque esta fórmula es apropiada para calcular el precio de un terreno por ejemplo. En esta sección vamos a justificar esta fórmula a partir de algunos hechos elementales.
+
+
+
+Vamos a considerar un plano $\mathcal{P}$. En este plano $\mathcal{P}$ supondremos fijada una unidad de longitud.  Pretendemos asignar un área a las figuras, es decir a los subconjuntos, de $\mathcal{P}$. De ahora en más, cómo es usual en esta materia  nos referiremos a \emph{medida}\index{medida} en lugar de área. La medida es un concepto más general  que el concepto de área. No obstante en el contexto en que estamos actualmente son sinónimos.  
+
+Queremos construir pues una función $m$ tal que $m(A)$ reppresente la medida  de  $A\subset\mathcal{P}$. Ahora bien ¿qué podemos usar de guía con ese objetivo? Si, como dijimos,  desconocemos todas las fórmulas previamente aprendidas, sobre que partimos para construir la medida o área. La respuesta es que tomaremos como principio rector  ciertas propiedades que son deseables  que una medida satisfaga. Ellas son las  siguientes. 
+
+
+
+
+\begin{description}
+ \item[Positividad.] debería ser una magnitud no negativa.  
+ \item[Invariancia por movimientos rígidos.] Si una región es transformada en otra por medio de un movimiento rígido, ambas regiones deberían tener la misma área. Otra manera de expresar esta propiedad es diciendo que dos figuras \emph{congruentes}\index{congruencia} tienen la misma área. 
+ \item[Aditividad.] Si una región es la unión de cierta cantidad de regiones más chicas mutuamente disjuntas  
+\end{description}
+
+\begin{figure}[h]
+\begin{center}
+ \input{imagenes/rectangulos1.tikz}
+ \caption{El área del rectángulo es la suma de sus partes}\label{fig:rect_descop} 
+\end{center}
+\end{figure}
+
+Utilizando la segunda y tercer propiedad se pueden relacionar el área del rectángulo de la figura \ref{fig:rect_descop} con las cuatro regiones en la que es dividido.
+
+Como veremos a lo largo de la materia la propiedad de aditividad debe ser estudiada con cuidado, esto ocurre por las intrincadas maneras en que una región puede ser unión de otras regiones. A lo largo de esta materia elaboraremos una  teoría que nos dará una descripción  precisa de a que conjuntos podemos asignarle una medida de modo que las propiedades previas sean ciertas. 
+
+Por el momento veamos como las propiedades anteriores determinan practicamente de manera unívoca la medida de regiones elementales planas.  
+
+
+Hablando de propiedades de la medida, supongamos que $A$ y $B$ son dos regiones con $A\subset B$. Entonces como $B=A\cup (B-A)$ y por la propiedad de aditividad y positividad
+
+\[
+ m(B)=m(A)+m(B-A)\geq m(A).
+\]
+
+Descubrimos así que nuestra medida deberá tener adicionalmente la siguiente propiedad:
+\begin{description}
+ \item[Monotonía.] Si $A\subset B$ entonces $m(A)\leq m(B)$. 
+\end{description}
+
+Es claro que si logramos construir una medida que satisfaga las propiedades anteriores cualquier multiplo por un número real positivo  de ella seguirá cumpliendo las propiedades. Esto es una manera de expresar el hecho que podemos usar diferentes unidades de medición. Esta cuestión se sortea proponiendo la unidad de medida. Esta unidad es completamente arbitraria, ud. podría elegir su figura plana preferida como unidad de área. \marginpar{ Podríamos por ejemplo elegir el círculo de radio uno como unidad de área. Así ya no tendríamos el problema de ese número raro $\pi$ que aparece en la fórmula del área del círculo. ¡El área de cualquier círculo sería igual a su radio al cuadrado! Claro que aparecería $\pi$  en la fórmula del área del cuadrado de lado 1. Nos tapamos los pies y se destapa el cuerpo.}  Cómo es habitual, elijamos el cuadrado cuyos lados miden la unidad de longitud previamente fijada. 
+
+
+Supongamos ahora que tenemos un rectángulo de un lado igual a la unidad y el otro de lado un racional $n/m$, $n,m\in\mathbb{N}$. Veamos que la aditividad, la invariancia por movimientos rígidos y el hecho que decidimos que el cuadrado de lados igual a la unidad determinan el área de este rectángulo. Primero observar que si dividimos el lado de cuadrado unidad en $m$ segmentos iguales de longitud. \marginpar{
+ \input{imagenes/CuadSubd.tikz}\\
+ }
+Queda dividido el cuadrado en $m$ rectángulos $R_1,\ldots,R_m$ (ver figura en el margen), todos ellos  congruentes entre si, de modo que todos tienen la misma medida, digamos $m(R_1)$. La unión de ellos es el cuadrado que por convención dijimos que tiene medida 1. De modo que por la aditividad debe ocurrir que $m(R_1)=\cdots =m(R_m))=1/m$. Recordemos nuestra pretención de inferir la medida de un rectángulo $R$ de lado 1 y otro $n/m$. Este rectángulo esta compuesto de $n$ rectángulos congruentes a los $R_i$, $i=1,\ldots,m$, nuevamente por la aditividad inferimos que $m(R)=n/m$. 
+
+Sea ahora una rectángulo $R$ con un lado unidad y el otro un real cualquiera $l>0$. Existen sendas sucesiones $0<q_k,p_k\in\mathbb{Q}$, $k\in\mathbb{N}$, tales que $q_1\leq q_2\leq\cdots \leq l \leq \cdots\leq p_2\leq p_1$ y $\lim_{k\to\infty}q_k =\lim_{k\to\infty} p_k=l$. Consideremos una dos sucesiones de rectángulos $R_k$ y $S_k$ que comparten el lado de $R$ igual a la unidad, mientras que el otro lado de $R_k$ y $S_k$ es igual a $q_k$ y $p_k$ respectivamente. Luego por la monotonía
+\[
+ q_k=m(R_k)\leq m(R) \leq m(S_k)\leq p_k.
+\]
+Tomando límite cuando $k\to\infty$ inferimos que $m(R)=l$. 
+
+
+
+\begin{figure}[h]
+ \begin{center}
+ \input{imagenes/ParalTria.tikz} 
+ \end{center}
+ \caption{Áreas de otras figuras elementales.}\label{fig:paral-trig}
+\end{figure}
+
+
+A partir de las propiedades fundamentales que postulamos para la medida o área inferimos la famosa fórmula del área de un rectángulo en el caso que uno de los lados sea igual a la unidad. Para un  rectángulo arbitrario. En la figura \ref{fig:paral-trig} se muestra como relacionar el área de un paralelepípedo con la de un rectángulo y la de un triángulo con la de un paralelepípedo para inferir las conocidas fórmulas para estas figuras.
+
+
+
+\section{Integral de Riemann}
+
+En esta sección abordaremos el problema del área de regiones planas. Vamos a contextualizarnos dentro del marco conceptual que nos brinda la geometría analítica. Mediante coordenadas cartesianas ortogonales los puntos del plano se identifican con pares ordenados $(x,y)\in\mathbb{R}^2$ y el plano con el conjunto $\rr^2$.  Nuestro propósito es entonces definir la medida de subconjuntos de $\mathbb{R}^2$. La geometría analítica abre así nuevas posibilidades para abordar el problema del área. 
+
+Nuestra primera aproximación será la que propuso Bernhard Riemann en 1854, pero seguiremos  el enfoque de Jean Darboux. En esta parte de nuestra aproximación consideraremos subconjuntos de $\mathbb{R}^2$ de un tipo especial, concretamente a conjuntos que quedan encerrados entre la gráfica de una función y del eje coordenadas $x$.   
+ 
+
