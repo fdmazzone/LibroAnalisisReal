@@ -19,7 +19,7 @@
 \usepackage[spanish]{varioref}
 \usepackage{fontspec}
 \usepackage[a4paper,driver=xetex,top=2.5cm, bottom=2.7cm,%
-layouthoffset=10mm, left=2.3cm, right=6.2cm,showframe]{geometry}
+layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geometry}
 \usepackage{fancyhdr}
 \usepackage{marginnote}
 \usepackage{titlesec}
@@ -36,6 +36,9 @@ layouthoffset=10mm, left=2.3cm, right=6.2cm,showframe]{geometry}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 \usepackage{imakeidx}
+\usepackage{sympytex}
+
+
 
 
 
@@ -124,6 +127,8 @@ layouthoffset=10mm, left=2.3cm, right=6.2cm,showframe]{geometry}
 %%%%%%%%%%%%%%%%%%%%%%%%%%Nuevos comandos entornos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newenvironment{demo}{\noindent\emph{Dem.}}{$\square$ \newline\vspace{5pt}}
+
+\newenvironment{observa}{\noindent\textbf{Observación:}}{}
 
 \newcommand{\com}{\mathbb{C}}
 \newcommand{\rr}{\mathbb{R}}
@@ -223,6 +228,9 @@ titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
 \newenvironment{ejemplo}{\noindent\textbf{Ejemplo  \arabic{chapter}.\arabic{ejemplo_cont}.} }{\addtocounter{ejemplo_cont}{1}}
 
 
+\renewcommand*{\raggedrightmarginnote}{\centering}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%Para escibir en clase articulo o similar
@@ -242,6 +250,8 @@ titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \makeindex
+
+
 \begin{document}
 
 
@@ -259,6 +269,6 @@ titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
 %\include{Uni0}
 %\include{Uni1}
 \include{Uni2}
-
+%\include{apendice}
 \printindex
 \end{document}
