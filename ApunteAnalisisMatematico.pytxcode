@@ -1,7 +1,163 @@
-=>PYTHONTEX#py#default#default#0#code####Uni2.tex#354#
-print(r'\begin{center}')
-print(r'\textit{A message from Python!}')
-print(r'\end{center}')
+=>PYTHONTEX#py#default#defaultverb#0#verbatim####Uni0.tex#192#
+'''
+Comentario  largo en un script de Python
+'''
+print "Hola mundo" # Comentario corto
+=>PYTHONTEX#py#default#defaultverb#1#verbatim####Uni0.tex#218#
+x = 1
+x = "texto"
+=>PYTHONTEX#pycon#default#default#0#console####Uni0.tex#245#
+x=1
+type(x)
+x='Ecuaciones'
+type(x)
+=>PYTHONTEX#pycon#default#default#1#console####Uni0.tex#279#
+lista = ["abc", 42, 3.1415]
+lista[0] # Acceder a un elemento por su indice
+lista[-1] # Acceder a un elemento usando un indice negativo
+lista.append(True) # Agregar un elemento al final de la lista
+lista
+del lista[3] # Borra un elemento de la lista usando un indice
+lista[0] = "xyz" # Re-asignar el valor del primer elemento
+lista[0:2]#elementos del indice "0" al "1"
+lista_anidada = [lista, [True, 42L]] #Es posible anidar listas
+lista_anidada
+lista_anidada[1][0] #accede lista dentro de otra lista
+=>PYTHONTEX#pycon#default#default#2#console####Uni0.tex#293#
+tupla = ("abc", 42, 3.1415)
+tupla[0] # Acceder a un elemento por su indice
+del tupla[0] # No es posible borrar ni agregar
+tupla[0] = "xyz" # Tampoco es posible re-asignar
+tupla[0:2] # elementos del indice "0" al "2" sin incluir
+tupla_anidada = (tupla, (True, 3.1415)) # es posible anidar
+1, 2, 3, "abc" # Esto tambien es una tupla
+(1) #  no es una tupla, ya que no posee al menos una coma
+(1,) # si es una tupla
+(1, 2) # Con mas de un elemento no es necesaria la coma final
+(1, 2,) # Aunque agregarla no modifica el resultado
+=>PYTHONTEX#pycon#default#default#3#console####Uni0.tex#321#
+dicci = {"cadena": "abc", "numero": 42, "lista": [True, 42L]}
+dicci["cadena"] # Usando una clave, se accede a su valor
+dicci["lista"][0]
+dicci["cadena"] = "xyz" # Re-asignar el valor de una clave
+dicci["cadena"]
+dicci["decimal"] = 3.1415927 # nuevo elemento clave:valor
+dicci["decimal"]
+dicci_mixto = {"tupla": (True, 3.1415), "diccionario": dicci}
+dicci_mixto["diccionario"]["lista"][1]
+dicci = {("abc",): 42} # tupla puede ser clave
+dicci = {["abc"]: 42} # una clave no puede ser lista
+=>PYTHONTEX#py#default#defaultverb#2#v####Uni0.tex#340#
+range(n)
+=>PYTHONTEX#pycon#default#default#4#console####Uni0.tex#342#
+range(5) #
+[i*i for i in range(5)]
+lista = [(i, i + 2) for i in range(5)]
+lista
+=>PYTHONTEX#pycon#default#default#5#console####Uni0.tex#363#
+def suma(x, y = 2): #el argumento y tiene un valor por defecto
+    return x + y # Retornar la suma
+
+suma(4) # La variable "y" no se modifica, siendo su valor: 2
+suma(4, 10) # La variable "y" si se modifica
+=>PYTHONTEX#pycon#default#default#6#console####Uni0.tex#372#
+suma = lambda x, y = 2: x + y
+suma(4) # La variable "y" no se modifica
+suma(4, 10) # La variable "y" si se modifica
+=>PYTHONTEX#py#default#defaultverb#3#v####Uni0.tex#379#
+if
+=>PYTHONTEX#py#default#defaultverb#4#v####Uni0.tex#380#
+True
+=>PYTHONTEX#py#default#defaultverb#5#v####Uni0.tex#380#
+elif
+=>PYTHONTEX#py#default#defaultverb#6#v####Uni0.tex#380#
+else
+=>PYTHONTEX#pycon#default#default#7#console####Uni0.tex#384#
+verdadero = True
+if verdadero: # No es necesario poner "verdadero == True"
+    print "Verdadero"
+
+else:
+    print "Falso"
+
+lenguaje = "Python"
+if lenguaje == "C":
+    print "Lenguaje de programacion: C"
+elif lenguaje == "Python": # tantos "elif" como se quiera
+    print "Lenguaje de programacion: Python"
+else:
+    print "Lenguaje de programacion: indefinido"
+
+if verdadero and lenguaje == "Python":
+    print "Verdadero y Lenguaje de programacion: Python"
+
+=>PYTHONTEX#py#default#defaultverb#7#v####Uni0.tex#411#
+for
+=>PYTHONTEX#py#default#defaultverb#8#v####Uni0.tex#414#
+for
+=>PYTHONTEX#py#default#defaultverb#9#v####Uni0.tex#415#
+in
+=>PYTHONTEX#pycon#default#default#8#console####Uni0.tex#419#
+lista = ["a", "b", "c"]
+for i in lista: # Iteramos sobre una lista, que es iterable
+    print i
+
+cadena = "abc"
+for i in cadena: # Iteramos sobre una cadena, que es iterable
+    print i # una coma al final evita un salto de linea
+
+=>PYTHONTEX#py#default#defaultverb#10#v####Uni0.tex#432#
+while
+=>PYTHONTEX#py#default#defaultverb#11#v####Uni0.tex#434#
+while
+=>PYTHONTEX#pycon#default#default#9#console####Uni0.tex#436#
+numero = 0
+while numero < 3:
+    print numero
+    numero += 1
+
+=>PYTHONTEX#sympy#default#default#0#block####Uni2.tex#241#
+from sympy import *
+N=1000.0
+lim=int(N+1)
+x=symbols('x')
+f=sqrt(1-x**2)
+Sinf=sum([ f.subs(x,i/N)*1/N for i in range(1,lim)])
+Ssup=sum([f.subs(x,(i-1)/N)*1/N for i in range(1,lim)])
+=>PYTHONTEX#sympy#default#default#1#i####Uni2.tex#251#
+4*Sinf
+=>PYTHONTEX#sympy#default#default#2#i####Uni2.tex#251#
+4*Ssup
+=>PYTHONTEX#sympy#default#defaultverb#0#verbatim####Uni2.tex#351#
+from matplotlib import pyplot as plt
+total=500
+q=[]
+f=[]
+for i in range(1,total):
+    for j in range(1,i):
+        if gcd(j,i)==1:
+            q.append(Rational(j,i))
+            f.append(1.0/i)
+plt.plot(q,f,'.',markersize=12)
+=>PYTHONTEX#sympy#default#defaultverb#1#verbatim####Uni2.tex#373#
+q=[]
+f=[]
+total=20
+for i in range(1,total):
+    for j in range(1,i):
+        if gcd(j,i)==1:
+            q.append(float(Rational(j,i)))
+x=symbols('x')
+Heavside=Piecewise((0,x<0),(1,x>=0))
+f=sum([Heavside.subs(x,x-q[n])/2**n for n in range(len(q))])
+plot(f,(x,0,1))
+=>PYTHONTEX#sympy#default#defaultverb#2#verbatim####Uni2.tex#464#
+x=symbols('x')
+g=x-floor(x+.5)
+plot(g,(x,-5,5))
+=>PYTHONTEX#sympy#default#defaultverb#3#verbatim####Uni2.tex#474#
+f=sum([g.subs(x,n*x)/n**2 for n in range(1,20)])
+plot(f,(x,0,1))
 =>PYTHONTEX:SETTINGS#
 version=0.14
 outputdir=pythontex-files-ApunteAnalisisMatematico

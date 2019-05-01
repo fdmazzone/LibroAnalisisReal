@@ -9,7 +9,7 @@
 \usepackage{verbatim}
 \usepackage{ esint }
 \usepackage{array}
-\usepackage{listings}
+%\usepackage{listings}
 \usepackage{ wasysym }
 \usepackage{hyperref}
 \usepackage{color}
@@ -17,7 +17,7 @@
 \usepackage{theorem}
 \usepackage{boiboites}
 \usepackage[spanish]{varioref}
-\usepackage{fontspec}
+ \usepackage{fontspec}
 \usepackage[a4paper,driver=xetex,top=2.5cm, bottom=2.7cm,%
 layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geometry}
 \usepackage{fancyhdr}
@@ -36,10 +36,10 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geom
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 \usepackage{imakeidx}
-\usepackage{sympytex}
+%\usepackage{sympytex}
+\usepackage{pythontex}
 
-
-
+\defaultfontfeatures{Ligatures=TeX}
 
 
 %%%%%%%%%%%%Configuración Página
@@ -74,58 +74,27 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geom
 \definecolor{color7}{rgb}{0.84,0.66,0.21}
 \definecolor{color8}{HTML}{8E87C1}
 
-
-%%%%%%%%%%%%%%%%%%%%%% Configuracion listing
-
-\lstset{ %
-  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
-  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-  breaklines=true,                 % sets automatic line breaking
-  captionpos=b,                    % sets the caption-position to bottom
-  commentstyle=\color{color2},    % comment style
-  deletekeywords={...},            % if you want to delete keywords from the given language
-  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-  frame=single,	                   % adds a frame around the code
-  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-  keywordstyle=\color{blue},       % keyword style
-  language=Python,                 % the language of the code
-  otherkeywords={symbols,dsolve,solve,Eq, simplify, subs, plot,Function},           % if you want to add more keywords to the set
-  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  numberstyle=\tiny\color{color3}, % the style that is used for the line-numbers
-  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-  showstringspaces=false,          % underline spaces within strings only
-  showtabs=false,                  % show tabs within strings adding particular underscores
-  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
-  stringstyle=\color{color4},     % string literal style
-  tabsize=2,	                   % sets default tabsize to 2 spaces
-  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
-}
-
-
-
-
-
-
-
-%%%%%%%%%%%%%Configuración de fuente para XeLaTeX
-%\setromanfont[Mapping=tex-text]{Oswald-Light}
-%\setsansfont{Roboto Condensed}
-%\setsansfont{Gentium Basic}
-%\setsansfont{FreeMono}
-\setsansfont{Oswald-Light}
-
-
-\renewcommand{\familydefault}{\sfdefault}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%Nuevos comandos entornos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% 
+% 
+% 
+% 
+% 
+% %%%%%%%%%%%%%Configuración de fuente para XeLaTeX
+% %\setromanfont[Mapping=tex-text]{Oswald-Light}
+% %\setsansfont{Roboto Condensed}
+% %\setsansfont{Gentium Basic}
+% %\setsansfont{FreeMono}
+ \setsansfont{Oswald-Light}
+% 
+% 
+ \renewcommand{\familydefault}{\sfdefault}
+% 
+% 
+% 
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%Nuevos comandos entornos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newenvironment{demo}{\noindent\emph{Dem.}}{$\square$ \newline\vspace{5pt}}
 
 \newenvironment{observa}{\noindent\textbf{Observación:}}{}
@@ -230,11 +199,11 @@ titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
 
 \renewcommand*{\raggedrightmarginnote}{\centering}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%Para escibir en clase articulo o similar
-
+% 
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%Para escibir en clase articulo o similar
+% 
 
 
 
@@ -260,14 +229,14 @@ titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
 
 \pagestyle{fancy}
  
- 
+%  
  \maketitle
  \tableofcontents
 %   
 
-%\include{prologo}
-%\include{Uni0}
-%\include{Uni1}
+\include{prologo}
+\include{Uni0}
+\include{Uni1}
 \include{Uni2}
 %\include{apendice}
 \printindex

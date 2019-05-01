@@ -8,7 +8,7 @@
 \href{https://www.python.org/}{Python} es un lenguaje de programación interpretado, 
 abierto, facil de aprender, potente y portátil. Es utilizado en proyectos de todo tipo, 
 no sólo aplicaciones científicas.
-\marginpar{
+\marginnote{
 %\begin{tabular}{b{.7in} b{.7in}}
  \includegraphics[scale=.25]{imagenes/python-logo.png}
 % &\begin{pspicture}(.7in,.7in)
@@ -26,7 +26,7 @@ Python científico, es un conjunto de módulos de python para distintos tipos de
 Está integrado por los módulos, SymPy (para cálculos simbólicos), 
 numpy (cálculos numéricos), matplotlib (gráficos) entre otros.  
 En este curso sólo usaremos SymPy.
-\marginpar{
+\marginnote{
 %\begin{tabular}{b{.7in} b{.7in}}
  \includegraphics[scale=.5]{imagenes/scipy_logo.png}
 %&\begin{pspicture}(.7in,.7in)
@@ -43,7 +43,7 @@ es una biblioteca de Python para matemática simbólica. Su objetivo es converti
 un sistema de álgebra computacional (SAC) completo, manteniendo el código lo más simple 
 posible para que sea comprensible y fácilmente extensible. SymPy está escrito enteramente 
 en Python y no requiere de ninguna biblioteca externa.
-\marginpar{
+\marginnote{
  % \begin{tabular}{b{.7in} b{.7in}}
     \includegraphics[scale=.2]{imagenes/sympy_logo.png}
 % 	&
@@ -61,7 +61,7 @@ en Python y no requiere de ninguna biblioteca externa.
 
 
 \href{http://matplotlib.org/}{Matplotlib} es una biblioteca de trazado de gráficos de Python que produce figuras de calidad de publicación en una variedad de formatos impresos y entornos interactivos a través de plataformas. Matplotlib se puede utilizar en scripts Python, en el shell Python e IPython, el portátil jupyter, servidores de aplicaciones web.
-\marginpar{
+\marginnote{
   \includegraphics[scale=.1]{imagenes/matplotlib.jpg}
 }
 
@@ -107,24 +107,24 @@ Además, se puede acceder a más de 720 paquetes que pueden ser fácilmente inst
  y para su redistribución. Al día que se escriben estas líneas, anaconda parece la opción más 
  sencilla y completa para instalar todos los recursos necesarios para desarrollar los contenidos de 
  estas notas. Existen versiones para linux, OS X y Windows. 
-\marginpar{
+\marginnote{
     \includegraphics[scale=.3]{imagenes/anaconda.png}
 }
 
 
 
 \subsection{Windows} Hay distribuciones específicas para distintos sistemas operativos. La distribución  \href{https://code.google.com/p/pythonxy/}{python(x,y)}  instala el interprete de python y todos los módulos de scipy. Además el entorno de desarrollo integrado (IDE) spyder.
-\marginpar{\includegraphics[scale=.07]{imagenes/windows-logo.png}}
+\marginnote{\includegraphics[scale=.07]{imagenes/windows-logo.png}}
 
 
 \subsection{linux} Aquí todo es más sencillo, el interprete de python suele venir con 
 la distribución del SO y se pueden instalar los módulos, SymPy, NumPy, etc, 
 recurriendo al administrador de paquetes o tipeando la sentencia adecuada en la línea 
 de comandos.  
-\marginpar{\includegraphics[scale=.4]{imagenes/linux.jpeg}}
+\marginnote{\includegraphics[scale=.4]{imagenes/linux.jpeg}}
 
 \subsection{Android} \href{http://qpython.com/}{Qpython} es una aplicación que permite ejecutar código python y una versión básica de sympy desde tablets y smartphones. Se descarga desde la plataforma \href{https://play.google.com/store/apps/details?id=com.hipipal.qpyplus}{google play}.
-\marginpar{\includegraphics[scale=.1]{imagenes/android.jpg}}. 
+\marginnote{\includegraphics[scale=.1]{imagenes/android.jpg}}. 
 
 \subsection{\href{https://es.wikipedia.org/wiki/Computación_en_la_nube}{Computación en la nube}}
 
@@ -189,12 +189,12 @@ Para comentarios largos se utilizan las tildes: \linebreak\verb~''' comentario '
  La segunda notación utiliza el símbolo \verb~#~, no necesita símbolo de finalización 
  pues se extiende hasta el final de la línea.
 
- \begin{lstlisting}
+ \begin{pyverbatim}
 '''
 Comentario  largo en un script de Python
 '''
 print "Hola mundo" # Comentario corto
-\end{lstlisting}
+\end{pyverbatim}
 
 
 
@@ -215,11 +215,12 @@ Las variables se definen de forma dinámica, lo que significa que no se tiene qu
 
 
 
-\begin{lstlisting}
+\begin{pyverbatim}
 x = 1
-x = "texto" # Esto es posible porque los tipos son asignados \
+x = "texto" 
+\end{pyverbatim}
+Esto es posible porque los tipos son asignados
 dinamicamente
-\end{lstlisting}
 
 \subsection{Tipo de datos}
 
@@ -241,14 +242,12 @@ Se clasifican en:
 
 Se usa el comando \verb~\type~ para averiguar que tipo de dato contiene una variable
 
- \begin{lstlisting}
->>> x=1
->>> type(x)
-<type 'int'>
->>> x='Ecuaciones'
->>> type(x)
-<type 'str'>
-\end{lstlisting}
+ \begin{pyconsole}
+x=1
+type(x)
+x='Ecuaciones'
+type(x)
+\end{pyconsole}
 
 
 
@@ -277,48 +276,33 @@ Se usa el comando \verb~\type~ para averiguar que tipo de dato contiene una vari
 
 
 
-\begin{lstlisting}
->>> lista = ["abc", 42, 3.1415]
->>> lista[0] # Acceder a un elemento por su indice
-'abc'
->>> lista[-1] # Acceder a un elemento usando un indice negativo
-3.1415
->>> lista.append(True) # Agregar un elemento al final de la lista
->>> lista
-['abc', 42, 3.1415, True]
->>> del lista[3] # Borra un elemento de la lista usando un indice
->>> lista[0] = "xyz" # Re-asignar el valor del primer elemento
->>> lista[0:2] # elementos del indice "0" al "2" (sin incluir  ultimo)
-['xyz', 42]
->>> lista_anidada = [lista, [True, 42L]] # Es posible anidar listas
->>> lista_anidada
-[['xyz', 42, 3.1415], [True, 42L]]
->>> lista_anidada[1][0] # Acceder a un elemento de una lista dentro de otra lista
-True
-\end{lstlisting}
+\begin{pyconsole}
+lista = ["abc", 42, 3.1415]
+lista[0] # Acceder a un elemento por su indice
+lista[-1] # Acceder a un elemento usando un indice negativo
+lista.append(True) # Agregar un elemento al final de la lista
+lista
+del lista[3] # Borra un elemento de la lista usando un indice
+lista[0] = "xyz" # Re-asignar el valor del primer elemento
+lista[0:2]#elementos del indice "0" al "1" 
+lista_anidada = [lista, [True, 42L]] #Es posible anidar listas
+lista_anidada
+lista_anidada[1][0] #accede lista dentro de otra lista
+\end{pyconsole}
 
-\begin{lstlisting}
->>> tupla = ("abc", 42, 3.1415)
->>> tupla[0] # Acceder a un elemento por su indice
-'abc'
->>> del tupla[0] # No es posible borrar ni agregar
-( Excepcion )
->>> tupla[0] = "xyz" # Tampoco es posible re-asignar
-( Excepcion )
->>> tupla[0:2] # elementos del indice "0" al "2" sin incluir
-('abc', 42)
->>> tupla_anidada = (tupla, (True, 3.1415)) # es posible anidar
->>> 1, 2, 3, "abc" # Esto tambien es una tupla
-(1, 2, 3, 'abc')
->>> (1) #  no es una tupla, ya que no posee al menos una coma
-1
->>> (1,) # si es una tupla
-(1,)
->>> (1, 2) # Con mas de un elemento no es necesaria la coma final
-(1, 2)
->>> (1, 2,) # Aunque agregarla no modifica el resultado
-(1, 2)
-\end{lstlisting}
+\begin{pyconsole}
+tupla = ("abc", 42, 3.1415)
+tupla[0] # Acceder a un elemento por su indice
+del tupla[0] # No es posible borrar ni agregar
+tupla[0] = "xyz" # Tampoco es posible re-asignar
+tupla[0:2] # elementos del indice "0" al "2" sin incluir
+tupla_anidada = (tupla, (True, 3.1415)) # es posible anidar
+1, 2, 3, "abc" # Esto tambien es una tupla
+(1) #  no es una tupla, ya que no posee al menos una coma
+(1,) # si es una tupla
+(1, 2) # Con mas de un elemento no es necesaria la coma final
+(1, 2,) # Aunque agregarla no modifica el resultado
+\end{pyconsole}
 
 \subsection{Diccionarios}
 \begin{itemize}
@@ -334,42 +318,33 @@ True
 
 
 
-\begin{lstlisting}
->>> dicci = {"cadena": "abc", "numero": 42, "lista": [True, 42L]}
->>> dicci["cadena"] # Usando una clave, se accede a su valor
-'abc'
->>> dicci["lista"][0]
-True
->>> dicci["cadena"] = "xyz" # Re-asignar el valor de una clave
->>> dicci["cadena"]
-'xyz'
->>> dicci["decimal"] = 3.1415927 # nuevo elemento clave:valor
->>> dicci["decimal"]
-3.1415927
->>> dicci_mixto = {"tupla": (True, 3.1415), "diccionario": dicci}
->>> dicci_mixto["diccionario"]["lista"][1]
-42L
->>> dicci = {("abc",): 42} # tupla puede ser clave pues es inmutable
->>> dicci = {["abc"]: 42} # No es posible que una clave sea una lista
-( Excepcion )
-\end{lstlisting}
+\begin{pyconsole}
+dicci = {"cadena": "abc", "numero": 42, "lista": [True, 42L]}
+dicci["cadena"] # Usando una clave, se accede a su valor
+dicci["lista"][0]
+dicci["cadena"] = "xyz" # Re-asignar el valor de una clave
+dicci["cadena"]
+dicci["decimal"] = 3.1415927 # nuevo elemento clave:valor
+dicci["decimal"]
+dicci_mixto = {"tupla": (True, 3.1415), "diccionario": dicci}
+dicci_mixto["diccionario"]["lista"][1]
+dicci = {("abc",): 42} # tupla puede ser clave 
+dicci = {["abc"]: 42} # una clave no puede ser lista
+\end{pyconsole}
 
 
 
 \subsection{Listas por comprensión}
 Una lista por comprensión es una expresión compacta para definir listas. Al igual que el operador lambda, aparece en lenguajes funcionales. Ejemplos:
 
+\pyv{range(n)} devuelve una lista, empezando en 0 y terminando en $n-1$.
 
-\begin{lstlisting}
->>> range(5) #  "range" devuelve una lista, empezando en 0 \
-y terminando con el numero indicado menos uno
-[0, 1, 2, 3, 4]
->>> [i*i for i in range(5)]
-[0, 1, 4, 9, 16]
->>> lista = [(i, i + 2) for i in range(5)]
->>> lista
-[(0, 2), (1, 3), (2, 4), (3, 5), (4, 6)]
-\end{lstlisting}
+\begin{pyconsole}
+range(5) #  
+[i*i for i in range(5)]
+lista = [(i, i + 2) for i in range(5)]
+lista
+\end{pyconsole}
 
 
 
@@ -385,53 +360,47 @@ y terminando con el numero indicado menos uno
   \end{itemize}
 
 
-\begin{lstlisting}
->>> def suma(x, y = 2): # el argumento y tiene un valor por defecto
-...     return x + y # Retornar la suma
-...
->>> suma(4) # La variable "y" no se modifica, siendo su valor: 2
-6
->>> suma(4, 10) # La variable "y" si se modifica
-14
-\end{lstlisting}
+\begin{pyconsole}
+def suma(x, y = 2): #el argumento y tiene un valor por defecto
+    return x + y # Retornar la suma
+
+suma(4) # La variable "y" no se modifica, siendo su valor: 2
+suma(4, 10) # La variable "y" si se modifica
+\end{pyconsole}
 
 
-\begin{lstlisting}
->>> suma = lambda x, y = 2: x + y
->>> suma(4) # La variable "y" no se modifica
-6
->>> suma(4, 10) # La variable "y" si se modifica
-14
-\end{lstlisting}
+\begin{pyconsole}
+suma = lambda x, y = 2: x + y
+suma(4) # La variable "y" no se modifica
+suma(4, 10) # La variable "y" si se modifica
+\end{pyconsole}
 
 \subsection{Condicionales}
- Una sentencia condicional (\verb~if condicion~) ejecuta su bloque de código interno 
- sólo si \verb~condicion~ tiene el valor booleano \verb~True~.  Condiciones adicionales, si las hay, se introducen usando \verb~elif~ seguida de la condición y su bloque de código. Todas las condiciones se evalúan secuencialmente hasta encontrar la primera que sea verdadera, y su bloque de código asociado es el único que se ejecuta. Opcionalmente, puede haber un bloque final (la palabra clave \verb~else~ seguida de un bloque de código) que se ejecuta sólo cuando todas las condiciones fueron falsas.
+ Una sentencia condicional (\pyv{if} \verb~condicion~) ejecuta su bloque de código interno 
+ sólo si \verb~condicion~ tiene el valor booleano \pyv{True}.  Condiciones adicionales, si las hay, se introducen usando \pyv{elif} seguida de la condición y su bloque de código. Todas las condiciones se evalúan secuencialmente hasta encontrar la primera que sea verdadera, y su bloque de código asociado es el único que se ejecuta. Opcionalmente, puede haber un bloque final (la palabra clave \pyv{else} seguida de un bloque de código) que se ejecuta sólo cuando todas las condiciones fueron falsas.
 
 
 
-\begin{lstlisting}
->>> verdadero = True
->>> if verdadero: # No es necesario poner "verdadero == True"
-...     print "Verdadero"
-... else:
-...     print "Falso"
-...
-Verdadero
->>> lenguaje = "Python"
->>> if lenguaje == "C": 
-...     print "Lenguaje de programacion: C"
-... elif lenguaje == "Python": # Se pueden agregar "elif" como se quiera
-...     print "Lenguaje de programacion: Python"
-... else: 
-...     print "Lenguaje de programacion: indefinido"
-...
-Lenguaje de programacion: Python
->>> if verdadero and lenguaje == "Python": 
-...     print "Verdadero y Lenguaje de programacion: Python"
-...
-Verdadero y Lenguaje de programacion: Python
-\end{lstlisting}
+\begin{pyconsole}
+verdadero = True
+if verdadero: # No es necesario poner "verdadero == True"
+    print "Verdadero"
+
+else:
+    print "Falso"
+
+lenguaje = "Python"
+if lenguaje == "C": 
+    print "Lenguaje de programacion: C"
+elif lenguaje == "Python": # tantos "elif" como se quiera
+    print "Lenguaje de programacion: Python"
+else: 
+    print "Lenguaje de programacion: indefinido"
+
+if verdadero and lenguaje == "Python": 
+    print "Verdadero y Lenguaje de programacion: Python"
+
+\end{pyconsole}
 
 
 
@@ -439,43 +408,38 @@ Verdadero y Lenguaje de programacion: Python
 
 
 \subsection{Bucles}
-El bucle \verb~for~ es similar a  otros lenguajes. Recorre un objeto \emph{iterable},
+El bucle \pyv{for} es similar a  otros lenguajes. Recorre un objeto \emph{iterable},
 esto es  una lista o una tupla, y por cada elemento del iterable 
 ejecuta el bloque de código interno. 
-Se define con la palabra clave \verb~for~ seguida de un nombre de variable, 
-seguido de \verb~in,~ seguido del iterable, y finalmente el bloque de código interno. 
+Se define con la palabra clave \pyv{for} seguida de un nombre de variable, 
+seguido de \pyv{in} seguido del iterable, y finalmente el bloque de código interno. 
 En cada iteración, el elemento siguiente del iterable se asigna al nombre de variable 
 especificado:
 
-\begin{lstlisting}
->>> lista = ["a", "b", "c"]
->>> for i in lista: # Iteramos sobre una lista, que es iterable
-...     print i
-...
-a
-b
-c
->>> cadena = "abcdef"
->>> for i in cadena: # Iteramos sobre una cadena, que es iterable
-...     print i, # una coma al final evita un salto de linea
-...
-a b c d e f
-\end{lstlisting}
+\begin{pyconsole}
+lista = ["a", "b", "c"]
+for i in lista: # Iteramos sobre una lista, que es iterable
+    print i
+
+cadena = "abc"
+for i in cadena: # Iteramos sobre una cadena, que es iterable
+    print i # una coma al final evita un salto de linea
+
+\end{pyconsole}
 
 
 
-El bucle \verb~while~ evalúa una condición y, si es verdadera, ejecuta el bloque
+El bucle \pyv{while} evalúa una condición y, si es verdadera, ejecuta el bloque
 de código interno. Continúa evaluando y ejecutando mientras la condición sea verdadera.
-Se define con la palabra clave \verb~while~ seguida de la condición, y a continuación 
+Se define con la palabra clave \pyv{while} seguida de la condición, y a continuación 
 el bloque de código interno:
-\begin{lstlisting}
->>> numero = 0
->>> while numero < 10:
-...     print numero
-...     numero += 1,  #un buen programador modificara las variables de control al finalizar el ciclo while
-...
-0 1 2 3 4 5 6 7 8 9
-\end{lstlisting}
+\begin{pyconsole}
+numero = 0
+while numero < 3:
+    print numero
+    numero += 1  
+
+\end{pyconsole}
 
 
 % 

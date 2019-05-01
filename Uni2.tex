@@ -476,7 +476,7 @@ f=sum([g.subs(x,n*x)/n**2 for n in range(1,20)])
 plot(f,(x,0,1))
 \end{sympyverbatim}
 \marginnote{\includegraphics[scale=.3]{imagenes/funcRiemann.png}\\
-Función serrucho}
+Función de Riemann}
  
 Demostramos que la función de Riemann es discontinua en los racionales $p/q$ donde $\text{m.c.d}(p,q)=1$ y $q$ par. Es integrable en $[0,1]$.  
  
@@ -507,6 +507,5 @@ donde el ínfimo es tomado sobre todos los cubrimientos finitos de $S$.
  
  \begin{teorema}[Criterio de integrabilidad de Hankel]  Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si para todo $\sigma>0$ el conjunto $S_{\sigma}:=\{x\in [a,b]| w(f,x)>\sigma\}$ tiene contenido exterior igual a $0$ ($c_e(S_{\sigma})=0)$.
    \end{teorema}
-
 
 
