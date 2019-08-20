@@ -1,511 +1,752 @@
-\chapter{Integral de Riemann}
+%==================================================
+%CAPITULO II
+%=================================================
 
-\section{Introducción}
-
-\begin{quotation}
-\marginnote{\includegraphics[scale=.6]{imagenes/Riemann.jpeg}\\
-Bernhard Riemann 1826-1866
-} 
-<< Bernard Riemann recibió su doctorado en 1851, su \emph{Habilitación} en 1854. La habilitación confiere el reconocimiento de la capacidad de crear sustanciales contribuciones en la investigación más allá de la tesis doctoral, y es un prerequisito necesario para ocupar un cargo de profesor en una universidad Alemana. Riemann eligió como tema  de habilitación el problema de las series de Fourier. Su tesis fue titulada \emph{\"Uber die Darstellbarkeit einer Function durch eine trigonometrische Reine} (Sobre la representación de una función por series trigonométricas) y respondía la pregunta:  Cuándo una función definida en el intervalo $(-\pi,\pi)$ puede ser respresentada por la serie trigonométrica $a_0/2+\sum_{n=1}^{\infty}[a_n\cos(nx)+b_n\sen(nx)]$? 
-En este trabajo  es donde hallamos   la Integral de Riemann, introducida en una sección corta antes del nucleo principal de la tesis, como parte del trabajo preparatorio que él necesitó desarrollar antes de abordar el problema de representabilidad por series trigonométricas. >> 
-\end{quotation}
-\begin{flushright}
- David M. Bressoud\\
- A Radical Approach to Lebesgue's Theory of Integration.\lectura
-\end{flushright}
-
-
-En este capítulo vamos a desarrollar el concepto de la integral de Riemman. Vamos a exponer la definición de la integral debida a Riemann y la ideada por J. G. Darboux.
-Mostraemos la equivalencia de las dos definiciones y discutiremos las propiedades de la intergal, sus alcances y límites. Preparamos así el camino para la introducción de la integral de Lebesgue. 
-\marginnote{\includegraphics[scale=.8]{imagenes/Darboux.jpg}\\
-Jean G. Darboux  1842-1917
-} 
-
-Debemos advertir \advertencia  al alumno que en este curso dejaremos un poco de lado las cuestiones procedimentales de cómo calcular integrales, aspecto que seguramente abordó en cursos anteriores y del cual nos vamos a valer. Tampoco debe esperar que las actividades prácticas se centren en esa dirección.   Nuestro principal objetivo aquí es discutir la materia conceptual ligada a la integral y cómo es previsible las actividades prácticas estarán orientadas con ese propósito.
-
-
-El concepto de integral encuentra su motivación en diversos problemas. Aparece cuando se busca el centro de masas de un determinado cuerpo, cuando se quieren hallar longitudes de arco, volúmenes, cuando se quiere reconstruir el movimiento de cuerpo conocida su velocidad, etc. La integral es utilizada en incontables otros conceptos matemáticos, como ser el mencionado már arriba relativo a las series de Fourier. 
-
-Quizás el 
-problema más simple donde aparece la integral es el que utilizaremos como motivación para introducirla y es el concepto de área.  Vamos a tratar de reconstruir este concepto desde su base, esto es analizando la noción de área de figuras tan simples como rectángulos, triángulos, etc. 
+\chapter{Nociones Básicas de Topología }
 
 
 
-\section{Área de figuras elementales planas}\label{sec:area_elem}
-
-  
-El cálculo de áreas es necesario en multitud de actividades humanas, por ejemplo con el comercio. La cantidad de muchos productos y servicios se estima en medidas de área, por ejemplo: las telas,  el trabajo de un colocador de pisos,  el precio de la construcción,  el valor de las extensiones de tierra, etc.  
- 
- 
-
-
-Por figuras elementales planas nos referimos a rectángulos, triángulos, trapecios, etc. Sin duda el alumno  debe estar  muy familiarizado con las áreas de estas figuras, el área de un rectángulo viene dada por la conocida fórmula $b\times h$, donde $b$ es la base del rectángulo y $h$ su altura.  Ahora bien, ¿Cómo 
-se llega a esta fórmula? Porque esta fórmula es apropiada para calcular el precio de un terreno por ejemplo. En esta sección vamos a justificar esta fórmula a partir de algunos hechos elementales.
-
-
-
-Vamos a considerar un plano $\mathcal{P}$. En este plano $\mathcal{P}$ supondremos fijada una unidad de longitud.  Pretendemos asignar un área a las figuras, es decir a los subconjuntos, de $\mathcal{P}$. De ahora en más, cómo es usual en esta materia  nos referiremos a \emph{medida}\index{medida} en lugar de área. La medida es un concepto más general  que el concepto de área. No obstante en el contexto en que estamos actualmente son sinónimos.  
-
-Queremos construir pues una función $m$ tal que $m(A)$ reppresente la medida  de  $A\subset\mathcal{P}$. Ahora bien ¿qué podemos usar de guía con ese objetivo? Si, como dijimos,  desconocemos todas las fórmulas previamente aprendidas, sobre que partimos para construir la medida o área. La respuesta es que tomaremos como principio rector  ciertas propiedades que son deseables  que una medida satisfaga. Ellas son las  siguientes. 
-
-
-
-
-\begin{description}
- \item[Positividad.] debería ser una magnitud no negativa.  
- \item[Invariancia por movimientos rígidos.] Si una región es transformada en otra por medio de un movimiento rígido, ambas regiones deberían tener la misma área. Otra manera de expresar esta propiedad es diciendo que dos figuras \emph{congruentes}\index{congruencia} tienen la misma área. 
- \item[Aditividad.] Si una región es la unión de cierta cantidad de regiones más chicas mutuamente disjuntas  
-\end{description}
-
-\begin{figure}[h]
+\section{Enfoque axiomático de las  estructuras métricas} 
+\marginnote{\vspace{-2cm}
 \begin{center}
- \input{imagenes/rectangulos1.tikz}
- \caption{El área del rectángulo es la suma de sus partes}\label{fig:rect_descop} 
+\includegraphics[scale=.2]{imagenes/Frechet.jpg}
+\end{center}
+\small
+Maurice René Fréchet; (Maligny, 2 de septiembre de 1878 - París, 4 de junio de 1973) fue un matemático francés. Trabajó en topología, teoría de la probabilidad y la estadística. 
+Sus trabajos en análisis funcional lo empujaron a buscar un marco más general que el espacio euclídeo introduciendo la noción de espacio métrico\index[personas]{Frechet}. 
+}
+Uno de los conceptos fundamentales de la matemática es la noción de \index{Distancia}\emph{distancia}. Esta noción está presente en multitud de actividades humanas, desde el comercio a la descripción del cosmos. En matemática medimos distancias en el plano y en el espacio y en las representaciones algebraicas de ellos  $\rr^2$ y $\rr^3$. Más generalmente  en espacios euclideanos $n$-dimensionales $\rr^n$. Desde comienzos del siglo XX los matemáticos fueron extendiendo la noción de distancia a conjuntos compuestos de los más diversos entes, matrices, funciones, funciones que actúan sobre funciones, etc. Esta ubicuidad y multiplicidad del concepto de distancia justifica un tratamiento axiomático de él.
+
+
+
+
+
+
+
+
+\begin{definicion} Sea $X$ un conjunto y $d:X\times X\rightarrow
+\mathbb{R}$ una función. Diremos que $d$ es una \index{Métrica}\emph{métrica} o \emph{distancia}
+sobre $X$ si satisface las siguientes propiedades:
+	  \begin{itemize}
+		   \item[i)]$\forall x \forall y: d(x,y)=0\Leftrightarrow x=y$.
+		   \item[ii)] $\forall x \forall y : d(x,y)=d(y,x)$.
+		   \item[iii)]$\forall x \forall y \forall z: d(x,z)\leq
+				d(x,y)+d(x,z)$.
+	  \end{itemize}
+Si $d$ es una métrica sobre $X$ diremos, entonces, que el par
+$(X,d)$ es un \index{Espacio métrico}\emph{espacio métrico}.
+\end{definicion}
+\marginnote{
+\begin{center}
+\includegraphics[scale=.25]{imagenes/triag.png}
+Desigualdad triangular
+\end{center}
+}
+La desigualdad iii) en la definición anterior se denomina\index{desigualdad triágular}
+\emph{desigualdad triágular}, esto debido a que se la puede
+pensar como la relación entre un lado de un triágulo y la suma
+de los otros dos, ver figura  en el margen.
+
+
+
+
+Veamos ahora algunos ejemplos de espacios métricos.
+
+\begin{ejemplo} La función módulo $|.|:\mathbb{R}\rightarrow
+\mathbb{R}$ induce una métrica sobre $\mathbb{R}$, a saber: para
+$x,y\in\mathbb{R}$ definimos
+\begin{equation}\label{distmod}
+	d(x,y)=|x-y|.
+\end{equation}
+\end{ejemplo}
+
+\begin{ejemplo}\label{ejem,disteuclidea} Sobre $\mathbb{R}^n$
+consideremos la función
+distancia $d$ definida por
+\begin{equation}\label{meteuclidea}
+	d(\mathbf{x},\mathbf{y}):=\sqrt{\sum\limits_{i=1}^{n}(x_i-y_i)^2},
+\end{equation}
+donde $\mathbf{x}=(x_1,\dots,x_n)$ e $\mathbf{y}=(y_1,\dots,y_n)$.
+Dejamos al alumno la demostración de que $d$ es una métrica,
+ver Ejercicio \vref{ejmeteuclidea}. Esta métrica es conocida
+como \emph{métrica euclidea}\index{métrica euclidea} y es la métrica usual que estamos
+habituados a considerar.
+\end{ejemplo}
+
+
+
+\begin{ejemplo} Dado cualquier conjunto no vacío $X$, la
+función definida por:
+\[
+	d(x,y):=\left\{
+\begin{array}{ll}
+	1, & \hbox{si $x\neq y$;} \\
+	0, & \hbox{si $x=y$.} \\
+\end{array}
+\right.
+\]
+es una métrica. Esta métrica se denomina \emph{métrica
+discreta}.\index{métrica
+discreta}
+\end{ejemplo}
+
+\begin{ejemplo}\label{ejem,distsobrecont} Dado un conjunto $X$,
+definamos $\mathcal{A}(X)$
+como el conjunto de todas las funciones acotadas $f:X\rightarrow
+\mathbb{R}$. Entonces $(\mathcal{A}(X),d)$ es una métrica,
+donde:
+\begin{equation}\label{convunifmet}
+	d(f,g):=\sup\limits_{x\in X}|f(x)-g(x)|.
+\end{equation}
+\end{ejemplo}
+
+\begin{ejemplo}\label{ejem,distsobrecontl1} Sea $\mathcal{C}([0,1])$
+el conjunto de funciones
+continuas $f:[0,1]\rightarrow\mathbb{R}$. Entonces\linebreak
+$(\mathcal{C}([0,1]),d)$ es un espacio métrico, donde:
+\begin{equation}\label{l1metint}
+	d(f,g):=\int_0^1|f(x)-g(x)|dx.
+\end{equation}
+\end{ejemplo}
+\section{Bolas, esferas y diámetro}
+Definido lo que es una métrica y un espacio métrico, pasamos a
+definir algunas entidades de carácter geométrico, esta son el
+concepto de \emph{bola}, \emph{esfera} y \emph{diámetro}.\index{bola} \index{esfera}  \index{diámetro}
+
+\begin{definicion} Sea $(X,d)$ un espacio métrico, $x\in X$ y
+$r>0$.
+\begin{itemize}
+\item[a)]Definimos la bola abierta $B(x,r)$, con centro en $x$ y radio
+$r$, por:
+\[B(x,r):=\{y\in X:d(x,y)<r\}.\]
+\item[b)]Definimos la esfera $E(x,r)$, con centro en $x$ y radio
+$r$, por:
+\[E(x,r):=\{y\in X:d(x,y)=r\}.\]
+\end{itemize}
+\end{definicion}
+
+Todos tenemos una concepción de lo que entendemos por una bola,
+quizas se nos venga a la mente, y de hecho es un ejemplo, un
+círculo en $\mathbb{R}^2$. No obstante, debemos proceder con
+cuidado. Estamos considerando métricas generales, ocurrirá que
+en algunos espacios métricos las  bolas no se parecen a lo
+que comunmente entendemos por este concepto. Esto es debido a que
+en nuestra vida cotidiana estamos habituados a considerar la
+métrica euclidea, pero en este curso trabajaremos con métricas
+muy generales.
+
+En $\mathbb{R}$, con la métrica dada por el módulo, la bola
+centrada en $x\in\mathbb{R}$ y radio $r$, no es mas que el
+intervalo $(x-r,x+r)$. En la figura \vref{ejembolas}  mostramos
+varios ejemplos de bolas en diferentes métricas sobre
+$\mathbb{R}^2$, las demostraciones las desarrollaremos en la
+clase.
+
+
+Todavía mas curiosas son las bolas respecto a la métrica
+discreta. Sea $(X,d)$ un espacio métrico discreto y $x\in X$,
+entonces:
+
+\[B(x,r)=\left\{
+\begin{array}{ll}
+	\{x\}, & \hbox{si $r<1$;} \\
+	X, & \hbox{si $r\geq 1$.} \\
+\end{array}
+\right.
+\]
+
+La esfera la podemos pensar como el borde de la bola, que no
+está incluida en la bola abierta. También tenemos en este caso
+situaciones que, en un primer momento, nos pueden parecer
+extra\~nas. Como casi siempre, el mayor ``grado de
+extra\~namiento'' se consigue con la métrica discreta. En este
+caso, si $(X,d)$ es un espacio métrico discreto, tenemos:
+\[E(x,r)=\left\{
+\begin{array}{ll}
+	\{x\}, & \hbox{si $r=0$;} \\
+	X-\{x\}, & \hbox{si $r=1$;} \\
+	\emptyset, & \hbox{si $r\neq 0$ y $r\neq 1$.} \\
+\end{array}
+\right.
+\]
+
+Pasamos a definir, ahora, el concepto de diámetro de un
+conjunto.
+
+\begin{definicion} Sea $(X,d)$ un espacio métrico y $A\subset
+X$. Definimos el diámetro del conjunto $A$ por:
+\[
+	\delta(A):=\sup\limits_{x,y\in A}d(x,y).
+\]
+Eventualmente, podría ocurrir que $\delta(A)=+\infty$.
+\end{definicion}
+La figura \vref{diamconj} explica, por si sola, el significado del
+concepto de diámetro.
+
+
+
+
+\begin{definicion} Un conjunto no vacío $A$ se dirá acotado si
+$\delta(A)<\infty$.
+\end{definicion}
+Es oportuno aclarar que el concepto de acotación depende del
+conjunto en si mismo y de la métrica. Así puede ocurrir que
+un mismo conjunto sea acotado con una métrica y con otra no.
+
+\begin{ejemplo} En el espacio $\mathbb{R}$, con la métrica del
+módulo, el conjunto $(0,+\infty)$ es no acotado. En cambio, con
+la métrica discreta todo conjunto, y en particular el dado, lo
+es.
+\end{ejemplo}
+
+También definiremos la distancia de un punto a un conjunto dado.
+
+\begin{definicion} En un espacio métrico $(X,d)$ se define la
+distancia de $x\in X$ a $A\subset X$ como
+\[d(x,A):=\inf\limits_{y\in A}d(x,y).\]
+\end{definicion}
+
+Demostremos que
+\[\delta(B(x,r))\leq 2r.\]
+Efectivamente, dados $z$ e $y$ en la bola $B(x,r)$, tenemos, por
+la desigualdad triangular
+\[d(y,z)\leq d(y,x)+d(x,z)\leq 2r.\]
+Tomando supremo sobre $z$ e $y$ obtenemos la afirmación. Notar
+que ya no es cierto que $\delta(B(x,r))=2r$. En efecto, por
+ejemplo si $(X,d)$ es un espacio métrico discreto, entonces
+$\delta(B(x,1/2))=0$.
+
+Ahora probaremos que la unión de conjuntos acostados es, a la
+vez, un conjunto acotado.
+
+\begin{proposicion} Sean $(X,d)$ un espacio métrico, $A$ y $B$
+subconjuntos acotados de $X$. Entonces $A\cup B$ es acotado.
+\end{proposicion}
+\begin{demo}  Tenemos que probar que:
+	\[\delta(A\cup B)<\infty.\]
+Para esto, es suficiente demostrar que $\forall x,y\in A\cup B$
+existe una constante $M$, independiente de $x$ e $y$, tal que:
+\[d(x,y)\leq M.\]
+Sean $z\in A$ y $w\in B$ dos cualesquiera puntos en los conjuntos
+indicados. A travez de esta demostración estos puntos estaran
+fijos, no importandonos que puntos sean, cualquiera conduce al
+mismo argumento. Tomemos, ahora, $x,y\in A\cup B$ cualesquiera,
+pero ya no estaran fijos. Si ocurriera que $x$ e $y$ estuvieran
+simultaneamente en uno mismo de los conjuntos, supongamos $A$,
+entonces tenemos que:
+\[d(x,y)\leq \delta(A),\]
+de modo que, en este caso, existe una constante $M$ con la
+propiedad deseada. Debemos considerar el caso en que $x$ e $y$
+esten en ``conjuntos diferentes'', digamos $x\in A$ e $y\in B$.
+Entonces tenemos:
+\[
+	d(x,y)\leq d(x,z)+d(z,w)+d(w,y)\leq \delta(A)+d(z,w)+\delta(B).
+\]
+El miembro derecho, de la desigualdad anterior, es independiente
+de $x$ e $y$, de modo que quedó demostrada la  proposición.
+\end{demo}
+
+\section{Conjuntos abiertos} Uno de los conceptos
+más importantes, sino el más, de la Topología es el de
+conjunto abierto.
+\begin{definicion} Sea $(X,d)$ un e.m\footnote{Abreviación para espacio
+métrico}. Diremos que $A\subset X$ es un conjunto abierto si
+$\forall x\in A\exists r>0$ tal que:
+\[
+	B(x,r)\subset X.
+\]
+\end{definicion}
+\marginnote{
+\begin{center}
+	\includegraphics[scale=.15]{imagenes/conjabi.png}
+	Conjuntos abiertos y no abiertos.
+\end{center}
+}
+En la figura \vref{conjabi} podemos ver un ejemplo de conjunto
+abierto, en $\mathbb{R}^2$ con la métrica euclidea, y otro que
+no lo es. La diferencia es que en el conjunto b) el borde (en la
+parte recta del conjunto) forma parte del mismo conjunto, entonces
+si $x$ está en este borde, toda bola centrada en $x$ contiene
+puntos fuera del conjunto.
+
+
+Un ejemplo, esperable, de conjunto abierto lo constituyen las
+bolas abiertas.
+\begin{proposicion} Toda bola abierta es un conjunto abierto.
+\end{proposicion}
+\begin{demo} 
+\marginnote{
+\begin{center}
+	\includegraphics[scale=.18]{imagenes/grafbol.png}\\
+	Construcción de $r'$.
+\end{center}
+}
+Sea $x\in X$ y $r>0$. Consideremos la bola abierta
+$B(x,r)$. Para demostrar que la bola es abierta, hay que
+encontrar, para todo $y\in B(x,r)$, un $r'>0$ tal que
+\begin{equation}\label{inclusion}
+	B(y,r')\subset B(x,r).
+\end{equation}
+Sea, pues, $y\in B(x,r)$. Tomemos:
+\[r':=r-d(x,y).\]
+Ver la figura \vref{construccionrprima} para un gráfico de la
+situación. Este $r'$ es mayor que cero. En efecto, como $y$
+está en la bola, tenemos que $d(x,y)<r$.
+
+
+
+
+Ahora, veamos la inclusión \vref{inclusion}. Sea $z\in B(y,r')$,
+entonces tenemos, por la desigualdad triangular, que:
+\[d(x,z)\leq d(x,y)+d(y,z)< d(x,y)+r'<r.\]
+Así $z\in B(x,r)$, que es lo que queríamos demostrar.
+\end{demo}
+
+Ahora damos dos propiedades de conjuntos abiertos que tendrán
+mucha trascendencia más adelante.
+\begin{teorema}\label{teo,uniointerabiertos} Sea $I$ un conjunto de índices y
+$\{A_i\}_{i\in I}$ una familia de conjuntos abiertos. Entonces:
+\begin{itemize}
+\item[a)] La unión $\bigcup_{i\in I}A_i$ es un conjunto abierto.
+\item[b)] Si $I$ es finito, la intersección $\bigcap_{i\in
+I}A_i$ es un conjunto abierto.
+\end{itemize}
+\end{teorema}
+\begin{demo} Empecemos por la propiedad a). Sea $x$ un punto en la
+unión, es decir existe algún índice $i_0$ tal que $x\in
+A_{i_0}$. Como este $A_{i_0}$ es un conjunto abierto, deberá
+existir $r>0$ tal que $B(x,r)\subset A_{i_0}$. Claramente la bola
+$B(x,r)$, al ser un subconjunto de $A_{i_0}$ es un subconjunto de
+la unión de todos los $A_i$, que es lo que teníamos que
+probar.
+
+Ahora veamos b). Podemos suponer que, para algún $n\in
+\mathbb{N}$, tenemos que $I=\{1,\dots,n\}$. Sea $x$ un punto en la
+intersección. En este caso, $x\in A_i$, para todo $i$. Como cada
+$A_i$ es abierto, existen radios $r_i$ tales que $B(x,r_i)\subset
+A_i$. Definamos:
+\[
+	r:=\min\{r_1,\dots,r_n\}.
+\]
+El mínimo existe, y es mayor que cero, pues hay una cantidad
+finita de radios. Ahora tenemos que, como $r\leq r_i$,
+$B(x,r)\subset B(x,r_i)\subset A_i$, para todo $i\in I$. Por
+consiguiente $B(x,r)$ es un subconjunto de la intersección de
+todos los $A_i$.
+\end{demo}
+
+Es interesante notar que, en un e.m. discreto $(X,d)$, todo
+subconjunto $A\subset X$ es abierto. Efectivamente, en un e.m.
+discreto $B(x,1/2)=\{x\}$ para todo $x\in X$. En particular, si
+$x\in A$ entonces $B(x,1/2)\subset A$.
+
+\section{Interior de un conjunto y entornos} Como es costumbre,
+empezamos con una definición.
+\begin{definicion} Sea $(X,d)$ un e.m. y $A\subset X$. Definimos
+el interior de $A$, denotaremos este conjunto $A^0$, como el
+conjunto de todos los puntos $x\in A$ tales que existe un $r>0$
+que satisface $B(x,r)\subset A$.
+\end{definicion}
+
+Hay una gran similitud de esta definición con la de conjunto
+abierto. De hecho se tiene que un conjunto $A$ es abierto si y
+solo si $A=A^0$.
+
+En $\mathbb{R}^2$ con la métrica euclidea podemos visualizar el
+interior de un conjunto como la parte del conjunto que no está
+sobre el borde de él, ver figura \vref{interiordeconj}.
+
+\begin{figure}
+\begin{center}
+	\includegraphics[scale=.5]{imagenes/interio.png}
+	\caption{Interior de un conjunto}\label{interiordeconj}
 \end{center}
 \end{figure}
 
-Utilizando la segunda y tercer propiedad se pueden relacionar el área del rectángulo de la figura \ref{fig:rect_descop} con las cuatro regiones en la que es dividido.
+Tenemos una caracterización alternativa del interior de un
+conjunto.
 
-Como veremos a lo largo de la materia la propiedad de aditividad debe ser estudiada con cuidado, esto ocurre por las intrincadas maneras en que una región puede ser unión de otras regiones. A lo largo de esta materia elaboraremos una  teoría que nos dará una descripción  precisa de a que conjuntos podemos asignarle una medida de modo que las propiedades previas sean ciertas. 
+\begin{teorema}\label{teo,mayorabierto} El interior de un conjunto $A$, es el mayor abierto
+contenido en $A$.
+\end{teorema}
+\begin{demo} El hecho de que $A^0$ es abierto y está contenido
+en $A$, es consecuencia inmediata de la definición y lo dejamos
+como ejercicio. Vamos a demostrar que es el mayor de los abiertos
+contenido en $A$. Vale decir, hay que demostrar que si $B$ es un
+abierto contenido en $A$, entonces $B\subset A^0$. Sea pues $B$
+abierto y $B\subset A$. Tomemos $x\in B$. Como $B$ es abierto
+existe un $r>0$ tal que $B(x,r)\subset B\subset A$. Así,
+necesariamente $x\in A^0$. Lo que demuestra que $B\subset A^0$.
+\end{demo}
 
-Por el momento veamos como las propiedades anteriores determinan practicamente de manera unívoca la medida de regiones elementales planas.  
+Daremos algunas propiedades de la operación de tomar el interior
+de un conjunto.
+\begin{teorema} Sea $(X,d)$ un e.m., $A$ y $B$ subconjuntos de
+$X$.
+\begin{itemize}
+\item[a)] $(A^0)^0=A^0$
+\item[b)] Si $A\subset B$ entonces $A^0\subset B^0$.
+\item[c)] $(A\cap B)^0=A^0\cap B^0$.
+\end{itemize}
+\end{teorema}
+\begin{demo} a) Como dijimos, $A^0$ es abierto, por ende
+$(A^0)^0=A^0$.
+
+b)$A^0$ es un abierto y además está contenido en $B$, por
+consiguiente $A^0\subset B^0$.
+
+c) Como $A\cap B\subset A$ tenemos que, a acausa de b), $(A\cap
+B)^0\subset A^0$. De la misma manera $(A\cap B)^0\subset B^0$. Por
+consiguiente $(A\cap B)^0\subset A^0\cap B^0$. Para la otra
+inclusión, tener en cuenta que $A^0\cap B^0$ es un abierto
+contenido en $A\cap B$, por lo tanto $A^0\cap B^0\subset (A\cap
+B)^0$.
+\end{demo}
+ Introducimos otro concepto.
+
+\begin{definicion} En un e.m. el exterior de un conjunto $A$ es el
+interior de su complemento. En símbolos ponemos
+$\text{Ext}(A)=(A^c)^0$.
+\end{definicion}
 
 
-Hablando de propiedades de la medida, supongamos que $A$ y $B$ son dos regiones con $A\subset B$. Entonces como $B=A\cup (B-A)$ y por la propiedad de aditividad y positividad
+\begin{definicion} Sea $(X,d)$ un e.m. y $x\in X$. Diremos que $V$
+es un entorno de $x$ si $x\in V^0$. También denotaremos por
+$E(x)$ al conjunto de todos los entornos de $x$.
+\end{definicion}
 
-\[
- m(B)=m(A)+m(B-A)\geq m(A).
-\]
+El anterior es otro de los conceptos claves de la topología.
+Observemos que un conjunto abierto es entorno de cada uno de sus
+puntos. La recíproca es también cierta, es decir si un
+conjunto es entorno de cada uno de sus puntos entonces es abierto.
 
-Descubrimos así que nuestra medida deberá tener adicionalmente la siguiente propiedad:
-\begin{description}
- \item[Monotonía.] Si $A\subset B$ entonces $m(A)\leq m(B)$. 
-\end{description}
-\marginpar{ Podríamos por ejemplo elegir el círculo de radio uno como unidad de área. Así ya no tendríamos el problema de ese número raro $\pi$ que aparece en la fórmula del área del círculo. ¡El área de cualquier círculo sería igual a su radio al cuadrado! Claro que aparecería $\pi$  en la fórmula del área del cuadrado de lado 1. Nos tapamos los pies y se destapa el cuerpo.}
-Es claro que si logramos construir una medida que satisfaga las propiedades anteriores cualquier multiplo por un número real positivo  de ella seguirá cumpliendo las propiedades. Esto es una manera de expresar el hecho que podemos usar diferentes unidades de medición. Esta cuestión se sortea proponiendo la unidad de medida. Esta unidad es completamente arbitraria, ud. podría elegir su figura plana preferida como unidad de área.   Cómo es habitual, elijamos el cuadrado cuyos lados miden la unidad de longitud previamente fijada. 
+\begin{proposicion} La intersección de una cantidad finita de
+entornos de un punto $x$ en un e.m. $(X,d)$ es, a su vez, un
+entorno de $x$.
+\end{proposicion}
+\begin{demo} Sean $V_i$, $i=1,...,n$, entornos de $x\in X$. Por
+definición $x\in V_i^0$ para todo $i=1,...,n$. Entonces $x\in
+V_1^0\cap\dots\cap V_n^0=(V_1\cap\dots\cap V_n)^0$. De modo que
+$V_1\cap\dots\cap V_n$ es un entorno de $x$. Así queda
+establecida la propiedad que expresa la proposición.
+\end{demo}
 
+\section{Conjuntos cerrados y clausura de
+conjuntos}
 
-Supongamos ahora que tenemos un rectángulo de un lado igual a la unidad y el otro de lado un racional $n/m$, $n,m\in\mathbb{N}$. Veamos que la aditividad, la invariancia por movimientos rígidos y el hecho que decidimos que el cuadrado de lados igual a la unidad determinan el área de este rectángulo. Primero observar que si dividimos el lado de cuadrado unidad en $m$ segmentos iguales de longitud. \marginnote{
- \input{imagenes/CuadSubd.tikz}\\
- Descomposición rectángulo $R$
- }
-Queda dividido el cuadrado en $m$ rectángulos $R_1,\ldots,R_m$ (ver figura en el margen), todos ellos  congruentes entre si, de modo que todos tienen la misma medida, digamos $m(R_1)$. La unión de ellos es el cuadrado que por convención dijimos que tiene medida 1. De modo que por la aditividad debe ocurrir que $m(R_1)=\cdots =m(R_m))=1/m$. Recordemos nuestra pretención de inferir la medida de un rectángulo $R$ de lado 1 y otro $n/m$. Este rectángulo esta compuesto de $n$ rectángulos congruentes a los $R_i$, $i=1,\ldots,m$, nuevamente por la aditividad inferimos que $m(R)=n/m$. 
+Ahora introduciremos el concepto de conjunto cerrado.
+\begin{definicion} Un conjunto es cerrado si su complemento es
+abierto.
+\end{definicion}
 
-Sea ahora una rectángulo $R$ con un lado unidad y el otro un real cualquiera $l>0$. Existen sendas sucesiones $0<q_k,p_k\in\mathbb{Q}$, $k\in\mathbb{N}$, tales que $q_1\leq q_2\leq\cdots \leq l \leq \cdots\leq p_2\leq p_1$ y $\lim_{k\to\infty}q_k =\lim_{k\to\infty} p_k=l$. Consideremos una dos sucesiones de rectángulos $R_k$ y $S_k$ que comparten el lado de $R$ igual a la unidad, mientras que el otro lado de $R_k$ y $S_k$ es igual a $q_k$ y $p_k$ respectivamente. Luego por la monotonía
-\[
- q_k=m(R_k)\leq m(R) \leq m(S_k)\leq p_k.
-\]
-Tomando límite cuando $k\to\infty$ inferimos que $m(R)=l$. 
+Esta sencilla definición hace las nociones de conjunto cerrado y
+abierto duales\footnote{Dos tipos de conceptos son duales cuando
+cualquier afirmación sobre uno de ellos se convierte en una
+afirmación sobre el otro. En este proceso de ``transformación
+de enunciados'' hay que traducir cada concepto por su dual. Por
+ejemplo, en el caso que nos ocupa, un conjunto cerrado muta en
+abierto y las intersecciones mutan en uniones y viceverza. Uniones
+e intersecciones son duales como consecuencia de las leyes de de
+Morgan}, así veremos que cada propiedad de conjuntos abiertos
+induce una correspondiente propiedad sobre conjuntos cerrados.
+Tener en cuenta esto en la siguiente teorema.
 
+\begin{teorema}\label{teo,uniointercerrados} Sea $I$ un conjunto de índices y
+$\{F_i\}_{i\in I}$ una familia de conjuntos cerrados. Entonces:
+\begin{itemize}
+\item[a)] La intersección $\bigcap_{i\in I}F_i$ es un conjunto cerrado.
+\item[b)] Si $I$ es finito, la unión $\bigcup_{i\in
+I}F_i$ es un conjunto cerrado.
+\end{itemize}
+\end{teorema}
+\begin{demo} La afirmaciones a) y b) de este teorema son duales de
+las a) y b) del Teorema \vref{teo,uniointerabiertos}. Por ejemplo,
+para demostrar a), observemos que, por definición, la siguiente
+es una familia de conjuntos abiertos: $\{F_i^c\}_{i\in I}$. De
+modo que por a) del Teorema \vref{teo,uniointerabiertos} tenemos
+que:
+\[\bigcup\limits_{i\in I}F_i^c\]
+es un conjunto abierto. De allí que el complemento de este
+conjunto es cerrado. Pero el complemento de este conjunto es, en
+virtud de las leyes de de Morgan, la intersección de todos los
+$F_i$. La propiedad b) se obtiene de la misma manera.
+\end{demo}
 
+Ejemplos de conjuntos cerrados son los intervalos cerrados de
+$\mathbb{R}$, con la métrica del módulo; las bolas cerradas en
+cualquier e.m., es decir los conjuntos de la forma:
+\[B'(x,r):=\{y\in X: d(x,y)\leq r\}.\]
+Las esferas también resultan ser conjuntos cerrados. Por otra
+parte, como en un e.m. discreto todo conjunto es abierto, todo
+conjunto, también, es cerrado. La demostración de que los
+anteriores son conjuntos cerrados las dejamos como ejercicios. A
+lo largo de esta materia veremos varios ejemplos mas de conjuntos
+cerrados, encomendamos al estudiante prestar atención a ellos,
+puesto que tan importante como aprender las definiciones y
+propiedades de determinado concepto, es conocer, y poder construir
+ejemplos de ese concepto.
 
-\begin{figure}[h]
- \begin{center}
- \input{imagenes/ParalTria.tikz} 
- \end{center}
- \caption{Áreas de otras figuras elementales.}\label{fig:paral-trig}
+El concepto de interior de un conjunto tiene su dual
+correspondiente.
+\begin{definicion} Sea $(X,d)$ un e.m.. La clausura de un conjunto $A\subset
+X$ se define y denota como se ve a continuación:
+\[\C{A}:=(\text{Ext}(A))^c=\bigl[(A^c)^0\bigr]^c.\]
+\end{definicion}
+
+ En $\rr^2$ con la métrica euclidea podemos visualizar la
+clausura de un conjunto  como el conjunto más su ``borde'', ver
+la figura \vref{fig,clausura}.
+
+\begin{figure}
+\begin{center}
+	\includegraphics[scale=.5]{imagenes/clausu.png}
+	\caption{Clausura de un conjunto}\label{fig,clausura}
+\end{center}
 \end{figure}
 
-
-A partir de las propiedades fundamentales que postulamos para la medida o área inferimos la famosa fórmula del área de un rectángulo en el caso que uno de los lados sea igual a la unidad. Para un  rectángulo arbitrario. En la figura \ref{fig:paral-trig} se muestra como relacionar el área de un paralelepípedo con la de un rectángulo y la de un triángulo con la de un paralelepípedo para inferir las conocidas fórmulas para estas figuras.
-
-
-
-\section{Integral de Riemann}
-
-En esta sección abordaremos el problema del área de regiones planas. Vamos a contextualizarnos dentro del marco conceptual que nos brinda la geometría analítica. Mediante coordenadas cartesianas ortogonales los puntos del plano se identifican con pares ordenados $(x,y)\in\mathbb{R}^2$ y el plano con el conjunto $\rr^2$.  Nuestro propósito es entonces definir la medida de subconjuntos de $\mathbb{R}^2$. La geometría analítica abre así nuevas posibilidades para abordar el problema del área. 
-
-Nuestra primera aproximación será la que propuso Bernhard Riemann en 1854, pero seguiremos  el enfoque de Jean Darboux. En esta parte de nuestra exposición consideraremos subconjuntos de $\mathbb{R}^2$ de un tipo especial, concretamente a conjuntos que quedan encerrados entre la gráfica de una función y del eje coordenadas $x$. Esto nos lleva alconcepto de integral. 
-
-
-\begin{definicion}[Partición] Sea $[a,b]$ un intervalo. Una {\em partición}\index{Partición} $P$ es un conjunto ordenado y finito de puntos, donde el primer elemento es $a$ y el último $b$. Es decir $P=\{x_0,x_1,\ldots,x_n\}$, donde $a=x_0<x_1<\cdots<x_n=b$. 
- 
-\end{definicion}
-
-
-
-
-\begin{definicion}[Sumas de Darboux] Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Consideremos las siguientes magnitudes
-\[
- \begin{split}
-    m_i&:=\inf\{f(x)| x\in [x_{i-1},x_i]\}\\
-    M_i&:=\sup\{f(x)| x\in [x_{i-1},x_i]\}\\
- \end{split}
-\]
-
-Definimos la \emph{Suma superior de Darboux}\index{Suma superior} como
-\[
- \overline{S}(P,f)=\sum_{i=1}^nM_i(x_i-x_{i-1}),
-\]
-y la \emph{Suma inferior de Darboux}\index{Suma inferiorr} como
-\[
- \underline{S}(P,f)=\sum_{i=1}^nm_i(x_i-x_{i-1}),
-\] 
-\end{definicion}
-\marginpar{
-  \begin{center}
-    \input{imagenes/DarbouxSum.tikz}
-    Sumas de Darboux. 
-  \end{center}
-}
-
-\begin{lema}[Monotonía sumas de Darboux]  Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Supongamos que $P'$ es otra partición que tiene un pnto más que $P$. Entoces
- \[
-  \underline{S}(P',f)\geq \underline{S}(P,f)\quad\text{y}\quad \overline{S}(P',f)\leq \overline{S}(P,f)
- \]
-\end{lema}
-
-\begin{ejercicio} Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P,P'$ particiones de $[a,b]$ con $P\subset P'$. Demostrar que 
-  \[
-  \underline{S}(P,f)\leq \underline{S}(P',f)\quad\text{y}\quad \overline{S}(P',f)\leq \overline{S}(P,f).
- \]
- Inferir que para cualesquiera $P,P'$ (sin importar que una este o no contenida dentro de la otra)
-   \[
-\underline{S}(P,f)\leq \overline{S}(P,f).
- \]
- 
-\end{ejercicio}
-
-\begin{definicion}[Funciones integrables] Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Diremos que $f$ es {\em integrable Riemann} \index{Integrable Riemann} si 
-\begin{equation}\label{eq:integrable}
- \sup\left\{\underline{S}(P,f)| P \text{partición de }[a,b]\right\}=\inf\left\{\overline{S}(P,f)| P \text{partición de }[a,b]\right\}
-\end{equation}
-En caso que $f$ sea integrable llamamos {\em integral} \index{Integral} entre $a$ y $b$ de $f$ al valor de los dos miembros de \eqref{eq:integrable} y este número se denota
-\[
-\int_a^bf(x)dx. 
-\]
- 
-\end{definicion}
- 
-\begin{teorema}[Primer criterio de integrabilidad]  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si para todo $\epsilon>0$ existe una partición $P$ tal que 
-\begin{equation}\label{eq:Crit1Int}
- \overline{S}(P;f)-\underline{S}(P;f)<\epsilon.
-\end{equation}
- 
-\end{teorema}
-
-\begin{demo} La demo
- 
-\end{demo}
-
-
-\begin{ejemplo} Sea $0\leq a<b$ veamos que 
-\[
- \int_a^b x dx=\frac{b^2}{2}-\frac{a^2}{2}.
-\]
-\end{ejemplo}
-
-
-\begin{ejercicio} Sea $0\leq a<b$ veamos que 
-\[
- \int_a^b x^2 dx=\frac{b^3}{3}-\frac{a^3}{3}.
-\]
-{\em Ayuda:} Usar particiones uniformes y la fórmula $\sum_{i=1}^nn^2= n(n+1)(2n+1)/6$.
-\end{ejercicio}
-
-\begin{ejemplo} Sea $0\leq a<b$ y $n\in\mathbb{N}$,  veamos que 
-\[
- \int_a^b x^n dx=\frac{b^{n+1}}{n+1}-\frac{a^{n+1}}{n+1}.
-\]
-Usamos particiones no uniformes
-\end{ejemplo}
-
-\begin{ejercicio} Sea $0\leq a<b$ y $n$ un entero negativo, veamos que
-\[
- \int_a^b x^n dx=\begin{cases}
-                  \frac{b^{n+1}}{n+1}-\frac{a^{n+1}}{n+1} & \text{ si } n\neq -1\\
-                  \ln(b)-\ln(a) & \text{ si } n=-1\\
-                 \end{cases}
-\]
-\end{ejercicio}
-
-
-\begin{ejemplo} Sea $0\leq a<b\leq \pi/2$, veamos que
-\[
- \int_a^b \sen x dx=-(\cos(b)-\cos(a)).
-\]
-\end{ejemplo}
-
-
-
-\begin{ejercicio} Sea $0\leq a<b\leq \pi$, veamos que
-\[
- \int_a^b \sen x dx=-(\cos(b)-\cos(a)).
-\]
-\end{ejercicio}
-
-
-\begin{ejemplo} Usamos SymPy y sumas de Darboux aproximar el valor de $\pi$. Utilizamos el hecho que $\pi/4$ es el área de un cuarto de círculo de radio $1$. Entonces 
-$$\pi=4\int_0^1\sqrt{1-x^2}dx.$$
-
-\begin{sympyblock}
-from sympy import *
-N=1000.0
-lim=int(N+1)
-x=symbols('x')
-f=sqrt(1-x**2)
-Sinf=sum([ f.subs(x,i/N)*1/N for i in range(1,lim)])
-Ssup=sum([f.subs(x,(i-1)/N)*1/N for i in range(1,lim)])
-\end{sympyblock}
-Encontramos la estimación
-\[\sympy{4*Sinf}\leq \pi \leq \sympy{4*Ssup}\]
-\end{ejemplo}
-
-\begin{ejercicio} Usando SymPy estimar las siguientes integrales 
-$$\int_1^2\frac{1}{x}dx,$$
- comparar con $\ln(2)$,
-
-$$\int_{-1}^{1}x^2dx$$
-¿A qué parece aproximarse las sumas inferiores y superiores?
-
-$$\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-x^2}}dx,$$
-¿Por qué el resultado puede usarse para aproximar $\pi$ ?
-
- 
-\end{ejercicio}
-
-
-
-
-\begin{teorema}[Propiedades elementales de la integral] Sean $f,g:[a,b]\to\mathbb{R}$ integrables, $\alpha,\beta\in\mathbb{R}$ y $c\in (a,b)$. Entonces
-\begin{description}
- \item[Linealidad] $\alpha f+\beta g$ es integrable y 
- \[
-  \int_a^b\alpha f(x)+\beta g(x)dx=\alpha \int_a^bf(x)dx+\beta\int_a^b g(x)dx.
- \]
- \item[Monotonía] Si $f(x)\leq g(x)$  para $x\in [a,b]$ entonces 
- \[
-  \int_a^b f(x)dx\leq \int_a^b g(x)dx.
- \]
- \item[Aditividad del Intervalo]  \[
-  \int_a^b\alpha f(x)dx= \int_a^cf(x)dx+\int_c^b f(x)dx.
- \]
-\end{description}
-
-
-\end{teorema}
-
-\begin{observa} Las propiedadades anteriores son compatibles con las propiedades que habíamos propuesto para el concepto de área en la sección  \ref{sec:area_elem}.
-\end{observa}
-
-\section{Integrabilidad y continuidad}
-
-
- 
-\begin{teorema}[Segundo criterio de integrabilidad]  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
-\[\max_i\{x_i-x_{i-1}\}<\delta,\]
-se tiene que
-\begin{equation}\label{eq:Crit1Int}
- \overline{S}(P;f)-\underline{S}(P;f)<\epsilon.
-\end{equation}
- 
-\end{teorema}
-\begin{demo} Agarrate catalina
- 
-\end{demo}
-
-\begin{teorema}[Continuidad implica integrabilidad]  Si $f:[a,b]\to\mathbb{R}$ es una función continua entonces es integrable.
-\end{teorema}
-\begin{demo} hacer
- \end{demo}
-
- 
-¿Qué ocurre con las funciones discontinuas? 
-
-\begin{ejemplo}[Función de Heavside] Es la función
-\[
- H(x)=\begin{cases}0 & \text{ si } x<0\\1 & \text{ si } x\geq 0\end{cases}.
-\]
-Es discontinua en $[-1,1]$ pero integrable.
- 
-\end{ejemplo}
-
-
-
-\marginnote{\includegraphics[scale=.25]{imagenes/dirichlet.png}\\
-Función de Dirichlet}
-\begin{ejemplo}[Función de Dirichlet] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
-\[
- f(x)=\begin{cases} 1 & \text{ si } x\in\mathbb{Q}\\0 & \text{ si }   x\notin\mathbb{Q}\\
-\end{cases}
-\]
-Veamos que $f$ es discontinua en todo punto y no integrable.
-\end{ejemplo}
-
-
-
-
-
-\begin{ejemplo}[Función de Thomae] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
-\[
- f(x)=\begin{cases} \frac{1}{q} & \text{ si } x=\frac{p}{q},p,q\in\mathbb{Z}, \text{m.c.d}(p,q)=1
- \\0 & \text{ si }   x\notin\mathbb{Q}\\
-\end{cases}
-\]
-\end{ejemplo}
-\marginnote{\includegraphics[scale=.15]{imagenes/thomae.png}\\
-Función de Thomae}
-
-Para graficarla
-
-\begin{sympyverbatim}
-from matplotlib import pyplot as plt
-total=500
-q=[]
-f=[]
-for i in range(1,total):
-    for j in range(1,i):
-        if gcd(j,i)==1:
-            q.append(Rational(j,i))
-            f.append(1.0/i)
-plt.plot(q,f,'.',markersize=12)
-\end{sympyverbatim}
-
-Veamos que es discontinua en todo punto racional y es integrable integrable.
-
-\marginnote{\includegraphics[scale=.22]{imagenes/escalera.png}\\
-Función creciente y discontinua en $\mathbb{Q}\cap [0,1]$}
-\begin{ejemplo}[Escalera discontinua] Sea $\mathbb{Q}\cap [0,1]=\{q_1,q_2,\ldots\}$ una numeración de los racionales del $[0,1]$. Definamos $f:[0,1]\to\mathbb{R}$ como
- \[
-  f(x)=\sum_{n=1}^{\infty}H(x-q_n),
- \]
-donde $H$ es la función de \emph{Heavside}\index{Heavside}. 
-\begin{sympyverbatim}
-q=[]
-f=[]
-total=20
-for i in range(1,total):
-    for j in range(1,i):
-        if gcd(j,i)==1:
-            q.append(float(Rational(j,i)))
-x=symbols('x')
-Heavside=Piecewise((0,x<0),(1,x>=0))
-f=sum([Heavside.subs(x,x-q[n])/2**n for n in range(len(q))])
-plot(f,(x,0,1))
-\end{sympyverbatim}
-
-Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\cap \mathbb{Q}$. Además $f$ es integrable.
-
-
-\end{ejemplo}
-\begin{definicion}[Oscilación sobre un intervalo] Sea $f:[a,b]\to\mathbb{R}$ acotada y $I=[\alpha,\beta]\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación} de $f$ en $I$ por 
-\[
- w(f,I)=\sup\{f(x)| x\in I\}-\inf\{f(x)| x\in I\}.
-\]
-\end{definicion}
-
-\begin{ejemplo} 
-\begin{enumerate}
- \item Para la función de Dirichlet $w(f,I)=1$ para todo $I$ con interior no vacío.
- \item Para la función de Heavside e $I=[\alpha,\beta]$
- \[
-  w(f,I)=\begin{cases}
-          1 & \text{ si } 0\in (\alpha,\beta]\\
-          0 & \text{ si } 0\notin (\alpha,\beta]\\
-         \end{cases}
- \]
-  \item Si $I^o\neq\emptyset$, $f$ la función de Thomae e $I\subset [0,1]$ entonces 
-     $ w(f,I)=1/q^*$, donde $q^*$ es el mínimo valor de $q$ para el que existe $p\leq q$ tal que $p/q\in I$.
-  \item Para la función escalera discontinua e $I\subset [0,1]$
-  \[
-   w(f,I)=\sum_{q_n\in I}\frac{1}{2^n}.
-  \]
-\end{enumerate}
-
- 
-\end{ejemplo}
-
-
-
-\begin{definicion} Sea $f:[a,b]\to\mathbb{R}$ acotada, $\sigma>0$ y $P=\{x_0,x_1,\ldots,x_n\}$ una partición. Definimos
-\[
- I_{\sigma}:=\{i\in\{1,\ldots,n\}|w(f,[x_{i-1},x_i])>\sigma\}.
-\]
-y
-\[
- R(P,f,\sigma)=\sum_{i\in I_{\sigma}}(x_i-x_{i-1}).
-\]
-\end{definicion}
-
-
-
-
-
-\begin{proposicion} Si $f$ es continua en $[a,b]$ para todo $\sigma>0$ existe $\delta>0$ tal que 
-\[
-\max_i(x_i-x_{i-1})<\delta\Rightarrow I_{\sigma}=\emptyset\Rightarrow R(P,f,\sigma)=0. 
-\]
-
- 
+Tenemos la siguiente caracterización alternativa de clausura de
+un conjunto.
+\begin{proposicion}\label{pro,clausura} Sea $(X,d)$ un e.m. y $A\subset X$. Son
+equivalentes:
+\begin{itemize}
+\item[a)] $x\in \C{A}$.
+\item[b)] $\forall r>0: B(x,r)\cap A\neq\emptyset$.
+\end{itemize}
 \end{proposicion}
+\begin{demo}Veamos primero que a)$\Rightarrow$b). Sea $x\in \C{A}$. Por
+definición $x\notin (A^c)^0$. Así, por definición de
+conjunto interior, tenemos que para todo $r>0$, $B(x,r)\nsubseteq
+A^c$. Es decir que para todo $r>0$ existe $y=y_r\in B(x,r)\cap A$.
+Esto prueba b).
 
-\begin{ejemplo} Para la función de Dirichlet y para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=\{x_1,\ldots,x_n\}$ y $R(P,f,\sigma)=[0,1]$
- 
-\end{ejemplo}
+Veamos ahora que b)$\Rightarrow$a). Sea, pues, $x$ un punto
+satisfaciendo la propiedad b). Toda bola de radio $x$ y centro
+$r>0$ corta al conjunto $A$. De modo que no existe una de tales
+bolas con la propiedad que este completamente contenida en el
+conjunto $A^c$. Esto nos dice, por definicion de conjunto
+interior, que $x$ no está en el interior de $A^c$. Dicho de otro
+modo $x\in \bigl[(A^c)^0\bigr]^c$.
+\end{demo}
 
-\begin{ejemplo} Para la función de Heavside,   para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=i$, donde $i$ es el índice para el que $i\in (x_{i-1},x_i]$ y $R(P,F,\sigma)=x_i-x_{i-1}$.
- 
-\end{ejemplo}
+Las propiedades del interior tienen propiedades duales
+correspondientes para la clausura.
 
-\begin{teorema}[Criterio de integrabilidad de Riemann] Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ talque $R(P,f,\sigma)<\epsilon$.
+\begin{teorema} Sean $(X,d)$ un e.m., $A$ y $B$ subconjuntos de
+$X$. Entonces tenemos que:
+\begin{itemize}
+\item[a)] $A\subset \C{A}$.
+\item[b)] El conjunto $\C{A}$ es el menor conjunto cerrado que
+contiene a $A$.
+\item[c)] $\C{\C{A}}=\C{A}$.
+\item[d)] Si $A\subset B$ entonces $\C{A}\subset \C{B}$.
+\item[e)]$\C{A\cup B}=\C{A}\cup \C{B}$.
+\item[f)]$x\in \C{A}\Leftrightarrow d(x,A)=0$
+\end{itemize}
 \end{teorema}
+\begin{demo} Veamos a) cuya propiedad dual es que $C^0\subset C$.
+En efecto, tenemos que:
 
-\begin{ejemplo} Discutir los ejemplos Dirichlet, Heavside, Continuas, escalera discontinua
- 
-\end{ejemplo}
+\[(A^c)^0\subset A^c.\]
+Ahora, tomando complementos a ambos miembros\footnote{La
+operación de complemento invierte las inclusiones}, obtenemos
+que:
+\[\C{A}=\bigl[(A^c)^0\bigr]^c\supset (A^c)^c=A.\]
+Esto prueba a).
 
-\begin{ejemplo}[Función de Riemann] Definimos
+Veamos b). El conjunto $\C{A}$ es cerrado pues es el complemento
+del abierto $(A^c)^0$. Sea $F$ un conjunto cerrado que contiene a
+$A$, hay que demostrar que $F\supset \C{A}$. Entonces, tomando
+complemento, tenemos que $F^c$ es un abierto contenido en $A^c$.
+Como $(A^c)^0$ es el mayor abierto contenido en $A^c$, tenemos que
+$F^c\subset (A^c)^0$. Ahora tomemos complemento a esta última
+inclusión y obtenemos
+\[F\supset \bigl[(A^c)^0\bigr]^c=\C{A},\]
+que es lo que queríamos demostrar.
+
+Como corolario de b), obtenemos que  $A$ es cerrado si, y solo si,
+$\C{A}=A$. A su vez, como corolario de esto, obtemos c) y d).
+
+Veamos e). Tenemos que:
+
+\begin{align}
+  \C{A\cup B}&=\bigl[(A\cup B)^c)^0\bigr]^c         &\qquad &\text{Definición clausura}\notag \\
+			 &=\bigl[(A^c\cap B^c)^0\bigr]^c    &&\text{Leyes de de         Morgan}\notag\\
+			 &=\bigl[(A^c)^0\cap (B^c)^0)\bigr]^c &&\text{Propiedad dual del interior}\notag\\
+			 &=\bigl[(A^c)^0\bigr]^c\cup \bigl[(B^c)^0)\bigr]^c &&\text{Leyes de de Morgan}\notag\\
+			 &= \C{A}\cup \C{B}                     &&\text{Definición de
+			 clausura}\notag
+  \end{align}
+
+
+Que es lo que queríamos demostrar.
+
+Por último demostremos f). Si $x\in \C{A}$ entonces, como
+consecuancia de la proposición \vref{pro,clausura}, tenemos que
+para todo $n\in\nn$ existe un $y_n\in A$ tal que $d(x,y_n)<1/n$,
+ver figura \vref{fig,incf)}.
+
+
+Tenemos asi que
+\[d(x,A)=\inf\limits_{y\in A}d(x,y)\leq d(x,y_n)\leq \frac1n.\]
+Y como la desigualdad es válida para todo $n\in\nn$, obtenemos
+que $d(x,A)=0$.
+
+Recíprocamente, si $d(x,A)=0$ entonces, por definición del
+ínfimo, para todo $r>0$ existe un $y=y_r\in A$ tal que
+$d(x,y)<r$. Así tenemos que $B(x,r)\cap A\neq \emptyset$,
+para todo $r>0$. Esto, como sabemos, es equivalente a afirmar que
+$x\in \C{A}$.
+\end{demo}
+
+Por último estamos interesados en definir aquellos puntos que
+estan en lo que hemos denominado, sin ninguna precisión, borde
+de un conjunto.
+
+\begin{definicion} Diremos que $x$ pertenece a la \emph{frontera} de un
+conjunto $A$ cuando $x$ está en la clausura de $A$ y en la
+clausura de $A^c$. Llamamos al conjunto de todos los puntos
+frontera de $A$ la \emph{frontera }de $A$ y denotaremnos este
+conjunto por $\partial A$. \end{definicion}
+
+
+La costumbre de denotar la frontera de un conjunto con el signo de
+una derivada proviene, suponemos, del calculo sobre variedades
+donde se observa que cierta integral de una ``derivada'' sobre un
+conjunto es igual a la integral de la función sobre la frontera
+del conjunto. Este resultado se conoce como Teorema de Stokes. El
+Teorema fundamenteal del Cálculo es un caso particular de este
+teorema. Es en este contexto donde se consigue una conexión
+entre derivadas y fronteras.
+
+
+
+
+
+
+\section{Ejercicios}
+
+\begin{ejercicio}\label{ejmeteuclidea} Demostrar que los siguientes son espacios métricos.
+
+\begin{itemize}
+	\item[a)] $(\mathbb{R},d)$ donde $d$ está definida en
+	\vref{distmod}.
+	\item[b)]  $(\mathbb{R}^n, d)$ donde $d$ está definida en \vref{meteuclidea}.
+	\emph{Ayuda:} Usar
+la desigueladad de Cauchy-Schwartz
+$\forall\mathbf{x}\in\mathbb{R}^n\forall\mathbf{y}\in\mathbb{R}^n$:
 \[
- ((x))=x-[x+0.5]
+	\sum\limits_{i=1}^{n}x_iy_i\leq
+	\sqrt{\sum\limits_{i=1}^{n}|x_i|^2}
+	\sqrt{\sum\limits_{i=1}^{n}|y_i|^2}
 \]
+\item[c)] $(\mathbb{R}^n, d)$, donde $d$ es la función definida
+en \vref{l1met}.
 
-\marginnote{\includegraphics[scale=.24]{imagenes/serrucho.pdf}\\
-Función serrucho}
-\begin{sympyverbatim}
-x=symbols('x')
-g=x-floor(x+.5)
-plot(g,(x,-5,5))
-\end{sympyverbatim}
-Definimos la función de Riemann Porque
+\item[d)]$(\mathbb{R}^n, d)$, donde $d$ es la función definida
+en \vref{linfmet}.
+\item[e)] Probar que la métrica discreta es, valga la
+redundancia, una métrica.
+\item[f)] Demostrar que las ecuaciones \vref{convunifmet} y
+\vref{l1metint} definen métricas.
+\end{itemize}
+\end{ejercicio}
+
+\begin{ejercicio}\label{deslipschitz} Sea $(X,d)$ un espacio métrico. Demostrar que
+para todos $x$ , $y$ y $z$ en $X$ tenemos que:
+\[|d(x,y)-d(x,z)|\leq d(y,z).\]
+\end{ejercicio}
+
+\begin{ejercicio}\label{daconjeslipschitz} Sea $(X,d)$ un espacio
+métrico y $A\subset X$. Demostrar que:
+\[|d(x,A)-d(y,A)|\leq d(x,y).\]
+\end{ejercicio}
+
+\begin{ejercicio}\label{ejer,distequiv} Sea $(X,d)$ un e.m., probar que las siguientes
+funciones son métricas sobre $X$:
+\begin{itemize}
+\item[a)] $d_1(x,y):=\min\{1,d(x,y)\}$.
+\item[b)] $d_2(x,y):=\frac{d(x,y)}{1+d(x,y)}$.
+\end{itemize}
+\end{ejercicio}
+
+\begin{ejercicio} Sea $(X,d)$ un e.m.. Demostrar que $\forall
+x,y\in X$, existe entornos $U\in E(x)$ y $V\in E(y)$ tales que
+$U\cap V=\emptyset$.
+\end{ejercicio}
+
+\begin{ejercicio} Sea $(X,d)$ u e.m.. Demostrar las siguientes
+propiedades:
+\begin{itemize}
+	\item[a)] Si $A\subset X$ es finito, entonces $X-A$ es abierto.
+	\item[b)] Si $A\subset X$ es abierto, entonces para todo
+	conjunto $B$ se tiene que $A\cap \C{B}\subset \C{A\cap B}$.
+	\item[c)] Si $A$ es abierto entonces $A\subset (\C{A})^0$.
+	\item[d)] Si $A$ es cerrado entonces $(\C{A})^0\subset A$.
+	\item[e)]
+	$(\C{A})^0=\C{\biggl(\C{\bigl((\C{A})^0\bigr)}\biggr)}$.
+	\item[f)]
+	$\C{(A^0)}=\C{\biggl(\C{\bigl(\C{(A^0)}\bigr)^0}\biggr)}$.
+	\item[g)] $A^0=\bigl(\C{A^c}\bigr)^c$.
+	\item[h)] $\partial A=\C{A}-A^0$.
+	\item[i)] $\text{Ext}(A)=(\C{A})^c$.
+	\item[j)] $\partial A^0\subset \partial A$ y $\partial
+	\C{A}\subset \partial A$.
+	\item[k)] $\partial (A\cup B)\subset \partial A\cup\partial
+	B$, Si $\C{A}\cap\C{B}=\emptyset$ entonces vale la igualdad en
+	la anterior inclusión.
+	\item[l)] $d(A,B)=d(\C{A},\C{B})$, donde por definición:
+	\[
+		d(A,B):=\inf\limits_{x\in A,y\in B}d(x,y).
+	\]
+\end{itemize}
+\end{ejercicio}
+\begin{ejercicio} Dar ejemplos de:
+\begin{itemize}
+\item[a)] $A$ y $B$ abiertos de $\rr$ tales que los siguientes
+conjuntos sean todos diferentes: $\C{A}\cap \C{B}$, $\C{A\cap B}$,
+$\C{A}\cap B$, $A\cap \C{B}$.
+\item[b)] $A$ y $B$ intervalos de $\rr$ tales que
+$A\cap\C{B}\nsubseteq \C{A\cap B}$.
+\item[c)] $A\subset \rr^2$ tal que $\partial A=A$.
+\item[d)] $A$ y $B$ subconjuntos de $\rr^2$ tales que entre los
+siguientes conjuntos no valga ninguna inclusión: $\partial
+A\cup\partial B-\partial(A\cap B)$ y $\partial (A\cup B)$.
+\end{itemize}
+\end{ejercicio}
+\begin{ejercicio} Demostrar que los siguientes conjuntos de
+$\rr^2$ y $\rr^3$, son abiertos con la métrica euclidea:
+\begin{itemize}
+\item[a)] $\{(x,y)\in\rr^2: m<d\bigl((x,y),(0,0)\bigr)<n\}$, donde
+$n,m\in\nn$ y $m<n$.
+\item[b)] $\{(x,y)\in\rr^2: 0<x<1,\,\, 0<y<1,\,\,x\neq
+\frac1n\,\,\forall n\in\nn\}$.
+\item[c)] $\{(x,y,z)\in\rr^3: x,y,z\in\mathbb{Z}\}^c$.
+\end{itemize}
+\end{ejercicio}
+\begin{ejercicio} Hallar la frontera y el diámetro del conjunto
+$\{\frac1n:n\in\nn\}$.
+\end{ejercicio}
+\begin{ejercicio} Demostrar que el diámetro de la dola unitaria
+en $\rr^2$ con la métrica euclidea es 2.
+\end{ejercicio}
+\begin{ejercicio} Un e.m. $(X,d)$ se dice ultramétrico si $d$ verifica la
+desigualdad ultramétrica, es decir:
 \[
- f(x)=\sum_{n=1}^{\infty}\frac{((x))}{n^2}.
+	d(x,y)\leq\max\{d(x,z),d(z,y)\}.
 \]
+Sea $X$ un e.m. ultramétrico. Demostrar que:
+\begin{itemize}
+\item[a)] Si $d(x,y)\neq d(y,z)$ entonces
+$d(x,z)=\max\{d(x,y),d(y,z)\}$.
+\item[b)] Si $y\in B(x,r)$ entonces $B(x,r)=B(y,r)$. Como
+consecuencia las bolas abiertas son también conjuntos cerrados.
+\item[c)] Si $y\in\C{B(x,r)}$ entonces $\C{B(y,r)}=\C{B(x,r)}$.
+Las bolas cerradas son, también, conjuntos abiertos.
 
-\begin{sympyverbatim}
-f=sum([g.subs(x,n*x)/n**2 for n in range(1,20)])
-plot(f,(x,0,1))
-\end{sympyverbatim}
-\marginnote{\includegraphics[scale=.3]{imagenes/funcRiemann.png}\\
-Función de Riemann}
- 
-Demostramos que la función de Riemann es discontinua en los racionales $p/q$ donde $\text{m.c.d}(p,q)=1$ y $q$ par. Es integrable en $[0,1]$.  
- 
-\end{ejemplo}
+\item[d)] Si dos bolas tienen intersección no vacía
+entonces una está  contenidad en la otra.
 
-
-\begin{definicion}[Oscilación de una función en un punto]\index{oscilación} 
-Sea $f:[a,b]\to\mathbb{R}$ y $x\in [a,b]$ 
-acotada definimos la {\em oscilación de $f$ en $x$} como 
-\[
- w(f;x)=\inf\limits_{x\in I^o}w(f,I),
-\]
-donde el ínfimo se toma sobre todos los intervalos que contienen a $x$ en su interior.
-\end{definicion}
-
-\begin{ejercicio} $f$ es continua en $x$ si y solo si $w(f;x)=0$.
- \end{ejercicio}
-
- \begin{definicion}[Contenido exterior]\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ [x_{i-1},x_i]\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n[x_{i-1},x_i]$.
- 
- El \emph{contenido exterior} de $S$ se define por 
- \[
-  c_e(S)=\inf \sum_{i=1}^n (x_i-x_{i-1}),
- \]
-donde el ínfimo es tomado sobre todos los cubrimientos finitos de $S$.
-  
- \end{definicion}
- 
- \begin{teorema}[Criterio de integrabilidad de Hankel]  Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si para todo $\sigma>0$ el conjunto $S_{\sigma}:=\{x\in [a,b]| w(f,x)>\sigma\}$ tiene contenido exterior igual a $0$ ($c_e(S_{\sigma})=0)$.
-   \end{teorema}
-
-
+\item[e)] La distancia de dos bolas abiertas distintas de radio
+$r$, contenidas en una bola cerrada de radio $r$, es igual a $r$.
+\end{itemize}
+\end{ejercicio}

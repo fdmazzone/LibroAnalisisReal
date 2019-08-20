@@ -1,0 +1,355 @@
+\chapter{Sucesiones, series de funciones y sus amigos}
+
+
+\section{Sucesiones de funciones}
+Sea $K$ un espacio métrico, usualmente $K\subset \mathbb{R}^n$ para algún $n$. 
+
+Una colección $f_n:K\to \mathbb{R}$ para $n=1,2,3,\dots$ se llama sucesión de funciones.
+
+Dada una sucesión de funciones $f_n$, $n=1,2,3,\dots$  y $x\in K$, $f_n(x)$
+es una sucesión de números reales y como tal puede o no converger a cierto límite.
+
+La mayor diferencia entre una sucesión de números reales y una sucesión de funciones es
+el hecho que en una sucesión de funciones los términos de la sucesión cambian cuando la variable
+$x$ cambia. 
+Por lo tanto el límite también puede cambiar, en caso de existir, y por consiguiente el límite
+también es una función de $x$.
+De manera que es necesario tener presente que cuando una sucesión de funciones es evaluada en
+un valor de  $x$ particular resulta una sucesión de números reales.
+
+Supongamos que para todo $x \in K$ la sucesión de números reales $f_n(x)$ converge,  
+es decir que existe el $\lim\limits_{n \to \infty} f_n(x)$ y lo denotaremos $f(x)$. 
+En este caso diremos que $f_n$ converge puntualmente a $f$.
+ 
+\begin{ejemplo}
+La sucesión $f_n(x)=\frac{1}{1+nx^2}$ converge puntualmente 
+\[f(x)=\left\{\begin{array}{ll}
+0&x\neq 0
+\\
+1&x=0
+\end{array}
+\right.\]
+\textbf{Justificación:}
+\\
+Claramente si $x=0$ tenemos que $f_n(0)=1$ para todo $n \in \mathbb{N}$ y entonces $\lim\limits_{n \to \infty}f_n(0)=1$.
+
+Si $x\neq 0$ entonces $nx^2\to \infty$ cuando $n\to \infty$  y por lo tanto $\lim\limits_{n \to \infty} \frac{1}{1+nx^2}=0$.
+
+Como vemos, la determinación de la convergencia puntual suele reducirse al cálculo de un límite. 
+Para este propósito es lícito usar todas las técnicas estudiadas en cursos anteriores como puede ser la Regla de L'H\^opital.
+\end{ejemplo}
+
+\begin{ejemplo}
+La sucesión $f_n(x)=\frac{n^2x-n^2}{1+n^2x}$ converge a $f(x)=\frac{x-1}{x}$ si $x \neq 0$.
+
+Si $x=0$ no converge.
+
+Es necesario ser cuidadoso con la justificación. Por ejemplo, la Regla de L'H\^opital  sólo puede usarse en casos de indeterminaciones.
+
+Si $x=0$ no hay indeterminación pues $f_n(0)=-n^2 $ y 
+$\lim\limits_{n \to \infty}f_n(0)=\lim\limits_{n \to \infty}(-n^2)=-\infty$. 
+
+Es lícito decir $\lim\limits_{n \to \infty}f_n(0)=-\infty$ en lugar de que $f_n$ no converge en $x=0$.
+
+Cuando $x=1$ tampoco hay indeterminación pues $f_n(1)=\frac{0}{1+n^2}$ y por tanto $\lim\limits_{n \to \infty} f_n(1)=0$. 
+ 
+Si $x\neq 0$ y $x \neq 1$ podemos usar la Regla de L'H\^opital dado que se tiene la indeterminación $\frac{\infty}{\infty}$. 
+En efecto, 
+$\lim\limits_{n \to \infty}f_n(x)=
+\lim\limits_{n \to \infty}\frac{n^2x-n^2}{1+n^2x}=
+\lim\limits_{n \to \infty}\frac{2nx-2n}{2nx}=
+\lim\limits_{n \to \infty}\frac{2x-2}{2x}=\frac{1-x}{x}
+$
+Observemos que si $f(x)=\frac{1-x}{x}$ entonces $f(1)=0$ y por tanto $\lim\limits_{n\to \infty}f_n(x)=f(x)$ $\forall x\neq 0$.
+
+Suele ser útil graficar algunas funciones de la sucesión y la función límite, ya sea empleando los procedimientos aprendidos 
+en materias anteriores o usando sympy.
+\end{ejemplo}
+
+Para el Ejemplo 1.....COPIAR TEXTO DE SYMPY Y GRÁFICOS!!!!
+
+En los ejemplos anteriores se forma una ``montaña'' alrededor de un punto \emph{fijo} ($x=0$). 
+Pero, puede ocurrir otro comportamiento que observaremos los siguientes ejemplos.
+
+\begin{ejemplo}
+Si  $f_n(x)=\left\{
+\begin{array}{ll}
+1&n\leq x\leq n+1
+\\
+0&\mbox{en otro caso}
+\end{array}
+\right.$
+entonces $\lim\limits_{n \to \infty} f_n(x)=0$. 
+\end{ejemplo} 
+
+GRAFICAR CON SYMPY!!!
+
+A partir del gráfico vemos que los términos de la sucesión $f_n(x)$ son ``montañas móviles'' de altura 1.
+
+
+\begin{ejemplo}
+Si  $f_n(x)=\frac{nx}{1+n^2x^2}$ en $[0,\infty)$
+entonces 
+$\lim\limits_{n \to \infty} \frac{nx}{1+n^2x^2}=
+\lim\limits_{n\to \infty} \frac{x}{x}\frac{x}{\frac{1}{n}+nx^2}=
+\lim\limits_{n \to \infty}\frac{x}{\frac{1}{n}+nx^2}=0.$ 
+\end{ejemplo}
+
+GRAFICAR CON SYMPY!!!
+En este caso también se observa una montaña móvil. 
+
+HACER EL ANÁLISIS CON LA DERIVADA!!!
+
+\begin{ejemplo}
+Si $f_n(x)=\sqrt{x^2+\frac{1}{n^2}}$, $x \in \mathbb{R}$ luego 
+$f_n^{'}(x)=\frac{x}{\sqrt{x^2+\frac{1}{n^2}}}$. 
+Entonces $f_n^{'}(x)>0$ en $(0,+\infty)$ y $f_n^{'}(x)<0$ en $(0,+\infty)$, de donde  $(0,+\infty)$ es intervalo de
+crecimiento para cada $f_n(x)$ y $(-\infty,0)$ es intervalo de decrecimiento para cada $f_n(x)$.
+Luego cada $f_n(x)$ tiene un mínimo en $x=0$ y el valor mínimo es $f_n(0)=\frac{1}{n}.$
+
+Por otra parte, $\lim\limits_{n \to \infty} f_n(x)=\lim\limits_{n \to \infty} \sqrt{x^2+\frac{1}{n^2}}=\sqrt{x^2}=|x|$.
+\end{ejemplo}
+
+GRAFICO!!!!
+
+En el Análisis Matemático, además de límites tenemos conceptos como continuidad, derivadas, integrales, etc.
+Es común operar expresiones conjugando varios de ellos y queremos contar con relaciones entre ellos que permitan 
+transformar las expresiones. 
+Por ejemplo, ?`es importante el orden en que se realizan  las operaciones?
+?`Es lo mismo tomar límite y luego derivar que hacerlo en el orden inverso? 
+Si se tienen dos límites, ?`se pueden permutar?
+
+\begin{ejemplo}
+Si $f_n(x)=\sen(nx)$ para $x\in [0,\pi]$ entonces $f_n(0)=f_n(\pi)=0$ y la sucesión converge en estos valores.
+
+Veamos que la sucesión de funciones dada no converge en ningún otro valor. 
+
+Supongamos que $x\neq0$, $x\neq \pi$ y $\lim\limits_{n \to \infty}\sen(nx)=\alpha$. 
+
+Si se tuviese $\alpha\neq 0$ entonces
+\[
+1=\lim\limits_{n \to \infty}\frac{\sen(2nx)}{\sen(x)}=2\lim\limits_{n \to \infty}\cos(nx)
+\]
+de donde $\lim\limits_{n \to \infty} \cos(nx)=\frac{1}{2}$.
+Sin embargo, 
+\[
+\lim\limits_{n \to \infty}\cos(2nx)=
+\lim\limits_{n \to \infty}2\cos^2(nx)-1=-\frac{1}{2}
+\]
+lo que nos lleva a una contradicción. 
+
+Por lo tanto, $\lim\limits_{n \to \infty}\sen(nx)=0$.
+Entonces 
+$\lim\limits_{n \to \infty}|\cos(2nx)|=1
+$
+y 
+\[
+0=\lim\limits_{n \to \infty} |\sen[(n+1)x]|=
+\lim\limits_{n \to \infty} |\sen(nx)\cos x+\cos(nx)\sen x|=|\sen x|
+\]
+y necesariamente  $x=0$ \'o $x=\pi$.
+\end{ejemplo}
+
+
+\begin{ejemplo}
+En el Ejemplo\ref{}1 vimos que  la sucesión 
+$f_n(x)=\frac{1}{1+nx^2}$ converge puntualmente 
+\[f(x)=\left\{\begin{array}{ll}
+0&x\neq 0
+\\
+1&x=0
+\end{array}
+\right.\]
+
+Si calculamos 
+\[
+\lim\limits_{n\to \infty}\lim\limits_{x \to 0}f_n(x)=\lim\limits_{n \to \infty}1=1
+\]
+y a continuación permutamos los límites obtenemos
+\[
+\lim\limits_{x\to 0}\lim\limits_{n \to \infty}f (x)=\lim\limits_{x \to 0}=0
+\]
+Por lo tanto, la permutación de los límites produce resultados \textbf{distintos}.
+
+También vemos que la función límite es discontinua a pesar de que cada $f_n(x)$ es continua para cada $n$.
+\end{ejemplo}
+
+\begin{ejemplo}
+Con las funciones del Ejemplo\ref{} 3 tenemos
+\[
+\int_{-\infty}^{+\infty} \lim\limits_{n \to  \infty} f_n(x)\,dx=\int_{-\infty}^{\infty} 0\,dx=0
+\]
+mientras que 
+\[
+\lim\limits_{n \to \infty} \int_{-\infty}^{\infty} f_n(x)\,dx=\lim\limits_{n \to \infty} \int_{n}^{n+1}dx=1
+\]
+En este caso, la permutación entre la operación de integración y la de límite también produce resultados \textbf{distintos}.
+\end{ejemplo}
+
+\begin{ejemplo}
+Cada $f_n(x)=\sqrt{x^2+\frac{1}{n^2}}$ del Ejemplo\ref{} 4/5 es derivable y las derivadas son
+$f_n^{'}(x)=\frac{x}{\sqrt{x^2+\frac{1}{n^2}}}$. 
+Si computamos
+\[
+\lim\limits_{n \to \infty} f_n^{'}(x)=\frac{x}{|x|}=
+\left\{
+\begin{array}{ll}
+1&x>0
+\\
+-1&x<0
+\end{array}
+\right.\]
+cuando $x\neq 0$.
+Entonces la funci\'on límite $f(x)=\frac{x}{|x|}$ no es derivable en 0. Luego  
+\[
+0=\lim\limits_{n \to \infty}f_n^{'}(0)\neq \frac{d}{dx}(\lim\limits_{n \to \infty}f_n(x))|_{x=0}
+\]
+pues ni siquiera tiene sentido el miembro de la derecha.
+\end{ejemplo}
+
+Es así que tenemos  
+\textbf{
+Problema: 
+Encontrar condiciones que permitan permutar las operaciones anteriores.}
+
+HABRÍA QUE PONER EL PROBLEMA ANTERIOR EN UN CUADRITO. BUSCAR EL COMANDO!!!
+
+Antes de atacar este problema vamos a presentar varios ejemplo \textit{famosos} de sucesiones.
+
+
+OJO!!!! LO QUE SIGUE EN EL APUNTE NO TIENE EJEMPLOS FAMOSOS, VIENEN LAS SERIES!!!!!
+
+\section{Series de funciones}
+Dada una sucesión de funciones $f_n(x)$, $n=1,2,\dots$ podemos formar otra sucesión tomando las sumas acumuladas o
+sumas parciales
+\[
+\begin{split}
+s_1(x)&=f_1(x)
+\\
+s_2(x)&=f_1(x)+f_2(x)
+\\
+&\vdots
+\\
+s_n(x)&=f_1(x)+f_2(x)+\dots+f_n(x)
+\end{split}
+\]
+
+Si la nueva sucesión $\{s_n(x)\}$ converge a $f$ se dice que la serie $\sum\limits_{n=1}^{\infty} f_n(x)$
+converge a $f$ o que 
+\[
+\sum\limits_{n=1}^{\infty} f_n(x)=f(x).
+\]
+
+En pocas ocasiones se puede determinar que una serie converge hallando una expresión simple para $s_n(x)$ y
+calculando su límite.
+
+\begin{ejemplo}
+Si $f_n(x)=c$ con $c \in \mathbb{R}$ un número independiente de $n$, entonces
+\[
+\begin{split}
+s_1(x)&=f_1(x)=c
+\\
+s_2(x)&=f_1(x)+f_2(x)=2c
+\\
+&\vdots
+\\
+s_n(x)&=f_1(x)+f_2(x)+\dots+f_n(x)=nc.
+\end{split}
+\]
+Entonces
+\[
+\lim\limits_{n \to \infty} s_n(x)=
+\left\{
+\begin{array}{lll}
+0&si&c=0
+\\
+\infty&si&c\neq 0
+\end{array}
+\right.
+\]
+y por lo tanto la series converge sólo cuando $c=0$.
+\end{ejemplo}
+
+\begin{ejemplo}
+Si $f_n(z)=z^n$ para $n=0,1,2,\dots$, luego 
+$s_n(z)=f_0(z)+\dots+f_n(z)=1+z+\dots+z^n$ y $zs_n(z)=z+z^2+\dots+z^n+z^{n+1}$ entonces
+$zs_n(z)-s_n(z)=z^{n+1}-1$ y por tanto $s_n(z)=\frac{z^{n+1}-1}{z-1}$.
+De este modo, logramos expresar $s_n(z)$ en una fórmula relativamente sencilla. Ahora, 
+\[
+\lim\limits_{n \to \infty} s_n(z)=
+\lim\limits_{n \to \infty} \frac{z^{n+1}-1}{z-1}=
+\left\{\begin{array}{ll}
+\frac{1}{1-z}&|z|<1
+\\
+\mbox{no converge}&|z|\geq 1
+\end{array}
+\right.
+\]
+\end{ejemplo}
+
+Es interesante ver qué ocurre en $|z|=1$. 
+
+Si $|z|=1$ entonces $z=e^{i\theta}=\cos \theta +i \sen \theta$ y 
+\[
+\begin{split}
+s_n(z)=
+\frac{z^{n+1}-1}{z-1}=
+\frac{z^{n+1}}{z-1}-\frac{1}{z-1}=
+\\
+\frac{z^{n+1}(\overline z-1)}{|z-1|^2}-\frac{1}{z-1}=
+\frac{ [\cos(n+1)\theta+i\sen(n+1)\theta](\overline z-1)}{|z-1|^2}-\frac{1}{z-1}=
+\\
+\cos(n+1)\theta \frac{\overline z-1}{|z-1|^2}+i \sen(n+1)\theta \frac{(\overline z-1)}{|z-1|^2}-\frac{1}{z-1}
+\end{split}
+\]
+son funciones oscilantes como en el Ejemplo \ref{} 5 y medio. VER GRÁFICOS!!!
+
+En los ejemplos anteriores pudimos justificar la convergencia calculando explícitamente el límite. 
+Ésto es posible las menos de las veces. En materias anteriores se estudiaron criterios para la 
+convergencia de series  numéricas. Estos criterios establecen condiciones, algunas necesarias, otras 
+suficientes y algunas necesarias y suficientes para que la serie converja. Recordaremos algunos de ellos.
+
+QUIZÁS EN ALGÚN RECUADRO!!!
+\textit{Criterio del Resto}
+Si  $\sum\limits_{n=1}^{\infty} a_n$ converge entonces $\lim\limits_{n \to \infty} a_n=0$.
+
+Coomo es una condición  necesaria sólo sirve para decir cuándo una serie no converge.
+
+\begin{ejemplo}
+Si $f_n(x)= \sen(nx)$ para $x \in [0,\pi]$. 
+Como ya vimos, $\sen(nx)$ no converge excepto para $x=0$ \'o $x=\pi$. 
+Luego, $\sum\limits_{n=1}^{\infty} \sen(nx)$ no converge.
+\end{ejemplo}
+
+Como veremos más adelante, la serie $\sum\limits_{n=1}^{\infty}\frac{1}{n}$ no converge y sin embargo
+$\lim\limits_{n \to \infty}\frac{1}{n}=0$. Entonces el \textit{Criterio del Resto} no sirve para determinar
+la convergencia de una serie.
+
+\textit{Convergencia Absoluta}
+Si$\sum\limits_{n=1}^{\infty} |a_n|$ converge entonces $\sum\limits_{n=1}^{\infty} a_n$ converge.
+
+\begin{ejemplo}
+$\sum \limits_{n=1}^{\infty} (-1)^n z^n$ converge cuando $|z|<1$.
+\end{ejemplo}
+
+\textit{Cirterio de Comparación}
+Si $0\leq a_n\leq b_n$ y $\sum\limits_{n=1}^{\infty} b_n$ converge entonces $\sum\limits_{n=1}^{\infty}a_n$ converge.
+Dicho de otro modo, si $\sum\limits_{n=1}^{\infty} a_n$ diverge (su suma es $+\infty$) entonces 
+$\sum\limits_{n=1}^{\infty}$ diverge.
+
+\begin{ejemplo}
+\begin{enumerate}
+\item $\sum\limits_{n=1}^{\infty} \frac{1}{2^n} \sen(nx)$ converge pues $|\frac{1}{2^n} \sen(nx)|\leq \frac{1}{2^n}$.
+\item $\sum\limits_{n=1}^{\infty} \frac{1}{n^2} \sin(nx)$ converge pues para $n>1$ tenemos
+\[
+\left|\frac{1}{n^2}\sin(nx)\right|\leq \frac{1}{n^2}\leq \frac{1}{(n-1)n}=\frac{1}{n-1}-\frac{1}{n}
+\]
+y
+\[
+\sum\limits_{n=2}^{m}\frac{1}{n-1}-\frac{1}{n}=1-\frac{1}{m}\to 1\mbox{  cuando  } m\to \infty
+\]
+Luego $\sum\limits_{n=1}^{\infty} \frac{1}{n^2}$ converge y 
+$\sum\limits_{n=1}^{\infty} \frac{1}{n^2} \sen(nx)$ también.
+\end{enumerate}
+\end{ejemplo}
+\section{Series de Fourier}

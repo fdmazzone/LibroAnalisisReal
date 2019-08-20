@@ -7,37 +7,40 @@
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{enumerate}
 \usepackage{verbatim}
-\usepackage{ esint }
+%\usepackage{ esint }
 \usepackage{array}
 %\usepackage{listings}
 \usepackage{ wasysym }
 \usepackage{hyperref}
 \usepackage{color}
-\usepackage{url}
-\usepackage{theorem}
-\usepackage{boiboites}
-\usepackage[spanish]{varioref}
- \usepackage{fontspec}
+%\usepackage{url}
+%\usepackage{theorem}
+\usepackage{boiboites} %Cajas en teorem
+\usepackage[spanish]{varioref} % ESTILO PARA REFERENCIAS
+\usepackage{fontspec} %para xelatex
 \usepackage[a4paper,driver=xetex,top=2.5cm, bottom=2.7cm,%
 layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geometry}
-\usepackage{fancyhdr}
-\usepackage{marginnote}
-\usepackage{titlesec}
-\usepackage{natbib}
-\usepackage{chapterbib}
+\usepackage{fancyhdr} %Encabezados mejorados
+
+
+\usepackage{marginnote} % Notas al margen mejoradas
+\usepackage{titlesec} %ni idea
+%\usepackage{natbib}
+%\usepackage{chapterbib}
 \usepackage{fontawesome}
-\usepackage{xcolor}
-\usepackage{appendix}
-\usepackage{chngcntr}
-\usepackage{etoolbox}
-\usepackage{lipsum}
+%\usepackage{xcolor}
+%\usepackage{appendix}
+%\usepackage{chngcntr}
+%\usepackage{etoolbox}
+%\usepackage{lipsum}
 \usepackage{pgf,tikz,pgfplots}
 \pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
+%\usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 \usepackage{imakeidx}
 %\usepackage{sympytex}
 \usepackage{pythontex}
+\usepackage{diagrams}
 
 \defaultfontfeatures{Ligatures=TeX}
 
@@ -74,33 +77,35 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geom
 \definecolor{color7}{rgb}{0.84,0.66,0.21}
 \definecolor{color8}{HTML}{8E87C1}
 
- 
-% 
-% 
-% 
-% 
-% 
+
+%
+%
+%
+%
+%
 % %%%%%%%%%%%%%Configuración de fuente para XeLaTeX
 % %\setromanfont[Mapping=tex-text]{Oswald-Light}
 % %\setsansfont{Roboto Condensed}
 % %\setsansfont{Gentium Basic}
 % %\setsansfont{FreeMono}
- \setsansfont{Oswald-Light}
-% 
-% 
- \renewcommand{\familydefault}{\sfdefault}
-% 
-% 
-% 
-% 
+\setromanfont{Oswald-Light}
+%\setromanfont{Comfortaa}
+ %
+%
+% \renewcommand{\familydefault}{\sfdefault}
+%
+%
+%
+%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%Nuevos comandos entornos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newenvironment{demo}{\noindent\emph{Dem.}}{$\square$ \newline\vspace{5pt}}
+\newenvironment{demo}{\noindent\emph{Dem.}}{\hfill\qed \newline\vspace{5pt}}
 
 \newenvironment{observa}{\noindent\textbf{Observación:}}{}
-
+\renewcommand{\C}{\overline}
 \newcommand{\com}{\mathbb{C}}
 \newcommand{\rr}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\lim}{\mathop{\rm lím}}
 \renewcommand{\inf}{\mathop{\rm ínf}}
@@ -110,7 +115,7 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geom
 \renewcommand{\max}{\mathop{\rm máx}}
 \renewcommand{\b}[1]{\boldsymbol{#1}}
 \renewenvironment{frame}[1]{}{}
-\newcommand{\link}{\reversemarginpar\marginnote{%\fontsize{24}{24                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+\newcommand{\link}{\reversemarginpar\marginnote{%\fontsize{24}{24
 %}\selectfont
 \faExternalLink} %
 \normalmarginpar
@@ -164,30 +169,31 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geom
 
 %%%%%%%%%%%%%%%%%%
 \newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=section]{problema}{Problema}{thcounter1}
+titleboxcolor = black,thcounter=chapter]{problema}{Problema}{thcounter1}
 
 \newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=section]{teorema}{Teorema}{thcounter2}
+titleboxcolor = black,thcounter=chapter]{teorema}{Teorema}{thcounter2}
 
 \newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=section]{definicion}{Definici\'on}{thcounter3}
+titleboxcolor = black,thcounter=chapter]{definicion}{Definici\'on}{thcounter3}
 
 \newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=section]{lema}{Lema}{thcounter4}
+titleboxcolor = black,thcounter=chapter]{lema}{Lema}{thcounter4}
 
 \newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=section]{corolario}{Corolario}{thcounter5}
+titleboxcolor = black,thcounter=chapter]{corolario}{Corolario}{thcounter5}
 
 \newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=section]{proposicion}{Proposici\'on}{thcounter6}
+titleboxcolor = black,thcounter=chapter]{proposicion}{Proposici\'on}{thcounter6}
 
 \newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=section]{codigo}{Función SymPy}{}
+titleboxcolor = black,thcounter=chapter]{codigo}{Función SymPy}{}
 
 \newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
+titleboxcolor = black,thcounter=chapter]{ejercicio}{Ejercicio}{}
 
-
+\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
+titleboxcolor = black,thcounter=chapter]{axioma}{Axioma}{thcounter7}
 
 
 
@@ -197,13 +203,13 @@ titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
 \newenvironment{ejemplo}{\noindent\textbf{Ejemplo  \arabic{chapter}.\arabic{ejemplo_cont}.} }{\addtocounter{ejemplo_cont}{1}}
 
 
-\renewcommand*{\raggedrightmarginnote}{\centering}
+%\renewcommand*{\raggedrightmarginnote}{\centering}
 
-% 
-% 
+%
+%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%Para escibir en clase articulo o similar
-% 
+%
 
 
 
@@ -212,14 +218,16 @@ titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
 
 
 
-\title{Análisis Real}
+\title{Análisis Real\\ \large Una introducción usando Python}
+ 
 
 \author{Sonia Acinas y Fernando Mazzone}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\makeindex
-
+\makeindex[title=Indice Conceptos]
+\makeindex[name=personas,title=Indice de Personas,columns=3]
+\makeindex[name=simbolos,title=Indice Símbolos,columns=3]
 
 \begin{document}
 
@@ -228,16 +236,20 @@ titleboxcolor = black,thcounter=section]{ejercicio}{Ejercicio}{}
 \fontsize{11pt}{11pt}\selectfont
 
 \pagestyle{fancy}
- 
-%  
+
+%
  \maketitle
  \tableofcontents
-%   
+%
 
 \include{prologo}
-\include{Uni0}
 \include{Uni1}
 \include{Uni2}
-%\include{apendice}
+\include{Uni3}
+\include{Uni4}
+\include{Uni5}
+\include{apendice}
 \printindex
+\printindex[personas]
+\printindex[simbolos]
 \end{document}
