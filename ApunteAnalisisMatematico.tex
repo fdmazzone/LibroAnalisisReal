@@ -1,0 +1,175 @@
+\documentclass[oneside]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Paquetes%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{empheq}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{ wasysym }%simbolos especiales
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[spanish]{varioref} % ESTILO PARA REFERENCIAS
+\usepackage{fontspec} %para xelatex
+\usepackage[a4paper,driver=xetex,top=2.5cm, bottom=2.7cm,%
+layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm]{geometry}
+\usepackage{fancyhdr} %Encabezados mejorados
+\usepackage{marginnote} % Notas al margen mejoradas
+\usepackage{titlesec} %para encabezados
+\usepackage{pst-all} %pstricks graficos
+\let\clipbox\relax
+\usepackage{pgf,tikz,pgfplots} %tikz graficos
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows}
+\usepackage{imakeidx} %supongo que para indices multiples
+\usepackage{pythontex}%Ejecutar python dentro latex
+\usepackage{diagrams}%diagramas comutativos
+\usepackage{hyperref}%hipertexto
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[breakable,many]{tcolorbox}
+\tcbset{nobeforeafter} % prevents tcolorboxes being placing in paragraphs
+\usepackage{float}
+\floatplacement{figure}{H} % forces figures to be placed at the correct location
+\usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+\else\Gin@nat@width\fi}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+% Set max figure width to be 80% of text width, for now hardcoded.
+\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+%     \usepackage{caption}
+%     \DeclareCaptionLabelFormat{nolabel}{}
+%     \captionsetup{labelformat=nolabel}
+\usepackage{adjustbox} % Used to constrain images to a maximum size 
+\usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+\AtBeginDocument{%
+\def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+\usepackage{upquote} % Upright quotes for verbatim code
+\usepackage{eurosym} % defines \euro
+\usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+\usepackage{fancyvrb} % verbatim replacement that allows latex
+\usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    
+%\usepackage{longtable} % longtable support required by pandoc >1.10
+\usepackage{booktabs}  % table support for pandoc > 1.12.2
+\usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+\usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+\usepackage{mathrsfs}
+
+
+
+%%%%%%%%%% Nuevos Entornos-Comandos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%\input{entornos_comandos.tex}
+\input{ComandosEstilosTeoremas.tex}
+
+%%%%%%%%%%%%% Configuracion para notebook importadas
+
+%\input{python/jupyter_config.tex}
+
+%%%%%%%%%%%%Configuración Encabezados Página
+\fancyfoot{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+  
+%%%%%%%%%%%%Configuracion Apéndices %%%%%%%%%%%%%%%%%%%%%%%%55555  
+\AtBeginEnvironment{subappendices}{%
+\chapter*{Apéndices}
+\addcontentsline{toc}{chapter}{Apéndices}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+}
+
+
+
+
+
+
+
+% %%%%%%%%%%%%%Configuración de fuente para XeLaTeX
+
+
+% %\setromanfont[Mapping=tex-text]{Oswald-Light}
+\setmainfont{Roboto Condensed}
+% %\setsansfont{Gentium Basic}
+% %\setsansfont{FreeMono}
+%\setromanfont{Oswald-Light}
+%\setromanfont{Comfortaa}
+ %
+%
+% \renewcommand{\familydefault}{\sfdefault}
+
+
+%%%%%%%%%%%%%%%%%   Titulo  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Introducción al Análisis Matemático}
+ 
+
+\author{}
+\date{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%   Indices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeindex[title=Indice Conceptos]
+\makeindex[name=personas,title=Indice de Personas,columns=3]
+\makeindex[name=simbolos,title=Indice Símbolos,columns=3]
+
+\begin{document}
+
+
+
+\fontsize{11pt}{11pt}\selectfont
+
+\pagestyle{fancy}
+
+%
+ \maketitle
+ \tableofcontents
+%
+
+%\include{prologo}
+%\include{Uni0}
+\include{Uni1}
+\include{Uni2}
+%\include{Uni3}
+\include{Uni4}
+\include{Uni5}
+\include{Uni6}
+\include{apendice}
+%\include{Apendice0}
+
+ \nocite{*}
+ \addcontentsline{toc}{chapter}{Bibliografía}
+ 
+\bibliographystyle{apalike}
+\bibliography{biblio}
+ 
+ \printindex
+\printindex[personas]
+\printindex[simbolos]
+
+
+
+\end{document}

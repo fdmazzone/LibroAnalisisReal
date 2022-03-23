@@ -1,0 +1,387 @@
+\chapter{Medida de Lebesgue en $\mathbb{R}$}
+
+\section{Longitud de intervalos}
+
+
+
+
+
+\section{Contexto}
+
+Medida exterior
+
+
+{Volúmen de rectángulos}
+  Sea $R=[a_1,b_1]\times\ldots\times [a_n,b_n]\subset\rr^d$ un rectángulo cerrado
+  \[|R|:=(b_1-a_1)\cdots(b_n-a_n).\]
+
+
+{Medida exterior, definición}
+  Sea $E\subset\rr^d$,
+  \[\boxed{m_*(E):=\inf\left\{\sum_{j=1}^{\infty}|Q_j|\left| E\subset\bigcup_{j=1}^{\infty}Q_j, Q_j\text{ cubo cerrado }, j\in\mathbb{N}\right.\right\}}\]   
+
+		
+
+
+Medida exterior, propiedades
+
+{Propiedades}
+  \begin{description}
+   \item[Monotonía:] $E_1\subset E_2\Rightarrow m_*(E_1)\leq m_*(E_2)$ 
+   \item[$\sigma$-subaditividad:] $E_j\in\rr^d$, $j=1,2,\ldots$, $\Rightarrow \boxed{ m_*\left(\bigcup_{j=1}^{\infty}E_j\right)\leq\sum_{j=1}^{\infty}m_*(E_j)}$
+   \item[$\sigma$-aditividad:] \emph{No se pudo demostrar la igualdad cuando los $E_j$ son mutuamente disjuntos}  
+   \item[Regularidad:] $m_*(E)=\inf\{m_*(G)|G\text{ es abierto } G\supset E\}$.
+  \end{description}
+
+
+
+
+		
+
+
+
+Conjuntos medibles
+
+{Definición}
+  $E\subset\rr^d$ se llama \emph{medible Lebesgue} si para todo $\epsilon>0$ existe $G\subset\rr^d$ abierto, $G\supset E$ tal que
+  \[\boxed{m_*(G-E)<\epsilon}.\]
+  Si $E$ es medible
+  \[m(E):=m_*(E).\]
+
+
+
+Conjuntos medibles, propiedades
+
+{Propiedades}
+    \begin{enumerate}
+   \item Los conjuntos abiertos son medibles 
+   \item Los conjuntos nulos ($m_*(Z)=0$) son medibles
+   \item Las uniones e intersecciones numerables y las diferencias de 
+conjuntos medibles resultan en conjuntos medibles.
+   \item\textbf{$\sigma$-aditividad.} $E_j\in\rr^d$, $j=1,2,\ldots$, son 
+medibles y $E_j\cap E_i=\emptyset$, $j\neq i$,  $\Rightarrow \boxed{ 
+m\left(\bigcup_{j=1}^{\infty}E_j\right)=\sum_{j=1}^{\infty}m(E_j)}$  
+
+  \end{enumerate}
+  
+
+
+
+
+% \section{Estructura conjuntos medibles}
+% Estructura significados (RAE)}
+% 
+% 
+%   \begin{enumerate}
+%     \item Disposición o modo de estar relacionadas las distintas partes de un conjunto.
+%   
+%     \item Distribución y orden de las partes importantes de un edificio.
+% 
+%     \item Distribución y orden con que está compuesta una obra de ingenio, como un poema, una historia, etc.
+% 
+%     \item Armadura, generalmente de acero u hormigón armado, que, fija al suelo, sirve de sustentación a un edificio.
+%   \end{enumerate}
+% 
+% 
+
+Problema
+  {Problema}
+   Podemos describir un conjunto medible como una estructura integrada por partes? Idealmente estas partes deberían ser más familiares y fáciles de caracterizar.
+  
+
+
+\subsection{Aproximación}
+\underline{Aproximación} por ``estructuras'' específicas
+  {Teorema (Aproximación de conjuntos medibles)} Si $E$ es medible Lebesgue y $\epsilon$ es cualquier número real positivo:
+  \begin{enumerate}
+   \item\textbf{Abiertos por exceso.} Existe un abierto $G$ con $E\subset G$ y $m(G-E)<\epsilon$.
+   \item\textbf{Cerrados por defecto.} Existe un cerrado $F$ con 
+$F\subset E$ y $m(E-F)<\epsilon$.
+   \item \textbf{Compacto por defecto.} Si $m(E)<\infty$, existe un compacto $K$ con $E\supset K$ y $m(E-K)<\epsilon$.
+   \item\textbf{Elementales} Si $m(E)<\infty$, existe una unión finita de cubos cerrados   $K=\bigcup_{j=1}^NQ_j$ tal que $m(E\triangle K)<\epsilon$.
+  \end{enumerate}
+
+    
+  
+  
+
+
+
+Demostración Teorema Aproximación
+1) Definición de conjunto medible.
+
+2) Aplicando 1), existe un abierto $G$ con  $G\supset E^c$ y 
+\[\epsilon>m(G-E^c)=m(E\cap G)=m(E-G^c).\]
+Debemos tomar $F=G^c$, que es cerrado y $F\subset E$.
+
+3) Por 2)  Sea $F$ cerrado que aproxima a $E$ por defecto con error a lo sumo $\epsilon$:
+\[m(E-F)<\epsilon.\]
+Sea $K_n$, $n=1,\ldots$,su colección favorita de compactos con 
+\[K_1\subset K_2\subset\cdots \quad\text{y}\quad \rr^d=\bigcup_{n=1}^{\infty}K_n.
+\]
+Mi favorito: $K_n:=\{x:|x|\leq n\}$. 
+
+
+Demostración Teorema Aproximación
+3) (continuación) Entonces $F_n:=F\cap K_n$ es compacto y
+\[E-F_1\supset E-F_2\supset\cdots\quad\text{ y } \bigcap_{n=1}^{\infty}(E-F_n)=E-F.\]
+
+Como $m(E-F_1)\leq m(E)<\infty$, el teorema de convergencia monótona de conjuntos 
+\[\lim_{n\to\infty}m(E-F_n)=m(E-F)<\epsilon.\]
+Luego existe un $n$ suficientemente grande para que 
+\[m(E-F_n)<\epsilon.\]
+
+
+
+Demostración Teorema Aproximación
+4) Sean $Q_j$, $j=1,2,\ldots$, cubos con 
+\[E\subset\bigcup_{j=1}^{\infty}Q_j,\quad \sum_{j=1}^{\infty}m(Q_j)<m(E)+\frac{\epsilon}{2}.\]
+Como $m(E)<\infty$ la serie converge $\Rightarrow$ existe $N>0$ con 
+\[\sum_{j=N+1}^{\infty}m(Q_j)<\frac{\epsilon}{2}.\]
+Sea el cerrado
+\[F=\bigcup_{j=1}^{N}Q_j\]
+
+
+
+Demostración Teorema Aproximación
+
+Entonces
+\[
+ \begin{split}
+  m(E\triangle F)&=m(E-F)+m(F-E)\\
+		 &\leq m\left(\bigcup_{j=N+1}^{\infty}Q_j\right)+m\left(\bigcup_{j=1}^{\infty}Q_j-E\right)\\
+		 &\leq\sum_{j=N+1}^{\infty}m(Q_j)+\sum_{j=1}^{\infty}m(Q_j)-m(E)\\
+		 &<\epsilon
+ \end{split}
+\]
+
+
+
+\subsection{Conjuntos $G_{\delta}$ y $F_{\sigma}$}
+Definición $G_{\delta}$ y $F_{\sigma}$
+Hasta el momento no hemos expresado un conjunto medible como una 
+estructura, sino que lo hemos aproximado, en un cierto sentido, por conjuntos 
+con  estructuras determinadas. Para lograr el objetivo necesitamos introducir 
+nuevos tipos de conjuntos.
+
+{Definición  $G_{\delta}$ y $F_{\sigma}$}
+ Un conjunto que es una intersección numerable de abiertos se denomina de clase $G_{\delta}$. El complemento de un conjunto de clase  $G_{\delta}$ se denomina de clase $F_{\sigma}$. 
+ 
+
+\textbf{Observación:} $F$ es $F_{\sigma}$ si es unión  numerable de conjunto cerrados.
+
+
+
+
+
+
+Ejemplos $G_{\delta}$ y $F_{\sigma}$
+\begin{ejemplo}{}
+  Obviamente todo abierto es $G_{\delta}$.
+ \end{ejemplo}
+ \begin{ejemplo}{}
+   Si $-\infty<a<b<\infty$, $[a,b]=\bigcap_{n=1}^{\infty}(a-\frac{1}{n},b+\frac{1}{n})$. Así todo intervalo compacto es $G_{\delta}$.
+   
+  \end{ejemplo}
+  
+   \begin{ejemplo}{}
+     $\mathbb{Q}$ es $F_{\sigma}$ pues es la unión numerable de conjuntos unitarios, que son cerrados. Por consiguiente, los irracionales $\rr-\mathbb{Q}$ es $G_{\delta}$. 
+    \end{ejemplo}
+
+
+      \begin{ejemplo}{}
+     $\mathbb{Q}$ no es $G_{\delta}$. Este hecho no es sencillo de demostrar y requiere un teorema profundo
+    \end{ejemplo} 
+    
+
+Ejemplos $G_{\delta}$ y $F_{\sigma}$
+    
+
+
+
+{Teorema de Baire}
+ Si $(X,d)$ es un espacio métrico completo y $U_n\subset X$, $n=1,2,\ldots$, son abiertos y densos de $X$, entonces $\bigcap_{n=1}^{\infty}U_n$ es denso.  
+
+
+Si $\mathbb{Q}$ fuese  $G_{\delta}$ y $U_n$ fuesen abiertos con $\mathbb{Q}=\bigcap_{n=1}^{\infty}U_n$, entonces cada $U_n$ es denso. Si ahora $\mathbb{Q}=\{q_1,q_2,\ldots\}$ y  ponemos $W_n=\rr-\{q_n\}$, entonces cada $W_n$ es abierto y denso. Si ponemos $\{V_n\}_{n=1}^{\infty}=\{U_n\}_{n=1}^{\infty}\cup \{W_n\}_{n=1}^{\infty}$, entonces 
+ $\{V_n\}_{n=1}^{\infty}$ es una colección de abiertos densos de $\rr$ que contradice el teorema de Baire pues
+ \[\bigcap_{n=1}^{\infty}V_n=\bigcap_{n=1}^{\infty}U_n\cap \bigcap_{n=1}^{\infty}W_n=\mathbb{Q}\cap(\rr-\mathbb{Q})=\emptyset.\]
+
+
+
+Teorema estructura conjuntos medibles
+
+{Teorema}
+ Sea $E\subset\rr^d$. Son equivalentes
+ \begin{enumerate}
+  \item $E$ es medible,
+  \item Existe $H\subset\rr^d$ de clase $G_{\delta}$ y $Z$ nulo tal que $E=H- Z$.
+  \item Existe $F\subset\rr^d$ de clase $F_{\sigma}$ y $Z$ nulo tal que $E=F\cup Z$.
+  
+ \end{enumerate}
+
+
+
+
+
+    
+
+
+Demostración teorema estructura conjuntos medibles
+
+Claramente items 2 y 3 implican el 1.
+
+
+1$\Rightarrow$ 2. Sean $n\in\mathbb{N}$ y  $G_n\supset E$ abiertos tales que
+\[m(G_n-E)<\frac{1}{n}.\]
+y sean 
+\[H=\bigcap_{n=1}^{\infty} G_n\quad\text{y}\quad Z=H-E.\]
+$H$ es $G_{\delta}$, $E\subset H$  y
+\[m(Z)=m(H-E)\leq m(G_n-E)<\frac{1}{n}.\]
+Como $n$ es arbitrario $m(Z)=0$. 
+
+
+Demostración teorema estructura conjuntos medibles
+Restaría ver 1 $\Rightarrow$ 3. Si $E$ es medible, $E^c$ es medible y, por 1 $\Rightarrow$ 2, 
+\[E^c=H-Z,\quad m(Z)=0.\]
+
+Si $F=H^c$, tomando complementos tenemos
+
+\[E=F\cup Z.\]
+\qed
+
+
+
+
+    
+
+
+\subsection{Conjuntos de Borel}
+$\sigma$-álgebras
+
+{Definición}
+ Una colección de subconjuntos de un conjunto dado $X$,  $\mathscr{A}\subset\mathcal{P}(X)$ se denomina $\sigma$-algebra si
+ \begin{enumerate}
+  \item $\emptyset\in\mathscr{A}$,
+  \item $A\in \mathscr{A}\Rightarrow A^c\in\mathscr{A}$,
+  \item $A_i\in \mathscr{A}$, $i=1,2,\ldots$, $\Rightarrow \bigcup_{i=1}^{\infty}A_i\in\mathscr{A}$
+ \end{enumerate}
+
+
+
+\textbf{Observaciones:} Si $\mathscr{A}$ es una $\sigma$-algebra 
+\begin{enumerate}
+ \item $X=\emptyset^c\in\mathscr{A}$,
+ \item  $A_i\in \mathscr{A}$, $i=1,2,\ldots$, $\Rightarrow$
+ $A_i^c\in \mathscr{A}$, $i=1,2,\ldots$, $\Rightarrow$ $\bigcup_{i=1}^{\infty}A_i^c\in\mathscr{A}$  $\Rightarrow$ $\bigcap_{i=1}^{\infty}A_i\in\mathscr{A}$ 
+ \end{enumerate}
+
+
+
+$\sigma$-álgebras, ejemplos
+ \begin{ejemplo}{}
+\begin{enumerate}
+ \item  Triviales $\mathscr{A}=\mathcal{P}(X)$ y $\mathscr{A}=\{\emptyset,X\}$.
+ \item  El conjunto $\mathscr{M}=\mathscr{M}(\rr^d)$ de todos los subconjuntos medibles Lebesgue de $\rr^d$
+ \item El conjunto de los abiertos, cerrados, las clases $G_{\delta}$ y $F_{\sigma}$ no forman $\sigma$-algebras. Es decir, no tenemos clases caracterizadas por propiedades topológicas que sean ejemplos de $\sigma$-algebras    Cómo remediarlo? 
+ 
+\end{enumerate}
+ 
+ \end{ejemplo}
+
+
+
+ $\sigma$-álgebra generada
+
+
+{Ejercicio} Si  $\{\mathscr{A}_i\}_{i\in I}$ es una colección de $\sigma$-álgebras  (reparar en que $I$ es arbitrario) del conjunto $X$, entonces $\bigcap_{i\in I}\mathscr{A}_i$ es $\sigma$-álgebra.
+
+
+
+{Definicion} Dado un subconjunto $\mathcal{C}$ de subconjuntos de $X$, $\mathcal{C}\subset\mathcal{P}(X)$, definimos la $\sigma$-álgebra generada por $\mathcal{C}$ como
+\[\langle\mathcal{C}\rangle=\bigcap\{\mathscr{A}| \mathcal{C}\subset \mathscr{A}\text{ y } \mathscr{A} \text{ es $\sigma$-algebra}\}.\]
+
+
+{Ejercicio} $\langle\mathcal{C}\rangle$ es la menor $\sigma$-algebra que contiene a $ \mathcal{C}$.
+
+
+
+
+Definición
+ {Definición} Sea $\mathcal{G}=\mathcal{G}(\rr^d)$ la colección de todos los conjuntos abiertos de $\rr^d$. Definimos la $\sigma$-algebra de Borel  $\mathscr{B}=\mathscr{B}(\rr^d)$ como  $\mathscr{B}=\langle \mathcal{G} \rangle$ 
+
+
+{Ejercicio} Demostrar que la $\sigma$-algebra  $\mathscr{B}$ es también generada por:
+\begin{enumerate}
+ \item Los subconjuntos cerrados de $\rr^d$.
+ \item Los subconjuntos compactos de $\rr^d$.
+ \item Las bolas abiertas (o cerradas) de $\rr^d$.
+ \item Los cubos de $\rr^d$.
+\end{enumerate}
+
+ 
+
+Observaciones
+ \begin{enumerate}
+ \item Claramente $G_{\delta},F_{\sigma}\subset\mathscr{B}$.
+ \item La definición de conjuntos de Borel es notable, pues definimos los conjuntos de Borel, definiendo  la estructura que los contiene. Esto se manifiesta cuando se intenta demostrar alguna propiedad de los borelianos. 
+\end{enumerate}
+ \begin{ejemplo}{}
+ Si $f:\rr^d\to\rr$ es continua y $B\in\mathscr{B}(\rr)$ entonces $f^{-1}(B)\in \mathscr{B}(\rr^d)$. 
+\end{ejemplo}
+ \textbf{Dem.} Definimos
+\[
+ \mathscr{A}=\{A\subset\rr|f^{-1}(A)\in  \mathscr{B}(\rr^d)\}.
+\]
+
+\begin{ejercicio}{} $\mathscr{A}$ es una $\sigma$-algebra que contiene a los abiertos.
+ \end{ejercicio}
+
+
+
+Entonces $\mathscr{B}(\rr)\subset \mathscr{A}$, que equivale a lo que queremos demostrar.
+
+
+
+
+Borelianos y medibles
+
+{Corolario}
+ Sea $E\subset\rr^d$. Son equivalentes
+ \begin{enumerate}
+  \item $E$ es medible,
+  \item Existe $B\in\mathscr{B}(\rr^d)$ y $Z$ nulo tal que $E=B\cup Z$.
+  
+ \end{enumerate}
+
+
+ 
+
+
+\subsection{Preguntas}
+Pregunta 1
+\centerline{¿$\boxed{\mathscr{B}=\mathscr{M}}$?}
+
+\textbf{Respuesta:} no.  
+
+Se justifica más adelante, depende de la construcción de un $A\subset\rr$ con $A\notin \mathscr{M}$ y usa la función de Cantor. 
+
+
+
+Pregunta 2
+ Así como definimos los conjuntos $G_{\delta}$ y $F_{\sigma}$ podemos considerar 
+\begin{enumerate}
+ \item Uniones numerables de conjuntos de clase  $G_{\delta}$:   $G_{\delta\sigma}$,
+ \item Intersecciones numerables de conjuntos de clase  $F_{\sigma}$:   $F_{\sigma\delta}$,
+ \item $\vdots$
+\end{enumerate}
+ 
+¿Podríamos continuando este proceso construir $\mathscr{B}$?
+ 
+ 
+ \textbf{Respuesta:} Si, con muchas sutilesas lógicas. Se necesita el concepto de ordinal e inducción transfinita.  Estamos en el terreno de la teoría descriptiva de conjuntos.
+
+
+
+
+

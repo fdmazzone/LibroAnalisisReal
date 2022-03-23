@@ -1,0 +1,23 @@
+\begin{tikzpicture}[scale=0.45]
+\begin{axis}[
+    xtick={0,...,5},ytick={5,10,15,20,25},
+    y=0.3cm, xmax=5.4,ymax=26.9,ymin=0,xmin=0,
+    enlargelimits=true,
+    axis lines=middle,
+    clip=false,yticklabels=\empty,xticklabels=\empty,
+    ]
+\addplot+[color=red,fill=red!10!white,const plot, mark=none]
+    coordinates {(0,2) (1,5) (2,10) (3,17) (4,26) (5,26)}\closedcycle;
+\addplot+[color=green,fill=green!10!white,const plot, mark=none]
+    coordinates {(0,1) (1,2) (2,5) (3,10) (4.0,17) (5,17)}\closedcycle;
+\addplot[smooth, thick,domain=0:5]{1+x^2};
+\addplot[const plot,domain=0:5,color=red] coordinates {(1,0) (1,2)};
+\addplot[const plot,domain=0:5,color=red] coordinates {(2,0) (2,5)};
+\addplot[const plot,domain=0:5,color=red] coordinates {(3,0) (3,10)};
+\addplot[const plot,domain=0:5,color=red] coordinates {(4,0) (4,17)};
+\addplot[const plot,domain=0:5,color=red] coordinates {(5,0) (5,26)};
+\addplot[color=black] coordinates {(0,-0.8)} node {$a$};
+\addplot[color=black] coordinates {(5,-0.8)} node {$b$};
+
+\end{axis}
+\end{tikzpicture}
