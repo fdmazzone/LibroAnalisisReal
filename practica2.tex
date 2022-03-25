@@ -1,0 +1,354 @@
+\documentclass{book}
+\usepackage{amssymb,amsmath}
+\usepackage{polyglossia}
+\setmainlanguage{spanish} % Idioma principal
+\usepackage{theorem}
+\usepackage{times}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage[cp1252]{inputenc}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage[a4paper,driver=xetex,top=4.5cm,head=4.5cm, bottom=2cm,%
+layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
+%\usepackage{bm}
+%\usepackage{tabular}
+\usepackage{fontspec}
+ \usepackage[breakable,many]{tcolorbox}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{empheq}
+ \setromanfont{Roboto Condensed}
+ \usepackage{float}
+ \usepackage{mathrsfs} 
+%
+%
+% \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%Estilo de la pagina%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcounter{ejer}
+% 
+% {\theorembodyfont{\normalfont}
+% \newtheorem{ejercicio}[ejer]{Ejercicio}}
+
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\nn}{\mathbb{N}}
+
+
+
+\DeclareMathOperator{\atan2}{atan2}
+%\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sn}{sn}
+\DeclareMathOperator{\SO}{SO}
+%\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\Or}{O}
+
+\input{EstilosPractica.tex}
+\tcbset{highlight math style={enhanced,
+  colframe=red!60!black,colback=yellow!50!white,arc=4pt,boxrule=1pt,
+  drop fuzzy shadow}}
+  
+  
+  
+  
+  
+  
+  
+
+
+\pagestyle{fancyplain}
+
+ \renewcommand{\sectionmark}[1]
+                 {\markright{\thesection\ #1}}
+
+
+% \lhead[\fancyplain{}{\bfseries\thepage}]
+%       {\fancyplain{}{\bfseries\rightmark}}
+%
+ \rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries}}
+
+
+
+
+ \lhead[\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}]{\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}}
+
+\cfoot{}
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+\begin{document}
+
+
+\hyphenation{excen-tri-ci-dad}
+
+
+\begin{large}
+\begin{bfseries} % \begin{scshape}
+        \noindent Depto de Matem\'atica.\\
+        Primer Cuatrimestre de 2022\\                                                                                                                                                                                                                                                                                                                                                
+        Teoría de la Medida \\
+        Práctica 2: Integral de Riemann
+
+%\end{scshape}
+\end{bfseries}
+\end{large}
+\par\noindent\rule{\textwidth}{.5pt}
+
+
+
+
+\section{Práctica II: Integral de Riemann}
+
+\begin{ejer}{} Obtener la fórmula del área de: 
+\begin{enumerate}
+\item rectángulos con lados  enteros, racionales  e irracionales; 
+\item paralelogramos; 
+\item triángulos; 
+\item trapecios; 
+\item polígonos regulares.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}{}  Explicar por qué si $P$ y $Q$ son particiones del mismo intervalo y $Q$ es un refinamiento de $P$
+($Q\supseteq P$) y si $f$ es cualquier función acotada sobre el intervalo, entonces
+\[
+\underline{S}(P;f)\leq \underline{S}(Q;f)\leq \overline{S}(Q;f)\leq \overline{S}(P;f)
+\]
+
+\end{ejer}
+
+ 
+\textbf{EN EL APUNTE:}
+\begin{ejer}{} 
+Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P,P'$ particiones de $[a,b]$ con $P\subset P'$. Demostrar que 
+  \[
+  \underline{S}(P,f)\leq \underline{S}(P',f)\quad\text{y}\quad \overline{S}(P',f)\leq \overline{S}(P,f).
+ \]
+ Inferir que para cualesquiera $P,P'$ (sin importar que una este o no contenida dentro de la otra)
+   \[
+\underline{S}(P,f)\leq \overline{S}(P,f).
+ \]
+
+
+\end{ejer}  
+
+\begin{ejer}{} Considerar la función definida por 
+\begin{equation}\label{eq:funcion-sumas-Darboux}
+f(x)=\left
+\{\begin{array}{ll}
+1&x=0\\
+x&0<x<1\\
+0&x=1,
+\end{array}
+\right.
+\end{equation}
+y la partición $P=\left\{0,\frac{1}{4},\frac{1}{2},\frac{3}{4},1\right\}$ de $(0,1)$. 
+\\
+Hallar las sumas inferior y superior de Darboux $\underline{S}(P;f)$ y $\overline{S}(P;f)$.
+
+\end{ejer}  
+
+\begin{ejer}{} Usando la función $f$ definida por \eqref{eq:funcion-sumas-Darboux} y $\epsilon=\frac{1}{2}$, 
+encontrar $\delta>0$ tal que para cualquier partición $P$ en intervalos de longitud menor que $\delta$, 
+la diferencia entre $\overline{S}(P;f)$ y $\underline{S}(P;f)$ sea menor que $\frac{1}{2}$.
+
+\end{ejer} 
+
+\begin{ejer}{} Considerar la función 
+\begin{equation}\label{eq:funcion-g}
+g(x)=\sum_{n=1}^{\infty} \frac{1}{2^{2n-1}}\left\lfloor \frac{2^nx+1}{2}\right\rfloor\;\;0\leq x\leq 1,
+\end{equation}
+donde $\left\lfloor\alpha\right\rfloor$ denota el mayor entero menor o igual a $\alpha$.
+\\
+Mostrar que la serie converge para todo $x \in [0,1]$, que la función $g(x)$ es monótona creciente, que 
+$g(0)=0$ y $g(1)=1$.
+\\
+Encontrar todos los puntos en los cuales la función $g$ es discontinua y en estos puntos calcular la diferencia
+entre los límites laterales.
+\end{ejer} 
+
+\begin{ejer}{} Mostrar que la función $g$ definida en   \eqref{eq:funcion-g} es integrable de Riemann sobre $[0,1]$.
+\end{ejer} 
+
+\begin{ejer}{} Hallar el valor de $\int_0^1 g(x)\,dx$ siendo $g$ la función definida por \eqref{eq:funcion-g}. 
+Indicar claramente los motivos que llevan a su conclusión.
+\end{ejer}  
+
+\begin{ejer}{} Encontrar todos los valores positivos de $\alpha$ para los cuales la integral impropia 
+\[
+\int_{-1}^1 \frac{1}{|x|^{\alpha}}\,dx
+\]
+tiene un valor. Explicar las razones que conducen a su conclusión.
+
+\end{ejer}  
+
+\begin{ejer}{} Probar que  $f(x)=\sum\limits_{n=1}^{\infty} \frac{((nx))}{n^2}$ converge uniformemente,
+siendo
+\[
+((x))=\left\{
+\begin{array}{ll}
+x-\left\lfloor x\right\rfloor, &\left\lfloor x\right\rfloor  \leq x < \left\lfloor x\right\rfloor+\frac{1}{2}
+\\
+0&x=\left\lfloor x\right\rfloor+\frac{1}{2}
+\\
+x-\left\lfloor x\right\rfloor-1 & \left\lfloor x\right\rfloor+\frac{1}{2} <x< \left\lfloor x\right\rfloor+1.
+\end{array}
+\right.
+\]
+
+
+\end{ejer} 
+
+\begin{ejer}{} Probar que $f$ es continua en $c$ si y sólo si la oscilación de $f$ en el punto $c$ es cero. 
+
+
+\textbf{EN EL APUNTE: }
+
+$f$ es continua en $x$ si y solo si $w(f;x)=0$.
+
+
+
+\end{ejer}
+
+\begin{ejer}{} Sea $f$ definida por $f(x)=\sen \left(\frac{1}{x}\right)$ si $x \neq 0$ y $f(0)=0$.
+?`Cuál es la oscilación de $f$ en 0? Justificar su respuesta.
+
+\end{ejer} 
+
+\begin{ejer}{} Hallar la oscilación en $x=\frac{1}{3}$ de la función 
+\[
+g(x)=\left\{
+\begin{array}{ll}
+x & x\in \qq
+\\
+-x & x\notin\qq
+\end{array}
+\right.
+\]
+Justificar la respuesta.
+
+
+\end{ejer} 
+
+\begin{ejer}{}  Usando sumas de Darboux y \textbf{Python ????}, aproximar:  
+\begin{enumerate}
+\item $\int_1^2\frac{1}{x}\,dx $    y comparar con $\ln(2)$; 
+\item  $\int_{-1}^{1}x^2\,dx$.\\
+   ?`A qu\'e parecen aproximarse las sumas inferiores y superiores?
+ \item  $\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-x^2}}\,dx$\\
+    ?`Por qu\'e el resultado puede usarse para aproximar $\pi$?
+\end{enumerate}    
+
+\end{ejer}  
+
+\begin{ejer}{} Usando sumas de Darboux obtener:
+\begin{enumerate}
+\item $\int_a^b x^2\,dx$;
+\item $\int_a^b \cos x\,dx$;
+\item $\int_a^b \frac{1}{x}\,dx=\ln b- \ln a$.
+\end{enumerate}
+\end{ejer}  
+
+\textbf{EN EL APUNTE: }
+
+
+
+\begin{ejer}{} 
+Sea $0\leq a<b$ veamos que 
+\[
+ \int_a^b x^2 dx=\frac{b^3}{3}-\frac{a^3}{3}.
+\]
+{\em Ayuda:} Usar particiones uniformes y la fórmula $\sum\limits_{i=1}^nn^2= n(n+1)(2n+1)/6$.
+
+
+\end{ejer}  
+
+\begin{ejer}{} 
+Sea $0\leq a<b$ y $n$ un entero negativo, veamos que
+\[
+ \int_a^b x^n dx=
+ \begin{cases}
+\frac{b^{n+1}}{n+1}-
+\frac{a^{n+1}}{n+1} & \text{ si } n\neq -1\\
+ \ln(b)-\ln(a) & \text{ si } n=-1\\
+\end{cases}
+\]
+
+\end{ejer} 
+
+\begin{ejer}{} 
+ Sea $0\leq a<b\leq \pi$, veamos que
+\[
+ \int_a^b \sen x dx=-(\cos(b)-\cos(a)).
+\]
+
+
+\end{ejer} 
+
+\begin{ejer}{} 
+Sea $n(x)=\left
+\{
+\begin {array}{ll}
+1&x=\frac{1}{n},\;\;n\in \nn.\\
+0&\mbox{en otro caso.}
+\end{array}
+\right.$
+\\
+Probar que $n$ es integrable sobre $[0,1]$ y que $\int n(x)\,dx=0$.
+
+
+\end{ejer}
+
+\begin{ejer}{} 
+Sea $p(x)=\left
+\{
+\begin {array}{ll}
+0&x=0\\
+\frac{1}{x}-\left\lfloor \frac{1}{x}\right\rfloor&\mbox{en otro caso}
+\end{array}
+\right.$
+\\
+Probar que $p$ es integrable sobre $[0,1]$.
+
+
+\end{ejer} 
+
+\begin{ejer}{} Hallar el contenido exterior de los siguientes conjuntos: 
+\begin{enumerate}
+\item $\qq \cap [0,1]$;
+\item $[0,1]-\qq$;
+\item $\left\{\frac{n}{n+1}\left. \right|\; n\in\nn\right\}$;
+\item $\left\{\frac{2k-1}{2^n}\left. \right|\; n\in\nn, 1\leq k\leq 2^{n-1}\right\}$;
+\item $\left\{\frac{k}{n}\left. \right|\; n\in\nn, \;k=1,2 \mbox{ \'o  } 3\right\}$;
+\item $(0,1)\cup(3,4)$;
+\item $\bigcup\limits_{n=1}^{\infty} \left(\frac{1}{2n},\frac{1}{2n-1}\right)$.
+\end{enumerate}
+
+
+\end{ejer}  
+
+\begin{ejer}{} Probar que si $S$ tiene contenido exterior 0 y $T$ es cualquier conjunto acotado, entonces
+\[
+c_e(S\cup T)=c_e(T)
+\]
+donde $c_e$ se lee como \textit{contenido exterior}.
+
+\end{ejer} 
+
+
+\end{document}
