@@ -1,0 +1,364 @@
+
+\documentclass[a4paper, 12pt]{article}
+%\usepackage[top=.5cm, bottom=2.5cm,textheight=5cm, left=2cm, right=2cm]{geometry}
+
+
+\usepackage{amssymb,amsmath}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{fontspec}
+\usepackage{fancyhdr}
+%\setmainfont{Oswald}
+
+\setmainfont{Roboto Condensed}
+%\renewcommand{\familydefault}{\sfdefault}
+\usepackage[spanish,activeacute]{babel}
+\begin{document}
+
+
+
+\pagestyle{plain}
+
+
+%\setlength{\unitlength}{1cm}
+%
+%\setlength{\extrarowheight}{5mm}
+%
+
+% \begin{flushright}
+% {\setmainfont{STIX}\small\textit{
+% ``40 años de la Convención sobre la eliminación de Todas las Formas de Discriminación contra la Mujer''}
+% }
+% \end{flushright}
+
+% 
+% \noindent\begin{tabular}{m{.1\textwidth} }
+% \includegraphics[scale=.25]{EscudoUNLPam.png} 
+% 
+% 
+% 
+% 
+% 
+% \end{large}
+% \\
+% \end{tabular}
+
+
+
+
+\pagestyle{fancyplain}
+
+ \renewcommand{\sectionmark}[1]
+                 {\markright{\thesection\ #1}}
+
+ \newcommand{\coltex}[1]{\textcolor{red}{#1}}
+
+                 
+% \lhead[\fancyplain{}{\bfseries\thepage}]
+%       {\fancyplain{}{\bfseries\rightmark}}
+%
+\setlength{\headheight}{1cm} 
+
+\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
+
+
+ 
+
+ \lhead[\fancyplain{}{\vspace{-3cm}\includegraphics[scale=.3]{EscudoUNLPam.png}}]{\fancyplain{}{\vspace{-3cm}\includegraphics[scale=.3]{EscudoUNLPam.png}}}
+
+\cfoot{}
+
+
+%\setlength{\parindent}{0pt} % Default is 15pt.
+
+\begin{flushleft}
+ \textbf{\large CORRESPONDE A LA RESOLUCIÓN N° 480/14}
+\end{flushleft}
+
+
+\begin{center}
+ \textbf{\large ANEXO I}
+\end{center}
+
+
+
+
+
+ \textbf{DEPARTAMENTO:}  Matemática.
+
+ \textbf{ACTIVIDAD CURRICULAR:} Teoría de la Medida.
+
+ \textbf{CARRERA Y PLAN:}  Lic. en Matemática Plan de Estudios RCS 133/15.
+
+\textbf{CURSO:} Cuarto Año
+
+\textbf{REGIMEN:} Cuatrimestral
+
+\textbf{CARGA HORARIA SEMANAL:} Teóricos 4hs, Prácticos 4hs. 
+
+\textbf{CARGA HORARIA TOTAL:} Teóricos 60hs, Prácticos 60hs.
+
+    \textbf{CICLO LECTIVO:} 2022
+
+
+
+\textbf{EQUIPO DOCENTE:}  
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|}\hline
+& Nombre & Cargo  & Dedicación & Caracter\\ \hline
+Teórico & Fernando Mazzone & Prof. Titular & Simple & Regular\\\hline
+Práctico & Fernando Mazzone & Prof. Titular & Simple & Regular\\\hline 
+\end{tabular} 
+\end{table}
+
+\textbf{FUNDAMENTACIÓN:}
+
+\begin{itemize}
+ \item \textbf{Importancia Matemática de los Contenidos Seleccionados.}  Desde la antiguedad diversos pensadores buscaron dar un sentido matemático preciso  a las nociones de   longitud, área, etc. En la actualidad se sabe que la noción de medida que es matemáticamente satisfactoria por diversas cuestiones es la medida de Lebesgue. Una vez introducida la medida de Lebesgue es sencillo definir la integral homónima.   La integral de Lebesgue es una pieza clave donde se asientan  muchas otras contrucciones del saber matemático, por ejemplo los espacios de funciones, que son de una importancia clave a la hora de mostrar que problemas  relacionados con ecuaciones diferenciales tienen solución. La integral de Lebesgue nos proporciona  un instrumento preciso para manipular determinadas expresiones, principalmente por su capacidad de interactuar con otro  concepto central del análisis. Nos referimos al concepto \emph{límite} en sus múltiples manifestaciones: sucesiones, series, derivadas, etc. El concepto de medida mostro además ser fecundo a la hora de introducir nuevos conceptos como derivadas débiles, soluciones débiles y distribuciones. 
+ La introducción en la problemática de  la teoría de la medida e integración forma parte de la curricula obligatoria de casi todas las carreras de Lic. en Matemática del país.
+ 
+\item \textbf{Contextualización del estudiante.} Los contenidos han sido elegidos de modo de atender las características que presentan los estudiantes. Por este motivo se  incluyen y desarrollan conceptos como cardinalidad, Teorema de Heine-Borel y funciones uniformemente continuas, integral de Riemann, entre otros. Suele ocurrir que estos temas, a pesar de haber sido estudiados por el alumno,  han sido olvidado por el el alumno. En este sentido es de destacar que un número importante de estudiantes suelen ser alumnos recibidos del profesorado en matemática, que luego de completar esta carrera continúan con la Lic. en Matemática. Generalmente este tipo de alumno cursó las asignaturas donde fue introducido a los prerequisitos de Teoría de la Medida mencionados arriba  varios años antes.
+
+
+
+\item \textbf{Enfoque metodológico en la enseñanza.} Una de las principales dificultades en la enseñanza  de la medida e integral de Lebesgue se puede apreciar cuando se toma dimensión histórica de este concepto.  Este instrumento matemático fue elaborado por sucesivas aproximaciones en el lapso de los dos milenios que median entre el método de exhaución de los antiguos griegos y las obras de Henri Lebesgue Leçons sur l'intégration et la recherché des fonctions primitives (1904) y Leçons sur les séries trigonométriques (1906). Tiene origen en varias problemáticas que preocupan a los matemáticos, particularmente  la convergencia de las series de Fourier y la caracterización de la funciones integrables Riemann. 
+
+Somos de la opinión que un elemento importante para prestar atención en el proceso de enseñanza-aprendizaje es la cuestión del sentido. El alumno debe percibir que el concepto que se le pretende enseñar tiene un sentido y razón de ser. Por este motivo,  nos parece importante que además de exponer los aspectos lógicos y formales que fundamentan la nociones de esta materia debemos preocuparnos por aquellos elementos que motivan su existencia. 
+
+Adherimos a I. Kleiner en \emph{Excursions in the History of Mathematics}, cuando dice:
+
+\begin{quote}
+<<La enseñanza del cálculo, qué debe enseñarse y cómo debe enseñarse, es
+un tema bajo debate continuo...>>
+
+<<Como señalamos anteriormente, el cálculo involucra algoritmos, teoría y aplicaciones.
+En cierto punto, entonces, los estudiantes deben estar expuestos a su poder técnico, su 
+armonía lógica  y su utilidad. El cálculo es también la respuesta a una búsqueda de 2000 años para describir la continuidad y la variabilidad; es un logro intelectual enorme. El espíritu de estos pensamientos debe animar nuestra enseñanza del tema, las ideas centrales deben destacar entre los cientos de fórmulas y técnicas.>>
+
+<<Hilbert observó que cada teoría matemática pasa por tres períodos de
+desarrollo: lo ingenuo, lo formal y lo crítico. En el caso del cálculo, el
+período ingenuo ocurrió en el siglo XVII, el formal en el siglo XVIII, y
+la crítica en el XIX. La evolución de una idea matemática a menudo procede.
+en cuatro etapas: descubrimiento (o invención), uso, comprensión y justificación . Es importante mantener el orden de estas etapas en mente al discutir cualquier concepto o teoría.>>
+\end{quote}
+
+La temática de la enseñanza del análisis matemático tomado en consideración  la evolución histórica del mismo ha recido atención en la bibliografía reciente, en especial de habla inglesa, por ejemplo en \cite{bressoud2008radical,hawkins2001lebesgue, bressoud2007radical,abbott2002understanding,hairer2008analysis}.
+
+
+\end{itemize}
+
+\textbf{OBJETIVOS Y/O ALCANCES DE LA ASIGNATURA:}
+\begin{itemize} 
+ \item Hacer un examen crítico de la integral de Riemann, precisar sus alcances y límites
+ \item Introducir a los alumnos a las nociones de medida e integral de Lebesgue. 
+ \item Percibir la potencia instrumental de la integral de Lebesgue por sobre la integral de Riemann.
+ \item Desarrollar el pensamiento analítico tendiente a justificar con rigor matemático. 
+ \item Desarrollar la capacidad de resolver problemas.
+ \item Incentivar el espíritu crítico, entiendiendo por esto la capacidad  de analizar un razonamiento formal, de preguntarse por la razón de ser de una teoría y de interpelarnos sobre creencias arraigadas en nuestro pensamiento. 
+\end{itemize}
+
+\newpage
+
+
+
+
+
+
+\begin{flushleft}
+ \textbf{\large CORRESPONDE A LA RESOLUCIÓN N° 480/14}
+\end{flushleft}
+
+
+\begin{center}
+ \textbf{\large ANEXO II}
+\end{center}
+
+
+
+
+
+ \textbf{ASIGNATURA:} Teoría de la Medida
+
+ \textbf{CICLO LECTIVO:} 2022
+ 
+  PROGRAMA ANALÍTICO
+ 
+
+
+
+
+\begin{description}
+
+
+\item[Unidad 1. Preliminares] Cardinalidad. Conjuntos numerables. Potencia del continuo. Topología en los espacios Euclideos $\mathbb{R}^n$. Completitud. Supremo e ínfimo. Compacidad, Teoremas de Bolzano-Weiertrass y Heine-Borel. 
+
+
+\item[Unidad 2. La integral de Riemann] Sumas superiores e inferiores de de Darboux. Funciones Integrables Riemann. Ejemplos de función no integrable Riemann. Diversos ejemplos de funciones integrables Riemann discontinuas sobre conjuntos densos.  Criterio de integrabilidad de Riemann. Contenido exterior de conjuntos. Criterio de intregrabilidad de Hankel. 
+
+
+\item[Unidad 3. Medida de Lebesgue] Medida de conjuntos elementales. Medida exterior. Conjuntos medibles. Conjuntos  de Borel. Estructura conjuntos medibles. Conjunto  de Vitali.  Conjunto de Cantor. Criterio de Lebesgue para la integrabilidad Riemann.
+
+\item[Unidad 4. Funciones medibles] Definición y propiedades elementales. Medibilidad y continuidad. Propiedades verdaderas en casi todo punto. Sucesiones de funciones medibles. Aproximación por funciones simples. Teoremas de Egorov y Lusin. Función de Cantor.
+
+\item[Unidad 5. Integral de Lebesgue] La integral de Lebesgue para funcionesmedibles  no-negativas. Definición y propiedades elementales. Teorema de Beppo-Levi. Lema de Fatou. La integral de Lebesgue para una función medible.  Teorema de la convergencia mayorada.  La integral de Lebesgue y la integral de Riemann.
+
+\item[Unidad 6. Medidas abstractas] $\sigma$-álgebras y clases monótonas. Definición de espacio de medida. Espacios de  Probabilidad. Medida exterior. Conjunto medible en el sentido de Carathéodory.   Premedidas. Medida exterior inducida por una premedida. Funciones de variación acotada. Medida de Lebesgue-Stieltjes. Integración en un espacio de medida. 
+
+\item[Unidad 7. Medida producto] Rectángulos medibles. Premedida sobre rectángulos medibles. Teorema de existencia de la medida producto. Secciones. Teorema de Tonelli y Teorema de Fubini.
+
+\item[Unidad 8. Espacios $L^p$] Espacios $L^p$. Desigualdad de H\"older. Desigualdad de Cauchy-Schwartz. Teorema de representación de Riesz. 
+
+
+\end{description}
+
+
+
+
+
+
+\noindent\textbf{Observación:} En el Plan de Estudios (RCS 133/15) dentro de los contenidos mínimos de la asignatura figura "Teoría abstracta de la diferenciación". Creo que hay evidencia concluyente de que dicha inclusión es un error de tipeo y lo que se quizo escribir es "Teoría abstracta de la integración". Entre las evidencias, está el hecho de que el tema continua a ``Medidas Abstractas'' y el tema que lógicamente le seguiría es el de integral respecto a esas medidas. Además no hay en la bibliografía, al menos en aquella de la temática y del nivel adecuados para la materia, un desarrollo de una "Teoría abstracta de la diferenciación". Existen nociones de derivadas débiles y en el sentido de las distribuciones que incorporan una noción de derivada mucho mas laxa que la tradicional, que involucra entes que podemos pensar que son más abstractos. Sin embargo estas teorías tampoco es costumbre denominarlas "Teoría abstracta de la diferenciación". 
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+\begin{flushleft}
+ \textbf{\large CORRESPONDE A LA RESOLUCIÓN N° 480/14}
+\end{flushleft}
+
+
+\begin{center}
+ \textbf{\large ANEXO III}
+\end{center}
+
+
+
+
+
+ \textbf{ASIGNATURA:} Teoría de la Medida
+
+ \textbf{CICLO LECTIVO:} 2022
+ 
+BIBLIOGRAFÍA
+
+
+%
+%
+\nocite{*}
+\bibliographystyle{apalike}
+  \bibliography{biblio}
+
+  
+  
+\newpage
+
+
+
+
+
+
+\begin{flushleft}
+ \textbf{\large CORRESPONDE A LA RESOLUCIÓN N° 480/14}
+\end{flushleft}
+
+
+\begin{center}
+ \textbf{\large ANEXO IV}
+\end{center}
+
+
+
+
+
+ \textbf{ASIGNATURA:} Teoría de la Medida
+
+ \textbf{CICLO LECTIVO:} 2022
+ PROGRAMA TRABAJOS PRÁCTICOS:
+
+ 
+Habrá un trabajo práctico por cada unidad del programa analítico. En las guías de trabajos prácticos se propondran ejercicios al alumno que mayormente consistirán en demostraciones de enunciados teóricos. Se espera fortalecer el pensamiento lógico-deductivo en el área del anállisis matemático y a su vez que el/la alumno/a genere estrategías para resolver problemas en matemática pura.
+
+\noindent\textbf{Trabajo Práctico No 1.} En este trabajo práctico se abordarán los temas de la Unidad 1. Se espera que el/la alumno/a comprenda las nociones de cardinalidad, numerabilidad, no numerabilidad e incorpore metodologías de pensamiento que incluyan estas nociones. Los demás temas de la Unidad 1, relacionados con nociones topológicas, serán expuestos en caracter de repaso y para referencia posterior en la materia, no tendrán actividades prácticas asociadas.
+
+\noindent\textbf{Trabajo Práctico No 2.} En este trabajo práctico se abordarán los temas de la Unidad 2. Se espera que el/la alumno/a comprenda la noción de función integrable Riemann, sus alcances y limitaciones. El tema está pensado como disparador de la medida e intergal de Lebesgue.
+
+\noindent\textbf{Trabajo Práctico No 3 .} En este trabajo práctico se abordarán los temas de la Unidad 3. Se espera que el/la alumno/a comprenda la noción de medida de Lebesgue, de conjunto medible Lebesgue y Borel. También que adquiera destreza en los argumentos típicos en esta área de la matemática, por ejemplo argumentos de aproximación por conjuntos elementales, argumentos que apelan a la estructura de $\sigma$-algebra, por nombrar algunos.
+
+\noindent\textbf{Trabajo Práctico No 4.} En este trabajo práctico se abordarán los temas de la Unidad 4. Se espera que el/la alumno/a logré las competencias necesarias para discernir la medibilidad de funciones y para operar con as mismas.
+
+\noindent\textbf{Trabajo Práctico N° 5.} En este trabajo práctico se abordarán los temas de la Unidad 5. Se espera que el/la alumno/a alcance los conocimientos teóricos-metodológicos que le permitan operar con fluidez con la integral de Lebesgue.
+
+\noindent\textbf{Trabajo Práctico N° 6.} En este trabajo práctico se abordarán los temas de la Unidad 6. Se espera que el/la alumno/a comprenda la pertinencia de elaborar la noción abstracta de medida, la utilidad que esta noción tiene y que disponga de una variedad de ejemplos de este concepto.
+
+\noindent\textbf{Trabajo Práctico No 7.} En este trabajo práctico se abordarán los temas de la Unidad 7. El objetivo es aprender a usar correctamente el Teorema de Fubini-Tonelli.
+
+\noindent\textbf{Trabajo Práctico N° 8.} En este trabajo práctico se abordarán los temas de la Unidad 8. El objetivo es introducir al/a la alumno/a a los espacios $L^{p}$ y enseñarle metodología para resolver problemas teóricos en ese contexto. 
+
+\newpage
+
+
+
+
+
+
+\begin{flushleft}
+ \textbf{\large CORRESPONDE A LA RESOLUCIÓN N° 480/14}
+\end{flushleft}
+
+
+\begin{center}
+ \textbf{\large ANEXO V}
+\end{center}
+
+ACTIVIDADES ESPECIALES 
+
+No previstas.
+
+
+\newpage
+
+
+
+
+
+
+\begin{flushleft}
+ \textbf{\large CORRESPONDE A LA RESOLUCIÓN N° 480/14}
+\end{flushleft}
+
+
+\begin{center}
+ \textbf{\large ANEXO VI}
+\end{center}
+
+PROGRAMA DE EXAMEN:
+
+Se evaluara la capacidad práctica y el dominio teórico de todos los contenidos del programa analítico. Durante  la cursada se evaluara la capacidad del alumno de resolver problemas y ejercicios  a través de dos exámenes parciales domiciliarios y personalizados.  Acorde a la Res. CD. FCEyN 366/17,  el alumno dispondrá de una instancia de recuperación por cada uno de estos exámenes.
+
+El exámen final consistirá en la evaluación del grado de apropiación por parte del alumno de los aspectos teóricos. 
+
+ \vspace{2cm}
+
+
+
+\includegraphics[scale=.5]{/home/fernando/fer/papeleria/firma.jpg}
+
+\vspace{-2cm}
+
+.........................................
+
+
+{Dr. Fernando Mazzone}
+  \end{document}

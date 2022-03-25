@@ -1,0 +1,107 @@
+\chapter{Los números reales}
+
+
+\section{Axiomas}\label{sec,apendice}
+ Hay dos ópticas para introducir los numeros
+ reales, las denominaremos axiomática y constructiva.
+ Describimos a continuación, y someramente, cada una de ellas.
+
+ Se pueden introducir los números reales a travez de un sistema
+ axiomático. Como es conocido, un sistema axiomático consta de
+ \emph{términos primitivos}, que son, por decirlo as\'{\i}, los
+ objetos iniciales, a travez de los cuales se construyen todos los
+ demás objetos de la teor\'{\i}a. Pueden ser términos
+ primitivos: conjuntos, operaciones, relaciones, etc. Es importante
+ aclarar que los términos primitivos son objetos puramente
+ hipotéticos, es decir no se afirma la existencia de estos
+ objetos. Los términos primitivos para los números reales son:
+ un conjunto, comunmente denotado por $\rr$, dos funciones de
+  $\rr\times\rr$ en $\rr$, usualmente denotadas por $+$ y $.$\footnote
+  {Estas operaciones se denominan suma y multiplicación,
+  usualmente se omite el signo de multiplicación} y una relación
+  $\leq$. Para completar el sistema axiomático,
+  debemos dar los axiomas, estos son propiedades que se postulan
+  para los términos primitivos. Los axiomas para los números
+  reales los podemos dividir en cuatro grupos:
+
+  \begin{itemize}
+    \item[1)] $\rr$ es un cuerpo, es decir:
+        \begin{itemize}
+            \item[1.1)] $x+(y+z)=(x+y)+z$;
+            \item[1.2)] $x+y=y+x$;
+            \item[1.3)] Existe un elemento $0\in\rr$ tal que $x+0=x$;
+            \item[1.4)] Para cada $x\in\rr$ existe un $y\in\rr$
+            tal que $x+y=0$;
+            \item[1.5)] $x(yz)=(xy)z$;
+            \item[1.6)] $xy=yx$;
+            \item[1.7)] Existe un elemento $1\in\rr$ tal que
+            $1.x=x$;
+            \item[1.8)] Para cada elemento $0\neq x\in\rr$ existe un
+            elemento $y\in\rr$ tal que $xy=1$;
+            \item[1.9)] $x(y+z)=xy+xz$;
+        \end{itemize}
+    \item[2)] $\rr$ es un cuerpo ordenado.
+        \begin{itemize}
+            \item[2.1)] Si $x\leq y$ e $y\leq z$ entonces $x\leq
+            z$;
+            \item[2.2)] Si $x\leq y$ e $y\leq x$ entonces $x=y$;
+            \item[2.3)] Si $x$ e $y$ pertenecen a $\rr$ entonces
+            $x\leq y$ o $y\leq x$;
+            \item[2.4)] Si $x\leq y$ entonces $x+z\leq y+z$;
+            \item[2.5)] Si $0\leq x$ e $0\leq y$ entonces $0\leq
+            xy$;
+        \end{itemize}
+
+        Dentro de $\rr$  se puede construir un conjunto, denotado
+        por $\mathbb{Z}$. que corresponde a los enteros.
+    \item[3)] $\rr$ es un cuerpo ordenado y arquimedeano. Esto es:
+    para todo $y\geq 0$ y todo $x>0$ existe un entero $n$ tal que
+    $nx\geq y$.
+
+    Por último tenemos el axioma de completitud. Hay varias
+    formulaciones equivalentes para este axioma, ver el Ejercicio
+     \vref{ejer,completitud} nosotros elegimos
+    la siguiente:
+
+    \item[4)] Todo subconjunto $A\subset\rr$ acotado
+    superiormente, tiene supremo, es decir existe un $\alpha\in\rr$
+    tal que: 1) $\alpha$ es una cota superior de $A$, esto es $\alpha\geq x$
+    para todo $x\in A$ y 2) $\alpha$ es la más chica de las
+    cotas superiores, esto es si $\beta$ es cota superior entonces
+    $\alpha\leq\beta$. Observar que no es necesario que $\alpha\in
+    A$.
+  \end{itemize}
+
+
+
+  Hay tres propiedades que
+  ser\'{\i}an deseables que un sistema axiomático tuviera: 1)
+  \emph{coherencia}, es decir que los axiomas no se
+  ``contradigan'' 2)\emph{independencia}, entendiendo por esto que
+  los axiomas no sean redundantes, es decir que ninguno de ellos
+  se obtenga a partir de los demás y 3)
+  \emph{completitud}\footnote{No confundir este concepto con el de
+  completitud de un e.m.}, esto es que toda afirmación de la
+  teor\'{\i}a o su negación se pueda deducir.
+
+  Destacamos,
+  nuevamente, que los objetos postulados como términos
+  primitivos en el sistema axiomatico y que satisfagan los axiomas
+  podr\'{\i}an no existir. En particular esto ocurre si el sistema
+  axiomático es contradictorio. Obviamente, en ese caso, nuestro
+  s\'{\i}stema axiomático no servir\'{\i}a de mucho. Esto no sucede para el
+  s\'{\i}stema de axiomas para los números reales. Este
+  s\'{\i}stema tiene un modelo, es decir podemos encontrar un
+  conjunto $\rr$ y las funciones y relación postuladas de modo
+  tal que se satisfagan todos los axiomas. Esto nos lleva a la otra óptica de
+  introducción de los números reales, la que denominamos constructiva. Varios
+  modelos fueron propuestos por diversos matemáticos, en
+  particular Dedekind y Cantor. Estos modelos
+  son construidos a partir de los números racionales.\footnote{Es bueno
+  decir que también es posible construir los números
+  racionales a partir de los naturales y estos a partir de la
+  Teor\'{\i}a de Conjuntos; no obstante esto se aparta
+  considerablemente de los objetivos de esta materia} A Dedekind
+  le debemos el método de cortaduras y a Cantor el método de
+  sucesiones fundamentales de Cauchy.
+

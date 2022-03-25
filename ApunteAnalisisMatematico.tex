@@ -2,50 +2,88 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Paquetes%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{empheq}
+%\usepackage{empheq}
 \usepackage[spanish]{babel}
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{enumerate}
 \usepackage{verbatim}
-%\usepackage{ esint }
 \usepackage{array}
-%\usepackage{listings}
-\usepackage{ wasysym }
+\usepackage{ wasysym }%simbolos especiales
 \usepackage{hyperref}
 \usepackage{color}
-%\usepackage{url}
-%\usepackage{theorem}
-\usepackage{boiboites} %Cajas en teorem
 \usepackage[spanish]{varioref} % ESTILO PARA REFERENCIAS
 \usepackage{fontspec} %para xelatex
 \usepackage[a4paper,driver=xetex,top=2.5cm, bottom=2.7cm,%
-layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geometry}
+layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm]{geometry}
 \usepackage{fancyhdr} %Encabezados mejorados
-
-
 \usepackage{marginnote} % Notas al margen mejoradas
-\usepackage{titlesec} %ni idea
-%\usepackage{natbib}
-%\usepackage{chapterbib}
-\usepackage{fontawesome}
-%\usepackage{xcolor}
-%\usepackage{appendix}
-%\usepackage{chngcntr}
-%\usepackage{etoolbox}
-%\usepackage{lipsum}
-\usepackage{pgf,tikz,pgfplots}
+\usepackage{titlesec} %para encabezados
+\usepackage{pst-all} %pstricks graficos
+\let\clipbox\relax
+\usepackage{pgf,tikz,pgfplots} %tikz graficos
 \pgfplotsset{compat=1.15}
-%\usepackage{mathrsfs}
 \usetikzlibrary{arrows}
-\usepackage{imakeidx}
-%\usepackage{sympytex}
-\usepackage{pythontex}
-\usepackage{diagrams}
-
+\usepackage{imakeidx} %supongo que para indices multiples
+\usepackage{pythontex}%Ejecutar python dentro latex
+\usepackage{diagrams}%diagramas comutativos
+\usepackage{hyperref}%hipertexto
 \defaultfontfeatures{Ligatures=TeX}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[breakable,many]{tcolorbox}
+\tcbset{nobeforeafter} % prevents tcolorboxes being placing in paragraphs
+\usepackage{float}
+\floatplacement{figure}{H} % forces figures to be placed at the correct location
+\usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+\else\Gin@nat@width\fi}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+% Set max figure width to be 80% of text width, for now hardcoded.
+\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+%     \usepackage{caption}
+%     \DeclareCaptionLabelFormat{nolabel}{}
+%     \captionsetup{labelformat=nolabel}
+\usepackage{adjustbox} % Used to constrain images to a maximum size 
+\usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+\AtBeginDocument{%
+\def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+\usepackage{upquote} % Upright quotes for verbatim code
+\usepackage{eurosym} % defines \euro
+\usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+\usepackage{fancyvrb} % verbatim replacement that allows latex
+\usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    
+%\usepackage{longtable} % longtable support required by pandoc >1.10
+\usepackage{booktabs}  % table support for pandoc > 1.12.2
+\usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+\usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+\usepackage{mathrsfs}
 
 
-%%%%%%%%%%%%Configuración Página
+
+%%%%%%%%%% Nuevos Entornos-Comandos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%\input{entornos_comandos.tex}
+\input{ComandosEstilosTeoremas.tex}
+
+%%%%%%%%%%%%% Configuracion para notebook importadas
+
+%\input{python/jupyter_config.tex}
+
+%%%%%%%%%%%%Configuración Encabezados Página
 \fancyfoot{}
 \fancyhead[RO,LE]{\thepage}
 \fancyhead[LO]{\leftmark}
@@ -55,6 +93,8 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geom
 \titleformat{\section}
   {\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
 
+  
+%%%%%%%%%%%%Configuracion Apéndices %%%%%%%%%%%%%%%%%%%%%%%%55555  
 \AtBeginEnvironment{subappendices}{%
 \chapter*{Apéndices}
 \addcontentsline{toc}{chapter}{Apéndices}
@@ -64,167 +104,34 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm,showframe]{geom
 
 
 
-%%%%%%%%%%%%Define colores%%%%%%%%%%%%%%%%%%%%
 
 
 
-\definecolor{color1}{rgb}{0.48,0.89,0.84}
-\definecolor{color2}{rgb}{0.48,0.89,0.84}
-\definecolor{color3}{rgb}{0.28, 0.51, .68}
-\definecolor{color4}{rgb}{0.29,0.3,0.57}
-\definecolor{color5}{rgb}{0.7,0.24,0.24}
-\definecolor{color6}{rgb}{0.72,0.4,0.28}
-\definecolor{color7}{rgb}{0.84,0.66,0.21}
-\definecolor{color8}{HTML}{8E87C1}
 
-
-%
-%
-%
-%
-%
 % %%%%%%%%%%%%%Configuración de fuente para XeLaTeX
+
+
 % %\setromanfont[Mapping=tex-text]{Oswald-Light}
-% %\setsansfont{Roboto Condensed}
+\setmainfont{Roboto Condensed}
 % %\setsansfont{Gentium Basic}
 % %\setsansfont{FreeMono}
-\setromanfont{Oswald-Light}
+%\setromanfont{Oswald-Light}
 %\setromanfont{Comfortaa}
  %
 %
 % \renewcommand{\familydefault}{\sfdefault}
-%
-%
-%
-%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%Nuevos comandos entornos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newenvironment{demo}{\noindent\emph{Dem.}}{\hfill\qed \newline\vspace{5pt}}
-
-\newenvironment{observa}{\noindent\textbf{Observación:}}{}
-\renewcommand{\C}{\overline}
-\newcommand{\com}{\mathbb{C}}
-\newcommand{\rr}{\mathbb{R}}
-\newcommand{\nn}{\mathbb{N}}
-\renewcommand{\epsilon}{\varepsilon}
-\renewcommand{\lim}{\mathop{\rm lím}}
-\renewcommand{\inf}{\mathop{\rm ínf}}
-\renewcommand{\liminf}{\mathop{\rm líminf}}
-\renewcommand{\limsup}{\mathop{\rm límsup}}
-\renewcommand{\min}{\mathop{\rm mín}}
-\renewcommand{\max}{\mathop{\rm máx}}
-\renewcommand{\b}[1]{\boldsymbol{#1}}
-\renewenvironment{frame}[1]{}{}
-\newcommand{\link}{\reversemarginpar\marginnote{%\fontsize{24}{24
-%}\selectfont
-\faExternalLink} %
-\normalmarginpar
-}
-\newcommand{\advertencia}{\reversemarginpar\marginnote{\fontsize{16}{16}\selectfont
-\faBolt}%
-\normalmarginpar }
-\newcommand{\lectura}{\reversemarginpar\marginnote{\fontsize{16}{16}\selectfont
-\faBook }%
-\normalmarginpar}
-\newcommand{\actividad}{\reversemarginpar\marginnote{\fontsize{16}{16}\selectfont
-\faCogs}%
-\normalmarginpar}
-
-%\renewcommand{\lim}{displaystyle\lim}
-\DeclareMathOperator{\atan2}{atan2}
-\DeclareMathOperator{\sen}{sen}
 
 
+%%%%%%%%%%%%%%%%%   Titulo  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%Definimos una caja con color
-\newlength\mytemplen
-\newsavebox\mytempbox
-\makeatletter
-\newcommand\mybluebox{%
-\@ifnextchar[%]
-{\@mybluebox}%
-{\@mybluebox[0pt]}}
-\def\@mybluebox[#1]{%
-\@ifnextchar[%]
-{\@@mybluebox[#1]}%
-{\@@mybluebox[#1][0pt]}}
-\def\@@mybluebox[#1][#2]#3{
-\sbox\mytempbox{#3}%
-\mytemplen\ht\mytempbox
-\advance\mytemplen #1\relax
-\ht\mytempbox\mytemplen
-\mytemplen\dp\mytempbox
-\advance\mytemplen #2\relax
-\dp\mytempbox\mytemplen
-\colorbox{color1}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
-\makeatother
-\DeclareDocumentCommand\boxedeq{ m g }{%
-{\begin{empheq}[box={\mybluebox[2pt][2pt]}]{equation}% #1%
-\IfNoValueF {#2} {\label{#2}}%
-#1
-\end{empheq}
-}%
-}
-
-
-%%%%%%%%%%%%%%%%%%
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{problema}{Problema}{thcounter1}
-
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{teorema}{Teorema}{thcounter2}
-
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{definicion}{Definici\'on}{thcounter3}
-
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{lema}{Lema}{thcounter4}
-
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{corolario}{Corolario}{thcounter5}
-
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{proposicion}{Proposici\'on}{thcounter6}
-
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{codigo}{Función SymPy}{}
-
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{ejercicio}{Ejercicio}{}
-
-\newboxedtheorem[boxcolor=color1, background=color2, titlebackground=color1,
-titleboxcolor = black,thcounter=chapter]{axioma}{Axioma}{thcounter7}
-
-
-
-\newcounter{ejemplo_cont}[chapter]
-\setcounter{ejemplo_cont}{1}
-
-\newenvironment{ejemplo}{\noindent\textbf{Ejemplo  \arabic{chapter}.\arabic{ejemplo_cont}.} }{\addtocounter{ejemplo_cont}{1}}
-
-
-%\renewcommand*{\raggedrightmarginnote}{\centering}
-
-%
-%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%Para escibir en clase articulo o similar
-%
-
-
-
-
-
-
-
-
-\title{Análisis Real\\ \large Una introducción usando Python}
+\title{Introducción al Análisis Matemático}
  
 
-\author{Sonia Acinas y Fernando Mazzone}
-
+\author{}
+\date{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%   Indices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeindex[title=Indice Conceptos]
 \makeindex[name=personas,title=Indice de Personas,columns=3]
 \makeindex[name=simbolos,title=Indice Símbolos,columns=3]
@@ -242,14 +149,27 @@ titleboxcolor = black,thcounter=chapter]{axioma}{Axioma}{thcounter7}
  \tableofcontents
 %
 
-\include{prologo}
+%\include{prologo}
+%\include{Uni0}
 \include{Uni1}
 \include{Uni2}
-\include{Uni3}
+%\include{Uni3}
 \include{Uni4}
 \include{Uni5}
+\include{Uni6}
 \include{apendice}
-\printindex
+%\include{Apendice0}
+
+ \nocite{*}
+ \addcontentsline{toc}{chapter}{Bibliografía}
+ 
+\bibliographystyle{apalike}
+\bibliography{biblio}
+ 
+ \printindex
 \printindex[personas]
 \printindex[simbolos]
+
+
+
 \end{document}

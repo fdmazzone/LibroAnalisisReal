@@ -4,9 +4,9 @@
 \section{Sucesiones de funciones}
 Sea $K$ un espacio métrico, usualmente $K\subset \mathbb{R}^n$ para algún $n$. 
 
-Una colección $f_n:K\to \mathbb{R}$ para $n=1,2,3,\dots$ se llama sucesión de funciones.
+Una colección $f_n:K\to \mathbb{R}$ para $n=1,2,3,\ldots$ se llama sucesión de funciones.
 
-Dada una sucesión de funciones $f_n$, $n=1,2,3,\dots$  y $x\in K$, $f_n(x)$
+Dada una sucesión de funciones $f_n$, $n=1,2,3,\ldots$  y $x\in K$, $f_n(x)$
 es una sucesión de números reales y como tal puede o no converger a cierto límite.
 
 La mayor diferencia entre una sucesión de números reales y una sucesión de funciones es
@@ -21,7 +21,7 @@ Supongamos que para todo $x \in K$ la sucesión de números reales $f_n(x)$ conv
 es decir que existe el $\lim\limits_{n \to \infty} f_n(x)$ y lo denotaremos $f(x)$. 
 En este caso diremos que $f_n$ converge puntualmente a $f$.
  
-\begin{ejemplo}
+\begin{ejemplo}{ej:sucesion-conv-puntual}
 La sucesión $f_n(x)=\frac{1}{1+nx^2}$ converge puntualmente 
 \[f(x)=\left\{\begin{array}{ll}
 0&x\neq 0
@@ -39,7 +39,7 @@ Como vemos, la determinación de la convergencia puntual suele reducirse al cál
 Para este propósito es lícito usar todas las técnicas estudiadas en cursos anteriores como puede ser la Regla de L'H\^opital.
 \end{ejemplo}
 
-\begin{ejemplo}
+\begin{ejemplo}{ej:sucesion-conv-unif-1}
 La sucesión $f_n(x)=\frac{n^2x-n^2}{1+n^2x}$ converge a $f(x)=\frac{x-1}{x}$ si $x \neq 0$.
 
 Si $x=0$ no converge.
@@ -58,7 +58,7 @@ En efecto,
 $\lim\limits_{n \to \infty}f_n(x)=
 \lim\limits_{n \to \infty}\frac{n^2x-n^2}{1+n^2x}=
 \lim\limits_{n \to \infty}\frac{2nx-2n}{2nx}=
-\lim\limits_{n \to \infty}\frac{2x-2}{2x}=\frac{1-x}{x}
+\lim\limits_{n \to \infty}\frac{2x-2}{2x}=\frac{1-x}{x}.
 $
 Observemos que si $f(x)=\frac{1-x}{x}$ entonces $f(1)=0$ y por tanto $\lim\limits_{n\to \infty}f_n(x)=f(x)$ $\forall x\neq 0$.
 
@@ -66,12 +66,58 @@ Suele ser útil graficar algunas funciones de la sucesión y la función límite
 en materias anteriores o usando sympy.
 \end{ejemplo}
 
-Para el Ejemplo 1.....COPIAR TEXTO DE SYMPY Y GRÁFICOS!!!!
+Para el Ejemplo \ref{ej:sucesion-conv-puntual} APARECE MAL LA REFERENCIA DEL EJEMPLO!!!!!!!!!!
 
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k+kn}{import} \PY{o}{*}
+\PY{n}{init\PYZus{}printing}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    %Ejemplo \(f_n(x)=\frac{1}{1+nx^2}\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x,n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fn}\PY{o}{=}\PY{l+m+mi}{1}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_3_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+
+Para el Ejemplo \ref{ej:sucesion-conv-unif-1}
+
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x,n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fn}\PY{o}{=}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{,}\PY{n}{ylim}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_5_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}		
 En los ejemplos anteriores se forma una ``montaña'' alrededor de un punto \emph{fijo} ($x=0$). 
 Pero, puede ocurrir otro comportamiento que observaremos los siguientes ejemplos.
 
-\begin{ejemplo}
+\begin{ejemplo}{}
 Si  $f_n(x)=\left\{
 \begin{array}{ll}
 1&n\leq x\leq n+1
@@ -87,7 +133,7 @@ GRAFICAR CON SYMPY!!!
 A partir del gráfico vemos que los términos de la sucesión $f_n(x)$ son ``montañas móviles'' de altura 1.
 
 
-\begin{ejemplo}
+\begin{ejemplo}{ej:montaña-movil-cte}
 Si  $f_n(x)=\frac{nx}{1+n^2x^2}$ en $[0,\infty)$
 entonces 
 $\lim\limits_{n \to \infty} \frac{nx}{1+n^2x^2}=
@@ -95,12 +141,28 @@ $\lim\limits_{n \to \infty} \frac{nx}{1+n^2x^2}=
 \lim\limits_{n \to \infty}\frac{x}{\frac{1}{n}+nx^2}=0.$ 
 \end{ejemplo}
 
-GRAFICAR CON SYMPY!!!
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x,n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fn}\PY{o}{=}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_7_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
 En este caso también se observa una montaña móvil. 
 
 HACER EL ANÁLISIS CON LA DERIVADA!!!
 
-\begin{ejemplo}
+\begin{ejemplo}{}
 Si $f_n(x)=\sqrt{x^2+\frac{1}{n^2}}$, $x \in \mathbb{R}$ luego 
 $f_n^{'}(x)=\frac{x}{\sqrt{x^2+\frac{1}{n^2}}}$. 
 Entonces $f_n^{'}(x)>0$ en $(0,+\infty)$ y $f_n^{'}(x)<0$ en $(0,+\infty)$, de donde  $(0,+\infty)$ es intervalo de
@@ -110,16 +172,33 @@ Luego cada $f_n(x)$ tiene un mínimo en $x=0$ y el valor mínimo es $f_n(0)=\fra
 Por otra parte, $\lim\limits_{n \to \infty} f_n(x)=\lim\limits_{n \to \infty} \sqrt{x^2+\frac{1}{n^2}}=\sqrt{x^2}=|x|$.
 \end{ejemplo}
 
-GRAFICO!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{grafica}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{x1}\PY{p}{,}\PY{n}{x2}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{f}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{x1}\PY{p}{,}\PY{n}{x2}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+    \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{:}
+        \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{f}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{x1}\PY{p}{,}\PY{n}{x2}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+    \PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\PY{n}{f}\PY{o}{=}\PY{n}{sqrt}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{l+m+mf}{1.0}\PY{o}{/}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{grafica}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_9_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
 
 En el Análisis Matemático, además de límites tenemos conceptos como continuidad, derivadas, integrales, etc.
 Es común operar expresiones conjugando varios de ellos y queremos contar con relaciones entre ellos que permitan 
 transformar las expresiones. 
+
 Por ejemplo, ?`es importante el orden en que se realizan  las operaciones?
 ?`Es lo mismo tomar límite y luego derivar que hacerlo en el orden inverso? 
 Si se tienen dos límites, ?`se pueden permutar?
 
-\begin{ejemplo}
+\begin{ejemplo}{ej:sucesion-conv-2 puntos}
 Si $f_n(x)=\sen(nx)$ para $x\in [0,\pi]$ entonces $f_n(0)=f_n(\pi)=0$ y la sucesión converge en estos valores.
 
 Veamos que la sucesión de funciones dada no converge en ningún otro valor. 
@@ -148,11 +227,25 @@ y
 \lim\limits_{n \to \infty} |\sen(nx)\cos x+\cos(nx)\sen x|=|\sen x|
 \]
 y necesariamente  $x=0$ \'o $x=\pi$.
+
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{f}\PY{o}{=}\PY{n}{sin}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{p}{)}
+\PY{n}{grafica}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{pi}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_11_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
 \end{ejemplo}
 
 
-\begin{ejemplo}
-En el Ejemplo\ref{}1 vimos que  la sucesión 
+\begin{ejemplo}{}
+En el Ejemplo \ref{ej:sucesion-conv-puntual} 0.1 OJO CON LA REFERENCIA!!!!
+vimos que  la sucesión 
 $f_n(x)=\frac{1}{1+nx^2}$ converge puntualmente 
 \[f(x)=\left\{\begin{array}{ll}
 0&x\neq 0
@@ -174,8 +267,8 @@ Por lo tanto, la permutación de los límites produce resultados \textbf{distint
 También vemos que la función límite es discontinua a pesar de que cada $f_n(x)$ es continua para cada $n$.
 \end{ejemplo}
 
-\begin{ejemplo}
-Con las funciones del Ejemplo\ref{} 3 tenemos
+\begin{ejemplo}{}
+Con las funciones del Ejemplo \ref{ej:montaña-movil-cte} 3 tenemos
 \[
 \int_{-\infty}^{+\infty} \lim\limits_{n \to  \infty} f_n(x)\,dx=\int_{-\infty}^{\infty} 0\,dx=0
 \]
@@ -186,8 +279,9 @@ mientras que
 En este caso, la permutación entre la operación de integración y la de límite también produce resultados \textbf{distintos}.
 \end{ejemplo}
 
-\begin{ejemplo}
-Cada $f_n(x)=\sqrt{x^2+\frac{1}{n^2}}$ del Ejemplo\ref{} 4/5 es derivable y las derivadas son
+\begin{ejemplo}{}
+Cada $f_n(x)=\sqrt{x^2+\frac{1}{n^2}}$ del Ejemplo \ref{ej:sucesion-conv-2 puntos} 4 ó 5 OJO CON LA REFERENCIA!!!!
+es derivable y las derivadas son
 $f_n^{'}(x)=\frac{x}{\sqrt{x^2+\frac{1}{n^2}}}$. 
 Si computamos
 \[
@@ -202,17 +296,17 @@ Si computamos
 cuando $x\neq 0$.
 Entonces la funci\'on límite $f(x)=\frac{x}{|x|}$ no es derivable en 0. Luego  
 \[
-0=\lim\limits_{n \to \infty}f_n^{'}(0)\neq \frac{d}{dx}(\lim\limits_{n \to \infty}f_n(x))|_{x=0}
+0=\lim\limits_{n \to \infty}f_n^{'}(0)\neq \frac{d}{dx}\left(\lim\limits_{n \to \infty}f_n(x)\right)\left. \right|_{x=0}
 \]
 pues ni siquiera tiene sentido el miembro de la derecha.
 \end{ejemplo}
 
 Es así que tenemos  
-\textbf{
-Problema: 
-Encontrar condiciones que permitan permutar las operaciones anteriores.}
+\begin{mdframed}[style=MiEstilo]\relax%
+Encontrar condiciones que permitan permutar las operaciones anteriores.
+\end{mdframed}
 
-HABRÍA QUE PONER EL PROBLEMA ANTERIOR EN UN CUADRITO. BUSCAR EL COMANDO!!!
+
 
 Antes de atacar este problema vamos a presentar varios ejemplo \textit{famosos} de sucesiones.
 
@@ -220,22 +314,22 @@ Antes de atacar este problema vamos a presentar varios ejemplo \textit{famosos} 
 OJO!!!! LO QUE SIGUE EN EL APUNTE NO TIENE EJEMPLOS FAMOSOS, VIENEN LAS SERIES!!!!!
 
 \section{Series de funciones}
-Dada una sucesión de funciones $f_n(x)$, $n=1,2,\dots$ podemos formar otra sucesión tomando las sumas acumuladas o
+Dada una sucesión de funciones $f_n(x)$, $n=1,2,\ldots$ podemos formar otra sucesión tomando las sumas acumuladas o
 sumas parciales
 \[
 \begin{split}
-s_1(x)&=f_1(x)
+s_1(x)&=f_1(x),
 \\
-s_2(x)&=f_1(x)+f_2(x)
+s_2(x)&=f_1(x)+f_2(x),
 \\
 &\vdots
 \\
-s_n(x)&=f_1(x)+f_2(x)+\dots+f_n(x)
+s_n(x)&=f_1(x)+f_2(x)+\ldots+f_n(x).
 \end{split}
 \]
 
 Si la nueva sucesión $\{s_n(x)\}$ converge a $f$ se dice que la serie $\sum\limits_{n=1}^{\infty} f_n(x)$
-converge a $f$ o que 
+converge a $f$ ó que 
 \[
 \sum\limits_{n=1}^{\infty} f_n(x)=f(x).
 \]
@@ -243,17 +337,17 @@ converge a $f$ o que
 En pocas ocasiones se puede determinar que una serie converge hallando una expresión simple para $s_n(x)$ y
 calculando su límite.
 
-\begin{ejemplo}
+\begin{ejemplo}{}
 Si $f_n(x)=c$ con $c \in \mathbb{R}$ un número independiente de $n$, entonces
 \[
 \begin{split}
-s_1(x)&=f_1(x)=c
+s_1(x)&=f_1(x)=c,
 \\
-s_2(x)&=f_1(x)+f_2(x)=2c
+s_2(x)&=f_1(x)+f_2(x)=2c,
 \\
 &\vdots
 \\
-s_n(x)&=f_1(x)+f_2(x)+\dots+f_n(x)=nc.
+s_n(x)&=f_1(x)+f_2(x)+\ldots+f_n(x)=nc.
 \end{split}
 \]
 Entonces
@@ -261,27 +355,31 @@ Entonces
 \lim\limits_{n \to \infty} s_n(x)=
 \left\{
 \begin{array}{lll}
-0&si&c=0
+0&si&c=0,
 \\
-\infty&si&c\neq 0
+\infty&si&c\neq 0.
 \end{array}
 \right.
 \]
 y por lo tanto la series converge sólo cuando $c=0$.
 \end{ejemplo}
 
-\begin{ejemplo}
-Si $f_n(z)=z^n$ para $n=0,1,2,\dots$, luego 
-$s_n(z)=f_0(z)+\dots+f_n(z)=1+z+\dots+z^n$ y $zs_n(z)=z+z^2+\dots+z^n+z^{n+1}$ entonces
+\begin{ejemplo}{}
+Si $f_n(z)=z^n$ para $n=0,1,2,\ldots$, luego
+ 
+$s_n(z)=f_0(z)+\ldots+f_n(z)=1+z+\ldots+z^n$ y $zs_n(z)=z+z^2+\ldots+z^n+z^{n+1}$ 
+
+entonces
 $zs_n(z)-s_n(z)=z^{n+1}-1$ y por tanto $s_n(z)=\frac{z^{n+1}-1}{z-1}$.
+
 De este modo, logramos expresar $s_n(z)$ en una fórmula relativamente sencilla. Ahora, 
 \[
 \lim\limits_{n \to \infty} s_n(z)=
 \lim\limits_{n \to \infty} \frac{z^{n+1}-1}{z-1}=
 \left\{\begin{array}{ll}
-\frac{1}{1-z}&|z|<1
+\frac{1}{1-z}&|z|<1,
 \\
-\mbox{no converge}&|z|\geq 1
+\mbox{no converge}&|z|\geq 1.
 \end{array}
 \right.
 \]
@@ -292,52 +390,59 @@ Es interesante ver qué ocurre en $|z|=1$.
 Si $|z|=1$ entonces $z=e^{i\theta}=\cos \theta +i \sen \theta$ y 
 \[
 \begin{split}
-s_n(z)=
+s_n(z)&=
 \frac{z^{n+1}-1}{z-1}=
-\frac{z^{n+1}}{z-1}-\frac{1}{z-1}=
+\frac{z^{n+1}}{z-1}-\frac{1}{z-1}
 \\
-\frac{z^{n+1}(\overline z-1)}{|z-1|^2}-\frac{1}{z-1}=
-\frac{ [\cos(n+1)\theta+i\sen(n+1)\theta](\overline z-1)}{|z-1|^2}-\frac{1}{z-1}=
+&=\frac{z^{n+1}(\overline z-1)}{|z-1|^2}-\frac{1}{z-1}
 \\
-\cos(n+1)\theta \frac{\overline z-1}{|z-1|^2}+i \sen(n+1)\theta \frac{(\overline z-1)}{|z-1|^2}-\frac{1}{z-1}
+&=\frac{ [\cos(n+1)\theta+i\sen(n+1)\theta](\overline z-1)}{|z-1|^2}-\frac{1}{z-1}
+\\
+&=\cos(n+1)\theta \frac{\overline z-1}{|z-1|^2}+i \sen(n+1)\theta \frac{(\overline z-1)}{|z-1|^2}-\frac{1}{z-1}
 \end{split}
 \]
-son funciones oscilantes como en el Ejemplo \ref{} 5 y medio. VER GRÁFICOS!!!
+son funciones oscilantes como en el Ejemplo \ref{ej:sucesion-conv-2 puntos} 5 y 1/2. VER GRÁFICOS!!!
 
 En los ejemplos anteriores pudimos justificar la convergencia calculando explícitamente el límite. 
 Ésto es posible las menos de las veces. En materias anteriores se estudiaron criterios para la 
 convergencia de series  numéricas. Estos criterios establecen condiciones, algunas necesarias, otras 
 suficientes y algunas necesarias y suficientes para que la serie converja. Recordaremos algunos de ellos.
 
-QUIZÁS EN ALGÚN RECUADRO!!!
-\textit{Criterio del Resto}
+\begin{teorema}[Criterio del Resto]{}
 Si  $\sum\limits_{n=1}^{\infty} a_n$ converge entonces $\lim\limits_{n \to \infty} a_n=0$.
+\end{teorema}
 
-Coomo es una condición  necesaria sólo sirve para decir cuándo una serie no converge.
+Como es una condición  necesaria sólo sirve para decir cuándo una serie no converge.
 
-\begin{ejemplo}
+\begin{ejemplo}{}
 Si $f_n(x)= \sen(nx)$ para $x \in [0,\pi]$. 
+
 Como ya vimos, $\sen(nx)$ no converge excepto para $x=0$ \'o $x=\pi$. 
+
 Luego, $\sum\limits_{n=1}^{\infty} \sen(nx)$ no converge.
 \end{ejemplo}
 
 Como veremos más adelante, la serie $\sum\limits_{n=1}^{\infty}\frac{1}{n}$ no converge y sin embargo
-$\lim\limits_{n \to \infty}\frac{1}{n}=0$. Entonces el \textit{Criterio del Resto} no sirve para determinar
+$\lim\limits_{n \to \infty}\frac{1}{n}=0$. 
+
+Entonces el \textit{Criterio del Resto} no sirve para determinar
 la convergencia de una serie.
 
-\textit{Convergencia Absoluta}
+\begin{teorema}[Convergencia Absoluta]{}
 Si$\sum\limits_{n=1}^{\infty} |a_n|$ converge entonces $\sum\limits_{n=1}^{\infty} a_n$ converge.
+\end{teorema}
 
-\begin{ejemplo}
+\begin{ejemplo}{}
 $\sum \limits_{n=1}^{\infty} (-1)^n z^n$ converge cuando $|z|<1$.
 \end{ejemplo}
 
-\textit{Cirterio de Comparación}
-Si $0\leq a_n\leq b_n$ y $\sum\limits_{n=1}^{\infty} b_n$ converge entonces $\sum\limits_{n=1}^{\infty}a_n$ converge.
+\begin{teorema}
+[Criterio de Comparación]Si $0\leq a_n\leq b_n$ y $\sum\limits_{n=1}^{\infty} b_n$ converge entonces $\sum\limits_{n=1}^{\infty}a_n$ converge.
 Dicho de otro modo, si $\sum\limits_{n=1}^{\infty} a_n$ diverge (su suma es $+\infty$) entonces 
 $\sum\limits_{n=1}^{\infty}$ diverge.
+\end{teorema}
 
-\begin{ejemplo}
+\begin{ejemplo}{}
 \begin{enumerate}
 \item $\sum\limits_{n=1}^{\infty} \frac{1}{2^n} \sen(nx)$ converge pues $|\frac{1}{2^n} \sen(nx)|\leq \frac{1}{2^n}$.
 \item $\sum\limits_{n=1}^{\infty} \frac{1}{n^2} \sin(nx)$ converge pues para $n>1$ tenemos
@@ -346,10 +451,697 @@ $\sum\limits_{n=1}^{\infty}$ diverge.
 \]
 y
 \[
-\sum\limits_{n=2}^{m}\frac{1}{n-1}-\frac{1}{n}=1-\frac{1}{m}\to 1\mbox{  cuando  } m\to \infty
+\sum\limits_{n=2}^{m}\frac{1}{n-1}-\frac{1}{n}=1-\frac{1}{m}\to 1\mbox{  cuando  } m\to \infty.
 \]
 Luego $\sum\limits_{n=1}^{\infty} \frac{1}{n^2}$ converge y 
 $\sum\limits_{n=1}^{\infty} \frac{1}{n^2} \sen(nx)$ también.
 \end{enumerate}
 \end{ejemplo}
+
+\begin{teorema}[Criterio del Cociente]{}
+Si $0<a_n$, $\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n}$ existe y es igual a $r$ entonces: 
+\begin{enumerate}
+\item si  $r<1$ entonces $\sum\limits_{n=1}^{\infty} a_n$ converge;
+\item si $r>1$ entonces $\sum\limits_{n=1}^{\infty} a_n$ diverge;
+\item\label{it:r=1} si $r=1$ no se sabe nada sobre la convergencia o divergencia de $\sum\limits_{n=1}^{\infty} a_n$.
+\end{enumerate}
+\end{teorema}
+
+La situación planteada por el item \ref{it:r=1} ocurre en una cantidad exasperante de casos.
+
+\begin{ejemplo}{}
+Consideramos la serie $\sum\limits_{n=1}^{\infty} z^n$ con $z \in \mathbb{C}$ y calculamos
+\[
+\lim\limits_{n \to \infty} \frac{|n||z|^{n+1}}{|n+1||z|^n}=|z|\lim\limits_{n \to \infty} \frac{n}{n+1}=|z|.
+\]
+La serie converge cuando $|z|<1$, diverge cuando $|z|>1$ y nada se sabe cuando $|z|=1$.
+\end{ejemplo}
+
+\begin{teorema}[Criterio del Cociente]{}
+Si $a_n\geq a_{n+1}\geq 0$ para todo $n$ y $\lim\limits_{n \to \infty} a_n=0$, entonces
+$\sum\limits_{n=1}^{\infty}(-1)^n a_n$ converge.
+\end{teorema}
+
+\begin{ejemplo}{}
+La series $f(z)=\sum\limits_{n=1}^{\infty}\frac{z^n}{n}$ converge en $z=-1$ pues 
+$f(-1)=\sum\limits_{n=1}^{\infty} \frac{(-1)^n}{n}$, $\frac{1}{n}>\frac{1}{n+1}$ para todo $n\geq 1$ y $\lim\limits_{n \to \infty} \frac{1}{n}=0$.
+\end{ejemplo}
+
+
+\section{Series de Potencias}
+
+Las series de la forma 
+\[
+\sum\limits_{n=0}^{\infty} a_n (z-z_0)^n,\quad a_n\in \mathbb{C},\quad z\in \mathbb{C},\quad z_0 \in \mathbb{C},
+\]
+se llaman series de potencias.
+
+Veremos para qué valores de $z$ esta serie converge.
+Por simplicidad asumiremos que $z_0=0$.
+
+\begin{lema}{}
+Si $\sum\limits_{n=0}^{\infty} a_n z^n$ converge en $z_1\in \mathbb{C}$ entonces 
+la serie converge uniformemente para todo $z$ tal que $|z|<|z_1|$.
+\end{lema}
+
+\begin{proof}
+Como $\sum\limits_{n=0}^{\infty} a_nz_1^n$ converge entonces $\lim\limits_{n\to \infty} a_nz_1^n=0$.
+En particular, existe $M>0$ tal que $|a_nz_1^n|\geq M$.
+Sea $|z|<|z_1|$ luego
+\[|a_n z^n|<|a_n z_1^n|\left|\frac{z}{z_1}\right|^n\leq M \left|\frac{z}{z_1}\right|^n. \]
+Como $|\frac{z}{z_1}|<1$ entonces $\sum\limits_{n=0}^{\infty} (\frac{z}{z_1})^n$ converge y por el 
+Criterio de Comparación obtenemos que $\sum\limits_{n=0}^{\infty} |a_nz^n|$ converge siempre que 
+$|z|<|z_1|$.
+\end{proof}
+
+\begin{corolario}{}
+Dada una serie de funciones $\sum\limits_{n=0}^{\infty} a_n (z-z_0)^n$ existe $R\geq 0$ tal que la serie
+converge en $|z-z_0|<R$ y no converge en $|z-z_0|>R$. 
+\end{corolario}
+
+El criterio del cociente suele ser útil para determinar el valor de $R$ que se denomina \emph{radio de convergencia}.
+
+\begin{ejemplo}{}
+La serie $\sum\limits_{n=1}^{\infty} \frac{z^n}{n}$ converge si 
+\[
+1>\lim\limits_{n \to \infty} \frac{\frac{|z|^{n+1}}{n+1}}{\frac{|z|^n}{n}}=
+|z|\lim\limits_{n \to \infty} \frac{n }{n+1}=|z|,
+\]
+y no converge si $|z|>1$. Luego, el radio de convergencia es $1$.
+
+?`Qué pasa en el borde $|z|=1$?
+
+Si  $|z|=1$ $\Leftrightarrow$ $z=\cos \theta +i\sen \theta$ y $z^n=\cos(n \theta)+i \sen(n \theta)$. 
+Luego
+\[
+\sum\limits_{n=1}^{\infty} \frac{z^n}{n}=
+\sum\limits_{n=1}^{\infty} \frac{\cos(n \theta)}{n}+i \sum \limits_{n=1}^{\infty} \frac{\sen (n \theta)}{n}.
+\]
+Esto nos lleva a considerar otras series.
+\end{ejemplo}
+
+
 \section{Series de Fourier}
+Una serie de Fourier es una expresión de la forma
+\[
+f(x)=\frac{a_0}{2}+\sum\limits_{n=1}^{\infty} a_n \cos(n x)+b_n \sen(nx).
+\]
+
+Las series de Fourier tiene la capacidad de aproximar funciones $2\pi$-periódicas. 
+En primer lugar,   es necesario saber elegir los coeficientes y para ello se usa la propiedad que se presenta a continuación.
+
+\begin{lema}{}
+\[
+\begin{split}
+&\int_{-\pi}^{\pi} \cos(nx) \cos(mx)\,dx=
+	\left\{
+	\begin{array}{ll}
+0&n\neq m
+\\
+\pi&n=m\neq0
+\\
+2\pi&n=m=0,
+	\end{array}
+	\right.
+\\
+&
+\int_{-\pi}^{\pi} \sen(nx) \sen(mx)\,dx=
+\left\{
+\begin{array}{ll}
+0&n\neq m
+\\
+\pi&n=m\neq0
+\\
+2\pi&n=m=0,
+\end{array}
+\right.
+\\
+&\int_{-\pi}^{\pi} \cos(nx) \sen(mx)\,dx=0.
+\end{split}
+\]
+\end{lema}
+
+
+%\[\sum\limits_{k=0}^n {n \choose k} x^k (1-x)^{n-k}\]
+
+
+Luego, si nos permitimos permutar integrales son sumas de series, tenemos
+\[
+\begin{split}
+&\int_{-\pi}^{\pi} f(x)\sen(kx)\,dx
+\\
+&=\frac{a_0}{2}\int_{-\pi}^{\pi} \sen(kx)\,dx
+\\
+&+ 
+\sum\limits_{n=1}^{\infty} 
+a_n \int_{-\pi}^{\pi} \cos(nx)\sen(kx)\,dx
+\\
+&+
+b_n \int_{-\pi}^{\pi}  \sen(nx) \sen(kx)\,dx
+\\
+&=\pi b_k 
+\end{split}\]
+
+\begin{definicion}{}
+Dada una función $2\pi$-periódica $f(x)$ definimos los coeficientes de Fourier por
+\begin{equation}
+a_n=\frac{1}{\pi} \int_{-\pi}{\pi} f(x)\cos(nx)\,dx,\quad n\geq 0
+\end{equation}
+y 
+\begin{equation}
+b_n=\frac{1}{\pi} \int_{-\pi}{\pi} f(x)\sen(nx)\,dx,\quad n\geq 1.
+\end{equation}
+\end{definicion}
+
+En la notebook de Sympy indagamos las facultades aproximativas de la serie de Fourier.
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{real}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n,m}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{integer}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,}\PY{n}{positive}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+\PY{n}{Integral}\PY{p}{(}\PY{n}{cos}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{m}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{10}{}
+    
+    $$\begin{cases} 0 & \text{for}\: m \neq n \\\pi & \text{otherwise} \end{cases}$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Integral}\PY{p}{(}\PY{n}{sin}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{m}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{11}{}
+    
+    $$\begin{cases} 0 & \text{for}\: m \neq n \\\pi & \text{otherwise} \end{cases}$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Integral}\PY{p}{(}\PY{n}{cos}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{m}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{12}{}
+    
+    $$0$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{S}\PY{o}{=}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{n}{sin}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{theta}\PY{p}{)}\PY{o}{/}\PY{n}{n} \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{plot}\PY{p}{(}\PY{n}{S}\PY{p}{,}\PY{p}{(}\PY{n}{theta}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{pi}\PY{p}{,}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_20_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+            \begin{tcolorbox}[breakable, boxrule=.5pt, size=fbox, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{13}{\hspace{3.5pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+<sympy.plotting.plot.Plot at 0x7f413f16afd0>
+\end{Verbatim}
+\end{tcolorbox}
+        
+    Ejemplo
+\[f(x)=\left\{\begin{array}{cc} \frac{\pi-x}{2}, & \text{ si } x\in [0,\pi]\\
+    -\frac{\pi+x}{2}, & \text{ si } x\in [-\pi,0) \end{array}    \right.\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{f}\PY{o}{=}\PY{n}{Piecewise}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{pi}\PY{o}{\PYZhy{}}\PY{n}{x}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{x}\PY{o}{\PYZgt{}}\PY{o}{=}\PY{l+m+mi}{0}  \PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{n}{pi}\PY{o}{+}\PY{n}{x}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{l+m+mi}{0} \PY{p}{)}\PY{p}{)}
+\PY{n}{plot}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_22_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+            \begin{tcolorbox}[breakable, boxrule=.5pt, size=fbox, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{14}{\hspace{3.5pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+<sympy.plotting.plot.Plot at 0x7f413f019b50>
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{a}\PY{p}{(}\PY{n}{g}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{l+m+mi}{1}\PY{o}{/}\PY{n}{pi}\PY{o}{*}\PY{n}{Integral}\PY{p}{(}\PY{n}{g}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\PY{k}{def} \PY{n+nf}{b}\PY{p}{(}\PY{n}{g}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{l+m+mi}{1}\PY{o}{/}\PY{n}{pi}\PY{o}{*}\PY{n}{Integral}\PY{p}{(}\PY{n}{g}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{[}\PY{n}{a}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{k}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{16}{}
+    
+    $$\left [ 0, \quad 0, \quad 0, \quad 0, \quad 0, \quad 0, \quad 0, \quad 0, \quad 0\right ]$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{[}\PY{n}{b}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{k}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{17}{}
+    
+    $$\left [ 1, \quad \frac{1}{2}, \quad \frac{1}{3}, \quad \frac{1}{4}, \quad \frac{1}{5}, \quad \frac{1}{6}, \quad \frac{1}{7}, \quad \frac{1}{8}, \quad \frac{1}{9}\right ]$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{S}\PY{o}{=}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{n}{b}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{x}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{S}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{18}{}
+    
+    %$$
+		\[\begin{split}
+		&\sin{\left (x \right )} + \frac{\sin{\left (2 x \right )}}{2} + \frac{\sin{\left (3 x \right )}}{3} + \frac{\sin{\left (4 x \right )}}{4}
+		\\&+\frac{\sin{\left (5 x \right )}}{5} + \frac{\sin{\left (6 x \right )}}{6} + \frac{\sin{\left (7 x \right )}}{7} +\frac{\sin{\left (8 x \right )}}{8} \\
+		&+ \frac{\sin{\left (9 x \right )}}{9} + \frac{\sin{\left (10 x \right )}}{10} + \frac{\sin{\left (11 x \right )}}{11} 
+		+ \frac{\sin{\left (12 x \right )}}{12} \\
+		&+ \frac{\sin{\left (13 x \right )}}{13} + \frac{\sin{\left (14 x \right )}}{14} + \frac{\sin{\left (15 x \right )}}{15} + \frac{\sin{\left (16 x \right )}}{16} \\
+		&+ \frac{\sin{\left (17 x \right )}}{17} + \frac{\sin{\left (18 x \right )}}{18} + \frac{\sin{\left (19 x \right )}}{19}
+		\end{split}\]
+		%$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{S}\PY{o}{=}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{n}{b}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{x}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{plot}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{S}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_27_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+            \begin{tcolorbox}[breakable, boxrule=.5pt, size=fbox, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{19}{\hspace{3.5pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+<sympy.plotting.plot.Plot at 0x7f413f1ae210>
+\end{Verbatim}
+\end{tcolorbox}
+
+
+Deberíamos justificar el uso de propiedades como 
+\[
+\int_a^b \sum\limits_{n=1}^{\infty} f_n(x)\,dx=\sum\limits_{n=1}^{\infty} \int_a^b f_n(x)\,dx,
+\]
+que se justificar\'ia  si 
+\[
+\begin{split}
+&\int_a^b \sum\limits_{n=1}^{\infty} f_n(x)= \int_a^b \lim\limits_{N \to \infty} \sum\limits_{n=1}^{N}f_n(x)
+\\
+\underset{?}{=}
+\lim\limits_{N \to \infty} &\int_a^b \sum\limits_{n=1}^{N} f_n(x)\,dx=
+\lim\limits_{N \to \infty} \sum\limits_{n=1}^N \int_a^b f_n(x)\,dx
+\end{split}
+\]
+Pero, ya hemos visto ejemplos de que éste no es siempre el caso. 
+Vamos a identificar otro modo de convergencia que hace esta regla posible. 
+
+Si $f_n(x)$ converge puntualmente a $f$ entonces
+\[
+\forall x \forall \epsilon>0 \exists N=N(\epsilon, x)>0:
+n\geq N\Rightarrow|f_n(x)-f(x)|<\epsilon.
+\]
+
+\begin{definicion}{}
+$f_n$ converge uniformemente a $f$ si y sólo si
+\[
+\forall \epsilon>0 \exists N=N(\epsilon)>0 \forall x:
+n\geq N\Rightarrow|f_n(x)-f(x)|<\epsilon.
+\]
+\end{definicion}
+IDEA GRÁFICA 
+
+\begin{ejemplo}{}
+\begin{enumerate}
+\item
+$f_n(x)=\frac{1}{n}xe^{-n^2x^2}$ converge uniformemente a cero. 
+
+Se tiene que 
+$f^{'}_n(x)=\frac{1}{n}e^{-n^2x^2}-n2x^2 e^{-n^2x^2}$ y 
+\[f^{'}_n(x)=0 \Longleftrightarrow 0=e^{-n^2x^2}\left(\frac{1}{n}-2nx^2\right) \Leftrightarrow x=\pm\frac{1}{\sqrt{2}n}.\]
+Luego $f^{'}_n(x)>0$ en $|x|<\frac{1}{\sqrt{2}n}$ y $f^{'}_n(x)<0$ en $|x|>\frac{1}{\sqrt{2}n}$.
+Y, $f\left(\pm\frac{1}{\sqrt{2}n}\right)=\frac{1}{n}(\pm\frac{1}{\sqrt{2}n} )e^{-\frac{1}{2}}=
+\pm \frac{1}{\sqrt{2}}e^{-\frac{1}{2}} \frac{1}{n^2}.$
+
+Luego, dado $\epsilon>0$ existe $N\geq \left(\frac{e^{\frac{1}{2}}}{\sqrt{2}\epsilon}\right)^{\frac{1}{2}}$.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x,n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fn}\PY{o}{=}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{n}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{x}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_29_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+\item $f_n(x)=nxe^{-n^2x^2}$ converge puntualmente pero no uniformemente a cero.
+
+Si $x\neq 0$, $\lim\limits_{n\to \infty} \frac{nx}{e^{n^2x^2}}=\lim\limits_{n \to \infty} \frac{x}{2ne^{n^2x^2}}=0$.
+
+Por otra parte, 
+\[
+0=f^{'}_n(x)=-n^2e^{-n^2 x^2}2x^2+e^{-n^2x^2}\Leftrightarrow 1-2n^2x^2=0 \Leftrightarrow x=\pm \frac{1}{\sqrt{2}n}.
+\]
+Y, $f\left(\pm\frac{1}{\sqrt{2}n}\right)=\pm e^{\frac{1}{2}}\frac{1}{\sqrt{2}}$.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{fn}\PY{o}{=}\PY{n}{n}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{x}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_31_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+\end{enumerate}
+\end{ejemplo}
+
+
+\begin{teorema}{}
+Si $f_n: A\to B$ (aquí $A,B \subset \mathbb{R}^n$ ó $A,B \subset \mathbb{C}$) 
+son continuas y convergen uniformemente a $f$, entonces $f$ es continua y 
+\[
+\lim\limits_{x \to a}\lim\limits_{n \to \infty} f_n(x)=
+\lim\limits_{n \to \infty} f_n(a)=
+\lim\limits_{n \to \infty} \lim \limits_{x \to a} f_n(x).
+\]
+\end{teorema}
+
+\begin{proof}
+Sea $f(x)=\lim\limits_{n \to \infty} f_n(x)$ y $a \in A$. 
+
+Sea $\epsilon>0$, entonces $\forall x \exists N: n\geq N\Rightarrow|f_n(x)-f(x)|<\frac{\epsilon}{3} $. 
+
+Fijamos un $n$ cualquiera que satisfaga la desigualdad anterior.
+
+Como $f_n$ es continua en $a$ $\exists \delta=\delta(\epsilon,a)$ tal que 
+$|x-a|<\delta \Rightarrow |f_n(x)-f_n(a)|<\frac{\epsilon}{3}$. 
+
+Entonces 
+\[
+|f(x)-f(a)|\leq |f(x)-f_n(x)|+|f_n(x)-f_n(a)|+|f_n(a)-f(a)|<\epsilon.
+\]
+\end{proof}
+
+\begin{ejemplo}{}
+$x^n$ converge puntualmente en $[0,1]$ pero no uniformemente.
+\end{ejemplo}
+
+\begin{teorema}{}
+Si $f_n$ converge uniformemente a $f$ en $[a,b]$ entonces
+\[
+\lim\limits_{n \to \infty} \int_a^b f_n(x)\,dx=\int_a^b f(x)\,dx.
+\]
+\end{teorema}
+
+\begin{proof}
+La prueba se deja como ejercicio.
+\end{proof}
+
+\begin{teorema}[M-test Weiertrass]{}
+Si $f_n:A\subset \mathbb{R}^n \to \mathbb{R}$ y $|f_n(x)|\leq M_n$ independientemente de $x$
+y $\sum\limits_{n=1}^{\infty} M_n<\infty$ entonces la serie $\sum\limits_{n=1}^{\infty}f_n(x)$
+converge uniformemente en $A$.
+\end{teorema}
+
+\begin{proof}
+La serie converge puntualmente por aplicación del \textit{Criterio de Comparación}.
+
+Sea $f(x)=\sum\limits_{n=1}^{\infty} f_n(x)$ y sea $\epsilon>0$.
+Entonces $\exists N>0 $ tal que $\sum\limits_{n=N+1}^{\infty} M_n<\epsilon$. 
+
+Luego, 
+\[
+\begin{split}
+&\left|f(x)-\sum\limits_{n=1}^{N} f_n(x)\right|=\left|\sum\limits_{n=N+1}^{\infty} f_n(x)\right|
+\\
+=&\left|\lim\limits_{M\to \infty} \sum\limits_{n=N+1}^{M} f_n(x)\right|
+\leq \lim\limits_{M\to \infty} \sum\limits_{n=N+1}^{M} M_n
+<\epsilon.
+\end{split}\]
+\end{proof}
+
+\begin{corolario}{}
+Si la serie de potencias $\sum\limits_{n=0}^{\infty} a_n (z-z_0)^n$ tiene radio de convergencia $R>0$, 
+entonces converge uniformemente en $|z-z_0|\leq r$ $\forall r<R$.
+\end{corolario}
+
+\begin{proof}
+Supongamos $z_0=0$.
+
+Sea $0<r<R$ entonces la serie converge abasolutamente en $|z|=r$ y por tanto 
+\[
+\sum\limits_{n=0}^{\infty}|a_n|r^n
+<\infty.\]
+Luego si $|z|<r$ entonces $|a_nz^n|\leq |a_n|r^n$ y se verifican las hipótesis del M-Test de Weierstrass.
+\end{proof}
+
+\begin{ejemplo}{}
+Analizar con Sympy la convergencia de $\sum\limits_{n=0}^{\infty} x^n$.
+\end{ejemplo}
+
+\begin{corolario}{}
+Si $\sum\limits_{n=0}^{\infty}|a_n|+|b_n|<\infty$ entonces la serie de Fourier 
+\[
+\frac{a_0}{2}+\sum\limits_{n=1}^{\infty} a_n \cos(nx)+b_n \sen(nx),
+\]
+converge uniformemente a una función $f$ en $[-\pi,\pi]$ y 
+\[
+\begin{split}
+a_n=\frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos(nx)\,dx,\\
+b_n=\frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sen(nx)\,dx.
+\end{split}
+\]
+\end{corolario}
+
+\textbf{Problema:} Hallar $\sum\limits_{n=1}^{\infty} \frac{1}{n^2}$.
+
+
+\section{Productos infinitos}
+
+Si un polinomio
+\[
+p(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_1x+1,
+\]
+tiene raíces reales $x_1,x_2,\ldots,x_n$ entonces
+\[
+x_1^{-1}+x_2^{-1}+\ldots+x_n^{-1}=-a_1.
+\]
+
+\begin{proof}
+Tenemos que $p(x)=a_n(x-x_1)(x-x_2)\ldots(x-x_n)$ entonces $1=p(0)=(-1)^n x_1\ldots x_n$
+y \[p'(0)=a_1=a_n (-1)^{n-1}(x_1x_3\ldots x_n+x_2x_3\ldots x_n+\ldots +x_1x_2\ldots x_{n-1}).\]
+
+Luego
+\[
+\begin{split}
+a_1&=\frac{p'(0)}{p(0)}
+\\
+&=\frac{a_n (-1)^{n-1}(x_1x_3\ldots x_n+x_2x_3\ldots x_n+\ldots +x_1x_2\ldots x_{n-1})}{(-1)^n x_1\ldots x_n}
+\\&=
+-\left(\frac{1}{x_1}+\frac{1}{x_2}+\ldots+\frac{1}{x_n}\right).
+\end{split}
+\]
+Además 
+\[
+p(x)=(-1)^n x_1x_2\ldots x_n \left(1-\frac{x}{x_1}\right) \left(1-\frac{x}{x_2}\right)\ldots \left(1-\frac{x}{x_n}\right).
+\]
+\end{proof}
+
+\begin{teorema}[Euler(1748)]{}
+\[\sen x=
+x \prod\limits_{k=1}^{\infty}
+\left(1-\frac{x^2}{k^2 \pi^2}\right).
+\]
+\end{teorema}
+
+\begin{proof}
+\begin{equation}\label{eq:previa-euler-a-wallis}
+\begin{split}
+\frac{\sen x}{x}=&\frac{x-\frac{x^3}{3!}+\frac{x^5}{5!}+\ldots+(-1)^{n+1}\frac{x^{2n-1}}{(2n-1)!}+\ldots}{x}
+\\
+=&\left(1-\frac{x}{\pi}\right)\left(1+\frac{x}{\pi}\right)\left(1-\frac{x}{2\pi}\right)\left(1+\frac{x}{2\pi}\right)\ldots
+\\
+=& \left(1-\frac{x^2}{\pi^2}\right) \left(1-\frac{x^2}{4\pi^2}\right)\ldots \left(1-\frac{x^2}{k^2 \pi^2}\right)\ldots
+\end{split}
+\end{equation}
+\end{proof}
+Tomando $x^2=y$  en \eqref{eq:previa-euler-a-wallis} llegamos a 
+\[1-\frac{y}{3!}+\frac{y^2}{5!}+\frac{y^4}{7!}+\ldots=\left(1-\frac{y}{\pi^2}\right)\ldots\left(1-\frac{y}{k^2\pi^2}\right).
+\]
+Luego
+\[
+\frac{1}{\pi^2}+\frac{1}{4\pi^2}+\ldots=\frac{1}{6}
+\]
+y 
+\[
+1+\frac{1}{4}+\ldots=\frac{\pi^2}{6}.
+\]
+Evaluando en $x=\frac{\pi}{2}$ obtenemos
+\[
+\begin{split}
+\frac{2}{\pi}&=
+\left(1-\frac{(\frac{\pi}{2})^2}{\pi^2}\right) \left(1-\frac{(\frac{\pi}{2})^2}{4\pi^2}\right)\ldots
+\left(1-\frac{(\frac{\pi}{2})^2}{k^2\pi^2}\right)\ldots
+\\
+&=\prod\limits_{k=1}^{\infty} \left(1-\frac{1}{4k^2}\right)=\prod\limits_{k=1}^{\infty}\frac{4k^2-1}{4k^2}
+\\
+&=\prod\limits_{k=1}^{\infty} \frac{2k-1}{2k}\frac{2k+1}{2k}=\frac{1\cdot3}{2\cdot 2}\frac{3 \cdot 5}{4 \cdot 4}\ldots
+\end{split}
+\]
+y por lo tanto obtenemos la fórmula de Wallis
+\[
+\frac{\pi}{2}=\frac{2\cdot 2}{1 \cdot 3}\frac{4 \cdot 4}{3\cdot 5}\ldots
+\]
+
+\section{Aproximación de funciones}
+
+\begin{teorema}[Weierstrass]{}
+Si $f$ es continua en $[0,1]$ entonces $f$ es límite uniforme de polinomios.
+\end{teorema}
+
+\begin{definicion}{}
+Si $f$ es una función se define su polinomio de Berstein de grado n por
+\[
+B_n(f)=\sum\limits_{k=0}^{n} {n \choose k} f\left(\frac{k}{n}\right) x^k (1-x)^{n-k}. 
+\]
+\end{definicion}
+
+Si $f \equiv 1$ entonces 
+\[
+B_n(f)=\sum\limits_{k=0}^{n} {n \choose k} x^k (1-x)^{n-k} =[x+(1-x)]^n=1.
+\]
+
+
+Si $f\equiv x$ entonces 
+\[\begin{split}
+B_n(f)&=\sum\limits_{k=0}^{n} {n \choose k} \frac{k}{n} x^k (1-x)^{n-k} 
+\\&=
+x \sum\limits_{k=1}^{n} \frac{(n-1)!}{(k-1)![n-1-(k-1)]!}  x^{k-1} (1-x)^{[n-1-(k-1)]}
+\\&=
+x B_{n-1}(1)=x.
+\end{split}
+\]
+
+
+Si $f\equiv x^2$ entonces 
+\[
+\begin{split}
+B_n(f)
+&=\sum\limits_{k=0}^{n} {n \choose k} \frac{k^2}{n^2} x^k (1-x)^{n-k} 
+\\
+&=
+x \sum\limits_{k=1}^{n}  \frac{(n-1)!} {(k-1)![n-1-(k-1)]!} \frac{k}{n}  x^{k-1} (1-x)^{n-k}
+\\
+&=
+x \sum\limits_{k=1}^{n}  \frac{k-1}{n} {{n-1} \choose{k-1}}  x^{k-1} (1-x)^{n-k}
++
+\frac{x}{n} \sum\limits_{k=1}^{n} {{n-1 }\choose{k-1}}   x^{k-1} (1-x)^{n-k}
+\\
+&=
+x \frac{n-1}{n} B_{n-1}(x) +  \frac{x}{n} B_{n-1}(1)=\frac{n-1}{n}x^2+\frac{x}{n}.
+\end{split}
+\]
+Luego, tenemos que $B_n(x^2) \to x^2$ uniformemente.
+
+Dado que $f$ es continua, para cada $\epsilon>0$  existe $\delta>0$ tal  que si $|x-y|<\delta$
+entonces $|f(x)-f(y)|<\epsilon$.
+
+Sean $I_{x}=\{ k| \left|\frac{k}{n}-x\right|<\delta \}$ y  $J_x=\{ 1,\dots,n\}-I_x$, luego
+\[
+\begin{split}
+&|f(x)-B_n(f)(x)|
+\\
+=&\left|\sum\limits_{k=0}^n f(x){n \choose k} x^k (1-x)^{n-k}-
+\sum\limits_{k=0}^n f\left(\frac{k}{n}\right){n \choose k} x^k (1-x)^{n-k}\right|
+\\
+\leq&
+\sum\limits_{k=0}^n \left|f(x)-f\left(\frac{k}{n}\right)\right|{n \choose k} x^k (1-x)^{n-k}
+\\
+\leq 
+&\sum\limits_{I_x}+\sum\limits_{J_x}<\epsilon+2M \sum\limits_{k=0}^n {n \choose k} x^k (1-x)^{n-k}
+\end{split}
+\]
+siendo $M=\sup|f|$.
+
+Ahora, 
+\[
+\begin{split}
+\sum\limits_{k=0}^n {n \choose k} x^k (1-x)^{n-k}
+\leq 
+&\frac{1}{\delta^2} \sum\limits_{k=0}^n \left(x-\frac{k}{n}\right)^2 {n \choose k} x^k (1-x)^{n-k}
+\\
+=&
+\frac{1}{\delta^2} \left(x^2-2x^2+\frac{n-1}{n}x^2+\frac{x}{n}\right).
+\end{split}
+\]
+
+Luego
+\[
+\left|\sum\limits_{J_x} {n \choose k} x^k (1-x)^{n-k}
+\right|
+\leq \frac{1}{\delta^2}\left\{\frac{|x|^2+|x|}{n}\right\}\leq \frac{1}{n\delta^2},
+\]
+y podemos elegir $n$ tal que $\frac{1}{n \delta^2}<\epsilon$.
+
+\newpage
+\input{python/SucesionesSeriesII.tex}

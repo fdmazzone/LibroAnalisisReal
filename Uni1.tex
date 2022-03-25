@@ -3,18 +3,18 @@
 %CAPITULO I
 %=======================================================================
 \chapter{Conjuntos}
-\marginnote{
+\marginpar{
 \begin{center}
- \includegraphics[scale=.4]{imagenes/Hilbert.jpg}\\
+ \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Hilbert.jpg}\\
 \end{center}
 \small
 <<David Hilbert (Königsberg, Prusia Oriental; 23 de enero de 1862-Gotinga, Alemania; 14 de febrero de 1943) fue un matemático alemán, reconocido como uno de los más influyentes del siglo XIX y principios del XX. Estableció su reputación como gran matemático y científico inventando y/o desarrollando un gran abanico de ideas, como la teoría de invariantes, la axiomatización de la geometría y la noción de espacio de Hilbert, uno de los fundamentos del análisis funcional. Hilbert y sus estudiantes proporcionaron partes significativas de la infraestructura matemática necesaria para la mecánica cuántica y la relatividad general. Fue uno de los fundadores de la teoría de la demostración, la lógica matemática y la distinción entre matemática y metamatemática. Adoptó y defendió vivamente la teoría de conjuntos y los números transfinitos de Cantor. Un ejemplo famoso de su liderazgo mundial en la matemática es su presentación en 1900 de un conjunto de problemas abiertos que incidió en el curso de gran parte de la investigación matemática del siglo XX.>> (Wikipedia)
 }
 \begin{quote}
- <<Nadie nos expulsará del paraíso que \index[personas]{Cantor} Cantor ha creado para nosotros>> 
+ <<Nadie nos expulsará del paraíso que \index[personas]{Cantor, George} Cantor ha creado para nosotros>> 
 \end{quote}
 \begin{flushright}
- David Hilbert \index[personas]{Hilbert}
+ David Hilbert \index[personas]{Hilbert, David}
 \end{flushright}
 
 
@@ -45,7 +45,7 @@ La siguiente introducción está lejos de ser exhaustiva, solo
 recordaremos conceptos ya sabidos. Nos dentendremos algo más en
 aquellos puntos que puedan ser nuevos.
 
-\begin{definicion}Dados dos conjuntos $A$ y $B$ denotaremos su \index{Conjuntos!union}\index{Conjuntos!intersección}\index{Conjuntos!diferencia}\emph{unión,
+\begin{definicion}{} Dados dos conjuntos $A$ y $B$ denotaremos su \index{Conjuntos!union}\index{Conjuntos!intersección}\index{Conjuntos!diferencia}\emph{unión,
 intersección y diferencia} por: $A\cup B$, $A\cap B$ y $A-B$
 repectivamente. Estos nuevos conjuntos se definen por: \index[simbolos]{$A\cup B$}\index[simbolos]{$A\cap B$}\index[simbolos]{$A-B$}
 \[A\cup B=\{x:x\in A\vee x\in B\},\]
@@ -67,24 +67,24 @@ Además consideraremos la operación de \index{Conjuntos!diferencia simétrica}\
 definiéndose por:
 \[A\bigtriangleup B=(A-B)\cup(B-A).\]
 \index[simbolos]{$A\bigtriangleup B$}
-\begin{definicion}Dados dos elementos arbitrarios $a$ y $b$ se
+\begin{definicion}{}[Kuratowski] Dados dos elementos arbitrarios $a$ y $b$ se
 define el \emph{par ordenado}\index{par ordenado} $(a,b)$, por la siguiente igualdad
-\[(a,b)=\{a,\{a,b\}\}.\]
+\[(a,b)=\{\{a\},\{a,b\}\}.\]
 \end{definicion}
 
 La propiedad más relevante de pares ordenados es que si \index[simbolos]{$(a,b)$}
-$(a,b)=(c,d)$ entonces $a=c$ y $b=d$. Eso se infiere de la demostración y queda como ejercicio. Ahora consideramos el
+$(a,b)=(c,d)$ entonces $a=c$ y $b=d$. La demostración de este hecho la dejamos de ejercicio. Ahora consideramos el
 conjunto formado por todos los pares ordenados de elementos
 pertenecientes a conjuntos dados.
 
-\begin{definicion} Sean $A$ y $B$ conjuntos. El \index{Conjuntos!producto cartesiano}\emph{producto cartesiano} de $A$ con
+\begin{definicion}{}  Sean $A$ y $B$ conjuntos. El \index{Conjuntos!producto cartesiano}\emph{producto cartesiano} de $A$ con
 $B$, denotado por $A\times B$, es el siguiente conjunto:
 \[A\times B=\{(a,b):a\in A\wedge b\in B\}.\]
 \end{definicion}
 La siguiente definición es bien conocida.
 
-\begin{definicion} Una \index{Función} \emph{función} $f$ de $A$ en $B$ (abreviaremos esta frase
-porel siguiente símbolo: $f:A\longrightarrow B$)\index[simbolos]{$f:A\longrightarrow B$}, es un
+\begin{definicion}{}  Una \index{Función} \emph{función} $f$ de $A$ en $B$ (abreviaremos esta frase
+por el siguiente símbolo: $f:A\longrightarrow B$)\index[simbolos]{$f:A\longrightarrow B$}, es un
 subconjunto del producto cartesiano $A\times B$ con la propiedad
 que: para todo $a\in A$ existe un único $b\in B$ tal que
 $(a,b)\in f$. \end{definicion}
@@ -94,7 +94,7 @@ conceptos relacionados de: imagen, la notación $f(a)$, función
 inyectiva, suryectiva y biyectiva. Admitimos todo esto por sabido.
 Ahora introducimos una nueva notación.
 
-\begin{definicion}
+\begin{definicion}{} 
 Por $B^A$ \index[simbolos]{$B^A$} denotamos al conjunto de todas las funciones
 $f:A\longrightarrow B$.
 \end{definicion}
@@ -104,21 +104,21 @@ notación.
 
 Seguidamente damos las definiciones de los conjuntos imagen y preimagen de un conjunto dado por una función.
 
-\marginnote{
+\marginpar{
 \begin{center}
-\includegraphics[scale=.15]{imagenes/funcima.png}\\
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/funcima.png}\\
 Conjunto $f(C)$
 \end{center}
 }
-\begin{definicion} Dada una función $f:A\longrightarrow B$ y subconjuntos
+\begin{definicion}{}  Dada una función $f:A\longrightarrow B$ y subconjuntos
 $C\subset A$ y $D\subset B$ definimos:
 \[f(C)=\{f(a):a\in C\}\]
 y
 \[f^{-1}(D)=\{a\in A:f(a)\in C\}.\]
 \end{definicion}
-\marginnote{
+\marginpar{
 \begin{center}
- \includegraphics[scale=.15]{imagenes/fpreima.png}\\
+ \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/fpreima.png}\\
  Conjunto $f^{-1}(D)$
 \end{center}
 }
@@ -137,12 +137,12 @@ Muy a menudo utilizaremos las propiedades que a continuación se
 enuncian. Las demostraciones, de las mismas, quedaran a cargo del
 alumno; ver Ejercicio \vref{3}.
 
-\begin{proposicion}\label{propfunc} Sea $f:A\longrightarrow B$ una función.
+\begin{proposicion}{propfunc} Sea $f:A\longrightarrow B$ una función.
 Entonces
 \begin{itemize}
 \item[1.] $f(C_1\cup C_2)=f(C_1)\cup f(C_2).$
 \item[2.]$f^{-1}(D_1\cup D_2)= f^{-1}(D_1)\cup f^{-1}(D_2).$
-\item[3.] $f(C_1\cap C_2)\subset f(C_1)\cap f(C_2).$
+\item[3.] $f(C_1\cap C_2)\subset f(C_1)\cap f(C_2).$ Dar un ejemplo de que la igualdad no vale en general.
 \item[4.]$f^{-1}(D_1\cap D_2)= f^{-1}(D_1)\cap f^{-1}(D_2).$
 \end{itemize}
 \end{proposicion}
@@ -151,22 +151,31 @@ Entonces
 También vamos a considerar el \index{Conjuntos!partes}\emph{conjunto de partes} de un conjunto
 dado, esto es el conjunto de todos sus subconjuntos.
 Explícitamente:
-\[\mathcal{P}(A)=\{C:C\subset A\}.\]
+\[\mathscr{P}(A)=\{C:C\subset A\}.\]
 Se pueden efectuar uniones e intersecciones de una cantidad
 arbitraria de conjuntos. Para poder enunciarlas debemos definir
 antes lo que entendemos por una \emph{familia subindicada de
 conjuntos} (o brevemente \emph{familia de conjuntos}).
 
-\begin{definicion} Supongamos dado un conjunto $I$, al que nos referiremos como
+\begin{definicion}{}  Supongamos dado un conjunto $I$, al que nos referiremos como
 conjunto de índices, y una función $i:I\longrightarrow
-\mathcal{P}(A)$. Así tenemos que, para cada $i\in I$, existe
+\mathscr{P}(A)$. Así tenemos que, para cada $i\in I$, existe
 un único subconjunto de $A$, que llamaremos $A_i$. Diremos entonces que $\{A_i\}_{i\in I}$ es una familia
 subindicada de conjuntos por el conjunto de índices $I$.
 \end{definicion}
 
+\marginpar{%\vspace{-9cm}
+\begin{center}
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Cantor.jpg}\\
+ George Cantor (1845-1918)
+\end{center}
+\small
+Georg Ferdinand Ludwig Philipp Cantor (San Petersburgo, 3 de marzo de 1845-Halle, 6 de enero de 1918) fue un matemático y lógico nacido en Rusia. Fue inventor con \index[personas]{Dedekind, Richard}\index[personas]{Frege, Friedrich Ludwig Gottlob }Dedekind y Frege de la teoría de conjuntos, que es la base de las matemáticas modernas. Gracias a sus atrevidas investigaciones sobre los conjuntos infinitos fue el primero capaz de formalizar la noción de infinito bajo la forma de los números transfinitos (cardinales y ordinales). 
+(Wikipedia)}
+
 Ahora podemos definir la unión y la intersección de una
 familia de esta índole de la siguiente manera
-\begin{definicion} Definimos la unión e intersección de una
+\begin{definicion}{}  Definimos la unión e intersección de una
 familia $\{A_i\}_{i\in I}$ por:
 \[\bigcup_{i\in I}A_i=\{a:\exists i\in I:a\in A_i\}\]\index[simbolos]{$\bigcup_{i\in I}A_i$}
 y
@@ -179,21 +188,25 @@ Estas propiedades las usaremos con frecuencia.
  Por último, en esta revisión de conjuntos, expondremos el
  axioma de elección. Este es un axioma de la teoría de
  conjuntos. Hay que aclarar que es posible axiomatizar la
- teoría de conjuntos, de esta axiomatización el mencionado axioma
- puede formar parte. Decimos ``puede'' por que este
- axioma ha despertado multitud de controversias en torno a su
- inserción o no en el restante conjunto de axiomas. No vamos a
+ teoría de conjuntos. Ver por ejemplo \href{https://es.wikipedia.org/wiki/Axiomas_de_Zermelo-Fraenkel}{Axiomas de Zermelo-Fraenkel} y los \href{https://es.wikipedia.org/wiki/Teoría_de_conjuntos_de_Von_Neumann-Bernays-Gödel}{Von Neumann-Bernays-G\"odel}.  De estas axiomatizaciones el mencionado axioma
+ forma parte. El axioma de elección  ha ocasionado multitud de controversias en torno a su  inserción o no en el restante conjunto de axiomas. No vamos a
  discutir aquí esta controversia ni tampoco la teoría
  axiomática de conjuntos pues esto nos desviaría de nuetros
  objetivos. Solo enunciaremos el \index{Axioma de elección}\emph{axioma de elección}, que
  usaremos frecuentemente.
 
-\begin{axioma} Sea $\{A_i\}_{i\in I}$ una familia de conjuntos no
+ 
+ %axioma
+
+\begin{mdframed}[style=MiEstilo]\relax%
+ \textbf{Axioma. (Elección)}  Sea $\{A_i\}_{i\in I}$ una familia de conjuntos no
 vacios. Entonces existe una función
 \[f:I\longrightarrow\bigcup_{i\in I}A_i.\]
 con la propiedad  que: 
 \[\forall i\in I: f(i)\in A_i.\]
-\end{axioma}
+\end{mdframed}
+
+
 
 
 
@@ -201,14 +214,7 @@ con la propiedad  que:
 %SECCION
 
 
-\section{Definición de conjuntos coordinables}\marginnote{\vspace{-6cm}
-\begin{center}
- \includegraphics[scale=.4]{imagenes/Cantor.jpg}\\
- George Cantor (1845-1918)
-\end{center}
-\small
-Georg Ferdinand Ludwig Philipp Cantor (San Petersburgo, 3 de marzo de 1845-Halle, 6 de enero de 1918) fue un matemático y lógico nacido en Rusia. Fue inventor con \index[personas]{Dedekind}\index[personas]{Frege}Dedekind y Frege de la teoría de conjuntos, que es la base de las matemáticas modernas. Gracias a sus atrevidas investigaciones sobre los conjuntos infinitos fue el primero capaz de formalizar la noción de infinito bajo la forma de los números transfinitos (cardinales y ordinales). 
-(Wikipedia)}
+\section{Definición de conjuntos coordinables}
 En esta sección definimos el concepto clave de esta unidad, a
 saber el concepto de que dos conjuntos sean \index{Conjuntos!coordinabilidad}\emph{coordinables}. Este concepto fue introducido y explotado por George Cantor.  Damos
 una breve discución para motivar nuestra definición.
@@ -229,18 +235,18 @@ $\{1,\dots,20\}$. Más aún, esta correspondencia fue biyectiva
 pues a cada número le correspondió solo uno de los objetos, es decir la función es inyectiva, y a cada objeto le
 correspondió algún número, es decir  la función es
 suryectiva. En otras palabras contar un conjunto significa
-determinar el \index{intervalo inicial} \emph{intervalo inicial} del conjunto de los
+determinar el \index{intervalo inicial} \emph{intervalo inicial}\marginpar{ \emph{Intervalo inicial:}  un conjunto de
+la forma: $\{j\in\mathbb{N}:1\leq j\leq n\}$, para cierto
+$n\in\mathbb{N}$. De ahora en más, llamaremos a este conjunto:
+$\mathbb{N}_n$} del conjunto de los
 números naturales para el cual exista una correspondencia biyectiva
 con el conjunto que queremos contar. Conocer esto obviamente es
-inútil a los efectos de contar cosas de la ``vida cotidiana'';
+inútil a los efectos de contar cosas de la vida cotidiana;
 no obstante, es una observación fundamental a los efectos de
 extender lo que llamamos ``contar'' a conjuntos infinitos. Lo que
 antecede sugiere la siguiente definición.
-\marginnote{ \emph{Intervalo inicial:}  un conjunto de
-la forma: $\{j\in\mathbb{N}:1\leq j\leq n\}$, para cierto
-$n\in\mathbb{N}$. De ahora en más, llamaremos a este conjunto:
-$\mathbb{N}_n$}
-\begin{definicion}\label{defcoordinables} Dados dos conjuntos: $A$ y $B$,
+
+\begin{definicion}{defcoordinables} Dados dos conjuntos: $A$ y $B$,
 se dirá que ellos son coordinables, escribiremos \index[simbolos]{$A\thicksim B$}$A\thicksim B$,
 si existe una función biyectiva $f:A\longrightarrow B$.
 \end{definicion}
@@ -253,7 +259,7 @@ una relación de equivalencia (ver Ejercicio \vref{1}).
  Ahora
 veamos algunos ejemplos.
 
-\begin{ejemplo}Consideremos la función
+\begin{ejemplo}{}Consideremos la función
 $f:\nn\longrightarrow\{x\in\nn:x\,\,\text{es par}\}$, definida por
 $f(x)=2x$. Facilmente se ve que $f$ es una biyección entre los
 conjuntos indicados. De ahí que:
@@ -263,9 +269,9 @@ $\nn\thicksim\{x\in\nn:x\,\,\text{es par}\}$.
 En este ejemplo observamos que, desde nuestro punto de vista, el
 conjunto de los naturales tiene la misma cantidad de elementos
 que el conjunto de los naturales pares. Es decir, según nuestra concepción de cantidad de elementos, el
-todo no es mayor que una de sus partes. Este ejemplo ya lo había mencionado Galileo Galilei.
+todo no es mayor que una de sus partes. Este ejemplo ya lo había mencionado Galileo Galilei\index[personas]{Galilei, Galileo}.
 
-\begin{ejemplo}\label{rcoord(0,1)} Veamos que $\rr\thicksim (0,1)$. En este caso se
+\begin{ejemplo}{rcoord(0,1)} Veamos que $\rr\thicksim (0,1)$. En este caso se
 puede considerar la función
 
 \[f(x):= \tan\biggl(\frac{2\pi x-\pi}{2}\biggr).\]
@@ -291,7 +297,7 @@ finitos e infinitos. Apelamos a la idea que todos nos forjamos en nuestras vidas
 partir de la noción  de coordinalidad, de definir de forma
 matemáticamente precisa los anteriores  significados.
 \index{Conjuntos!finitos}\index{Conjuntos!infinitos}\index{Conjuntos!numerables}\index{Conjuntos!a lo sumo numerables}
-\begin{definicion} Diremos que un conjunto $A$ es:
+\begin{definicion}{}  Diremos que un conjunto $A$ es:
 \begin{itemize}
 \item[1.] \textbf{finito} si existe un $n\in\nn$ tal que
 $A\thicksim\nn_n$.
@@ -301,7 +307,7 @@ $A\thicksim\nn_n$.
 \end{itemize}
 \end{definicion}
 
-En virtud de que $\thicksim$ es una realción de equivalencia, y
+En virtud de que $\thicksim$ es una realación de equivalencia, y
 especialmente por el carácter transitivo de esta, si $A\thicksim
 B$ y $B$ tiene alguna de las cuatro propiedades de la definición
 anterior entonces $A$ tendrá esa misma propiedad.
@@ -319,7 +325,7 @@ y finito a la vez; dicho de otra forma, los conjuntos numerables
 son infinitos. Esto, como hemos definido los conceptos numerable y
 finito de  manera precisa, tiene que ser demostrado.
 
-\begin{teorema}\label{nesinfinito} Un conjunto numerable es
+\begin{teorema}{nesinfinito} Un conjunto numerable es
 infinito.
 \end{teorema}
 \begin{demo} Supongamos que, por lo contrario, existe un conjunto
@@ -345,11 +351,11 @@ que $1$.
 Vamos a ver algunos otros conjuntos que también son numerables.
 Empezamos por el siguiente.
 
-\begin{proposicion}\label{subconjunto} Un subconjunto de un conjunto a lo sumo numerable es a
+\begin{proposicion}{subconjunto} Un subconjunto de un conjunto a lo sumo numerable es a
 lo sumo numerable.
 \end{proposicion}
 \begin{demo} Sea $A\subset B$, con $B$ a lo sumo numerable. Se puede suponer
-que $B\subset \nn$. ?`Por qué? Y, también podemos suponer que
+que $B\subset \nn$. ?`Por qué? También podemos suponer que
 $A$ es infinito, puesto que si fuera finito no habría nada
 que probar. Definimos una función $f:\nn\longrightarrow A$ por
 induccion. Puesto que los números naturales son bien ordenados,
@@ -380,7 +386,7 @@ $\nn\thicksim f(\nn)$. Lo que es una contradicción pues $\nn$ es
 infinito.
 \end{demo}
 
-\begin{proposicion}\label{zesnum}
+\begin{proposicion}{zesnum}
 El conjuntos $\mathbb{Z}$, de los enteros,  es numerable.
 \end{proposicion}
 \begin{demo} Construímos una función que establece
@@ -397,7 +403,7 @@ función es la siguiente:
 función $f$ es una biyección entre $\nn$ y $\mathbb{Z}$.
 \end{demo}
 
-\begin{proposicion}\label{NxNesnum} El conjunto $\nn\times\nn$ es numerable.
+\begin{proposicion}{NxNesnum} El conjunto $\nn\times\nn$ es numerable.
 \end{proposicion}
 \begin{demo} La demostración de este enunciado ya no es tan
 sencilla. La idea se la debemos a G. Cantor. Primero presentaremos un razonamiento \href{https://es.wikipedia.org/wiki/Heur%C3%ADstica}{heurístico}  de
@@ -410,7 +416,7 @@ la construcción de la biyección entre $\nn\times\nn$
 
 
  Dispongamos del conjunto $\nn\times\nn$ en un arreglo del tipo
-de una ``matríz infinita'', como sigue:
+de una matríz infinita, como sigue:
 \[\begin{diagram}
 (1,1)   & \rTo        & (1,2)  &                      & (1,3)  &                      & (1,4) &\dots\\
         & \ldTo(2,2)  &        &\ldTo(2,2)\ruTo(4,2)  &        & \ldTo(2,2)\ruTo(6,4) &        &     \\
@@ -494,7 +500,7 @@ entonces $A\times B$ es numerable.
 La siguiente propiedad también es útil para determinar si un
 conjunto es numerable.
 
-\begin{proposicion}\label{numinysur}Sean $A$ y $B$ conjuntos, con $B$ a lo sumo
+\begin{proposicion}{numinysur} Sean $A$ y $B$ conjuntos, con $B$ a lo sumo
 numerable.
 \begin{itemize}
 \item[1.] Supongamos que existe una función inyectiva $f:A\longrightarrow
@@ -519,18 +525,17 @@ inyectiva, entonces obtendríamos la tesis a partir del inciso
 Supongamos que $a_1,a_2\in A$ y que $a_1\neq a_2$. Afirmamos que
 $f^{-1}(\{a_1\})\cap f^{-1}(\{a_2\})=\emptyset$. En efecto, si
 $b\in f^{-1}(\{a_1\})\cap f^{-1}(\{a_2\})$ entonces por un lado
- $f(b)=a_1$ y por otro $f(b)=a_2$, lo que es una contradicción pues $a_1\neq a_2$.
-\end{demo}
+ $f(b)=a_1$ y por otro $f(b)=a_2$, lo que es una contradicción pues $a_1\neq a_2$. Luego, como $g(a_1)\in f^{-1}(\{a_1\})$ y 
+$g(a_2)\in f^{-1}(\{a_2\})$ se tiene que $a_1\neq a_2$.
+ \end{demo}
 
 Es interesante hacer notar que, utilizando el teorema anterior,
 podemos dar otra demostración, más concisa, de la
-Proposición \vref{NxNesnum}.
-
-En esta demostración hacemos uso del Teorema Fundamental de la
+Proposición \vref{NxNesnum}. En esta demostración hacemos uso del Teorema Fundamental de la
 Aritmética. Recordemos lo que este teorema nos dice:
 
 
-\begin{teorema}[Fundamental de la Aritmética] Todo entero positivo $n$ se representa, de
+\begin{teorema}[Fundamental de la Aritmética]{teo:fund_arit} Todo entero positivo $n$ se representa, de
 manera única, de la forma $n=p_1^{\alpha_1}p_2^{\alpha_2}\dots
 p_j^{\alpha_j}$, donde $p_1$, $p_2$,...,$p_j$ son números primos
 y $\alpha_1$, $\alpha_2$,...,$\alpha_j$ son enteros positivos.
@@ -561,10 +566,16 @@ demostración.
 
 Ahora podemos demostrar  uno de los resultados más interesantes
 de esta teoría.
-
-\begin{teorema} El conjunto $\mathbb{Q}$ es numerable.
+\marginpar{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}
+{imagenes/Weierstrass.jpg}
+\end{center}
+El influyente matemático Karl Weierstrass 1815-1897 fue de los primeros en reconocer la importancia del resultado que afirma la numerabilidad de $\mathbb{Q}$, observó que esto implicaba la existencia de una sucesión $\{a_n\}$ tal que dado cualquier número real $a$ existe una subsucesión  
+$\{a_{n_k}\}$ tal que $\lim a_{n_k}=a$. }
+\begin{teorema}{} El conjunto $\mathbb{Q}$ es numerable.
 \end{teorema}
-\begin{demo} Sabemos que $\mathbb{Z}$ es numerable y dejamos como ejercicio demostrar que $\mathbb{Z}-\{0\}$ es numerable. Consecuentemente también  $\mathbb{Z}\times\mathbb{Z}-\{0\}$ es numerable. Podemos
+\begin{demo} Sabemos que $\mathbb{Z}$ es numerable y dejamos como ejercicio demostrar que $\mathbb{Z}-\{0\}$ es numerable. Consecuentemente también  $\mathbb{Z}\times\left(\mathbb{Z}-\{0\}\right) $es numerable. Podemos
 definir la siguiente función:
 \[
 \begin{split}
@@ -592,7 +603,7 @@ todos los conjuntos resultan ser numerables, pero ya veremos, en
 la sección siguiente, que no es así.
 
 
-\begin{lema}\label{subconjnum} Todo conjunto infinito tiene un
+\begin{lema}{subconjnum} Todo conjunto infinito tiene un
 subconjunto numerable.
 \end{lema}
 
@@ -634,13 +645,10 @@ extendemos la biyección a todo $\nn$ de cualquier
 forma\footnote{Por ejemplo: ponemos $f(j)=1$ para $j>n$}, la
 función resultante es suryectiva, aunque ya no inyectiva.
 
-\begin{proposicion}\label{unionnumdenum} Sea $I$ un conjunto de índices a lo sumo
+\begin{proposicion}{unionnumdenum} Sea $I$ un conjunto de índices a lo sumo
 numerable. Supongamos que para cada $i\in I$ tenemos un conjunto
-$A_i$ que, también, es a lo sumo numerable. Entonces
-\[\bigcup_{i\in I}A_i\]
-es a lo sumo numerable. Brevemente: ``Una unión a lo sumo
-numerable de conjuntos a lo sumo numerables es a lo sumo
-numerable''.
+$A_i$ que, también, es a lo sumo numerable. Entonces $\bigcup_{i\in I}A_i$
+es a lo sumo numerable. 
 \end{proposicion}
 
 \begin{demo} Como vimos, para cada $i\in I$ existe una función
@@ -661,17 +669,17 @@ obtenemos la tesis.
 \end{demo}
 
 
-\section{Un conjunto no numerable} \index{Conjuntos;no numerables}
+\section{Un conjunto no numerable} \index{Conjuntos!no numerables}
 Vimos que $\nn$ es numerable, por definición, y que $\mathbb{Z}$
 y $\mathbb{Q}$ son también numerables. Ahora mostraremos un
 conjunto que no es a lo sumo numerable. No será otro que el
 conjunto de los numeros reales.
 
 
-\begin{teorema}\label{realnonum} El conjunto $\mathbb{R}$ no es
+\begin{teorema}{realnonum} El conjunto $\mathbb{R}$ no es
 a lo sumo numerable.
 \end{teorema}
-\begin{demo} Supongamos, por el contrario, que $\mathbb{R}$ es a
+\begin{demo} \marginpar{El arguemnto de esta demostración se conoce como \href{https://es.wikipedia.org/wiki/Argumento_de_la_diagonal_de_Cantor}{argumento diagonal de Cantor}. Es un técnica de demostración ideada por George Cantor. Actualmente es  utilizada frecuentemente para resolver otros tipos problemas}Supongamos, por el contrario, que $\mathbb{R}$ es a
 lo sumo numerable. En virtud de la Proposición
 \vref{subconjunto}, tendríamos que el intervalo $[0,1)$
 sería también a lo sumo numerable. Como él es infinito
@@ -701,7 +709,7 @@ a_n&=0.a_{n,1}a_{n,2}a_{n,3}\dots\\
  \end{split}\]
 Ahora definimos un número $r=0.r_1r_2\dots\in[0,1)$, tomando en
 cuenta los valores de $a_{i,j}$ sobre la digonal principal, que
-por fuerza no será ninguno de los $a_j$. La definición es la
+    no será igual a ninguno de los $a_j$. La definición es la
 siguiente:
 \[r_n:=\left\{
 \begin{array}{ll}
@@ -731,9 +739,9 @@ con $\rr$.
 
 
 
-\section{Una aplicación}
-En esta sección daremos una aplicación de los conceptos
-desarrollados en las secciones previas. Veremos como estos se
+\section{Una aplicación: existencia de números trascendentes}
+En esta sección desarrollaremos una aplicación de los conceptos
+desarrollados en las secciones previas  para demostrar un resultado de la matemática pura. Veremos como estos se
 pueden usar para demostrar la existencia de números
 trascendentes. Antes empezaremos con algunas definiciones.
 
@@ -750,7 +758,7 @@ $\alpha\in\mathbb{C}$ tal que
 Observar que un número racional $q=n/m$ es solución (o
 raíz del polinomio) de la siguiente ecuación:
 \[P(X):=mX-n=0.\]
-Notar que este polinomio $P$ es de primer grado y además
+Este polinomio $P$ es de primer grado y además
 $P\in\mathbb{Z}[X]$. Reciprocamente, si $q$ es solución de una
 ecuación polinomial $P(X)=0$, donde $P$ es de primer grado y con
 coeficientes en $\mathbb{Z}$, entonces $q$ es racional.
@@ -763,15 +771,20 @@ números reales, a saber los \emph{trascendentes}\index{Números!trascendentes}.
 Tomemos por caso el
 número $\sqrt{2}$, que como sabemos es irracional. A pesar de
 ello $\sqrt{2}$ es solución de una ecuación a coeficientes
-enteros de  segundo grado. Nos referimos a
-siguiente:
+enteros de  segundo grado. Nos referimos a:
 \[X^2-2=0.\]
 Vemos que $\sqrt{2}$ tiene, si se nos permite por el momento esta
 expresión, un grado de irracionalidad no muy grande, puesto
 que es solución de una ecuación de segundo grado a
-coeficientes enteros. A estos números se los llama \index{Números!irracionales cuadráticos} \emph{irracionales cuadráticos}.
-
-Nos preguntamos ahora si existiran números que acorde con la perspectiva anterior tengan el mayor grado
+coeficientes enteros. A los números irracionales satisfaciendo esta propiedad se los llama \index{Números!irracionales cuadráticos} \emph{irracionales cuadráticos}.
+\marginpar{
+El problema de la existencia de números trascendentes fue
+resuelto por \index[personas]{Liouville, Carl Louis Ferdinand von } Carl Louis Ferdinand von Liouville en 1844. El demostró que el número
+\[L=\sum_{n=0}^{\infty}\frac{1}{10^{n!}}\]
+es trascendente. Posteriormente C. Hermite\index[personas]{Hermite} demostró en 1873
+que $e=2.7172...$ es trascendente y Lindemann\index[personas]{Lindemann}, en 1882, que $\pi$
+también lo es.}
+Nos preguntamos ahora si existiran números que, acorde con la perspectiva anterior, tengan el mayor grado
 de irracionalidad  posible. Esto es que no sean solución de
 ninguna ecuación polinomial a coeficientes enteros, no importa
 del grado que fuere. Llamaremos a estos números, cuya existencia
@@ -783,12 +796,6 @@ número que sea obtenido por medio de raices, del grado que
 fuere, de números enteros son algebraicos. Esto indica que
 resolver el problema planteado puede no ser fácil.
 
-El problema de la existencia de números trascendentes fue
-resuelto por \index[personas]{Liouville}Liouville en 1844. El demostró que el número
-\[L=\sum_{n=0}^{\infty}\frac{1}{10^{n!}}\]
-es trascendente. Posteriormente C. Hermite\index[personas]{Hermite} demostró en 1873
-que $e=2.7172...$ es trascendente y Lindemann\index[personas]{Lindemann}, en 1882, que $\pi$
-también lo es.
 
 En esta sección mostraremos el argumento usado por G. Cantor, en
 1874, para demostrar la existencia de números trascendentes. La
@@ -802,6 +809,13 @@ modo, los números trascendentes son los más comunes entre los
 números reales. Los racionales, por el contrario, son una
 excepción, habiendo de ellos solo una cantidad numerable.
 
+
+\marginpar{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}
+{imagenes/Kronecker.jpg}
+\end{center}
+Uno de los mayores opositores a la Teoría de Conjunto de Cantor fue Leopold Kronecker (1823-1891). Kronecker rechazó la demostración de existencia de números trascendentes de Cantor. Sostuvo que había que evitar los argumentos con conjunto infinitos y construir la matemática a partir de los números naturales por medio de argumentos finitistas.  }
 Es bueno comentar que hubo matemáticos  que se opusieron a
 G.Cantor y a su Teoría de Conjuntos. Quizas la gota que
 rebalso el vaso fue la anterior demostración de la existencia
@@ -812,7 +826,7 @@ la teoría de conjuntos.
 
 La clave de la demostración es el siguiente lema.
 
-\begin{lema} El conjunto $\mathbb{Z}[X]$ es numerable.
+\begin{lema}{} El conjunto $\mathbb{Z}[X]$ es numerable.
 \end{lema}
 \begin{demo} Un polinomio  en $\mathbb{Z}[X]$ y de grado $n$ se puede
 identificar con la $n+1$-upla de enteros formada por sus
@@ -842,7 +856,7 @@ numerable.
 Como corolario obtenemos que el conjunto de números algebraicos
 es numerable.
 
-\begin{corolario}\label{algsonnum}
+\begin{corolario}{algsonnum}
 El conjunto de números algebraicos es numerable.
 \end{corolario}
 \begin{demo} Se tiene que
@@ -861,13 +875,13 @@ $\mathbb{T}\neq\emptyset$. Pues de lo contrario, como
 $\rr=\mathbb{A}\cup\mathbb{T}$ y como la unión de a lo sumo
 numerables es a lo sumo numerable, tendríamos que $\rr$
 sería a lo sumo numerable, que es una contradicción. Pero
-en realidad podemos demostrar algo más que
+en realidad podemos demostrar algo más fuerte  que
 $\mathbb{T}\neq\emptyset$; podemos probar que
 $\mathbb{T}\thicksim\rr$. Esto es consecuencia del siguiente
 teorema, que afirma que al sacarle un conjunto numerable a un
 conjunto coordinable con $\rr$ no alteramos la cantidad de
 elementos del conjunto.
-\begin{lema} Sean $A\thicksim\rr$ y $B\thicksim\nn$ tales que
+\begin{lema}{} Sean $A\thicksim\rr$ y $B\thicksim\nn$ tales que
 $B\subset A$. Entonces $A-B\thicksim\rr$.
 \end{lema}
 \begin{demo} Tenemos que $A-B$ es infinito, de lo contrario, por la
@@ -889,7 +903,7 @@ No es dificil demostar que $\hat{f}$ es una biyección, de donde
 $A-B\thicksim A\thicksim\rr$.
 \end{demo}
 
-\begin{corolario} $\mathbb{T}\thicksim\rr$.
+\begin{corolario}{} $\mathbb{T}\thicksim\rr$.
 \end{corolario}
 \begin{demo} Aplicando el lema anterior, con $A=\rr$ y
 $B=\mathbb{A}$, obtenemos la tesis.
@@ -906,9 +920,9 @@ noción al decir que había más números reales que
 naturales. No obstante, en aquel momento, esa afirmación solo
 constituyó una interpretación de cierto resultado, otra manera
 de decirlo que fuera común a nuestra experiencia. En todo caso,
-no fue ni una definición, ni un teorema, ni nada que fuera
+no fue ni una definición ni nada que fuera
 plausible de ser demostrado. En esta sección,  formalizaremos el
-concepto de y posteriormente analizaremos
+concepto   y posteriormente analizaremos
 algunas consecuencias de este.
 
 Intuitivamente, decíamos que había más reales que
@@ -930,27 +944,27 @@ $\nn$, es una aplicación inyectiva de $\nn_0$ en $\rr$.
 Esperemos que la discución de este ejemplo muestre la
 siguiente definición como natural.
 
-\begin{definicion}\label{relorden} Dados dos conjuntos $A$ y $B$, diremos que
+\begin{definicion}{relorden} Dados dos conjuntos $A$ y $B$, diremos que
 $A\precsim B$ si existe una aplicación inyectiva
 $f:A\longrightarrow B$. Si, además, $A\nsim B$ diremos entonces
 que $A\prec B$.
 \end{definicion}
 
 
-\begin{ejemplo} Si $A$ es un conjunto infinito, entonces
+\begin{ejemplo}{} Si $A$ es un conjunto infinito, entonces
 $\nn\precsim A $. Esto es consecuencia del Lema \vref{subconjnum}
 \end{ejemplo}
 
-\begin{ejemplo} Si $A$ es un conjunto finito entonces $A\prec\nn$.
+\begin{ejemplo}{} Si $A$ es un conjunto finito entonces $A\prec\nn$.
 Esto es consecuencia de la definición y del Teorema
 \vref{nesinfinito}.
 \end{ejemplo}
 
-\begin{ejemplo} Tenemos las siguientes relaciones
+\begin{ejemplo}{} Tenemos las siguientes relaciones
 \[\nn\thicksim\mathbb{Z}\thicksim\mathbb{Q}\thicksim\mathbb{A}\prec\mathbb{T}\thicksim\rr.\]
 \end{ejemplo}
 
-\begin{ejemplo} Si $A\prec B$, $A\thicksim C$ y
+\begin{ejemplo}{} Si $A\prec B$, $A\thicksim C$ y
 $B\thicksim D$, entonces $C\prec D$. A continuación justificamos esta afirmación. A causa de las
 hipótesis, existen: una función inyectiva $f:A\longrightarrow
 B$ y funciones biyectivas: $g:C\longrightarrow A$ y
@@ -981,22 +995,25 @@ hipótesis.
 En el siguiente teorema podemos ver que para cualquier conjunto
 $A$ hay otro conjunto que es mas grande, en el sentido de la
 Definición \vref{relorden}. Este conjunto será el conjunto de
-partes $\mathcal{P}(A)$.
+partes $\mathscr{P}(A)$.
 
-\begin{teorema}[Cantor]\label{teorcantor} Para todo conjunto $A$, $A\prec\mathcal{P}(A)$.
+\begin{teorema}[Cantor]{}\label{teorcantor} Para todo conjunto $A$, $A\prec\mathscr{P}(A)$.
 \end{teorema}
-\begin{demo} Tenemos que probar que: $A\precsim\mathcal{P}(A)$ y
-$A\nsim\mathcal{P}(A)$. La siguiente función:
+\begin{demo} Tenemos que probar que: $A\precsim\mathscr{P}(A)$ y
+$A\nsim\mathscr{P}(A)$. La siguiente función:
 
 \[\begin{split}
-        f:A&\longrightarrow\mathcal{P}(A)\\
+        f:A&\longrightarrow\mathscr{P}(A)\\
           a&\longmapsto \{a\}
   \end{split}
 \]
-es inyectiva, de modo que $A\precsim\mathcal{P}(A)$.
+es inyectiva, de modo que $A\precsim\mathscr{P}(A)$.
+
+
 
 Supongamos que existe una biyección
-$g:A\longrightarrow\mathcal{P}(A)$. Definimos el subconjunto $B$
+$g:A\longrightarrow\mathscr{P}(A)$. 
+Definimos el subconjunto $B$
 de $A$ de la siguiente manera
 \[B:=\{a\in A:a\notin g(a)\}.\]
 Como $g$ es suryectiva, existe un $b\in A$ tal que $g(b)=B$.
@@ -1006,21 +1023,24 @@ contradicción. Si fuera falso, es decir $b\notin B$, nuevamente
 por la definición de $B$, deducimos que $b\in g(b)=B$, otra
 contradicción. De modo que, no importando cual, todos los casos
 nos conducen a una contradicción que es  fruto de suponer que
-$A\thicksim\mathcal{P}(A)$.
+$A\thicksim\mathscr{P}(A)$.\marginpar{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}
+{imagenes/Russell.jpg}
+\end{center}
+Bertrand Russel (1872-1970), inspirado en la demostración  de Cantor sobre la relación entre la cardinalidad de $A$ y $\mathscr{P}(A)$, construyo un \emph{paradoja}\index{paradoja} (esto es un razonamiento aparentemente coprrecto que lleva a una contradicción) de la teoría de conjuntos. Esta paradoja consiste en definir
+\[B=\{A: A\notin A\}.\]
+Puede verse facilmente que cualquiera de las siguientes afirmaciones: $A\in A$ y $A\notin A$ lleva a una contradicción.}
 \end{demo}
 
 Una propiedad importante de $\precsim$ es su atisimetría,
 esta propiedad no es facil de probar.
 
-\begin{teorema}[Schr\"oder-Bernstein]\label{scho-ber} Si
+\begin{teorema}[Schr\"oder-Bernstein]{scho-ber} Si
 $A\precsim B$ y $B\precsim A$ entonces $A\thicksim B$.
 \end{teorema}
 
-\noindent\emph{Idea de la demostración} Como dijimos, la
-demostración de este teorema  no es tan sencilla. En primer
-lugar, trataremos de explicar la idea que subyace en ella,  y
-posteriormente la expondremos acabadamente.
-
+\begin{demo} 
 Por las hipótesis, existen funciones inyectivas
 $f:A\longrightarrow B$ y $g:B\longrightarrow A$. Si alguna de
 estas funciones fuera suryectiva, entonces el teorema ya
@@ -1053,7 +1073,7 @@ $B_1:=f(A_1)$. Ver la Figura \vref{figura3}
 
 
 \begin{center}
-\includegraphics[scale=.5]{imagenes/supfyg.png}
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/supfyg.png}
 \end{center}
 
  \caption{Las funciones $f$ y $g^{-1}$}\label{figura3}
@@ -1067,7 +1087,9 @@ suryectiva de $g(B)$ en $B$. No obstante, con esa elección de
 $\tilde{A}$, la función $\tilde{f}$ no es inyectiva pues cada
 elemento de $B_1$ es imágen, por esta $\tilde{f}$, de dos
 elementos, uno en $A_1$ y otro en $g(B)$. De modo que esta
-elección de $\tilde{A}$ todavía no nos sirve. Lo que vamos
+elección de $\tilde{A}$ todavía no nos sirve.
+
+Lo que vamos
 a hacer ahora es agregarle a $\tilde{A}$ el conjunto de todos los
 elementos de $g(B)$ tales que $g^{-1}$ los lleva a $B_1$. Este
 conjunto es $A_2:=g(B_1)$. Definamos además $B_2:=f(A_2)$. Ahora
@@ -1093,27 +1115,15 @@ $B_n$, y luego definir:
 \end{equation}
 
 
-\index[personas]{Schr\"oder}\index[personas]{Berstein}
+\index[personas]{Schr\"oder, Ernst }\index[personas]{Berstein, Felix}
 \begin{figure}[h]
  \begin{center}
-\includegraphics[scale=.5]{imagenes/schber4.png}
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/schber4.png}
 \end{center}
  \caption{Demostración del teorema de Schr\"oder-Berstein}\label{figura4}
 \end{figure}
 
-Intuitivamente, este conjunto debería  funcionar, es decir no
-hay más superposición de $f$ con $g^{-1}$. Esto es pues si
-$a\in\tilde{A}$ entonces $a\in A_n$, para algún $n$, y $f(a)\in
-B_n$; eventualmente $f(a)$ podría ser igual a algún
-$g^{-1}(a')$, pero $a'$ tendría que estar en $A_{n+1}$ y por
-consiguiente está en $\tilde{A}$. Y así
-$\tilde{f}(a')=f(a')$, y no $\tilde{f}(a')=g^{-1}(a')$, evitando
-la superposición de imagenes.
-
-\vspace{10pt}
-\begin{demo}\emph{Teorema \ref{scho-ber}} Estamos en condiciones de hacer la demostración propiamente
-dicha del teorema. Hasta ahora solo tratamos de explicar la
-demostración. Definimos inductivamente conjuntos $A_n$ y $B_n$
+Definimos inductivamente conjuntos $A_n$ y $B_n$
 de la siguiente manera:
 
 \[\left\{%
@@ -1125,9 +1135,9 @@ de la siguiente manera:
 
 Definamos $\tilde{A}$  como en ~\eqref{defatilde} y $\tilde{f}$
 como en ~\eqref{ftilde}. Veamos que $\tilde{f}:A\longrightarrow B$
-es biyectiva, empezando por la inyectividad.
+es biyectiva.
 
-Sean $a,a'\in A$ dos puntos cualesquiera tales que
+Empecemos por la inyectividad. Sean $a,a'\in A$ dos puntos cualesquiera tales que
 $\tilde{f}(a)=\tilde{f}(a')$. Si $a$ y $a'$ están
 simultaneamente en $\tilde{A}$, o en $\tilde{A}^c$, tenemos que
 $a=a'$ como consecuencia de que $f$ y $g^{-1}$ son inyectivas.
@@ -1159,24 +1169,24 @@ $a=g(b)$. Que era lo que queríamos probar.
 \end{demo}
 
 \section{Números Cardinales}
-\marginnote{\vspace{-4cm}
+\marginpar{\vspace{-4cm}
 \begin{center}
- \includegraphics[scale=.13]{imagenes/Borges.jpg}\\
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Borges.jpg}\\
 \end{center}
 \small
-<<Borges y la matemática es un libro de ensayo de 2006 de Guillermo Martínez que relata como varias ideas en la matemática moderna se hallan en la obra literaria del autor argentino Jorge Luis Borges, incluyendo conceptos como la teoría de conjuntos, recursión, la teoría de caos, y sucesión matemática infinita,1​ aunque los enlaces más fuertes que Borges tuvo con la matemática son a través de la teoría de conjuntos infinitos de Georg Cantor. El título del cuento El Aleph se alude al uso de la letra hebrea de Cantor, álef ( $\aleph$ ) por denotar cardinalidad de conjuntos transfinitos>> (Wikipedia)
+<<Borges y la matemática es un libro de ensayo de 2006 de Guillermo Martínez que relata como varias ideas en la matemática moderna se hallan en la obra literaria del autor argentino Jorge Luis Borges, incluyendo conceptos como la teoría de conjuntos, recursión, la teoría de caos, y sucesión matemática infinita. Aunque los enlaces más fuertes que Borges tuvo con la matemática son a través de la teoría de conjuntos infinitos de Georg Cantor. El título del cuento El Aleph se alude al uso de la letra hebrea de Cantor, álef ( $\aleph$ ) por denotar cardinalidad de conjuntos transfinitos>> (Wikipedia)
 }
 
-Hasta el momento hemos introducido la noción de cuando dos conjuntos tienen la misma catidad de elementos. Pero no hemos definido el concepto de cantidad de elementos de un conjunto digamos $A$.  A grandes rasgos esto debería ser una característica de todos los conjuntos coordinables con $A$ y se denominará \index{Cardinal}\emph{cardinal} del conjunto $A$ y lo denotaremos por $\#A$. George Cantor defininió este concepto. La definición precisa demanda desarrollar la Teoría de números ordinales, que no es la intención de estas notas. Permítasenos pues invocar el concepto de cardinal a partir de la definición matemáticamente no satisfactoria que dimos, pero creemos que es bastante clara al entendimiento. 
+Hasta el momento hemos introducido la noción de cuando dos conjuntos tienen la misma cantidad de elementos. Pero no hemos definido el concepto de cantidad de elementos de un conjunto digamos $A$.  A grandes rasgos esto debería ser una característica de todos los conjuntos coordinables con $A$ y se denominará \index{Cardinal}\emph{cardinal} del conjunto $A$ y lo denotaremos por $\#A$. La definición precisa demanda desarrollar la Teoría de números ordinales, que no es la intención de estas notas. Nos vamos a tomar la licencia de invocar el concepto de cardinal a partir de la idea intuitiva que dimos de este concepto. 
 
- Se sabe que los números cardinales están ordenados bajo el orden es el definido en la sección anterior.  Concretamente escribiremos   $\#A< \#B$ cuando $A\prec B$. Se puede demostrar que este un buen orden, en el sentido que todo conjunto acotado inferiormente tiene primer elemento. 
+ Se sabe que los números cardinales están ordenados con la relación  de orden  definida en la sección anterior.  Concretamente escribiremos   $\#A< \#B$ cuando $A\prec B$. Se puede demostrar que este un buen orden, en el sentido que todo conjunto acotado inferiormente tiene primer elemento. 
  
  Desde George Cantor es costumbre denotar los números cardinales con letras del alfabeto hebreo. Así el primer \emph{cardinal transfinito}\index{Cadinal!transfinito}\footnote{Como es usual adoptaremos la denominación de transfinito en lugar de infinito como usamos hasta aquí} es el que le corresponde a los números naturales y se denota por $\aleph_0$.
  \index[simbolos]{$\aleph_0$} Como el conjunto de cardinales es bien ordenado existe un sucesor de $\aleph_0$ al que denominamos naturalmente $\aleph_1$. Al cardinal que corresponde a los números reales lo denominamos $c$. Sabemos que $\aleph_0<\aleph_1\leq c$ y George Cantor  conjeturó
-que $c=\aleph_1$. Esta fue una de las más famosas conjeturas de la matemática y se denominó \href{https://es.wikipedia.org/wiki/Hipótesis_del_continuo}{La Hipótesis del Continuo}. George Cantor fracasó en hallar una demostración de la hipótesis del continuo.   El gran maremático Kurt G\"odel probó en 1938 que esta hipótesis es consistente con el sistema axiomático de la Teoría de conjuntos de  \index[personas]{Zermelo}\index[personas]{Fraenkel} Zermelo y Fraenkel, y por tanto puede ser tomado como un axioma nuevo para la teoría de conjuntos. Sin embargo, en 1963 \index[personas]{Cohen} Paul Cohen probó que la negación de la hipótesis del continuo también es consistente con los axiomas ZF, lo cual prueba que dicha hipótesis es totalmente independiente de los axiomas ZF. Esta situación es similar a la de las geometrías no euclídeas. 
-\marginnote{\vspace{-2cm}
+que $c=\aleph_1$. Esta fue una de las más famosas conjeturas de la matemática y se denominó \href{https://es.wikipedia.org/wiki/Hipótesis_del_continuo}{La Hipótesis del Continuo}. George Cantor fracasó en hallar una demostración de la hipótesis del continuo.   El gran matemático\index[personas]{G\"odel, Kurt} Kurt G\"odel probó en 1938 que esta hipótesis es consistente con el sistema axiomático de la Teoría de conjuntos de  \index[personas]{Zermelo, Ernst}\index[personas]{Fraenkel, Adolf  } Zermelo y Fraenkel, y por tanto puede ser tomado como un axioma nuevo para la teoría de conjuntos. Sin embargo, en 1963 \index[personas]{Cohen}\index[personas]{Cohen, Paul} Paul Cohen probó que la negación de la hipótesis del continuo también es consistente con los axiomas ZF, lo cual prueba que dicha hipótesis es totalmente independiente de los axiomas ZF. Esta situación es similar a la de las geometrías no euclídeas. 
+\marginpar{\vspace{-2cm}
 \begin{center}
- \includegraphics[scale=.3]{imagenes/godel.png}\\
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/godel.png}\\
 \end{center}
 \small
 <<Kurt Gödel; Brünn, Imperio austrohúngaro, actual República Checa, 28 de abril de 1906-Princeton, Estados Unidos; 14 de enero de 1978) fue un lógico, matemático y filósofo austríaco.
@@ -1200,7 +1210,7 @@ No contento con introducir los números cardinales transfinitos George Cantor in
 Algunas relaciones que hemos demostrado
 \[
  \begin{array}{ccl}
-  \forall \aleph: 2^\aleph &< \aleph & \text{(Por Teorema \ref{teorcantor})}\\  
+  \forall \aleph: \aleph &<2^\aleph  & \text{(Por Teorema \ref{teorcantor})}\\  
    \aleph_0\times\aleph_0&=\aleph_0 &\text{(Por Proposición \ref{NxNesnum})}\\
    \aleph_0+\aleph_0&=\aleph_0 &\text{(Por Proposición \ref{unionnumdenum})}\\
    
@@ -1218,12 +1228,12 @@ Habíamos visto
 que $\rr\nsim\nn$. ?` Qué ocurre con $\rr^2$, $\rr^3$,...?
 ?`Serán estos conjuntos más ``numerosos'' que $\rr$? Esto es:
 ?`Serán no coordinables con $\rr$?. Recordando que $\#\rr=c$ nos preguntamos si $c<c^2$. La respuesta a esta
-pregunta es negativa, es decir $\rr^n\thicksim\rr$ esto es$c^n=c$. Para ver esto
+pregunta es negativa, es decir $\rr^n\thicksim\rr$ esto es $c^n=c$. Para ver esto
 basta demostrar que $(0,1)^2\thicksim (0,1)$. El caso general es
 consecuencia del caso $n=2$, usando inducción, el Ejemplo
 \vref{rcoord(0,1)} y el Ejercicio \vref{1.2}.
 
-\begin{teorema} $(0,1)^2\thicksim (0,1)$. En otras palabras $c^2=c$. 
+\begin{teorema}{} $(0,1)^2\thicksim (0,1)$. En otras palabras $c^2=c$. 
 \end{teorema}
 \begin{demo} Observar que $(0,1)\precsim (0,1)^2$. Para
 demostrarlo considerar la función inyectiva $f(x)=(x,1/2)$.
@@ -1246,18 +1256,18 @@ anterior, no es suryectiva. Un número que no es imagen de
 ningún par es $0.909090...$. ?`Por qué será esto?
 
 Por el Teorema \vref{teorcantor} tenemos que
-$\nn\prec\mathcal{P}(\nn)$. Desmostramos, además, que $\nn\prec
+$\nn\prec\mathscr{P}(\nn)$. Desmostramos, además, que $\nn\prec
 \rr$. Nos preguntamos, ahora, que relación unirá
-$\mathcal{P}(\nn)$ con $\rr$. Con el siguiente teorema probaremos
+$\mathscr{P}(\nn)$ con $\rr$. Con el siguiente teorema probaremos
 que aquellos conjuntos son coordinables.
 
-\begin{teorema} $\mathcal{P}(\nn)\thicksim\rr$. En otras palabras $2^{\aleph_0}=c$.
+\begin{teorema}{} $\mathscr{P}(\nn)\thicksim\rr$. En otras palabras $2^{\aleph_0}=c$.
 \end{teorema}
-\begin{demo} Probaremos que $\mathcal{P}(\nn)\precsim\rr$ y después que
-$\mathcal{P}(\nn)\succsim\rr$.
+\begin{demo} Probaremos que $\mathscr{P}(\nn)\precsim\rr$ y después que
+$\mathscr{P}(\nn)\succsim\rr$.
 
- Como $\mathcal{P}(\nn)\thicksim\mathbf{2}^{\nn}$ ( Ejercicio \vref{6}), y por el
- Ejercicio \vref{1.2} inciso 4, probaremos que $\mathcal{P}(\nn)\precsim\rr$ si podemos
+ Como $\mathscr{P}(\nn)\thicksim\mathbf{2}^{\nn}$ ( Ejercicio \vref{6}), y por el
+ Ejercicio \vref{1.2} inciso 4, probaremos que $\mathscr{P}(\nn)\precsim\rr$ si podemos
  probar que $\mathbf{2}^{\nn}\precsim \rr$. Para este fin,
  consideremos la siguiente función:
  \[
@@ -1280,15 +1290,15 @@ consideramos tienen solo 0 y 1}, tenemos que $f(1)=g (1)$,
 $f(2)=g(2)$,.... Por consiguiente las funciones son iguales. Lo
 que prueba la inyectividad. De este modo demostramos que
 $\mathbf{2}^{\nn}\precsim \rr$ y esto, por lo que explicamos
-anteriormente, implica que $\mathcal{P}(\nn)\precsim \rr$
+anteriormente, implica que $\mathscr{P}(\nn)\precsim \rr$
 
-Ahora debemos ver que $\mathcal{P}(\nn)\succsim\rr$. Utilizando
+Ahora debemos ver que $\mathscr{P}(\nn)\succsim\rr$. Utilizando
 los  incisos 1. y 4. del Ejercicios \vref{1.2}, vemos que es
-suficiente probar que $\rr\precsim \mathcal{P}(\mathbb{Q})$. Para
+suficiente probar que $\rr\precsim \mathscr{P}(\mathbb{Q})$. Para
 hacer esto definimos la siguiente aplicación:
 \[
    \begin{split}
-        T:\rr &\longrightarrow \mathcal{P}(\mathbb{Q})\\
+        T:\rr &\longrightarrow \mathscr{P}(\mathbb{Q})\\
         r &\longmapsto \{q\in\mathbb{Q}:q<r\}
    \end{split}
 .\]
@@ -1306,7 +1316,7 @@ $\nn^{\nn}\thicksim\mathbf{2}^{\nn}$. Mas que el resultado en
 sí, vamos a resaltar su demostración, pues contiene una
 idea interesante.
 
-\begin{proposicion} $\nn^{\nn}\thicksim\mathbf{2}^{\nn}$. En lenguaje de cardinales  $\aleph_0^{\aleph_0}=2^{\aleph_0}$.
+\begin{proposicion}{} $\nn^{\nn}\thicksim\mathbf{2}^{\nn}$. En lenguaje de cardinales  $\aleph_0^{\aleph_0}=2^{\aleph_0}$.
 \end{proposicion}
 
 \begin{demo} Dado un conjunto $X$ cualquiera, podemos interpretar una
@@ -1373,10 +1383,8 @@ más fácil de obtener pues
 \]
 \end{demo}
 
-Existe una demostración más sucinta de que
-$\nn^{\nn}\precsim\mathbf{2}^{\nn}$. No la preferimos debido a que
-no muestra una biyección, es una demostración indirecta. Ahora
-la exponemos.
+Existe una demostración mucho más  de que
+$\nn^{\nn}\precsim\mathbf{2}^{\nn}$. Sin embargo preferimos la dada arriba por la idea interesante y potencialmente útil que contiene.  Expogamos esta segunda demostración.
 \[
   \begin{split}
        \nn &\precsim \mathbf{2}^{\nn}\quad\quad\,\text{Teorema de
@@ -1395,12 +1403,12 @@ la exponemos.
 \section{Ejercicios}
 
 
-\begin{ejercicio}\label{propuniarb} Sea $f:A\longrightarrow B$ una función cualquiera.
+\begin{ejercicio}{propuniarb} Sea $f:A\longrightarrow B$ una función cualquiera.
 Supongamos que $\{A_i\}_{i\in I}$ y $\{B_i\}_{i\in I}$ son
 familias subindicadas de conjuntos, donde los $A_i$ y $B_i$ son
 subconjuntos de $A$ y $B$ respectivamente. Demostrar las
 siguientes propiedades:
-\end{ejercicio}
+
 \begin{itemize}
 \item[1.] $\biggl(\bigcup_{i\in I}A_i\biggr)^c=\bigcap_{i\in
 I}A_i^c$.
@@ -1414,23 +1422,23 @@ I}f^{-1}(B_i)$.
 \item[6.]$f^{-1}\biggl(\bigcap_{i\in I}B_i\biggr)=\bigcap_{i\in
 I}f^{-1}(B_i)$.
 \end{itemize}
-
-\begin{ejercicio}\label{3} Demostrar las propiedades de la
+\end{ejercicio}
+\begin{ejercicio}{3} Demostrar las propiedades de la
 Proposición \vref{propfunc}
 \end{ejercicio}
-\begin{ejercicio}\label{1} Probar que $\thicksim$ es una
+\begin{ejercicio}{1} Probar que $\thicksim$ es una
 relación de equivalencia.
 \end{ejercicio}
-\begin{ejercicio}\label{1.2} Supongamos que $A\thicksim B$ y
+\begin{ejercicio}{1.2} Supongamos que $A\thicksim B$ y
 $C\thicksim D$.
 \begin{itemize}
-\item[1.] Demostrar que $\mathcal{P}(A)\thicksim \mathcal{P}(B)$.
+\item[1.] Demostrar que $\mathscr{P}(A)\thicksim \mathscr{P}(B)$.
 \item[2.] Demostrar que $A\times C\thicksim B\times D$.
 \item[3.] Demostrar que $A^C\thicksim B^D$.
 \item[4.] Si $A\precsim C$ entonces $B\precsim D$.
 \end{itemize}
 \end{ejercicio}
-\begin{ejercicio}\label{potdelapot} Sean $A$, $B$ y $C$ conjuntos
+\begin{ejercicio}{potdelapot} Sean $A$, $B$ y $C$ conjuntos
 no vacios. Demostrar que
 \begin{itemize}
 \item[1.] $\bigl(A^{B}\bigr)^C\thicksim A^{B\times C}$.
@@ -1438,28 +1446,35 @@ no vacios. Demostrar que
 \end{itemize}
 \end{ejercicio}
 
-\begin{ejercicio}\label{1.5} Demostrar que un subconjunto de un conjunto
+\begin{ejercicio}{1.5} Demostrar que un subconjunto de un conjunto
 finito es finito.
 \end{ejercicio}
-\begin{ejercicio}\label{2} Demostrar que la función
+\begin{ejercicio}{2} Demostrar que la función
 $f:\nn\times\nn\longrightarrow\nn$ definida por:
 \[f(j,k):=\frac{(j+k-1)(j+k)}{2}-j+1,\]
 es una biyección.
 \end{ejercicio}
-\begin{ejercicio}\label{5} Demostrar, exhibiendo una biyección, que $(0,1)\thicksim [0,1]$
+
+\begin{ejercicio}{} Encontrar, de manera explícita, una cantidad numerable de subconjuntos
+de $\nn$, mutuamente disjuntos y cada uno de ellos 
+numerable. Usar esto para dar otra demostración de que $\nn\times\nn$ es
+numerable.
 \end{ejercicio}
-\begin{ejercicio}\label{6} Demostrar que el conjunto
-$\mathcal{P}(\nn)$ es coordinable con el conjunto
+
+\begin{ejercicio}{5} Demostrar, exhibiendo una biyección, que $(0,1)\thicksim [0,1]$
+\end{ejercicio}
+\begin{ejercicio}{6} Demostrar que el conjunto
+$\mathscr{P}(\nn)$ es coordinable con el conjunto
 $\mathbf{2}^{\nn}$, donde $\mathbf{n}=\{0,1,...,n-1\}$. Recordar
 que, si $A$ y $B$ son conjuntos, $B^A:=\{f:f:A\longrightarrow
 B\}$. De este modo $\mathbf{2}^{\nn}$ es el conjunto de funciones
 $f:\nn\longrightarrow \{0,1\}$.
 \end{ejercicio}
 
-\begin{ejercicio}\label{8} Demostrar que, para cualquier conjunto
-$A$, $\mathcal{P}(A)\thicksim\mathbf{2}^A$.
+\begin{ejercicio}{8} Demostrar que, para cualquier conjunto
+$A$, $\mathscr{P}(A)\thicksim\mathbf{2}^A$.
 \end{ejercicio}
-\begin{ejercicio}\label{infcoordconsub} Demostrar que son
+\begin{ejercicio}{infcoordconsub} Demostrar que son
 equivalentes:
 \begin{itemize}
      \item[1.] $A$ es infinito.
@@ -1468,17 +1483,31 @@ equivalentes:
      $A\thicksim B$.
 \end{itemize}
 \end{ejercicio}
-\begin{ejercicio} Demostrar que el conjunto formado por todos los
-sub-\newline conjuntos de $\nn$ que son finitos, es numerable.
+
+\begin{ejercicio}{} Sea $A$ un conjunto infinito y $B\subset A$ 
+ numerable. Supongamos que $A-B$ es infinito. Demostrar que
+$A-B\sim A$.
+\end{ejercicio}
+
+
+
+
+\begin{ejercicio}{} Sean $A$ y $B$ conjuntos y supongamos que existe
+una funci'on  $f$ de $A$ en $B$ suprayectiva. Demostrar que $\#
+B\leq \#A$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Demostrar que el conjunto formado por todos los
+subconjuntos de $\nn$ que son finitos, es numerable.
 ?`Qué ocurrira con el conjunto de todos los subconjuntos
 infinitos?
 \end{ejercicio}
-\begin{ejercicio} Sea $\{A_i\}_{i\in I}$ una familia de intervalos
+\begin{ejercicio}{} Sea $\{A_i\}_{i\in I}$ una familia de intervalos
 de $\rr$. Suponer que los conjuntos en la familia son mutuamente
 disjuntos, es decir: $A_i\cap A_j=\emptyset$ si $i\neq j$.
 Demostrar que el conjunto $\{A_i:i\in I\}$ es a lo sumo numerable.
 \end{ejercicio}
-\begin{ejercicio} Recordemos que una función
+\begin{ejercicio}{} Recordemos que una función
 $f:\rr\longrightarrow\rr$ se dice nodecre-\newline ciente, si para
 todos $x,y\in\rr$, tales que $x<y$, se tiene que $f(x)\leq f(y)$.
 Dada una función nodecreciente, demostrar que el conjunto de
@@ -1491,9 +1520,9 @@ límites laterales:
 \]
 existen para todo $a\in\rr$. Luego aplicar el ejercicio anterior.
 \end{ejercicio}
-\begin{ejercicio} Demostrar que $\rr^{\nn}\thicksim\rr$.
+\begin{ejercicio}{} Demostrar que $\rr^{\nn}\thicksim\rr$ ($c^{\aleph_0}=c$).
 \end{ejercicio}
-\begin{ejercicio} Como aprendimos $\nn\thicksim\mathbb{Q}$, esto
+\begin{ejercicio}{} Como aprendimos $\nn\thicksim\mathbb{Q}$, esto
 significa que existe una aplicación biyectiva
 $f:\nn\longrightarrow\mathbb{Q}$, que nos permite enumerar
 $\mathbb{Q}$ como una suceción $r_j:=f(j)$. Definimos la

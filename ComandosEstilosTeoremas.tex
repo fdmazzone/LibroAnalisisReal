@@ -1,0 +1,218 @@
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%Nuevos comandos entornos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{demo}{\noindent\emph{Dem.}}{\hfill\qed \newline\vspace{5pt}}
+
+\newenvironment{observa}{\noindent\textbf{Observación:}}{}
+\renewcommand{\C}{\overline}
+\newcommand{\com}{\mathbb{C}}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\lim}{\mathop{\rm lím}}
+\renewcommand{\inf}{\mathop{\rm ínf}}
+\renewcommand{\liminf}{\mathop{\rm líminf}}
+\renewcommand{\limsup}{\mathop{\rm límsup}}
+\renewcommand{\min}{\mathop{\rm mín}}
+\renewcommand{\max}{\mathop{\rm máx}}
+\renewcommand{\b}[1]{\boldsymbol{#1}}
+\renewenvironment{frame}[1]{}{}
+
+%%%%%%%%%%%%%%%% Funcion característica %%%%%%%%%%%5555555
+
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
+
+
+% 
+% 
+% 
+
+
+%\renewcommand{\lim}{displaystyle\lim}
+\DeclareMathOperator{\atan2}{atan2}
+\DeclareMathOperator{\sen}{sen}
+
+\pgfdeclareverticalshading{exersicebackground}{100bp}
+  {color(0bp)=(black!40);color(50bp)=(black!0)}
+
+\mdfdefinestyle{MiEstilo}{innertopmargin=10pt,linecolor=white!100,%
+linewidth=2pt,topline=true,tikzsetting={shading=exersicebackground}}  
+
+
+%%%%%%%%%%%%  Teorema %%%%%%%%%%%%%%%%%%%%%%%%%%55
+
+\newcounter{teorema}[chapter] \setcounter{teorema}{0}
+\renewcommand{\theteorema}{\arabic{chapter}.\arabic{section}.\arabic{teorema}}
+\newenvironment{teorema}[2][]{%
+\refstepcounter{teorema}%
+\mdfsetup{style=MiEstilo%
+}
+\ifstrempty{#1}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Teorema~\theteorema}\label{#2}
+}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Teorema~\theteorema~(#1)}\label{#2}
+}
+}{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Lemma
+
+
+\newcounter{lema}[chapter] \setcounter{lema}{0}
+\renewcommand{\thelema}{\arabic{chapter}.\arabic{section}.\arabic{lema}}
+\newenvironment{lema}[2][]{%
+\refstepcounter{lema}%
+\mdfsetup{style=MiEstilo%
+}
+\ifstrempty{#1}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Lema~\thelema}\label{#2}
+}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Lema~\thelema~(#1)}\label{#2}
+}
+}{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Definicion
+\newcounter{definicion}[chapter] \setcounter{definicion}{0}
+\renewcommand{\thedefinicion}{\arabic{chapter}.\arabic{section}.\arabic{definicion}}
+\newenvironment{definicion}[2][]{%
+\refstepcounter{definicion}%
+\mdfsetup{style=MiEstilo%
+}
+\ifstrempty{#1}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Definición~\thedefinicion}\label{#2}
+}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Definición~\thedefinicion~(#1)}\label{#2}
+}}{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% Demostracion
+
+\newenvironment{prf}{\noindent\emph{Dem.}}{$\square$ \newline\vspace{5pt}}
+
+
+%Corolario
+\newcounter{corolario}[chapter] \setcounter{corolario}{0}
+\renewcommand{\thecorolario}{\arabic{chapter}.\arabic{section}.\arabic{corolario}}
+\newenvironment{corolario}[2][]{%
+\refstepcounter{corolario}%
+\mdfsetup{style=MiEstilo%
+}
+\ifstrempty{#1}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Corolario~\thecorolario}\label{#2}
+}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Corolario~\thecorolario~(#1)}\label{#2}
+}}{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ejercicio
+\newcounter{ejercicio}[chapter] \setcounter{ejercicio}{0}
+\renewcommand{\theejercicio}{\arabic{chapter}.\arabic{section}.\arabic{ejercicio}}
+\newenvironment{ejercicio}[2][]{%
+\refstepcounter{ejercicio}%
+\mdfsetup{style=MiEstilo%
+}
+\ifstrempty{#1}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Ejercicio~\theejercicio}\label{#2}
+}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Ejercicio~\theejercicio~(#1)}\label{#2}
+}}{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%    Proposicion    %%%%%%%%%%%%%%%%%%%%5
+
+\newcounter{proposicion}[chapter] \setcounter{proposicion}{0}
+\renewcommand{\theproposicion}{\arabic{chapter}.\arabic{section}.\arabic{proposicion}}
+\newenvironment{proposicion}[2][]{%
+\refstepcounter{proposicion}%
+\mdfsetup{style=MiEstilo%
+}
+\ifstrempty{#1}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Proposición~\theproposicion}\label{#2}
+}
+{
+\begin{mdframed}[]\relax%
+\strut \textbf{Proposición~\theproposicion (~#1)}\label{#2}
+}}{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%Ejemplo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5555
+\newcounter{ejemplo}[chapter] \setcounter{ejemplo}{0}
+\renewcommand{\theejemplo}{\arabic{chapter}.\arabic{section}.\arabic{ejemplo}}
+\newenvironment{ejemplo}[2][]{%
+\refstepcounter{ejemplo}%
+\relax\noindent\textbf{Ejemplo~\theejemplo}\label{#2}
+}{}
+
+
+%%%%%%%%%%Observacion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5555
+\newcounter{observacion}[chapter] \setcounter{observacion}{0}
+\renewcommand{\theobservacion}{\arabic{chapter}.\arabic{section}.\arabic{observacion}}
+\newenvironment{observacion}{%
+\refstepcounter{observacion}%
+\relax\noindent\textbf{Observacion~\theobservacion}
+}{}
+
+%%%%%%%%%%%%%%%Secciones%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+
+\makeatletter
+\newcommand\makeSecHead[4][\fbox]{%
+  \@namedef{#2}{\@ifnextchar*{\@nameuse{#2@i}}{\@nameuse{#2@ii}}}
+%
+    \expandafter\def\csname#2@i\endcsname*##1{\par\vspace{#4}\noindent
+       #1{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+         \normalfont\normalsize#3\makebox[40pt][l]{}~##1}}\par\vspace{#4}}%
+%
+    \expandafter\def\csname#2@ii\endcsname{\@ifnextchar[{\@nameuse{#2@iii}}{\@nameuse{#2@iv}}}%
+%
+    \expandafter\def\csname#2@iii\endcsname[##1]##2{\par\vspace{#4}\noindent
+      #1{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+        \refstepcounter{#2}\normalfont\normalsize#3\makebox[40pt][l]{\@nameuse{the#2}}~##2}}%
+        \addcontentsline{toc}{#2}{\@nameuse{the#2}~##1}\par\vspace{#4}}%
+%
+   \expandafter\def\csname#2@iv\endcsname##1{\par\vspace{#4}\noindent
+     #1{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+       \refstepcounter{#2}\normalfont\normalsize#3\makebox[40pt][l]{\@nameuse{the#2}}~##1}}%
+       \addcontentsline{toc}{#2}{\@nameuse{the#2}~##1}\par\vspace{#4}}%
+}
+\makeatother    
+
+\makeSecHead[\colorbox{gray!30}]{chapter}{\Huge\bfseries}{20pt}
+\makeSecHead[\colorbox{gray!30}]{section}{\LARGE\bfseries}{15pt}
+\makeSecHead[\colorbox{gray!30}]{subsection}{\Large\bfseries}{12pt}
+\makeSecHead[\colorbox{gray!30}]{subsubsection}{\large\bfseries}{10pt}
+
+%\renewcommand{\emph}[1]{\fontshape{it}\selectfont #1}

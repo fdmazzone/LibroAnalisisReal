@@ -9,14 +9,9 @@
 abierto, facil de aprender, potente y portátil. Es utilizado en proyectos de todo tipo, 
 no sólo aplicaciones científicas.
 \marginnote{
-%\begin{tabular}{b{.7in} b{.7in}}
- \includegraphics[scale=.25]{imagenes/python-logo.png}
-% &\begin{pspicture}(.7in,.7in)
-%        \psbarcode{https://www.python.org/}{}{qrcode}
-%    \end{pspicture}\\
-%    &
-% {\tiny https://www.python.org/}
-% \end{tabular}
+\begin{center}
+ \adjustimage{max size={0.5\linewidth}{0.5\paperheight}}{imagenes/python-logo.png}
+\end{center}
 }
 
 
@@ -27,14 +22,9 @@ Está integrado por los módulos, SymPy (para cálculos simbólicos),
 numpy (cálculos numéricos), matplotlib (gráficos) entre otros.  
 En este curso sólo usaremos SymPy.
 \marginnote{
-%\begin{tabular}{b{.7in} b{.7in}}
- \includegraphics[scale=.5]{imagenes/scipy_logo.png}
-%&\begin{pspicture}(.7in,.7in)
-%       \psbarcode{http://www.scipy.org/}{}{qrcode}
-%   \end{pspicture}\\
-%   &
-%{\tiny http://www.scipy.org/}
-%\end{tabular}
+\begin{center}
+\adjustimage{max size={0.5\linewidth}{0.5\paperheight}}{imagenes/scipy_logo.png}
+\end{center}
 }
 
 
@@ -44,16 +34,9 @@ un sistema de álgebra computacional (SAC) completo, manteniendo el código lo m
 posible para que sea comprensible y fácilmente extensible. SymPy está escrito enteramente 
 en Python y no requiere de ninguna biblioteca externa.
 \marginnote{
- % \begin{tabular}{b{.7in} b{.7in}}
-    \includegraphics[scale=.2]{imagenes/sympy_logo.png}
-% 	&
-% 	  \begin{pspicture}(.7in,.7in)
-% 	    \psbarcode{http://www.sympy.org/}{}{qrcode}
-% 	  \end{pspicture}
-% \\
-% 	&
-% 	  {\tiny http://www.sympy.org/}
-%   \end{tabular}
+  \begin{center}
+    \adjustimage{max size={0.5\linewidth}{0.5\paperheight}}{imagenes/sympy_logo.png}
+  \end{center}
 }
 % 
 % 
@@ -61,8 +44,9 @@ en Python y no requiere de ninguna biblioteca externa.
 
 
 \href{http://matplotlib.org/}{Matplotlib} es una biblioteca de trazado de gráficos de Python que produce figuras de calidad de publicación en una variedad de formatos impresos y entornos interactivos a través de plataformas. Matplotlib se puede utilizar en scripts Python, en el shell Python e IPython, el portátil jupyter, servidores de aplicaciones web.
-\marginnote{
-  \includegraphics[scale=.1]{imagenes/matplotlib.jpg}
+\marginnote{\begin{center}
+  \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/matplotlib.jpg}
+   \end{center}
 }
 
 
@@ -108,23 +92,23 @@ Además, se puede acceder a más de 720 paquetes que pueden ser fácilmente inst
  sencilla y completa para instalar todos los recursos necesarios para desarrollar los contenidos de 
  estas notas. Existen versiones para linux, OS X y Windows. 
 \marginnote{
-    \includegraphics[scale=.3]{imagenes/anaconda.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/anaconda.png}
 }
 
 
 
 \subsection{Windows} Hay distribuciones específicas para distintos sistemas operativos. La distribución  \href{https://code.google.com/p/pythonxy/}{python(x,y)}  instala el interprete de python y todos los módulos de scipy. Además el entorno de desarrollo integrado (IDE) spyder.
-\marginnote{\includegraphics[scale=.07]{imagenes/windows-logo.png}}
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/windows-logo.png}}
 
 
 \subsection{linux} Aquí todo es más sencillo, el interprete de python suele venir con 
 la distribución del SO y se pueden instalar los módulos, SymPy, NumPy, etc, 
 recurriendo al administrador de paquetes o tipeando la sentencia adecuada en la línea 
 de comandos.  
-\marginnote{\includegraphics[scale=.4]{imagenes/linux.jpeg}}
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/linux.jpeg}}
 
 \subsection{Android} \href{http://qpython.com/}{Qpython} es una aplicación que permite ejecutar código python y una versión básica de sympy desde tablets y smartphones. Se descarga desde la plataforma \href{https://play.google.com/store/apps/details?id=com.hipipal.qpyplus}{google play}.
-\marginnote{\includegraphics[scale=.1]{imagenes/android.jpg}}. 
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/android.jpg}}. 
 
 \subsection{\href{https://es.wikipedia.org/wiki/Computación_en_la_nube}{Computación en la nube}}
 
@@ -152,7 +136,7 @@ Se puede trabajar de tres formas
 
 \section{Características sobresalientes del lenguaje}
 
-Seguiremos en esta exposición a \cite{wiki_python} de manera cercana. \link
+Seguiremos en esta exposición a \cite{wiki_python} de manera cercana. 
 Las principales características del lenguaje son:
 
 \normalmarginpar
@@ -211,7 +195,7 @@ El intérprete no tiene en cuenta los comentarios, lo cual es útil si deseamos 
 \subsection{Variables}
 Las variables se definen de forma dinámica, lo que significa que no se tiene que especificar cuál es su tipo de antemano y que una variable puede tomar distintos valores en distintos momentos de un programa, incluso puede tomar
  un tipo diferente al que tenía previamente. \emph{Se usa el símbolo = para asignar valores a variables.}
-\advertencia Es importante distinguir este = (de asignación) con el igual que es utilizado para definir igualdades en sympy, para ecuaciones por ejemplo.
+ Es importante distinguir este = (de asignación) con el igual que es utilizado para definir igualdades en sympy, para ecuaciones por ejemplo.
 
 
 
@@ -226,13 +210,13 @@ dinamicamente
 
 Python implementa diferentes tipos de datos. Para la noción de \emph{tipos de datos} en 
 general 
-ver \cite{wiki:tipo_dato}\link. A continuación describimos sumariamente algunos de los tipos 
+ver \cite{wiki:tipo_dato}. A continuación describimos sumariamente algunos de los tipos 
 más comunes presentes en Python. Cuando se utilizan módulos específicos (p. ej. sympy) la 
 diversidad  de tipos de datos se expande, con la incorporación de tipos con significación
 matemática, p.ej. matrices,  expresiones algebraicas, etc. 
 
 
-\includegraphics[scale=.4]{imagenes/tipo_datos.jpg}
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/tipo_datos.jpg}
 
 Se clasifican en:
 \begin{description}
@@ -449,8 +433,8 @@ while numero < 3:
 % 
 % \end{document}
 
-\bibliographystyle{plain}%{apalike-url}
-\bibliography{biblio,diferenciales_ecuaciones,diferenciales_ecuaciones_sim}
+%\bibliographystyle{plain}%{apalike-url}
+%\bibliography{biblio,diferenciales_ecuaciones,diferenciales_ecuaciones_sim}
 
 
 

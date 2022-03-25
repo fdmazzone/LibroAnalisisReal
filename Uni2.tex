@@ -4,18 +4,18 @@
 
 \chapter{Nociones Básicas de Topología }
 
+\section{Espacios Métricos}
 
-
-\section{Enfoque axiomático de las  estructuras métricas} 
+\subsection{Enfoque axiomático de las  estructuras métricas} 
 \marginnote{\vspace{-2cm}
 \begin{center}
-\includegraphics[scale=.2]{imagenes/Frechet.jpg}
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Frechet.jpg}
 \end{center}
 \small
 Maurice René Fréchet; (Maligny, 2 de septiembre de 1878 - París, 4 de junio de 1973) fue un matemático francés. Trabajó en topología, teoría de la probabilidad y la estadística. 
 Sus trabajos en análisis funcional lo empujaron a buscar un marco más general que el espacio euclídeo introduciendo la noción de espacio métrico\index[personas]{Frechet}. 
 }
-Uno de los conceptos fundamentales de la matemática es la noción de \index{Distancia}\emph{distancia}. Esta noción está presente en multitud de actividades humanas, desde el comercio a la descripción del cosmos. En matemática medimos distancias en el plano y en el espacio y en las representaciones algebraicas de ellos  $\rr^2$ y $\rr^3$. Más generalmente  en espacios euclideanos $n$-dimensionales $\rr^n$. Desde comienzos del siglo XX los matemáticos fueron extendiendo la noción de distancia a conjuntos compuestos de los más diversos entes, matrices, funciones, funciones que actúan sobre funciones, etc. Esta ubicuidad y multiplicidad del concepto de distancia justifica un tratamiento axiomático de él.
+Uno de los conceptos fundamentales de la matemática es la noción de \index{Distancia}\emph{distancia}. Esta noción está presente en multitud de actividades humanas, desde el comercio a la descripción del cosmos. En matemática medimos distancias en el plano y en el espacio y en las representaciones algebraicas de ellos  $\rr^2$ y $\rr^3$. Más generalmente  en \index{Espacio Euclideano} \emph{espacios euclideanos} $n$-dimensionales $\rr^n$. Desde comienzos del siglo XX los matemáticos fueron extendiendo la noción de distancia a conjuntos compuestos de los más diversos entes, matrices, funciones, funciones que actúan sobre funciones, etc. Esta ubicuidad y multiplicidad del concepto de distancia justifica un tratamiento axiomático de él.
 
 
 
@@ -24,7 +24,7 @@ Uno de los conceptos fundamentales de la matemática es la noción de \index{Dis
 
 
 
-\begin{definicion} Sea $X$ un conjunto y $d:X\times X\rightarrow
+\begin{definicion}{} Sea $X$ un conjunto y $d:X\times X\rightarrow
 \mathbb{R}$ una función. Diremos que $d$ es una \index{Métrica}\emph{métrica} o \emph{distancia}
 sobre $X$ si satisface las siguientes propiedades:
 	  \begin{itemize}
@@ -38,11 +38,11 @@ $(X,d)$ es un \index{Espacio métrico}\emph{espacio métrico}.
 \end{definicion}
 \marginnote{
 \begin{center}
-\includegraphics[scale=.25]{imagenes/triag.png}
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/triag.png}
 Desigualdad triangular
 \end{center}
 }
-La desigualdad iii) en la definición anterior se denomina\index{desigualdad triágular}
+La desigualdad iii) en la definición anterior se denomina\index{Desigualdad triágular}
 \emph{desigualdad triágular}, esto debido a que se la puede
 pensar como la relación entre un lado de un triágulo y la suma
 de los otros dos, ver figura  en el margen.
@@ -52,7 +52,7 @@ de los otros dos, ver figura  en el margen.
 
 Veamos ahora algunos ejemplos de espacios métricos.
 
-\begin{ejemplo} La función módulo $|.|:\mathbb{R}\rightarrow
+\begin{ejemplo}{} La función módulo $|.|:\mathbb{R}\rightarrow
 \mathbb{R}$ induce una métrica sobre $\mathbb{R}$, a saber: para
 $x,y\in\mathbb{R}$ definimos
 \begin{equation}\label{distmod}
@@ -60,7 +60,7 @@ $x,y\in\mathbb{R}$ definimos
 \end{equation}
 \end{ejemplo}
 
-\begin{ejemplo}\label{ejem,disteuclidea} Sobre $\mathbb{R}^n$
+\begin{ejemplo}{ejem,disteuclidea} Sobre $\mathbb{R}^n$
 consideremos la función
 distancia $d$ definida por
 \begin{equation}\label{meteuclidea}
@@ -69,13 +69,12 @@ distancia $d$ definida por
 donde $\mathbf{x}=(x_1,\dots,x_n)$ e $\mathbf{y}=(y_1,\dots,y_n)$.
 Dejamos al alumno la demostración de que $d$ es una métrica,
 ver Ejercicio \vref{ejmeteuclidea}. Esta métrica es conocida
-como \emph{métrica euclidea}\index{métrica euclidea} y es la métrica usual que estamos
-habituados a considerar.
+como \emph{métrica euclidea}\index{Métrica!euclidea} y es la métrica con la que estamos más familiarizados.
 \end{ejemplo}
 
 
 
-\begin{ejemplo} Dado cualquier conjunto no vacío $X$, la
+\begin{ejemplo}{} Dado cualquier conjunto no vacío $X$, la
 función definida por:
 \[
 	d(x,y):=\left\{
@@ -86,11 +85,11 @@ función definida por:
 \right.
 \]
 es una métrica. Esta métrica se denomina \emph{métrica
-discreta}.\index{métrica
+discreta}.\index{Métrica!
 discreta}
 \end{ejemplo}
 
-\begin{ejemplo}\label{ejem,distsobrecont} Dado un conjunto $X$,
+\begin{ejemplo}{ejem,distsobrecont} Dado un conjunto $X$,
 definamos $\mathcal{A}(X)$
 como el conjunto de todas las funciones acotadas $f:X\rightarrow
 \mathbb{R}$. Entonces $(\mathcal{A}(X),d)$ es una métrica,
@@ -100,7 +99,7 @@ donde:
 \end{equation}
 \end{ejemplo}
 
-\begin{ejemplo}\label{ejem,distsobrecontl1} Sea $\mathcal{C}([0,1])$
+\begin{ejemplo}{ejem,distsobrecontl1} Sea $\mathcal{C}([0,1])$
 el conjunto de funciones
 continuas $f:[0,1]\rightarrow\mathbb{R}$. Entonces\linebreak
 $(\mathcal{C}([0,1]),d)$ es un espacio métrico, donde:
@@ -108,12 +107,12 @@ $(\mathcal{C}([0,1]),d)$ es un espacio métrico, donde:
 	d(f,g):=\int_0^1|f(x)-g(x)|dx.
 \end{equation}
 \end{ejemplo}
-\section{Bolas, esferas y diámetro}
+\subsection{Bolas, esferas y diámetro}
 Definido lo que es una métrica y un espacio métrico, pasamos a
 definir algunas entidades de carácter geométrico, esta son el
-concepto de \emph{bola}, \emph{esfera} y \emph{diámetro}.\index{bola} \index{esfera}  \index{diámetro}
+concepto de \emph{bola}, \emph{esfera} y \emph{diámetro}.\index{Bola} \index{Esfera}  \index{Diámetro}
 
-\begin{definicion} Sea $(X,d)$ un espacio métrico, $x\in X$ y
+\begin{definicion}{} Sea $(X,d)$ un espacio métrico, $x\in X$ y
 $r>0$.
 \begin{itemize}
 \item[a)]Definimos la bola abierta $B(x,r)$, con centro en $x$ y radio
@@ -173,7 +172,7 @@ caso, si $(X,d)$ es un espacio métrico discreto, tenemos:
 Pasamos a definir, ahora, el concepto de diámetro de un
 conjunto.
 
-\begin{definicion} Sea $(X,d)$ un espacio métrico y $A\subset
+\begin{definicion}{} Sea $(X,d)$ un espacio métrico y $A\subset
 X$. Definimos el diámetro del conjunto $A$ por:
 \[
 	\delta(A):=\sup\limits_{x,y\in A}d(x,y).
@@ -186,14 +185,14 @@ concepto de diámetro.
 
 
 
-\begin{definicion} Un conjunto no vacío $A$ se dirá acotado si
+\begin{definicion}{} Un conjunto no vacío $A$ se dirá acotado si
 $\delta(A)<\infty$.
 \end{definicion}
 Es oportuno aclarar que el concepto de acotación depende del
 conjunto en si mismo y de la métrica. Así puede ocurrir que
 un mismo conjunto sea acotado con una métrica y con otra no.
 
-\begin{ejemplo} En el espacio $\mathbb{R}$, con la métrica del
+\begin{ejemplo}{} En el espacio $\mathbb{R}$, con la métrica del
 módulo, el conjunto $(0,+\infty)$ es no acotado. En cambio, con
 la métrica discreta todo conjunto, y en particular el dado, lo
 es.
@@ -201,7 +200,7 @@ es.
 
 También definiremos la distancia de un punto a un conjunto dado.
 
-\begin{definicion} En un espacio métrico $(X,d)$ se define la
+\begin{definicion}{} En un espacio métrico $(X,d)$ se define la
 distancia de $x\in X$ a $A\subset X$ como
 \[d(x,A):=\inf\limits_{y\in A}d(x,y).\]
 \end{definicion}
@@ -219,7 +218,7 @@ $\delta(B(x,1/2))=0$.
 Ahora probaremos que la unión de conjuntos acostados es, a la
 vez, un conjunto acotado.
 
-\begin{proposicion} Sean $(X,d)$ un espacio métrico, $A$ y $B$
+\begin{proposicion}{} Sean $(X,d)$ un espacio métrico, $A$ y $B$
 subconjuntos acotados de $X$. Entonces $A\cup B$ es acotado.
 \end{proposicion}
 \begin{demo}  Tenemos que probar que:
@@ -246,10 +245,10 @@ El miembro derecho, de la desigualdad anterior, es independiente
 de $x$ e $y$, de modo que quedó demostrada la  proposición.
 \end{demo}
 
-\section{Conjuntos abiertos} Uno de los conceptos
+\subsection{Conjuntos abiertos} Uno de los conceptos
 más importantes, sino el más, de la Topología es el de
 conjunto abierto.
-\begin{definicion} Sea $(X,d)$ un e.m\footnote{Abreviación para espacio
+\begin{definicion}{} Sea $(X,d)$ un e.m\footnote{Abreviación para espacio
 métrico}. Diremos que $A\subset X$ es un conjunto abierto si
 $\forall x\in A\exists r>0$ tal que:
 \[
@@ -258,7 +257,7 @@ $\forall x\in A\exists r>0$ tal que:
 \end{definicion}
 \marginnote{
 \begin{center}
-	\includegraphics[scale=.15]{imagenes/conjabi.png}
+	\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/conjabi.png}
 	Conjuntos abiertos y no abiertos.
 \end{center}
 }
@@ -272,12 +271,12 @@ puntos fuera del conjunto.
 
 Un ejemplo, esperable, de conjunto abierto lo constituyen las
 bolas abiertas.
-\begin{proposicion} Toda bola abierta es un conjunto abierto.
+\begin{proposicion}{} Toda bola abierta es un conjunto abierto.
 \end{proposicion}
 \begin{demo} 
 \marginnote{
 \begin{center}
-	\includegraphics[scale=.18]{imagenes/grafbol.png}\\
+	\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/grafbol.png}\\
 	Construcción de $r'$.
 \end{center}
 }
@@ -304,7 +303,7 @@ Así $z\in B(x,r)$, que es lo que queríamos demostrar.
 
 Ahora damos dos propiedades de conjuntos abiertos que tendrán
 mucha trascendencia más adelante.
-\begin{teorema}\label{teo,uniointerabiertos} Sea $I$ un conjunto de índices y
+\begin{teorema}{teo,uniointerabiertos} Sea $I$ un conjunto de índices y
 $\{A_i\}_{i\in I}$ una familia de conjuntos abiertos. Entonces:
 \begin{itemize}
 \item[a)] La unión $\bigcup_{i\in I}A_i$ es un conjunto abierto.
@@ -340,9 +339,9 @@ subconjunto $A\subset X$ es abierto. Efectivamente, en un e.m.
 discreto $B(x,1/2)=\{x\}$ para todo $x\in X$. En particular, si
 $x\in A$ entonces $B(x,1/2)\subset A$.
 
-\section{Interior de un conjunto y entornos} Como es costumbre,
+\subsection{Interior de un conjunto y entornos} Como es costumbre,
 empezamos con una definición.
-\begin{definicion} Sea $(X,d)$ un e.m. y $A\subset X$. Definimos
+\begin{definicion}{} Sea $(X,d)$ un e.m. y $A\subset X$. Definimos
 el interior de $A$, denotaremos este conjunto $A^0$, como el
 conjunto de todos los puntos $x\in A$ tales que existe un $r>0$
 que satisface $B(x,r)\subset A$.
@@ -358,7 +357,7 @@ sobre el borde de él, ver figura \vref{interiordeconj}.
 
 \begin{figure}
 \begin{center}
-	\includegraphics[scale=.5]{imagenes/interio.png}
+	\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/interio.png}
 	\caption{Interior de un conjunto}\label{interiordeconj}
 \end{center}
 \end{figure}
@@ -366,7 +365,7 @@ sobre el borde de él, ver figura \vref{interiordeconj}.
 Tenemos una caracterización alternativa del interior de un
 conjunto.
 
-\begin{teorema}\label{teo,mayorabierto} El interior de un conjunto $A$, es el mayor abierto
+\begin{teorema}{teo,mayorabierto} El interior de un conjunto $A$, es el mayor abierto
 contenido en $A$.
 \end{teorema}
 \begin{demo} El hecho de que $A^0$ es abierto y está contenido
@@ -381,7 +380,7 @@ necesariamente $x\in A^0$. Lo que demuestra que $B\subset A^0$.
 
 Daremos algunas propiedades de la operación de tomar el interior
 de un conjunto.
-\begin{teorema} Sea $(X,d)$ un e.m., $A$ y $B$ subconjuntos de
+\begin{teorema}{} Sea $(X,d)$ un e.m., $A$ y $B$ subconjuntos de
 $X$.
 \begin{itemize}
 \item[a)] $(A^0)^0=A^0$
@@ -404,13 +403,13 @@ B)^0$.
 \end{demo}
  Introducimos otro concepto.
 
-\begin{definicion} En un e.m. el exterior de un conjunto $A$ es el
+\begin{definicion}{} En un e.m. el exterior de un conjunto $A$ es el
 interior de su complemento. En símbolos ponemos
 $\text{Ext}(A)=(A^c)^0$.
 \end{definicion}
 
 
-\begin{definicion} Sea $(X,d)$ un e.m. y $x\in X$. Diremos que $V$
+\begin{definicion}{} Sea $(X,d)$ un e.m. y $x\in X$. Diremos que $V$
 es un entorno de $x$ si $x\in V^0$. También denotaremos por
 $E(x)$ al conjunto de todos los entornos de $x$.
 \end{definicion}
@@ -420,7 +419,7 @@ Observemos que un conjunto abierto es entorno de cada uno de sus
 puntos. La recíproca es también cierta, es decir si un
 conjunto es entorno de cada uno de sus puntos entonces es abierto.
 
-\begin{proposicion} La intersección de una cantidad finita de
+\begin{proposicion}{} La intersección de una cantidad finita de
 entornos de un punto $x$ en un e.m. $(X,d)$ es, a su vez, un
 entorno de $x$.
 \end{proposicion}
@@ -431,11 +430,11 @@ $V_1\cap\dots\cap V_n$ es un entorno de $x$. Así queda
 establecida la propiedad que expresa la proposición.
 \end{demo}
 
-\section{Conjuntos cerrados y clausura de
+\subsection{Conjuntos cerrados y clausura de
 conjuntos}
 
 Ahora introduciremos el concepto de conjunto cerrado.
-\begin{definicion} Un conjunto es cerrado si su complemento es
+\begin{definicion}{} Un conjunto es cerrado si su complemento es
 abierto.
 \end{definicion}
 
@@ -451,7 +450,7 @@ Morgan}, así veremos que cada propiedad de conjuntos abiertos
 induce una correspondiente propiedad sobre conjuntos cerrados.
 Tener en cuenta esto en la siguiente teorema.
 
-\begin{teorema}\label{teo,uniointercerrados} Sea $I$ un conjunto de índices y
+\begin{teorema}{teo,uniointercerrados} Sea $I$ un conjunto de índices y
 $\{F_i\}_{i\in I}$ una familia de conjuntos cerrados. Entonces:
 \begin{itemize}
 \item[a)] La intersección $\bigcap_{i\in I}F_i$ es un conjunto cerrado.
@@ -488,7 +487,7 @@ ejemplos de ese concepto.
 
 El concepto de interior de un conjunto tiene su dual
 correspondiente.
-\begin{definicion} Sea $(X,d)$ un e.m.. La clausura de un conjunto $A\subset
+\begin{definicion}{} Sea $(X,d)$ un e.m.. La clausura de un conjunto $A\subset
 X$ se define y denota como se ve a continuación:
 \[\C{A}:=(\text{Ext}(A))^c=\bigl[(A^c)^0\bigr]^c.\]
 \end{definicion}
@@ -499,14 +498,14 @@ la figura \vref{fig,clausura}.
 
 \begin{figure}
 \begin{center}
-	\includegraphics[scale=.5]{imagenes/clausu.png}
+	\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/clausu.png}
 	\caption{Clausura de un conjunto}\label{fig,clausura}
 \end{center}
 \end{figure}
 
 Tenemos la siguiente caracterización alternativa de clausura de
 un conjunto.
-\begin{proposicion}\label{pro,clausura} Sea $(X,d)$ un e.m. y $A\subset X$. Son
+\begin{proposicion}{pro,clausura} Sea $(X,d)$ un e.m. y $A\subset X$. Son
 equivalentes:
 \begin{itemize}
 \item[a)] $x\in \C{A}$.
@@ -531,7 +530,7 @@ modo $x\in \bigl[(A^c)^0\bigr]^c$.
 Las propiedades del interior tienen propiedades duales
 correspondientes para la clausura.
 
-\begin{teorema} Sean $(X,d)$ un e.m., $A$ y $B$ subconjuntos de
+\begin{teorema}{} Sean $(X,d)$ un e.m., $A$ y $B$ subconjuntos de
 $X$. Entonces tenemos que:
 \begin{itemize}
 \item[a)] $A\subset \C{A}$.
@@ -602,7 +601,7 @@ Por último estamos interesados en definir aquellos puntos que
 estan en lo que hemos denominado, sin ninguna precisión, borde
 de un conjunto.
 
-\begin{definicion} Diremos que $x$ pertenece a la \emph{frontera} de un
+\begin{definicion}{} Diremos que $x$ pertenece a la \emph{frontera} de un
 conjunto $A$ cuando $x$ está en la clausura de $A$ y en la
 clausura de $A^c$. Llamamos al conjunto de todos los puntos
 frontera de $A$ la \emph{frontera }de $A$ y denotaremnos este
@@ -623,9 +622,9 @@ entre derivadas y fronteras.
 
 
 
-\section{Ejercicios}
+\subsection{Ejercicios}
 
-\begin{ejercicio}\label{ejmeteuclidea} Demostrar que los siguientes son espacios métricos.
+\begin{ejercicio}{ejmeteuclidea} Demostrar que los siguientes son espacios métricos.
 
 \begin{itemize}
 	\item[a)] $(\mathbb{R},d)$ donde $d$ está definida en
@@ -651,17 +650,17 @@ redundancia, una métrica.
 \end{itemize}
 \end{ejercicio}
 
-\begin{ejercicio}\label{deslipschitz} Sea $(X,d)$ un espacio métrico. Demostrar que
+\begin{ejercicio}{deslipschitz} Sea $(X,d)$ un espacio métrico. Demostrar que
 para todos $x$ , $y$ y $z$ en $X$ tenemos que:
 \[|d(x,y)-d(x,z)|\leq d(y,z).\]
 \end{ejercicio}
 
-\begin{ejercicio}\label{daconjeslipschitz} Sea $(X,d)$ un espacio
+\begin{ejercicio}{daconjeslipschitz} Sea $(X,d)$ un espacio
 métrico y $A\subset X$. Demostrar que:
 \[|d(x,A)-d(y,A)|\leq d(x,y).\]
 \end{ejercicio}
 
-\begin{ejercicio}\label{ejer,distequiv} Sea $(X,d)$ un e.m., probar que las siguientes
+\begin{ejercicio}{ejer,distequiv} Sea $(X,d)$ un e.m., probar que las siguientes
 funciones son métricas sobre $X$:
 \begin{itemize}
 \item[a)] $d_1(x,y):=\min\{1,d(x,y)\}$.
@@ -669,12 +668,12 @@ funciones son métricas sobre $X$:
 \end{itemize}
 \end{ejercicio}
 
-\begin{ejercicio} Sea $(X,d)$ un e.m.. Demostrar que $\forall
+\begin{ejercicio}{} Sea $(X,d)$ un e.m.. Demostrar que $\forall
 x,y\in X$, existe entornos $U\in E(x)$ y $V\in E(y)$ tales que
 $U\cap V=\emptyset$.
 \end{ejercicio}
 
-\begin{ejercicio} Sea $(X,d)$ u e.m.. Demostrar las siguientes
+\begin{ejercicio}{} Sea $(X,d)$ u e.m.. Demostrar las siguientes
 propiedades:
 \begin{itemize}
 	\item[a)] Si $A\subset X$ es finito, entonces $X-A$ es abierto.
@@ -700,7 +699,7 @@ propiedades:
 	\]
 \end{itemize}
 \end{ejercicio}
-\begin{ejercicio} Dar ejemplos de:
+\begin{ejercicio}{} Dar ejemplos de:
 \begin{itemize}
 \item[a)] $A$ y $B$ abiertos de $\rr$ tales que los siguientes
 conjuntos sean todos diferentes: $\C{A}\cap \C{B}$, $\C{A\cap B}$,
@@ -713,7 +712,7 @@ siguientes conjuntos no valga ninguna inclusión: $\partial
 A\cup\partial B-\partial(A\cap B)$ y $\partial (A\cup B)$.
 \end{itemize}
 \end{ejercicio}
-\begin{ejercicio} Demostrar que los siguientes conjuntos de
+\begin{ejercicio}{} Demostrar que los siguientes conjuntos de
 $\rr^2$ y $\rr^3$, son abiertos con la métrica euclidea:
 \begin{itemize}
 \item[a)] $\{(x,y)\in\rr^2: m<d\bigl((x,y),(0,0)\bigr)<n\}$, donde
@@ -723,13 +722,13 @@ $n,m\in\nn$ y $m<n$.
 \item[c)] $\{(x,y,z)\in\rr^3: x,y,z\in\mathbb{Z}\}^c$.
 \end{itemize}
 \end{ejercicio}
-\begin{ejercicio} Hallar la frontera y el diámetro del conjunto
+\begin{ejercicio}{} Hallar la frontera y el diámetro del conjunto
 $\{\frac1n:n\in\nn\}$.
 \end{ejercicio}
-\begin{ejercicio} Demostrar que el diámetro de la dola unitaria
+\begin{ejercicio}{} Demostrar que el diámetro de la dola unitaria
 en $\rr^2$ con la métrica euclidea es 2.
 \end{ejercicio}
-\begin{ejercicio} Un e.m. $(X,d)$ se dice ultramétrico si $d$ verifica la
+\begin{ejercicio}{} Un e.m. $(X,d)$ se dice ultramétrico si $d$ verifica la
 desigualdad ultramétrica, es decir:
 \[
 	d(x,y)\leq\max\{d(x,z),d(z,y)\}.
@@ -750,3 +749,1826 @@ entonces una está  contenidad en la otra.
 $r$, contenidas en una bola cerrada de radio $r$, es igual a $r$.
 \end{itemize}
 \end{ejercicio}
+
+ \begin{ejercicio}{} Si $(X,d)$ es un e.m. demostrar que
+ \[
+	d'(x,y)=\log(1+d(x,y))
+ \]
+ define una nueva métrica sobre $X$. ?`Que tipo de conjunto son
+ las bolas de esta métrica?
+ \end{ejercicio}
+
+
+% 
+% %=================================================================
+% %seccion II
+% %==================================================================
+% 
+
+
+\section{Subespacios de un espacio métrico}
+
+Sea $(X,d)$ un e.m. e $Y\subset X$. La métrica $d$ es una
+función definida sobre $X\times X$, luego podemos considerar su
+restricción a $Y\times Y$. Esta restricción también
+cumplirá, es inmediato verlo,  los axiomas de una métrica. Por
+este motivo, el par $(Y,d)$ es un e.m., por una abuso de\marginnote{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/bolasub.jpg}
+    Una bola en un subespacio
+\end{center}
+}
+notación denotaremos la restricción de $d$ al conjunto
+$Y\times Y$ por el mismo s\'{\i}mbolo $d$.  Diremos que $Y$ es un
+subespacio de $X$.  Observar que la forma de las bolas en un
+subespacio puede ser diferente que en el espacio total, como puede
+verse en la figura \vref{fig,bolasub}. En este gráfico $X$ es el
+espacio ``total'', $Y$ el subespacio y $x$ es un punto sobre la
+frontera de $Y$, entonces la bola en $Y$ de centro $x$ y radio $r$
+es la parte que quedo cuadriculada en el dibujo. Pongamos
+$B_Y(x,r)$ para la bola en $Y$ de centro  $x$ y radio $r$,
+entonces tenemos la relación:
+
+\begin{equation}\label{eq,bolasub}
+    B_Y(x,r):=\{y\in Y: d(x,y)<r\}=B(x,r)\cap Y,
+\end{equation}
+donde $B(x,r)$ es la bola en el espacio total.
+
+
+
+El siguiente teorema nos dá una relación de los abiertos y
+cerrados en $Y$ con los abiertos y cerrados en $X$.
+
+\begin{teorema}{} Sea $(X,d)$ un e.m. e $Y\subset X$. Entonces:
+\begin{itemize}
+\item[a)] El conjunto $A$ es abierto en $Y$ si y solo si existe un
+$G$ abierto en $X$ tal que $A=G\cap Y$.
+\item[b)] El conjunto $C$ es cerrado en $Y$ si y solo si existe un
+cerrado $F$ en $X$ tal que $C=Y\cap F$.
+\end{itemize}
+\end{teorema}
+\begin{demo} Veamos, primero, la propiedad a). Sea $A$ un abierto
+en $Y$. Para cada $x\in A$ existe, de acuerdo a la Ecuación
+\vref{eq,bolasub}, un radio $r_x>0$ tal que:
+\begin{equation}\label{eq,inclusiondebolas}
+    B(x,r_x)\cap Y\subset A.
+\end{equation}
+Definamos:
+\[
+    G:=\bigcup\limits_{x\in A}B(x,r_x).
+\]
+El conjunto $G$ es abierto, pues la unión de conjuntos abiertos
+resulta abierto. Además
+\[
+    G\cap Y=\bigcup\limits_{x\in A}B(x,r_x)\cap Y= A.
+\]
+La última igualdad es cierta por la ecuación
+\vref{eq,inclusiondebolas} y por que cada $x\in A$ está en el
+conjunto $B(x,r_x)\cap Y$. De modo que, encontramos el conjunto
+que cumple la propiedad a).
+
+Ahora la demostración de b) es sencilla de obtener. Sea $C$
+cerrado en $Y$, en particular $C\subset Y$, entonces $Y-C$ es
+abierto en $Y$. Por a) existe un abierto $G$ tal que:
+\[
+    Y-C=G\cap Y.
+\]
+Entonces
+\[C=Y\cap G^c.\]
+Como el conjunto $G^c$ es cerrado, obtenemos la tesis con $F=G^c$.
+\end{demo}
+
+\begin{proposicion}{pro,entornosub}Sea $(X,d)$ un e.m. e $Y\subset X$ un
+subespacio. El conjunto $U\subset Y$ es un entorno de $x\in Y$ en
+el espacio $(Y,d)$ si y solo si existe un entorno $V$ de $x$ en el
+e.m. $(X,d)$ tal que $U=V\cap Y$.
+\end{proposicion}
+\begin{demo}
+\marginnote{
+\begin{center}
+   \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/entosub.jpg}
+    Demostración de la Proposición
+    \ref{pro,entornosub}
+\end{center}
+}
+Si $U$ es un entorno de $x$ en $Y$, entonces $x$
+está en el interior de $U$ relativo a $Y$ (pongamos $U^0_Y$ para
+este conjunto). Como $U^0_Y$ es un abierto en $Y$, por el teorema
+anterior, existe un abierto $W$ tal que $U^0_Y=Y\cap W$. Tomemos
+$V=W\cup U$. El conjunto $V$ es un entorno de $x$ en $(X,d)$, pues
+contiene al conjunto $W$ que lo es. Además $V\cap Y=U$, lo que
+demuestra la aserción.
+\end{demo}
+
+
+
+
+
+
+
+\begin{proposicion}{} Sea $(X,d)$ un e.m. e $Y\subset X$ un
+subespacio. Supongamos que $A\subset Y$. Entonces la clausura de
+$A$ en el subespacio $Y$ (denotemos esto por $\overline{A}^Y$) es
+igual a $\overline{A}^Y=\overline{A}\cap Y$.
+\end{proposicion}
+\begin{demo} El conjunto $\overline{A}\cap Y$ es un cerrado en $Y$
+que contiene al conjunto $A$, de modo que
+$\overline{A}^Y\subset\overline{A}\cap Y$. Veamos la otra
+inclusión. Sea $x\in \overline{A}\cap Y$. Como $x\in
+\overline{A}$ entonces para todo entorno $U$ de $x$, tenemos que
+$U\cap A\neq\emptyset$. Como $A\subset Y$ tenemos que $(U\cap
+Y)\cap A=U\cap A\neq\emptyset$. As\'{\i}, como $U\cap Y$ es un
+entorno  arbitrario de $X$ en el subespacio $Y$, tenemos que
+$x\in\overline{A}^Y$.
+\end{demo}
+
+\subsection{Ejercicios}
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m., $A\subset X$ y $B\subset
+A$.  Demostrar que $B^0\subset B^0_A$. Dar un ejemplo donde
+$B^0\neq B^0_A$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m., $B$ y $C$ subconjuntos de
+$X$ y $A\subset C\cap B$. Demostrar que $A$ es abierto (cerrado)
+en $B\cup C$ si, y solo si, es abierto (respectivamente cerrado)
+en $B$ y $C$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $\{G_i\}_{i\in I}$ un cubrimiento por abiertos de un e.m.
+$X$. Demostrar que $F\subset X$ es cerrado si, y solo si, $F\cap
+G_i$ es cerrado en $G_i$ para todo $i\in I$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Dar un ejemplo de un subespacio $A$ de $\rr^2$
+tal que exista una bola abierta que es un conjunto cerrado, pero
+no una bola cerrada, y una bola cerrada que es un conjunto
+abierto, pero no una bola abierta. Ayuda: Considerar $A$ formado
+por los puntos $(0,1)$, $(0,-1)$ y por un subconjunto apropiado
+del eje $x$.
+\end{ejercicio}
+
+
+
+\section{Espacios separables}
+\begin{definicion}{} Sea $(X,d)$ un e.m.. Un conjunto $A\subset X$
+se dirá \emph{denso en }$B\subset X$ si $\overline{A}\supset B$.
+Si el conjunto $A$ es denso en $X$ se dirá, brevemente, que $A$
+\emph{es denso}.
+\end{definicion}
+\begin{ejemplo}{} $\mathbb{R}-\{0\}$, $\mathbb{Q}$ son densos en $\mathbb{R}$.
+\end{ejemplo}
+\begin{ejemplo}{} Sea $(X,d)$ un e.m discreto. Entonces $A$ es denso
+si y solo si $A=X$. En efecto, tenemos que $\overline{A}=X$, de
+modo que si $x\in X$  todo entorno de $x$ interseca al conjunto
+$A$. De modo que  $B(x,1/2)\cap A\neq\emptyset$. Pero, como se
+sabe, $B(x,1/2)=\{x\}$, de modo que $x\in A$. Esto demuestra que
+$X=A$.
+\end{ejemplo}
+
+\begin{definicion}{} Un e.m. $(X,d)$ se dirá separable si tiene un
+subconjunto denso y a lo sumo numerable.
+\end{definicion}
+
+\begin{ejemplo}{} Como se dijo $\mathbb{Q}$ es un conjunto denso,
+además es numerable, por consiguiente $\mathbb{R}$ es separable.
+\end{ejemplo}
+
+\begin{ejemplo}{ej,rndenso} $\mathbb{R}^n$ con la métrica euclidea es
+separable. Afirmamos que $\mathbb{Q}^n$ es un conjunto denso y
+numerable. Para verlo, tomemos $x=(x_1,...,x_n)\in \mathbb{R}^n$ y
+veamos que está en $\overline{\mathbb{Q}^n}$. Para ello es
+suficiente probar que $B(x,r)\cap \mathbb{Q}^n\neq\emptyset$, para
+todo $r>0$. Sea $r>0$ un radio, no es muy dificil demostrar, ver
+la figura \vref{fig,rndenso}, la siguiente inclusión de un
+``cubo'' en la bola:
+\marginnote{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/rndenso.jpg}
+    Construcción del Ejemplo
+    \ref{ej,rndenso}
+    \end{center}
+}
+\[
+    (x_1-\frac{r}{\sqrt{n}},x_1+\frac{r}{\sqrt{n}})\times\dots\times
+    (x_n-\frac{r}{\sqrt{n}},x_n+\frac{r}{\sqrt{n}})\subset B(x,r).
+\]
+Como $\mathbb{Q}$ es denso en $\mathbb{R}$ existen racionales
+$q_i\in (x_i-\frac{r}{\sqrt{n}},x_i+\frac{r}{\sqrt{n}})$,
+$i=1,...,n$. En virtud de esto $(q_1,...,q_n)\in\mathbb{Q}^n\cap
+B(x,r)$. Y as\'{\i} queda establecida la afirmación.
+
+
+\end{ejemplo}
+
+\begin{ejemplo}{} Un e.m. discreto $(X,d)$ es separable si y solo si
+$X$ es a lo sumo numerable. Como vimos en un ejemplo anterior el
+único conjunto denso que hay en un e.m. discreto es el total, de
+modo que si el espacio es separable $X$ debe ser a lo sumo
+numerable.
+\end{ejemplo}
+
+\begin{definicion}{} En un e.m. $(X,d)$, una familia de conjuntos
+abiertos $\{G_i\}_{i\in I}$ se dirá \emph{base} si todo abierto
+se puede obtener como unión de miembros de la familia. Más
+precisamente, si $G$ es un abierto cualquiera existe un
+subconjunto de sub\'{\i}ndices $J\subset I$ tal que:
+\[
+    G=\bigcup_{i\in J}G_i.
+\]
+\end{definicion}
+
+\begin{ejemplo}{} En cualquier e.m. $(X,d)$ la familia de todas las
+bolas es una base. También es una base la familia de todas las
+bolas con radio igual a $1/n$ con $n\in \nn$. En efecto, si $G$ es
+un abierto cualquiera, para todo $x\in G$ existe un $r_x>0$ tal
+que $B(x,r_x)\subset G$. As\'{\i} podemos ver que
+\[
+    G=\bigcup\limits_{x\in G}B(x,r_x),
+\]
+lo que demuestra que $G$ lo podemos escribir como unión de
+bolas. Para el otro caso elegimos un natural $n_x$ suficientemente
+grande para que $1/n_x<r_x$.
+\end{ejemplo}
+
+\begin{proposicion}{pro,caracbase} Una familia de abiertos $\{G_i\}_{i\in I}$ es
+una base si y solo si para todo $x\in X$ y para todo entorno $U\in
+E(x)$, existe un $i\in I$ tal que:
+\[
+    x\in G_i\subset U.
+\]
+\end{proposicion}
+\begin{demo} $\Rightarrow )$. Sea $x\in X$ y $U\in E(x)$. Como la familia es
+base, tenemos que $U^0$ es unión de miembros de la familia.
+Además, por definición, tenemos que $x\in U^0$, estos dos
+hechos implican la tesis.
+
+$\Leftarrow)$ Sea $G$ un abierto. Por hipótesis, para cada $x\in
+G$ encontramos un $i_x\in I$ tal que $x\in G_{i_x}\subset G$.
+As\'{\i} tenemos que:
+\[
+    G=\bigcup\limits_{x\in G}G_{i_x}.
+\]
+\end{demo}
+
+\begin{teorema}{teo,basenum} Un e.m. es separable si y solo si existe una base
+a lo sumo numerable.
+\end{teorema}
+\begin{demo}$\Leftarrow )$. Sea $\{G_n\}_{n\in\nn}$ una base numerable de
+abiertos (si hubiera una base finita el razonamiento es
+idéntico). Elijamos $a_n\in G_n$. El conjunto
+$D:=\{a_n:n\in\nn\}$ es, entonces, a lo sumo numerable (?` Por
+qué?). Además, veamos que es denso. Efectivamente, sea $x\in
+X$ un punto arbitrario y $U\in E(x)$. Como consecuencia de la
+Proposición \vref{pro,caracbase} existe un $n\in\nn$ tal que
+$x\in G_n\subset U$. Ahora tenemos el punto $a_n\in G_n$, y por
+ello $U\cap D\neq\emptyset$. Probamos as\'{\i} que todo entorno de
+$x$ interseca a $D$, en consecuencia $x\in \overline{D}$. Como el
+$x$ es arbitrario, aquello prueba que $D$ es un conjunto denso.
+
+
+$\Rightarrow )$. Sea $D$ un conjunto denso y a lo sumo numerable.
+Definamos la siguiente familia de bolas abiertas:
+\[
+   \mathcal{A}:= \{B(x,\frac1n):x\in D \wedge n\in\nn\}.
+\]
+Esta es una familia a lo sumo numerable, pues la siguiente
+función
+\marginnote{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/basenum.jpg}
+    \small Demostración del Teorema
+    \ref{teo,basenum}
+\end{center}
+}
+
+\begin{eqnarray}
+    T:\nn\times D&\longrightarrow\mathcal{A}\nonumber \\
+    (n,x)&\longmapsto B(x,\frac1n)\nonumber \\
+\end{eqnarray}
+es suryectiva.
+
+
+Veamos que la familia propuesta es una base de abiertos usando la
+Proposición \vref{pro,caracbase}. Sea $x\in X$ y $U\in E(x)$.
+Como $x\in U^0$, podemos elejir $r>0$ tal que $B(x,r)\subset U$.
+Sea, ahora, $n\in\nn$ suficientemente grande, de modo que $2/n<r$.
+Como $D$ es denso debe existir un $a\in D$ tal que $a\in
+B(x,\frac1n)$. Observesé que tenemos que $x\in B(a,1/n)$, ver
+Figura \ref{fig,basenum}. Además, tenemos que $B(a,1/n)\subset
+B(x,r)\subset U$. Para demostrarlo, tomemos $y\in B(a,1/n)$.
+Entonces
+\[
+    d(x,y)\leq d(x,a)+d(a,y)<\frac1n+\frac1n=\frac2n<r.
+\]
+Tenemos as\'{\i} que $x\in B(a,1/n)\subset U$, como $B(a,1/n)$ es
+un elemento de la familia propuesta, tenemos probada la propiedad
+de la Proposicion \vref{pro,caracbase} y, de este modo, la familia
+propuesta resulta una base.
+\end{demo}
+
+\begin{corolario}{} Un subespacio de un espacio separable es
+separable.
+\end{corolario}
+\begin{demo} Sea $(X,d)$ un e.m. e $Y\subset X$. Sea $\{G_n\}_{n\in I}$
+una base a lo sumo numerable de abiertos. Es fácil demostrar que
+la familia $\{G_n\cap Y\}_{n\in I}$ es una base de los abiertos de
+$Y$.
+\end{demo}
+
+\subsection{Ejercicios}
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m. y $A\subset X$. Demostrar
+que $A\cup \text{Ext}(A)$ es denso en $A$. ?`Será cierto que
+$A^0\cup \text{Ext}(A)$ es, siempre, denso?
+\end{ejercicio}
+
+\begin{ejercicio}{} Demostrar que $\mathbb{I}:=\rr-\mathbb{Q}$ es
+separable. Exhibir un conjunto denso numerable.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $A\subset \rr$. Definamos $B:=\{x\in
+A|\exists y>x: (x,y)\cap A=\emptyset\}$. Demostrar que $B$ es a lo
+sumo numerable.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m. y $A\subset X$. Diremos que
+$a\in A$ es un \emph{punto aislado} de $A$ si existe un entorno
+$U$ de $a$ tal que $U\cap A=\{a\}$. En la Figura
+\vref{fig,aislado} el conjunto $A$ consiste de la parte sombreada
+y el punto $a$, este último es un punto aislado, pues el entorno
+$U$ satisface la definición.
+
+
+
+
+Por otra parte, un punto $a\in X$ es un \emph{punto de
+acumulación} de $A$ si, para todo entorno $U$ de $a$ se tiene
+que $(U-\{a\})\cap A\neq\emptyset$.
+
+Sea $A$ un conjunto, $B$ el conjunto de puntos de acumulación de
+$A$ y $C$ el conjunto de puntos aislados de $A$. Demostrar los
+siguientes items:
+\begin{itemize}
+    \item[a)] $B$ es cerrado, y $\overline{A}=B\cup C$.
+    \item[b)] Si $X$ es separable entonces $C$ es numerable.
+\end{itemize}
+\end{ejercicio}
+\marginnote{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/aislado.jpg}
+    \small Punto aislado
+\end{center}
+}
+\begin{ejercicio}{} Demostrar que $(X,d)$ es separable si y solo si
+ todo cubrimiento de $X$ por abiertos\footnote{Un cubrimiento por
+abiertos de $X$ es una familia de conjuntos abiertos
+$\{G_i\}_{i\in I}$ tal que $X=\bigcup_{i\in I}G_i$.} tiene un
+subcubrimiento a lo sumo numerable\footnote{Es decir existe una
+subfamilia a lo sumo numerable de la familia $\{G_i\}$ que
+también es un cubrimiento.}. \emph{Ayuda:} Sea $\{U_i\}_{i\in
+I}$ un cubrimiento de $X$ y $\{G_n\}_{n\in\nn}$ una base
+numerable. Para cada $n\in\nn$ elegir un $i_n$ tal que $G_n\subset
+U_{i_n}$. Luego la familia $\{U_{i_n}\}_{n\in\nn}$ será un
+cubrimiento.
+\end{ejercicio}
+
+
+
+\section{Funciones Continuas}
+Vamos a ver que, en el contexto de los espacios métricos,
+podemos definir el concepto de que una función sea continua.
+
+\marginnote{
+\begin{center}
+   \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/funccon.jpg}
+    \small Definición de función
+    continua
+\end{center}
+} 
+\begin{definicion}{} Sean $(X,d)$, $(Y,d')$ dos e.m, $f:X\rightarrow
+Y$ una función y $x\in X$.
+Diremos que $f$ \emph{es continua en}
+$x$ si para todo entorno  $V\in E(f(x))$, existe un entorno de
+$U\in E(x)$ tal que $f(U)\subset V$ (ver Figura
+\vref{fig,funccon}). Diremos que $f:X\rightarrow Y$ es
+\emph{continua} si es continua en cada punto de $X$.
+\end{definicion}
+
+
+
+Algunas veces es más práctico emplear las siguientes
+equivalencias de la definición de función continua en un
+punto.
+
+\begin{proposicion}{pro,caraccontpunto} Sean $(X,d)$, $(Y,d')$ dos e.m, $f:X\rightarrow
+Y$ una función y $x\in X$. Entonces son equivalentes:
+\begin{itemize}
+\item[i)] $f$ es continua en $x$.
+\item[ii)] Para todo entorno $V$ de $f(x)$, $f^{-1}(V)$ es un
+entorno de $x$.
+\item[iii)]Para todo $\epsilon>0$ existe un $\delta>0$ tal que
+si $d(x,y)<\delta$ entonces  $d'(f(x),f(y))<\epsilon$.
+\end{itemize}
+\end{proposicion}
+\begin{demo} i)$\Rightarrow$ii). Sea $V$ un entorno  de $f(x)$.
+En virtud de la definición, existe un entorno $U$ de $x$ tal que
+$f(U)\subset V$. As\'{\i} tenemos que $U\subset f^{-1}(V)$ y como
+$U$ es un entorno de $x$, $f^{-1}(V)$ también lo és.
+
+ii)$\Rightarrow$iii). Sea $\epsilon>0$. La bola $B(f(x),\epsilon)$
+es un entorno de $f(x)$, as\'{\i}, por ii), el conjunto
+$U:=f^{-1}(B(f(x),\epsilon))$ es un entorno de $x$. Entonces $x\in
+U^0$, lo que implica que existe un $\delta>0$ tal que
+$B(x,\delta)\subset f^{-1}(B(f(x),\epsilon))$. Esta inclusión es
+otra forma de afirmar iii).
+
+iii)$\Rightarrow$i). Sea $V$ un entorno de $f(x)$. Entonces existe
+$\epsilon>0$ tal que $B(f(x),\epsilon)\subset V$. Por iii), existe
+un $\delta>0$ tal que si $d(x,y)<\delta$ entonces
+$d(f(x),f(y))<\epsilon$. Esto afirma que $f(B(x,\delta))\subset
+B(f(x),\epsilon)$. Como $B(f(x),\epsilon)\subset V$, tenemos que
+$f(B(x,\delta))\subset V$. Pero $B(x,\delta)$ es un entorno de
+$x$, de modo que hemos establecido que $f$ es continua en $x$.
+\end{demo}
+\begin{ejemplo}{} Sea $f:X\rightarrow Y$ una función entre
+e.m.. Si $(X,d)$ es discreto entonces $f$ es continua. Vale decir
+si el dominio de una función es un e.m. discreto la función es
+continua, no importa que función sea ni, que sea el codominio.
+En efecto, sea $x\in X$ y $V$ un entorno de $f(x)$. Como todo
+conjunto en un e.m. es abierto, $f^{-1}(V)$ es un abierto,
+además contiene a $x$, de este modo es un entorno de $x$, lo que
+demuestra la condición ii) de la Proposición
+\vref{pro,caraccontpunto}.
+\end{ejemplo}
+\begin{ejemplo}{} Sea $(X,d)$ un e.m. e $Y$ un subespacio de $X$. La
+\emph{inyección natural} $j:Y\rightarrow X$, definida por
+$j(x)=x$ es una función continua, como se puede corroborar
+facilmente, quedando esta demostración como ejercicio.
+\end{ejemplo}
+\begin{ejemplo}{} Las funciones constantes son continuas, es decir:
+sea $(X,d)$ y $(Z,d')$ dos e.m. y $f:X\rightarrow Z$ definida por
+$f(x)=a$, donde $a$ es un punto de $Z$, entonces $f$ es continua.
+La demostración queda como ejercicio.
+\end{ejemplo}
+
+\begin{proposicion}{pro,caraccont}Sea $f:X\rightarrow Y$ continua en $x$. Supongamos que $x\in
+\overline{A}$ entonces $f(x)\in\overline{f(A)}$.
+\end{proposicion}
+
+\begin{demo} Sea $V$ un entorno de $f(x)$, hay que demostrar que
+$V\cap f(A)\neq\emptyset$. Pero, como $f$ es continua en $x$,
+$f^{-1}(V)$ es un entorno de $x$. Ahora, ya que
+$x\in\overline{A}$, tenemos que $f^{-1}(V)\cap A\neq\emptyset$.
+Sea, pues, $y\in f^{-1}(V)\cap A$. As\'{\i}, tenemos que $f(y)\in
+V\cap f(A)$. Luego $V\cap f(A)\neq\emptyset$.
+\end{demo}
+
+Ahora vamos a dar una serie de equivalencias a que una función
+sea globalmente continua.
+
+\begin{teorema}{teo,caraccont} Sean $(X,d)$ e $(Y,d')$ e.m. y $f:X\rightarrow Y$
+una función. Los siguientes enunciados son equivalentes:
+\begin{itemize}
+\item[a)] $f$ es continua.
+\item[b)]  Si $A\subset Y$ es un abierto de $Y$, entonces $f^{-1}(A)$ es
+abierto de $X$.
+\item[c)] Si $A\subset Y$ es un cerrado de $Y$, entonces $f^{-1}(A)$ es
+un cerrado de $X$.
+\item[d)] Para todo subconjunto $A\subset X$ se tiene que
+$f(\overline{A})\subset \overline{f(A)}$.
+\end{itemize}
+\end{teorema}
+\marginnote{
+\begin{center}
+   \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/fclausu.jpg}
+    \small Interpretación del inciso d) del Teorema
+    \ref{teo,caraccont}
+\end{center}
+}
+\begin{demo} La Proposición \vref{pro,caraccont} establece
+a)$\Rightarrow$d). Veamos que d)$\Rightarrow$c). Sea $A$ cerrado
+en $Y$ y $A'=f^{-1}(A)$. Entonces
+
+\begin{equation}\label{eq,caraccont}
+  \begin{split}
+       f(\overline{A'})&\subset\overline{f(A')}\quad\quad\,\,\,\text{Hipótesis}\\
+       &\subset\overline{A}\quad\quad\quad\quad\text{definición de $A'$}\\
+        &=A\quad\quad\quad\quad\text{$A$ es cerrado}\\
+  \end{split}
+\end{equation}
+Luego
+
+\[
+    \begin{split}
+        \overline{A'}&\subset f^{-1}(f(\overline{A'}))\quad\text{Propiedad de la
+        función imagen}\\
+        &\subset f^{-1}(A)\,\,\,\quad\quad\text{Inclusión
+        \ref{eq,caraccont}}\\
+        &=A'\quad\quad\quad\quad\,\,\,\,\text{Definición de $A'$}
+    \end{split}
+\]
+Por otro lado, como es sabido, $A'\subset \overline{A'}$, luego
+$\overline{A'}=A'$, lo que implica que $A'$ es cerrado.
+
+Ahora veamos que c)$\Rightarrow$b). Sea $A$ abierto en $Y$.
+Entonces $A^c$ es cerrado en $Y$. Entonces, por c), $f^{-1}(A^c)$
+es cerrado en $X$. Pero, $f^{-1}(A^c)=\bigl(f^{-1}(A)\bigr)^c$.
+
+Por último veamos que b)$\Rightarrow$a). Sea $x\in X$ y $V$ un
+entorno de $f(x)$, entonces $f(x)\in V^0$. Por hipótesis
+$f^{-1}(V^0)$ es un abierto que contiene a $x$. De este modo
+$f^{-1}(V^0)$ es un entorno de $x$. Como $f^{-1}(V^0)\subset
+f^{-1}(V)$ tenemos que $f^{-1}(V)$ es un entorno de $x$ también.
+Lo que prueba que $f$ es continua en $x$.
+\end{demo}
+
+La propiedad d) tiene una interpretación gráfica. Expresa el
+hecho que si un punto $a$ está ``pegado'' a un conjunto $A$ (en
+el sentido que $a\in \overline{A}$) entonces $f(a)$ está
+``pegado'' a $f(A)$, ver Figura \ref{fig,interpretacionteo}. Esto
+es as\'{\i} pues las funciones continuas aplican ``puntos
+próximos'' en ``puntos próximos'', y, al decir que
+$a\in\overline{A}$ estamos diciendo que $a$ ``está próximo''
+al conjunto $A$.
+
+
+
+Ahora veamos que la composición de funciones continuas es
+continua.
+
+\begin{proposicion}{} Sean $(X,d)$, $(Y,d')$, $(Z,d'')$ tres e.m.,
+$f:X\rightarrow Y$ y $g:Y\rightarrow Z$ funciones tales que $f$ es
+continua en $a\in X$ y $g$ es continua en $f(a)\in Y$. Entonces
+$g\circ f:X\rightarrow Z$ es continua en $a$.
+\end{proposicion}
+\begin{demo} Sea $W$ un entorno de $g(f(a))$. Como $g$ es continua
+en $f(a)$ entonces $V:=g^{-1}(W)$ es un entorno de $f(a)$. Luego,
+como $f$ es continua en $a$, $f^{-1}(V)=f^{-1}(g^{-1}(W))$ es un
+entorno de $a$. Esto implica la tesis, pues
+$f^{-1}(g^{-1}(W))=(g\circ f)^{-1}(W)$.
+\end{demo}
+
+\begin{corolario}{} Sea $f:X\rightarrow Y$ una función continua
+en $a$. Supongamos que $Z\subset X$ es un subespacio con $a\in Z$.
+Entonces la restricción de $f$ al subespacio $Z$, con la
+métrica de subespacio, es continua en $a$.
+\end{corolario}
+\begin{demo} La susodicha restricción es la composición de $f$
+con la inyección natural $j:Z\rightarrow X$. Por lo tanto el
+resultado sigue del hecho que la composición de funciones
+continuas es continua.
+\end{demo}
+
+Otro concepto importante es el de función uniformemente
+continua.
+
+\begin{definicion}{} Sea $f$ una función entre dos e.m. $(X,d)$ e $(Y,d')$.
+Diremos que $f$ es \emph{uniformemente continua} si para todo
+$\epsilon>0$ existe un $\delta>0$ tal que
+$d'(f(x),f(y))<\epsilon$, si $d(x,y)<\delta$.
+\end{definicion}
+
+No es facil entender la diferencia de esta definición con la que
+expresa que $f$ es continua en cada punto de $X$. La diferencia es
+que el $\delta$ de esta definición es el mismo para todos los
+puntos de $X$. Mientras que decir que $f$ es continua en cada
+punto de $X$ implicar\'{\i}a, en principio, la existencia de un
+delta  que puede depender del punto. Los siguientes ejemplos
+aclararan más esta definición.
+
+
+\begin{ejemplo}{} Las funciones constantes son uniformemente
+continuas. Dado un $\epsilon>0$ podemos tomar cualquier valor de
+$\delta$ que seguramente cumplirá la definición.
+\end{ejemplo}
+
+\begin{ejemplo}{} Una función puede ser continua en todo punto y,\marginnote{
+\begin{center}
+   \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/nounco.jpg}
+    \small Función no uniformemente
+    continua
+\end{center}
+}
+sin embargo, no ser uniformemente continua,, como muestra el
+siguiente ejemplo: Sea $f:\rr\rightarrow\rr$ definida por
+$f(x)=x^2$. Esta $f$ es continua en todo punto y no uniformemente
+continua. En efecto, la diferencia $(a+h)^2-a^2=2ah+h^2$ tiende a
+$+\infty$ si $a$ tiende a $+\infty$. De modo que asegurar que
+$h<\delta$ no implica que las imagenes de $a+h$ y $a$ esten cerca,
+no importando, para ello, cuan chico sea $\delta$. Ver Figura
+\ref{fig,nouncon}.
+\end{ejemplo}
+
+Si una función es uniformemente continua es continua en cada
+punto. La demostración de este hecho es bastante directa y
+simple.
+
+\begin{ejemplo}{} Sea $(X,d)$ un e.m. y $A\subset X$. La función:
+\[
+    \begin{split}
+        f:&X\longrightarrow \rr\\
+        &x\longmapsto d(x,A).
+    \end{split}
+\]
+es uniformemente continua. Esto es consecuencia de la desigualdad
+probada en el Ejercicio \vref{daconjeslipschitz}, a saber:
+\[
+    |d(x,A)-d(y,A)|\leq d(x,y).
+\]
+\end{ejemplo}
+
+\subsection{Ejercicios}
+
+
+
+\begin{ejercicio}{} Sean $(X,d)$, $(Y,d')$ e.m., $A$ y $B$
+subconjuntos de $X$ tales que $A\cup B=X$.
+\begin{itemize}
+\item[i)] Sea $f:X\rightarrow Y$ una función tal que
+$f_{|A}$\footnote{$f_{|A}$denota la restricción de $f$ al
+conjunto $A$} y $f_{|B}$ son ambas continuas en $x\in A\cap B$,
+probar que $f$ es continua en $x$.
+\item[ii)] Dar un ejemplo de función tal que $f_{|A}$, $f_{|B}$ y $f_{|A\cap
+B}$sean continuas pero $f$ no lo sea.
+\end{itemize}
+\end{ejercicio}
+
+\begin{ejercicio}{} Sean $(X,d)$, $(Y,d')$ e.m. y $f:X\rightarrow Y$
+una función. Demostrar que son equivalentes:
+\begin{itemize}
+\item[i)] $f$ es continua.
+\item[ii)] Para todo $B\subset Y$: $f^{-1}(B^0)\subset
+\bigl[f^{-1}(B)\bigr]^0$.
+\item[iii)]Para todo $B\subset Y$: $\overline{f^{-1}(B)}\subset
+f^{-1}(\overline{B})$.
+\end{itemize}
+Dar un ejemplo de función continua donde
+$\overline{f^{-1}(B)}\neq f^{-1}(\overline{B})$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sean $(X,d)$, $(Y,d')$ e.m. y $f,g:X\rightarrow Y$
+ funciones continuas. Demostrar que:
+ \begin{itemize}
+    \item[i)]  El conjunto $\{x\in X| f(x)=g(x)\}$ es cerrado.
+    \item[ii)] Si $f$ y $g$ coinciden en un conjunto denso
+    entonces son iguales.
+ \end{itemize}
+ \end{ejercicio}
+
+\begin{ejercicio}{} Sean $(X,d)$, $(Y,d')$ e.m.. Demostrar que son equivalentes
+\begin{itemize}
+    \item[i)] Toda función $f:X\rightarrow Y$ es continua.
+    \item[ii)] Todo punto de $X$ es aislado\footnote{Por abuso de
+    lenguaje los e.m. con esta propiedad se denominan discretos}.
+\end{itemize}
+\end{ejercicio}
+
+
+\section{Homeomorfismos e isometr\'{\i}as}
+
+\begin{definicion}{} Sean $(X,d)$, $(Y,d')$ dos e.m. y
+$f:X\rightarrow Y$ una función \emph{biyectiva}. Diremos que $f$
+es un \emph{homeomorfismo} si $f$ y $f^{-1}$ son ambas continuas.
+Dos e.m. tales que exista un homeomorfismo entre ellos se
+denominaran homeomorfos.
+\end{definicion}
+
+\begin{ejemplo}{} Dos intervalos abiertos cualesquiera de $\rr$ son
+homeomorfos, uno puede construir una función lineal, que son
+homeomorfismos, que aplique uno en el otro. Mientras que un
+intervalos abierto  cualquiera $(a,b)$ es homeomorfo a $\rr$. Un
+homeomorfismo entre ambos es la función:
+\[
+    \begin{split}
+        f:&(a,b)\longrightarrow\rr\\
+          &x\longmapsto
+          \text{tan}\biggl(\pi\frac{2x-(a+b)}{2(b-a)}\biggr)
+    \end{split}
+\]
+\end{ejemplo}
+
+ \marginnote{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/graffun.jpg}
+    \small Grafico de la función $f(x)=x/(1+|x|)$
+\end{center}
+}
+\begin{ejemplo}{}Un intervalo cerrado ya no es homeomorfo a $\rr$,
+esto lo demostraremos más adelante. No obstante podemos definir
+la \emph{recta real extendida} que será homeomorfa a los
+intervalos cerrados. Más precisamente, sea $f:\rr\rightarrow
+(-1,1)$ la función $f(x)=x/(1+|x|)$. No es difícil demostrar
+que $f$ es biyectiva, de hecho analizando esta función con las
+herramientas aprendidas en Cálculo I vemos que tiene la forma de
+la Figura \vref{fig,graffunc}. Definamos el conjunto
+$\overline{\rr}$, al que llamaremos \emph{recta extendida}, como
+la unión de $\rr$ con dos nuevos elementos, a los que llamaremos
+$-\infty$ y $+\infty$. Ahora extendemos $f$ de $\overline{\rr}$ al
+$[-1,1]$ por $f(+\infty)=1$ y $f(-\infty)=-1$. Definimos la
+función $d:\overline{\rr}\times\overline{\rr}\rightarrow \rr$
+por: \begin{equation}\label{eq,defiso}
+    d(x,y)=|f(x)-f(y)|.
+\end{equation}
+
+
+La función $d$ es una métrica en $\overline{\rr}$ (la sencilla
+demostración la desarrollaremos en clase). Con esta métrica el
+conjunto $\rr$ es acotado, de hecho $\delta(\rr)=2$. Además la
+función $f$ resulta un homeomorfismo de $\overline{\rr}$ en
+$[-1,1]$ (este último con la métrica del módulo). En efecto,
+en virtud de la ecuación \vref{eq,defiso}, dado $\epsilon>0$
+basta elegir $\delta=\epsilon$ para verificar que $f$ es
+uniformemente continua. Si llamamos $g$ a la inversa de $f$ y
+reemplazamos $x$ e $y$ en \vref{eq,defiso} por $g(t)$ y $g(s)$
+respectivamente, comprobamos que
+\begin{equation}\label{eq,defisoinv}
+    d(g(t),g(s))=|t-s|.
+\end{equation}
+Lo cual implica que $g$ es uniformemente continua, por razones
+similares a las que invocamos para $f$. En particular $f$ y su
+inversa son continuas, de modo que $f$ es un homeomorfismo.
+
+
+\end{ejemplo}
+
+En el ejemplo anterior las funciones $f$ y $g$ tienen una
+propiedad más fuerte que la de ser homeomorfismos, esta
+propiedad la definimos a continuación.
+\begin{definicion}{} Sean $(X,d)$, $(Y,d')$ dos e.m. y
+$f:X\rightarrow Y$ una función biyectiva. Se dirá que $f$ es
+una \emph{isometr\'{\i}a} si para todos $x$ e $y$ en $X$ se tiene
+que:
+\[
+    d'(f(x),f(y))=d(x,y).
+\]
+Si, entre dos e.m. existe una isometr\'{\i}a diremos que los
+espacios son \emph{isométricos}.
+\end{definicion}
+
+Una isometr\'{\i}a es un homeomorfismo, la idea central de la
+demostración de esta afirmación está en el ejemplo anterior.
+Igual que en aquel ejemplo, hay que demostrar que la inversa de
+una isometr\'{\i}a es, a la vez, una isometr\'{\i}a.
+
+\begin{proposicion}{} Sean $(X,d)$, $(Y,d')$ dos e.m. y
+$f:X\rightarrow Y$ una función biyectiva con inversa $g$.
+Entonces son equivalentes:
+\begin{itemize}
+\item[i)] $f$ es un homeomorfismo.
+\item[ii)] $A\subset X$ es abierto si, y solo si, $f(A)$ es
+abierto.
+\end{itemize}
+\end{proposicion}
+\begin{demo} i)$\Rightarrow$ii). Sea $A\subset X$. Supongamos, en primer lugar,
+que $A$ es abierto. Como $g:Y\rightarrow X$ es continua,
+$g^{-1}(A)=f(A)$ es abierto. Supongamos, ahora, que $f(A)$ es
+abierto. Como $f$ es continua, $f^{-1}(f(A))=g(f(A))=A$ es
+abierto. Esto concluye la demostración de la primera
+implicación.
+
+ii)$\Rightarrow$i). Tenemos que demostrar que $f$ y $g$ son
+continuas. Veamos, primero, que $f$ es continua. Sea $B$ un
+abierto de $Y$, hay que demostrar que $f^{-1}(B)=g(B)$ es un
+abierto de $X$. Pero $B=f(g(B))$ y $B$ es abierto, entonces, por
+ii), $g(B)$ es abierto. Veamos, ahora, que $g$ es continua. Sea
+$A$ abierto en $X$. Luego, por ii), $g^{-1}(A)=f(A)$ es abierto en
+$Y$, por lo cual, $g$ es continua.
+\end{demo}
+
+Este teorema nos dice que si dos espacios son homeomorfos,
+entonces existe una correspondencia de los abiertos de uno con los
+del otro espacio.
+
+El conjunto formado por todos los conjuntos abiertos, se denomina
+\emph{topolog\'{\i}a}. Brevemente, digamos que un \emph{espacio
+topológico} es un par $(X,\tau)$, donde $\tau\subset
+\mathcal{P}(X)$\footnote{$\mathcal{P}(X)$ es el conjunto de partes
+de $X$, es decir $\tau$ es un conjunto cuyos elementos son
+subconjuntos de $X$}, que satisface los siguientes axiomas:
+\begin{itemize}
+    \item[1)] $\emptyset, X\in \tau$
+    \item[2)] Si $G_i\in\tau$, para $i\in I$, entonces
+    $\bigcup_{i\in I}G_i\in \tau$.
+    \item[3)] Si $G_i\in\tau$, para $i\in I$, e $I$ es finito, entonces
+    $\bigcap_{i\in I}G_i\in \tau$.
+\end{itemize}
+
+En un espacio topológico uno puede construir la nociones, que
+hemos construido para e.m., por ejemplo conjunto cerrado,
+interior, clausura,  entorno, función continua y espacio
+separable. Por tanto, estas propiedades se denominan
+topológicas. Las propiedades topológicas son invariantes por
+homeomorfismos, por ejemplo si un espacio es separable, cualquier
+homeomorfo a él también lo es. Algunas propiedades no son
+topológicas, por ejemplo que una función sea uniformemente
+continua, puesto que para definir este concepto necesitamos de una
+métrica.
+
+Un mismo conjunto $X$, puede tener dos métricas distintas, por
+ejemplo en $\rr$ tenemos la métrica euclidea y la discreta.
+Podemos plantearnos que estas métricas den origen a una misma
+topolog\'{\i}a, si esto sucede diremos que las dos
+\emph{métricas son equivalentes}.
+
+
+\subsection{Ejercicios}
+
+
+\begin{ejercicio}{} Sean $(X,d)$, $(Y,d')$ e.m. y $f:X\rightarrow Y$
+ una función biyectiva. Demostrar que $f$ es un homeomorfismo
+ si, y solo si, para todo $A\subset X$ tenemos que
+ $f(\overline{A})=\overline{f(A)}$.
+ \end{ejercicio}
+
+ \begin{ejercicio}{} Demostrar:
+ \begin{itemize}
+    \item[i)] que las métricas sobre $\rr^n$
+    definidas en los Ejemplos \vref{ejem,disteuclidea},
+    \vref{ejem,distl1} y \vref{ejem,distlinf} son todas equivalentes.
+    \item[ii)] que las distancias $d$ , $d_1$ y $d_2$ del Ejercicio
+    \vref{ejer,distequiv} son equivalentes.
+    \item[iii)] Dados dos topolog\'{\i}as $\tau_1$ y $\tau_2$
+    sobre el mismo espacio $X$ decimos que $\tau_1$ es más fina
+    que $\tau_2$ si $\tau_2\subset \tau_1$. Demostrar que, sobre $C([0,1])$,
+    la topolog\'{\i}a que genera la métrica del
+    Ejemplo \vref{ejem,distsobrecont} es más fina que la
+    topolog\'{\i}a que genera la métrica del Ejemplo
+    \vref{ejem,distsobrecont} es más fina que la del
+    Ejemplo \vref{ejem,distsobrecontl1}.
+ \end{itemize}
+ \end{ejercicio}
+ 
+ \section{Completitud}
+
+Una propiedad importante de los espacios métricos es la
+completitud. En esta unidad introducimos esta propiedad e
+indagamos algunas de sus consecuencias.
+\subsection{Sucesiones}
+\begin{definicion}{} Una \index{Sucesión}\emph{sucesión} en un e.m. $(X,d)$ es una
+función $f:\nn\rightarrow X$.
+\end{definicion}
+
+Esta el la definición formal de sucesión, no obstante cuando
+se trabaja con sucesiones no se hace alusión expl\'{\i}cita a la
+función $f$ de la definición. Normalmente una sucesión se
+introduce con el s\'{\i}mbolo $\{a_n\}_{n\in\nn}$ o, brevemente,
+$\{a_n\}$, asumiendo que los \'{\i}ndices $n$ son naturales. Claro
+está que, \'{\i}mplicitamente, estos s\'{\i}mbolos conllevan la
+función $f$. Esta es la función tal que $f(n)=a_n$.
+
+\begin{definicion}{def,sucesionconvergente} Sea $\{a_n\}$ una sucesión en el e.m.
+$(X,d)$. Diremos que esta sucesión \emph{converge} al punto
+$a\in X$ (denotaremos esto por $a_n\rightarrow a$) si, y solo si,
+para todo entorno $U$ de $a$ existe un $n_0=n_0(U)$ tal que cuando
+$n\geq n_0$ se tiene que $a_n\in U$. Sinteticamente, dado
+cualquier entorno, salvo posiblemente una cantidad finita de
+términos de la sucesión todos los términos restantes están
+inclu\'{\i}dos en el entorno, ver la Figura
+\vref{fig,sucesionconvergente}
+\end{definicion}
+\marginnote{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/succonv.jpg}
+    \small Definición
+    \vref{def,sucesionconvergente}
+\end{center}
+}
+
+
+La convergencia es una propiedad topológica. Confiamos en que el
+alumno tiene muchos ejemplos de sucesiones convergentes en $\rr$,
+esto fué visto en Cálculo I. Vamos a ver que sucede en otros
+espacios métricos.
+
+\begin{ejemplo}{} En un e.m. discreto $(X,d)$ si una sucesión
+$\{a_n\}$  converge al punto $a$, entonces a partir de un $n_0$ en
+adelante se tiene que $a_n=a_{n_0}$. En efecto, esto es
+consecuencia de considerar el siguiente entorno:
+$U=B(a,1/2)=\{a\}$.
+\end{ejemplo}
+
+\begin{ejemplo}{ejem,convfunciones} Consideremos el e.m. $(C([0,1]),d)$, donde
+$C([0,1])$ representa al conjunto de funciones continuas
+$f:[0,1]\rightarrow\rr$ y $d$ es la métrica definida en el
+Ejemplo \vref{ejem,distsobrecontl1}. Consideremos las funciones
+definidas por:
+
+\[
+    f(x)=\left\{%
+\begin{array}{ll}
+    nx, & \hbox{si $0\leq x\leq \frac1n$;} \\
+    2-nx, & \hbox{si $\frac1n\leq x\leq \frac2n$.} \\
+    0,    &\hbox{si $\frac2n\leq x\leq 1.$}
+\end{array}%
+\right.
+\]
+En la Figura \vref{fig,convfunciones}, se pueden observar los
+gráficos de estas funciones.
+\marginnote{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/funciones0.jpg}
+    \small Funciones del Ejemplo
+    \ref{ejem,convfunciones} 
+\end{center}
+}
+Es un ejercicio de Cálculo I demostrar que $f_n\rightarrow 0$
+con la métrica propuesta. Sin embargo, sobre $C([0,1])$ tenemos
+definida otra métrica, a saber: la del Ejemplo
+\vref{ejem,distsobrecont}. Con esta métrica la sucesión $f_n$
+no converge a ninguna función.
+\end{ejemplo}
+
+Es posible caracterizar algunos de los conceptos, que ya hemos
+visto, en términos de sucesiones. Por ejemplo, el concepto de
+clausura y continuidad.
+
+\begin{proposicion}{} Sea $(X,d)$ un e.m. y $A\subset X$. Entonces
+$a\in\C{A}$ si, y solo si, existe una sucesion $a_n\in A$ tal que
+$a_n\rightarrow a$.
+\end{proposicion}
+\begin{demo} Supongamos que $a\in\C{A}$, entonces, para todo
+$n\in\nn$ se tiene que $B(a,1/n)\cap A\neq\emptyset$. Sea, pues,
+$a_n\in B(a,1/n)\cap A$. Se puede ver, sin dificultad, que
+$a_n\rightarrow a$. Rec\'{\i}procamente, supongamos que existe la
+sucesión $\{a_n\}$. Si $U$ es un entorno arbitrario de $a$,
+entonces, puesto que $a\in\C{A}$, tenemos que, para ciertos $n$,
+$a_n\in U$, luego, estos $a_n$, estan en la intersección de $U$
+con $A$, lo que implica que esta es no vac\'{\i}a. Eso prueba que
+$a\in\C{A}$.
+\end{demo}
+
+\subsection{Sucesiones de Cauchy, espacios métricos completos}
+
+
+\begin{definicion}{}
+\begin{itemize}
+\item[i)]Dada una sucesión $\{a_n\}$ en un e.m. $(X,d)$, diremos que
+$\{a_n\}$ es una \emph{sucesión de Cauchy} si: para todo
+$\epsilon>0$ existe un $n_0=n_0(\epsilon)$\footnote{Con
+$n_0=n_0(\epsilon)$ queremos decir que el número $n_0$ depende
+de $\epsilon$ pero que normalmente no usaremos la notación
+$n_0(\epsilon)$ sino, simplemente, $n_0$} tal que para $n,m\geq
+n_0$ tenemos que $d(a_n,a_m)<\epsilon$. En otras palabras, para
+valores grandes de $n$ los términos $a_n$ están cerca entre
+si.
+\item[ii)] Un e.m. se dirá \emph{completo} si, y solo si, todo
+sucesión de Cauchy en él es convergente.
+\end{itemize}
+\end{definicion}
+
+
+Como acabamos de decir, en un e.m. completo toda sucesión de
+Cauchy converge. La reciproca de esta afirmación es siempre
+cierta, es decir en cualquier e.m. toda sucesión convergente es
+de Cauchy. En efecto, sea $\{a_n\}$ una sucesión convergente en
+$(X,d)$ al punto $a$ y sea  $\epsilon > 0$. Existe un
+$N=N(\epsilon)$ tal que para $n>N$ se tiene que
+\[
+    d(a_n,a)<\frac{\epsilon}{2}.
+\]
+Luego, para $n,m>N$ y por la desigualdad triágular, tenemos que
+\[
+    d(a_n,a_m)\leq d(a_n,a)+d(a,a_m)<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon.
+\]
+Esto prueba que la sucesión es de Cauchy, como quer\'{\i}amos.
+
+Un ejemplo importante de e.m. completo es $\rr$. Esta propiedad de
+$\rr$ es enunciada, prácticamente, como un axióma. Hablaremos,
+mas no sea brevemente, de los ``fundamentos'' de los
+ números reales en el apéndice al final de esta unidad, ver
+ Sección  \vref{sec,apendice}. Sabiendo que $\rr$ con la
+ métrica del módulo es completo podemos demostrar la
+ completitud de otros e.m., como veremos más abajo. Antes de ver
+ esto demostremos que toda sucesión convergente es de Cauchy
+
+ \begin{ejemplo}{} $\rr^n$ con la métrica euclidea es un e.m.
+ completo.\footnote{Observar que, en virtud del Ejercicio
+ \vref{ejer,completitudconmetequi} $\rr^n$ con cualquier
+ métrica equivalente a la euclidea también resultará
+ completo} Vamos a demostrar esta afirmación. Denotemos
+ por letras en negritas $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$,
+ etc $n$-uplas en $\rr^n$, es decir $\mathbf{x}=(x_1,\dots, x_n)$
+ con $x_i\in\rr$, $i=1,\dots,n$. Consideremos una sucesión de
+ Cauchy  $\{\mathbf{x}_j\}_{j\in\nn}$ en $\rr^n$. Esto nos determina $n$
+ sucesiones en $\rr$, puesto que
+ $\mathbf{x}_j=(x_1^j,\dots,x_n^j)$. Veamos que, para cada $i$,
+ $\{x_i^j\}_{j\in\nn}$ es una sucesión de Cauchy en $\rr$. Se
+ tiene que:
+\[
+    |x_i^j-x_i^k|\leq \sqrt{\sum\limits_{s=1}^n(x_s^j-x_s^k)^2}\leq
+    d(\mathbf{x}_j,\mathbf{x}_k).
+\]
+Como el último miembro se puede hacer tan chico como queramos,
+puesto que $\{\mathbf{x}_j\}$ es de Cauchy, podemos conseguir lo
+mismo para el primer miembro, esto es $\{x_i^j\}$ es de Cauchy.
+As\'{\i}, como $\rr$ es completo, existe un $x_i$, para
+$i=1,\dots,n$ tal que $x_i^j\rightarrow x_i$, para
+$j\rightarrow\infty$. Definamos, pues,
+$\mathbf{x}=(x_1,\dots,x_n)$ y veamos que $\mathbf{x}_j\rightarrow
+\mathbf{x}$. Sea $\epsilon>0$, para cada $i=1,\dots,n$ podemos
+hallar un $j(\epsilon,i)$, es decir $j$ depende de $\epsilon $ y
+de $i$, tal que para $j\geq j(\epsilon, i)$ tenemos que:
+\[
+    |x_i^j-x_i|<\frac{\epsilon}{\sqrt{n}}.
+\]
+As\'{\i}, si:
+\[
+    j\geq\max\limits_{1\leq i\leq n}j(\epsilon,i)
+\]
+entonces
+\[
+    d(\mathbf{x}_j-\mathbf{x})=\sqrt{\sum\limits_{i=1}^n(x_i^j-x_i)^2}=
+    \sqrt{\sum\limits_{i=1}^n\frac{\epsilon^2}{n}}=\epsilon,
+\]
+lo que demuestra que $\mathbf{x}_j\rightarrow \mathbf{x}$, como
+quer\'{\i}amos.
+\end{ejemplo}
+
+\begin{ejemplo}{ejem,emnocompleto} El e.m. $(C([0,1]),d)$, con $d$ como en el Ejemplo
+\vref{ejem,convfunciones}, no es completo. Consideremos las
+siguientes funciones, para $n/geq 2$:
+
+\[
+    f_n(x):=\left\{
+                \begin{array}{ll}
+                        1, & \hbox{si $0\leq x\leq \frac12$;} \\
+                        -nx+\frac{n+2}{2n}, & \hbox{si $\frac12\leq x\leq \frac12+\frac1{n}$;} \\
+                        0, & \hbox{si $\frac12\leq x\leq 1$.} \\
+\end{array}
+\right.
+\]
+ en la Figura \vref{fig,emnocompleto} graficamos estas
+funciones.
+\marginnote{
+\begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/funciones1.jpg}
+    \small Funciones del Ejemplo
+    \ref{ejem,emnocompleto}
+\end{center}
+}
+
+No es dificil convencerse que esta es una sucesi/ón de Cauchy,
+puesto que, para $j,k/geq n$ tenemos que:
+
+\[
+    d(f_j,f_k)=\frac12|\frac1j-\frac1k|\leq \frac1n\rightarrow
+    0\quad\text{cuando}\quad n\rightarrow \infty.
+\]
+Sin embargo estas funciones no convergen a ninguna función en
+$C([0,1])$. Para ver esto, supongamos que, por el contrario,
+existe $f\in C([0,1])$ tal que $f_n\rightarrow f$.\marginnote{
+\begin{center}
+      \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/demnoco.jpg}
+    \small Construcción de la demostración en el Ejemplo
+    \ref{ejem,emnocompleto}
+\end{center}
+} Vamos a
+demostrar que, necesariamente, $f$ debe valer 1 en el intervalo
+$[0,1/2)$ y debe valer 0 en el intervalo $(1/2,1)$, por tal motivo
+no podr\'{\i}a ser continua contradiciendo las hipótesis. Vamos
+a demostrar solo que $f$ es 0 en $(1/2,1)$, la otra parte es
+similar y aun más facil. Supongamos que exista $1/2<a<1$ tal que
+$f(a)\neq 0$, podemos suponer que $f(a)>0$. Elijamos $\delta_1>0$
+suficientemente peque\~no de modo que $1/2<a-\delta_1$ y elijamos
+$\delta_2>0$ suficientemente peque\~no de modo tal que
+$f(x)>f(a)/2$ para $x\in(a-\delta_2,a+\delta+2)$ (esto es posible
+pues $f$ es continua en $a$). Ahora, el número
+$\delta:=\min\{\delta_1,\delta_2\}$ satisface las dos propiedades
+anteriores simultaneamente. Podemos encontrar un $n_0$
+suficientemente grande para que $1/2+1/n<a-\delta$, cuando
+$n>n_0$, esto implica que $f_n$ es idénticamente cero en el
+intervalo $(a-\delta,a+\delta)$, ver la Figura
+\vref{fig,dememnocompleto}.
+
+Juntando todas las propiedades vistas en el párrafo anterior,
+deducimos que, para $n>n_0$,
+\[
+    d(f_n,f)=\int_0^1|f_n-f|dx\geq\int_{a-\delta}^{a+\delta}|f_n-f|dx\geq
+    \delta f(a)>0.
+\]
+De modo que $f_n$ no converge a $f$, contradiciendo nuestras
+suposiciones.
+\end{ejemplo}
+
+
+Ahora veremos que subespacios, de un e.m. completo, son, a su vez,
+completos.
+
+\begin{proposicion}{} Sea $(X,d)$ un e.m. completo e $Y\subset X$.
+Son equivalentes:
+\begin{itemize}
+\item[i)] $(Y,d)$ es un subespacio completo.
+\item[ii)] $Y$ es cerrado en $X$.
+\end{itemize}
+\end{proposicion}
+
+
+
+
+
+
+
+
+
+
+\subsection{Ejercicios}
+
+\begin{ejercicio}{}\label{ejer,testearconv} Consideremos el conjunto $C([0,1])$ donde
+tenemos definidas las dos métricas $d_1$ y $d_2$ de los Ejemplos
+\vref{convunifmet} y \vref{l1metint} respectivamente. Determinar
+si las siguientes sucesiones son convergentes con estas métricas
+y si son de Cauchy.
+\begin{itemize}
+    \item[i)] $f_n(x):=\frac1n\text{sen}(nx)$.
+    \item[ii)] $f_n(x):=x^n$.
+    \item[iii)]$f_n(x):=nx^n$.
+\end{itemize}
+\end{ejercicio}
+\begin{ejercicio}{} Con la misma notación del ejercicio anterior
+demostrar que si $f_n\to f$ con la métrica  $d_1$ entonces lo
+mismo ocurre con la métrica $d_2$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sean $(X,d)$ e $(Y,d')$ dos e.m. y $f:X\to Y$ un homeomorfismo.
+Demostrar que la sucesión $\{a_n\}$ es convergente en $X$ si, y
+solo si, $f(a_n)$ es convergente en $Y$.
+\end{ejercicio}
+
+
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m., $a\in A$ y $A\subset X$. Demostrar
+que existe un sucesión $\{a_n\}$, con $a_n\in A$, para todo $n$,
+y:
+\[\lim\limits_{n\to\infty}d(a,a_n)=d(a,A).\]
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $A\subset \rr$ un conjunto acotado
+superiormente. Demostrar que existe una sucesión $\{a_n\}$, con
+$a_n\in A$, para todo $n$, y además:
+\[
+    \sup A=\lim\limits_{n\to\infty} a_n.
+\]
+\end{ejercicio}
+
+\begin{ejercicio}{} Demostrar que $(C([0,1]),d_1)$, con $d_1$ como
+en el Ejercicio \ref{ejer,testearconv}, es un e.m. completo.
+\end{ejercicio}
+
+\begin{ejercicio}{} Demostrar que un e.m. con una cantidad finita de
+elementos es completo.
+\end{ejercicio}
+
+\begin{ejercicio}{} Demostrar que una sucesión de Cauchy es
+acotada.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $\{a_n\}$ una sucesión en un e.m. $(X,d)$,
+demostrar que cualquierqa de las dos condiciones implica que
+$\{a_n\}$ es de Cauchy.
+\begin{itemize}
+    \item[i)] $d(a_n,a_{n+1})\leq \alpha^n$, con $0<\alpha<1$.
+    \item[ii)] La siguiente serie es convergente:
+    \[
+        \sum\limits_{n=1}^{\infty}d(a_n,a_{n+1}).
+    \]
+\end{itemize}
+\end{ejercicio}
+
+\begin{ejercicio}{ejer,completitudconmetequi} Sean $d$ y $d'$ dos métricas
+ uniformemente equivalentes
+sobre el mismo espacio $X$. Demostrar que $(X,d)$ es completo si,
+y solo si, $(X,d')$ es completo.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $f:X\to Y$ una función uniformemente
+continua entre dos e.m.. Demostrar que si $\{a_n\}$ es de Cauchy
+en $X$ entonces $\{f(a_n)\}$ es de Cauchy en $Y$. Dar un
+contraejemplo a la afirmación anterior suponiendo, solo, que $f$
+es continua. \emph{Ayuda:} Considerar la recta extendida.
+\end{ejercicio}
+
+
+\begin{ejercicio}{ejer,completitud} Demostrar que el axioma de completitud de $\rr$
+dado, se puede sustitu\'{\i}r por cualquiera de los siguientes:
+\begin{itemize}
+    \item[i)] Toda sucesión de Cauchy en $\rr$ converge.
+    \item[ii)] \emph{Principio de Encajes de Intervalos}. Sea
+    $\{I_n\}_{n\in\nn}$ una sucesión de intervalos cerrados
+    tales que $I_{n+1}\subset I_n$, para todo $n$, entonces
+    $\bigcap_{n\in\nn}I_n\neq\emptyset$.
+\end{itemize}
+\end{ejercicio}
+% 
+% 
+\section{Compacidad}
+
+Es quizas con la noción de conjunto compacto donde encontraremos
+las diferencias más grandes entre la topología de $\mathbb{R}^n$
+y la de un espacio métrico arbitrario. En particular, ya no será
+válida la carectización de compacto como cerrado y acotado. Para
+obtener una caracterización necesitaremos un concepto más fuerte
+que la acotación, este será el de conjunto \textbf{totalmente
+acotado} y, a la vez, un concepto más fuerte que el de conjunto
+cerrado y en este caso usaremos la de conjunto completo.
+
+Es interesante hacer notar que, en topología, interesan aquellas
+propiedades que se preservan por homeomorfismos. En este sentido
+vemos que la noción de conjunto cerrado acotado no se preserva
+por este tipo de aplicaciones (claro está, los espacios métricos
+involucrados deberían ser distintos que $\mathbb{R}^n$ con la
+métrica euclidea). Por ejemplo, como ya hemos visto, la identidad
+es un homeomorfismo de $(\mathbb{R}^n,d)$, con $d$ la métrica
+euclidea, en $(\mathbb{R}^n,d_1)$, con
+\[
+	d_1(x,y)=\frac{d(x,y)}{1+d(x,y)}.
+\]
+Ahora bien, como $0\leq d_1<1$ cualquier conjunto de
+$\mathbb{R}^n$ tiene diámetro, respecto a $d_1$ menor o igual a
+$1$ y, por ende, cualquier conjunto es acotado. Sin embargo, no
+todo conjunto es acotado respecto a la métrica euclidea. Por otra
+parte $\mathbb{R}^n$ es cerrado en ambas métricas, pues es el
+conjunto total. Vemos así que el concepto de conjunto cerrado y
+acotado no necesariamente se preserva por homeomorfismos lo que
+relativiza su importancia.
+
+
+
+\begin{definicion}{}  Diremos que un conjunto $A$ de un e.m. $(X,d)$
+es totalmente acotado
+si para cada $\epsilon>0$ existe una cantidad finita de conjuntos
+de diámetro menor que $\epsilon$ cuya unión contiene a  $A$.
+En otras palabras existen conjuntos $A_i$, $i=1,...,n$, con
+$\delta(A_i)<\epsilon$ que satisfacen:
+\[
+	A\subset \bigcup\limits_{i=1}^nA_i.
+\]
+\end{definicion}
+
+
+\begin{ejercicio}{ejer,subpreespre} Demostrar que un
+subconjunto de un conjunto totalmente acotado es totalmente
+acotado.
+\end{ejercicio}
+
+
+Veamos algunos ejemplos de conjuntos totalmente acotados y de
+conjuntos que no lo son.
+
+\begin{ejemplo}{} Cualquier intervalo acotado de $\rr$ es
+totalmente acotado. Para justificar esta aseveración, tomemos
+$\epsilon>0$ y un intervalo cualquiera de extremos $a$ y $b$.
+Elijamos $n$ suficientemente grande para que $1/n<\epsilon$.
+Entonces los conjuntos
+\[
+	I_k:=\Big[\frac{k}{n},\frac{k+1}{n}\Big]\quad ,k=0,\ldots,n-1,
+\]
+satisfacen la definición.
+\end{ejemplo}
+
+\begin{ejemplo}{ejem,cubpre} Cualquier conjunto  acotado en el
+espacio euclideo $\rr^n$ es totalmente acotado. 
+\marginnote{
+\begin{center}
+	\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/cubpre.jpg}
+	\small Construcción del Ejemplo
+	\ref{ejem,cubpre}
+\end{center}
+}
+Sea
+$A\subset\rr^n$ un conjunto acotado, entonces $A$  está
+contenido en un cubo de la forma $C:=[-m,m]\times\dots\times
+[-m,m]=[-m,m]^n$. En virtud del Ejercicio \vref{ejer,subpreespre}
+es suficiente demostrar que $C$ es totalmente acotado. Sea
+$\epsilon>0$. Tomemos $k$ suficientemente grande para que
+\begin{equation}\label{eq,defk}
+	\frac{2\sqrt{n}m}{\epsilon}<k
+\end{equation}
+Ahora, partimos cada intervalo $[-m,m]$ en $k$ subintervalos de la
+misma longitud $1/k$.
+
+
+
+Como puede observarse en la Figura \ref{fig,cubpre}, nos quedan
+determinados $k^n$ cubos que cubren el cubo $C$. Cada uno de estos
+cubos más chicos tiene diámetro $2\sqrt{n}m/k$, por
+consiguiente, por la desigualdad \ref{eq,defk}, el diámetro de
+ellos es menor que $\epsilon$.
+\end{ejemplo}
+
+No es cierto, en general, que todo conjunto acotado en un e.m. sea
+totalmente acotado. Los siguientes ejemplos muestran esto.
+
+\begin{ejemplo}{} Sea $(X,d)$ un e.m. discreto con $X$ infinito. El
+conjunto $X$ es acotado, de hecho $\delta(X)=1$; sin embargo no
+podemos cubrir $X$ con conjuntos de diámetro menor que 1/2
+(cualquier número menor que 1 servir\'{\i}a). Esto ocurre debido
+a que si un conjunto en un e.m. discreto tiene más de un
+elemento entonces su diámetro es 1. As\'{\i}, si cubrimos $X$
+con una cantidad finita de conjuntos, alguno de los conjuntos del
+cubrimiento necesariamente tiene más de un elemento, de lo
+contrario $X$ ser\'{\i}a finito, por consiguiente el diámetro de
+este conjunto es 1 y no puede ser menor que $1/2$.
+\end{ejemplo}
+
+\begin{ejemplo}{ejem,contnopre} En $C([0,1])$, con la métrica
+ del Ejemplo
+\vref{ejem,distsobrecont}, la bola cerrada $K(0,1)$ (0 denota la
+función que es constantemente igual a 0) no es un conjunto
+totalmente acotado. Para ver esto definimos la siguiente
+función:
+
+\[
+	f(x):=\left\{%
+\begin{array}{ll}
+	4(x-\frac12), & \hbox{si $\frac12\leq x\leq \frac34$;} \\
+	-4(x-1), & \hbox{si $\frac34\leq x\leq 1$;} \\
+	0, & \hbox{para los restantes $x$;} \\
+\end{array}
+\right.
+\]\marginnote{
+\begin{center}
+	\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/noprecom.jpg}
+	\small Funciones del Ejemplo
+	\ref{ejem,contnopre}
+\end{center}
+}
+y la siguiente sucesión de funciones $f_n(x):=f(2^nx)$. En la
+Figura \ref{fig,contnopre} puede verse las gráficas de algunas
+de las funciones de la sucesión.
+
+
+Puede demostrarse que la distancia de cualquiera de las funciones
+de la sucesión a otra es igual a 1 y que $f_n\in K(0,1)$. Sea
+$C:=\{f_n:n\in\nn\}$, observemos que como subespacio $C$ resulta
+ser un e.m. discreto, as\'{\i}, por el Ejemplo anterior y el
+Ejercicio \vref{ejer,subpreespre}, $\C{B(0,1)}$ no puede ser
+totalmente acotado.
+\end{ejemplo}
+
+\begin{ejemplo}{} Hay una interesante conexión de la total
+acotación con la dimensión. Para introducirla, veamos
+ cuantas bolas abiertas de radio
+$1/2$, en $\mathbb{R}^n$ con la métrica euclidea,
+se necesitan, al menos,  para cubrir la bola cerrada $K(0,1)$.
+Denotemos por $e_j$ los vectores canónicos
+\[
+	e_j:=(0,\ldots,1,\ldots,0),
+\]
+donde el $1$ está en el lugar $j$. Notesé que $e_j\in K(0,1)$ y que:
+\[
+	d(e_j,e_i)=\sqrt{2}\quad i\neq j.
+\]
+De modo que, si $i\neq j$ entonces $e_i$ y $e_j$ no pueden estar
+en una misma bola de radio $1/2$. De lo contrario, si $e_i,e_j\in
+B(x,1/2)$, entonces
+\[
+	d(e_i,e_j)\leq d(e_i,x)+d(x,e_j)<1<\sqrt{2},
+\]
+que es una contradicción. De esta manera si cubrimos la bola cerrada
+$K(0,1)$ por bolas abiertas de radio $1/2$ necesitaremos, al menos,
+$n$ de estas bolas. Es decir, la cantidad de estas bolas crece cuando aumenta
+la dimensión $n$. Esta observación nos lleva a conjeturar que si
+buscamos un espacio vectorial de dimensión infinita\footnote{Esto significa
+que no tiene una base finita} tenemos chances de construir conjuntos acotados,
+en particular la bola $K(0,1)$, que no son totalmente acotados.
+
+\begin{ejercicio}{} Demostrar que en $l_2$ la bola cerrada $K(0,1)$
+no es totalmente acotada.
+\end{ejercicio}
+\end{ejemplo}
+
+
+Recordemos que, en un e.m. $(X,d)$, una familia de conjuntos
+abiertos $\{U_i\}_{i\in I}$ es un cubrimiento por abiertos de
+$A\subset X$ si
+\[
+	A\subset\bigcup\limits_{i\in I}U_i.
+\]
+\begin{definicion}{} Un subconjunto $A$ de un e.m. $(X,d)$ se dirá
+\textbf{compacto} si, y solo si, todo cubrimiento por abiertos de
+$A$ tiene un subcubrimiento finito. Es decir, si $\{U_i\}_{i\in
+I}$ es un cubrimiento  de $A$, existe un conjunto finito $F\subset
+I$ tal que $\{U_i\}_{i\in F}$ es un cubrimiento de $A$.
+\end{definicion}
+
+\begin{teorema}[Caracterización de compacidad en espacios métricos]{}
+ Sea $(X,d)$ un  espacio métrico. Entonces son
+equivalentes:
+
+\begin{enumerate}
+\item\label{inc,compacto} $X$ es compacto;
+\item\label{inc,toacotadoycomp} $X$ es totalmente acotado y
+completo.
+\item\label{inc,subs} Toda sucesión en $X$ tiene una subsucesión
+convergente.
+\end{enumerate}
+\end{teorema}
+\begin{demo} Veamos que
+\ref{inc,compacto}$\Rightarrow$\ref{inc,subs}. Por el absurdo
+supongamos que existe una sucesión $\{a_n\}$ en $X$ que no tiene
+ninguna subsucesión convergente. Definamos $\Gamma$ como la
+colección de todos los conjuntos abiertos $G$ de $X$ tales que
+$G$ tiene una cantidad finita de elementos de la sucesión, es
+decir:
+\[
+G\in\Gamma\Leftrightarrow \#\{n:a_n\in G\}<\infty.
+\]
+Vamos a probar que $\Gamma$ es un cubrimiento de $X$. Supongamos
+que $x\in X$ y $x\notin G$ para todo $G\in\Gamma$. De modo que,
+por definición, cada abierto que contiene a $x$ contiene
+infinitos términos de la sucesión $\{a_n\}$. En particular,
+podemos encontrar $n_1$ tal que $a_{n_1}\in B(x,1)$. Ahora podemos
+encontrar $n_2>n_1$ tal que $a_{n_2}\in B(x,\frac12)$. Y así
+continuamos, construímos una subsucesión $a_{n_k}$ tal que
+$a_{n_k}\in B(x,\frac1k)$. Lo que implica que $a_{n_k}$ converge a
+$x$, contradiciendo nuestra suposición. De esta manera,
+$\Gamma$ es un cubrimiento de $X$. Sea $G_i$, $i=1,\ldots,n$, un
+subcubrimiento finito de $X$. Es decir
+\[
+	X=G_1\cup\dots\cup G_n.
+\]
+Como cada $G_i$, $i=1,\ldots,n$, tiene una cantidad finita de
+términos de la sucesión, concluímos que $X$
+contiene una cantidad finita de términos de la sucesión, lo que,
+claro está, no puede ocurrir. Esto finaliza la demostración de
+\ref{inc,compacto}$\Rightarrow$\ref{inc,subs}.
+
+Demostremos ahora que \ref{inc,subs}$\Rightarrow$
+\ref{inc,toacotadoycomp} empezando por ver que $X$ es totalmente
+acotado. Nuevamente procedemos por el absurdo, suponiendo que $X$
+no es totalmente acotado. Esto implica que existe un $\epsilon>0$
+tal que $X$ no se puede cubrir con una cantidad finita de
+conjuntos de diámetro $\epsilon$. Sea $a_1$ cualquier punto de
+$X$. Como $B(a_1,\epsilon)$ no cubre $X$, existe $a_2\in
+X-B(a_1,\epsilon)$. Como $B(a_i,\epsilon)$, $i=1,2$, no cubren
+$X$, existe un $a_3\in X-\bigl(B(a_1,\epsilon)\cup
+B(a_2,\epsilon)\bigr)$. Continuando de esta forma, contruímos una
+sucesión $a_n$ tal que
+\[
+	a_n\in X-\big(B(a_1,\epsilon)\cup\dots\cup
+	B(a_{n-1},\epsilon)\big).
+\]
+De esta forma tendremos que:
+\[
+	d(a_i,a_j)\geq \epsilon\quad\hbox{para $i\neq j$}.
+\]
+Por hipótesis la sucesión $a_n$ tiene una subsucesión convergente,
+en particular esta subsucesión será  de Cauchy. No obstante la desigualdad
+anterior implica que ninguna subsucesión de $\{a_n\}$ puede
+ser de Cauchy, contradicción que prueba que $X$ es totalmente acotado.
+
+Veamos ahora que $X$ es completo. Sea $\{a_n\}$ una sucesión de
+Cauchy en $X$. Podemos extraer una subsucesión $\{a_{n_k}\}$
+convergente a un $a\in X$. Sea $\epsilon>0$. Puesto que $\{a_n\}$
+es de Cauchy, pondemos encontrar $N>0$ tal que si $n,m>N$ entonces:
+\begin{equation}\label{eq,conddecauchy}
+	d(a_n,a_m)<\frac{\epsilon}{2}.
+\end{equation}
+Como $a_{n_k}$ converge a $a$, podemos encontrar un $n_k$ lo
+suficientemente
+grande para que $n_k>N$ y:
+\[
+	d(a_{n_k},a)<\frac{\epsilon}{2}.
+\]
+Así, usando \eqref{eq,conddecauchy},  tenemos que para $n>N$:
+\[
+	d(a_n,a)\leq d(a_n,a_{n_k})+d(a_{n_k},a)<\epsilon.
+\]
+Por último veamos que \ref{inc,toacotadoycomp}
+$\Rightarrow$\ref{inc,compacto}. Para este fin elijamos un
+cubrimiento $\{G_{\lambda}\}_{\lambda\in L}$ arbitrario de $X$.
+Supongamos que este cubrimiento no tiene un subcubrimiento finito.
+Como $X$ es totalmente acotado, acorde al Ejercicio
+\ref{ejer,precantfinibolas}, podemos cubrir a $X$ por una cantidad
+finita de bolas de radio $1$. Alguna de estas bolas no se podrá
+cubrir por una cantidad finita de $G_{\lambda}$, de lo contrario,
+si todas se cubren por una cantidad finita, como hay una cantidad
+finita de estas bolas, podríamos cubrir $X$ por una cantidad
+finita de $G_{\lambda}$. Llamemos $B(x_1,1)$ a la bola que no se
+cubre por finitos $G_{\lambda}$. Como $B(x_1,1)$ es totalmente
+acotado, podemos aplicar la construcción anterior a $B(x_1,1)$ en
+lugar de $X$ y con bolas de radio $1/2$, en lugar de $1$,
+obteniendo de esta forma una bola $B(x_2,1/2)$ que no se cubre por
+una cantidad finita de $G_{\lambda}$. Además podemos suponer que
+$B(x_2,1/2)\cap B(x_1,1)\neq \emptyset$, de lo contrario no
+hubiera tenido sentido usar la bola $B(x_2,1/2)$ para cubrir
+$B(x_1,1)$. Continuamos de esta forma y producimos una sucesión
+$B(x_n,1/2^n)$ (aquí no basta que los radios tiendan a cero, sino
+que es necesario que la serie de radios converja) de bolas tales
+que ninguna de ellas se puede cubrir por una cantidad finita de
+$G_{\lambda}$. Veamos que la sucesión $x_n$ es de Cauchy.   Para
+esto tomemos
+\[
+	z_n\in B\Big(x_n,\frac{1}{2^n}\Big)\cap B\Big(x_{n+1}
+	,\frac{1}{2^{n+1}}\Big).
+\]
+Entonces
+\[
+	d(x_n,x_{n+1})\leq d(x_n,z_n)+d(z_n,x_{n+1})<
+	\frac{1}{2^n}+\frac{1}{2^{n+1}}<\frac{1}{2^{n-1}}.
+\]
+Lo que permite utilizar el criterio de comparación para
+la convergencia de series para demostrar que:
+\[
+	\sum\limits_{n=1}^{\infty}d(x_n,x_{n+1})<\infty.
+\]
+Acorde a un ejercicio de la práctica, esto implica que $\{x_n\}$ es
+de Cauchy, por ende converge a algún $x_0\in X$. Como $G_{\lambda}$
+es un cubrimiento, existe $\lambda_0$ tal que $x_0\in G_{\lambda_0}$. Como
+$G_{\lambda_0}$ es abierto, existe un $r>0$ tal que
+\begin{equation}\label{eq,dalecasillegamos}
+	B(x_0,r)\subset G_{\lambda_0}.
+\end{equation}
+Puesto que $x_n$ converge a $x_0$ y $1/2^{n-1}$ converge a 0,
+podemos hallar $n$ lo suficientemente grande para que:
+\begin{equation}\label{ufamecanse}
+	d(x_n,x_0)<\frac{r}{2}\quad\hbox{y}\quad
+	\frac{1}{2^{n-1}}<\frac{r}{2}.
+\end{equation}
+Veamos que esto, \eqref{ufamecanse} y \eqref{eq,dalecasillegamos}
+implica que:
+\begin{equation}\label{casicasi}
+	B\Big(x_n,\frac{1}{2^n}\Big)\subset B(x_0,r)\subset G_{\lambda_0}.
+\end{equation}
+En efecto, si:
+\[
+	 y\in B\Big(x_n,\frac{1}{2^n}\Big),
+\]
+entonces
+\[
+	d(y,x_0)\leq d(y,x_n)+d(x_n,x_0)<\frac{1}{2^n}+\frac{r}{2}<r,
+\]
+lo que prueba \eqref{casicasi}, siendo, además, esta inclusión
+una contradicción puesto que estamos cubriendo la bola
+$B(x_n,1/2^n)$ por un sólo $G_{\lambda}$, recordemos que estas
+bolas no se cubrían por finitos $G_{\lambda}$. (ya terminamos,
+!`por fin!)
+ \end{demo}
+
+ \subsection{Ejercicios}
+ 
+ 
+
+\begin{ejercicio}{} Demostrar que un espacio métrico discreto es compacto
+si, y solo si, es finito.
+\end{ejercicio}
+
+\begin{ejercicio}{} Demostrar que un conjunto totalmente acotado es
+acotado.
+\end{ejercicio}
+
+
+
+\begin{ejercicio}{ejer,precantfinibolas} Demostrar que $X$ es totalmente acotado si, y
+solo si, para cada $\epsilon>0$ podemos cubrir $X$ por una cantidad
+finita de bolas de radio $\epsilon$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Demostrar que un conjunto compacto es cerrado y
+acotado.
+\end{ejercicio}
+
+\begin{ejercicio}{} Demostrar que si $f:(X,d)\to (Y,d')$ es continua
+y $X$ compacto entonces $f(X)$ es compacto. Como corolario,
+demostrar que si $f:X\to\mathbb{R}$ y $X$ es compacto entonces $f$
+alcanza un máximo y un mínimo.
+\end{ejercicio}
+
+\begin{ejercicio}{ejer,subpreespre} Demostrar que un
+subconjunto de un conjunto precompacto es precompacto.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m., $A$ y $B$ subconjuntos compactos de
+$X$. Demostrar que
+\begin{itemize}
+    \item[i)] Existen puntos $x$ e $y$ en $A$ tales que $d(x,y)=\delta(A)$.
+    \item[ii)] Existe un $x\in A$ e $y\in B$ tales que
+    $d(x,y)=d(A,B)$.
+    \item[iii)] Si $A\cap B=\emptyset$, entonces $d(A,B)>0$.
+\end{itemize}
+\end{ejercicio}
+\begin{ejercicio}{} Sea $\{a_n\}$ una sucesi\'on en un e.m. $(X,d)$
+tal que $a_n\to a$. Demostrar que el conjunto
+$\{a_n:n\in\nn\}\cup\{a\}$ es compacto.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sean $(X,d)$ e $(Y,d')$ dos e.m. y $f:X\to Y$
+una funci\'on. Demostrar que $f$ es continua si, y solo si,
+$f_{|K}:K\to Y$ es continua para cada compacto $K$.
+\end{ejercicio}
+
+
+\begin{ejercicio}{} Como se desprende de la teor\'{\i}a, el intervalo
+$(0,1)$ no es cerrado en $\rr$. Encontrar un cubrimiento de
+$(0,1)$ que no tenga un subcubrimiento finito.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m. compacto y $f:X\to X$ una
+funci\'on continua. Supongamos que, para todo $x\in X$, se tiene
+que $f(x)\neq x$. Demostrar que existe $\epsilon>0$ tal que
+$d(f(x),x)>\epsilon$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $A\subset\rr$ no compacto, demostrar que
+existe una funci\'on continua $f:A\to\rr$ que no es acotada.
+\emph{Sugerencia} Como $A$ es no compacto y $A\subset \rr$
+entonces o $A$ es no acotado o $A$ es no cerrado, considerar estos
+dos casos.
+\end{ejercicio}
+
+
+\begin{ejercicio}{} Sea $\{K_n\}$ una sucesi\'on de conjuntos
+compactos no vacios, tales que $K_n\supset K_{n+1}$. Demostrar que
+$\bigcap_{n\in\nn}K_n\neq\emptyset$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m. compacto y $\{U_i\}_{i\in
+I}$ un cubrimiento por abiertos de $X$. Demostrar que existe un
+$\epsilon>0$ tal que toda bola de radio $\epsilon$ est\'a
+contenida en, al menos, un $U_i$. \emph{Sugerencia} Para cada
+$x\in X$ elegir $r_x$ tal que $B(x,r_x)$ esta contenida en alg\'un
+$U_i$. Tomar un subcubrimiento finito de estas bolas y luego
+considerar $\epsilon$ como el m\'{\i}nimo de las mitades de los
+radios de las bolas del subcubrimiento.
+\end{ejercicio}
+
+ 
+ \begin{ejercicio}{} Utilizar la siguiente ``idea'' para dar una
+ demostración alternativa de que compacto implica completo. Tomar
+ una suseción de Cauchy $\{a_n\}$ en $X$. De la desigualdad
+
+ \[
+	|d(x,a_n)-d(x,a_m)|\leq d(a_n,a_m)\quad n,m\in\mathbb{N}\,\,
+	x\in X
+ \]
+ concluír que $d(x,a_n)$ es una sucesión de Cauchy en
+ $\mathbb{R}$ y de esto que la siguiente función esta bien
+ definida:
+\[
+	f(x):=\lim\limits_{n\to\infty}d(x,a_n).
+\]
+Notar que $f:X\to\mathbb{R}$ y por ende $f$ alcanza un mínimo en
+algún $a\in X$. Por último demostrar que $a$ es el límite de
+$a_n$.
+\end{ejercicio}
+
+\section{Conexión}La definición de conjunto \textbf{conexo},
+\textbf{arco conexo} es idéntica a la que ya hemos estudiado. Los
+conjuntos conexos, así definidos, satisfacen las mismas
+propiedades que ya observamos para la métrica euclidea, con una
+excepción. El hecho que valga las mismas propiedades nos permite
+definir el concepto de \textbf{componente conexa} de la misma
+forma que lo hicimos para $\mathbb{R}^n$.
+
+La propiedad que no continua valiendo, en espacios métricos en
+general, es aquella que afirmaba que las componentes conexas de
+conjuntos abiertos eran abiertas. Esto es así pues en la
+demostración de tal propiedad utilizamos que una bola era un
+conjunto conexo y por el siguiente ejercicio:
+
+\begin{ejercicio}{} Encontrar un ejemplo de espacio métrico que
+tenga bolas disconexas.
+\end{ejercicio}
+
+Para conservar tal propiedad podríamos ``pedir'' la hipótesis que
+las bolas sean conexas. No obstante observaremos que en tal demostración
+podríamos haber utilizado cualquier entorno conexo que fuera bola o no.
+Esto nos lleva a la siguiente definición:
+
+\begin{definicion}{} Un espacio métrico $(X,d)$ se llama
+\textbf{localmente conexo} si para todo $x\in X$ y $r>0$
+existe un entorno conexo $V$ de $x$ tal que $V\subset B(x,r)\subset X$.
+\end{definicion}
+
+$\mathbb{R}^n$ es localmente conexo, podemos utilizar como $V$ la
+ misma bola que aparece en la definición anterior. Lo curioso del
+ caso es que hay espacios métricos $(X,d)$ tales que $X$ es conexo
+ y, sin embargo, $X$ no es localmente conexo.
+
+ \begin{ejemplo}{} Sea $X=\mathbb{Q}\times\mathbb{R}\cup \{(x,0):x\in\mathbb{R}\}$
+ y consideremos este $X$ como subespacio de $\mathbb{R}^2$. En la
+ figura \ref{noloccon} hemos hecho un bosquejo, está claro que es
+ imposible lograr exactitud, del gráfico $X$.
+ \begin{center}
+\begin{figure}[h]
+ \psset{unit=1mm}
+  \begin{pspicture}(0,0)(100,60)
+ \psset{linewidth=1}
+ \multirput{0}(0,0)(2,0){26}{\psline(0,0)(0,50)}
+ \rput(0,0){\psline(0,25)(50,25)}
+  \psset{linewidth=.5}
+ \pscircle(25,40){8}
+
+\rput(40,-40){
+ \scalebox{2}{
+\psclip{\pscircle(25,40){8}
+ }
+
+  \multirput{0}(0,0)(2,0){26}{\psline(0,0)(0,50)}
+ \rput(0,0){\psline(0,25)(50,25)}
+  \psset{linewidth=.5}
+ \pscircle(25,40){8}
+\endpsclip  }
+}
+\psline[linestyle=dashed](24,32)(90,24)
+\psline[linestyle=dashed](24,47.5)(88,55)
+\rput(116,54){$B(x,r)\cap X$}
+ \end{pspicture}
+ \caption{El subespacio $X$}\label{noloccon}
+ \end{figure}
+ \end{center}
+
+Notesé que si tomamos un punto en $X$ pero no sobre el eje horizontal
+y consideramos una bola de centro $x$ y un radio suficientemete chico
+de modo que la bola no interseque el mencionado eje, entonces
+$B(x,r)\cap X$ está compuesto de un conjunto de segmentos verticales
+disconexos entre si.  Si ahora buscamos un conjunto conexo $V$ tal que
+$V\subset B(x,r)$ notaremos que $V$ debería ser un subconjunto de alguno de los
+segmentos verticales, precisamente de aquel segmento que tenga el $x$ dentro
+de si, pero tal $V$ no será un entorno. Lo que prueba que el espacio $(X.d)$
+no es localmente conexo.
+
+\end{ejemplo}
+
+\subsection{Ejercicios}
+
+\begin{ejercicio}{} Demostrar que los siguientes conjuntos son
+disconexos:
+\begin{enumerate}
+    \item $(0,3)\cup [4,6)$.
+    \item $\rr-\mathbb{Q}$.
+    \item $\{1/n:n\in\nn\}\cup \{0\}$.
+\end{enumerate}
+\end{ejercicio}
+
+\begin{ejercicio}{} ?` Cu\'ales de los siguientes conjuntos son
+conexos? Justificar la respuesta.
+\begin{itemize}
+    \item[i)] $\bigcup_{n\in\nn}\{(x,\frac1nx):x\in\rr\}$.
+    \item[ii)] $\rr\times\rr-\mathbb{I}\times\mathbb{I}$, donde
+    $\mathbb{I}$ son los n\'umeros irracionales.
+    \item[iii)] $\{(x,y)\in\rr^2:x\neq 1\}$.
+    \item[iv)] $\{(x,y)\in\rr^2:x\neq 1\}\cup\{(1,0)\}$.
+\end{itemize}
+\end{ejercicio}
+
+\begin{ejercicio}{} Supongamos que  $A$ y $B$ son conjuntos conexos
+de un e.m.. Demostrar, dando contraejemplos, que no necesariamente
+deben ser conexos los siguientes conjuntos $A\cap B$, $A\cup B$,
+$\partial A$ y $A^0$.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $(X,d)$ un e.m. conexo e $(Y,d)$ un e.m. discreto.
+Demostrar que una funci\'on $f:X\to Y$ continua es constante.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sean $A$ y $B$ subconjuntos conexos de un e.m.
+Demostra que si $\C{A}\cap B\neq\emptyset$ entonces $A\cup B$ es
+conexo.
+\end{ejercicio}
+
+\begin{ejercicio}{} Probar que todo espacio ultram\'etrico es
+totalmente disconexo.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $\{K_n\}$ una sucesi\'on de conjuntos compactos y conexos
+de un e.m., supongamos que la sucesi\'on es decreciente, es decir
+$K_n\supset K_{n+1}$. Demostrar que $\bigcap_{n\in\nn} K_n$ es
+conexo. Dar un ejemplo de una sucesi\'on como la anterior,
+cambiando compacto por cerrado, tal que $\bigcap_{n\in\nn}K_n$ no
+sea conexo.
+\end{ejercicio}
+
+\begin{ejercicio}{} Dado un conjunto $A$ de un e.m. $(X,d)$
+definimos la funci\'on caracter\'{\i}stica del conjunto $A$ por:
+\[
+    1_A(x):=\left\{%
+\begin{array}{ll}
+    1, & \hbox{si $x\in A$;} \\
+    0, & \hbox{si $x\notin A$.} \\
+\end{array}%
+\right.
+\]
+Demostrar que $X$ es conexo si, y solo si, no existe una funci\'on
+caracter\'{\i}stica $1_A$, con $A\neq\emptyset$ y $A\neq X$,
+continua.
+\end{ejercicio}
+
+ 
+
+
+\begin{ejercicio}{} Demostrar que el espacio métrico $(X,d)$ es
+localmente conexo si, y sólo si, las componentes conexas de conjuntos
+abiertos son abiertas.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea $(X,d)$ un espacio métrico localmente
+conexo y compacto. Demostrar que $X$ tiene, a lo sumo, una
+cantidad finita de componentes.
+\end{ejercicio}
+
+\begin{ejercicio}{} Sea ${X,d}$ un espacio métrico homeomorfo a
+$\mathbb{Z}$ demostrar que las componentes conexas de $X$ son
+conjuntos unitarios. Este tipo de espacios se llaman totalmente
+disconexos. \end{ejercicio}

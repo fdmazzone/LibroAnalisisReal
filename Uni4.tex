@@ -3,7 +3,7 @@
 \section{Introducción}
 
 \begin{quotation}
-\marginnote{\includegraphics[scale=.6]{imagenes/Riemann.jpeg}\\
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Riemann.jpeg}\\
 Bernhard Riemann 1826-1866
 } 
 << Bernard Riemann recibió su doctorado en 1851, su \emph{Habilitación} en 1854. La habilitación confiere el reconocimiento de la capacidad de crear sustanciales contribuciones en la investigación más allá de la tesis doctoral, y es un prerequisito necesario para ocupar un cargo de profesor en una universidad Alemana. Riemann eligió como tema  de habilitación el problema de las series de Fourier. Su tesis fue titulada \emph{\"Uber die Darstellbarkeit einer Function durch eine trigonometrische Reine} (Sobre la representación de una función por series trigonométricas) y respondía la pregunta:  Cuándo una función definida en el intervalo $(-\pi,\pi)$ puede ser respresentada por la serie trigonométrica $a_0/2+\sum_{n=1}^{\infty}[a_n\cos(nx)+b_n\sen(nx)]$? 
@@ -11,17 +11,17 @@ En este trabajo  es donde hallamos   la Integral de Riemann, introducida en una 
 \end{quotation}
 \begin{flushright}
  David M. Bressoud\\
- A Radical Approach to Lebesgue's Theory of Integration.\lectura
+ A Radical Approach to Lebesgue's Theory of Integration.
 \end{flushright}
 
 
 En este capítulo vamos a desarrollar el concepto de la integral de Riemman. Vamos a exponer la definición de la integral debida a Riemann y la ideada por J. G. Darboux.
 Mostraemos la equivalencia de las dos definiciones y discutiremos las propiedades de la intergal, sus alcances y límites. Preparamos así el camino para la introducción de la integral de Lebesgue. 
-\marginnote{\includegraphics[scale=.8]{imagenes/Darboux.jpg}\\
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Darboux.jpg}\\
 Jean G. Darboux  1842-1917
 } 
 
-Debemos advertir \advertencia  al alumno que en este curso dejaremos un poco de lado las cuestiones procedimentales de cómo calcular integrales, aspecto que seguramente abordó en cursos anteriores y del cual nos vamos a valer. Tampoco debe esperar que las actividades prácticas se centren en esa dirección.   Nuestro principal objetivo aquí es discutir la materia conceptual ligada a la integral y cómo es previsible las actividades prácticas estarán orientadas con ese propósito.
+Debemos advertir  al alumno que en este curso dejaremos un poco de lado las cuestiones procedimentales de cómo calcular integrales, aspecto que seguramente abordó en cursos anteriores y del cual nos vamos a valer. Tampoco debe esperar que las actividades prácticas se centren en esa dirección.   Nuestro principal objetivo aquí es discutir la materia conceptual ligada a la integral y cómo es previsible las actividades prácticas estarán orientadas con ese propósito.
 
 
 El concepto de integral encuentra su motivación en diversos problemas. Aparece cuando se busca el centro de masas de un determinado cuerpo, cuando se quieren hallar longitudes de arco, volúmenes, cuando se quiere reconstruir el movimiento de cuerpo conocida su velocidad, etc. La integral es utilizada en incontables otros conceptos matemáticos, como ser el mencionado már arriba relativo a las series de Fourier. 
@@ -118,14 +118,14 @@ En esta sección abordaremos el problema del área de regiones planas. Vamos a c
 Nuestra primera aproximación será la que propuso Bernhard Riemann en 1854, pero seguiremos  el enfoque de Jean Darboux. En esta parte de nuestra exposición consideraremos subconjuntos de $\mathbb{R}^2$ de un tipo especial, concretamente a conjuntos que quedan encerrados entre la gráfica de una función y del eje coordenadas $x$. Esto nos lleva alconcepto de integral. 
 
 
-\begin{definicion}[Partición] Sea $[a,b]$ un intervalo. Una {\em partición}\index{Partición} $P$ es un conjunto ordenado y finito de puntos, donde el primer elemento es $a$ y el último $b$. Es decir $P=\{x_0,x_1,\ldots,x_n\}$, donde $a=x_0<x_1<\cdots<x_n=b$. 
+\begin{definicion}[Partición]{} Sea $[a,b]$ un intervalo. Una {\em partición}\index{Partición} $P$ es un conjunto ordenado y finito de puntos, donde el primer elemento es $a$ y el último $b$. Es decir $P=\{x_0,x_1,\ldots,x_n\}$, donde $a=x_0<x_1<\cdots<x_n=b$. 
  
 \end{definicion}
 
 
 
 
-\begin{definicion}[Sumas de Darboux] Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Consideremos las siguientes magnitudes
+\begin{definicion}[Sumas de Darboux]{} Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Consideremos las siguientes magnitudes
 \[
  \begin{split}
     m_i&:=\inf\{f(x)| x\in [x_{i-1},x_i]\}\\
@@ -149,13 +149,13 @@ y la \emph{Suma inferior de Darboux}\index{Suma inferiorr} como
   \end{center}
 }
 
-\begin{lema}[Monotonía sumas de Darboux]  Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Supongamos que $P'$ es otra partición que tiene un pnto más que $P$. Entoces
+\begin{lema}[Monotonía sumas de Darboux]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Supongamos que $P'$ es otra partición que tiene un pnto más que $P$. Entoces
  \[
   \underline{S}(P',f)\geq \underline{S}(P,f)\quad\text{y}\quad \overline{S}(P',f)\leq \overline{S}(P,f)
  \]
 \end{lema}
 
-\begin{ejercicio} Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P,P'$ particiones de $[a,b]$ con $P\subset P'$. Demostrar que 
+\begin{ejercicio}{} Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P,P'$ particiones de $[a,b]$ con $P\subset P'$. Demostrar que 
   \[
   \underline{S}(P,f)\leq \underline{S}(P',f)\quad\text{y}\quad \overline{S}(P',f)\leq \overline{S}(P,f).
  \]
@@ -166,7 +166,7 @@ y la \emph{Suma inferior de Darboux}\index{Suma inferiorr} como
  
 \end{ejercicio}
 
-\begin{definicion}[Funciones integrables] Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Diremos que $f$ es {\em integrable Riemann} \index{Integrable Riemann} si 
+\begin{definicion}[Funciones integrables]{} Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Diremos que $f$ es {\em integrable Riemann} \index{Integrable Riemann} si 
 \begin{equation}\label{eq:integrable}
  \sup\left\{\underline{S}(P,f)| P \text{partición de }[a,b]\right\}=\inf\left\{\overline{S}(P,f)| P \text{partición de }[a,b]\right\}
 \end{equation}
@@ -177,7 +177,7 @@ En caso que $f$ sea integrable llamamos {\em integral} \index{Integral} entre $a
  
 \end{definicion}
  
-\begin{teorema}[Primer criterio de integrabilidad]  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si para todo $\epsilon>0$ existe una partición $P$ tal que 
+\begin{teorema}[Primer criterio de integrabilidad]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si para todo $\epsilon>0$ existe una partición $P$ tal que 
 \begin{equation}\label{eq:Crit1Int}
  \overline{S}(P;f)-\underline{S}(P;f)<\epsilon.
 \end{equation}
@@ -189,28 +189,28 @@ En caso que $f$ sea integrable llamamos {\em integral} \index{Integral} entre $a
 \end{demo}
 
 
-\begin{ejemplo} Sea $0\leq a<b$ veamos que 
+\begin{ejemplo}{} Sea $0\leq a<b$ veamos que 
 \[
  \int_a^b x dx=\frac{b^2}{2}-\frac{a^2}{2}.
 \]
 \end{ejemplo}
 
 
-\begin{ejercicio} Sea $0\leq a<b$ veamos que 
+\begin{ejercicio}{} Sea $0\leq a<b$ veamos que 
 \[
  \int_a^b x^2 dx=\frac{b^3}{3}-\frac{a^3}{3}.
 \]
 {\em Ayuda:} Usar particiones uniformes y la fórmula $\sum_{i=1}^nn^2= n(n+1)(2n+1)/6$.
 \end{ejercicio}
 
-\begin{ejemplo} Sea $0\leq a<b$ y $n\in\mathbb{N}$,  veamos que 
+\begin{ejemplo}{} Sea $0\leq a<b$ y $n\in\mathbb{N}$,  veamos que 
 \[
  \int_a^b x^n dx=\frac{b^{n+1}}{n+1}-\frac{a^{n+1}}{n+1}.
 \]
 Usamos particiones no uniformes
 \end{ejemplo}
 
-\begin{ejercicio} Sea $0\leq a<b$ y $n$ un entero negativo, veamos que
+\begin{ejercicio}{} Sea $0\leq a<b$ y $n$ un entero negativo, veamos que
 \[
  \int_a^b x^n dx=\begin{cases}
                   \frac{b^{n+1}}{n+1}-\frac{a^{n+1}}{n+1} & \text{ si } n\neq -1\\
@@ -220,7 +220,7 @@ Usamos particiones no uniformes
 \end{ejercicio}
 
 
-\begin{ejemplo} Sea $0\leq a<b\leq \pi/2$, veamos que
+\begin{ejemplo}{} Sea $0\leq a<b\leq \pi/2$, veamos que
 \[
  \int_a^b \sen x dx=-(\cos(b)-\cos(a)).
 \]
@@ -228,14 +228,14 @@ Usamos particiones no uniformes
 
 
 
-\begin{ejercicio} Sea $0\leq a<b\leq \pi$, veamos que
+\begin{ejercicio}{} Sea $0\leq a<b\leq \pi$, veamos que
 \[
  \int_a^b \sen x dx=-(\cos(b)-\cos(a)).
 \]
 \end{ejercicio}
 
 
-\begin{ejemplo} Usamos SymPy y sumas de Darboux aproximar el valor de $\pi$. Utilizamos el hecho que $\pi/4$ es el área de un cuarto de círculo de radio $1$. Entonces 
+\begin{ejemplo}{} Usamos SymPy y sumas de Darboux aproximar el valor de $\pi$. Utilizamos el hecho que $\pi/4$ es el área de un cuarto de círculo de radio $1$. Entonces 
 $$\pi=4\int_0^1\sqrt{1-x^2}dx.$$
 
 \begin{sympyblock}
@@ -251,7 +251,7 @@ Encontramos la estimación
 \[\sympy{4*Sinf}\leq \pi \leq \sympy{4*Ssup}\]
 \end{ejemplo}
 
-\begin{ejercicio} Usando SymPy estimar las siguientes integrales 
+\begin{ejercicio}{} Usando SymPy estimar las siguientes integrales 
 $$\int_1^2\frac{1}{x}dx,$$
  comparar con $\ln(2)$,
 
@@ -267,7 +267,7 @@ $$\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-x^2}}dx,$$
 
 
 
-\begin{teorema}[Propiedades elementales de la integral] Sean $f,g:[a,b]\to\mathbb{R}$ integrables, $\alpha,\beta\in\mathbb{R}$ y $c\in (a,b)$. Entonces
+\begin{teorema}[Propiedades elementales de la integral]{} Sean $f,g:[a,b]\to\mathbb{R}$ integrables, $\alpha,\beta\in\mathbb{R}$ y $c\in (a,b)$. Entonces
 \begin{description}
  \item[Linealidad] $\alpha f+\beta g$ es integrable y 
  \[
@@ -292,7 +292,7 @@ $$\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-x^2}}dx,$$
 
 
  
-\begin{teorema}[Segundo criterio de integrabilidad]  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
+\begin{teorema}[Segundo criterio de integrabilidad]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
 \[\max_i\{x_i-x_{i-1}\}<\delta,\]
 se tiene que
 \begin{equation}\label{eq:Crit1Int}
@@ -304,7 +304,7 @@ se tiene que
  
 \end{demo}
 
-\begin{teorema}[Continuidad implica integrabilidad]  Si $f:[a,b]\to\mathbb{R}$ es una función continua entonces es integrable.
+\begin{teorema}[Continuidad implica integrabilidad]{}  Si $f:[a,b]\to\mathbb{R}$ es una función continua entonces es integrable.
 \end{teorema}
 \begin{demo} hacer
  \end{demo}
@@ -312,7 +312,7 @@ se tiene que
  
 ¿Qué ocurre con las funciones discontinuas? 
 
-\begin{ejemplo}[Función de Heavside] Es la función
+\begin{ejemplo}[Función de Heavside]{} Es la función
 \[
  H(x)=\begin{cases}0 & \text{ si } x<0\\1 & \text{ si } x\geq 0\end{cases}.
 \]
@@ -322,9 +322,9 @@ Es discontinua en $[-1,1]$ pero integrable.
 
 
 
-\marginnote{\includegraphics[scale=.25]{imagenes/dirichlet.png}\\
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/dirichlet.png}\\
 Función de Dirichlet}
-\begin{ejemplo}[Función de Dirichlet] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
+\begin{ejemplo}[Función de Dirichlet]{} Es la función $f:[0,1]\to\mathbb{R}$ definida por 
 \[
  f(x)=\begin{cases} 1 & \text{ si } x\in\mathbb{Q}\\0 & \text{ si }   x\notin\mathbb{Q}\\
 \end{cases}
@@ -336,14 +336,14 @@ Veamos que $f$ es discontinua en todo punto y no integrable.
 
 
 
-\begin{ejemplo}[Función de Thomae] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
+\begin{ejemplo}[Función de Thomae]{} Es la función $f:[0,1]\to\mathbb{R}$ definida por 
 \[
  f(x)=\begin{cases} \frac{1}{q} & \text{ si } x=\frac{p}{q},p,q\in\mathbb{Z}, \text{m.c.d}(p,q)=1
  \\0 & \text{ si }   x\notin\mathbb{Q}\\
 \end{cases}
 \]
 \end{ejemplo}
-\marginnote{\includegraphics[scale=.15]{imagenes/thomae.png}\\
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/thomae.png}\\
 Función de Thomae}
 
 Para graficarla
@@ -363,9 +363,9 @@ plt.plot(q,f,'.',markersize=12)
 
 Veamos que es discontinua en todo punto racional y es integrable integrable.
 
-\marginnote{\includegraphics[scale=.22]{imagenes/escalera.png}\\
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/escalera.png}\\
 Función creciente y discontinua en $\mathbb{Q}\cap [0,1]$}
-\begin{ejemplo}[Escalera discontinua] Sea $\mathbb{Q}\cap [0,1]=\{q_1,q_2,\ldots\}$ una numeración de los racionales del $[0,1]$. Definamos $f:[0,1]\to\mathbb{R}$ como
+\begin{ejemplo}[Escalera discontinua]{} Sea $\mathbb{Q}\cap [0,1]=\{q_1,q_2,\ldots\}$ una numeración de los racionales del $[0,1]$. Definamos $f:[0,1]\to\mathbb{R}$ como
  \[
   f(x)=\sum_{n=1}^{\infty}H(x-q_n),
  \]
@@ -388,13 +388,13 @@ Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\
 
 
 \end{ejemplo}
-\begin{definicion}[Oscilación sobre un intervalo] Sea $f:[a,b]\to\mathbb{R}$ acotada y $I=[\alpha,\beta]\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación} de $f$ en $I$ por 
+\begin{definicion}[Oscilación sobre un intervalo]{} Sea $f:[a,b]\to\mathbb{R}$ acotada y $I=[\alpha,\beta]\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación} de $f$ en $I$ por 
 \[
  w(f,I)=\sup\{f(x)| x\in I\}-\inf\{f(x)| x\in I\}.
 \]
 \end{definicion}
 
-\begin{ejemplo} 
+\begin{ejemplo}{} 
 \begin{enumerate}
  \item Para la función de Dirichlet $w(f,I)=1$ para todo $I$ con interior no vacío.
  \item Para la función de Heavside e $I=[\alpha,\beta]$
@@ -417,7 +417,7 @@ Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\
 
 
 
-\begin{definicion} Sea $f:[a,b]\to\mathbb{R}$ acotada, $\sigma>0$ y $P=\{x_0,x_1,\ldots,x_n\}$ una partición. Definimos
+\begin{definicion}{} Sea $f:[a,b]\to\mathbb{R}$ acotada, $\sigma>0$ y $P=\{x_0,x_1,\ldots,x_n\}$ una partición. Definimos
 \[
  I_{\sigma}:=\{i\in\{1,\ldots,n\}|w(f,[x_{i-1},x_i])>\sigma\}.
 \]
@@ -439,27 +439,27 @@ y
  
 \end{proposicion}
 
-\begin{ejemplo} Para la función de Dirichlet y para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=\{x_1,\ldots,x_n\}$ y $R(P,f,\sigma)=[0,1]$
+\begin{ejemplo}{} Para la función de Dirichlet y para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=\{x_1,\ldots,x_n\}$ y $R(P,f,\sigma)=[0,1]$
  
 \end{ejemplo}
 
-\begin{ejemplo} Para la función de Heavside,   para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=i$, donde $i$ es el índice para el que $i\in (x_{i-1},x_i]$ y $R(P,F,\sigma)=x_i-x_{i-1}$.
+\begin{ejemplo}{} Para la función de Heavside,   para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=i$, donde $i$ es el índice para el que $i\in (x_{i-1},x_i]$ y $R(P,F,\sigma)=x_i-x_{i-1}$.
  
 \end{ejemplo}
 
-\begin{teorema}[Criterio de integrabilidad de Riemann] Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ talque $R(P,f,\sigma)<\epsilon$.
+\begin{teorema}[Criterio de integrabilidad de Riemann]{} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ talque $R(P,f,\sigma)<\epsilon$.
 \end{teorema}
 
-\begin{ejemplo} Discutir los ejemplos Dirichlet, Heavside, Continuas, escalera discontinua
+\begin{ejemplo}{} Discutir los ejemplos Dirichlet, Heavside, Continuas, escalera discontinua
  
 \end{ejemplo}
 
-\begin{ejemplo}[Función de Riemann] Definimos
+\begin{ejemplo}[Función de Riemann]{} Definimos
 \[
  ((x))=x-[x+0.5]
 \]
 
-\marginnote{\includegraphics[scale=.24]{imagenes/serrucho.pdf}\\
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/serrucho.pdf}\\
 Función serrucho}
 \begin{sympyverbatim}
 x=symbols('x')
@@ -475,7 +475,7 @@ Definimos la función de Riemann Porque
 f=sum([g.subs(x,n*x)/n**2 for n in range(1,20)])
 plot(f,(x,0,1))
 \end{sympyverbatim}
-\marginnote{\includegraphics[scale=.3]{imagenes/funcRiemann.png}\\
+\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/funcRiemann.png}\\
 Función de Riemann}
  
 Demostramos que la función de Riemann es discontinua en los racionales $p/q$ donde $\text{m.c.d}(p,q)=1$ y $q$ par. Es integrable en $[0,1]$.  
@@ -483,7 +483,7 @@ Demostramos que la función de Riemann es discontinua en los racionales $p/q$ do
 \end{ejemplo}
 
 
-\begin{definicion}[Oscilación de una función en un punto]\index{oscilación} 
+\begin{definicion}[Oscilación de una función en un punto]{}\index{oscilación} 
 Sea $f:[a,b]\to\mathbb{R}$ y $x\in [a,b]$ 
 acotada definimos la {\em oscilación de $f$ en $x$} como 
 \[
@@ -492,10 +492,10 @@ acotada definimos la {\em oscilación de $f$ en $x$} como
 donde el ínfimo se toma sobre todos los intervalos que contienen a $x$ en su interior.
 \end{definicion}
 
-\begin{ejercicio} $f$ es continua en $x$ si y solo si $w(f;x)=0$.
+\begin{ejercicio}{} $f$ es continua en $x$ si y solo si $w(f;x)=0$.
  \end{ejercicio}
 
- \begin{definicion}[Contenido exterior]\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ [x_{i-1},x_i]\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n[x_{i-1},x_i]$.
+ \begin{definicion}[Contenido exterior]{}\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ [x_{i-1},x_i]\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n[x_{i-1},x_i]$.
  
  El \emph{contenido exterior} de $S$ se define por 
  \[
@@ -505,7 +505,7 @@ donde el ínfimo es tomado sobre todos los cubrimientos finitos de $S$.
   
  \end{definicion}
  
- \begin{teorema}[Criterio de integrabilidad de Hankel]  Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si para todo $\sigma>0$ el conjunto $S_{\sigma}:=\{x\in [a,b]| w(f,x)>\sigma\}$ tiene contenido exterior igual a $0$ ($c_e(S_{\sigma})=0)$.
+ \begin{teorema}[Criterio de integrabilidad de Hankel]{}  Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si para todo $\sigma>0$ el conjunto $S_{\sigma}:=\{x\in [a,b]| w(f,x)>\sigma\}$ tiene contenido exterior igual a $0$ ($c_e(S_{\sigma})=0)$.
    \end{teorema}
 
 
@@ -533,7 +533,7 @@ plt.plot(x,y)
 
  \begin{figure}[h]
  \begin{center}
- \includegraphics[scale=0.5]{imagenes/VolterraPrecursora.png}
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/VolterraPrecursora.png}
  \caption{Función precursora de Volterra}
 \end{center}
  \end{figure}
@@ -594,7 +594,7 @@ plt.plot(x,y)
 
  \begin{figure}[h]
  \begin{center}
- \includegraphics[scale=0.4]{imagenes/volterra.png}
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/volterra.png}
  \caption{Función de Volterra}
 \end{center}
  \end{figure}

@@ -1,0 +1,350 @@
+ Ejemplos unidad 2
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k+kn}{import} \PY{o}{*}
+\PY{n}{init\PYZus{}printing}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    Ejemplo \(f_n(x)=\frac{1}{1+nx^2}\) En este ejemplo 
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x,n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fn}\PY{o}{=}\PY{l+m+mi}{1}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_3_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Ejemplo \(f_n(x)=\frac{n^2x-n^2}{1+nx^2}\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x,n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fn}\PY{o}{=}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{,}\PY{n}{ylim}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_5_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Ejemplo \(f_n(x)=\frac{nx}{1+n^2x^2}\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x,n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fn}\PY{o}{=}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_7_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Ejemplo \(f_n(x)=\sqrt{x^2+\frac{1}{n^2}}\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{grafica}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{x1}\PY{p}{,}\PY{n}{x2}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{f}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{x1}\PY{p}{,}\PY{n}{x2}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+    \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{m}\PY{p}{)}\PY{p}{:}
+        \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{f}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{x1}\PY{p}{,}\PY{n}{x2}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+    \PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\PY{n}{f}\PY{o}{=}\PY{n}{sqrt}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{l+m+mf}{1.0}\PY{o}{/}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{grafica}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_9_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Ejemplo \(f_n(x)=\sin(nx)\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{f}\PY{o}{=}\PY{n}{sin}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{p}{)}
+\PY{n}{grafica}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{pi}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_11_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Series de Potencias
+
+Ejemplo \(S(z)=\sum\limits_{n=1}^{\infty}z^n\)
+
+Serie geométrica converge \(|z|<1\). Ponemos \(z=r e^{i\theta}\). Luego
+\(z^j=r^je^{j\theta i}\).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{n}\PY{p}{,}\PY{n}{theta}\PY{p}{,}\PY{n}{r}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n,theta,r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{real}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+
+\PY{n}{S}\PY{o}{=}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{n}{r}\PY{o}{*}\PY{o}{*}\PY{n}{j}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{n}{j}\PY{o}{*}\PY{n}{theta}\PY{o}{*}\PY{n}{I}\PY{p}{)} \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{SS}\PY{o}{=}\PY{n}{re}\PY{p}{(}\PY{n}{S}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{sympy.plotting} \PY{k+kn}{import} \PY{n}{plot3d\PYZus{}parametric\PYZus{}surface}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plot3d\PYZus{}parametric\PYZus{}surface}\PY{p}{(}\PY{n}{r}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{theta}\PY{p}{)}\PY{p}{,}\PY{n}{r}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{theta}\PY{p}{)}\PY{p}{,}\PY{n}{SS}\PY{p}{,}\PY{p}{(}\PY{n}{theta}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{r}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_15_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+            \begin{tcolorbox}[breakable, boxrule=.5pt, size=fbox, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{9}{\hspace{3.5pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+<sympy.plotting.plot.Plot at 0x7f413ec776d0>
+\end{Verbatim}
+\end{tcolorbox}
+        
+    Series de Fourier 
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{real}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n,m}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{integer}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,}\PY{n}{positive}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+\PY{n}{Integral}\PY{p}{(}\PY{n}{cos}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{m}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{10}{}
+    
+    $$\begin{cases} 0 & \text{for}\: m \neq n \\\pi & \text{otherwise} \end{cases}$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Integral}\PY{p}{(}\PY{n}{sin}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{m}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{11}{}
+    
+    $$\begin{cases} 0 & \text{for}\: m \neq n \\\pi & \text{otherwise} \end{cases}$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Integral}\PY{p}{(}\PY{n}{cos}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{m}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{12}{}
+    
+    $$0$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{S}\PY{o}{=}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{n}{sin}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{theta}\PY{p}{)}\PY{o}{/}\PY{n}{n} \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{plot}\PY{p}{(}\PY{n}{S}\PY{p}{,}\PY{p}{(}\PY{n}{theta}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{pi}\PY{p}{,}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_20_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+            \begin{tcolorbox}[breakable, boxrule=.5pt, size=fbox, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{13}{\hspace{3.5pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+<sympy.plotting.plot.Plot at 0x7f413f16afd0>
+\end{Verbatim}
+\end{tcolorbox}
+        
+    Ejemplo
+\[f(x)=\left\{\begin{array}{cc} \frac{\pi-x}{2}, & \text{ si } x\in [0,\pi]\\
+    -\frac{\pi+x}{2}, & \text{ si } x\in [-\pi,0) \end{array}    \right.\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{f}\PY{o}{=}\PY{n}{Piecewise}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{pi}\PY{o}{\PYZhy{}}\PY{n}{x}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{x}\PY{o}{\PYZgt{}}\PY{o}{=}\PY{l+m+mi}{0}  \PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{n}{pi}\PY{o}{+}\PY{n}{x}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{l+m+mi}{0} \PY{p}{)}\PY{p}{)}
+\PY{n}{plot}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_22_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+            \begin{tcolorbox}[breakable, boxrule=.5pt, size=fbox, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{14}{\hspace{3.5pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+<sympy.plotting.plot.Plot at 0x7f413f019b50>
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{a}\PY{p}{(}\PY{n}{g}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{l+m+mi}{1}\PY{o}{/}\PY{n}{pi}\PY{o}{*}\PY{n}{Integral}\PY{p}{(}\PY{n}{g}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\PY{k}{def} \PY{n+nf}{b}\PY{p}{(}\PY{n}{g}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{l+m+mi}{1}\PY{o}{/}\PY{n}{pi}\PY{o}{*}\PY{n}{Integral}\PY{p}{(}\PY{n}{g}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{doit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{[}\PY{n}{a}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{k}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{16}{}
+    
+    $$\left [ 0, \quad 0, \quad 0, \quad 0, \quad 0, \quad 0, \quad 0, \quad 0, \quad 0\right ]$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{[}\PY{n}{b}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{k}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{17}{}
+    
+    $$\left [ 1, \quad \frac{1}{2}, \quad \frac{1}{3}, \quad \frac{1}{4}, \quad \frac{1}{5}, \quad \frac{1}{6}, \quad \frac{1}{7}, \quad \frac{1}{8}, \quad \frac{1}{9}\right ]$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{S}\PY{o}{=}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{n}{b}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{x}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{S}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{18}{}
+    
+    $$\sin{\left (x \right )} + \frac{\sin{\left (2 x \right )}}{2} + \frac{\sin{\left (3 x \right )}}{3} + \frac{\sin{\left (4 x \right )}}{4} + \frac{\sin{\left (5 x \right )}}{5} + \frac{\sin{\left (6 x \right )}}{6} + \frac{\sin{\left (7 x \right )}}{7} + \frac{\sin{\left (8 x \right )}}{8} + \frac{\sin{\left (9 x \right )}}{9} + \frac{\sin{\left (10 x \right )}}{10} + \frac{\sin{\left (11 x \right )}}{11} + \frac{\sin{\left (12 x \right )}}{12} + \frac{\sin{\left (13 x \right )}}{13} + \frac{\sin{\left (14 x \right )}}{14} + \frac{\sin{\left (15 x \right )}}{15} + \frac{\sin{\left (16 x \right )}}{16} + \frac{\sin{\left (17 x \right )}}{17} + \frac{\sin{\left (18 x \right )}}{18} + \frac{\sin{\left (19 x \right )}}{19}$$
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{S}\PY{o}{=}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{n}{b}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{x}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{plot}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{S}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{p}{,}\PY{n}{pi}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_27_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+            \begin{tcolorbox}[breakable, boxrule=.5pt, size=fbox, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{19}{\hspace{3.5pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+<sympy.plotting.plot.Plot at 0x7f413f1ae210>
+\end{Verbatim}
+\end{tcolorbox}
+        
+    Convergencia uniforme
+
+Ejemplo $ f\_n(x)=\frac{1}{n}e^{-n2x^2}x $
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x,n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fn}\PY{o}{=}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{n}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{x}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_29_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Ejemplo \$ f\_n(x)=ne\textsuperscript{\{-n}2x\^{}2\}x \$
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\hspace{4pt}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{fn}\PY{o}{=}\PY{n}{n}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{n}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{x}
+\PY{n}{p}\PY{o}{=}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{n}{p}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{plot}\PY{p}{(}\PY{n}{fn}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{show}\PY{o}{=}\PY{n}{false}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{p}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{python/uni3/output_31_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    % Add a bibliography block to the postdoc
+    
