@@ -1,16 +1,4 @@
-=>PYTHONTEX#sympy#default#default#0#block####Uni4.tex#241#
-from sympy import *
-N=1000.0
-lim=int(N+1)
-x=symbols('x')
-f=sqrt(1-x**2)
-Sinf=sum([ f.subs(x,i/N)*1/N for i in range(1,lim)])
-Ssup=sum([f.subs(x,(i-1)/N)*1/N for i in range(1,lim)])
-=>PYTHONTEX#sympy#default#default#1#i####Uni4.tex#251#
-4*Sinf
-=>PYTHONTEX#sympy#default#default#2#i####Uni4.tex#251#
-4*Ssup
-=>PYTHONTEX#sympy#default#defaultverb#0#verbatim####Uni4.tex#351#
+=>PYTHONTEX#sympy#default#defaultverb#0#verbatim####Uni4.tex#443#
 from matplotlib import pyplot as plt
 total=500
 q=[]
@@ -21,7 +9,7 @@ for i in range(1,total):
             q.append(Rational(j,i))
             f.append(1.0/i)
 plt.plot(q,f,'.',markersize=12)
-=>PYTHONTEX#sympy#default#defaultverb#1#verbatim####Uni4.tex#373#
+=>PYTHONTEX#sympy#default#defaultverb#1#verbatim####Uni4.tex#465#
 q=[]
 f=[]
 total=20
@@ -33,35 +21,35 @@ x=symbols('x')
 Heavside=Piecewise((0,x<0),(1,x>=0))
 f=sum([Heavside.subs(x,x-q[n])/2**n for n in range(len(q))])
 plot(f,(x,0,1))
-=>PYTHONTEX#sympy#default#defaultverb#2#verbatim####Uni4.tex#464#
+=>PYTHONTEX#sympy#default#defaultverb#2#verbatim####Uni4.tex#556#
 x=symbols('x')
 g=x-floor(x+.5)
 plot(g,(x,-5,5))
-=>PYTHONTEX#sympy#default#defaultverb#3#verbatim####Uni4.tex#474#
+=>PYTHONTEX#sympy#default#defaultverb#3#verbatim####Uni4.tex#566#
 f=sum([g.subs(x,n*x)/n**2 for n in range(1,20)])
 plot(f,(x,0,1))
-=>PYTHONTEX#py#default#default#0#block####Uni4.tex#517#
+=>PYTHONTEX#py#default#default#0#block####Uni4.tex#609#
 import numpy as np
 import scipy.optimize
 from matplotlib import pyplot as plt
-=>PYTHONTEX#py#default#default#1#block####Uni4.tex#525#
+=>PYTHONTEX#py#default#default#1#block####Uni4.tex#617#
 def G(x):
     return x**2*np.sin(1/x)
 x=np.arange(0,.15,0.0000001)
 y=G(x)
 plt.plot(x,y)
-=>PYTHONTEX#py#default#default#2#block####Uni4.tex#545#
+=>PYTHONTEX#py#default#default#2#block####Uni4.tex#637#
 def F(x):
     return 2*x*np.sin(1/x) - np.cos(1/x)
 x = scipy.optimize.broyden2(F, .13, f_tol=1e-14)
 x,1-x, G(x)
-=>PYTHONTEX#py#default#default#3#i####Uni4.tex#552#
+=>PYTHONTEX#py#default#default#3#i####Uni4.tex#644#
 np.float32(x)
-=>PYTHONTEX#py#default#default#4#i####Uni4.tex#552#
+=>PYTHONTEX#py#default#default#4#i####Uni4.tex#644#
 np.float32(G(x))
-=>PYTHONTEX#py#default#default#5#i####Uni4.tex#552#
+=>PYTHONTEX#py#default#default#5#i####Uni4.tex#644#
 np.float32(1-x)
-=>PYTHONTEX#py#default#default#6#block####Uni4.tex#559#
+=>PYTHONTEX#py#default#default#6#block####Uni4.tex#651#
 def f0(x):
     x1=x[x<=0]
     x2=x[(x<=0.13163877)*(x>0)]
@@ -74,7 +62,7 @@ def f0(x):
     y4=(1-x4)**2*np.sin(1/(1-x4))
     y5=np.zeros(np.shape(x5))
     return np.concatenate((y1,y2,y3,y4,y5), axis=None)
-=>PYTHONTEX#py#default#defaultverb#0#verbatim####Uni4.tex#575#
+=>PYTHONTEX#py#default#defaultverb#0#verbatim####Uni4.tex#667#
 def volterra(x,n,a=0,b=1):
     if n == 0:
         return 0
@@ -83,7 +71,7 @@ def volterra(x,n,a=0,b=1):
     pto_med = .5*(a+b)
     return volterra(x,n-1,a,a1) + (b1-a1)*f0((x-a1)/(b1-a1))\
     + volterra(x,n-1,b1,b)
-=>PYTHONTEX#py#default#defaultverb#1#verbatim####Uni4.tex#588#
+=>PYTHONTEX#py#default#defaultverb#1#verbatim####Uni4.tex#680#
 x=np.arange(0,1,0.0000001)
 y=volterra(x,12)
 plt.plot(x,y)

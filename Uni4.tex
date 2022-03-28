@@ -3,9 +3,9 @@
 \section{Introducción}
 
 \begin{quotation}
-\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Riemann.jpeg}\\
-Bernhard Riemann 1826-1866
-} 
+\marginpar{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Riemann.jpeg}\\
+Bernhard Riemann 1826-1866. Fue un matemático alemán que realizó contribuciones muy importantes al análisis y la geometría diferencial, algunas de las cuales allanaron el camino para el desarrollo más avanzado de la relatividad general. Su nombre está conectado con la función zeta, la hipótesis de Riemann, la integral de Riemann, el lema de Riemann, las variedades de Riemann, las superficies de Riemann y la geometría de Riemann. 
+\flushright{Wikipedia}} 
 << Bernard Riemann recibió su doctorado en 1851, su \emph{Habilitación} en 1854. La habilitación confiere el reconocimiento de la capacidad de crear sustanciales contribuciones en la investigación más allá de la tesis doctoral, y es un prerequisito necesario para ocupar un cargo de profesor en una universidad Alemana. Riemann eligió como tema  de habilitación el problema de las series de Fourier. Su tesis fue titulada \emph{\"Uber die Darstellbarkeit einer Function durch eine trigonometrische Reine} (Sobre la representación de una función por series trigonométricas) y respondía la pregunta:  Cuándo una función definida en el intervalo $(-\pi,\pi)$ puede ser respresentada por la serie trigonométrica $a_0/2+\sum_{n=1}^{\infty}[a_n\cos(nx)+b_n\sen(nx)]$? 
 En este trabajo  es donde hallamos   la Integral de Riemann, introducida en una sección corta antes del nucleo principal de la tesis, como parte del trabajo preparatorio que él necesitó desarrollar antes de abordar el problema de representabilidad por series trigonométricas. >> 
 \end{quotation}
@@ -15,16 +15,15 @@ En este trabajo  es donde hallamos   la Integral de Riemann, introducida en una 
 \end{flushright}
 
 
-En este capítulo vamos a desarrollar el concepto de la integral de Riemman. Vamos a exponer la definición de la integral debida a Riemann y la ideada por J. G. Darboux.
-Mostraemos la equivalencia de las dos definiciones y discutiremos las propiedades de la intergal, sus alcances y límites. Preparamos así el camino para la introducción de la integral de Lebesgue. 
-\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Darboux.jpg}\\
-Jean G. Darboux  1842-1917
-} 
+En este capítulo vamos a desarrollar el concepto de la integral de Riemman. Vamos a exponer la definición de esta integral dada por J. G. Darboux. Discutiremos las propiedades de la intergal, sus alcances y límites. Preparamos así el camino para la introducción de la integral de Lebesgue. 
+\marginpar{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Darboux.jpg}\\
+Jean G. Darboux  1842-1917. Matemático frances. Su trabajo se desarrolló en el análisis (integración, ecuaciones diferenciales parciales) y geometría diferencial (estudio de curvas y superficies).  
+\flushright{Wikipedia}} 
 
-Debemos advertir  al alumno que en este curso dejaremos un poco de lado las cuestiones procedimentales de cómo calcular integrales, aspecto que seguramente abordó en cursos anteriores y del cual nos vamos a valer. Tampoco debe esperar que las actividades prácticas se centren en esa dirección.   Nuestro principal objetivo aquí es discutir la materia conceptual ligada a la integral y cómo es previsible las actividades prácticas estarán orientadas con ese propósito.
+Debemos advertir  al alumno que en este curso dejaremos un poco de lado las cuestiones procedimentales de cómo calcular integrales, aspecto que seguramente abordó en cursos anteriores y del cual nos vamos a valer. Tampoco debe esperar que las actividades prácticas se centren en esa dirección. El objetivo del capítulo es recordar y profundizar nuestro conocimiento de la integral de Riemann. No es nuestra intención que el material sea auto contenido. Algunas propiedades sólo las enunciaremos sin demostración pues seguramente estas demostraciones faltantes son parte de curso previos.   Nuestro principal objetivo aquí es discutir la materia conceptual ligada a la integral y cómo es previsible las actividades prácticas estarán orientadas con ese propósito. Por ejemplo, un problema que nos planteamos y que guiará la exposición es el de caracterizar las funciones integrables Riemann. Nos interesa este problema pues  resolverlo entraña el desarrollo de la noción de medida de  Lebesgue, que es el principal concepto abordado en este libro.
 
 
-El concepto de integral encuentra su motivación en diversos problemas. Aparece cuando se busca el centro de masas de un determinado cuerpo, cuando se quieren hallar longitudes de arco, volúmenes, cuando se quiere reconstruir el movimiento de cuerpo conocida su velocidad, etc. La integral es utilizada en incontables otros conceptos matemáticos, como ser el mencionado már arriba relativo a las series de Fourier. 
+La integral encuentra su motivación en diversos problemas. Aparece cuando se busca el centro de masas de un determinado cuerpo, cuando se quieren hallar longitudes de arco, volúmenes, cuando se quiere reconstruir el movimiento de cuerpo conocida su velocidad. En general, cuando se quiere reconstruir determinada propiedad de un conjunto, cuando es conocida esta proiedad sobre regiones infinitesimales.  La integral es utilizada en incontables teorías matemáticas, como ser el mencionado már arriba relativo a las series de Fourier. 
 
 Quizás el 
 problema más simple donde aparece la integral es el que utilizaremos como motivación para introducirla y es el concepto de área.  Vamos a tratar de reconstruir este concepto desde su base, esto es analizando la noción de área de figuras tan simples como rectángulos, triángulos, etc. 
@@ -39,14 +38,14 @@ El cálculo de áreas es necesario en multitud de actividades humanas, por ejemp
  
 
 
-Por figuras elementales planas nos referimos a rectángulos, triángulos, trapecios, etc. Sin duda el alumno  debe estar  muy familiarizado con las áreas de estas figuras, el área de un rectángulo viene dada por la conocida fórmula $b\times h$, donde $b$ es la base del rectángulo y $h$ su altura.  Ahora bien, ¿Cómo 
+Por \emph{figuras elementales}\index{figura!elemental} planas nos referimos a rectángulos, triángulos, trapecios, etc. Sin duda el alumno  debe estar  muy familiarizado con las áreas de estas figuras, el área de un rectángulo viene dada por la conocida fórmula $b\times h$, donde $b$ es la base del rectángulo y $h$ su altura.  Ahora bien, ¿Cómo 
 se llega a esta fórmula? Porque esta fórmula es apropiada para calcular el precio de un terreno por ejemplo. En esta sección vamos a justificar esta fórmula a partir de algunos hechos elementales.
 
 
 
 Vamos a considerar un plano $\mathcal{P}$. En este plano $\mathcal{P}$ supondremos fijada una unidad de longitud.  Pretendemos asignar un área a las figuras, es decir a los subconjuntos, de $\mathcal{P}$. De ahora en más, cómo es usual en esta materia  nos referiremos a \emph{medida}\index{medida} en lugar de área. La medida es un concepto más general  que el concepto de área. No obstante en el contexto en que estamos actualmente son sinónimos.  
 
-Queremos construir pues una función $m$ tal que $m(A)$ reppresente la medida  de  $A\subset\mathcal{P}$. Ahora bien ¿qué podemos usar de guía con ese objetivo? Si, como dijimos,  desconocemos todas las fórmulas previamente aprendidas, sobre que partimos para construir la medida o área. La respuesta es que tomaremos como principio rector  ciertas propiedades que son deseables  que una medida satisfaga. Ellas son las  siguientes. 
+Queremos construir pues una función $m$ tal que $m(A)$ represente la medida  de  $A\subset\mathcal{P}$. Ahora bien ¿qué podemos usar de guía con ese objetivo? Si, como dijimos,  desconocemos todas las fórmulas previamente aprendidas, sobre que partimos para construir la medida o área. La respuesta es que tomaremos como principio rector  ciertas propiedades que son deseables  que una medida satisfaga. Ellas son las  siguientes. 
 
 
 
@@ -54,7 +53,7 @@ Queremos construir pues una función $m$ tal que $m(A)$ reppresente la medida  d
 \begin{description}
  \item[Positividad.] debería ser una magnitud no negativa.  
  \item[Invariancia por movimientos rígidos.] Si una región es transformada en otra por medio de un movimiento rígido, ambas regiones deberían tener la misma área. Otra manera de expresar esta propiedad es diciendo que dos figuras \emph{congruentes}\index{congruencia} tienen la misma área. 
- \item[Aditividad.] Si una región es la unión de cierta cantidad de regiones más chicas mutuamente disjuntas  
+ \item[Aditividad.] Si una región $A$ es la unión de cierta cantidad de regiones más chicas mutuamente disjuntas $A_i$, $i=1,\ldots,n$, la medida   de $A$ es la suma de las medidas de los $A_i$.
 \end{description}
 
 \begin{figure}[h]
@@ -66,7 +65,7 @@ Queremos construir pues una función $m$ tal que $m(A)$ reppresente la medida  d
 
 Utilizando la segunda y tercer propiedad se pueden relacionar el área del rectángulo de la figura \ref{fig:rect_descop} con las cuatro regiones en la que es dividido.
 
-Como veremos a lo largo de la materia la propiedad de aditividad debe ser estudiada con cuidado, esto ocurre por las intrincadas maneras en que una región puede ser unión de otras regiones. A lo largo de esta materia elaboraremos una  teoría que nos dará una descripción  precisa de a que conjuntos podemos asignarle una medida de modo que las propiedades previas sean ciertas. 
+Como veremos a lo largo de la materia la propiedad de aditividad debe ser estudiada con cuidado, esto ocurre por las intrincadas maneras en que una región puede ser unión de otras regiones. A lo largo de esta materia elaboraremos una  teoría que nos dará una descripción  precisa de a que conjuntos podemos asignarle una medida de modo que las propiedades previas sean consistentes. 
 
 Por el momento veamos como las propiedades anteriores determinan practicamente de manera unívoca la medida de regiones elementales planas.  
 
@@ -82,21 +81,25 @@ Descubrimos así que nuestra medida deberá tener adicionalmente la siguiente pr
  \item[Monotonía.] Si $A\subset B$ entonces $m(A)\leq m(B)$. 
 \end{description}
 \marginpar{ Podríamos por ejemplo elegir el círculo de radio uno como unidad de área. Así ya no tendríamos el problema de ese número raro $\pi$ que aparece en la fórmula del área del círculo. ¡El área de cualquier círculo sería igual a su radio al cuadrado! Claro que aparecería $\pi$  en la fórmula del área del cuadrado de lado 1. Nos tapamos los pies y se destapa el cuerpo.}
-Es claro que si logramos construir una medida que satisfaga las propiedades anteriores cualquier multiplo por un número real positivo  de ella seguirá cumpliendo las propiedades. Esto es una manera de expresar el hecho que podemos usar diferentes unidades de medición. Esta cuestión se sortea proponiendo la unidad de medida. Esta unidad es completamente arbitraria, ud. podría elegir su figura plana preferida como unidad de área.   Cómo es habitual, elijamos el cuadrado cuyos lados miden la unidad de longitud previamente fijada. 
+Es claro que si logramos construir una medida que satisfaga las propiedades anteriores cualquier multiplo por un número real positivo  de ella seguirá cumpliendo las propiedades. Esto es una manera de expresar el hecho que podemos usar diferentes unidades de medición. Esta cuestión se sortea proponiendo la unidad de medida. Esta unidad es completamente arbitraria, ud. podría elegir su figura plana preferida como unidad de área.   Cómo es habitual, elijamos el cuadrado cuyos lados miden la unidad de longitud supuesto que esta unidad fue previamente establecida. 
 
 
-Supongamos ahora que tenemos un rectángulo de un lado igual a la unidad y el otro de lado un racional $n/m$, $n,m\in\mathbb{N}$. Veamos que la aditividad, la invariancia por movimientos rígidos y el hecho que decidimos que el cuadrado de lados igual a la unidad determinan el área de este rectángulo. Primero observar que si dividimos el lado de cuadrado unidad en $m$ segmentos iguales de longitud. \marginnote{
- \input{imagenes/CuadSubd.tikz}\\
- Descomposición rectángulo $R$
- }
-Queda dividido el cuadrado en $m$ rectángulos $R_1,\ldots,R_m$ (ver figura en el margen), todos ellos  congruentes entre si, de modo que todos tienen la misma medida, digamos $m(R_1)$. La unión de ellos es el cuadrado que por convención dijimos que tiene medida 1. De modo que por la aditividad debe ocurrir que $m(R_1)=\cdots =m(R_m))=1/m$. Recordemos nuestra pretención de inferir la medida de un rectángulo $R$ de lado 1 y otro $n/m$. Este rectángulo esta compuesto de $n$ rectángulos congruentes a los $R_i$, $i=1,\ldots,m$, nuevamente por la aditividad inferimos que $m(R)=n/m$. 
+Supongamos ahora que tenemos un rectángulo $R$ de un lado igual a la unidad y el otro de longitud racional $n/m$, $n,m\in\mathbb{N}$. Veamos que las propiedades de las medidas determinan el área de este rectángulo. Sea $Q$ un cuadrado de lados iguales a 1. Luego $m(Q)=1$, por suposición.  Primero observar que si dividimos un lado de $Q$ en $m$ segmentos iguales de longitud $1/m$, queda dividido el cuadrado en $m$ rectángulos $R_1,\ldots,R_m$ (ver figura en el margen), todos ellos  congruentes entre si, de modo que todos tienen la misma medida, digamos $m(R_1)$.  De modo que por la aditividad debe ocurrir que $m(R_1)=\cdots =m(R_m))=1/m$. Recordemos nuestra pretención de inferir la medida de un rectángulo $R$ de lado 1 y otro $n/m$. Este rectángulo esta compuesto de $n$ rectángulos congruentes a los $R_i$, $i=1,\ldots,m$, nuevamente por la aditividad inferimos que $m(R)=n/m$. Notar que $n/m$ es la base por la altura de $R$.
 
-Sea ahora una rectángulo $R$ con un lado unidad y el otro un real cualquiera $l>0$. Existen sendas sucesiones $0<q_k,p_k\in\mathbb{Q}$, $k\in\mathbb{N}$, tales que $q_1\leq q_2\leq\cdots \leq l \leq \cdots\leq p_2\leq p_1$ y $\lim_{k\to\infty}q_k =\lim_{k\to\infty} p_k=l$. Consideremos una dos sucesiones de rectángulos $R_k$ y $S_k$ que comparten el lado de $R$ igual a la unidad, mientras que el otro lado de $R_k$ y $S_k$ es igual a $q_k$ y $p_k$ respectivamente. Luego por la monotonía
+Sea ahora una rectángulo $R$ con un lado unidad y el otro un real cualquiera $l>0$. Existen sendas sucesiones $0<q_k,p_k\in\mathbb{Q}$, $k\in\mathbb{N}$, tales que $q_1\leq q_2\leq\cdots \leq l \leq \cdots\leq p_2\leq p_1$ y $\lim_{k\to\infty}q_k =\lim_{k\to\infty} p_k=l$. Consideremos una dos sucesiones de rectángulos $R_k$ y $S_k$ que comparten el lado de $R$ igual a la unidad, mientras que los otros lados de $R_k$ y $S_k$ son iguales a $q_k$ y $p_k$ respectivamente. Luego por la monotonía
 \[
  q_k=m(R_k)\leq m(R) \leq m(S_k)\leq p_k.
 \]
 Tomando límite cuando $k\to\infty$ inferimos que $m(R)=l$. 
 
+
+
+
+\marginpar{
+ \input{imagenes/CuadSubd.tikz}\\
+ Descomposición del cuadrado $Q$
+ } 
+A partir de las propiedades fundamentales que postulamos para la medida o área inferimos la famosa fórmula del área de un rectángulo en el caso que uno de los lados sea igual a la unidad. Si ahora tenemos un rectángulo arbitrario, hay que fijar un lado y repetir el análisis previo con el segundo lado. Se llega de este modo a justificar la fórmula del área para un  rectángulo arbitrario. 
 
 
 \begin{figure}[h]
@@ -106,8 +109,7 @@ Tomando límite cuando $k\to\infty$ inferimos que $m(R)=l$.
  \caption{Áreas de otras figuras elementales.}\label{fig:paral-trig}
 \end{figure}
 
-
-A partir de las propiedades fundamentales que postulamos para la medida o área inferimos la famosa fórmula del área de un rectángulo en el caso que uno de los lados sea igual a la unidad. Para un  rectángulo arbitrario. En la figura \ref{fig:paral-trig} se muestra como relacionar el área de un paralelepípedo con la de un rectángulo y la de un triángulo con la de un paralelepípedo para inferir las conocidas fórmulas para estas figuras.
+En la figura \ref{fig:paral-trig} se muestra como relacionar el área de un paralelepípedo con la de un rectángulo y la de un triángulo con la de un paralelepípedo para inferir las conocidas fórmulas para estas figuras.
 
 
 
@@ -126,12 +128,12 @@ Nuestra primera aproximación será la que propuso Bernhard Riemann en 1854, per
 
 
 \begin{definicion}[Sumas de Darboux]{} Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Consideremos las siguientes magnitudes
-\[
+\begin{equation}\label{eq:Mi-mi}
  \begin{split}
     m_i&:=\inf\{f(x)| x\in [x_{i-1},x_i]\}\\
     M_i&:=\sup\{f(x)| x\in [x_{i-1},x_i]\}\\
  \end{split}
-\]
+\end{equation}
 
 Definimos la \emph{Suma superior de Darboux}\index{Suma superior} como
 \[
@@ -149,13 +151,38 @@ y la \emph{Suma inferior de Darboux}\index{Suma inferiorr} como
   \end{center}
 }
 
-\begin{lema}[Monotonía sumas de Darboux]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Supongamos que $P'$ es otra partición que tiene un pnto más que $P$. Entoces
+\begin{lema}[Monotonía sumas de Darboux]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Supongamos que $P'$ es otra partición que tiene un punto más que $P$. Entoces
  \[
   \underline{S}(P',f)\geq \underline{S}(P,f)\quad\text{y}\quad \overline{S}(P',f)\leq \overline{S}(P,f)
  \]
 \end{lema}
 
-\begin{ejercicio}{} Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P,P'$ particiones de $[a,b]$ con $P\subset P'$. Demostrar que 
+\begin{proof} Supongamos que 
+\[P=\{x_0,x_1,\ldots,x_n\},\]
+\[P'=\{x_0,x_1,\ldots,x_{i-1},x^*,x_{i},x_n\}.\]
+Sean $m_i,M_i$ como en \eqref{eq:Mi-mi} 
+y es escribamos 
+\[
+ \begin{split}
+    m'_i&:=\inf\{f(x)| x\in [x_{i-1},x^*]\}\\
+    M'_i&:=\sup\{f(x)| x\in [x_{i-1},x^*]\}\\
+    m''_i&:=\inf\{f(x)| x\in [x^*,x_i]\}\\
+    M''_i&:=\sup\{f(x)| x\in [x^*,x_i]\}\\
+ \end{split}
+\]
+ Valen las relaciones $m_i\leq m'_i$, $m_i\leq m''_i$, $M_i'\leq M_i$ y $M''_i\leq M_i$. Entonces
+ \begin{multline*}
+ \underline{S}(P,f)=\sum_{i=1}^nm_i(x_i-x_{i-1})\\=
+ m_1(x_1-x_0)+\cdots+m_i(x^*-x_{i-1})+m_i(x_i-x^*)+\cdots++m_n(x_n-x_{n-1})\\
+ \leq m_1(x_1-x_0)+\cdots+m'_i(x^*-x_{i-1})+m''_i(x_i-x^*)+\cdots++m_n(x_n-x_{n-1})\\
+ \leq \underline{S}(P',f).
+\end{multline*}
+ Obviamente la demostración para las sumas superiores es completamente análoga.  
+\end{proof}
+
+Usando inducción podemos generalizar el resultado anterior como muestra el siguiente ejercicio.
+
+\begin{ejercicio}{ej:sumas-darboux-mon} Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P,P'$ particiones de $[a,b]$ con $P\subset P'$. Demostrar que 
   \[
   \underline{S}(P,f)\leq \underline{S}(P',f)\quad\text{y}\quad \overline{S}(P',f)\leq \overline{S}(P,f).
  \]
@@ -166,25 +193,95 @@ y la \emph{Suma inferior de Darboux}\index{Suma inferiorr} como
  
 \end{ejercicio}
 
-\begin{definicion}[Funciones integrables]{} Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Diremos que $f$ es {\em integrable Riemann} \index{Integrable Riemann} si 
+\begin{definicion}[Funciones integrables]{def:int_riemann} Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Diremos que $f$ es {\em integrable Riemann} \index{Integrable!Riemann} si 
 \begin{equation}\label{eq:integrable}
- \sup\left\{\underline{S}(P,f)| P \text{partición de }[a,b]\right\}=\inf\left\{\overline{S}(P,f)| P \text{partición de }[a,b]\right\}
+ \sup\left\{\underline{S}(P,f)| P \text{ partición de }[a,b]\right\}=\inf\left\{\overline{S}(P,f)| P \text{ partición de }[a,b]\right\}
 \end{equation}
-En caso que $f$ sea integrable llamamos {\em integral} \index{Integral} entre $a$ y $b$ de $f$ al valor de los dos miembros de \eqref{eq:integrable} y este número se denota
+En caso que $f$ sea integrable Riemann llamamos {\em integral de Riemann} \index{integral!Riemann} entre $a$ y $b$ de $f$ al valor de los dos miembros de \eqref{eq:integrable} y este número se denota
 \[
-\int_a^bf(x)dx. 
+(\mathop{R})\int_a^bf(x)dx. 
 \]
- 
+Cuando no haya lugar a confusión, por ejemplo a lo largo de este capítulo, omitiremos el símbolo $(\mathop{R})$ en la integral.
 \end{definicion}
+
+
+
+\begin{teorema}[Propiedades elementales de la integral]{teo:prop_elem} Sean $f,g:[a,b]\to\mathbb{R}$ integrables, $\alpha,\beta\in\mathbb{R}$ y $c\in (a,b)$. Entonces
+\begin{description}
+ \item[Linealidad] $\alpha f+\beta g$ es integrable y 
+ \[
+  \int_a^b\alpha f(x)+\beta g(x)dx=\alpha \int_a^bf(x)dx+\beta\int_a^b g(x)dx.
+ \]
+ \item[Monotonía] Si $f(x)\leq g(x)$  para $x\in [a,b]$ entonces 
+ \[
+  \int_a^b f(x)dx\leq \int_a^b g(x)dx.
+ \]
+ \item[Aditividad del Intervalo]  \[
+  \int_a^b\alpha f(x)dx= \int_a^cf(x)dx+\int_c^b f(x)dx.
+ \]
+\end{description}
+
+
+\end{teorema}
+
+\begin{proof} Fue dada en cursos previos y la omitiremos aquí. 
+\end{proof}
+
+
+\begin{observa} Las propiedadades anteriores son compatibles con las propiedades que habíamos propuesto para el concepto de área en la sección  \ref{sec:area_elem}.
+\end{observa}
+
+
+
+Es útil tener un símbolo que nos represente el supremo y el ínfimo en la Definición \ref{def:int_riemann}.
+
+\begin{definicion}[Integrables de Darboux]{def:int_dar}
+ Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Definimos la integral \emph{superior e inferior de Darboux} \index{integral!Darboux} como
+\begin{equation}\label{eq:darboux_sup}
+ (\mathop{D})\overline{\int_a^b}f(x)dx=\inf\left\{\overline{S}(P,f)| P \text{ partición de }[a,b]\right\}.
+ \end{equation}
+y
+\begin{equation}\label{eq:darboux_inf}
+ (\mathop{D})\underline{\int_a^b}f(x)dx=\sup\left\{\underline{S}(P,f)| P \text{ partición de }[a,b]\right\}.
+ \end{equation}
+\end{definicion}
+
+Apelando a estos conceptos se tiene que $f$ es integrable Riemann si y sólo si 
+\begin{equation}\label{eq:darboux_riemann}
+ (\mathop{D})\overline{\int_a^b}f(x)dx= (\mathop{D})\underline{\int_a^b}f(x)dx .
+ \end{equation}
+
  
-\begin{teorema}[Primer criterio de integrabilidad]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si para todo $\epsilon>0$ existe una partición $P$ tal que 
+\begin{teorema}[Primer criterio de integrabilidad]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ es integrable si y solo si para todo $\epsilon>0$ existe una partición $P$ tal que 
 \begin{equation}\label{eq:Crit1Int}
  \overline{S}(P;f)-\underline{S}(P;f)<\epsilon.
 \end{equation}
  
 \end{teorema}
 
-\begin{demo} La demo
+\begin{demo} Veamos la parte ``solo si''. Si $f$ es integrable satisface \eqref{eq:integrable}. Si $\varepsilon>0$, usando la caracterización \eqref{lem:sup-inf-carac} (\textcolor{red}{debería haber una intro con estas propiedades}) tenemos que existen particiones $P'$ y $P''$ tales que:
+
+
+\begin{eqnarray*}
+ \int_a^bf(x)dx&\leq \overline{S}(P';f)&<\int_a^bf(x)dx+\frac{\varepsilon}{2},\\
+ \int_a^bf(x)dx-\frac{\varepsilon}{2}&<\underline{S}(P'';f)&\leq\int_a^bf(x)dx.
+\end{eqnarray*}
+
+Sea ahora la partición $P=P'\cup P''$. Por el ejercicio \eqref{ej:sumas-darboux-mon} tenemos que:
+\begin{multline*}
+ \overline{S}(P;f)-\frac{\varepsilon}{2}\leq \overline{S}(P';f)-\frac{\varepsilon}{2}<\int_a^bf(x)dx<\underline{S}(P'';f)+\frac{\varepsilon}{2}
+ \leq \underline{S}(P;f)+\frac{\varepsilon}{2}
+\end{multline*}
+Así tenemos \eqref{eq:Crit1Int}. 
+
+Asumamos ahora que se satisface \eqref{eq:Crit1Int}. Entonces 
+
+ \[
+   (\mathop{D})\overline{\int_a^b}f(x)dx\leq \overline{S}(P;f)<
+   \underline{S}(P;f)(\mathop{D})+\varepsilon<(\mathop{D})\underline{\int_a^b}f(x)dx +\varepsilon.
+ \]
+
+
  
 \end{demo}
 
@@ -203,19 +300,25 @@ En caso que $f$ sea integrable llamamos {\em integral} \index{Integral} entre $a
 {\em Ayuda:} Usar particiones uniformes y la fórmula $\sum_{i=1}^nn^2= n(n+1)(2n+1)/6$.
 \end{ejercicio}
 
-\begin{ejemplo}{} Sea $0\leq a<b$ y $n\in\mathbb{N}$,  veamos que 
+\begin{ejemplo}{ej:int x^n} Sea $0< a<b$ y $m\in\mathbb{Z}$, $m\neq -1$,  veamos que 
 \[
- \int_a^b x^n dx=\frac{b^{n+1}}{n+1}-\frac{a^{n+1}}{n+1}.
+ \int_a^b x^m dx=\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.
 \]
-Usamos particiones no uniformes
+\textcolor{red}{COMPLETAR}
 \end{ejemplo}
 
-\begin{ejercicio}{} Sea $0\leq a<b$ y $n$ un entero negativo, veamos que
+\begin{ejercicio}{} Sea $0< a<b$  y $f(x)=1/x$. Como en el ejemplo \ref{ej:int x^n}  para $n\in\nn$ tomamos $q=(b/a)^{1/n}$ y 
+\[P_n=\{a,qa,q^2a,\ldots, aq^{n-1},b\}.\]  
+Demostrar que
 \[
- \int_a^b x^n dx=\begin{cases}
-                  \frac{b^{n+1}}{n+1}-\frac{a^{n+1}}{n+1} & \text{ si } n\neq -1\\
-                  \ln(b)-\ln(a) & \text{ si } n=-1\\
-                 \end{cases}
+\begin{split}
+  \underline{S}(P_n;f)&= n\frac{q-1}{q}\\
+  \overline{S}(P_n;f)&= n(q-1)\\
+\end{split}
+\]
+Inferir que $f$ es integrable en $[a,b]$ y
+\[
+ \int_a^b \frac{1}{x} dx= \ln(b)-\ln(a)
 \]
 \end{ejercicio}
 
@@ -228,65 +331,52 @@ Usamos particiones no uniformes
 
 
 
-\begin{ejercicio}{} Sea $0\leq a<b\leq \pi$, veamos que
+\begin{ejercicio}{} Sea $0\leq a<b\leq \pi$. Demostrar que
 \[
- \int_a^b \sen x dx=-(\cos(b)-\cos(a)).
+ \int_a^b \cos x dx=-(\sin(b)-\sin(a)).
 \]
 \end{ejercicio}
 
 
-\begin{ejemplo}{} Usamos SymPy y sumas de Darboux aproximar el valor de $\pi$. Utilizamos el hecho que $\pi/4$ es el área de un cuarto de círculo de radio $1$. Entonces 
-$$\pi=4\int_0^1\sqrt{1-x^2}dx.$$
-
-\begin{sympyblock}
-from sympy import *
-N=1000.0
-lim=int(N+1)
-x=symbols('x')
-f=sqrt(1-x**2)
-Sinf=sum([ f.subs(x,i/N)*1/N for i in range(1,lim)])
-Ssup=sum([f.subs(x,(i-1)/N)*1/N for i in range(1,lim)])
-\end{sympyblock}
-Encontramos la estimación
-\[\sympy{4*Sinf}\leq \pi \leq \sympy{4*Ssup}\]
-\end{ejemplo}
-
-\begin{ejercicio}{} Usando SymPy estimar las siguientes integrales 
-$$\int_1^2\frac{1}{x}dx,$$
- comparar con $\ln(2)$,
-
-$$\int_{-1}^{1}x^2dx$$
-¿A qué parece aproximarse las sumas inferiores y superiores?
-
-$$\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-x^2}}dx,$$
-¿Por qué el resultado puede usarse para aproximar $\pi$ ?
-
- 
-\end{ejercicio}
-
-
-
-
-\begin{teorema}[Propiedades elementales de la integral]{} Sean $f,g:[a,b]\to\mathbb{R}$ integrables, $\alpha,\beta\in\mathbb{R}$ y $c\in (a,b)$. Entonces
-\begin{description}
- \item[Linealidad] $\alpha f+\beta g$ es integrable y 
- \[
-  \int_a^b\alpha f(x)+\beta g(x)dx=\alpha \int_a^bf(x)dx+\beta\int_a^b g(x)dx.
- \]
- \item[Monotonía] Si $f(x)\leq g(x)$  para $x\in [a,b]$ entonces 
- \[
-  \int_a^b f(x)dx\leq \int_a^b g(x)dx.
- \]
- \item[Aditividad del Intervalo]  \[
-  \int_a^b\alpha f(x)dx= \int_a^cf(x)dx+\int_c^b f(x)dx.
- \]
-\end{description}
-
-
-\end{teorema}
-
-\begin{observa} Las propiedadades anteriores son compatibles con las propiedades que habíamos propuesto para el concepto de área en la sección  \ref{sec:area_elem}.
+\begin{observa} Notar que en todos los ejemplos anteriores
+\[
+ \int_a^bf(x)dx=F(b)-F(a),
+\]
+donde $F$ es na función que satisface $F'=f$.
 \end{observa}
+
+% 
+% \begin{ejemplo}{} Usamos SymPy y sumas de Darboux aproximar el valor de $\pi$. Utilizamos el hecho que $\pi/4$ es el área de un cuarto de círculo de radio $1$. Entonces 
+% $$\pi=4\int_0^1\sqrt{1-x^2}dx.$$
+% 
+% \begin{sympyblock}
+% from sympy import *
+% N=1000.0
+% lim=int(N+1)
+% x=symbols('x')
+% f=sqrt(1-x**2)
+% Sinf=sum([ f.subs(x,i/N)*1/N for i in range(1,lim)])
+% Ssup=sum([f.subs(x,(i-1)/N)*1/N for i in range(1,lim)])
+% \end{sympyblock}
+% Encontramos la estimación
+% \[\sympy{4*Sinf}\leq \pi \leq \sympy{4*Ssup}\]
+% \end{ejemplo}
+% 
+% \begin{ejercicio}{} Usando SymPy estimar las siguientes integrales 
+% $$\int_1^2\frac{1}{x}dx,$$
+%  comparar con $\ln(2)$,
+% 
+% $$\int_{-1}^{1}x^2dx$$
+% ¿A qué parece aproximarse las sumas inferiores y superiores?
+% 
+% $$\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-x^2}}dx,$$
+% ¿Por qué el resultado puede usarse para aproximar $\pi$ ?
+% 
+%  
+% \end{ejercicio}
+
+
+
 
 \section{Integrabilidad y continuidad}
 
@@ -300,23 +390,23 @@ se tiene que
 \end{equation}
  
 \end{teorema}
-\begin{demo} Agarrate catalina
+\begin{demo} \textcolor{red}{COMPLETAR}
  
 \end{demo}
 
 \begin{teorema}[Continuidad implica integrabilidad]{}  Si $f:[a,b]\to\mathbb{R}$ es una función continua entonces es integrable.
 \end{teorema}
-\begin{demo} hacer
+\begin{demo}  \textcolor{red}{COMPLETAR}
  \end{demo}
 
  
 ¿Qué ocurre con las funciones discontinuas? 
 
-\begin{ejemplo}[Función de Heavside]{} Es la función
+\begin{ejemplo}{}[Función de Heavside] Es la función
 \[
  H(x)=\begin{cases}0 & \text{ si } x<0\\1 & \text{ si } x\geq 0\end{cases}.
 \]
-Es discontinua en $[-1,1]$ pero integrable.
+Es discontinua en $[-1,1]$ pero integrable.  \textcolor{red}{JUSTIFICAR}
  
 \end{ejemplo}
 
@@ -329,37 +419,39 @@ Función de Dirichlet}
  f(x)=\begin{cases} 1 & \text{ si } x\in\mathbb{Q}\\0 & \text{ si }   x\notin\mathbb{Q}\\
 \end{cases}
 \]
-Veamos que $f$ es discontinua en todo punto y no integrable.
+Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUSTIFICAR}
 \end{ejemplo}
 
 
 
 
 
-\begin{ejemplo}[Función de Thomae]{} Es la función $f:[0,1]\to\mathbb{R}$ definida por 
+\begin{ejemplo}{}[Función de Thomae] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
 \[
  f(x)=\begin{cases} \frac{1}{q} & \text{ si } x=\frac{p}{q},p,q\in\mathbb{Z}, \text{m.c.d}(p,q)=1
  \\0 & \text{ si }   x\notin\mathbb{Q}\\
 \end{cases}
 \]
 \end{ejemplo}
-\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/thomae.png}\\
-Función de Thomae}
-
-Para graficarla
-
-\begin{sympyverbatim}
-from matplotlib import pyplot as plt
-total=500
-q=[]
-f=[]
-for i in range(1,total):
-    for j in range(1,i):
-        if gcd(j,i)==1:
-            q.append(Rational(j,i))
-            f.append(1.0/i)
-plt.plot(q,f,'.',markersize=12)
-\end{sympyverbatim}
+\begin{figure}[H]
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/thomae.png}\\
+\caption{Función de Thomae}
+\end{figure}
+% 
+% Para graficarla
+% 
+% \begin{sympyverbatim}
+% from matplotlib import pyplot as plt
+% total=500
+% q=[]
+% f=[]
+% for i in range(1,total):
+%     for j in range(1,i):
+%         if gcd(j,i)==1:
+%             q.append(Rational(j,i))
+%             f.append(1.0/i)
+% plt.plot(q,f,'.',markersize=12)
+% \end{sympyverbatim}
 
 Veamos que es discontinua en todo punto racional y es integrable integrable.
 
