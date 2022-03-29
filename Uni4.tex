@@ -414,13 +414,41 @@ Es discontinua en $[-1,1]$ pero integrable.  \textcolor{red}{JUSTIFICAR}
 
 \marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/dirichlet.png}\\
 Función de Dirichlet}
-\begin{ejemplo}[Función de Dirichlet]{} Es la función $f:[0,1]\to\mathbb{R}$ definida por 
+\begin{ejemplo}{}[Función de Dirichlet] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
 \[
  f(x)=\begin{cases} 1 & \text{ si } x\in\mathbb{Q}\\0 & \text{ si }   x\notin\mathbb{Q}\\
 \end{cases}
 \]
 Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUSTIFICAR}
 \end{ejemplo}
+
+
+ 
+\begin{definicion}[Oscilación sobre un intervalo]{} Sea $f:[a,b]\to\mathbb{R}$ acotada y $I=[\alpha,\beta]\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación! en un intervalo} de $f$ en $I$ por 
+\[
+ w(f,I)=\sup\{f(x)| x\in I\}-\inf\{f(x)| x\in I\}.
+\]
+\end{definicion}
+\begin{figure}[h]
+ \begin{center}
+\input{imagenes/oscilacion.pdf_tex}
+ \end{center}
+ \caption{Áreas de otras figuras elementales.}\label{fig:paral-trig}
+\end{figure}
+
+\begin{ejemplo}{} 
+\begin{enumerate}
+ \item Para la función de Dirichlet $w(f,I)=1$ para todo $I$ con interior no vacío.
+ \item Para la función de Heavside e $I=[\alpha,\beta]$
+ \[
+  w(f,I)=\begin{cases}
+          1 & \text{ si } 0\in (\alpha,\beta]\\
+          0 & \text{ si } 0\notin (\alpha,\beta]\\
+         \end{cases}
+ \]
+\end{enumerate}
+\end{ejemplo}
+
 
 
 
@@ -432,7 +460,7 @@ Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUS
  \\0 & \text{ si }   x\notin\mathbb{Q}\\
 \end{cases}
 \]
-\end{ejemplo}
+
 \begin{figure}[H]
 \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/thomae.png}\\
 \caption{Función de Thomae}
@@ -453,59 +481,50 @@ Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUS
 % plt.plot(q,f,'.',markersize=12)
 % \end{sympyverbatim}
 
-Veamos que es discontinua en todo punto racional y es integrable integrable.
+Si $I^o\neq\emptyset$, $f$ la función de Thomae e $I\subset [0,1]$ entonces 
+     $ w(f,I)=1/q^*$, donde $q^*$ es el mínimo valor de $q$ para el que existe $p\leq q$ tal que $p/q\in I$. \textcolor{red}{Justificar}
 
-\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/escalera.png}\\
-Función creciente y discontinua en $\mathbb{Q}\cap [0,1]$}
-\begin{ejemplo}[Escalera discontinua]{} Sea $\mathbb{Q}\cap [0,1]=\{q_1,q_2,\ldots\}$ una numeración de los racionales del $[0,1]$. Definamos $f:[0,1]\to\mathbb{R}$ como
+
+\end{ejemplo}
+
+ \begin{ejemplo}{}[Escalera discontinua] Sea $\mathbb{Q}\cap [0,1]=\{q_1,q_2,\ldots\}$ una numeración de los racionales del $[0,1]$. Definamos $f:[0,1]\to\mathbb{R}$ como
  \[
   f(x)=\sum_{n=1}^{\infty}H(x-q_n),
  \]
 donde $H$ es la función de \emph{Heavside}\index{Heavside}. 
-\begin{sympyverbatim}
-q=[]
-f=[]
-total=20
-for i in range(1,total):
-    for j in range(1,i):
-        if gcd(j,i)==1:
-            q.append(float(Rational(j,i)))
-x=symbols('x')
-Heavside=Piecewise((0,x<0),(1,x>=0))
-f=sum([Heavside.subs(x,x-q[n])/2**n for n in range(len(q))])
-plot(f,(x,0,1))
-\end{sympyverbatim}
 
-Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\cap \mathbb{Q}$. Además $f$ es integrable.
-
-
-\end{ejemplo}
-\begin{definicion}[Oscilación sobre un intervalo]{} Sea $f:[a,b]\to\mathbb{R}$ acotada y $I=[\alpha,\beta]\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación} de $f$ en $I$ por 
-\[
- w(f,I)=\sup\{f(x)| x\in I\}-\inf\{f(x)| x\in I\}.
-\]
-\end{definicion}
-
-\begin{ejemplo}{} 
-\begin{enumerate}
- \item Para la función de Dirichlet $w(f,I)=1$ para todo $I$ con interior no vacío.
- \item Para la función de Heavside e $I=[\alpha,\beta]$
- \[
-  w(f,I)=\begin{cases}
-          1 & \text{ si } 0\in (\alpha,\beta]\\
-          0 & \text{ si } 0\notin (\alpha,\beta]\\
-         \end{cases}
- \]
-  \item Si $I^o\neq\emptyset$, $f$ la función de Thomae e $I\subset [0,1]$ entonces 
-     $ w(f,I)=1/q^*$, donde $q^*$ es el mínimo valor de $q$ para el que existe $p\leq q$ tal que $p/q\in I$.
-  \item Para la función escalera discontinua e $I\subset [0,1]$
+Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\cap \mathbb{Q}$. 
+ Para la función escalera discontinua e $I\subset [0,1]$
   \[
    w(f,I)=\sum_{q_n\in I}\frac{1}{2^n}.
   \]
-\end{enumerate}
+  \textcolor{red}{JUSTIFICAR}
+
+
+\end{ejemplo}
+
+
+
+
+
+
+
+
+
+
+\begin{definicion}{}[Oscilación en un punto] Sea $f$ una función definida en un entorno de $x$, definimos la  \emph{oscilación}\index{oscilación! en un punto} de $f$ en $x$ como
+
+\[
+ \omega(f;x)=\inf\limits_{x\in I^0}\omega(f;I).
+\]
 
  
-\end{ejemplo}
+\end{definicion}
+
+\begin{ejercicio}{}
+ Demostrar que $f$ es continua en $x$ si y sólo si $\omega(f;x)=0$.
+\end{ejercicio}
+
 
 
 
@@ -523,7 +542,7 @@ y
 
 
 
-\begin{proposicion} Si $f$ es continua en $[a,b]$ para todo $\sigma>0$ existe $\delta>0$ tal que 
+\begin{proposicion}{} Si $f$ es continua en $[a,b]$ para todo $\sigma>0$ existe $\delta>0$ tal que 
 \[
 \max_i(x_i-x_{i-1})<\delta\Rightarrow I_{\sigma}=\emptyset\Rightarrow R(P,f,\sigma)=0. 
 \]
@@ -551,41 +570,31 @@ y
  ((x))=x-[x+0.5]
 \]
 
-\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/serrucho.pdf}\\
-Función serrucho}
-\begin{sympyverbatim}
-x=symbols('x')
-g=x-floor(x+.5)
-plot(g,(x,-5,5))
-\end{sympyverbatim}
-Definimos la función de Riemann Porque
+\begin{figure}[H]
+\begin{center}
+\adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{imagenes/serrucho.pdf}\\
+ \caption{Función serrucho}
+\end{center}
+ \end{figure}
+
+
+Definimos la función de Riemann:
 \[
  f(x)=\sum_{n=1}^{\infty}\frac{((x))}{n^2}.
 \]
 
-\begin{sympyverbatim}
-f=sum([g.subs(x,n*x)/n**2 for n in range(1,20)])
-plot(f,(x,0,1))
-\end{sympyverbatim}
-\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/funcRiemann.png}\\
-Función de Riemann}
+\begin{figure}[H]
+\begin{center}
+\adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{imagenes/funcRiemann.png}\\
+\caption{Función de Riemann}
+ \end{center}
+ \end{figure}
  
 Demostramos que la función de Riemann es discontinua en los racionales $p/q$ donde $\text{m.c.d}(p,q)=1$ y $q$ par. Es integrable en $[0,1]$.  
  
 \end{ejemplo}
 
 
-\begin{definicion}[Oscilación de una función en un punto]{}\index{oscilación} 
-Sea $f:[a,b]\to\mathbb{R}$ y $x\in [a,b]$ 
-acotada definimos la {\em oscilación de $f$ en $x$} como 
-\[
- w(f;x)=\inf\limits_{x\in I^o}w(f,I),
-\]
-donde el ínfimo se toma sobre todos los intervalos que contienen a $x$ en su interior.
-\end{definicion}
-
-\begin{ejercicio}{} $f$ es continua en $x$ si y solo si $w(f;x)=0$.
- \end{ejercicio}
 
  \begin{definicion}[Contenido exterior]{}\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ [x_{i-1},x_i]\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n[x_{i-1},x_i]$.
  
@@ -600,8 +609,64 @@ donde el ínfimo es tomado sobre todos los cubrimientos finitos de $S$.
  \begin{teorema}[Criterio de integrabilidad de Hankel]{}  Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si para todo $\sigma>0$ el conjunto $S_{\sigma}:=\{x\in [a,b]| w(f,x)>\sigma\}$ tiene contenido exterior igual a $0$ ($c_e(S_{\sigma})=0)$.
    \end{teorema}
 
+\section{Integrales impropias}
+Se denomina \emph{integrales impropias}\index{integral!impropia} a la integral de funciones no acotadas o a integrales sobre intervalos no acotados. Tales integrales requieren de una definición especial.
+\begin{definicion}{def:int_impropia}[Integral impropia función no-acotada] Supongamos $a<c<b$ y que $f:[a,b]\to\rr$ es una función integrable sobre $[a,c-\varepsilon]$ y sobre $[c+\varepsilon]$ para todo $\varepsilon>0$. Si los siguientes límites existen
+
+\[
+ \lim_{\varepsilon\to 0}\int_a^{c-\varepsilon}f(x)dx,\quad \lim_{\varepsilon\to 0}\int_{c+\varepsilon}^bf(x)dx,
+\]
+definimos 
+\begin{equation}\label{eq:int_impro}
+ \int_a^bf(x)dx= \lim_{\varepsilon\to 0}\int_a^{c-\varepsilon}f(x)dx+ \lim_{\varepsilon\to 0}\int_{c+\varepsilon}^bf(x)dx.
+\end{equation}
+
+
+
+ 
+\end{definicion}
+
+\begin{definicion}{def:int_impropia}[Integral impropia sobre región no-acotada] Supongamos  que $f:[a,+\infty)\to\rr$ es una función integrable sobre $[a,b]$  para todo $b>a$. Si el siguiente límite existe
+
+\[
+ \lim_{b\to +\infty}\int_a^bf(x)dx,
+\]
+definimos 
+\begin{equation}\label{eq:int_impro_inf}
+ \int_a^{+\infty}f(x)dx= \lim_{b\to +\infty}\int_a^bf(x)dx.
+\end{equation}
+
+\end{definicion}
+
+Análogamente se definen integrales sobre intervalos no-acotados de la forma $(-\infty, a]$ y $(-\infty,+\infty)$.
+
+
 
 \section{Teorema Fundamental de Cálculo}
+
+
+\begin{teorema}{teo:fund_calc}[Teorema Fundamental del Cálculo]
+ Sea $f:[a,b]\to\rr$ integrable Riemann. Definimos
+ \begin{equation*}\label{eq:primi1}
+  \phi(x)=\int_a^{x}f(x)dx.
+ \end{equation*}
+Etonces $\phi$ es derivable en cada punto de continuidad de $f$ y vale que
+ \begin{equation}\label{eq:primi2}
+  \phi'(x)=f(x).
+ \end{equation}
+\end{teorema}
+
+
+\begin{corolario}{teo:fund_calc}[Regla de Barrow]
+ Sea $f:[a,b]\to\rr$ continua y $\phi$ una función que satisface $\phi'(x)=f(x)$. Entonces
+ \begin{equation}\label{eq:barrow}
+  \int_a^{x}f(x)dx=\phi(b)-\phi(a).
+ \end{equation}
+Etonces $\phi$ es derivable en cada punto de continuidad de $f$ y vale que
+ \begin{equation*}\label{eq:primi2}
+  \phi'(x)=f(x).
+ \end{equation*}
+\end{corolario}
 
 
 \section{Función de Volterra}
