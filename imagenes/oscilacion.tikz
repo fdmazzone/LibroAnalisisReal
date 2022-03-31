@@ -1,0 +1,128 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+\begin{document}
+\definecolor{cc90000}{RGB}{201,0,0}
+\definecolor{cdce300}{RGB}{220,227,0}
+\definecolor{c00ffff}{RGB}{0,255,255}
+
+
+\def \globalscale {10.000000}
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-\globalscale, xscale=\globalscale, inner sep=0pt, outer sep=0pt]
+\begin{scope}[shift={(-36.2188,-11.0124)}]% layer1
+  % path1357
+  \path[draw=black,line cap=butt,line join=miter,line width=0.423pt,miter
+    limit=4.00] (12.2607,3.7137) -- (12.2493,30.8160);
+
+
+  % path1357
+
+
+
+  % path1515
+  \path[draw=black,line cap=butt,line join=miter,line width=0.423pt,miter
+    limit=4.00] (40.5156,29.5140) .. controls (40.5156,29.5140) and
+    (40.5156,29.5140) .. (9.8168,29.3992) .. controls (9.4545,29.5030) and
+    (9.8168,29.3992) .. (9.8168,29.3992);
+
+
+  % path1515
+
+
+
+  % path1646
+  \path[draw=cc90000,line cap=butt,line join=miter,line width=0.318pt,miter
+    limit=4.00] (16.9093,14.8428) .. controls (16.9610,14.9851) and
+    (17.4220,19.1991) .. (18.9304,20.4658) .. controls (20.4387,21.7325) and
+    (21.2088,14.5064) .. (21.2088,14.5064) .. controls (21.2088,14.5064) and
+    (21.7801,8.0238) .. (22.5636,10.1970) .. controls (23.3472,12.3703) and
+    (24.9509,31.4412) .. (26.1396,21.0205) .. controls (27.3284,10.5999) and
+    (27.3766,10.5656) .. (27.3766,10.5656);
+
+
+  % path1646
+
+
+
+  % text8666
+  \path[cm={{0.26458,0.0,0.0,0.26458,(0.63941,4.55439)}}] (0.0000,0.0000)
+    node[above right] (text8666) {$[                       ]$};
+
+
+  % text8666
+
+
+
+  % path17999
+  \path[draw=cdce300,fill=c00ffff,line cap=butt,line join=miter,line
+    width=1.270pt,miter limit=4.00] (17.6348,29.4933) -- (27.9213,29.4917);
+
+
+  % path17999
+
+
+
+  % text23932
+  \path[line width=0.056pt] (21.5768,32.1657) node[above right] (text23932)
+    {$I$};
+
+
+  % text23932
+
+
+
+  % path28306
+  \path[draw=black,dash pattern=on 0.42pt off 0.21pt,line cap=butt,line
+    join=miter,line width=0.212pt,miter limit=4.00] (25.2631,24.2324) --
+    (35.7034,24.2049);
+
+
+  % path28306
+
+
+
+  % path28306-3
+  \path[draw=black,dash pattern=on 0.42pt off 0.21pt,line cap=butt,line
+    join=miter,line width=0.212pt,miter limit=4.00] (22.1303,9.5034) --
+    (35.5212,9.5149);
+
+
+  % path28306-3
+
+
+
+  % path28478
+  \path[draw=black,line cap=butt,line join=miter,line width=0.212pt,miter
+    limit=4.00] (34.4031,9.5281) .. controls (34.4139,15.6846) and
+    (34.4139,15.6791) .. (34.4139,15.6791) -- (34.4348,15.6943);
+
+
+  % path28478
+
+
+
+  % path28478-5
+  \path[draw=black,line cap=butt,line join=miter,line width=0.212pt,miter
+    limit=4.00] (34.4139,24.0139) .. controls (34.4246,18.1678) and
+    (34.4246,18.1731) .. (34.4246,18.1731) -- (34.4455,18.1586);
+
+
+  % path28478-5
+
+
+
+  % text33832
+  \path[cm={{0.26458,0.0,0.0,0.26458,(-4.23858,-0.4931)}}] (0.0000,0.0000)
+    node[above right] (text33832) {$\omega(f;I)$};
+
+
+  % text33832
+
+
+
+\end{scope}
+
+\end{tikzpicture}
+\end{document}
