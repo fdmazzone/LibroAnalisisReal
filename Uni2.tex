@@ -1201,11 +1201,13 @@ además contiene a $x$, de este modo es un entorno de $x$, lo que
 demuestra la condición ii) de la Proposición
 \vref{pro,caraccontpunto}.
 \end{ejemplo}
+
 \begin{ejemplo}{} Sea $(X,d)$ un e.m. e $Y$ un subespacio de $X$. La
 \emph{inyección natural} $j:Y\rightarrow X$, definida por
 $j(x)=x$ es una función continua, como se puede corroborar
 facilmente, quedando esta demostración como ejercicio.
 \end{ejemplo}
+
 \begin{ejemplo}{} Las funciones constantes son continuas, es decir:
 sea $(X,d)$ y $(Z,d')$ dos e.m. y $f:X\rightarrow Z$ definida por
 $f(x)=a$, donde $a$ es un punto de $Z$, entonces $f$ es continua.
@@ -1864,7 +1866,20 @@ Son equivalentes:
 \end{proposicion}
 
 
+2.4. Teorema de la categoría de Baire
+Definición 2.4.1. Sea $(X, d)$ un espacio métrico. Se dice que un subconjunto $Y \subseteq X$ no es denso en ninguna parte si $(\bar{Y})^{\circ}$ está vacío, es decir, $(\bar{Y})^{\circ}$ no contiene punto interior. Se dice que un subconjunto $F \subseteq X$ es de categoría $I$ si es una unión contable de subconjuntos densos en ninguna parte. Los subconjuntos que no son de categoría I se dice que son de categoría II.
 
+Observaciones 2.4.2. (i) Un subconjunto $Y$ de $X$ no es denso en ninguna parte si y solo si el complemento $(\bar{Y})^{c}$ es denso en $X$, o $\overline{(X-\ barra{Y})}=X$. Esto se sigue fácilmente del comentario inmediatamente después de la Definición 2.3.12.
+(ii) Si $d$ denota la métrica discreta, el único conjunto denso en ninguna parte es el conjunto nulo.
+(iii) La noción de ser denso en ninguna parte no es lo opuesto a ser denso en todas partes, es decir, no ser denso en ninguna parte no implica que el conjunto sea denso en todas partes. Para un ejemplo de un conjunto que no es ninguno de los dos, sea $\mathbf{R}$ la línea real con la métrica usual y considere el conjunto $Y=\{x \in \mathbf{R}: 1<x<2\}$. Luego
+$$
+(\bar{Y})^{0}=Y \neq \varnothing \text { y }(\bar{Y})^{c}=\{x \in \mathbf{R}: x<1 \text { o } x>2\}=(-\infty, 1) \cup(2, \infty),
+$$
+que no es denso en $\mathbf{R}$.
+(iv) Cada subconjunto debe ser de categoría I o de categoría II.
+(v) Está claro que el conjunto nulo es de categoría I. Además, el subconjunto $\mathbf{Q}$ de racionales en $\mathbf{R}$ es un conjunto de categoría I. De hecho, si $x_{1 }, x_{2}, \ldots$ es una enumeración de los racionales, cada $\left\{x_{i}\right\}$ es cerrado y $\left\{x_{i}\right\}^{ \circ}=\emptyset$; se sigue que $\cup\left\{x_{i}\right\}$, el conjunto de todos los racionales en $\mathbf{R}$, es de categoría I.
+(vi) Dado que una unión numerable de conjuntos numerables es nuevamente un conjunto numerable, se sigue que, si $Y_{1}, Y_{2}, \ldots$ son cada uno de la categoría I, entonces también debe ser $\bigcup_{i } Y_{i}$.
+(vii) Si $X=Y_{1} \cup Y_{2}$ y se sabe que $Y_{1}$ es de categoría I mientras que $X$ es de categoría II, entonces $Y_{2}$ debe ser de categoría II. Porque, si $Y_{2}$ es de categoría I, entonces se sigue de (vi) arriba que $X$ también es de categoría I, lo cual es una contradicción. 
 
 
 
