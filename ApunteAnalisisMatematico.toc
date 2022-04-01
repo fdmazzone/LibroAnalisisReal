@@ -6,7 +6,7 @@
 \contentsline {section}{1.4~Un conjunto no numerable}{10}{section.1.4}%
 \contentsline {section}{1.5~Una aplicación: existencia de números trascendentes}{11}{section.1.5}%
 \contentsline {section}{1.6~Comparación de cardinales}{13}{section.1.6}%
-\contentsline {section}{1.7~Números Cardinales}{16}{section.1.7}%
+\contentsline {section}{1.7~Números Cardinales}{17}{section.1.7}%
 \contentsline {section}{1.8~Aplicaciones del Teorema de Schr\"oder-Berstein}{18}{section.1.8}%
 \contentsline {section}{1.9~Ejercicios}{20}{section.1.9}%
 \contentsline {chapter}{2~Integral de Riemann}{24}{chapter.2}%
