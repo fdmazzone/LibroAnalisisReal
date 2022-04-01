@@ -1,0 +1,21 @@
+\babel@toc {spanish}{}
+\contentsline {chapter}{1~Conjuntos}{2}{chapter.1}%
+\contentsline {section}{1.1~Repaso nociones básicas sobre conjuntos}{2}{section.1.1}%
+\contentsline {section}{1.2~Definición de conjuntos coordinables}{4}{section.1.2}%
+\contentsline {section}{1.3~Conjuntos numerables}{5}{section.1.3}%
+\contentsline {section}{1.4~Un conjunto no numerable}{10}{section.1.4}%
+\contentsline {section}{1.5~Una aplicación: existencia de números trascendentes}{11}{section.1.5}%
+\contentsline {section}{1.6~Comparación de cardinales}{13}{section.1.6}%
+\contentsline {section}{1.7~Números Cardinales}{16}{section.1.7}%
+\contentsline {section}{1.8~Aplicaciones del Teorema de Schr\"oder-Berstein}{18}{section.1.8}%
+\contentsline {section}{1.9~Ejercicios}{20}{section.1.9}%
+\contentsline {chapter}{2~Integral de Riemann}{24}{chapter.2}%
+\contentsline {section}{2.1~Introducción}{24}{section.2.1}%
+\contentsline {section}{2.2~Área de figuras elementales planas}{24}{section.2.2}%
+\contentsline {section}{2.3~Integral de Riemann}{26}{section.2.3}%
+\contentsline {section}{2.4~Integrabilidad y continuidad}{30}{section.2.4}%
+\contentsline {section}{2.5~Integrales impropias}{35}{section.2.5}%
+\contentsline {section}{2.6~Teorema Fundamental de Cálculo}{36}{section.2.6}%
+\contentsline {section}{2.7~Función de Volterra}{36}{section.2.7}%
+\contentsline {section}{2.8~Integral de Riemann y pasos al límite}{38}{section.2.8}%
+\contentsline {chapter}{Bibliografía}{39}{section.2.8}%
