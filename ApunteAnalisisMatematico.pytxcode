@@ -1,25 +1,25 @@
-=>PYTHONTEX#py#default#default#0#block####Uni4.tex#674#
+=>PYTHONTEX#py#default#default#0#block####Uni4.tex#709#
 import numpy as np
 import scipy.optimize
 from matplotlib import pyplot as plt
-=>PYTHONTEX#py#default#default#1#block####Uni4.tex#682#
+=>PYTHONTEX#py#default#default#1#block####Uni4.tex#717#
 def G(x):
     return x**2*np.sin(1/x)
 x=np.arange(0,.15,0.0000001)
 y=G(x)
 plt.plot(x,y)
-=>PYTHONTEX#py#default#default#2#block####Uni4.tex#702#
+=>PYTHONTEX#py#default#default#2#block####Uni4.tex#737#
 def F(x):
     return 2*x*np.sin(1/x) - np.cos(1/x)
 x = scipy.optimize.broyden2(F, .13, f_tol=1e-14)
 x,1-x, G(x)
-=>PYTHONTEX#py#default#default#3#i####Uni4.tex#709#
+=>PYTHONTEX#py#default#default#3#i####Uni4.tex#744#
 np.float32(x)
-=>PYTHONTEX#py#default#default#4#i####Uni4.tex#709#
+=>PYTHONTEX#py#default#default#4#i####Uni4.tex#744#
 np.float32(G(x))
-=>PYTHONTEX#py#default#default#5#i####Uni4.tex#709#
+=>PYTHONTEX#py#default#default#5#i####Uni4.tex#744#
 np.float32(1-x)
-=>PYTHONTEX#py#default#default#6#block####Uni4.tex#716#
+=>PYTHONTEX#py#default#default#6#block####Uni4.tex#751#
 def f0(x):
     x1=x[x<=0]
     x2=x[(x<=0.13163877)*(x>0)]
@@ -32,7 +32,7 @@ def f0(x):
     y4=(1-x4)**2*np.sin(1/(1-x4))
     y5=np.zeros(np.shape(x5))
     return np.concatenate((y1,y2,y3,y4,y5), axis=None)
-=>PYTHONTEX#py#default#defaultverb#0#verbatim####Uni4.tex#732#
+=>PYTHONTEX#py#default#defaultverb#0#verbatim####Uni4.tex#767#
 def volterra(x,n,a=0,b=1):
     if n == 0:
         return 0
@@ -41,7 +41,7 @@ def volterra(x,n,a=0,b=1):
     pto_med = .5*(a+b)
     return volterra(x,n-1,a,a1) + (b1-a1)*f0((x-a1)/(b1-a1))\
     + volterra(x,n-1,b1,b)
-=>PYTHONTEX#py#default#defaultverb#1#verbatim####Uni4.tex#745#
+=>PYTHONTEX#py#default#defaultverb#1#verbatim####Uni4.tex#780#
 x=np.arange(0,1,0.0000001)
 y=volterra(x,12)
 plt.plot(x,y)

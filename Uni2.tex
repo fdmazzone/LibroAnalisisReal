@@ -1201,11 +1201,13 @@ además contiene a $x$, de este modo es un entorno de $x$, lo que
 demuestra la condición ii) de la Proposición
 \vref{pro,caraccontpunto}.
 \end{ejemplo}
+
 \begin{ejemplo}{} Sea $(X,d)$ un e.m. e $Y$ un subespacio de $X$. La
 \emph{inyección natural} $j:Y\rightarrow X$, definida por
 $j(x)=x$ es una función continua, como se puede corroborar
 facilmente, quedando esta demostración como ejercicio.
 \end{ejemplo}
+
 \begin{ejemplo}{} Las funciones constantes son continuas, es decir:
 sea $(X,d)$ y $(Z,d')$ dos e.m. y $f:X\rightarrow Z$ definida por
 $f(x)=a$, donde $a$ es un punto de $Z$, entonces $f$ es continua.
@@ -1863,12 +1865,142 @@ Son equivalentes:
 \end{itemize}
 \end{proposicion}
 
+\subsection{Teorema de Cantor}
+
+
+\begin{teorema}{teo:cantor_encajes}[Teorema de la intersección de Cantor.] Sea $(X, d)$ un espacio métrico completo. Sea $\left\{F_{n}\right\}_{1}^{\infty}$ una secuencia decreciente de conjuntos cerrados en $X$. Es decir
+$$
+F_{1} \supset F_{2} \supset\cdots \supset F_{n} \supset\cdots
+$$
+Supongamos  que:
+$$
+\delta\left(F_{n}\right) \longrightarrow 0 \text { as } n \rightarrow \infty
+$$
+Entonces:
+$$
+\exists x \in X: \bigcap_{n=1}^{\infty} F_{n}=\{x\} .
+$$ 
+\end{teorema}
+
+
+\begin{proof}  Primero demostramos que $\bigcap_{n=1}^{\infty} F_{n}$ tiene como máximo un elemento. De hecho, sea $x_{0}, \tilde{x}_{0} \in \bigcap_{n=1}^{\infty} F_{n}$. Entonces $x_{0}, \tilde{x}_{0} \in F_{n}$ para todo $n \in \mathbb{N}$ y por lo tanto
+$$
+d\left(x_{0}, \tilde{x}_{0}\right) \leq \delta\left(F_{n}\right)
+$$
+para cualquier $n \in \mathbb{N}$. Por lo tanto, tomando límite cuando $n\to\infty$ deducimos $d(x_0,\tilde{x}_0)=0$, por lo cual  $x_{0}=\tilde{x}_{0}$.  De allí que hay a lo sumo un elemento en la intersección.
+
+Ahora probamos que $\bigcap_{n=1}^{\infty} F_{n}$ tiene al menos un elemento. Para cualquier $n \in \mathbb{N}$, elijamos algún elemento $x_{n} \in F_{n}$. Probamos que $\left\{x_{n}\right\}_{1}^{\infty}$ es una sucesión de Cauchy. De hecho, para cualquier $\varepsilon>0$, elijamos $N \in \mathbb{N}$ tal que $\operatorname{diam}\left(F_{N}\right)<\varepsilon$. Entonces, para cualquier $n, m \geq N$, tenemos que $x_{n} \in F_{n} \subseteq F_{N}$ y $x_{m} \in F_{m} \subseteq F_{ N}$, por lo que
+$$
+d\left(x_{n}, x_{m}\right) \leq \delta\left(F_{N}\right)<\varepsilon
+$$
+Por lo tanto, $\left(x_{n}\right)_{1}^{\infty}$ es una sucesión de Cauchy. Como $(X, d)$ es completo, se sigue que existe $x_{0} \in X$ tal que $x_{n} \longrightarrow x_{0}$ como $n \rightarrow \infty$. Afirmamos que $x_{0} \in F_{k}$ para todo $k \in \mathbb{N}$. De hecho, para cualquier $k \in \mathbb{N}$, tenemos que
+$$
+x_{k}, x_{k+1}, x_{k+2}, \ldots \in F_{k}
+$$
+y dado que $F_{k}$ es cerrado y $x_{n} \longrightarrow x_{0}$ como $n \rightarrow \infty$, se sigue que $x_{0} \in F_{k}$. Por lo tanto, $x_{0} \in \bigcap_{k \in \mathbb{N}} F_{k}$. Esto completa la prueba. 
+\end{proof}
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+\subsection{Teorema de Baire}
+\index[personas]{Baire}
+\begin{definicion}{}[Conjuntos nunca densos, categorías de Baire] Sea $(X, d)$ un espacio métrico. 
+\begin{enumerate}
+ \item Se dice que un subconjunto $Y \subset X$ es \emph{nunca denso}\index{conjunto!nunca denso} o \emph{magro}\index{conjunto!magro} cuando $(\bar{Y})^{\circ}=\emptyset$.
+ \item Se dice que un subconjunto $Y \subset X$ es de \emph{ primera categoría}\index{conjunto!primera categoría}  si es  unión numerable de subconjuntos nunca densos.
+ \item Los subconjuntos que no son de primera categoria se denominan de \emph{segunda categoria}\index{conjunto!segunda categoria}.
+\end{enumerate}
+ 
+ 
+
+\end{definicion}
+
+\begin{observa}{} i) Puesto que  $\overline{\left({\overline{Y}}\right)^{c}}=  Y^{c\circ ccc\circ c}=Y^{c\circ c\circ c}=\left(\overline{Y}^\circ\right)^c$. Se concluye que  $Y$ es magro si y sólo si $\left({\overline{Y}}\right)^c$ es denso.
+ \\
+ ii) El concepto de nunca denso no es lo mismo que lo contrario a denso. De hecho son conceptos bastantes diferentes.  Por ejemplo un intervalo $(a,b)$ de $\mathbb{R}$ no es denso y tampoco nunca denso. La implicación contraria es verdadera, esto es si un conjunto es nunca denso entonces no es denso.  
+ \\
+ iii) Un subconjunto de un conjunto nunca denso resulta nunca denso. La misma aseveración vale con conjuntos de primera categoría. 
+\end{observa}
+
+\begin{ejercicio}{} Demostrar que el único conjunto magro en un espacio métrico discreto es $\emptyset$. 
+ \end{ejercicio}
+
+ 
+ \begin{ejercicio}{} Demostrar que $\mathbb{Q}$ es de primera categoría.
+   \end{ejercicio}
+
+
+\begin{teorema}{}[Baire] Todo espacio métrico completo es de segunda categoría.
+ \end{teorema}
+ 
+ \begin{proof}
+  Suponemos   que $(X, d)$ es un espacio métrico completo y
+\begin{equation}\label{eq:X cat I}
+X=\bigcup_{n=1}^{\infty} E_{n}
+\end{equation}
+donde cada uno de los $E_{n}$ magro, o equivalentemente  $V_n:=\left(\overline{E_{n}}\right)^{c}$ es un abierto denso.  Tomando complementos en la identidad \eqref{eq:X cat I} deducimos que $\emptyset=\bigcap_{n=1}^\infty  E_{n}^c$. Y como $V_n\subset E_{n}^c$  deducimos
+\begin{equation*}\label{eq:X cat I b}
+ \emptyset= \bigcap_{n=1}^\infty  V_{n}^c.
+\end{equation*}
+Probaremos que el conjunto del segundo miembro de la igualdad anterior es no vacío y así arribaremos a una contradicción. De hecho, vamos todavía más fuerte, esto es que $\bigcap_{n=1}^\infty  V_{n}^c$ es un conjunto denso. Esto es un resultado que merece destacarse. \emph{En un espacio métrico completo la intersección de una cantidad numerable  conjuntos abiertos y densos es un conjunto denso}.
+
+Para demostrar que $\bigcap_{n=1}^\infty  V_{n}^c$ es denso es suficiente demostrar que:
+\begin{equation}\label{eq:equiv_dens}
+  x_0\in X \hbox{ y }r>0 \Rightarrow B(x_0,r)\cap \left(\bigcap_{n=1}^\infty  V_{n}^c\right)\neq\emptyset. 
+\end{equation}
+
+
+
+
+\begin{observa}{}
+Vamos a usar repetidamente la siguiente propiedad: \emph{Si $V$ es abierto y denso y $G$ es abierto entonces $G\cap V$ es abierto y no vacio, por ende existe $r>0$  y $x\in G\cap V$ con $B'(x,r)\subset G\cap V$}
+\end{observa}
+
+
+Por la observación existe $x_{1} \in X $ y $r_{1}>0$ tal que
+$$
+B'\left(x_{1}, r_1\right) \subset V_{1} \cap B\left(x_{0},r\right) .
+$$
+Nuevamente por la observación  existe $x_{2} \in X$ y $r_{2}>0$ tal que
+$$
+B'\left(x_{2},r_2\right) \subset V_{2} \cap B\left(x_{1},r_1\right)
+$$
+Continuando de esta manera, usando el hecho de que para cada $n \in \mathbb{N}, V_{n}$ es abierto y denso y que $B\left(x_{ n-1},r_{n-1}\right)$ es abierto, obtenemos $x_{n} \in X$ y $r_{n}>0$ tal que
+$$
+B'\left(x_{n},r_n\right) \subset V_{n} \cap B\left(x_{n -1},r_{n-1}\right)
+$$
+Además, en cada paso de esta construcción, podemos elegir $r_{n}$, achicándolo si fuese necesario, de modo  que $0<r_{n} \leq 1 / n$. 
+
+Se tiene que
+
+$$
+B'\left(x_{1},r_1\right) \supset B'\left(x_{2},r_2\right) \supset \cdots \supset B'\left(x_{n},r_n\right) \supset \cdots
+$$
+y
+$$
+\operatorname{diam}\left(B'\left(x_{n},r_n\right)\right) \longrightarrow 0 \text { cuando } n \rightarrow \infty
+$$
+de modo que, por el Teorema \ref{teo:cantor_encajes}, tenemos que existe $x \in X$ tal que
+$$
+\bigcap_{n=1}^{\infty} B'\left(x_{n},r_n\right)=\{x\}
+$$
+Notar que por lo prviamente probado
+$$
+x \in B\left(x_{0},r\right)\cap\left( \bigcap_{n=1}^{\infty} V_{n}\right) .
+$$
+Por lo tanto se verifica \eqref{eq:equiv_dens}.
+\end{proof}
 
 
 
