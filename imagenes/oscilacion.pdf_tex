@@ -55,7 +55,7 @@
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{imagenes/oscilacion.pdf}}%
     \put(0.38207359,0.00613673){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$I$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{imagenes/oscilacion.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{   oscilacion.pdf}}%
     \put(0.7759844,0.47341153){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\omega(f;I)$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
