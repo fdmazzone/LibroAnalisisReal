@@ -382,7 +382,7 @@ donde $F$ es na función que satisface $F'=f$.
 
 
  
-\begin{teorema}[Segundo criterio de integrabilidad]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si y solo si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
+\begin{teorema}[Segundo criterio de integrabilidad]{teo:2-crite}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si y solo si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
 \[\max_i\{x_i-x_{i-1}\}<\delta,\]
 se tiene que
 \begin{equation}\label{eq:Crit1Int}
@@ -524,6 +524,7 @@ Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUS
 \end{ejemplo}
 
 
+ \section{Criterio integrabilidad de Riemann}
  
 \begin{definicion}[Oscilación sobre un intervalo]{} Sea $f:[a,b]\to\mathbb{R}$ acotada y $I=[\alpha,\beta]\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación! en un intervalo} de $f$ en $I$ por 
 \[
@@ -566,21 +567,7 @@ Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUS
 \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/thomae.png}\\
 \caption{Función de Thomae}
 \end{figure}
-% 
-% Para graficarla
-% 
-% \begin{sympyverbatim}
-% from matplotlib import pyplot as plt
-% total=500
-% q=[]
-% f=[]
-% for i in range(1,total):
-%     for j in range(1,i):
-%         if gcd(j,i)==1:
-%             q.append(Rational(j,i))
-%             f.append(1.0/i)
-% plt.plot(q,f,'.',markersize=12)
-% \end{sympyverbatim}
+
 
 Si $I^o\neq\emptyset$, $f$ la función de Thomae e $I\subset [0,1]$ entonces 
      $ w(f,I)=1/q^*$, donde $q^*$ es el mínimo valor de $q$ para el que existe $p\leq q$ tal que $p/q\in I$. \textcolor{red}{Justificar}
@@ -631,7 +618,7 @@ Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\
 
 \begin{definicion}{} Sea $f:[a,b]\to\mathbb{R}$ acotada, $\sigma>0$ y $P=\{x_0,x_1,\ldots,x_n\}$ una partición. Definimos
 \[
- I_{\sigma}:=\{i\in\{1,\ldots,n\}|w(f,[x_{i-1},x_i])>\sigma\}.
+ I_{\sigma}:=\{i\in\{1,\ldots,n\}|w(f,[x_{i-1},x_i])\geq\sigma\}.
 \]
 y
 \[
@@ -659,8 +646,39 @@ y
  
 \end{ejemplo}
 
-\begin{teorema}[Criterio de integrabilidad de Riemann]{} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ talque $R(P,f,\sigma)<\epsilon$.
+\begin{teorema}[Criterio de integrabilidad de Riemann]{} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ tal que $R(P,f,\sigma)<\epsilon$.
 \end{teorema}
+
+\begin{proof} Supongamos $f$ integrable y $\varepsilon,\sigma>0$. Por el 2° criterio de integrabilidad aplicado a $ \varepsilon\sigma$ en lugar de $\varepsilon$, existe $\delta>0$ tal que 
+\[\max_i\{x_i-x_{i-1}\}<\delta\Rightarrow 
+ \overline{S}(P;f)-\underline{S}(P;f)<\epsilon\sigma.
+\]
+Pero 
+\begin{multline*}\label{eq:3crite}
+\epsilon\sigma> \overline{S}(P;f)-\underline{S}(P;f)= \sum_{i=1}^n (M_i-m_i)(x_i-x_{i-1})\\
+\geq \sum_{i\in I_\sigma} (M_i-m_i)(x_i-x_{i-1})\geq \sigma \sum_{i\in I_\sigma} (x_i-x_{i-1})=\sigma R(P,f,\sigma)
+\end{multline*}
+Deducimos
+\[
+ R(P,f,\sigma)=\sum_{i\in I_{\sigma}}(x_i-x_{i-1})<\varepsilon.
+\]
+
+Para el recíproco, tomemos $\varepsilon>0$. Como $f$ es acotada, existe $M>0$ tal que $|f|\leq M$.  Observar que  $M$ satisface $M_i-m_i\leq 2M$. Vamos a tomar $\sigma=\varepsilon/2(b-a)$ y tomamos $\delta>0$ que satisface la condición necesaria del teorema para ese $\sigma$ y con $\varepsilon/4M$ en lugar de $\varepsilon$. Definimos 
+\[
+ I=\{i \left|{f}\right. w(f,[x_{i-1},x_i])\geq \sigma\}
+\]
+Entonces 
+
+\begin{multline*}\label{eq:3criteb}
+ \overline{S}(P;f)-\underline{S}(P;f)= \sum_{i\in I} (M_i-m_i)(x_i-x_{i-1})+\sum_{i\notin I} (M_i-m_i)(x_i-x_{i-1})\\
+ \leq 2M\sum_{i\in I}  (x_i-x_{i-1})+ \sigma \sum_{i\in I}  (x_i-x_{i-1})<\varepsilon
+\end{multline*}
+
+ 
+\end{proof}
+
+
+
 
 \begin{ejemplo}{} Discutir los ejemplos Dirichlet, Heavside, Continuas, escalera discontinua
  
