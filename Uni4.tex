@@ -217,7 +217,7 @@ Cuando no haya lugar a confusión, por ejemplo a lo largo de este capítulo, omi
   \int_a^b f(x)dx\leq \int_a^b g(x)dx.
  \]
  \item[Aditividad del Intervalo]  \[
-  \int_a^b\alpha f(x)dx= \int_a^cf(x)dx+\int_c^b f(x)dx.
+  \int_a^b  f(x)dx= \int_a^cf(x)dx+\int_c^b f(x)dx.
  \]
 \end{description}
 
@@ -278,7 +278,7 @@ Asumamos ahora que se satisface \eqref{eq:Crit1Int}. Entonces
 
  \[
    (\mathop{D})\overline{\int_a^b}f(x)dx\leq \overline{S}(P;f)<
-   \underline{S}(P;f)(\mathop{D})+\varepsilon<(\mathop{D})\underline{\int_a^b}f(x)dx +\varepsilon.
+   \underline{S}(P;f)+\varepsilon<(\mathop{D})\underline{\int_a^b}f(x)dx +\varepsilon.
  \]
 
 
@@ -378,25 +378,126 @@ donde $F$ es na función que satisface $F'=f$.
 
 
 
-\section{Integrabilidad y continuidad}
+\section{2° Criterio de integrabilidad}
 
 
  
-\begin{teorema}[Segundo criterio de integrabilidad]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
+\begin{teorema}[Segundo criterio de integrabilidad]{teo:2-crite}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si y solo si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
 \[\max_i\{x_i-x_{i-1}\}<\delta,\]
 se tiene que
 \begin{equation}\label{eq:Crit1Int}
- \overline{S}(P;f)-\underline{S}(P;f)<\epsilon.
+ \overline{S}(P;f)-\underline{S}(P;f)<\varepsilon.
 \end{equation}
  
 \end{teorema}
-\begin{demo} \textcolor{red}{COMPLETAR}
+\begin{demo} La suficiencia de la condición es trivial. Para la necesidad tomemos $\varepsilon>0$. Por el primer criterio de integrabilidad existe una partición $P^*=\{y_0,\ldots,y_m\}$ tal que se satisface
+\[
+ \overline{S}(f;P^*)-\underline{S}(f;P^*)<\frac{\epsilon}{2}.
+\]
+Como $f$ es integrable es acotada, por consiguiente existe $M>0$ tal que
+\[
+ |f|\leq M.
+\]
+Elijamos 
+\[
+ \delta<\min\left\{\frac{\varepsilon}{6Mm},\min_{j=1,\ldots,m}(y_j-y_{j-1})   \right\}  .
+\]
+Sea ahora $P=\{x_0,\ldots,n\}$ una partición que satisface
+\[
+ x_i-x_{i-1}<\delta,\quad i=1,\ldots,n.
+\]
+Definimos los conjuntos de índices $I_j$ para $j=1,\ldots,m$ por
+\[
+ I_j:=\left\{ i\in I\left|\vphantom{ \exists }\right.   [x_{i-1},x_i]\subset [y_{j-1},y_j]\right\}.
+\]
+Ahora ponemos
+
+\begin{equation*}
+  I=I_1\cup\cdots\cup I_m,
+\end{equation*}
+
+Pongamos
+\begin{eqnarray*}
+     m_i&:=\inf\{f(x)| x\in [x_{i-1},x]\},\quad     M_i&:=\sup\{f(x)| x\in [x_{i-1},x_i]\}\\
+    m^*_j&:=\inf\{f(x)| x\in [y_{j-1},y_j]\}\quad
+    M^*_j&:=\sup\{f(x)| x\in [y_{j-1},y_j]\}\\
+\end{eqnarray*}
+
+Observar que
+\[
+ i\in I_j\Rightarrow  [x_{i-1},x_i]\subset [y_{j-1},y_j]\Rightarrow
+m_i\geq m^*_j \wedge M_i\leq M^*_j.
+\]
+
+
+Entonces, toomando en consideración la figura \ref{fig:crite2}:
+
+\begin{equation}\label{eq:2drite_estima_suma}
+ \begin{split}
+   \sum_{i\in I_j}m_i(x_i-x_{i-1})&\geq \sum_{i\in I_j}m^*_j(x_i-x_{i-1}) \geq  m^*_j(y_j-y_{j-1}-2\delta)\\
+ \sum_{i\in I_j}M_i(x_i-x_{i-1})&\leq \sum_{i\in I_j}M^*_j(x_i-x_{i-1}) \geq  M^*_j(y_j-y_{j-1})
+ \end{split}
+\end{equation}
+\begin{figure}[H]
+ \begin{center}
+\input{imagenes/criterio2.pdf_tex}
+ \end{center}
+ \caption{Demostración 2° criterio}\label{fig:crite2}
+\end{figure}
+
+Cuando  $i\notin I $  existe $j$ tal que $x_{i-1}<y_j<x_i$. 
+
+Así finalmente
+
+\begin{multline*}\label{eq:crite2_cuentas}
+ \overline{S}(P;f)-\underline{S}(P;f)=\sum_{i=1}^n(M_i-m_i)(x_i-x_{i-1})\\
+ =\sum_{j=1}^m \sum_{i\in I_j}(M_i-m_i)(x_i-x_{i-1})+ \sum_{i\notin I}(M_i-m_i)(x_i-x_{i-1})\\  .
+\end{multline*}
+En la segunda sumatoria usamos las acontaciones $M_i-m_i\leq 2M$ y $(x_i-x_{i-1})<\delta$ y tomamos en cuenta que la cantidad de términos es a lo sumo $m$. En la primer sumatoria usamos las estimaciones \eqref{eq:2drite_estima_suma}. Así obtenemos
+
+\begin{multline*}\label{eq:crite2_cuentas}
+ \overline{S}(P;f)-\underline{S}(P;f)
+ =\sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1}-2\delta)+ 2M\delta m\\ 
+ . =\sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1})+ \sum_{j=1}^m m^*_j 2\delta +2M\delta m\\ 
+ = \overline{S}(P^*;f)-\underline{S}(P^*;f)+3Mm\delta<\epsilon
+\end{multline*}
  
 \end{demo}
 
+
+
+\section{Integrabilidad y continuidad}
+
+
+\begin{definicion}{}[Uniforme continuidad] \index{continuidad!uniforme} Sean $(X,d)$ e $(Y,d')$ espacios métricos con $X$ compacto. Diremos que $f:X\to Y$ es uniformememnte continua si 
+\[
+ \forall\varepsilon>0\exists \delta>0:d(x,y)\delta\Rightarrow d'(f(x),f(y))<varepsilon.
+\]
+
+ 
+\end{definicion}
+
+\begin{teorema}{}[Uniforme continuidad] 
+ Sean $(X,d)$ e $(Y,d')$ espacios métricos con $X$ compacto. Si $f:X\to Y$ es continua entonces es uniformemente continua.
+
+\end{teorema}
+
 \begin{teorema}[Continuidad implica integrabilidad]{}  Si $f:[a,b]\to\mathbb{R}$ es una función continua entonces es integrable.
 \end{teorema}
-\begin{demo}  \textcolor{red}{COMPLETAR}
+\begin{demo}  Apliquemos la definición de continuidad uniforme con $\varepsilon/(b-a)$ en lugar de $\varepsilon$. Sea $P=_\{x_1,\ldots,x_n\}$ una partición tal que
+\[
+ \max_{i=1,\ldots,n}(x_i-x_{i-1})<\delta.
+\]
+Como $f$ es continua $f$ alcanza su máximo y mṕinimo en $[x_{i-1},x_i]$. Luego existen $x^*,x_*\in x_{i-1},x_i]$ con $M_i^*=f(x^*)$ y $m_i^*=f(x_*)$.  Luego
+\[
+ M_i-m_i=f(x^*)-f(x_*)<\varepsilon/(b-a).
+ \]
+Entonces 
+\[
+ \overline{S}(P;f)-\underline{S}(P;f)=\sum_{i=1}^n(M_i-m_i)(x_i-x_{i-1})\leq \frac{\varepsilon}{(b-a)}\sum_{i=1}^n (x_i-x_{i-1})=\varepsilon.
+\]
+
+
  \end{demo}
 
  
@@ -423,10 +524,11 @@ Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUS
 \end{ejemplo}
 
 
+ \section{Criterio integrabilidad de Riemann}
  
-\begin{definicion}[Oscilación sobre un intervalo]{} Sea $f:[a,b]\to\mathbb{R}$ acotada y $I=[\alpha,\beta]\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación! en un intervalo} de $f$ en $I$ por 
+\begin{definicion}[Oscilación]{} Sea $f:[a,b]\to\mathbb{R}$ acotada y $E\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación! sobre conjunto} de $f$ en $E$ por 
 \[
- w(f,I)=\sup\{f(x)| x\in I\}-\inf\{f(x)| x\in I\}.
+ w(f,E)=\sup\{f(x)| x\in E\}-\inf\{f(x)| x\in E\}.
 \]
 \end{definicion}
 \begin{figure}[h]
@@ -465,21 +567,7 @@ Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUS
 \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/thomae.png}\\
 \caption{Función de Thomae}
 \end{figure}
-% 
-% Para graficarla
-% 
-% \begin{sympyverbatim}
-% from matplotlib import pyplot as plt
-% total=500
-% q=[]
-% f=[]
-% for i in range(1,total):
-%     for j in range(1,i):
-%         if gcd(j,i)==1:
-%             q.append(Rational(j,i))
-%             f.append(1.0/i)
-% plt.plot(q,f,'.',markersize=12)
-% \end{sympyverbatim}
+
 
 Si $I^o\neq\emptyset$, $f$ la función de Thomae e $I\subset [0,1]$ entonces 
      $ w(f,I)=1/q^*$, donde $q^*$ es el mínimo valor de $q$ para el que existe $p\leq q$ tal que $p/q\in I$. \textcolor{red}{Justificar}
@@ -512,11 +600,12 @@ Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\
 
 
 
-\begin{definicion}{}[Oscilación en un punto] Sea $f$ una función definida en un entorno de $x$, definimos la  \emph{oscilación}\index{oscilación! en un punto} de $f$ en $x$ como
+\begin{definicion}{}[Oscilación en un punto] Sea $f:[a,b]\to\rr$ y $x\in [a,b]$, definimos la  \emph{oscilación}\index{oscilación! en un punto} de $f$ en $x$ como
 
 \[
- \omega(f;x)=\inf\limits_{x\in I^0}\omega(f;I).
+ \omega(f;x)=\inf\limits_{x\in G}\omega(f;G).
 \]
+Donde el $\inf$ se toma sobre todos los $G$ abiertos relativos a $[a,b]$ con $x\in G$.  
 
  
 \end{definicion}
@@ -530,7 +619,7 @@ Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\
 
 \begin{definicion}{} Sea $f:[a,b]\to\mathbb{R}$ acotada, $\sigma>0$ y $P=\{x_0,x_1,\ldots,x_n\}$ una partición. Definimos
 \[
- I_{\sigma}:=\{i\in\{1,\ldots,n\}|w(f,[x_{i-1},x_i])>\sigma\}.
+ I_{\sigma}:=\{i\in\{1,\ldots,n\}|w(f,[x_{i-1},x_i])\geq\sigma\}.
 \]
 y
 \[
@@ -558,8 +647,39 @@ y
  
 \end{ejemplo}
 
-\begin{teorema}[Criterio de integrabilidad de Riemann]{} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ talque $R(P,f,\sigma)<\epsilon$.
+\begin{teorema}[Criterio de integrabilidad de Riemann]{teo:crite_riemann} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ tal que $R(P,f,\sigma)<\epsilon$.
 \end{teorema}
+
+\begin{proof} Supongamos $f$ integrable y $\varepsilon,\sigma>0$. Por el 2° criterio de integrabilidad aplicado a $ \varepsilon\sigma$ en lugar de $\varepsilon$, existe $\delta>0$ tal que 
+\[\max_i\{x_i-x_{i-1}\}<\delta\Rightarrow 
+ \overline{S}(P;f)-\underline{S}(P;f)<\epsilon\sigma.
+\]
+Pero 
+\begin{multline*}\label{eq:3crite}
+\epsilon\sigma> \overline{S}(P;f)-\underline{S}(P;f)= \sum_{i=1}^n (M_i-m_i)(x_i-x_{i-1})\\
+\geq \sum_{i\in I_\sigma} (M_i-m_i)(x_i-x_{i-1})\geq \sigma \sum_{i\in I_\sigma} (x_i-x_{i-1})=\sigma R(P,f,\sigma)
+\end{multline*}
+Deducimos
+\[
+ R(P,f,\sigma)=\sum_{i\in I_{\sigma}}(x_i-x_{i-1})<\varepsilon.
+\]
+
+Para el recíproco, tomemos $\varepsilon>0$. Como $f$ es acotada, existe $M>0$ tal que $|f|\leq M$.  Observar que  $M$ satisface $M_i-m_i\leq 2M$. Vamos a tomar $\sigma=\varepsilon/2(b-a)$ y tomamos $\delta>0$ que satisface la condición necesaria del teorema para ese $\sigma$ y con $\varepsilon/4M$ en lugar de $\varepsilon$. Definimos 
+\[
+ I=\{i \left|{f}\right. w(f,[x_{i-1},x_i])\geq \sigma\}
+\]
+Entonces 
+
+\begin{multline*}\label{eq:3criteb}
+ \overline{S}(P;f)-\underline{S}(P;f)= \sum_{i\in I} (M_i-m_i)(x_i-x_{i-1})+\sum_{i\notin I} (M_i-m_i)(x_i-x_{i-1})\\
+ \leq 2M\sum_{i\in I}  (x_i-x_{i-1})+ \sigma \sum_{i\in I}  (x_i-x_{i-1})<\varepsilon
+\end{multline*}
+
+ 
+\end{proof}
+
+
+
 
 \begin{ejemplo}{} Discutir los ejemplos Dirichlet, Heavside, Continuas, escalera discontinua
  
@@ -595,8 +715,57 @@ Demostramos que la función de Riemann es discontinua en los racionales $p/q$ do
 \end{ejemplo}
 
 
+\section{Criterio de Hankel}
 
- \begin{definicion}[Contenido exterior]{}\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ [x_{i-1},x_i]\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n[x_{i-1},x_i]$.
+\begin{lema}{lem:cubri_lebesgue}[Cubrimiento de Lebesgue] Sea $(X,d)$ un espacio métrico compacto, $\{G_i\}_{i\in\mathscr{I}}$ un cubrimiento de $X$ por conjuntos abiertos: i.e.
+\[
+ X=\bigcup_{i\in\mathscr{I}}G_i.
+\]
+Entonces existe un $\delta>0$ tal que si $A\subset X$ es un conjunto con $\operatorname{diam}(A)<\delta$ entonces existe $i\in\mathscr{I}$ tal que $A\subset G_i$. El número $\delta$ se suele llama  \emph{número de Lebesgue} \emph{número de Lebesgue} del cubrimiento.
+ 
+\end{lema}
+\begin{proof} Sea $x\in X$. Existe $i_x\in\mathscr{I}$ tal que $x\in G_{i_x}$. Como $G_{i_x}$ es abierto, existe $r_x$ tal que $B(x;r_x)\subset G_{i_x}$. La colección de bolas $\{B(x;r_x/2)\}_{x\in X}$ es un cubrimiento de $X$. Como $X$ es compacto, existen una cantidad finita $\{x_1,\ldots,x_n\}$ de puntos tales que
+\[
+ X=\bigcup_{i=1}^n B(x_i;r_{x_i}/2).
+\]
+Tomemos 
+\[
+ \delta=\min_{i=1,\ldots,n}\frac{r_{x_i}}{2}.
+\]
+Sea ahora $A\subset X$ con $\operatorname{diam}(A)<\delta$. Tomemos cualquier $x\in A$. Debe existir $k=1,\ldots,n$ tal que $x\in B(x_k;r_{x_k}/2)\subset B(x_k;r_{x_k})\subset G_j$, donde por simplicidad pusimos $j=i_{x_k}$. Sea ahora $y$ otro punto en $A$. Entonces tenemos
+\[
+ d(y,x_k)\leq d(y,x)+d(x,x_k)\leq\delta + \frac{r_{x_k}}{2}\leq\frac{r_{x_k}}{2}+ \frac{r_{x_k}}{2}=r_{x_k}
+\]
+Entonces $y\in B(x_k;r_{x_k})\subset  G_j$. Hemos probado $A\subset G_j$. 
+\end{proof}
+
+
+
+
+\begin{lema}{lem:lema_osci} Sea $f:[a,b]\to\rr$ una función acotada y supongamos que  tal que $w(f,x)<\varepsilon$, con $\varepsilon>0$. Entonces existe una partición $P$ tal que 
+\begin{equation}\label{eq:lema_oscila}
+ \overline{S}(P;f)-\underline{S}(P;f)<\varepsilon(b-a).
+\end{equation}
+ 
+\end{lema}
+\begin{proof} Si $x\in [a,b]$, debe existir un intervalo abierto relativo a $[a,b]$,  $I_x$ tal que $w(f,I_x)<\epsilon$. La colección $\{I_x\}_{x\in [a,b]}$ forma un cubrimiento del compacto $[a,b]$. Sea $\delta$ un número de Lebesgue de este cubrimiento, que lo tiene en virtud del Lema \ref{lem:cubri_lebesgue}. Sea una partición $P=\{x_0,\ldots,n\}$ tal que $(x_i-x_{i-1})<\delta$. Dicho de otra forma $\operatorname{diam}( [x_{i-1},x_i])<\delta$. De modo que para cada subintervalo $[x_{i-1},x_i]$ de la partición existe un $I_x$ con $[x_{i-1},x_i]\subset I_x$. Entonces 
+\[
+ M_i-m_i:=\sup\limits_{[x_{i-1},x_i]} f-\inf\limits_{[x_{i-1},x_i]} f=w(f,[x_{i-1},x_i])\leq w(f,I_x)<\varepsilon.
+\]
+Finalmente
+\[
+ \overline{S}(P;f)-\underline{S}(P;f)=\sum_{i=1}^n( M_i-m_i)(x_i-x_{i-1})<\varepsilon\sum_{i=1}^n(x_i-x_{i-1})=\varepsilon(b-a).
+\]
+
+
+ 
+\end{proof}
+
+
+
+
+
+ \begin{definicion}[Contenido exterior]{}\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ (x_{i-1},x_i)\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n(x_{i-1},x_i)$.
  
  El \emph{contenido exterior} de $S$ se define por 
  \[
@@ -606,9 +775,79 @@ donde el ínfimo es tomado sobre todos los cubrimientos finitos de $S$.
   
  \end{definicion}
  
- \begin{teorema}[Criterio de integrabilidad de Hankel]{}  Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si para todo $\sigma>0$ el conjunto $S_{\sigma}:=\{x\in [a,b]| w(f,x)>\sigma\}$ tiene contenido exterior igual a $0$ ($c_e(S_{\sigma})=0)$.
-   \end{teorema}
+ \begin{ejemplo}{} Si $S$ es un conjunto finito $c_e(S)=0$.
+  
+ \end{ejemplo}
 
+ \begin{ejemplo}{} Si $S=[a,b]$ entonces  $c_e(S)=b-a$. \textcolor{red}{JUSTIFICAR}
+    
+ \end{ejemplo}
+ \begin{ejemplo}{} Sa $\{x_n\}$ una sucesión convergente al punto $x$. Si $S=\{x_n| n=1,\dots\}\cup\{x\}$ entonces  $c_e(S)=0$. \textcolor{red}{JUSTIFICAR}
+    
+ \end{ejemplo}
+ 
+ 
+ \begin{teorema}[Criterio de integrabilidad de Hankel]{teo:hankel}  Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si para todo $\sigma>0$ el conjunto 
+ $$S_{\sigma}:=\{x\in [a,b]| w(f,x)>\sigma\}$$ 
+ tiene contenido exterior igual a $0$ 
+ $$c_e(S_{\sigma})=0.$$
+   \end{teorema}
+\begin{proof}  Supongamos $|f|\leq M$. Veamos que la condición es suficiente. Vamos a verificar que se satisface el primer criterio de integrabilidad. Sea $\varepsilon>0$ y aplicaremos la condición suficiente a $\sigma=\varepsilon/4(b-a)$. Como $c_e(S_\sigma)=0$ existen intervalos $I_i=(a_i,b_i)$, $i=1,\ldots,n$, tales que:
+$$S_\sigma\subset \bigcup_{i=1}^n(a_i,b_i)\quad\text{y}\quad \sum_{i=1}^n(b_i-a_i)<\frac{\varepsilon}{4M}.$$ 
+ Se tiene que $[a,b]-\bigcup_{i=1}^n(a_i,b_i)$ es una unión finita de intervalos cerrados
+ \[
+  [a,b]-\bigcup_{i=1}^n(a_i,b_i)= \bigcup_{j=1}^m [c_j,d_j]:= \bigcup_{j=1}^m I_j.
+ \]
+Se tiene que cada $I_j\subset \left(S_\sigma\right)^c$, por lo tanto si $x\in I_j$ entonces $w(f,x)\leq \sigma<2\sigma$. Podemos aplicar el Lema \ref{lem:lema_osci} sobre cada intervalo $I_j$, obteniendo particiones $P_j$ de ellos tales que
+ \[ \overline{S}(P_j;f)-\underline{S}(P_j;f)<2\sigma(d_j-c_j).\]
+ Sea ahora la partición que resulta de reunir todas 
+ \[
+  P:=\{a_1,b_1,a_2,b_2,\ldots,a_n,b_n\}\cup P_1\cup\cdots\cup P_m.
+ \]
+Entonces si $M_i=\sup_{[a_i,b_i]}f$ y $m_i=\inf_{[a_i,b_i]}f$
+\begin{multline*}
+  \overline{S}(P;f)-\underline{S}(P;f)=\sum_{j=1}^m \overline{S}(P_j;f)-\underline{S}(P_j;f)+\sum_{i=1}^n(M_i-m_i)(b_i-a_i)\\
+  \leq 2\sigma\sum_{j=1}^m(d_j-c_j)+2M\frac{\varepsilon}{4M}<\frac{\varepsilon}{2(b-a)}(b-a)+\frac{\varepsilon}{2}=\varepsilon.
+\end{multline*}
+Lo que termina estableciendo el primer criterio de integrabilidad, que es lo que queríamos hacer.
+
+Para ver que la condición es necesaria. Para ello vamos a ver que para todo $\sigma>0$ y para todo $\varepsilon>0$ se tiene que 
+\begin{equation}\label{eq:hankel_final}
+ c_e(S_\sigma)<\varepsilon.
+\end{equation}
+Como $\varepsilon$ es arbitrario no que mas que $c_e(S_\sigma)=0$. Tomemos pues $\sigma,\varepsilon>0$. Por el criterio de integrabilidad de Riemann Teorema \ref{teo:crite_riemann}, aplicado a $\sigma/2$ en lugar de $\sigma$, encontramos una partición $P$ tal que si 
+\[
+ I_{\sigma/2}:=\{i|w(f,[x_{i-1},x_i])\geq\sigma/2\},
+\] 
+entonces
+\[
+ \sum_{i\in I_{\sigma/2}}(x_i-x_{i-1})<\varepsilon.
+\]
+Si $i\notin I_{\sigma/2}$ entonces $w(f,[x_{i-1},x_i])<\sigma/2$. De esto se deduce que  si $i\notin I_{\sigma/2}$ y $x$ estuviese en el interior relativo a $[a,b]$ del intervalo $[x_{i-1},x_i]$ entonces $w(f,x)<\sigma/2$. Vamos a probar que
+\begin{equation}\label{eq:hankel_conj=}
+ \{x| w(f,x)>\sigma\}\subset \bigcup_{i\in I_{\sigma/2}}[x_{i-1},x_i].
+\end{equation}
+
+Si esta afirmación fuese falsa existiría $x$ con $w(f,x)>\sigma$ y $x\notin [x_{i-1},x_i]$ para ningún $i\in I_{\sigma/2}$. De modo que debe ocurrir que $x\in   [x_{i-1},x_i]$ con $i\notin I_{\sigma/2}$. Si fuese el caso que  $x\in   (x_{i-1},x_i)$ entonces  $w(f,x)<\sigma/2<\sigma$ que es una contradicción. De modo que $x$ sólo puede pertenecer a puntos extremos de intervalos  $[x_{i-1},x_i]$ con  $i\notin I_{\sigma/2}$. Debería ser la situación que $x=x_i$ con $i,(i+1)\notin I_{\sigma/2}$. Entonces si $y,z\in \in (x_{i-1},x_{i+1})$ Pueden ocurrir esencialmente dos situaciones i) que $y,z$ esten en el mismo subintervalo, digamos  $y,z \in (x_{i-1},x_{i}]$ en cuyo caso
+\[
+ f(y)-f(z)\leq\w(f, [x_{i-1},x_{i}])<\sigma/2.
+\]
+ii) o que esten en diferentes, digamos $y\in \in (x_{i-1},x_{i}]$ y $z\in \in [x_{i},x_{i+1})$. En cuyo caso
+\begin{multline*}
+ f(y)-f(z)=f(y)-f(x)+f(x)-f(z)\\
+ \leq w(f,[x_{i-1},x_i])+w(f,[x_{i},x_{i+1}])\leq\frac{\sigma}{2}+\frac{\sigma}{2}=\sigma.
+\end{multline*}
+
+En cualquier situación $f(y)-f(z)\leq\sigma$. Tomando supremo sobre $y$ e infimo sobre $z$ concluímos que $w(f,x)\leq w(f,(x_{i-1},x_{i+1}))<\sigma$, que es una contradicción que termina por probar la inclusión  \eqref{eq:hankel_conj=}. 
+
+Aplicando \eqref{eq:hankel_conj=}
+\[
+ c_e(S_{\sigma})\leq  \sum_{i\in I_{\sigma/2}}(x_i-x_{i-1})<\epsilon.
+\] 
+\end{proof}
+
+   
+   
 \section{Integrales impropias}
 Se denomina \emph{integrales impropias}\index{integral!impropia} a la integral de funciones no acotadas o a integrales sobre intervalos no acotados. Tales integrales requieren de una definición especial.
 \begin{definicion}{def:int_impropia}[Integral impropia función no-acotada] Supongamos $a<c<b$ y que $f:[a,b]\to\rr$ es una función integrable sobre $[a,c-\varepsilon]$ y sobre $[c+\varepsilon]$ para todo $\varepsilon>0$. Si los siguientes límites existen

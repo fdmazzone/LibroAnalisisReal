@@ -2,27 +2,38 @@
 \contentsline {chapter}{1~Nociones Básicas de Topología }{2}{chapter.1}
 \contentsline {section}{1.1~Espacios Métricos}{2}{section.1.1}
 \contentsline {subsection}{1.1.1~Enfoque axiomático de las estructuras métricas}{2}{subsection.1.1.1}
-\contentsline {subsection}{1.1.2~Bolas, esferas y diámetro}{3}{subsection.1.1.2}
-\contentsline {subsection}{1.1.3~Conjuntos abiertos}{4}{subsection.1.1.3}
+\contentsline {subsection}{1.1.2~Bolas, esferas y diámetro}{4}{subsection.1.1.2}
+\contentsline {subsection}{1.1.3~Conjuntos abiertos}{5}{subsection.1.1.3}
 \contentsline {subsection}{1.1.4~Interior de un conjunto y entornos}{6}{subsection.1.1.4}
-\contentsline {subsection}{1.1.5~Conjuntos cerrados y clausura de conjuntos}{7}{subsection.1.1.5}
-\contentsline {subsection}{1.1.6~Ejercicios}{10}{subsection.1.1.6}
-\contentsline {section}{1.2~Subespacios de un espacio métrico}{12}{section.1.2}
-\contentsline {subsection}{1.2.1~Ejercicios}{13}{subsection.1.2.1}
-\contentsline {section}{1.3~Espacios separables}{14}{section.1.3}
-\contentsline {subsection}{1.3.1~Ejercicios}{16}{subsection.1.3.1}
-\contentsline {section}{1.4~Funciones Continuas}{17}{section.1.4}
-\contentsline {subsection}{1.4.1~Ejercicios}{19}{subsection.1.4.1}
-\contentsline {section}{1.5~Homeomorfismos e isometr\'{\i }as}{20}{section.1.5}
-\contentsline {subsection}{1.5.1~Ejercicios}{22}{subsection.1.5.1}
-\contentsline {section}{1.6~Completitud}{22}{section.1.6}
-\contentsline {subsection}{1.6.1~Sucesiones}{22}{subsection.1.6.1}
-\contentsline {subsection}{1.6.2~Sucesiones de Cauchy, espacios métricos completos}{23}{subsection.1.6.2}
-\contentsline {subsection}{1.6.3~Teorema de Cantor}{25}{subsection.1.6.3}
-\contentsline {subsection}{1.6.4~Teorema de Baire}{25}{subsection.1.6.4}
-\contentsline {subsection}{1.6.5~Ejercicios}{25}{subsection.1.6.5}
-\contentsline {section}{1.7~Compacidad}{27}{section.1.7}
-\contentsline {subsection}{1.7.1~Ejercicios}{31}{subsection.1.7.1}
-\contentsline {section}{1.8~Conexión}{33}{section.1.8}
-\contentsline {subsection}{1.8.1~Ejercicios}{34}{subsection.1.8.1}
-\contentsline {chapter}{Bibliografía}{36}{ejercicio.1.70}
+\contentsline {subsection}{1.1.5~Conjuntos cerrados y clausura de conjuntos}{8}{subsection.1.1.5}
+\contentsline {subsection}{1.1.6~Ejercicios}{11}{subsection.1.1.6}
+\contentsline {section}{1.2~Subespacios de un espacio métrico}{13}{section.1.2}
+\contentsline {subsection}{1.2.1~Ejercicios}{14}{subsection.1.2.1}
+\contentsline {section}{1.3~Espacios separables}{15}{section.1.3}
+\contentsline {subsection}{1.3.1~Ejercicios}{17}{subsection.1.3.1}
+\contentsline {section}{1.4~Funciones Continuas}{18}{section.1.4}
+\contentsline {subsection}{1.4.1~Ejercicios}{20}{subsection.1.4.1}
+\contentsline {section}{1.5~Homeomorfismos e isometr\'{\i }as}{21}{section.1.5}
+\contentsline {subsection}{1.5.1~Ejercicios}{23}{subsection.1.5.1}
+\contentsline {section}{1.6~Completitud}{23}{section.1.6}
+\contentsline {subsection}{1.6.1~Sucesiones}{23}{subsection.1.6.1}
+\contentsline {subsection}{1.6.2~Sucesiones de Cauchy, espacios métricos completos}{24}{subsection.1.6.2}
+\contentsline {subsection}{1.6.3~Teorema de Cantor}{26}{subsection.1.6.3}
+\contentsline {subsection}{1.6.4~Teorema de Baire}{27}{subsection.1.6.4}
+\contentsline {subsection}{1.6.5~Ejercicios}{28}{subsection.1.6.5}
+\contentsline {section}{1.7~Compacidad}{30}{section.1.7}
+\contentsline {subsection}{1.7.1~Ejercicios}{34}{subsection.1.7.1}
+\contentsline {section}{1.8~Conexión}{35}{section.1.8}
+\contentsline {subsection}{1.8.1~Ejercicios}{36}{subsection.1.8.1}
+\contentsline {chapter}{2~Integral de Riemann}{39}{chapter.2}
+\contentsline {section}{2.1~Introducción}{39}{section.2.1}
+\contentsline {section}{2.2~Área de figuras elementales planas}{39}{section.2.2}
+\contentsline {section}{2.3~Integral de Riemann}{41}{section.2.3}
+\contentsline {section}{2.4~2° Criterio de integrabilidad}{45}{section.2.4}
+\contentsline {section}{2.5~Integrabilidad y continuidad}{47}{section.2.5}
+\contentsline {section}{2.6~Criterio integrabilidad de Riemann}{48}{section.2.6}
+\contentsline {section}{2.7~Integrales impropias}{52}{section.2.7}
+\contentsline {section}{2.8~Teorema Fundamental de Cálculo}{52}{section.2.8}
+\contentsline {section}{2.9~Función de Volterra}{53}{section.2.9}
+\contentsline {section}{2.10~Integral de Riemann y pasos al límite}{54}{section.2.10}
+\contentsline {chapter}{Bibliografía}{55}{section.2.10}

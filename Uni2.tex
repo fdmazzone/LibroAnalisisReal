@@ -107,6 +107,80 @@ $(\mathcal{C}([0,1]),d)$ es un espacio métrico, donde:
 	d(f,g):=\int_0^1|f(x)-g(x)|dx.
 \end{equation}
 \end{ejemplo}
+
+
+\begin{ejemplo}{ejem,caballo}[Métrica caballo ajedrez]\index{métrica!caballo ajedrez} Sobre el conjunto $\mathbb{Z}^2$ definimos la métrica $d$ por $d((x_0,y_0),(x_1,y_1))$  como la menor cantidad de movidas necesarias dar con un caballo de ajedrez para ir desde $(x_0,y_0)$ a $(x_1,y_1)$.  
+\end{ejemplo}
+
+
+
+\begin{ejemplo}{ejem,geodesia}[Métrica de las geodesias] Sobre el conjunto 
+
+\[S^2:=\left\{(x,y,z)\in\mathbb{R}^3 | x^2+y^2+z^2=1\right\}.\]
+definimos para $P,Q\in S^2$ por 
+
+\[
+ d_g(P,Q)=\arccos(\langle P, Q \rangle),\quad P,Q\in S^2,
+\]
+donde $\langle P, Q \rangle$ denota el producto interno entre $P$ y $Q$ y para la función $\arccos$ tomamos la rama con valores en el intervalo $[0,\pi]$. Entonces $d_g$ es una métrica, que se denomina \emph{métrica geodésica}\index{métrica!geodésica}. La afirmación de que $d_g$ es métrica amerita justificación.
+
+Recordemos que la \emph{desigualdad de Cauchy Schwartz} afirma que
+
+\begin{equation}\label{eq:C-S}
+ \langle P, Q \rangle\leq \|P\| \|Q\|,
+\end{equation}
+donde $\|P\|=\sqrt{x^2+y^2+z^2}$. Además la igualdad en la desigualdad de Cauchy-Schwartz sólo es posible cuando $P=\lambda Q$ con $\lambda\geq 0$. 
+
+Si $d_g(P,Q)=0$ significa que $\langle P, Q \rangle=1$.  Como $\|P\|=\|Q\|=1$ tendríamos la igualdad en la desigualdad de Cauchy-Schwartz, luego   $P=\lambda Q$. Tomandos normas en la última igualdad $|\lambda|=1$, de lo que terminamos por deducir que $\lambda=1$, vale decir $P=Q$.
+
+La afirmación $d_g(P,Q)=g(Q,P)$ es inmediata de la conmutatividad del producto interno. 
+
+Para la desigualdad triangular tomemos $P,Q$ y $R$ en $S^2$.  Definamos los vectores
+\[
+ U=P- \langle P, Q \rangle Q,\quad V=R- \langle R, Q \rangle Q.
+\]
+
+Entonces un cálculo sencillo muestra queda
+\begin{equation}\label{eq:geodesica}
+\langle U, Q \rangle=0= \langle V, Q \rangle . 
+\end{equation}
+
+Además
+ \begin{multline}\label{eq:geodesica2}
+  \|U\|^2 =\langle P- \langle P, Q \rangle Q  ,P- \langle P, Q \rangle Q   \rangle\\=1-
+  \langle P, Q \rangle^2 =1-\cos^2(d_g(P,Q))=\sen^2(d_g(P,Q)).
+ \end{multline}
+
+ De manera similar
+\begin{equation}\label{eq:geodesica3}
+    \|V\|^2 =\sen^2(d_g(R,Q)).
+\end{equation}
+
+ Entonces 
+
+ \[
+ \begin{array}{lll}
+   \langle P, R \rangle &=     \langle U+\langle P, Q \rangle Q , V+ \langle R, Q \rangle Q \rangle &  \\ 
+   &=\langle U, V \rangle +\langle P, Q \rangle\langle R, Q \rangle & \text{usando \eqref{eq:geodesica} }\\
+   &\geq -\|U\|\|V\|+\cos(d_g(P,Q))\cos(d_g(R,Q)) & \text{Cauchy-Schwartz}\\
+    &=- \sen(d_g(P,Q))\sen(d_g(R,Q)) &   \\
+    &+\cos(d_g(P,Q))\cos(d_g(R,Q)) & \text{por \eqref{eq:geodesica2} y \eqref{eq:geodesica3}}\\
+    &=\cos(d_g(P,Q)+d_g(R,Q)) &\text{fórmula adición}
+ \end{array}
+\]
+Se puede asumir que $d_g(P,Q)+d_g(R,Q)\leq \pi$ de lo contrario la desigualdad triángular es inmediata. Tomando $\arccos$ en el primer y último término de la cadena de iguldades anteriores inferimos la desigualdad triangular.  
+
+
+
+% Si los conjuntos de vectores $\{P,Q\}$ y $\{P,R\}$ fueran linealmente independientes ambos, deduciríamos que existirían $\lambda,\mu\in\rr$ con $Q=\lambda P$ y $R=\mu P$. Luego tambián $Q=\lambda/\mu P$. Razonando como antes, puesto que los vectores tienen norma 1 concluímos que $\lambda=\pm 1=\mu$. De esto deducimos o que $P=Q=R$ o que hay dos iguales y uno opuesto, por ejemplo $P=Q$ y $P=-R$. Encualquiera de estas situaciones es fácil verificar la desigualdad triangular y lo dejamos como ejercicio. Entonces podemos suponer que alguno dfe los conjuntos $\{P,Q\}$ o $\{P,R\}$ son linealmente independientes. Ahora podemos suponer que los dos lo son, porque de no ser así, supongamos  $\{P,Q\}$  linealmente independiente y  $\{P,R\}$ linealmente dependiente. 
+
+\end{ejemplo}
+
+
+
+
+
+
 \subsection{Bolas, esferas y diámetro}
 Definido lo que es una métrica y un espacio métrico, pasamos a
 definir algunas entidades de carácter geométrico, esta son el
@@ -1866,6 +1940,50 @@ Son equivalentes:
 \end{proposicion}
 
 \subsection{Teorema de Cantor}
+
+
+
+\begin{teorema}{teo:cantor_encajes}[Teorema de la intersección de Cantor.] Sea $(X, d)$ un espacio métrico completo. Sea $\left\{F_{n}\right\}_{1}^{\infty}$ una secuencia decreciente de conjuntos cerrados en $X$. Es decir
+$$
+F_{1} \supset F_{2} \supset\cdots \supset F_{n} \supset\cdots
+$$
+Supongamos  que:
+$$
+\delta\left(F_{n}\right) \longrightarrow 0 \text { as } n \rightarrow \infty
+$$
+Entonces:
+$$
+\exists x \in X: \bigcap_{n=1}^{\infty} F_{n}=\{x\} .
+$$ 
+\end{teorema}
+
+
+\begin{proof}  Primero demostramos que $\bigcap_{n=1}^{\infty} F_{n}$ tiene como máximo un elemento. De hecho, sea $x_{0}, \tilde{x}_{0} \in \bigcap_{n=1}^{\infty} F_{n}$. Entonces $x_{0}, \tilde{x}_{0} \in F_{n}$ para todo $n \in \mathbb{N}$ y por lo tanto
+$$
+d\left(x_{0}, \tilde{x}_{0}\right) \leq \delta\left(F_{n}\right)
+$$
+para cualquier $n \in \mathbb{N}$. Por lo tanto, tomando límite cuando $n\to\infty$ deducimos $d(x_0,\tilde{x}_0)=0$, por lo cual  $x_{0}=\tilde{x}_{0}$.  De allí que hay a lo sumo un elemento en la intersección.
+
+Ahora probamos que $\bigcap_{n=1}^{\infty} F_{n}$ tiene al menos un elemento. Para cualquier $n \in \mathbb{N}$, elijamos algún elemento $x_{n} \in F_{n}$. Probamos que $\left\{x_{n}\right\}_{1}^{\infty}$ es una sucesión de Cauchy. De hecho, para cualquier $\varepsilon>0$, elijamos $N \in \mathbb{N}$ tal que $\operatorname{diam}\left(F_{N}\right)<\varepsilon$. Entonces, para cualquier $n, m \geq N$, tenemos que $x_{n} \in F_{n} \subseteq F_{N}$ y $x_{m} \in F_{m} \subseteq F_{ N}$, por lo que
+$$
+d\left(x_{n}, x_{m}\right) \leq \delta\left(F_{N}\right)<\varepsilon
+$$
+Por lo tanto, $\left(x_{n}\right)_{1}^{\infty}$ es una sucesión de Cauchy. Como $(X, d)$ es completo, se sigue que existe $x_{0} \in X$ tal que $x_{n} \longrightarrow x_{0}$ como $n \rightarrow \infty$. Afirmamos que $x_{0} \in F_{k}$ para todo $k \in \mathbb{N}$. De hecho, para cualquier $k \in \mathbb{N}$, tenemos que
+$$
+x_{k}, x_{k+1}, x_{k+2}, \ldots \in F_{k}
+$$
+y dado que $F_{k}$ es cerrado y $x_{n} \longrightarrow x_{0}$ como $n \rightarrow \infty$, se sigue que $x_{0} \in F_{k}$. Por lo tanto, $x_{0} \in \bigcap_{k \in \mathbb{N}} F_{k}$. Esto completa la prueba. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
 \subsection{Teorema de Baire}
 \index[personas]{Baire}
 \begin{definicion}{}[Conjuntos nunca densos, categorías de Baire] Sea $(X, d)$ un espacio métrico. 
@@ -1879,9 +1997,11 @@ Son equivalentes:
 
 \end{definicion}
 
-\begin{observa}{} i) Puesto que  $\overline{Y^{c\circ}}=
- Y^{c\circ c\circ c}=\overline{Y}^{\circ c}$. Se concluye que  $Y$ es magro si y sólo si $Y^{c\circ}$ es denso.
+\begin{observa}{} i) Puesto que  $\overline{\left({\overline{Y}}\right)^{c}}=  Y^{c\circ ccc\circ c}=Y^{c\circ c\circ c}=\left(\overline{Y}^\circ\right)^c$. Se concluye que  $Y$ es magro si y sólo si $\left({\overline{Y}}\right)^c$ es denso.
  \\
+ ii) El concepto de nunca denso no es lo mismo que lo contrario a denso. De hecho son conceptos bastantes diferentes.  Por ejemplo un intervalo $(a,b)$ de $\mathbb{R}$ no es denso y tampoco nunca denso. La implicación contraria es verdadera, esto es si un conjunto es nunca denso entonces no es denso.  
+ \\
+ iii) Un subconjunto de un conjunto nunca denso resulta nunca denso. La misma aseveración vale con conjuntos de primera categoría. 
 \end{observa}
 
 \begin{ejercicio}{} Demostrar que el único conjunto magro en un espacio métrico discreto es $\emptyset$. 
@@ -1892,7 +2012,64 @@ Son equivalentes:
    \end{ejercicio}
 
 
+\begin{teorema}{}[Baire] Todo espacio métrico completo es de segunda categoría.
+ \end{teorema}
+ 
+ \begin{proof}
+  Suponemos   que $(X, d)$ es un espacio métrico completo y
+\begin{equation}\label{eq:X cat I}
+X=\bigcup_{n=1}^{\infty} E_{n}
+\end{equation}
+donde cada uno de los $E_{n}$ magro, o equivalentemente  $V_n:=\left(\overline{E_{n}}\right)^{c}$ es un abierto denso.  Tomando complementos en la identidad \eqref{eq:X cat I} deducimos que $\emptyset=\bigcap_{n=1}^\infty  E_{n}^c$. Y como $V_n\subset E_{n}^c$  deducimos
+\begin{equation*}\label{eq:X cat I b}
+ \emptyset= \bigcap_{n=1}^\infty  V_{n}^c.
+\end{equation*}
+Probaremos que el conjunto del segundo miembro de la igualdad anterior es no vacío y así arribaremos a una contradicción. De hecho, vamos todavía más fuerte, esto es que $\bigcap_{n=1}^\infty  V_{n}^c$ es un conjunto denso. Esto es un resultado que merece destacarse. \emph{En un espacio métrico completo la intersección de una cantidad numerable  conjuntos abiertos y densos es un conjunto denso}.
 
+Para demostrar que $\bigcap_{n=1}^\infty  V_{n}^c$ es denso es suficiente demostrar que:
+\begin{equation}\label{eq:equiv_dens}
+  x_0\in X \hbox{ y }r>0 \Rightarrow B(x_0,r)\cap \left(\bigcap_{n=1}^\infty  V_{n}^c\right)\neq\emptyset. 
+\end{equation}
+
+
+\begin{observa}{}
+Vamos a usar repetidamente la siguiente propiedad: \emph{Si $V$ es abierto y denso y $G$ es abierto entonces $G\cap V$ es abierto y no vacio, por ende existe $r>0$  y $x\in G\cap V$ con $B'(x,r)\subset G\cap V$}
+\end{observa}
+
+
+Por la observación existe $x_{1} \in X $ y $r_{1}>0$ tal que
+$$
+B'\left(x_{1}, r_1\right) \subset V_{1} \cap B\left(x_{0},r\right) .
+$$
+Nuevamente por la observación  existe $x_{2} \in X$ y $r_{2}>0$ tal que
+$$
+B'\left(x_{2},r_2\right) \subset V_{2} \cap B\left(x_{1},r_1\right)
+$$
+Continuando de esta manera, usando el hecho de que para cada $n \in \mathbb{N}, V_{n}$ es abierto y denso y que $B\left(x_{ n-1},r_{n-1}\right)$ es abierto, obtenemos $x_{n} \in X$ y $r_{n}>0$ tal que
+$$
+B'\left(x_{n},r_n\right) \subset V_{n} \cap B\left(x_{n -1},r_{n-1}\right)
+$$
+Además, en cada paso de esta construcción, podemos elegir $r_{n}$, achicándolo si fuese necesario, de modo  que $0<r_{n} \leq 1 / n$. 
+
+Se tiene que
+
+$$
+B'\left(x_{1},r_1\right) \supset B'\left(x_{2},r_2\right) \supset \cdots \supset B'\left(x_{n},r_n\right) \supset \cdots
+$$
+y
+$$
+\operatorname{diam}\left(B'\left(x_{n},r_n\right)\right) \longrightarrow 0 \text { cuando } n \rightarrow \infty
+$$
+de modo que, por el Teorema \ref{teo:cantor_encajes}, tenemos que existe $x \in X$ tal que
+$$
+\bigcap_{n=1}^{\infty} B'\left(x_{n},r_n\right)=\{x\}
+$$
+Notar que por lo prviamente probado
+$$
+x \in B\left(x_{0},r\right)\cap\left( \bigcap_{n=1}^{\infty} V_{n}\right) .
+$$
+Por lo tanto se verifica \eqref{eq:equiv_dens}.
+\end{proof}
 
 
 
