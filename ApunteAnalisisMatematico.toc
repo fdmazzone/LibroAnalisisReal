@@ -23,17 +23,6 @@
 \contentsline {subsection}{1.6.5~Ejercicios}{28}{subsection.1.6.5}
 \contentsline {section}{1.7~Compacidad}{30}{section.1.7}
 \contentsline {subsection}{1.7.1~Ejercicios}{34}{subsection.1.7.1}
-\contentsline {section}{1.8~Conexión}{35}{section.1.8}
-\contentsline {subsection}{1.8.1~Ejercicios}{36}{subsection.1.8.1}
-\contentsline {chapter}{2~Integral de Riemann}{39}{chapter.2}
-\contentsline {section}{2.1~Introducción}{39}{section.2.1}
-\contentsline {section}{2.2~Área de figuras elementales planas}{39}{section.2.2}
-\contentsline {section}{2.3~Integral de Riemann}{41}{section.2.3}
-\contentsline {section}{2.4~2° Criterio de integrabilidad}{45}{section.2.4}
-\contentsline {section}{2.5~Integrabilidad y continuidad}{47}{section.2.5}
-\contentsline {section}{2.6~Criterio integrabilidad de Riemann}{48}{section.2.6}
-\contentsline {section}{2.7~Integrales impropias}{52}{section.2.7}
-\contentsline {section}{2.8~Teorema Fundamental de Cálculo}{52}{section.2.8}
-\contentsline {section}{2.9~Función de Volterra}{53}{section.2.9}
-\contentsline {section}{2.10~Integral de Riemann y pasos al límite}{54}{section.2.10}
-\contentsline {chapter}{Bibliografía}{55}{section.2.10}
+\contentsline {section}{1.8~Conexión}{36}{section.1.8}
+\contentsline {subsection}{1.8.1~Ejercicios}{37}{subsection.1.8.1}
+\contentsline {chapter}{Bibliografía}{39}{ejercicio.1.70}
