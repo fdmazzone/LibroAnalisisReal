@@ -107,6 +107,80 @@ $(\mathcal{C}([0,1]),d)$ es un espacio métrico, donde:
 	d(f,g):=\int_0^1|f(x)-g(x)|dx.
 \end{equation}
 \end{ejemplo}
+
+
+\begin{ejemplo}{ejem,caballo}[Métrica caballo ajedrez]\index{métrica!caballo ajedrez} Sobre el conjunto $\mathbb{Z}^2$ definimos la métrica $d$ por $d((x_0,y_0),(x_1,y_1))$  como la menor cantidad de movidas necesarias dar con un caballo de ajedrez para ir desde $(x_0,y_0)$ a $(x_1,y_1)$.  
+\end{ejemplo}
+
+
+
+\begin{ejemplo}{ejem,geodesia}[Métrica de las geodesias] Sobre el conjunto 
+
+\[S^2:=\left\{(x,y,z)\in\mathbb{R}^3 | x^2+y^2+z^2=1\right\}.\]
+definimos para $P,Q\in S^2$ por 
+
+\[
+ d_g(P,Q)=\arccos(\langle P, Q \rangle),\quad P,Q\in S^2,
+\]
+donde $\langle P, Q \rangle$ denota el producto interno entre $P$ y $Q$ y para la función $\arccos$ tomamos la rama con valores en el intervalo $[0,\pi]$. Entonces $d_g$ es una métrica, que se denomina \emph{métrica geodésica}\index{métrica!geodésica}. La afirmación de que $d_g$ es métrica amerita justificación.
+
+Recordemos que la \emph{desigualdad de Cauchy Schwartz} afirma que
+
+\begin{equation}\label{eq:C-S}
+ \langle P, Q \rangle\leq \|P\| \|Q\|,
+\end{equation}
+donde $\|P\|=\sqrt{x^2+y^2+z^2}$. Además la igualdad en la desigualdad de Cauchy-Schwartz sólo es posible cuando $P=\lambda Q$ con $\lambda\geq 0$. 
+
+Si $d_g(P,Q)=0$ significa que $\langle P, Q \rangle=1$.  Como $\|P\|=\|Q\|=1$ tendríamos la igualdad en la desigualdad de Cauchy-Schwartz, luego   $P=\lambda Q$. Tomandos normas en la última igualdad $|\lambda|=1$, de lo que terminamos por deducir que $\lambda=1$, vale decir $P=Q$.
+
+La afirmación $d_g(P,Q)=g(Q,P)$ es inmediata de la conmutatividad del producto interno. 
+
+Para la desigualdad triangular tomemos $P,Q$ y $R$ en $S^2$.  Definamos los vectores
+\[
+ U=P- \langle P, Q \rangle Q,\quad V=R- \langle R, Q \rangle Q.
+\]
+
+Entonces un cálculo sencillo muestra queda
+\begin{equation}\label{eq:geodesica}
+\langle U, Q \rangle=0= \langle V, Q \rangle . 
+\end{equation}
+
+Además
+ \begin{multline}\label{eq:geodesica2}
+  \|U\|^2 =\langle P- \langle P, Q \rangle Q  ,P- \langle P, Q \rangle Q   \rangle\\=1-
+  \langle P, Q \rangle^2 =1-\cos^2(d_g(P,Q))=\sen^2(d_g(P,Q)).
+ \end{multline}
+
+ De manera similar
+\begin{equation}\label{eq:geodesica3}
+    \|V\|^2 =\sen^2(d_g(R,Q)).
+\end{equation}
+
+ Entonces 
+
+ \[
+ \begin{array}{lll}
+   \langle P, R \rangle &=     \langle U+\langle P, Q \rangle Q , V+ \langle R, Q \rangle Q \rangle &  \\ 
+   &=\langle U, V \rangle +\langle P, Q \rangle\langle R, Q \rangle & \text{usando \eqref{eq:geodesica} }\\
+   &\geq -\|U\|\|V\|+\cos(d_g(P,Q))\cos(d_g(R,Q)) & \text{Cauchy-Schwartz}\\
+    &=- \sen(d_g(P,Q))\sen(d_g(R,Q)) &   \\
+    &+\cos(d_g(P,Q))\cos(d_g(R,Q)) & \text{por \eqref{eq:geodesica2} y \eqref{eq:geodesica3}}\\
+    &=\cos(d_g(P,Q)+d_g(R,Q)) &\text{fórmula adición}
+ \end{array}
+\]
+Se puede asumir que $d_g(P,Q)+d_g(R,Q)\leq \pi$ de lo contrario la desigualdad triángular es inmediata. Tomando $\arccos$ en el primer y último término de la cadena de iguldades anteriores inferimos la desigualdad triangular.  
+
+
+
+% Si los conjuntos de vectores $\{P,Q\}$ y $\{P,R\}$ fueran linealmente independientes ambos, deduciríamos que existirían $\lambda,\mu\in\rr$ con $Q=\lambda P$ y $R=\mu P$. Luego tambián $Q=\lambda/\mu P$. Razonando como antes, puesto que los vectores tienen norma 1 concluímos que $\lambda=\pm 1=\mu$. De esto deducimos o que $P=Q=R$ o que hay dos iguales y uno opuesto, por ejemplo $P=Q$ y $P=-R$. Encualquiera de estas situaciones es fácil verificar la desigualdad triangular y lo dejamos como ejercicio. Entonces podemos suponer que alguno dfe los conjuntos $\{P,Q\}$ o $\{P,R\}$ son linealmente independientes. Ahora podemos suponer que los dos lo son, porque de no ser así, supongamos  $\{P,Q\}$  linealmente independiente y  $\{P,R\}$ linealmente dependiente. 
+
+\end{ejemplo}
+
+
+
+
+
+
 \subsection{Bolas, esferas y diámetro}
 Definido lo que es una métrica y un espacio métrico, pasamos a
 definir algunas entidades de carácter geométrico, esta son el
