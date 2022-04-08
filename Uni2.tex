@@ -2507,6 +2507,30 @@ bolas no se cubrían por finitos $G_{\lambda}$. (ya terminamos,
 !`por fin!)
  \end{demo}
 
+ 
+ \textcolor{red}{Ojo! está repetido}
+\begin{lema}{lem:cubri_lebesgue2}[Cubrimiento de Lebesgue] Sea $(X,d)$ un espacio métrico compacto, $\{G_i\}_{i\in\mathscr{I}}$ un cubrimiento de $X$ por conjuntos abiertos: i.e.
+\[
+ X=\bigcup_{i\in\mathscr{I}}G_i.
+\]
+Entonces existe un $\delta>0$ tal que si $A\subset X$ es un conjunto con $\operatorname{diam}(A)<\delta$ entonces existe $i\in\mathscr{I}$ tal que $A\subset G_i$. El número $\delta$ se suele llama  \emph{número de Lebesgue} \emph{número de Lebesgue} del cubrimiento.
+ 
+\end{lema}
+\begin{proof} Sea $x\in X$. Existe $i_x\in\mathscr{I}$ tal que $x\in G_{i_x}$. Como $G_{i_x}$ es abierto, existe $r_x$ tal que $B(x;r_x)\subset G_{i_x}$. La colección de bolas $\{B(x;r_x/2)\}_{x\in X}$ es un cubrimiento de $X$. Como $X$ es compacto, existen una cantidad finita $\{x_1,\ldots,x_n\}$ de puntos tales que
+\[
+ X=\bigcup_{i=1}^n B(x_i;r_{x_i}/2).
+\]
+Tomemos 
+\[
+ \delta=\min_{i=1,\ldots,n}\frac{r_{x_i}}{2}.
+\]
+Sea ahora $A\subset X$ con $\operatorname{diam}(A)<\delta$. Tomemos cualquier $x\in A$. Debe existir $k=1,\ldots,n$ tal que $x\in B(x_k;r_{x_k}/2)\subset B(x_k;r_{x_k})\subset G_j$, donde por simplicidad pusimos $j=i_{x_k}$. Sea ahora $y$ otro punto en $A$. Entonces tenemos
+\[
+ d(y,x_k)\leq d(y,x)+d(x,x_k)\leq\delta + \frac{r_{x_k}}{2}\leq\frac{r_{x_k}}{2}+ \frac{r_{x_k}}{2}=r_{x_k}
+\]
+Entonces $y\in B(x_k;r_{x_k})\subset  G_j$. Hemos probado $A\subset G_j$. 
+\end{proof}
+ 
  \subsection{Ejercicios}
  
  
