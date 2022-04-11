@@ -333,7 +333,7 @@ Inferir que $f$ es integrable en $[a,b]$ y
 
 \begin{ejercicio}{} Sea $0\leq a<b\leq \pi$. Demostrar que
 \[
- \int_a^b \cos x dx=-(\sin(b)-\sin(a)).
+ \int_a^b \cos x dx=\sin(b)-\sin(a).
 \]
 \end{ejercicio}
 
@@ -342,7 +342,7 @@ Inferir que $f$ es integrable en $[a,b]$ y
 \[
  \int_a^bf(x)dx=F(b)-F(a),
 \]
-donde $F$ es na función que satisface $F'=f$.
+donde $F$ es una función que satisface $F'=f$.
 \end{observa}
 
 % 
@@ -400,7 +400,7 @@ Como $f$ es integrable es acotada, por consiguiente existe $M>0$ tal que
 \]
 Elijamos 
 \[
- \delta<\min\left\{\frac{\varepsilon}{6Mm},\min_{j=1,\ldots,m}(y_j-y_{j-1})   \right\}  .
+ \delta<\min\left\{\frac{\varepsilon}{8Mm},\min_{j=1,\ldots,m}(y_j-y_{j-1})   \right\}  .
 \]
 Sea ahora $P=\{x_0,\ldots,x_n\}$ una partición que satisface
 \[
@@ -457,9 +457,9 @@ En la segunda sumatoria usamos las acontaciones $M_i-m_i\leq 2M$ y $(x_i-x_{i-1}
 
 \begin{multline*}\label{eq:crite2_cuentas}
  \overline{S}(P;f)-\underline{S}(P;f)
- =\sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1}-2\delta)+ 2M\delta m\\ 
+ \leq \sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1}-2\delta)+ 2M\delta m\\ 
  . =\sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1})+ \sum_{j=1}^m m^*_j 2\delta +2M\delta m\\ 
- = \overline{S}(P^*;f)-\underline{S}(P^*;f)+3Mm\delta<\epsilon
+ = \overline{S}(P^*;f)-\underline{S}(P^*;f)+4Mm\delta<\epsilon
 \end{multline*}
  
 \end{demo}
@@ -745,7 +745,7 @@ Entonces $y\in B(x_k;r_{x_k})\subset  G_j$. Hemos probado $A\subset G_j$.
 
 
 
-\begin{lema}{lem:lema_osci} Sea $f:[a,b]\to\rr$ una función acotada y supongamos que  tal que $w(f,x)<\varepsilon$, con $\varepsilon>0$. Entonces existe una partición $P$ tal que 
+\begin{lema}{lem:lema_osci} Sea $f:[a,b]\to\rr$ una función acotada y supongamos que   $w(f,x)<\varepsilon$, con $\varepsilon>0$. Entonces existe una partición $P$ tal que 
 \begin{equation}\label{eq:lema_oscila}
  \overline{S}(P;f)-\underline{S}(P;f)<\varepsilon(b-a).
 \end{equation}
@@ -814,7 +814,7 @@ Entonces si $M_i=\sup_{[a_i,b_i]}f$ y $m_i=\inf_{[a_i,b_i]}f$
 \end{multline*}
 Lo que termina estableciendo el primer criterio de integrabilidad, que es lo que queríamos hacer.
 
-Para ver que la condición es necesaria. Para ello vamos a ver que para todo $\sigma>0$ y para todo $\varepsilon>0$ se tiene que 
+Para ver que la condición es necesaria vamos a ver que para todo $\sigma>0$ y para todo $\varepsilon>0$ se tiene que 
 \begin{equation}\label{eq:hankel_final}
  c_e(S_\sigma)<\varepsilon.
 \end{equation}
