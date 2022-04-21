@@ -333,7 +333,7 @@ Inferir que $f$ es integrable en $[a,b]$ y
 
 \begin{ejercicio}{} Sea $0\leq a<b\leq \pi$. Demostrar que
 \[
- \int_a^b \cos x dx=-(\sin(b)-\sin(a)).
+ \int_a^b \cos x dx=\sin(b)-\sin(a).
 \]
 \end{ejercicio}
 
@@ -342,7 +342,7 @@ Inferir que $f$ es integrable en $[a,b]$ y
 \[
  \int_a^bf(x)dx=F(b)-F(a),
 \]
-donde $F$ es na función que satisface $F'=f$.
+donde $F$ es una función que satisface $F'=f$.
 \end{observa}
 
 % 
@@ -400,9 +400,9 @@ Como $f$ es integrable es acotada, por consiguiente existe $M>0$ tal que
 \]
 Elijamos 
 \[
- \delta<\min\left\{\frac{\varepsilon}{6Mm},\min_{j=1,\ldots,m}(y_j-y_{j-1})   \right\}  .
+ \delta<\min\left\{\frac{\varepsilon}{8Mm},\min_{j=1,\ldots,m}(y_j-y_{j-1})   \right\}  .
 \]
-Sea ahora $P=\{x_0,\ldots,n\}$ una partición que satisface
+Sea ahora $P=\{x_0,\ldots,x_n\}$ una partición que satisface
 \[
  x_i-x_{i-1}<\delta,\quad i=1,\ldots,n.
 \]
@@ -418,7 +418,7 @@ Ahora ponemos
 
 Pongamos
 \begin{eqnarray*}
-     m_i&:=\inf\{f(x)| x\in [x_{i-1},x]\},\quad     M_i&:=\sup\{f(x)| x\in [x_{i-1},x_i]\}\\
+     m_i&:=\inf\{f(x)| x\in [x_{i-1},x_i]\},\quad     M_i&:=\sup\{f(x)| x\in [x_{i-1},x_i]\}\\
     m^*_j&:=\inf\{f(x)| x\in [y_{j-1},y_j]\}\quad
     M^*_j&:=\sup\{f(x)| x\in [y_{j-1},y_j]\}\\
 \end{eqnarray*}
@@ -430,12 +430,12 @@ m_i\geq m^*_j \wedge M_i\leq M^*_j.
 \]
 
 
-Entonces, toomando en consideración la figura \ref{fig:crite2}:
+Entonces, tomando en consideración la figura \ref{fig:crite2}:
 
 \begin{equation}\label{eq:2drite_estima_suma}
  \begin{split}
    \sum_{i\in I_j}m_i(x_i-x_{i-1})&\geq \sum_{i\in I_j}m^*_j(x_i-x_{i-1}) \geq  m^*_j(y_j-y_{j-1}-2\delta)\\
- \sum_{i\in I_j}M_i(x_i-x_{i-1})&\leq \sum_{i\in I_j}M^*_j(x_i-x_{i-1}) \geq  M^*_j(y_j-y_{j-1})
+ \sum_{i\in I_j}M_i(x_i-x_{i-1})&\leq \sum_{i\in I_j}M^*_j(x_i-x_{i-1}) \leq  M^*_j(y_j-y_{j-1})
  \end{split}
 \end{equation}
 \begin{figure}[H]
@@ -457,9 +457,9 @@ En la segunda sumatoria usamos las acontaciones $M_i-m_i\leq 2M$ y $(x_i-x_{i-1}
 
 \begin{multline*}\label{eq:crite2_cuentas}
  \overline{S}(P;f)-\underline{S}(P;f)
- =\sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1}-2\delta)+ 2M\delta m\\ 
+ \leq \sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1}-2\delta)+ 2M\delta m\\ 
  . =\sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1})+ \sum_{j=1}^m m^*_j 2\delta +2M\delta m\\ 
- = \overline{S}(P^*;f)-\underline{S}(P^*;f)+3Mm\delta<\epsilon
+ = \overline{S}(P^*;f)-\underline{S}(P^*;f)+4Mm\delta<\epsilon
 \end{multline*}
  
 \end{demo}
@@ -471,7 +471,7 @@ En la segunda sumatoria usamos las acontaciones $M_i-m_i\leq 2M$ y $(x_i-x_{i-1}
 
 \begin{definicion}{}[Uniforme continuidad] \index{continuidad!uniforme} Sean $(X,d)$ e $(Y,d')$ espacios métricos con $X$ compacto. Diremos que $f:X\to Y$ es uniformememnte continua si 
 \[
- \forall\varepsilon>0\exists \delta>0:d(x,y)\delta\Rightarrow d'(f(x),f(y))<varepsilon.
+ \forall\varepsilon>0\exists \delta>0:d(x,y)\delta\Rightarrow d'(f(x),f(y))<\varepsilon.
 \]
 
  
@@ -484,11 +484,11 @@ En la segunda sumatoria usamos las acontaciones $M_i-m_i\leq 2M$ y $(x_i-x_{i-1}
 
 \begin{teorema}[Continuidad implica integrabilidad]{}  Si $f:[a,b]\to\mathbb{R}$ es una función continua entonces es integrable.
 \end{teorema}
-\begin{demo}  Apliquemos la definición de continuidad uniforme con $\varepsilon/(b-a)$ en lugar de $\varepsilon$. Sea $P=_\{x_1,\ldots,x_n\}$ una partición tal que
+\begin{demo}  Apliquemos la definición de continuidad uniforme con $\varepsilon/(b-a)$ en lugar de $\varepsilon$. Sea $P=\{x_1,\ldots,x_n\}$ una partición tal que
 \[
  \max_{i=1,\ldots,n}(x_i-x_{i-1})<\delta.
 \]
-Como $f$ es continua $f$ alcanza su máximo y mṕinimo en $[x_{i-1},x_i]$. Luego existen $x^*,x_*\in x_{i-1},x_i]$ con $M_i^*=f(x^*)$ y $m_i^*=f(x_*)$.  Luego
+Como $f$ es continua $f$ alcanza su máximo y mínimo en $[x_{i-1},x_i]$. Luego existen $x^*,x_*\in [x_{i-1},x_i]$ con $M_i^*=f(x^*)$ y $m_i^*=f(x_*)$.  Luego
 \[
  M_i-m_i=f(x^*)-f(x_*)<\varepsilon/(b-a).
  \]
@@ -577,12 +577,12 @@ Si $I^o\neq\emptyset$, $f$ la función de Thomae e $I\subset [0,1]$ entonces
 
  \begin{ejemplo}{}[Escalera discontinua] Sea $\mathbb{Q}\cap [0,1]=\{q_1,q_2,\ldots\}$ una numeración de los racionales del $[0,1]$. Definamos $f:[0,1]\to\mathbb{R}$ como
  \[
-  f(x)=\sum_{n=1}^{\infty}H(x-q_n),
+  f(x)=\sum_{n=1}^{\infty}\frac{1}{2^n}H(x-q_n),
  \]
 donde $H$ es la función de \emph{Heavside}\index{Heavside}. 
 
 Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\cap \mathbb{Q}$. 
- Para la función escalera discontinua e $I\subset [0,1]$
+ Para la función escalera discontinua e $I\subset [0,1]$ abierto
   \[
    w(f,I)=\sum_{q_n\in I}\frac{1}{2^n}.
   \]
@@ -647,7 +647,10 @@ y
  
 \end{ejemplo}
 
-\begin{teorema}[Criterio de integrabilidad de Riemann]{teo:crite_riemann} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ tal que $R(P,f,\sigma)<\epsilon$.
+\begin{teorema}[Criterio de integrabilidad de Riemann]{teo:crite_riemann} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ tal que que para cualquier partición $P$ que satisface
+\[\max_i\{x_i-x_{i-1}\}<\delta,\]
+se tiene que
+\[R(P,f,\sigma)<\epsilon.\]
 \end{teorema}
 
 \begin{proof} Supongamos $f$ integrable y $\varepsilon,\sigma>0$. Por el 2° criterio de integrabilidad aplicado a $ \varepsilon\sigma$ en lugar de $\varepsilon$, existe $\delta>0$ tal que 
@@ -721,7 +724,7 @@ Demostramos que la función de Riemann es discontinua en los racionales $p/q$ do
 \[
  X=\bigcup_{i\in\mathscr{I}}G_i.
 \]
-Entonces existe un $\delta>0$ tal que si $A\subset X$ es un conjunto con $\operatorname{diam}(A)<\delta$ entonces existe $i\in\mathscr{I}$ tal que $A\subset G_i$. El número $\delta$ se suele llama  \emph{número de Lebesgue} \emph{número de Lebesgue} del cubrimiento.
+Existe un $\delta>0$ tal que si $A\subset X$ es un conjunto con $\operatorname{diam}(A)<\delta$ entonces existe $i\in\mathscr{I}$ tal que $A\subset G_i$. El número $\delta$ se suele llama  \emph{número de Lebesgue} \emph{número de Lebesgue} del cubrimiento.
  
 \end{lema}
 \begin{proof} Sea $x\in X$. Existe $i_x\in\mathscr{I}$ tal que $x\in G_{i_x}$. Como $G_{i_x}$ es abierto, existe $r_x$ tal que $B(x;r_x)\subset G_{i_x}$. La colección de bolas $\{B(x;r_x/2)\}_{x\in X}$ es un cubrimiento de $X$. Como $X$ es compacto, existen una cantidad finita $\{x_1,\ldots,x_n\}$ de puntos tales que
@@ -742,13 +745,13 @@ Entonces $y\in B(x_k;r_{x_k})\subset  G_j$. Hemos probado $A\subset G_j$.
 
 
 
-\begin{lema}{lem:lema_osci} Sea $f:[a,b]\to\rr$ una función acotada y supongamos que  tal que $w(f,x)<\varepsilon$, con $\varepsilon>0$. Entonces existe una partición $P$ tal que 
+\begin{lema}{lem:lema_osci} Sea $f:[a,b]\to\rr$ una función acotada y supongamos que   $w(f,x)<\varepsilon$, con $\varepsilon>0$. Entonces existe una partición $P$ tal que 
 \begin{equation}\label{eq:lema_oscila}
  \overline{S}(P;f)-\underline{S}(P;f)<\varepsilon(b-a).
 \end{equation}
  
 \end{lema}
-\begin{proof} Si $x\in [a,b]$, debe existir un intervalo abierto relativo a $[a,b]$,  $I_x$ tal que $w(f,I_x)<\epsilon$. La colección $\{I_x\}_{x\in [a,b]}$ forma un cubrimiento del compacto $[a,b]$. Sea $\delta$ un número de Lebesgue de este cubrimiento, que lo tiene en virtud del Lema \ref{lem:cubri_lebesgue}. Sea una partición $P=\{x_0,\ldots,n\}$ tal que $(x_i-x_{i-1})<\delta$. Dicho de otra forma $\operatorname{diam}( [x_{i-1},x_i])<\delta$. De modo que para cada subintervalo $[x_{i-1},x_i]$ de la partición existe un $I_x$ con $[x_{i-1},x_i]\subset I_x$. Entonces 
+\begin{proof} Si $x\in [a,b]$, debe existir un intervalo abierto relativo a $[a,b]$,  $I_x$ tal que $w(f,I_x)<\epsilon$. La colección $\{I_x\}_{x\in [a,b]}$ forma un cubrimiento del compacto $[a,b]$. Sea $\delta$ un número de Lebesgue de este cubrimiento, que lo tiene en virtud del Lema \ref{lem:cubri_lebesgue}. Sea una partición $P=\{x_0,\ldots,x_n\}$ tal que $(x_i-x_{i-1})<\delta$. Dicho de otra forma $\operatorname{diam}( [x_{i-1},x_i])<\delta$. De modo que para cada subintervalo $[x_{i-1},x_i]$ de la partición existe un $I_x$ con $[x_{i-1},x_i]\subset I_x$. Entonces 
 \[
  M_i-m_i:=\sup\limits_{[x_{i-1},x_i]} f-\inf\limits_{[x_{i-1},x_i]} f=w(f,[x_{i-1},x_i])\leq w(f,I_x)<\varepsilon.
 \]
@@ -811,11 +814,11 @@ Entonces si $M_i=\sup_{[a_i,b_i]}f$ y $m_i=\inf_{[a_i,b_i]}f$
 \end{multline*}
 Lo que termina estableciendo el primer criterio de integrabilidad, que es lo que queríamos hacer.
 
-Para ver que la condición es necesaria. Para ello vamos a ver que para todo $\sigma>0$ y para todo $\varepsilon>0$ se tiene que 
+Para ver que la condición es necesaria vamos a ver que para todo $\sigma>0$ y para todo $\varepsilon>0$ se tiene que 
 \begin{equation}\label{eq:hankel_final}
  c_e(S_\sigma)<\varepsilon.
 \end{equation}
-Como $\varepsilon$ es arbitrario no que mas que $c_e(S_\sigma)=0$. Tomemos pues $\sigma,\varepsilon>0$. Por el criterio de integrabilidad de Riemann Teorema \ref{teo:crite_riemann}, aplicado a $\sigma/2$ en lugar de $\sigma$, encontramos una partición $P$ tal que si 
+Como $\varepsilon$ es arbitrario no que mas opción que $c_e(S_\sigma)=0$. Tomemos pues $\sigma,\varepsilon>0$. Por el criterio de integrabilidad de Riemann Teorema \ref{teo:crite_riemann}, aplicado a $\sigma/2$ en lugar de $\sigma$, encontramos una partición $P$ tal que si 
 \[
  I_{\sigma/2}:=\{i|w(f,[x_{i-1},x_i])\geq\sigma/2\},
 \] 
@@ -828,11 +831,11 @@ Si $i\notin I_{\sigma/2}$ entonces $w(f,[x_{i-1},x_i])<\sigma/2$. De esto se ded
  \{x| w(f,x)>\sigma\}\subset \bigcup_{i\in I_{\sigma/2}}[x_{i-1},x_i].
 \end{equation}
 
-Si esta afirmación fuese falsa existiría $x$ con $w(f,x)>\sigma$ y $x\notin [x_{i-1},x_i]$ para ningún $i\in I_{\sigma/2}$. De modo que debe ocurrir que $x\in   [x_{i-1},x_i]$ con $i\notin I_{\sigma/2}$. Si fuese el caso que  $x\in   (x_{i-1},x_i)$ entonces  $w(f,x)<\sigma/2<\sigma$ que es una contradicción. De modo que $x$ sólo puede pertenecer a puntos extremos de intervalos  $[x_{i-1},x_i]$ con  $i\notin I_{\sigma/2}$. Debería ser la situación que $x=x_i$ con $i,(i+1)\notin I_{\sigma/2}$. Entonces si $y,z\in \in (x_{i-1},x_{i+1})$ Pueden ocurrir esencialmente dos situaciones i) que $y,z$ esten en el mismo subintervalo, digamos  $y,z \in (x_{i-1},x_{i}]$ en cuyo caso
+Si esta afirmación fuese falsa existiría $x$ con $w(f,x)>\sigma$ y $x\notin [x_{i-1},x_i]$ para ningún $i\in I_{\sigma/2}$. De modo que debe ocurrir que $x\in   [x_{i-1},x_i]$ con $i\notin I_{\sigma/2}$. Si fuese el caso que  $x\in   (x_{i-1},x_i)$ entonces  $w(f,x)<\sigma/2<\sigma$ que es una contradicción. De modo que $x$ sólo puede pertenecer a puntos extremos de intervalos  $[x_{i-1},x_i]$ con  $i\notin I_{\sigma/2}$. Debería ser la situación que $x=x_i$ con $i,(i+1)\notin I_{\sigma/2}$. Entonces si $y,z  \in (x_{i-1},x_{i+1})$ Pueden ocurrir esencialmente dos situaciones i) que $y,z$ esten en el mismo subintervalo, digamos  $y,z \in (x_{i-1},x_{i}]$ en cuyo caso
 \[
  f(y)-f(z)\leq w(f, [x_{i-1},x_{i}])<\sigma/2.
 \]
-ii) o que esten en diferentes, digamos $y\in \in (x_{i-1},x_{i}]$ y $z\in \in [x_{i},x_{i+1})$. En cuyo caso
+ii) o que esten en diferentes, digamos $y\in  (x_{i-1},x_{i}]$ y $z \in [x_{i},x_{i+1})$. En cuyo caso
 \begin{multline*}
  f(y)-f(z)=f(y)-f(x)+f(x)-f(z)\\
  \leq w(f,[x_{i-1},x_i])+w(f,[x_{i},x_{i+1}])\leq\frac{\sigma}{2}+\frac{\sigma}{2}=\sigma.
