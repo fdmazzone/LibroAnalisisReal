@@ -117,18 +117,20 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 
 
 
-
+\begin{ejer}{} Sean $R$ y $R_j$, $j=1,\ldots,N$, rectángulos de  $\rr^d$ con $R\subset \bigcup\limits_{j=1}^NR_j$. 
+ Probar que $vol(R)\leq \sum\limits_{j=1}^N vol(R_j)$.
+\end{ejer}
 
 
 \begin{ejer}{}  Demostrar que  $m_*(A)=0$  cuando $A\subset\mathbb{R}^d$ es numerable.
 \end{ejer}  
 
-\begin{ejer}{} Probar que
-\begin{enumerate}
-\item Si $m_*$ fuera finitamente aditiva, entonces $m_*$ sería  sigma aditiva.
-\item Si $m_*(A)=0$, entonces $m_*(A\cup B)=m_*(A)+m_*(B)=m_*(B)$.
-\end{enumerate}
-\end{ejer} 
+%\begin{ejer}{} Probar que
+%\begin{enumerate}
+%\item Si $m_*$ fuera finitamente %aditiva, entonces $m_*$ sería  %sigma aditiva.
+%\item Si $m_*(A)=0$, entonces $m_*(A\cup B)=m_*(A)+m_*(B)=m_*(B)$.
+%\end{enumerate}
+%\end{ejer} 
 
 
 
@@ -143,7 +145,7 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 
 
 
- \begin{ejer}{}* 
+ \begin{ejer}{}
 	Mostrar que cualquier conjunto con medida exterior positiva contiene un conjunto acotado con medida exterior positiva. 
 	\end{ejer}
  
@@ -187,7 +189,7 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 
     \item Probar que si $E$ satisface la condición de Caratheodory, entonces $E$ es medible.
     \\
-    \underline{Sugerencia:} en virtud de {\it{1.)}} y {\it{2.)}} se puede suponer que $E$ es acotado.
+    \underline{Sugerencia:} en virtud de los incisos  1. y  2. se puede suponer que $E$ es acotado.
 	\end{enumerate}
     La moraleja del problema es que 
     %%%% 
@@ -212,30 +214,27 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
   %\\
   %La desigualdad opuesta es inmediata.
  %\end{ejer}
-\begin{ejer}{}
-Probar que $E\subset \rr$ es medible Lebesgue si y s\'olo si existen conjuntos borelianos $B_1$
- y $B_2$ tales que $B_2\subset E\subset B_1$ y $m_*(B_1-B_2)=0$.
-\\
-\underline{Sugerencia:} $B_1-B_2=(B_1-E)\cup (E-B_2)$. 
-\end{ejer} 
 
 
- \begin{ejer}{}*
-	\label{ej-guia}
-  Para cualquier conjunto $E \subset \rr^d$, existe un conjunto $H$ de clase $G_{\delta}$,
+
+ \begin{ejer}{}
+	 Para cualquier conjunto $E \subset \rr^d$,  probar que: 
+	\begin{enumerate}
+	    \item 
+	    \label{ej-guia}
+existe un conjunto $H$ de clase $G_{\delta}$,
   tal que $E \subset H$ y $m_*(E)=m(H)$.
-	\end{ejer} 
-
-
-  \begin{ejer}{}
-	Probar que para cualquier  conjunto $E \subset \rr^d$ existe un conjunto $H$ de
+  \item 
+  existe un conjunto $H$ de
   clase $G_{\delta}$, tal que $E \subset H$ y para cualquier conjunto medible $M$ se cumple
   $$m_*(E \cap M)=m(H\cap M).$$
- %%%%
+  %%
   \underline{Sugerencia:} suponiendo primero que $m_*(E)<\infty$, considérese un conjunto
-  $H$ de clase $G_{\delta}$ como en el ejercicio \ref{ej-guia}. El conjunto $M$ satisface la
+  $H$ de clase $G_{\delta}$ como en el inciso \ref{ej-guia}. El conjunto $M$ satisface la
   condición de Caratheodory con respecto a $E$.
-   \end{ejer} 
+  	\end{enumerate}
+	
+  \end{ejer} 
 
    \begin{ejer}{}
 	Probar que si $E_1$ y $E_2$ son conjuntos medibles disjuntos, entonces para cualquier
@@ -252,23 +251,23 @@ Probar que $E\subset \rr$ es medible Lebesgue si y s\'olo si existen conjuntos b
 
 
    \begin{ejer}{}  Probar que $G \in G_{\delta}$ si y sólo si $G^c \in F_{\sigma}$.
-	\end{ejer} 
+\end{ejer} 
  
 %
 
-\begin{ejer}{} 
- Sea $E$ un conjunto medible Lebesgue con $m(E)<\infty$.
-\\Probar que existe una sucesi\'on decreciente de conjuntos abiertos $(G_k)$ tal que
-$\lim m(G_k)=m (E)$.
-\end{ejer} 
+%\begin{ejer}{} 
+ %Sea $E$ un conjunto medible %Lebesgue con $m(E)<\infty$.
+%\\Probar que existe una sucesi\'on %decreciente de conjuntos abiertos %$(G_k)$ tal que
+%$\lim m(G_k)=m (E)$.
+%\end{ejer} 
 
 
 
-\begin{ejer}{}*
- Sea  $E$ un conjunto medible Lebesgue con $m(E)<\infty$.\\
-Probar que existe una sucesi\'on creciente de conjuntos cerrados $(F_k)$ tal que
-$\lim m(F_k)=m (E)$.
-\end{ejer} 
+%\begin{ejer}{}*
+ %Sea  $E$ un conjunto medible %Lebesgue con $m(E)<\infty$.\\
+%Probar que existe una sucesi\'on %creciente de conjuntos cerrados %$(F_k)$ tal que
+%$\lim m(F_k)=m (E)$.
+%\end{ejer} 
 
     \begin{ejer}{} 
 	Probar que para cualquier conjunto medible $E$ vale la fórmula
@@ -297,23 +296,8 @@ $\lim m(F_k)=m (E)$.
   Mostrar que $H$ es unión numerable de conjuntos cerrados con interior vacío.
 \end{ejer} 
 
-
-
-
-
-\begin{ejer}{} 
-Mostrar que los conjuntos $ \mathscr{O}$ constituyen una $\sigma$-\'algebra.
-\begin{enumerate}
-%\item $\mathscr{O}=\{\emptyset, \Omega\}$.
-%\item $\mathscr{O}$ es la colecci\'on de todos los subconjuntos de $\Omega$: $2^{\Omega}$.
-\item $\Omega=\{1,2,3,\dots\}$, $\mathscr{O}=\{\emptyset,\{1,3,5,\dots,\},\{2,4,6,\dots,\},\Omega\}$.
-\item $\Omega$ es cualquier conjunto no numerable y $\mathscr{O}$ es la colecci\'on de todos los subconjuntos
-de $\Omega$ que son numerables o que tienen complementos numerables.
-\end{enumerate}
-\end{ejer} 
-
  \begin{ejer}{}  * 	Demostrar que $\mathscr{O}$ es $\sigma$-álgebra si:
-	\[\mathscr{O}=\{Z\subset \Omega|\,m(Z)=0 \;\;\text{ó}\;\; m(Z^c)=0\}
+	\[\mathscr{O}=\{Z\subset \Omega|\,m(Z)=0 \;\;\text{ó}\;\; m(Z^c)=0\}.
 	\]
 	\end{ejer} 
 
@@ -333,11 +317,7 @@ Si $(A_k)$ es una sucesi\'on de conjuntos en una $\sigma$-\'algebra $\mathscr{O}
  \end{ejer}  
 
 
-\begin{ejer}{}* 
-Sean $\Omega$ un espacio, $\mathscr{O}_1$ y  $\mathscr{O}_2$ $\sigma$-\'algebras de subconjuntos de 
-$\Omega$. Probar que si $\mathscr{O}_3=\mathscr{O}_1\cap \mathscr{O}_2$, entonces $\mathscr{O}_3$ 
-tambi\'en es $\sigma$-\'algebra de $\Omega$. 
-\end{ejer} 
+
 
 
 \begin{ejer}{} 
@@ -350,14 +330,14 @@ $\sigma$-\'algebra en $A$.
   
 
 	\begin{ejer}{} Demostrar que si $A,B$ son borelianos de $\rr$ entonces $A\times B$ es boreliano de $\rr^2$. 
-	 
-	\end{ejer}
+	 	\end{ejer}
 
 
 
 
 %\begin{ejer}{}* Probar que $\sqrt{2}$ no es %equivalente a $\sqrt{3}$ respecto a la %relación definida para la construcción del %conjunto de Vitali.
 %\end{ejer}
+  
   
    \begin{ejer}{} 
 	?`Cómo son los subconjuntos medibles del conjunto de Vitali?
