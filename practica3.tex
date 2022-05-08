@@ -117,8 +117,10 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 
 
 
-\begin{ejer}{} Sean $R$ y $R_j$, $j=1,\ldots,N$, rectángulos de  $\rr^d$ con $R\subset \bigcup\limits_{j=1}^NR_j$. 
- Probar que $vol(R)\leq \sum\limits_{j=1}^N vol(R_j)$.
+\begin{ejer}{} Sean $R$ y $R_j$, $j=1,\ldots,M$, rectángulos de  $\rr^d$ con $R\subset \bigcup\limits_{j=1}^M R_j$. 
+ Probar que $|R|\leq \sum\limits_{j=1}^N |R_j|$, 
+ donde $|R|$ es el volumen del rect\'angulo $R$ y 
+ $|R_j|$ es el volumen de cada  rect\'angulo $R_j$ para $j=1,2,\ldots,M.$
 \end{ejer}
 
 
@@ -321,7 +323,15 @@ Si $(A_k)$ es una sucesi\'on de conjuntos en una $\sigma$-\'algebra $\mathscr{O}
 
 
 \begin{ejer}{} 
-Sea $f: A\to B$ una funci\'on  y sup\'ongase que $\mathscr{O}$ es una $\sigma$-\'algebra en $B$. \\
+Sea $f: A\to B$ una funci\'on.  
+\begin{enumerate}
+    \item  Sup\'ongase 
+$\mathscr{O}_2$ es una $\sigma$-\'algebra en $B$.  Probar que el conjunto de im\'agenes inversas de los conjuntos en $\mathscr{O}_2$  forman una 
+$\sigma$-\'algebra en $A$. 
+\item Sup\'ongase que  $\mathscr{O}_1$ es una $\sigma$-\'algebra en $A$.
+Probar que los conjuntos de $B$ cuyas im\'agenes inversas pertenecen a $\mathscr{O}_1$ forman una 
+$\sigma$-\'algebra en $B$. 
+\end{enumerate}
 Probar que el conjunto de im\'agenes inversas de los conjuntos en $\mathscr{O}$  forman una 
 $\sigma$-\'algebra en $A$. 
 \end{ejer}
