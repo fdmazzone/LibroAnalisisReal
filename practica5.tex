@@ -1,0 +1,245 @@
+\documentclass{book}
+\usepackage{amssymb,amsmath}
+\usepackage{polyglossia}
+\setmainlanguage{spanish} % Idioma principal
+\usepackage{theorem}
+\usepackage{times}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage[cp1252]{inputenc}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage[a4paper,driver=xetex,top=4.5cm,head=4.5cm, bottom=2cm,%
+layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
+%\usepackage{bm}
+%\usepackage{tabular}
+\usepackage{fontspec}
+ \usepackage[breakable,many]{tcolorbox}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{empheq}
+ \setromanfont{Roboto Condensed}
+ \usepackage{float}
+ \usepackage{mathrsfs} 
+%
+%
+% \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%Estilo de la pagina%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcounter{ejer}
+% 
+% {\theorembodyfont{\normalfont}
+% \newtheorem{ejercicio}[ejer]{Ejercicio}}
+
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\nn}{\mathbb{N}}
+
+
+
+\DeclareMathOperator{\atan2}{atan2}
+%\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sn}{sn}
+\DeclareMathOperator{\SO}{SO}
+%\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\Or}{O}
+
+\input{EstilosPractica.tex}
+\tcbset{highlight math style={enhanced,
+  colframe=red!60!black,colback=yellow!50!white,arc=4pt,boxrule=1pt,
+  drop fuzzy shadow}}
+  
+  
+  
+  
+  
+  
+  
+
+
+\pagestyle{fancyplain}
+
+ \renewcommand{\sectionmark}[1]
+                 {\markright{\thesection\ #1}}
+
+
+% \lhead[\fancyplain{}{\bfseries\thepage}]
+%       {\fancyplain{}{\bfseries\rightmark}}
+%
+ \rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries}}
+
+
+
+
+ \lhead[\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}]{\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}}
+
+\cfoot{}
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+\begin{document}
+
+
+\hyphenation{excen-tri-ci-dad}
+
+
+\begin{large}
+\begin{bfseries} % \begin{scshape}
+        \noindent Depto de Matem\'atica.\\
+        Primer Cuatrimestre de 2022\\                                                                                                                                                                                                                                                                                                                                                
+        Teoría de la Medida \\
+        Práctica 5: Integral de Lebesgue
+
+%\end{scshape}
+\end{bfseries}
+\end{large}
+\par\noindent\rule{\textwidth}{.5pt}
+
+
+
+
+
+
+
+
+\begin{ejer}{}
+  Mostrar que la función $x^{p-1} e^{-x}$ es integrable sobre $(0,\infty)$ si y sólo si $p>0$.
+	\end{ejer}
+  
+	\begin{ejer}{}
+  La función $\frac{\text{sen}\,x}{x}$ no es integrable sobre $(0,\infty)$, aunque existe el límite
+\linebreak  $\lim\limits_{R\rightarrow \infty}\int_0^R \frac{\text{sen}\,x}{x}\,dx.$
+\end{ejer}
+	
+	\begin{ejer}{}
+	Probar que la integral $\int_0^1 \frac{1}{x}\text{sen} \left(\frac{1}{x}\right)\,dx$ 
+	existe como integral impropia de Riemann pero no existe como integral de Lebesgue.
+	\end{ejer}
+
+	\begin{ejer}{}
+	Sup\'ongase que $f$ es integrable de Riemann sobre un intervalo  infinito (tal integral
+	s\'olo puede existir en el sentido impropio). 
+	Demostrar que $f$ es integrable de Lebesgue sobre el mismo intervalo si y s\'olo si la integral
+	impropia converge absolutamente.
+  \end{ejer}
+	
+	
+	\begin{ejer}{}
+	Probar, usando el Teorema de la Convergencia Mayorada, la fórmula
+  $$\lim\limits_{n\rightarrow \infty} \int_0^1 \frac{n^{\frac{3}{2}} x}{1+n^2 x^2}\,dx=0. $$
+	\end{ejer}
+
+%  \item Probar que si $p>0$, entonces 
+ % $$\lim_{n \rightarrow \infty}\int_0^n x^{p-1}.\Bigl(1-\frac{x}{n}\Bigr)^n\,dx=
+ % \int_0^{\infty} x^{p-1}.e^{-x}\,dx. $$
+
+  \begin{ejer}{}
+	Usando integración término a término probar que 
+  $$\int_0^{\infty} \frac{x}{e^x-1}\,dx=\sum_{n=1}^{\infty}\frac{1}{n^2}. $$
+  \end{ejer}
+	
+	\begin{ejer}{}
+	\begin{enumerate}
+	\item Sup\'ongase que $f\geq 0$, integrable de Riemann en $[0,a]$ $\forall a>0$ y que adem\'as tiene integral impropia. 
+	Probar que $f$ es integrable de Lebesgue en $\rr$.
+	\item Sup\'ongase que $f\geq 0$, integrable de Riemann en $[a+\epsilon,b]$ y que existe la integral impropia.
+	Probar que $f$ es integrable de Lebesgue en $[a,b]$.
+	\end{enumerate}
+	\end{ejer}
+	
+  \begin{ejer} Sea $f$ una función medible no negativa sobre $\rr$ y sea $(E_k)$ una sucesión creciente de conjuntos
+  cuya unión es $E$.
+	\begin{enumerate}
+  \item Probar que $\int_{E} f=\lim\limits_{k \rightarrow \infty} \int_{E_k} f$.
+  \item Extender a cualquier función $f$ integrable sobre $E$.
+	\end{enumerate}
+	\end{ejer}
+
+  
+
+  \begin{ejer} {}
+	Si se considera la sucesión de funciones $f_n(x)=n \chi_n(x)$ en el intervalo $0\leq x\leq 1$,
+  donde $\chi_n$ es la función característica del intervalo $\left(0,\frac{1}{n}\right)$, ?`es posible que exista
+  una función $g(x)$ integrable en dicho intervalo, tal que $f_n(x) \leq g(x)$ para cualquier $n$ y cualquier
+  $x$?
+	\end{ejer}
+
+
+  \begin{ejer}{}
+	Si $\varphi(x) f(x)$ es integrable sobre $E$ para cualquier función $f$ integrable sobre $E$, entonces
+  existe una constante finita $C$, tal que $|\varphi(x)|\leq C$ en c.t.p $x$ de $E$.
+	\end{ejer}
+  
+  \begin{ejer}{} 
+	Sea $f$ una función medible no negativa sobre $\rr^1$ tal que $\int_a^b f(x)\,dx>0$ siempre
+  que $a<b$, ?`puede concluirse que $f(x)>0$ en c.t.p $x$?
+	\end{ejer}
+ 
+	\begin{ejer}{}
+	\textbf{Absoluta continuidad de la integral de Lebesgue.}
+	Sup\'ongase que $f$ es integrable de Lebesgue sobre $E$. 
+	Probar que para cada $\epsilon>0$ existe $\delta>0$ tal que $\int_E |f|\,dx<\epsilon$ siempre que $m(E)<\delta$.
+	\end{ejer}
+	
+  \begin{ejer}{} Probar que el Teorema de la Convergencia Mayorada se extiende a una familia de funciones medibles $f_t(x)$,\;  
+  $a<t<b$, dependiente de un parámetro real $t$, de la manera siguiente:
+   \\
+   Supongamos que $\tau \in (a,b)$ y que en cada punto de $E$ existe el límite 
+   $f(x)=\lim\limits_{t \rightarrow \tau} f_t(x)$.
+   Si existe una función $\Phi(x)$ integrable sobre $E$, tal que $|f_t(x)|\leq \Phi(x)$ para $x \in E$ y $a<t<b$;
+   entonces $f$ es integrable sobre $E$ y además 
+   $$\int_E f(x)\,dx=\lim_{t \rightarrow \tau}\int_E f_t(x)\,dx. $$
+	\end{ejer}
+	
+	\begin{ejer}{}
+   {\bf{Derivación de una integral paramétrica}}. Supongamos que la integral 
+   $$ \varphi(t)=\int_E f(t,x)\,dx\;\;\;\;\;\;\;(a<t<b),$$ 
+   existe para cada $t\in (a,b)$; que $f(t,x)$ es derivable con respecto
+   a $t$ y existe una función $g(x)$ integrable sobre $E$, tal que 
+   $$\Bigl|\frac{\partial f(t,x)}{\partial t}\Bigr|\leq g(x)$$
+   para $x \in E$ y $a<t<b$.
+   Probar que $\varphi$ es derivable y además 
+   $$\varphi'(t)=\int_E \frac{\partial f(t,x)}{\partial t}\,dx $$ para $a<t<b$.
+	\\
+   \underline{Sugerencia:} Escribir el cociente $\frac{\varphi(t+h)-\varphi(t)}{h}$, emplear el Teorema del Valor
+   Medio del Cálculo Diferencial y el ejercicio anterior.
+	\end{ejer}
+
+\begin{ejer}{}
+  {\bf{Transformada de Fourier}}. Si $f$ es integrable sobre $\rr$, la función 
+   $$g(t)=\int_{-\infty}^{\infty} e^{i t x} f(x)\,dx $$
+   es acotada y uniformemente continua.
+   \\
+   Si $x^k.f(x)$ es integrable, entonces $g$ es de clase $C^k$ y además 
+   $$g^{(k)}(t)=\int_{-\infty}^{\infty} e^{i t x} (i x)^k  f(x)\,dx.$$
+ \end{ejer}
+   
+  
+
+
+
+
+	
+	
+	
+	
+
+
+%¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+
+
+\end{document}

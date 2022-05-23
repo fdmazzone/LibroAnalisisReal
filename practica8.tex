@@ -1,0 +1,231 @@
+\documentclass{book}
+\usepackage{amssymb,amsmath}
+\usepackage{polyglossia}
+\setmainlanguage{spanish} % Idioma principal
+\usepackage{theorem}
+\usepackage{times}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage[cp1252]{inputenc}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage[a4paper,driver=xetex,top=4.5cm,head=4.5cm, bottom=2cm,%
+layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
+%\usepackage{bm}
+%\usepackage{tabular}
+\usepackage{fontspec}
+ \usepackage[breakable,many]{tcolorbox}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{empheq}
+ \setromanfont{Roboto Condensed}
+ \usepackage{float}
+ \usepackage{mathrsfs} 
+%
+%
+% \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%Estilo de la pagina%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcounter{ejer}
+% 
+% {\theorembodyfont{\normalfont}
+% \newtheorem{ejercicio}[ejer]{Ejercicio}}
+
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\nn}{\mathbb{N}}
+
+
+
+\DeclareMathOperator{\atan2}{atan2}
+%\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sn}{sn}
+\DeclareMathOperator{\SO}{SO}
+%\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\Or}{O}
+
+\input{EstilosPractica.tex}
+\tcbset{highlight math style={enhanced,
+  colframe=red!60!black,colback=yellow!50!white,arc=4pt,boxrule=1pt,
+  drop fuzzy shadow}}
+  
+  
+  
+  
+  
+  
+  
+
+
+\pagestyle{fancyplain}
+
+ \renewcommand{\sectionmark}[1]
+                 {\markright{\thesection\ #1}}
+
+
+% \lhead[\fancyplain{}{\bfseries\thepage}]
+%       {\fancyplain{}{\bfseries\rightmark}}
+%
+ \rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries}}
+
+
+
+
+ \lhead[\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}]{\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}}
+
+\cfoot{}
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+\begin{document}
+
+
+\hyphenation{excen-tri-ci-dad}
+
+
+\begin{large}
+\begin{bfseries} % \begin{scshape}
+        \noindent Depto de Matem\'atica.\\
+        Primer Cuatrimestre de 2022\\                                                                                                                                                                                                                                                                                                                                                
+        Teoría de la Medida \\
+        Práctica 8: Espacios $L^p$
+
+%\end{scshape}
+\end{bfseries}
+\end{large}
+\par\noindent\rule{\textwidth}{.5pt}
+
+
+
+
+
+
+
+
+  \begin{ejer}{} Demostrar que el conjunto de las funciones acotadas sobre el conjunto $X$,
+  denotado $B(X)$, con la norma 
+  $$\parallel f \parallel=\sup_{x\in X}|f(x)| $$
+  es un espacio vectorial normado.
+	\end{ejer}
+
+
+
+
+\begin{ejer}{} Sea $E\subseteq \rr^n$ medible tal que $m(E)<\infty$.
+\\
+Supóngase que $\{f_n\}_{ \{ n \in \nn\} }$ es una sucesión de funciones de $L^1(E)$
+y que \linebreak $f\in L^1(E)$.
+Probar que:
+\begin{enumerate}
+	\item Si $f_n \stackrel {u}{\longrightarrow}f$, entonces $f_n \stackrel {L^1(E)}{\longrightarrow}f$.
+	\item Si $f_n \stackrel {L^1(E)}{\longrightarrow}f$, entonces $f_n \stackrel {m}{\longrightarrow}f$.
+	\item Si $f_n \stackrel {L^1(E)}{\longrightarrow}f$, entonces existe $\{f_{n_k}\}\subseteq \{f_n\}$
+	tal que  $f_{n_k}{\to}f$ c.t.p.
+ \end{enumerate}
+\end{ejer}
+
+
+\begin{ejer}{} Demostrar que:
+	\begin{enumerate}
+\item $\|\, \cdot\,\|_{\infty}$ es una norma.
+\item $L^{\infty}(E)$ es un álgebra.
+\item $L^{\infty}(E)$ es un espacio de Banach.  
+%\item Las funciones simples son densas en $L^{\infty}(E)$.
+	\end{enumerate}
+	\end{ejer}
+
+
+
+\begin{ejer}{} Sean $g\in L^{\infty}(E)$ y \;\;$\ell_g:L^1(E)\rightarrow \rr$\;\; 
+tal que \;\;$\ell_g(f)=\int_E (fg)(x)\,dx$\;\; para
+\\ 
+$f \in L^1(E)$, entonces
+$\ell_g$ es lineal.
+\end{ejer}
+
+
+\begin{ejer}{} Sea $g$ una función medible tal que $fg\in L^1(E)$ $\;\forall f \in L^1(E)$, entonces $g \in L^{\infty}(E)$.
+\end{ejer}
+
+
+
+
+\begin{ejer}{} Probar que: 
+		\begin{enumerate}
+	\item 
+$\|T\|_{L(X,Y)}=\sup\limits_{\|x\|_{X}\leq 1}\{\|Tx\|_{Y}\}$
+es una norma.
+	\item 
+ $\|T\|_{L(X,Y)}=\sup\limits_{\|x\|_{X}=1}\|Tx\|_{Y}=
+\sup\limits_{x \not =0}\frac{\|Tx\|_{Y}}{\|x\|_{X}}=
+\\
+\inf\{M:\|Tx\|_{Y}\leq M \|x\|_{X}, x\in X\}$.
+\item $L(X,Y)$ es un espacio de Banach siempre que $Y$ sea un espacio de Banach.
+		\end{enumerate}
+\end{ejer}
+		
+		
+\begin{ejer}{} 
+Sea $H$ un espacio de Hilbert.
+ \\
+ Si $x,y\in H$ entonces vale la {\it{Identidad del Paralelogramo:}}
+\\
+ $\|x+y\|^2+\|x-y\|^2=2(\|x\|^2+\|y\|^2). $
+ \end{ejer}
+ 
+%%%%%%%%%%%%%%
+\begin{ejer}{}
+ Probar que:
+	\begin{enumerate}
+  \item $\frac{1}{x}\in L^2((1,\infty))$ y $\frac{1}{x}\not \in L^1((1,\infty))$;
+  \item $\frac{1}{\sqrt{|x|}}\in L^1((-1,1))$ y $\frac{1}{\sqrt{|x|}}\not \in L^2((-1,1))$.
+	\end{enumerate}
+\end{ejer}
+
+
+\begin{ejer}{} 
+Si $1\leq p \leq \infty$, demostrar que
+	%\begin{enumerate}
+		$L^p(E)$ es un espacio de Banach.
+		%\item  Las funciones continuas de soporte compacto son densas en $L^p(E)$.
+	%\end{enumerate} 
+	\end{ejer}
+	
+	
+	\begin{ejer}{}
+	Probar la desigualdad de Minkowski usando la desigualdad de H\"older.
+	\end{ejer}
+	
+	\begin{ejer}{}
+ Demostrar que si $m(E)<\infty$ y $1\leq p\leq q \leq \infty$, entonces 
+$L^{q}(E)\subset L^{p}(E)$.
+\\
+{\it Sugerencia:} Si $q<\infty$, verificar 
+$$\left\|\frac{f}{|E|^{\frac{1}{p}}}\right\|_p\leq
+\left\|\frac{f}{|E|^{\frac{1}{q}}}\right\|_q$$
+usando Jensen.
+Tambi\'en se puede probar el ejercicio usando la desigualdad de H\"older.
+\end{ejer}
+
+%%\item Si $f \in L^{1}(\rr^n)$, se define la {\bf transformada de Fourier} de $f$ como
+%\[
+%\mathcal{F}(f)(y)=(2\pi)^{-\frac{n}{2}}\int_{\rr^n} e^{ix \cdot y}f(x)\,dx.
+%\]
+%Probar que $\mathcal{F}$ es una transformación lineal continua de $L^{1}(\rr^n)$ en el espacio de las funciones continuas que se anulan en el infinito.
+
+
+\end{document}
