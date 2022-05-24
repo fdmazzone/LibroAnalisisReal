@@ -228,7 +228,142 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
    $$g^{(k)}(t)=\int_{-\infty}^{\infty} e^{i t x} (i x)^k  f(x)\,dx.$$
  \end{ejer}
    
+   
+ \textbf{ DE ACA EN ADELANTE, EJERCICIOS DE MEDIDA PRODUCTO.
+  HABRIA QUE VER SI QUEDAN TODOS.} 
   
+\begin{ejer}{}
+ Si $(\rr,\mathscr{B})$ denota el espacio medible que consiste de los números reales junto con los conjuntos 
+de Borel, mostrar que todo subconjunto abierto de $\rr\times \rr$ pertenece a $\mathscr{B}\times \mathscr{B}$.
+De hecho, esta $\sigma$-álgebra es la sigma-álgebra generada por los subconjuntos abiertos de $\rr\times \rr$.
+(En otras palabras, $\mathscr{B}\times \mathscr{B}$ es el álgebra de Borel de $\rr \times \rr$).
+\end{ejer}
+
+
+\begin{ejer}{} 
+Integrar la función no negativa $xe^{-x^2(1+y^2)}$ sobre el conjunto $(0,\infty)\times (0,\infty)$
+en dos formas diferentes. Concluir a partir de sus cálculos que 
+\[
+\int_0^{\infty} e^{-t^2}\,dt=\frac{\sqrt{\pi}}{2}.
+\]
+\end{ejer}
+
+
+\begin{ejer}{} 
+\begin{enumerate}
+\item Integrar la función $\text{sen} x e^{-xy}$ sobre el conjunto $(0,a)\times (0,\infty)$.
+Mostrar que 
+\begin{equation}\label{eq:fubini-senx/x}
+\int_0^a \frac{\text{sen} x}{x}\,dx=
+\frac{\pi}{2}-\cos a\int_0^{-\infty} \frac{e^{-ay}}{1+y^2}\,dy
+-\sen a \int_0^{\infty} \frac{y e^{-ay}}{1+y^2}\,dy
+\end{equation}
+\item Mostrar que 
+\[
+\int_0^{\infty }\frac{\text{sen} x}{x}\,dx=\frac{\pi}{2}
+\]
+\underline{Ayuda:} 
+Demostrar que las integrales de miembro derecho de \eqref{eq:fubini-senx/x} tienden a 0 cuando $a \to \infty$.
+\end{enumerate} 
+\end{ejer}
+
+
+\begin{ejer}{}
+\begin{enumerate}
+\item Mostrar que
+\[
+\int_0^{\infty} \frac{\text{sen} a x}{x}\,dx= 
+\left
+\{\begin{array}{rll}
+\frac{\pi}{2}&si&a>0
+\\
+0&si&a=0
+\\
+-\frac{\pi}{2}&si&a<0
+\end{array}
+\right.
+\] 
+\item Integrando por partes en el item anterior mostrar que
+\[
+\int_0^{\infty}\frac{1-\cos ax}{x^2}\,dx=\frac{\pi}{2}|a|.
+\]
+\item Probar que $\frac{1-\cos ax}{x^2}$ es una función integrable en $(0,\infty)$.
+\end{enumerate}
+\end{ejer}
+
+
+\begin{ejer}{}
+ Por integración de $e^{-xy}$ sobre una región apropiada mostrar que 
+\[
+\int_0^{\infty}\frac{e^{-ax}-e^{-bx}}{x}\,dx=\ln\frac{b}{a}\;\; \mbox{  si   }a>0, \;\;b>0.
+\]
+\end{ejer}
+
+\begin{ejer}{}
+ Sean $a_i>0$ para $1\leq i \leq n$ y $J=(0,1)\times \ldots \times (0,1)$.
+Probar que 
+\[
+\int_J  \frac{1}{x_1^{a_1}+x_2^{a_2}+\ldots+x_n^{a_n}}\,dx<\infty 
+\Leftrightarrow
+\sum\limits_{i=1}^{n}\frac{1}{a_i}>1.
+\]
+\\
+\underline{Ayuda:}
+Sea $G_i=\{x \in J | x_j^{a_j} \leq x_i^{a_i} \mbox{ para todo  } j \}$. \\
+Notar que para $x \in G_i$, $x_i^{a_i}\leq x_1^{a_1}+x_2^{a_2}+\ldots+x_n^{a_n}\leq n x_i^{a_i}$
+y $J=\bigcup\limits_{i=1}^{n} G_i$. \\
+Calcular 
+\[
+\int_G \frac{dx}{x_i^{a_i}}=\int_0^1 x_i ^{a_i\left(\sum\limits_{j=1}^n \frac{1}{a_j}-1\right)-1}\,dx_i,
+\]
+y usar el hecho de que $\int_0^1 t^{s-1}\,dt<\infty \Leftrightarrow s>0$.
+\end{ejer}
+
+
+\begin{ejer}{}
+Sobre $(0,1)\times (0,1)$ considerar
+\[
+f(x,y)=\left\{
+\begin{array}{rll}
+x^{-2}&si&y<x<1
+\\
+-y^{-2}&si&x<y<1
+\end{array}
+\right.
+\]
+y probar que $\int_0^1\,dx\int_0^1 f(x,y)\,dy=1$ y $\int_0^1\,dy \int_0^1 f(x,y)\,dx=-1$.
+\end{ejer}
+
+\begin{ejer}{}
+ Mostrar que si $f(x,y)=\frac{(x^2-y^2)}{(x^2+y^2)^2}$, entonces
+     $$\frac{\pi}{4}=\int_0^1 \,dx\int_0^1 f(x,y)\,dy\not = \int_0^1\,dy \int_0^1 f(x,y)\,dx=-\frac{\pi}{4}. $$
+\end{ejer}
+
+ \begin{ejer}{} Mostrar que la función $f(x,y)=\frac{xy}{(x^2+y^2)^2}$ verifica
+   $$\int_{-1}^1 \,dx\int_{-1}^1 f(x,y)\,dy=\int_{-1}^1\,dy \int_{-1}^1 f(x,y)\,dx $$
+   a pesar de que $f$ no es integrable sobre el cuadrado $Q=[-1,1]\times [-1,1]$.
+	\end{ejer}
+
+ 
+\begin{ejer}{} Una función no negativa $f$, definida sobre $\rr^1$, se llama una {\bf{densidad}}
+   (de probabilidad) si su integral sobre toda la recta es igual a uno. Probar que: 
+	\begin{enumerate}
+	\item La convolución de dos densidades es otra densidad.
+	\item Para cada $p>0$, la función 
+     $$f_p(x)=\left\{ 
+      \begin{array}{cc}
+      \frac{1}{\Gamma(p)} x^{p-1} e^{-x} & \mbox{si $x>0$}\\
+      0 & \mbox{si $x \leq 0$}
+      \end{array}
+      \right. $$
+      es una densidad.
+	 \item Si $p>0$ y $q>0$, entonces $f_p*f_q=f_{p+q}$ y además
+      $$\int_0^1 (1-t)^{p-1} t^{q-1}\,dt=\frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}. $$
+      La integral biparamétrica del primer miembro se denota por $B(p,q)$ y se llama 
+      {\bf{función beta}}.
+	\end{enumerate}
+	
+\end{ejer}
 
 
 
