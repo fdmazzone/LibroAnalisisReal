@@ -109,22 +109,37 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 \end{large}
 \par\noindent\rule{\textwidth}{.5pt}
 
-
-\begin{ejer}{}  Hallar el valor de la integral
+\begin{color}{red}
+\begin{ejer}{}  Por medio de la definición de integral de función no negativa, hallar el valor de las integrales:
 \[
- \int_0^\infty \sum_{n=1}^\infty \chi_{\left[n,n+\frac{1}{2^n}\right)}.
+ \int_0^\infty \sum_{n=1}^\infty \chi_{\left[n,n+\frac{1}{2^n}\right)}\quad\text{y}\quad \int_0^\infty \sum_{n=1}^\infty \alpha_n\chi_{\left[n,n+\frac{1}{2}\right)},
 \]
-
+donde $\alpha_n\geq 0$. 
  
 \end{ejer}
+\end{color}
 
+\begin{color}{red}
+\begin{ejer}[Criterio de Lebesgue para la integrabilidad Riemann]{} El criterio establece que si $f:[a,b]\to\rr$ es acotada entonces  son equivalentes
+\begin{enumerate}
+\item[a)] $f$ es integrable Riemann.
+ \item[b)] Si $Z$ es el conjunto de puntos donde $f$ es discontinua entonces $m_*(Z)=0$. 
+\end{enumerate}
+\emph{Ayuda:} Para a)$\Rightarrow$ b) observar que 
+\[
+ Z=\{x:\omega(f;x)>0\}=\bigcup_{n=1}^{\infty}S_n:= \bigcup_{n=1}^{\infty}\left\{x:\omega(f;x)\geq \frac{1}{n}\right\}.
+\]
+Luego usar que $m_*(S_n)\leq c_e(S_n)$.
 
+Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0$ se puede hallar una colección de intervalos abiertos y disjuntos $I_j$ tales que $S_n\subset \bigcup_{j=1}^\infty I_j$ y   $\sum_jm(I_j)<\varepsilon$.  Demostrar que $S_n$ es compacto y de allí se cubre por finitos $I_j$. Finalemnte invocar la caracterización de Haenkel.
+\end{ejer}
+\end{color}
 
 
 
 
 \begin{ejer}{}
-  Mostrar que la función $x^{p-1} e^{-x}$ es integrable sobre $(0,\infty)$ si y sólo si $p>0$.
+  Mostrar que la función $x^{p-1} e^{-x}$ es integrable sobre $(0,\infty)$ si y sólo si $p>0$. \textcolor{red}{Quizás es más importante que aprenda cuando las funciones $1/x^p$ son integrales en $(0,1)$ y $(1,\infty)$. ¿no?}
 	\end{ejer}
   
 	\begin{ejer}{}
@@ -137,7 +152,8 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 	existe como integral impropia de Riemann pero no existe como integral de Lebesgue.
 	\end{ejer}
 
-	\begin{ejer}{}
+	\begin{ejer}{} \textcolor{red}{Este resultado no estaría contemplado con el ejercicio 9a?}
+
 	Sup\'ongase que $f$ es integrable de Riemann sobre un intervalo  infinito (tal integral
 	s\'olo puede existir en el sentido impropio). 
 	Demostrar que $f$ es integrable de Lebesgue sobre el mismo intervalo si y s\'olo si la integral
@@ -150,9 +166,6 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
   $$\lim\limits_{n\rightarrow \infty} \int_0^1 \frac{n^{\frac{3}{2}} x}{1+n^2 x^2}\,dx=0. $$
 	\end{ejer}
 
-%  \item Probar que si $p>0$, entonces 
- % $$\lim_{n \rightarrow \infty}\int_0^n x^{p-1}.\Bigl(1-\frac{x}{n}\Bigr)^n\,dx=
- % \int_0^{\infty} x^{p-1}.e^{-x}\,dx. $$
 
   \begin{ejer}{}
 	Usando integración término a término probar que 
@@ -162,7 +175,7 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 	\begin{ejer}{}
 	\begin{enumerate}
 	\item Sup\'ongase que $f\geq 0$, integrable de Riemann en $[0,a]$ $\forall a>0$ y que adem\'as tiene integral impropia. 
-	Probar que $f$ es integrable de Lebesgue en $\rr$.
+	Probar que $f$ es integrable de Lebesgue en $\rr$ \textcolor{red}{¿Capaz que sea en $[0,+\infty)$, no?}.
 	\item Sup\'ongase que $f\geq 0$, integrable de Riemann en $[a+\epsilon,b]$ y que existe la integral impropia.
 	Probar que $f$ es integrable de Lebesgue en $[a,b]$.
 	\end{enumerate}
@@ -186,7 +199,7 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 	\end{ejer}
 
 
-  \begin{ejer}{}
+  \begin{ejer}{} \textcolor{red}{Yo creo Sonia que esto estaría bueno dejarlo para los $L^p$}
 	Si $\varphi(x) f(x)$ es integrable sobre $E$ para cualquier función $f$ integrable sobre $E$, entonces
   existe una constante finita $C$, tal que $|\varphi(x)|\leq C$ en c.t.p $x$ de $E$.
 	\end{ejer}
@@ -196,7 +209,7 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
   que $a<b$, ?`puede concluirse que $f(x)>0$ en c.t.p $x$?
 	\end{ejer}
  
-	\begin{ejer}{}
+	\begin{ejer}{}\textcolor{red}{Capaz lo trabaje en el teórico}
 	\textbf{Absoluta continuidad de la integral de Lebesgue.}
 	Sup\'ongase que $f$ es integrable de Lebesgue sobre $E$. 
 	Probar que para cada $\epsilon>0$ existe $\delta>0$ tal que $\int_E |f|\,dx<\epsilon$ siempre que $m(E)<\delta$.
@@ -239,7 +252,7 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
  \textbf{ DE ACA EN ADELANTE, EJERCICIOS DE MEDIDA PRODUCTO.
   HABRIA QUE VER SI QUEDAN TODOS.} 
   
-\begin{ejer}{}
+\begin{ejer}{} \textcolor{red}{Como vamos a adoptar el enfoque de Fava y Zó no sería adecuado este ejercicio}
  Si $(\rr,\mathscr{B})$ denota el espacio medible que consiste de los números reales junto con los conjuntos 
 de Borel, mostrar que todo subconjunto abierto de $\rr\times \rr$ pertenece a $\mathscr{B}\times \mathscr{B}$.
 De hecho, esta $\sigma$-álgebra es la sigma-álgebra generada por los subconjuntos abiertos de $\rr\times \rr$.
@@ -305,6 +318,9 @@ Demostrar que las integrales de miembro derecho de \eqref{eq:fubini-senx/x} tien
 \int_0^{\infty}\frac{e^{-ax}-e^{-bx}}{x}\,dx=\ln\frac{b}{a}\;\; \mbox{  si   }a>0, \;\;b>0.
 \]
 \end{ejer}
+
+
+\textcolor{red}{Los siguientes ejericios me gustan todos, pero ¿No quedará demasiado larga la práctica?. ¿NO te parece que asterisquemos 23,25,26,27?}
 
 \begin{ejer}{}
  Sean $a_i>0$ para $1\leq i \leq n$ y $J=(0,1)\times \ldots \times (0,1)$.
