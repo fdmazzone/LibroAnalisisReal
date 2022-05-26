@@ -109,17 +109,17 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 \end{large}
 \par\noindent\rule{\textwidth}{.5pt}
 
-\begin{color}{red}
-\begin{ejer}{}  Por medio de la definición de integral de función no negativa, hallar el valor de las integrales:
+%\begin{color}{red}
+\begin{ejer}{}  Por medio de la definición de integral de función no negativa, hallar el valor de las integrales
 \[
  \int_0^\infty \sum_{n=1}^\infty \chi_{\left[n,n+\frac{1}{2^n}\right)}\quad\text{y}\quad \int_0^\infty \sum_{n=1}^\infty \alpha_n\chi_{\left[n,n+\frac{1}{2}\right)},
 \]
 donde $\alpha_n\geq 0$. 
  
 \end{ejer}
-\end{color}
+%\end{color}
 
-\begin{color}{red}
+%\begin{color}{red}
 \begin{ejer}[Criterio de Lebesgue para la integrabilidad Riemann]{} El criterio establece que si $f:[a,b]\to\rr$ es acotada entonces  son equivalentes
 \begin{enumerate}
 \item[a)] $f$ es integrable Riemann.
@@ -131,34 +131,33 @@ donde $\alpha_n\geq 0$.
 \]
 Luego usar que $m_*(S_n)\leq c_e(S_n)$.
 
-Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0$ se puede hallar una colección de intervalos abiertos y disjuntos $I_j$ tales que $S_n\subset \bigcup_{j=1}^\infty I_j$ y   $\sum_jm(I_j)<\varepsilon$.  Demostrar que $S_n$ es compacto y de allí se cubre por finitos $I_j$. Finalemnte invocar la caracterización de Haenkel.
+Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0$ se puede hallar una colección de intervalos abiertos y disjuntos $I_j$ tales que $S_n\subset \bigcup\limits_{j=1}^\infty I_j$ y   $\sum\limits_j m(I_j)<\varepsilon$.  Demostrar que $S_n$ es compacto y de allí se cubre por finitos $I_j$. Finalmente invocar la caracterización de Hankel.
 \end{ejer}
-\end{color}
+%\end{color}
 
 
 
 
 \begin{ejer}{}
-  Mostrar que la función $x^{p-1} e^{-x}$ es integrable sobre $(0,\infty)$ si y sólo si $p>0$. \textcolor{red}{Quizás es más importante que aprenda cuando las funciones $1/x^p$ son integrales en $(0,1)$ y $(1,\infty)$. ¿no?}
+  %Mostrar que la función $x^{p-1} e^{-x}$ es %integrable sobre $(0,\infty)$ si y sólo si $p>0$. %\textcolor{red}{Quizás es más importante que %aprenda cuando las funciones $1/x^p$ son %integrales en $(0,1)$ y $(1,\infty)$. ¿no?}
+  Analizar para qu\'e valores de $p$ las funciones $\frac{1}{x^p}$ son integrables en $(0,1)$ y $(1,\infty)$.
 	\end{ejer}
   
-	\begin{ejer}{}
-  La función $\frac{\text{sen}\,x}{x}$ no es integrable sobre $(0,\infty)$, aunque existe el límite
+	\begin{ejer}{} 
+	Probar que la función $\frac{\text{sen}\,x}{x}$ no es integrable sobre $(0,\infty)$, aunque existe el límite
 \linebreak  $\lim\limits_{R\rightarrow \infty}\int_0^R \frac{\text{sen}\,x}{x}\,dx.$
 \end{ejer}
 	
-	\begin{ejer}{}
-	Probar que la integral $\int_0^1 \frac{1}{x}\text{sen} \left(\frac{1}{x}\right)\,dx$ 
-	existe como integral impropia de Riemann pero no existe como integral de Lebesgue.
-	\end{ejer}
+%	\begin{ejer}{}
+%	Probar que la integral $\int_0^1 \frac{1}{x}\text{sen} \left(\frac{1}{x}\right)\,dx$ 
+	%existe como integral impropia de Riemann %pero no existe como integral de Lebesgue.
+	%\end{ejer}
 
-	\begin{ejer}{} \textcolor{red}{Este resultado no estaría contemplado con el ejercicio 9a?}
-
-	Sup\'ongase que $f$ es integrable de Riemann sobre un intervalo  infinito (tal integral
-	s\'olo puede existir en el sentido impropio). 
-	Demostrar que $f$ es integrable de Lebesgue sobre el mismo intervalo si y s\'olo si la integral
-	impropia converge absolutamente.
-  \end{ejer}
+%e un intervalo  infinito (tal integral
+	%s\'olo puede existir en el sentido impropio). 
+	%Demostrar que $f$ es integrable de Lebesgue sobre el mismo intervalo si y s\'olo si la integral
+	%impropia converge absolutamente.
+ % \end{ejer}
 	
 	
 	\begin{ejer}{}
@@ -175,13 +174,15 @@ Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0
 	\begin{ejer}{}
 	\begin{enumerate}
 	\item Sup\'ongase que $f\geq 0$, integrable de Riemann en $[0,a]$ $\forall a>0$ y que adem\'as tiene integral impropia. 
-	Probar que $f$ es integrable de Lebesgue en $\rr$ \textcolor{red}{¿Capaz que sea en $[0,+\infty)$, no?}.
+	Probar que $f$ es integrable de Lebesgue en $[0,+\infty)$.
+	%\textcolor{red}{¿Capaz que sea en $[0,+\infty)$, no?}.
 	\item Sup\'ongase que $f\geq 0$, integrable de Riemann en $[a+\epsilon,b]$ y que existe la integral impropia.
 	Probar que $f$ es integrable de Lebesgue en $[a,b]$.
 	\end{enumerate}
 	\end{ejer}
 	
-  \begin{ejer} Sea $f$ una función medible no negativa sobre $\rr$ y sea $(E_k)$ una sucesión creciente de conjuntos
+  \begin{ejer}{} 
+  Sea $f$ una función medible no negativa sobre $\rr$ y sea $(E_k)$ una sucesión creciente de conjuntos
   cuya unión es $E$.
 	\begin{enumerate}
   \item Probar que $\int_{E} f=\lim\limits_{k \rightarrow \infty} \int_{E_k} f$.
@@ -191,7 +192,7 @@ Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0
 
   
 
-  \begin{ejer} {}
+  \begin{ejer}{}
 	Si se considera la sucesión de funciones $f_n(x)=n \chi_n(x)$ en el intervalo $0\leq x\leq 1$,
   donde $\chi_n$ es la función característica del intervalo $\left(0,\frac{1}{n}\right)$, ?`es posible que exista
   una función $g(x)$ integrable en dicho intervalo, tal que $f_n(x) \leq g(x)$ para cualquier $n$ y cualquier
@@ -199,23 +200,24 @@ Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0
 	\end{ejer}
 
 
-  \begin{ejer}{} \textcolor{red}{Yo creo Sonia que esto estaría bueno dejarlo para los $L^p$}
-	Si $\varphi(x) f(x)$ es integrable sobre $E$ para cualquier función $f$ integrable sobre $E$, entonces
-  existe una constante finita $C$, tal que $|\varphi(x)|\leq C$ en c.t.p $x$ de $E$.
-	\end{ejer}
+ %\begin{ejer}{} \textcolor{red}{Yo creo Sonia que %esto estaría bueno dejarlo para los $L^p$}
+%	Si $\varphi(x) f(x)$ es integrable sobre $E$ para %cualquier función $f$ integrable sobre $E$, entonces
+%  existe una constante finita $C$, tal que $|\varphi(x)|\leq C$ en c.t.p $x$ de $E$.
+%\end{ejer}
   
   \begin{ejer}{} 
 	Sea $f$ una función medible no negativa sobre $\rr^1$ tal que $\int_a^b f(x)\,dx>0$ siempre
   que $a<b$, ?`puede concluirse que $f(x)>0$ en c.t.p $x$?
 	\end{ejer}
  
-	\begin{ejer}{}\textcolor{red}{Capaz lo trabaje en el teórico}
-	\textbf{Absoluta continuidad de la integral de Lebesgue.}
-	Sup\'ongase que $f$ es integrable de Lebesgue sobre $E$. 
-	Probar que para cada $\epsilon>0$ existe $\delta>0$ tal que $\int_E |f|\,dx<\epsilon$ siempre que $m(E)<\delta$.
-	\end{ejer}
+%\begin{ejer}{}\textcolor{red}{Capaz lo trabaje en el teórico}
+%	\textbf{Absoluta continuidad de la integral de Lebesgue.}
+%	Sup\'ongase que $f$ es integrable de Lebesgue sobre $E$. 
+%	Probar que para cada $\epsilon>0$ existe %$\delta>0$ tal que $\int_E |f|\,dx<\epsilon$ siempre %que $m(E)<\delta$.
+	%\end{ejer}
 	
-  \begin{ejer}{} Probar que el Teorema de la Convergencia Mayorada se extiende a una familia de funciones medibles $f_t(x)$,\;  
+  \begin{ejer}{} 
+  Probar que el Teorema de la Convergencia Mayorada se extiende a una familia de funciones medibles $f_t(x)$,\;  
   $a<t<b$, dependiente de un parámetro real $t$, de la manera siguiente:
    \\
    Supongamos que $\tau \in (a,b)$ y que en cada punto de $E$ existe el límite 
@@ -225,8 +227,8 @@ Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0
    $$\int_E f(x)\,dx=\lim_{t \rightarrow \tau}\int_E f_t(x)\,dx. $$
 	\end{ejer}
 	
-	\begin{ejer}{}
-   {\bf{Derivación de una integral paramétrica}}. Supongamos que la integral 
+	\begin{ejer} [Derivación de una integral paramétrica]{}*
+   Supongamos que la integral 
    $$ \varphi(t)=\int_E f(t,x)\,dx\;\;\;\;\;\;\;(a<t<b),$$ 
    existe para cada $t\in (a,b)$; que $f(t,x)$ es derivable con respecto
    a $t$ y existe una función $g(x)$ integrable sobre $E$, tal que 
@@ -239,9 +241,9 @@ Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0
    Medio del Cálculo Diferencial y el ejercicio anterior.
 	\end{ejer}
 
-\begin{ejer}{}
-  {\bf{Transformada de Fourier}}. Si $f$ es integrable sobre $\rr$, la función 
-   $$g(t)=\int_{-\infty}^{\infty} e^{i t x} f(x)\,dx $$
+\begin{ejer}[Transformada de Fourier]{}*
+ Si $f$ es integrable sobre $\rr$, la función 
+  $$g(t)=\int_{-\infty}^{\infty} e^{i t x} f(x)\,dx $$
    es acotada y uniformemente continua.
    \\
    Si $x^k.f(x)$ es integrable, entonces $g$ es de clase $C^k$ y además 
@@ -249,15 +251,14 @@ Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0
  \end{ejer}
    
    
- \textbf{ DE ACA EN ADELANTE, EJERCICIOS DE MEDIDA PRODUCTO.
-  HABRIA QUE VER SI QUEDAN TODOS.} 
+ 
   
-\begin{ejer}{} \textcolor{red}{Como vamos a adoptar el enfoque de Fava y Zó no sería adecuado este ejercicio}
- Si $(\rr,\mathscr{B})$ denota el espacio medible que consiste de los números reales junto con los conjuntos 
-de Borel, mostrar que todo subconjunto abierto de $\rr\times \rr$ pertenece a $\mathscr{B}\times \mathscr{B}$.
-De hecho, esta $\sigma$-álgebra es la sigma-álgebra generada por los subconjuntos abiertos de $\rr\times \rr$.
-(En otras palabras, $\mathscr{B}\times \mathscr{B}$ es el álgebra de Borel de $\rr \times \rr$).
-\end{ejer}
+%\begin{ejer}{} \textcolor{red}{Como vamos a adoptar el enfoque de Fava y Zó no sería adecuado este ejercicio}
+ %Si $(\rr,\mathscr{B})$ denota el espacio medible que consiste de los números reales junto con los conjuntos 
+%de Borel, mostrar que todo subconjunto abierto de $\rr\times \rr$ pertenece a $\mathscr{B}\times \mathscr{B}$.
+%De hecho, esta $\sigma$-álgebra es la sigma-álgebra generada por los subconjuntos abiertos de $\rr\times \rr$.
+%(En otras palabras, $\mathscr{B}\times \mathscr{B}$ es el álgebra de Borel de $\rr \times \rr$).
+%\end{ejer}
 
 
 \begin{ejer}{} 
@@ -320,14 +321,14 @@ Demostrar que las integrales de miembro derecho de \eqref{eq:fubini-senx/x} tien
 \end{ejer}
 
 
-\textcolor{red}{Los siguientes ejericios me gustan todos, pero ¿No quedará demasiado larga la práctica?. ¿NO te parece que asterisquemos 23,25,26,27?}
+%\textcolor{red}{Los siguientes ejericios me gustan todos, pero ¿No quedará demasiado larga la práctica?. ¿NO te parece que asterisquemos 23,25,26,27?}
 
-\begin{ejer}{}
+\begin{ejer}{}*
  Sean $a_i>0$ para $1\leq i \leq n$ y $J=(0,1)\times \ldots \times (0,1)$.
 Probar que 
 \[
 \int_J  \frac{1}{x_1^{a_1}+x_2^{a_2}+\ldots+x_n^{a_n}}\,dx<\infty 
-\Leftrightarrow
+\Longleftrightarrow
 \sum\limits_{i=1}^{n}\frac{1}{a_i}>1.
 \]
 \\
@@ -357,18 +358,18 @@ x^{-2}&si&y<x<1
 y probar que $\int_0^1\,dx\int_0^1 f(x,y)\,dy=1$ y $\int_0^1\,dy \int_0^1 f(x,y)\,dx=-1$.
 \end{ejer}
 
-\begin{ejer}{}
+\begin{ejer}{}*
  Mostrar que si $f(x,y)=\frac{(x^2-y^2)}{(x^2+y^2)^2}$, entonces
      $$\frac{\pi}{4}=\int_0^1 \,dx\int_0^1 f(x,y)\,dy\not = \int_0^1\,dy \int_0^1 f(x,y)\,dx=-\frac{\pi}{4}. $$
 \end{ejer}
 
- \begin{ejer}{} Mostrar que la función $f(x,y)=\frac{xy}{(x^2+y^2)^2}$ verifica
+ \begin{ejer}{}* Mostrar que la función $f(x,y)=\frac{xy}{(x^2+y^2)^2}$ verifica
    $$\int_{-1}^1 \,dx\int_{-1}^1 f(x,y)\,dy=\int_{-1}^1\,dy \int_{-1}^1 f(x,y)\,dx $$
    a pesar de que $f$ no es integrable sobre el cuadrado $Q=[-1,1]\times [-1,1]$.
 	\end{ejer}
 
  
-\begin{ejer}{} Una función no negativa $f$, definida sobre $\rr^1$, se llama una {\bf{densidad}}
+\begin{ejer}{}* Una función no negativa $f$, definida sobre $\rr^1$, se llama una {\bf{densidad}}
    (de probabilidad) si su integral sobre toda la recta es igual a uno. Probar que: 
 	\begin{enumerate}
 	\item La convolución de dos densidades es otra densidad.
