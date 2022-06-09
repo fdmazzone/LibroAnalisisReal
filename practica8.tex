@@ -102,7 +102,7 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
         \noindent Depto de Matem\'atica.\\
         Primer Cuatrimestre de 2022\\                                                                                                                                                                                                                                                                                                                                                
         Teoría de la Medida \\
-        Práctica 8: Espacios $L^p$
+        Práctica 6: Espacios $L^p$
 
 %\end{scshape}
 \end{bfseries}
@@ -116,27 +116,28 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 
 
 
-  \begin{ejer}{} Demostrar que el conjunto de las funciones acotadas sobre el conjunto $X$,
-  denotado $B(X)$, con la norma 
-  $$\parallel f \parallel=\sup_{x\in X}|f(x)| $$
-  es un espacio vectorial normado.
-	\end{ejer}
+%  \begin{ejer}{} \textcolor{red}{lo sacaría porque no tiene que ver con los $L^p$} %Demostrar que el conjunto de las funciones acotadas sobre el conjunto $X$,
+ % denotado $B(X)$, con la norma 
+  %$$\parallel f \parallel=\sup_{x\in X}|f(x)| $$
+  %es un espacio vectorial normado.
+%	\end{ejer}
 
 
 
 
-\begin{ejer}{} Sea $E\subseteq \rr^n$ medible tal que $m(E)<\infty$.
-\\
-Supóngase que $\{f_n\}_{ \{ n \in \nn\} }$ es una sucesión de funciones de $L^1(E)$
-y que \linebreak $f\in L^1(E)$.
-Probar que:
-\begin{enumerate}
-	\item Si $f_n \stackrel {u}{\longrightarrow}f$, entonces $f_n \stackrel {L^1(E)}{\longrightarrow}f$.
-	\item Si $f_n \stackrel {L^1(E)}{\longrightarrow}f$, entonces $f_n \stackrel {m}{\longrightarrow}f$.
-	\item Si $f_n \stackrel {L^1(E)}{\longrightarrow}f$, entonces existe $\{f_{n_k}\}\subseteq \{f_n\}$
-	tal que  $f_{n_k}{\to}f$ c.t.p.
- \end{enumerate}
-\end{ejer}
+%\begin{ejer}{} 
+%\textcolor{red}{ya lo hice en el teórico} Sea $E\subseteq \rr^n$ medible tal que %$m(E)<\infty$.
+%\\
+%Supóngase que $\{f_n\}_{ \{ n \in \nn\} }$ es una sucesión de funciones de $L^1(E)$
+%y que \linebreak $f\in L^1(E)$.
+%Probar que:
+%\begin{enumerate}
+%	\item Si $f_n \stackrel {u}{\longrightarrow}f$, entonces $f_n \stackrel %{L^1(E)}{\longrightarrow}f$.
+%	\item Si $f_n \stackrel {L^1(E)}{\longrightarrow}f$, entonces $f_n \stackrel %{m}{\longrightarrow}f$.
+%	\item Si $f_n \stackrel {L^1(E)}{\longrightarrow}f$, entonces existe %$\{f_{n_k}\}\subseteq \{f_n\}$
+%	tal que  $f_{n_k}{\to}f$ c.t.p.
+% \end{enumerate}
+%\end{ejer}
 
 
 \begin{ejer}{} Demostrar que:
@@ -150,23 +151,18 @@ Probar que:
 
 
 
-\begin{ejer}{} Sean $g\in L^{\infty}(E)$ y \;\;$\ell_g:L^1(E)\rightarrow \rr$\;\; 
-tal que \;\;$\ell_g(f)=\int_E (fg)(x)\,dx$\;\; para
-\\ 
-$f \in L^1(E)$, entonces
-$\ell_g$ es lineal.
-\end{ejer}
+%\begin{ejer}{}\textcolor{red}{lo sacaría por que es muy facil} Sean $g\in %L^{\infty}(E)$ y \;\;$\ell_g:L^1(E)\rightarrow \rr$\;\; 
+%tal que \;\;$\ell_g(f)=\int_E (fg)(x)\,dx$\;\; para
+%\\ 
+%$f \in L^1(E)$, entonces
+%%$\ell_g$ es lineal.
+%\end{ejer}
 
 
 \begin{ejer}{} Sea $g$ una función medible tal que $fg\in L^1(E)$ $\;\forall f \in L^1(E)$, entonces $g \in L^{\infty}(E)$.
 \end{ejer}
 
 
-\begin{ejer}{}
-%\textcolor{red}{Yo creo Sonia que esto estaría bueno dejarlo para los $L^p$}
-	Si $\varphi(x) f(x)$ es integrable sobre $E$ para cualquier función $f$ integrable sobre $E$, entonces
-  existe una constante finita $C$, tal que $|\varphi(x)|\leq C$ en c.t.p $x$ de $E$.
-	\end{ejer}
 
 
 \begin{ejer}{} Probar que: 
@@ -185,35 +181,33 @@ es una norma.
 		
 		
 \begin{ejer}{} 
-Sea $H$ un espacio de Hilbert.
- \\
- Si $x,y\in H$ entonces vale la {\it{Identidad del Paralelogramo:}}
-\\
- $\|x+y\|^2+\|x-y\|^2=2(\|x\|^2+\|y\|^2). $
+Sea $H$ un espacio de Hilbert. Si $x,y\in H$ entonces vale la {\it{Identidad del Paralelogramo:}}
+
+ $$\|x+y\|^2+\|x-y\|^2=2(\|x\|^2+\|y\|^2). $$
  \end{ejer}
  
 %%%%%%%%%%%%%%
-\begin{ejer}{}
- Probar que:
-	\begin{enumerate}
-  \item $\frac{1}{x}\in L^2((1,\infty))$ y $\frac{1}{x}\not \in L^1((1,\infty))$;
-  \item $\frac{1}{\sqrt{|x|}}\in L^1((-1,1))$ y $\frac{1}{\sqrt{|x|}}\not \in L^2((-1,1))$.
-	\end{enumerate}
-\end{ejer}
+%\begin{ejer}{} \textcolor{red}{Habría uno parecido}
+ %Probar que:
+%	\begin{enumerate}
+ % \item $\frac{1}{x}\in L^2((1,\infty))$ y %$\frac{1}{x}\not \in L^1((1,\infty))$;
+  %\item $\frac{1}{\sqrt{|x|}}\in L^1((-1,1))$ y %$\frac{1}{\sqrt{|x|}}\not \in L^2((-1,1))$.
+%	\end{enumerate}
+%\end{ejer}
 
 
-\begin{ejer}{} 
-Si $1\leq p \leq \infty$, demostrar que
-	%\begin{enumerate}
-		$L^p(E)$ es un espacio de Banach.
+%\begin{ejer}{} \textcolor{red}{lo haría en el teórico}
+%Si $1\leq p \leq \infty$, demostrar que
+	%%\begin{enumerate}
+	%	$L^p(E)$ es un espacio de Banach.
 		%\item  Las funciones continuas de soporte compacto son densas en $L^p(E)$.
 	%\end{enumerate} 
-	\end{ejer}
+%	\end{ejer}
 	
 	
-	\begin{ejer}{}
-	Probar la desigualdad de Minkowski usando la desigualdad de H\"older.
-	\end{ejer}
+%	\begin{ejer}{}\textcolor{red}{lo haría en el teórico}
+%	Probar la desigualdad de Minkowski usando la desigualdad de H\"older.
+%	\end{ejer}
 	
 	\begin{ejer}{}
  Demostrar que si $m(E)<\infty$ y $1\leq p\leq q \leq \infty$, entonces 
@@ -232,5 +226,30 @@ Tambi\'en se puede probar el ejercicio usando la desigualdad de H\"older.
 %\]
 %Probar que $\mathcal{F}$ es una transformación lineal continua de $L^{1}(\rr^n)$ en el espacio de las funciones continuas que se anulan en el infinito.
 
+%\begin{color}{red}
+
+ \begin{ejer}{}
+  Demostrar que la función $f(x)=1 /x(\ln x)^2 $ satisface que $f\in L^1([0,1])$ y $f\notin L^p([0,1])$ para todo $p>1$.
+  \end{ejer}
+  
+\begin{ejer}{}
+ Demostrar que $L^1(\rr^n)$ es separable, o sea tiene un conjunto denso numerable.
+\end{ejer}
+
+\begin{ejer}{}
+ Demostrar el Teorema de Riemann-Lebesgue: si  $L^1(\rr^n)$, entonces
+ $$\lim_{n\to\infty}\int_{-\infty}^{\infty} f(x) \cos nx dx = \lim_{n\to\infty}\int_{-\infty}^{\infty} f(x) \text{sen} nx dx=0.$$
+Sugerencia: demostrar el resultado para una función escalera y luego usar la densidad de las mismas. 
+\end{ejer}
+
+\begin{ejer}{}
+La funcion $\text{sen} (nx)/x$ no es integrable Lebesgue en $(0, +\infty)$. Observar que  \[\lim_{n\to\infty} \int_0 ^n\frac{\text{sen} x}{x} dx \]
+ existe.
+\end{ejer}
+
+\begin{ejer}{} El espacio $L^\infty(0, 1)$ con la norma $\|\cdot \|_\infty$ es un espacio de Banach no separable.
+\end{ejer}
+
+%\end{color}
 
 \end{document}
