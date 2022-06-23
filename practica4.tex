@@ -1,0 +1,414 @@
+\documentclass{book}
+\usepackage{amssymb,amsmath}
+\usepackage{polyglossia}
+\setmainlanguage{spanish} % Idioma principal
+\usepackage{theorem}
+\usepackage{times}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage[cp1252]{inputenc}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage[a4paper,driver=xetex,top=4.5cm,head=4.5cm, bottom=2cm,%
+layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
+%\usepackage{bm}
+%\usepackage{tabular}
+\usepackage{fontspec}
+ \usepackage[breakable,many]{tcolorbox}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{empheq}
+ \setromanfont{Roboto Condensed}
+ \usepackage{float}
+ \usepackage{mathrsfs} 
+%
+%
+% \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%Estilo de la pagina%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcounter{ejer}
+% 
+% {\theorembodyfont{\normalfont}
+% \newtheorem{ejercicio}[ejer]{Ejercicio}}
+
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\ii}{\mathbb{I}}
+
+
+
+\DeclareMathOperator{\atan2}{atan2}
+%\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sn}{sn}
+\DeclareMathOperator{\SO}{SO}
+%\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\Or}{O}
+
+\input{EstilosPractica.tex}
+\tcbset{highlight math style={enhanced,
+  colframe=red!60!black,colback=yellow!50!white,arc=4pt,boxrule=1pt,
+  drop fuzzy shadow}}
+  
+  
+  
+  
+  
+  
+  
+
+
+\pagestyle{fancyplain}
+
+ \renewcommand{\sectionmark}[1]
+                 {\markright{\thesection\ #1}}
+
+
+% \lhead[\fancyplain{}{\bfseries\thepage}]
+%       {\fancyplain{}{\bfseries\rightmark}}
+%
+ \rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries}}
+
+
+
+
+ \lhead[\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}]{\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}}
+
+\cfoot{}
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+\begin{document}
+
+
+\hyphenation{excen-tri-ci-dad}
+
+
+\begin{large}
+\begin{bfseries} % \begin{scshape}
+        \noindent Depto de Matem\'atica.\\
+        Primer Cuatrimestre de 2022\\                                                                                                                                                                                                                                                                                                                                                
+        Teoría de la Medida \\
+        Práctica 4: Funciones medibles
+
+%\end{scshape}
+\end{bfseries}
+\end{large}
+\par\noindent\rule{\textwidth}{.5pt}
+
+	%\begin{ejer}{} 
+%Sea $f$ una  funci\'on medible sobre el conjunto medible $E$. %Mostrar que
+%\begin{enumerate}
+%\item $f^{-1}([c,d))=\{ x \in E: c\leq f(x)<d \}$ y 
+%$f^{-1}((c,d])=\{ x \in E: c< f(x)\leq d \}$ son conjuntos %medibles.
+%\\
+%\underline{Sugerencia:} $f^{-1}([c,d))=f^{-1}([c,\infty]\cap %[-\infty,d))=f^{-1}([c,\infty])\cap f^{-1}( [-\infty,d)).$
+%\item  $f^{-1}((c,d))=\{ x \in E: c< f(x)<d \}$  es %medible.
+%\\
+%\underline{Ayuda:} $f^{-1}([c,d)))=f^{-1}((c,\infty]\cap %[-\infty,d))=f^{-1}((c,\infty])\cap f^{-1}( %[-\infty,d)).$ 
+%\item  $f^{-1}(\{\infty\})$ y $f^{-1}(\{-\infty\})$ son %conjuntos  medibles.
+%\\
+%%\underline{Sugerencia:} $f^{-1}({\infty})=\{ x \in E: f(x)=\infty \}=  \bigcap\limits_k \{ x \in E: f(x)>k\}.$ 
+%\item  $f^{-1}(\{c\})=\{x\in E: f(x)=c\}$ es medible. 
+%\\
+%\underline{Ayuda:} $\{ x \in E: f(x)=c \}=\{x \in E: %f(x)\geq c\}  \cap \{ x \in E: f(x)\leq c\}.$ 
+%\item Sea $G$ cualquier conjunto abierto de $\rr$. Entonces %$f^{-1}(G)$ es un subconjunto medible de $E$.
+%\\
+%\underline{Sugerencia:} $G=\bigcup\limits_k I_k$, $I_k$ %intervalos abiertos disjuntos y 
+%$f^{-1}(G)=f^{-1}(\bigcup I_k)=\bigcup\ f^{-1}(I_k)$.
+%\end{enumerate}
+%\end{ejer}
+
+
+\begin{ejer}{} 
+Mostrar que las siguientes funciones son medibles sobre sus respectivos dominios y calcular 
+$m(f^{-1}((a,\infty]))$.
+\begin{enumerate}
+\item  $f(x)=\frac{1}{x}$, para $0<x<1$. \;\;
+\underline{Sugerencia:} $a<0,$\, $0\leq a<1$,\, $1\leq a$.
+\item* 
+{
+\extrarowheight = -0.5ex
+\renewcommand{\arraystretch}{1.8}
+$f(x)=\left\{
+\begin{array}{ll}
+\frac{1}{x}&0<x\leq 1
+\\
+0&x=0
+\end{array}
+\right.$}
+%\item $f(x)=\left\{
+%\begin{array}{ll}
+%1&x \in \qq \cap[0,1]
+%\\
+%0&x \in \ii\cap[0,1]
+%\end{array}
+%\right.
+%$
+\end{enumerate}
+\end{ejer}
+
+
+\begin{ejer}{} 
+Mostrar que si $f$ es una funci\'on  medible sobre un conjunto medible $E$ y si $A$ es cualquier subconjunto medible de $E$, entonces $f$ es una funci\'on medible sobre $A$.
+%\\
+%\underline{Sugerencia:}  $\{x \in A: f(x)>c \}=\{ x\in E: %f(x)>c\}\cap A.$
+\end{ejer}
+
+
+
+
+\begin{ejer}{} 
+Probar que si $f(x)$ es una función medible y $h$ es un vector de $\rr^d$, la ``función 
+trasladada'' $f(x+h)$ es también medible.
+\end{ejer}
+
+%\begin{ejer}{} 
+ %Demostrar que
+ %: 
+	%\begin{enumerate}
+%\item una función $f$ continua en c.t.p es medible;
+%\item 
+%si $f$ es medible y $f=g$ en c.t.p, entonces $g$ es medible.
+%	\end{enumerate}
+%	\end{ejer}
+
+
+\begin{ejer}{} 
+Determinar si las siguientes funciones son simples en $[0,1]$:
+\begin{enumerate}
+\item 
+{
+\extrarowheight = -0.5ex
+\renewcommand{\arraystretch}{1.8}
+$\varphi(x)=
+\left\{
+\begin{array}{rl}
+1& x=\frac{1}{n},\;n=1,2,\dots
+\\
+-1&x\neq \frac{1}{n}
+\end{array}
+\right.
+$}
+\item 
+$\varphi(x)=
+\left\{
+\begin{array}{ll}
+1& x \in \ii
+\\
+0&x\in \qq
+\end{array}
+\right.
+$
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}{}
+ Para cada $k\in \nn$, sea
+ {
+\extrarowheight = -0.5ex
+\renewcommand{\arraystretch}{1.8}
+ $\varphi_k(x)=
+ \left\{
+ \begin{array}{lll}
+  \frac{i-1}{2^k}    & \frac{i-1}{2^k} \leq x< \frac{i}{2^k}, & i=1,2,\ldots,k 2^k
+  \\
+    0  & x<0 &
+    \\
+    k &  x\geq k. &
+ \end{array}
+ \right.$}
+ %con $k \in \nn$. 
+ 
+ Dada $f\geq 0$  y  medible, se define $f_k=\varphi_k \circ f$. 
+ Se verifica que cada $f_k$ es medible y que $\lim\limits_{k \to \infty} f_k=f$.
+\\
+Hallar $f_k$ para 
+ \begin{enumerate}
+     \item  $f$ igual a la funci\'on de Dirichlet;
+     \item\label{it:item-2} $f=\alpha \chi_A$, $\alpha\in \rr$ y $\alpha>0$, $A$ medible;
+     \item ?`puede ocurrir que $f=f_k$ para las funciones del inciso \ref{it:item-2}?
+ \end{enumerate}
+\end{ejer}
+
+
+\begin{ejer}{} 
+Calcular $f^+$, $f^-$, $f^+-f^-$, $f^{+} + f^-$ para
+\begin{enumerate}
+\item 
+{
+\extrarowheight = -0.5ex
+\renewcommand{\arraystretch}{1.5}
+$f(x)=\left\{
+\begin{array}{lc}
+\infty&x=\frac{-\pi}{2}
+\\
+\tan x &-\frac{\pi}{2}<x<\frac{\pi}{2}
+\\
+\infty&x=\frac{\pi}{2}
+\end{array}
+\right.$
+\item $f(x)=\left\{
+\begin{array}{ll}
+x^2-1&x<1
+\\
+3-x&x\geq 1
+\end{array}
+\right.$}
+\end{enumerate}
+\end{ejer}
+
+
+
+
+\begin{ejer}{} 
+Exhibir una función no medible $f$ tal que $|f|$ es medible.
+\end{ejer}
+
+
+
+
+\begin{ejer}{} 
+Sea $(f_k)$ una sucesión de  funciones medibles que converge a una función finita $f$
+en c.t.p de un conjunto $E$ de medida finita. 
+\\
+Demostrar que para cada $\delta>0$  existe un conjunto
+$E_{\delta}\subset E$ de medida menor que $\delta$, tal que $f_k$ converge uniformemente sobre 
+$E-E_{\delta}$. 
+{\it{(Teorema de Egorov)}}.
+\\
+\underline{Sugerencia:} Considérese para cada $i$ la 
+sucesión decreciente de conjuntos
+$$E_m^i=\bigcup_{k\geq m}E\Bigl(|f_k-f|\geq \frac{1}{i}\Bigr) \;\;\;m=1,2,3,...$$
+y elíjase un índice $m_i$ tal que la medida de $E_{m_i}^i$ sea menor luego, llámese $E_{\delta}$ a la unión de estos conjuntos.
+\end{ejer} 
+
+\begin{ejer}{} 
+Considerar la sucesi\'on de funciones $f_k(x)=\left[\cos(\frac{\pi}{x})\right]^{2k}$ para $x \in (0,1]$.
+\begin{enumerate}
+\item Demostrar que $f_k \to 0$ en c.t.p.
+\item El \textit{Teorema de Egorov} dice que existe un conjunto $E_{\delta}$ tal que $f_k \xrightarrow{u} 0$
+en $(0,1]-E_{\delta}$. 
+Hallar $E_{\delta}$.
+\end{enumerate}
+\end{ejer}
+
+%\begin{ejer} {}*
+%\begin{enumerate} 
+%\item Dada la sucesión
+%{
+%\extrarowheight = -0.5ex
+%\renewcommand{\arraystretch}{2.0}
+%$f_k(x)=\left\{
+%\begin{array}{cl}
+%k^2x &\mbox{si }x\in[0,\frac{1}{k}]
+%\\
+%-k^2x+2k &\mbox{si } x\in \left[\frac{1}{k},\frac{2}{k}\right] %
+%\\
+%&\mbox{en otro caso,}
+%\end{array}
+%\right.
+%$}\\
+%comprobar que $f_k \to 0$ en $[0,1]$. 
+%?`Qué se puede decir acerca de la convergencia uniforme en %$[0,1]$?
+%\item Sea $f_k=\chi_{(0,\frac{1}{k})}$ con $k\in\nn$. 
+%Probar que $\{f_k\}_{\{k\in\nn\}}$ converge puntualmente a $0$ %pero que no converge uniformemente
+%excepto un conjunto de medida nula.
+%\end{enumerate}
+%\end{ejer}
+
+%\begin{ejer}{}  
+%Considerar la funci\'on 
+%$f(x)=\left\lfloor \frac{1}{x}\right\rfloor+\left\lfloor %\frac{1}{x-1}\right\rfloor$
+%para $x \in [0,1]$.
+%\begin{enumerate}
+%\item Demostrar que $f$ es medible.
+%\item Seg\'un el \textit{Teorema de Lusin} existe  un conjunto %compacto $E_{\varepsilon}\subset [0,1]$
+%tal que $m\left([0,1]-E_{\varepsilon}\right)<\epsilon$ y %$f\left.\right|_{E_{\varepsilon}}$ es continua.
+%Hallar un conjunto $E_{\varepsilon}$.
+%\end{enumerate}
+%\end{ejer}
+
+
+%\begin{ejer}{}
+% Probar que toda función medible $f$ coincide en c.t.p con una %función boreliana.
+%\\
+%\underline{Sugerencia:} suponer %primero que $f$ es la función %característica de un conjunto
+%medible; luego, que $f$ es una %función simple;   finalmente que %$f\geq 0$.
+%\end{ejer}
+
+
+
+
+
+%\begin{ejer}{}
+%Calcular $\underline{f_k}$, $\overline{f_k}$, $\limsup f_k$, %$\liminf f_k$ y $\lim f_k$ cuando sea
+%apropiado para las siguientes sucesiones de funciones:
+%\begin{enumerate}
+%\item
+%$f_k(x)=x^k$, \; para $0\leq x\leq 1.$
+%\item $f_{2k}(x)=\left(1+\frac{x}{2k}\right)^{2k}$, %$f_{2k-1}(x)=\left(1-\frac{x}{2k-1}\right)^{2k-1}$, \;para %$0\leq x<\infty$.
+%%\item $f_k(x)=\left\{ 
+%%\begin{array}{ll}
+%%1&x=\frac{i}{j}, \;i+j=k,\; 0\leq x\leq 1
+%%\\
+%%0& \mbox{en otro caso.}
+%%\end{array}
+%%\right.$
+%\end{enumerate}
+%\end{ejer}
+
+
+
+\begin{ejer}{} Probar que si $f_k \stackrel{m}{\rightarrow}f$ \;y\; $g_k \stackrel{m}{\rightarrow}g$, entonces \;
+$f_k+g_k \stackrel{m}{\rightarrow}f+g$.  
+Y si, además, todas las funciones son finitas y $m(E)<\infty$, entonces $f_k.g_k \stackrel{m} \rightarrow f.g$
+dentro del conjunto $E$.
+\end{ejer}
+
+\begin{ejer}{} 
+Dada la sucesión $\{f_k(x)\}=\{\text{sen}^{2k} x\}$ definida sobre el intervalo $[-5 \pi, 5\pi]$, 
+analizar  la convergencia puntual, uniforme y en medida.
+\end{ejer}
+
+
+%\begin{ejer}{}* 
+%Probar que si $f_k \stackrel{m}{\rightarrow}f$, \;entonces existe una subsucesión %$(f_{k_i})$ que 
+%converge a $f$ en c.t.p.
+%\end{ejer}
+
+\begin{ejer}{} 
+ Siendo $E$ un subconjunto de medida finita de $\rr^d$,\;  para cada función medible $f$
+y cada n\'umero real $t$, se define
+$$\lambda_f(t)=m(\{x:x\in E,f(x)>t\})=m\,E(f>t).$$
+Probar que 
+	\begin{enumerate}
+  \item $\lambda_f$ es decreciente y continua por la derecha;
+  \item si $f_k \stackrel {m}{\rightarrow}f$, entonces $\lambda_{f_k} \rightarrow \lambda_f(t)$
+  en cada punto $t$ donde $\lambda_f$ sea continua.
+\\
+  \underline{Sugerencia:}
+de la inclusión $E(f_k>t)\subset E(f>t-\epsilon)\cup E(|f_k-f|>\epsilon) $
+se deduce \;$\limsup\limits_{{k\rightarrow \infty}\atop} \lambda_{f_k}(t)\leq \lambda_{f}(t-)$\; y análogamente se prueba que 
+\;$\lambda_f(t)\leq \liminf\limits_{k\rightarrow \infty} \lambda_{f_k}(t).\;$
+	\end{enumerate}
+\end{ejer}
+
+%======================================================================================
+
+
+\end{document}

@@ -1,0 +1,404 @@
+\documentclass{book}
+\usepackage{amssymb,amsmath}
+\usepackage{polyglossia}
+\setmainlanguage{spanish} % Idioma principal
+\usepackage{theorem}
+\usepackage{times}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+%\usepackage[cp1252]{inputenc}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage[a4paper,driver=xetex,top=4.5cm,head=4.5cm, bottom=2cm,%
+layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
+%\usepackage{bm}
+%\usepackage{tabular}
+\usepackage{fontspec}
+ \usepackage[breakable,many]{tcolorbox}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{empheq}
+ \setromanfont{Roboto Condensed}
+ \usepackage{float}
+ \usepackage{mathrsfs} 
+%
+%
+% \renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%Estilo de la pagina%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcounter{ejer}
+% 
+% {\theorembodyfont{\normalfont}
+% \newtheorem{ejercicio}[ejer]{Ejercicio}}
+
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\nn}{\mathbb{N}}
+
+
+
+\DeclareMathOperator{\atan2}{atan2}
+%\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sn}{sn}
+\DeclareMathOperator{\SO}{SO}
+%\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\Or}{O}
+
+\input{EstilosPractica.tex}
+\tcbset{highlight math style={enhanced,
+  colframe=red!60!black,colback=yellow!50!white,arc=4pt,boxrule=1pt,
+  drop fuzzy shadow}}
+  
+  
+  
+  
+  
+  
+  
+
+
+\pagestyle{fancyplain}
+
+ \renewcommand{\sectionmark}[1]
+                 {\markright{\thesection\ #1}}
+
+
+% \lhead[\fancyplain{}{\bfseries\thepage}]
+%       {\fancyplain{}{\bfseries\rightmark}}
+%
+ \rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries}}
+
+
+
+
+ \lhead[\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}]{\fancyplain{}{ \includegraphics[scale=.3]{EscudoUNLPam.png}}}
+
+\cfoot{}
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+\begin{document}
+
+
+\hyphenation{excen-tri-ci-dad}
+
+
+\begin{large}
+\begin{bfseries} % \begin{scshape}
+        \noindent Depto de Matem\'atica.\\
+        Primer Cuatrimestre de 2022\\                                                                                                                                                                                                                                                                                                                                                
+        Teoría de la Medida \\
+        Práctica 5: Integral de Lebesgue
+
+%\end{scshape}
+\end{bfseries}
+\end{large}
+\par\noindent\rule{\textwidth}{.5pt}
+
+%\begin{color}{red}
+\begin{ejer}{}  Por medio de la definición de integral de función no negativa, hallar el valor de las integrales
+\[
+ \int_0^\infty \sum_{n=1}^\infty \chi_{\left[n,n+\frac{1}{2^n}\right)}\quad\text{y}\quad \int_0^\infty \sum_{n=1}^\infty \alpha_n\chi_{\left[n,n+\frac{1}{2}\right)},
+\]
+donde $\alpha_n\geq 0$. 
+ 
+\end{ejer}
+%\end{color}
+
+%\begin{color}{red}
+\begin{ejer}[Criterio de Lebesgue para la integrabilidad Riemann]{} El criterio establece que si $f:[a,b]\to\rr$ es acotada entonces  son equivalentes
+\begin{enumerate}
+\item[a)] $f$ es integrable Riemann.
+ \item[b)] Si $Z$ es el conjunto de puntos donde $f$ es discontinua entonces $m_*(Z)=0$. 
+\end{enumerate}
+\emph{Ayuda:} Para a)$\Rightarrow$ b) observar que 
+\[
+ Z=\{x:\omega(f;x)>0\}=\bigcup_{n=1}^{\infty}S_n:= \bigcup_{n=1}^{\infty}\left\{x:\omega(f;x)\geq \frac{1}{n}\right\}.
+\]
+Luego usar que $m_*(S_n)\leq c_e(S_n)$.
+
+Para b)$\Rightarrow$ a). Notar que $m_*(S_n)=0$. Luego, para todo $\varepsilon>0$ se puede hallar una colección de intervalos abiertos y disjuntos $I_j$ tales que $S_n\subset \bigcup\limits_{j=1}^\infty I_j$ y   $\sum\limits_j m(I_j)<\varepsilon$.  Demostrar que $S_n$ es compacto y de allí se cubre por finitos $I_j$. Finalmente invocar la caracterización de Hankel.
+\end{ejer}
+%\end{color}
+
+
+
+
+\begin{ejer}{}
+  %Mostrar que la función $x^{p-1} e^{-x}$ es %integrable sobre $(0,\infty)$ si y sólo si $p>0$. %\textcolor{red}{Quizás es más importante que %aprenda cuando las funciones $1/x^p$ son %integrales en $(0,1)$ y $(1,\infty)$. ¿no?}
+  Analizar para qu\'e valores de $p$ las funciones $\frac{1}{x^p}$ son integrables en $(0,1)$ y $(1,\infty)$.
+	\end{ejer}
+  
+	\begin{ejer}{} 
+	Probar que la función $\frac{\text{sen}\,x}{x}$ no es integrable sobre $(0,\infty)$, aunque existe el límite
+\linebreak  $\lim\limits_{R\rightarrow \infty}\int_0^R \frac{\text{sen}\,x}{x}\,dx.$
+\end{ejer}
+	
+%	\begin{ejer}{}
+%	Probar que la integral $\int_0^1 \frac{1}{x}\text{sen} \left(\frac{1}{x}\right)\,dx$ 
+	%existe como integral impropia de Riemann %pero no existe como integral de Lebesgue.
+	%\end{ejer}
+
+%e un intervalo  infinito (tal integral
+	%s\'olo puede existir en el sentido impropio). 
+	%Demostrar que $f$ es integrable de Lebesgue sobre el mismo intervalo si y s\'olo si la integral
+	%impropia converge absolutamente.
+ % \end{ejer}
+	
+	
+	\begin{ejer}{}
+	Probar, usando el Teorema de la Convergencia Mayorada, la fórmula
+  $$\lim\limits_{n\rightarrow \infty} \int_0^1 \frac{n^{\frac{3}{2}} x}{1+n^2 x^2}\,dx=0. $$
+	\end{ejer}
+
+
+  \begin{ejer}{}
+	Usando integración término a término probar que 
+  $$\int_0^{\infty} \frac{x}{e^x-1}\,dx=\sum_{n=1}^{\infty}\frac{1}{n^2}. $$
+  \end{ejer}
+	
+	\begin{ejer}{}
+	\begin{enumerate}
+	\item Sup\'ongase que $f\geq 0$, integrable de Riemann en $[0,a]$ $\forall a>0$ y que adem\'as tiene integral impropia. 
+	Probar que $f$ es integrable de Lebesgue en $[0,+\infty)$.
+	%\textcolor{red}{¿Capaz que sea en $[0,+\infty)$, no?}.
+	\item Sup\'ongase que $f\geq 0$, integrable de Riemann en $[a+\epsilon,b]$ y que existe la integral impropia.
+	Probar que $f$ es integrable de Lebesgue en $[a,b]$.
+	\end{enumerate}
+	\end{ejer}
+	
+  \begin{ejer}{} 
+  Sea $f$ una función medible no negativa sobre $\rr$ y sea $(E_k)$ una sucesión creciente de conjuntos
+  cuya unión es $E$.
+	\begin{enumerate}
+  \item Probar que $\int_{E} f=\lim\limits_{k \rightarrow \infty} \int_{E_k} f$.
+  \item Extender a cualquier función $f$ integrable sobre $E$.
+	\end{enumerate}
+	\end{ejer}
+
+  
+
+  \begin{ejer}{}
+	Si se considera la sucesión de funciones $f_n(x)=n \chi_n(x)$ en el intervalo $0\leq x\leq 1$,
+  donde $\chi_n$ es la función característica del intervalo $\left(0,\frac{1}{n}\right)$, ?`es posible que exista
+  una función $g(x)$ integrable en dicho intervalo, tal que $f_n(x) \leq g(x)$ para cualquier $n$ y cualquier
+  $x$?
+	\end{ejer}
+
+
+ %\begin{ejer}{} \textcolor{red}{Yo creo Sonia que %esto estaría bueno dejarlo para los $L^p$}
+%	Si $\varphi(x) f(x)$ es integrable sobre $E$ para %cualquier función $f$ integrable sobre $E$, entonces
+%  existe una constante finita $C$, tal que $|\varphi(x)|\leq C$ en c.t.p $x$ de $E$.
+%\end{ejer}
+  
+  \begin{ejer}{} 
+	Sea $f$ una función medible no negativa sobre $\rr^1$ tal que $\int_a^b f(x)\,dx>0$ siempre
+  que $a<b$, ?`puede concluirse que $f(x)>0$ en c.t.p $x$?
+	\end{ejer}
+ 
+%\begin{ejer}{}\textcolor{red}{Capaz lo trabaje en el teórico}
+%	\textbf{Absoluta continuidad de la integral de Lebesgue.}
+%	Sup\'ongase que $f$ es integrable de Lebesgue sobre $E$. 
+%	Probar que para cada $\epsilon>0$ existe %$\delta>0$ tal que $\int_E |f|\,dx<\epsilon$ siempre %que $m(E)<\delta$.
+	%\end{ejer}
+	
+  \begin{ejer}{} 
+  Probar que el Teorema de la Convergencia Mayorada se extiende a una familia de funciones medibles $f_t(x)$,\;  
+  $a<t<b$, dependiente de un parámetro real $t$, de la manera siguiente:
+   \\
+   Supongamos que $\tau \in (a,b)$ y que en cada punto de $E$ existe el límite 
+   $f(x)=\lim\limits_{t \rightarrow \tau} f_t(x)$.
+   Si existe una función $\Phi(x)$ integrable sobre $E$, tal que $|f_t(x)|\leq \Phi(x)$ para $x \in E$ y $a<t<b$;
+   entonces $f$ es integrable sobre $E$ y además 
+   $$\int_E f(x)\,dx=\lim_{t \rightarrow \tau}\int_E f_t(x)\,dx. $$
+	\end{ejer}
+	
+	\begin{ejer} [Derivación de una integral paramétrica]{}*
+   Supongamos que la integral 
+   $$ \varphi(t)=\int_E f(t,x)\,dx\;\;\;\;\;\;\;(a<t<b),$$ 
+   existe para cada $t\in (a,b)$; que $f(t,x)$ es derivable con respecto
+   a $t$ y existe una función $g(x)$ integrable sobre $E$, tal que 
+   $$\Bigl|\frac{\partial f(t,x)}{\partial t}\Bigr|\leq g(x)$$
+   para $x \in E$ y $a<t<b$.
+   Probar que $\varphi$ es derivable y además 
+   $$\varphi'(t)=\int_E \frac{\partial f(t,x)}{\partial t}\,dx $$ para $a<t<b$.
+	\\
+   \underline{Sugerencia:} Escribir el cociente $\frac{\varphi(t+h)-\varphi(t)}{h}$, emplear el Teorema del Valor
+   Medio del Cálculo Diferencial y el ejercicio anterior.
+	\end{ejer}
+
+\begin{ejer}[Transformada de Fourier]{}*
+ Si $f$ es integrable sobre $\rr$, la función 
+  $$g(t)=\int_{-\infty}^{\infty} e^{i t x} f(x)\,dx $$
+   es acotada y uniformemente continua.
+   \\
+   Si $x^k.f(x)$ es integrable, entonces $g$ es de clase $C^k$ y además 
+   $$g^{(k)}(t)=\int_{-\infty}^{\infty} e^{i t x} (i x)^k  f(x)\,dx.$$
+ \end{ejer}
+   
+   
+ 
+  
+%\begin{ejer}{} \textcolor{red}{Como vamos a adoptar el enfoque de Fava y Zó no sería adecuado este ejercicio}
+ %Si $(\rr,\mathscr{B})$ denota el espacio medible que consiste de los números reales junto con los conjuntos 
+%de Borel, mostrar que todo subconjunto abierto de $\rr\times \rr$ pertenece a $\mathscr{B}\times \mathscr{B}$.
+%De hecho, esta $\sigma$-álgebra es la sigma-álgebra generada por los subconjuntos abiertos de $\rr\times \rr$.
+%(En otras palabras, $\mathscr{B}\times \mathscr{B}$ es el álgebra de Borel de $\rr \times \rr$).
+%\end{ejer}
+
+
+\begin{ejer}{} 
+Integrar la función no negativa $xe^{-x^2(1+y^2)}$ sobre el conjunto $(0,\infty)\times (0,\infty)$
+en dos formas diferentes. Concluir a partir de sus cálculos que 
+\[
+\int_0^{\infty} e^{-t^2}\,dt=\frac{\sqrt{\pi}}{2}.
+\]
+\end{ejer}
+
+
+\begin{ejer}{} 
+\begin{enumerate}
+\item Integrar la función $\text{sen} x e^{-xy}$ sobre el conjunto $(0,a)\times (0,\infty)$.
+Mostrar que 
+\begin{equation}\label{eq:fubini-senx/x}
+\int_0^a \frac{\text{sen} x}{x}\,dx=
+\frac{\pi}{2}-\cos a\int_0^{-\infty} \frac{e^{-ay}}{1+y^2}\,dy
+-\sen a \int_0^{\infty} \frac{y e^{-ay}}{1+y^2}\,dy
+\end{equation}
+\item Mostrar que 
+\[
+\int_0^{\infty }\frac{\text{sen} x}{x}\,dx=\frac{\pi}{2}
+\]
+\underline{Ayuda:} 
+Demostrar que las integrales de miembro derecho de \eqref{eq:fubini-senx/x} tienden a 0 cuando $a \to \infty$.
+\end{enumerate} 
+\end{ejer}
+
+
+\begin{ejer}{}
+\begin{enumerate}
+\item Mostrar que
+\[
+\int_0^{\infty} \frac{\text{sen} a x}{x}\,dx= 
+\left
+\{\begin{array}{rll}
+\frac{\pi}{2}&si&a>0
+\\
+0&si&a=0
+\\
+-\frac{\pi}{2}&si&a<0
+\end{array}
+\right.
+\] 
+\item Integrando por partes en el item anterior mostrar que
+\[
+\int_0^{\infty}\frac{1-\cos ax}{x^2}\,dx=\frac{\pi}{2}|a|.
+\]
+\item Probar que $\frac{1-\cos ax}{x^2}$ es una función integrable en $(0,\infty)$.
+\end{enumerate}
+\end{ejer}
+
+
+\begin{ejer}{}
+ Por integración de $e^{-xy}$ sobre una región apropiada mostrar que 
+\[
+\int_0^{\infty}\frac{e^{-ax}-e^{-bx}}{x}\,dx=\ln\frac{b}{a}\;\; \mbox{  si   }a>0, \;\;b>0.
+\]
+\end{ejer}
+
+
+%\textcolor{red}{Los siguientes ejericios me gustan todos, pero ¿No quedará demasiado larga la práctica?. ¿NO te parece que asterisquemos 23,25,26,27?}
+
+\begin{ejer}{}*
+ Sean $a_i>0$ para $1\leq i \leq n$ y $J=(0,1)\times \ldots \times (0,1)$.
+Probar que 
+\[
+\int_J  \frac{1}{x_1^{a_1}+x_2^{a_2}+\ldots+x_n^{a_n}}\,dx<\infty 
+\Longleftrightarrow
+\sum\limits_{i=1}^{n}\frac{1}{a_i}>1.
+\]
+\\
+\underline{Ayuda:}
+Sea $G_i=\{x \in J | x_j^{a_j} \leq x_i^{a_i} \mbox{ para todo  } j \}$. \\
+Notar que para $x \in G_i$, $x_i^{a_i}\leq x_1^{a_1}+x_2^{a_2}+\ldots+x_n^{a_n}\leq n x_i^{a_i}$
+y $J=\bigcup\limits_{i=1}^{n} G_i$. \\
+Calcular 
+\[
+\int_G \frac{dx}{x_i^{a_i}}=\int_0^1 x_i ^{a_i\left(\sum\limits_{j=1}^n \frac{1}{a_j}-1\right)-1}\,dx_i,
+\]
+y usar el hecho de que $\int_0^1 t^{s-1}\,dt<\infty \Leftrightarrow s>0$.
+\end{ejer}
+
+
+\begin{ejer}{}
+Sobre $(0,1)\times (0,1)$ considerar
+\[
+f(x,y)=\left\{
+\begin{array}{rll}
+x^{-2}&si&y<x<1
+\\
+-y^{-2}&si&x<y<1
+\end{array}
+\right.
+\]
+y probar que $\int_0^1\,dx\int_0^1 f(x,y)\,dy=1$ y $\int_0^1\,dy \int_0^1 f(x,y)\,dx=-1$.
+\end{ejer}
+
+\begin{ejer}{}*
+ Mostrar que si $f(x,y)=\frac{(x^2-y^2)}{(x^2+y^2)^2}$, entonces
+     $$\frac{\pi}{4}=\int_0^1 \,dx\int_0^1 f(x,y)\,dy\not = \int_0^1\,dy \int_0^1 f(x,y)\,dx=-\frac{\pi}{4}. $$
+\end{ejer}
+
+ \begin{ejer}{}* Mostrar que la función $f(x,y)=\frac{xy}{(x^2+y^2)^2}$ verifica
+   $$\int_{-1}^1 \,dx\int_{-1}^1 f(x,y)\,dy=\int_{-1}^1\,dy \int_{-1}^1 f(x,y)\,dx $$
+   a pesar de que $f$ no es integrable sobre el cuadrado $Q=[-1,1]\times [-1,1]$.
+	\end{ejer}
+
+ 
+\begin{ejer}{}* Una función no negativa $f$, definida sobre $\rr^1$, se llama una {\bf{densidad}}
+   (de probabilidad) si su integral sobre toda la recta es igual a uno. Probar que: 
+	\begin{enumerate}
+	\item La convolución de dos densidades es otra densidad.
+	\item Para cada $p>0$, la función 
+     $$f_p(x)=\left\{ 
+      \begin{array}{cc}
+      \frac{1}{\Gamma(p)} x^{p-1} e^{-x} & \mbox{si $x>0$}\\
+      0 & \mbox{si $x \leq 0$}
+      \end{array}
+      \right. $$
+      es una densidad.
+	 \item Si $p>0$ y $q>0$, entonces $f_p*f_q=f_{p+q}$ y además
+      $$\int_0^1 (1-t)^{p-1} t^{q-1}\,dt=\frac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)}. $$
+      La integral biparamétrica del primer miembro se denota por $B(p,q)$ y se llama 
+      {\bf{función beta}}.
+	\end{enumerate}
+	
+\end{ejer}
+
+
+
+
+	
+	
+	
+	
+
+
+%¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
+
+
+\end{document}
