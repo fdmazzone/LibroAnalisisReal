@@ -111,73 +111,122 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 
 
 
-
-
-
-\begin{ejer}{}
-Sea $\mathcal{A}$ una $\sigma$-álgebra.
-Probar que si $A_n \in \mathcal{A}$ entonces $\bigcap\limits_{n=1}^{\infty} A_n \in \mathcal{A}$.
+\begin{ejer}{} Demostrar que los siguientes ejemplos definen álgebras de conjuntos.
+ \begin{enumerate}
+  \item La colección de todas las uniones de una cantidad finita de intervalos de $\mathbb{R}$, donde por intervalo inlcuímos tanto acotados como  no y tanto abiertos como cerrados como ninguno de ambos.
+  \item Como en el ejemplo anterior, pero con los extremos de los intervalos en $\mathbb{Z}\cup \{\pm \infty\}$ o $\mathbb{Q}\cup \{\pm \infty\}$.
+    \item Más generalmente aún, como en los ejemplos anteriores, pero con los extremos de los intervalos en $A\cup \{\pm \infty\}$, donde $A\subset\mathbb{R}$.
+ \end{enumerate}
 \end{ejer}
+
+
+\begin{ejer}{} Demostrar que los siguientes ejemplos definen clases monótonas.
+ \begin{enumerate}
+  \item La colección de todos los intervalos de $\mathbb{R}$ de la forma $(a,+\infty)$ o $[a,+\infty)$ con $a\in [-\infty,+\infty)$.
+  \item En $\mathbb{R}^n$ la colección de de todas las bolas, tanto cerradas o abiertas, de centro $0$ y radio $r\in[0,+\infty]$. 
+  \item La colección de todos los subgrupos de un grupo dado $G$. 
+ \end{enumerate}
+\end{ejer}
+
 
 \begin{ejer}{}
  Mostrar que  $\Sigma$ es $\sigma$-álgebra si y sólo si $\Sigma$ es álgebra y clase monótona.
 \end{ejer}
 
 
+\begin{ejer}{} Supongamos $\mathscr{A}$ un álgebra que  satisface  $\bigcup\limits_{n=1}^{\infty} E_n\in \mathscr{A},$
+si $E_n \in \mathscr{A}$ para $ n=1,2,\ldots$ son mutuamente disjuntos. Probar que $\mathscr{A}$ es $\sigma$-álgebra.
+ 
+\end{ejer}
+	
+ 
+
 \begin{ejer}{}
- Verificar que $\mathcal{A}=\{(a,+\infty)|a \in \rr\}\cup \{[a,+\infty)|a \in \rr\}$ es clase mónotona pero no 
+ Verificar que $\mathscr{A}=\{(a,+\infty)|a \in \rr\}\cup \{[a,+\infty)|a \in \rr\}$ es clase mónotona pero no 
 es álgebra.
 \end{ejer}
 
-\begin{ejer}{} Verificar las propiedades de $\sigma$-álgebra y medida.
+
+\begin{ejer}[Medida de conteo]{def:med_cont} Sea $X$ es un conjunto y $\mathscr{A}=\mathcal{P}(X)$ la colección de todos los subconjuntos de $X$. Para $A\in\mathscr{A}$ escribamos $\mu(A)=\#A$, cuando $A$ es finito, y $\mu(A)=+\infty$ cuando $A$ no es finito. Demostrar que el triple $(X,\mathscr{A},\mu)$ es espacio de medida.
+ 
+\end{ejer}
+ 
+ 
+\begin{ejer}{def:med_cont} Sea $X=\mathbb{N}$  y $\mathscr{A}=\mathcal{P}(\mathbb{N})$ la colección de todos los subconjuntos de $\mathbb{N}$. Supongamos dada una función $f:\mathbb{N}\to [0,+\infty]$. Para $A\in\mathscr{A}$ escribamos 
+\[\mu(A)=\sum_{n\in A}f(n), \] 
+Demostrar que el triple $(\mathbb{N},\mathscr{A},\mu)$ es espacio de medida. ¿Qué resulta $\mu$ si $f(n)=1$ para todo $n$? ¿Qué condición debe satisfacer $f$ para que $\mu(A)<\infty$ para todo $A\subset\mathbb{N}$?
+ 
+\end{ejer}
+
+\begin{ejer}{}  Sea $(X,\mathscr{A},\mu)$ espacio de medida. Demostrar que se satisface las siguientes relaciones
 \begin{enumerate}
-\item Sean $X=\rr$, $\mathcal{A}=\mathcal{M}$ la $\sigma$-álgebra de los conjuntos medibles y $\mu$ la medida de Lebesgue.
-\item Sean $X=\nn$ y $\{\mu_n\}_{n \in \nn}$ una sucesión con $\mu_n\geq 0$. 
-Luego $\mathcal{A}=\mathcal{P}(\nn)$ es $\sigma$-álgebra; y, si $A\in \mathcal{A}$, entonces 
-$\mu(A)=\sum\limits_{n \in \mathcal{A}} \mu_n$.
+ \item $\mu(\emptyset)=0$.
+ \item $\mu(A\cup B)+\mu(A\cap B)=\mu(A)+\mu(B)$.
+ \item Si $\mu(B)<\infty$ y $B\subset A$ entonces $\mu(A-B)=\mu(A)-\mu(B)$. 
 \end{enumerate}
 \end{ejer}
 
 
-\begin{ejer}{} Sea $\mathcal{M}$ la $\sigma$-álgebra de los conjuntos medibles. 
-Si $E_n \in \mathcal{M}$ para $n=1,2,3,\ldots$, mutuamente disjuntos,  entonces
+\begin{ejer}{def:med_cont_mult3} Sea $X=\mathbb{N}$  y $\mathscr{A}=\mathcal{P}(\mathbb{N})$ la colección de todos los subconjuntos de $\mathbb{N}$. Sea $k$ un natural fijo. Para $A\subset\mathbb{N}$ escribir
+
 \[
-\chi_{\bigcup\limits_{n=1}^{\infty}E_n}=\sum\limits_{n=1}^{\infty}\chi_{E_n}
+ \mu(A)=\#\{ n\in A :  k|n \},
 \]
+es decir $\mu(A)$ cuenta cuantos multiplos de $k$ hay en $A$. Demostrar que $\mu$ es medida. Demostrar que esta medida es una instancia de las medidas introducidas en \eqref {def:med_cont}. 
+\end{ejer}
+
+
+\begin{ejer}[Delta de dirac]{ejer:delta_dirac}
+ Sea $X$ un conjunto no vacío cualquiera, $a\in X$ un punto fijo y $\mathscr{A}=\mathcal{P}(X)$. Definimos $\delta_a:\mathscr{A}\to [0,+\infty]$ por
+ \[
+  \delta_a(A)=\left\{\begin{array}{ll} 1 &\text{ si } a\in A\\0 &\text{ si } a\notin A\end{array}\right.
+ \]
+ Demostrar que $(X,\mathscr{A},\delta)$ es un espacio de medida. La medida $\delta_a$
+se denomina \emph{$\delta$ de Dirac}\index{$\delta$ de Dirac}\index[personas]{Dirac}. 
+\end{ejer}
+ 
+
+\begin{ejer}{} 
+ Sea $\mu_0$ una premedida sobre el álgebra  $\mathscr{A}_0$ de subconjuntos de $X$. Definimos  $\mu^\star:\mathcal{P}(X)\to [0,+\infty]$ por
+ \begin{equation}\label{eq:defi_med_ext}
+  \mu^\star(E)=\inf\left\{ \sum_{j=1}^{\infty}\mu_0(E_j)\mid E\subset \bigcup_{j=1}^{\infty}E_j, E_j\in\mathcal{A}_0  \right\}
+ \end{equation}
+Probar que  $\mu^\star$ es una medida exterior. 
+
+  
 \end{ejer}
 
 \begin{ejer}{} Demostrar que si $\mu$ es una medida sobre una $\sigma$-álgebra,  entonces $\mu(\emptyset)=0$.
 \end{ejer}
 
 \begin{ejer}{}
-Sean $\mu^*$ medida exterior en $X$ y $\mathcal{A}$ el conjunto de todos los conjuntos 
-medibles Carathéodory.
+Sean $\mu^*$ medida exterior en $X$ y $\mathscr{A}$ el conjunto de todos los conjuntos  medibles Carathéodory.
 Probar que:
 \begin{enumerate}
-\item $\emptyset  \in \mathcal{A}$;
-\item si $\mu^{*}(E)=0$ entonces $E \in \mathcal{A}$.
+\item $\emptyset  \in \mathscr{A}$;
+\item si $\mu^{*}(E)=0$ entonces $E \in \mathscr{A}$.
 \end{enumerate}
 \end{ejer}
 
-\begin{ejer}{} Demostrar que:
-\begin{enumerate}
-\item Si $E_1,E_2,\ldots,E_n \in  \mathcal{A}$ y $E_i\cap E_j=\emptyset$ para $i\neq j$, entonces 
-$\mu^{*}(E_1\cup E_2\cup\ldots\cup E_n )=\mu^{*}(E_1)+\mu^{*}(E_2)+\ldots+\mu^{*}(E_n)$.
-\item Sea $\mathcal{A}$ un álgebra cualquiera. 
-
-Supongamos que se satisface que 
-
-\textit{
-si $E_n \in \mathcal{A}$ para $ n=1,2,\ldots$ son mutuamente disjuntos,  entonces 
-$\bigcup\limits_{n=1}^{\infty} E_n\in \mathcal{A}$.}
-
-Probar que $\mathcal{A}$ es $\sigma$-álgebra.
-\end{enumerate}
+\begin{ejer}{} Supongamos que $g:\rr\to\rr$ es no decreciente y diferenciable con $g'$ continua. Sea $\mu_g$ la medida de Lebesgue-Stieltjes que genera $g$. Demostrar que para todo Boreliano $A\subset\rr$
+\[
+ \mu_g(A)=\int_Ag'(t)dt.
+\]
 \end{ejer}
-	
 
+\begin{ejer}{} Sea 
+$$g(x)=\left\{
+            \begin{array}{cc}
+             -1  & \hbox{ si } x<0\\
+             x  & \hbox{ si } 0\leq x < 1\\
+             x^2  &   \hbox{ si } 1\leq x 
+            \end{array}
+       \right.
+$$
+Sea $\mu_g$ la medida de Lebesgue-Stieltjes que genera $g$. Calcular 
+$\mu_g([-1,2])$
+\end{ejer}
 
-%¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
 
 
 \end{document}
