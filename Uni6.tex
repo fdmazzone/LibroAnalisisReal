@@ -9,14 +9,14 @@ Sur l’intégrale d’une fonctionnelle étendueà un ensemble abstrait\\
 Bulletin de la S. M. F., tome  43 (1915), p. 248-265.
 \end{flushright}
 
-En todos los capítulos anteriores hemos tratado de fundar los conceptos que fuimos introduciendo relacionándolos con  conceptos que juzgamos los precedían. cunado decimos  ``preceder''contemplamos tanto el orden lógico de la construcción  como  el grado de abstracción de los objetos de estudio.
+En todos los capítulos anteriores hemos tratado de fundar los conceptos que fuimos introduciendo relacionándolos con  conceptos que juzgamos los precedían. cuando decimos  ``preceder''contemplamos tanto el orden lógico de la construcción  como  el grado de abstracción de los objetos de estudio.
 
-En esta unidad planteamos un salto cualitativo. Vamos abstraernos de la problemática que dió origen a la construcción de la medida en itengral de Lebesgue, esto es la noción de área, y consideraremos una teoría axiomática, donde postularemos como axiomas aquellas propiedades que se revelaron trascendentes en los capítulos anteriores. Este enfoque axiomático se abstrae a su vez de las entidades a las que pretendemos medir, en el sentido que ya no formularemos el concepto de medida para subconjuntos de $\mathbb{R}$, o el espacio euclideano $\mathbb{R}^n$. Introducieremos el concepto de \emph{espacio de medida}\index{Espacio de medida}  como una abstracción de la construcción en capítulos anbteriores y veremos como este concepto induce un consecuente concepto de integral. En capítulos posteriores usaremos esta teoría para construir una medida sobre $\mathbb{R}^n$.
+En esta unidad planteamos un salto cualitativo. Vamos abstraernos de la problemática que dió origen a la construcción de la medida en itengral de Lebesgue, esto es la noción de área, y consideraremos una teoría axiomática, donde postularemos como axiomas aquellas propiedades que se revelaron trascendentes en los capítulos anteriores. Este enfoque axiomático se abstrae a su vez de las entidades a las que pretendemos medir, en el sentido que ya no formularemos el concepto de medida para subconjuntos de $\mathbb{R}$, o el espacio euclideano $\mathbb{R}^n$. Introducieremos el concepto de \emph{espacio de medida}\index{Espacio de medida}  como una abstracción y veremos como este concepto induce un consecuente concepto de integral.  
 
 
 Las nociones introducidas aquí fueron presentadas por primera vez por M. Frechet en el artículo del cual fue extraída la cita con la que comensamos el presente capítulo. 
 
-La noción de medida abstracta es muy fructífera pues unifica multitud de instancias particulares de esta noción que aparecen en distintas áres de la matemática.  además de contemplarla medida de Lebesgue 
+La noción de medida abstracta es muy fructífera pues unifica multitud de instancias particulares de esta noción que aparecen en distintas áres de la matemática  además de contemplar la medida de Lebesgue. 
 
 \section{Algebras, $\sigma$-álgebras y clases monótonas}
 
@@ -91,7 +91,9 @@ Recordemos del capítulo anterior.
 
 \section{Medidas} 
 
-\begin{definicion}{} Sea $X$ un conjunto y $\mathscr{A}$ una $\sigma$-álgebra. Una funcion $\mu:\mathscr{A}\to [0,+\infty]$ se llama una \emph{medida}\index{Medida} si  para toda colección numerable de subconjuntos $A_i\in\mathscr{A}$, $i=1,\ldots$, mutuamente disjuntos entre si, $A_i\cap A_j=\emptyset$ cuando $i\neq j$, se satisface que $\bigcup_{i=1}^{\infty}A_i\in\mathscr{A}$. Al triplete $(X,\mathscr{A},\mu)$ se lo denomina \emph{espacio de medida}.\index{Espacio de medida}. 
+\begin{definicion}{} Sea $X$ un conjunto y $\mathscr{A}$ una $\sigma$-álgebra. Una funcion $\mu:\mathscr{A}\to [0,+\infty]$ se llama una \emph{medida}\index{Medida} si  para toda colección numerable de subconjuntos $A_i\in\mathscr{A}$, $i=1,2,\ldots$, mutuamente disjuntos entre si, se satisface que 
+$$\mu\left(\bigcup_{i=1}^{\infty}A_i\right)=\sum_{i=1}^{\infty}\mu\left(A_i\right).$$
+Al triplete $(X,\mathscr{A},\mu)$ se lo denomina \emph{espacio de medida}.\index{Espacio de medida}. 
 \end{definicion}
 
 
@@ -202,9 +204,7 @@ Sea $X$ un conjunto no vacío. Una función $\mu^\star:\mathcal{P}(X)\to [0,+\in
 \begin{ejemplo}{} La medida exterior que definimos sobre subconjuntos de $\mathbb{R}$ es obviamente una medida exterior en el sentido de la definición anterior. 
 \end{ejemplo}
 
-
-\begin{ejercicio}{} La condición de $\sigma$-subaditividad de la medida exterior fue formulada para uniones de una cantidad numerable de conjuntos, demostrar que vale para una unión en cantidad finita.
-\end{ejercicio}
+ 
 
 
 
@@ -232,13 +232,13 @@ Sea $X$ un conjunto no vacío. Una función $\mu^\star:\mathcal{P}(X)\to [0,+\in
  
  Si uno escribe la condición de Carathéodory para $E^c$ queda exactamente igual que la respectiva condición para $E$. Esta observación justifica que $E\in \mathscr{A}$ implica que $E^c\in\mathscr{A}$.
  
- Sean $E-1,E_2\in\mathscr{A}$ y $A\subset X$. Entonces
+ Sean $E_1,E_2\in\mathscr{A}$ y $A\subset X$. Entonces
  \begin{multline*}
   \mu^\star(A)\geq  \mu^\star(A\cap E_2)+ \mu^\star(A\cap E_2^c)\\
   \geq \mu^\star(A\cap E_1\cap E_2)+ \mu^\star(A\cap E_2\cap E_1^c)\\
   + \mu^\star(A\cap E_2^c\cap E_1)+ \mu^\star(A\cap E_2^c\cap E_1^c)
  \end{multline*} 
-Ahora los conjuntos $E_2\cap E_1, E_2\cap E_1^c$ y $E_1\cap E_2^c$ son mutuamente disjuntos  y su unión es $E_1\cup E_2$. Esta observación aplicada a los tres primeros términos del último miembro de la desigualdad probada en el párrafo anterior resulta en 
+Ahora los conjuntos $E_2\cap E_1, E_2\cap E_1^c$ y $E_1\cap E_2^c$ son mutuamente disjuntos  y su unión es $E_1\cup E_2$. Esta observación aplicada a los tres primeros términos del último miembro de la desigualdad anterior implica
 \[
   \mu^\star(A)\geq \mu^\star(A\cap (E_1\cup E_2))+ \mu^\star(A\cap (E_1\cup E_2)^c).
 \]
@@ -326,14 +326,39 @@ $E\in\mathcal{A}_0$ es medible en el sentido de Carathéodory.
  
 \end{ejercicio}
 
+Veamos que la restricción de $\mu_{*}$ to $\mathcal{A}$ coincide con $\mu_{0}$. Supongamos que $E \in \mathcal{A}$. Siempre $\mu_{*}(E) \leq \mu_{0}(E)$ pues $E$ se cubre a si mismo. Probemos la desigualdad recíproca. Supongamos  $E \subset \bigcup_{j=1}^{\infty} E_{j}$, con $E_{j} \in \mathcal{A}$ para todo $j$. Definimos
+$$
+E_{k}^{\prime}=E \cap\left(E_{k}-\bigcup_{j=1}^{k-1} E_{j}\right)
+.$$
+Los conjuntos $E_{k}^{\prime}$ son mutuamente disjuntos, $E_{k}^{\prime}\in \mathcal{A}, E_{k}^{\prime} \subset E_{k}$ y $E=\bigcup_{k=1}^{\infty} E_{k}^{\prime}$. Por la definición de premedida:
+$$
+\mu_{0}(E)=\sum_{k=1}^{\infty} \mu_{0}\left(E_{k}^{\prime}\right) \leq \sum_{k=1}^{\infty} \mu_{0}\left(E_{k}\right)
+$$
+Luego  $\mu_{0}(E) \leq \mu_{*}(E)$.
 
+Por último probemos que los conjuntos en $\mathcal{A}$ son medibles para $\mu_{*}$. Sea $A\subset X$, $E \in \mathcal{A}$ y $\epsilon>0$. Por definición existen  $E_{1}, E_{2}, \ldots$ en $\mathcal{A}$ con $A \subset \bigcup_{j=1}^{\infty} E_{j}$ y
+$$
+\sum_{j=1}^{\infty} \mu_{0}\left(E_{j}\right) \leq \mu_{*}(A)+\epsilon
+$$
+Como $\mu_{0}$  finitamente  aditiva en $\mathcal{A}$ 
+$$
+\begin{aligned}
+\sum_{j=1}^{\infty} \mu_{0}\left(E_{j}\right) &=\sum_{j=1}^{\infty} \mu_{0}\left(E \cap E_{j}\right)+\sum_{j=1}^{\infty} \mu_{0}\left(E^{c} \cap E_{j}\right) \\
+& \geq \mu_{*}(E \cap A)+\mu_{*}\left(E^{c} \cap A\right)
+\end{aligned}
+$$
 
- \end{demo}
+$\epsilon$ es arbitrario,  $\mu_{*}(A) \geq \mu_{*}(E \cap A)+\mu_{*}\left(E^{c} \cap A\right)$ que termina por probar el teorema. \end{demo}
 
  
 \begin{teorema}[Extensión premedidas]{teo:extension}
   Sea $\mu_0$ una premedida sobre el álgebra  $\mathscr{A}_0$ de subconjuntos de $X$. Entonces existe una extensión $\mu$ de $\mu_0$ a la $\sigma$-algebra   $\mathscr{A}$ generada por  $\mathscr{A}_0$.
 \end{teorema}
+\begin{proof}  La medida exterior $\mu_{*}$ inducida po $\mu_{0}$ define una medida $\mu$ sobre la $\sigma$-álgebra de los conjuntos medibles según  Carathéodory. Por el Lema anterior  $\mu$ es medida sobre $\mathscr{A}$ que extiende $\mu_{0}$. 
+
+\end{proof}
+
+
 
 \section{Medidas $\sigma$-finitas}
 
@@ -346,6 +371,56 @@ $E\in\mathcal{A}_0$ es medible en el sentido de Carathéodory.
 \end{ejercicio}
 
 
+\section{Medida de Lebesgue-Stieltjes}
+
+Haremos una construcción más general  que produce una gran familia de medidas en $\mathbb{R}$ cuyo dominio es el $\sigma$-álgebra de Borel $\mathcal{B}_{\mathbb {R}}$. Tales medidas se denominan \emph{medidas de Borel}\index{medida!Borel} en $\mathbb{R}$.
+
+Para motivar las ideas, supongamos que $\mu$ es una medida de Borel finita en $\mathbb{R}$, y sea $F(x)=\mu((-\infty, x])$ . La función $F$  se llama la \emph{función de distribución}\index{función!distribución} de $\mu$.  Entonces $F$ es creciente a y continua a la derecha, ya que $(-\infty, x]=\ bigcap_{1}^{\infty}\left(-\infty, x_{n}\right]$ siempre que $x_{n} \searrow x$.  Además, si $b>a,(-\infty, b]=(-\infty, a] \cup(a, b]$, entonces $\mu((a, b])=F(b) -F(a)$. Nuestro procedimiento será darle la vuelta a este proceso y construir una medida $\mu$ a partir de una función creciente continua por la derecha $F$. El caso especial $F(x)=x$ producirá la medida habitual de Lebesgue.
+
+Los bloques de construcción de nuestra teoría serán los intervalos abiertos por la izquierda y cerrados por la derecha en $\mathbb{R}$, es decir, conjuntos de la forma $(a, b]$ o $(a, \infty)$ o $\varnothing$, donde $-\infty \leq a<b<\infty$. En esta sección nos referiremos a tales conjuntos como intervalos semi-abiertos. Claramente, la intersección de dos intervalos semi-abiertos es un intervalo semi-abierto, y el complemento de un intervalo semi-abierto es un intervalo semi-abierto o la unión disjunta de dos intervalos semi-abiertos. La colección $\mathcal{A}$ de uniones disjuntas finitas de intervalos semi-abiertos es un álgebra, y la $\sigma$-álgebra generada por $\mathcal{A}$ es la $\sigma$-algebra de Borel  $\mathcal{B}_{\mathbb{R}}$.
+
+
+\begin{proposicion}{}
+ Sea $F: \mathbb{R} \rightarrow \mathbb{R}$ creciente y continua por la derecha. Si $\left(a_{j}, b_{j}\right]$ $(j=1, \ldots, n)$ son intervalos semi-abiertos disjuntos, sea
+$$
+\mu_{0}\left(\bigcup_{1}^{n}\left(a_{j}, b_{j}\right]\right)=\sum_{1}^{n}\left[F\left(b_{j}\right)-F\left(a_{j}\right)\right]
+$$
+y sea $\mu_{0}(\varnothing)=0$. Entonces $\mu_{0}$ es una premedida en el álgebra $\mathcal{A} .$
+\end{proposicion}
+
+\begin{proof}
+ Primero debemos verificar que $\mu_{0}$ esté bien definida, ya que los elementos de $\mathcal{A}$ se pueden representar en más de una forma como uniones disjuntas de intervalos semi-abiertos. Si $\left\{\left(a_{j}, b_{j}\right]\right\}_{1}^{n}$ son disjuntos y $\bigcup_{1}^{n}\left( a_{j}, b_{j}\right]=(a, b]$, entonces, quizás después de volver a etiquetar el índice $j$, debemos tener $a=a_{1}<b_{1}=a_{2 }<b_{2}=\ldots<b_{n}=b$, entonces $\sum_{1}^{n}\left[F\left(b_{j}\right)-F\left(a_{ j}\right)\right]=$ $F(b)-F(a)$. Más generalmente, si $\left\{I_{i}\right\}_{1}^{n}$ y $ \left\{J_{j}\right\}_{1}^{m}$ son dos familias  finitas de intervalos semi-abiertos disjuntos tales que $\bigcup_{1}^{n} I_{i}=\bigcup_{1}^{n} J_{j}$:
+ 
+$$
+\sum_{i} \mu_{0}\left(I_{i}\right)=\sum_{i, j} \mu_{0}\left(I_{i} \cap J_{j}\right)= \sum_{j} \mu_{0}\left(J_{j}\right) .
+$$
+Por lo tanto, $\mu_{0}$ está bien definida y es finitamente aditiva por construcción.
+Queda por demostrar que si $\left\{I_{j}\right\}_{1}^{\infty}$ es una secuencia de intervalos semi-abiertos disjuntos con $\bigcup_{1}^{\infty} I_ {j} \in$ $\mathcal{A}$ entonces $\mu_{0}\left(\bigcup_{1}^{\infty} I_{j}\right)=\sum_{1}^{\infty } \mu_{0}\left(I_{j}\right)$. Dado que $\bigcup_{1}^{\infty} I_{j}$ es una unión finita de  intervalos semi-abiertos, la sucesión $\left\{I_{j}\right\}_{1}^{\infty} $ se puede dividir en un número finito de subsucesiones de modo que la unión de los intervalos en cada subsucesión sea un único intervalo semi-abierto. Al considerar cada subsucesión por separado y usar la aditividad finita de $\mu_{0}$, podemos suponer que $\bigcup_{1}^{\infty} I_{j}$ es un intervalo semi-abierto $I=(a, b]$. En este caso, tenemos
+$$
+\mu_{0}(I)=\mu_{0}\left(\bigcup_{1}^{n} I_{j}\right)+\mu_{0}\left(I \backslash \bigcup_{1} ^{n} I_{j}\right) \geq \mu_{0}\left(\bigcup_{1}^{n} I_{j}\right)=\sum_{1}^{n} \mu_{ 0}\left(I_{j}\right) .
+$$
+Haciendo $n \rightarrow \infty$, obtenemos $\mu_{0}(I) \geq \sum_{1}^{\infty} \mu_0\left(I_{j}\right)$. 
+
+Para probar la desigualdad inversa, supongamos primero que $a$ y $b$ son finitos, y fijemos $\epsilon>0$. Como $F$ es continua por la derecha, existe $\delta>0$ tal que $F(a+\delta)-F(a)<\epsilon$, y si $I_{j}=\left(a_{j} , b_{j}\right]$, para cada $j$ existe $\delta_{j}>0$ tal que $F\left(b_{j}+\delta_{j}\right)-F\left(b_{j}\right)<\epsilon 2^{-j}$ Los intervalos abiertos $\left(a_{j}, b_{j}+\delta_{j}\right)$ cubren el conjunto compacto $[a+\delta, b]$, por lo que hay un sub-cubrimiento finito. Al descartar cualquier $\left(a_{j}, b_{j}+\delta_{j}\right)$ que esté contenido en uno más grande y reetiquetando el índice $j$, podemos suponer que 
+\begin{itemize}
+\item  los intervalos $\left(a_{1}, b_{1}+\delta_{1}\right), \ldots,\left(a_{N}, b_{N}+\delta_{N}\right)$  cubren $[a+\delta, b]$,
+\item  $b_{j}+\delta_{j} \in\left(a_{j+1}, b_{j+1}+\delta_{j+1}\right)$ para $j=1, \ldots , N-1$.
+\end{itemize}
+Pero entonces
+$$
+\begin{aligned}
+\mu_{0}(I) &<F(b)-F(a+\delta)+\epsilon \\
+& \leq F\left(b_{N}+\delta_{N}\right)-F\left(a_{1}\right)+\epsilon \\
+&=F\left(b_{N}+\delta_{N}\right)-F\left(a_{N}\right)+\sum_{1}^{N-1}\left[F\left( a_{j+1}\right)-F\left(a_{j}\right)\right]+\epsilon \\
+& \leq F\left(b_{N}+\delta_{N}\right)-F\left(a_{N}\right)+\sum_{1}^{N-1}\left[F\left (b_{j}+\delta_{j}\right)-F\left(a_{j}\right)\right]+\epsilon \\
+&<\sum_{1}^{N}\left[F\left(b_{j}\right)+\epsilon 2^{-j}-F\left(a_{j}\right)\right]+ \epsilon \\
+&<\sum_{1}^{\infty} \mu\left(I_{j}\right)+2 \epsilon .
+\end{aligned}
+$$
+Dado que $\epsilon$ es arbitrario, demostramos el resultado cuando $a$ y $b$ son finitos. 
+
+Si $a=-\infty$, para cualquier $M<\infty$ los intervalos $\left(a_{j}, b_{j}+\delta_{j}\right)$ cubren $[-M, b]$ , por lo que el mismo razonamiento da $F(b)-F(-M) \leq \sum_{1}^{\infty} \mu_{0}\left(I_{j}\right)+2 \epsilon$, mientras que si $b=\infty$, para cualquier $M<\infty$ obtenemos igualmente $F(M)-F(a) \leq \sum_{1}^{\infty} \mu_{0}\left( I_{j}\right)+2 \epsilon$. El resultado deseado sigue entonces dejando $\epsilon \rightarrow 0$ y $M \rightarrow \infty$.
+\end{proof}
 
 
 \section{Integración en espacio de medida}
@@ -379,6 +454,9 @@ La mayoría de los resultados y definiciones  establecidos en el contexto de la 
  \item Lema Fatou.
  \item Teorema de la convergencia mayorada de Lebesgue
 \end{itemize}
+
+
+\end{document}
 
 \section{Medidas producto}
 
