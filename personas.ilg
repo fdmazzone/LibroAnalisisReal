@@ -1,6 +1,11 @@
 This is makeindex, version 2.15 [TeX Live 2017] (kpathsea + Thai support).
+<<<<<<< HEAD
 Scanning input file personas.idx....done (3 entries accepted, 0 rejected).
 Sorting entries....done (4 comparisons).
 Generating output file personas.ind....done (13 lines written, 0 warnings).
 Output written in personas.ind.
+=======
+Scanning input file personas.idx...done (0 entries accepted, 0 rejected).
+Nothing written in personas.ind.
+>>>>>>> 3fd15fb1fd3b358c305a1abe7dccb499ab10ecd6
 Transcript written in personas.ilg.
