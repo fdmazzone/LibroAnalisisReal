@@ -280,16 +280,63 @@ Asumamos ahora que se satisface \eqref{eq:Crit1Int}. Entonces
    (\mathop{D})\overline{\int_a^b}f(x)dx\leq \overline{S}(P;f)<
    \underline{S}(P;f)+\varepsilon<(\mathop{D})\underline{\int_a^b}f(x)dx +\varepsilon.
  \]
-
-
- 
 \end{demo}
 
 
-\begin{ejemplo}{} Sea $0\leq a<b$ veamos que 
+\begin{ejemplo}{ejemplo:integral-de-x} Sea $0\leq a<b$ veamos que 
 \[
  \int_a^b x dx=\frac{b^2}{2}-\frac{a^2}{2}.
 \]
+\begin{demo}
+Sea $n \in \nn$.
+Consideramos particiones uniformes $P_n=\{x_0,x_1,\ldots,x_n\}$ tales que
+\[x_k=a+\frac{k}{n}(b-a),\;\;  k=0,1,\ldots,n.\]
+Definimos
+\[\begin{split}
+m_i&=\inf\limits_{[x_{i-1},x_i]}f(x)=x_{i-1}=a+\frac{i-1}{n}(b-a),
+\\
+M_i&=\sup\limits_{[x_{i-1},x_i]}f(x)=x_{i}=a+\frac{i}{n}(b-a).
+\end{split}\]
+Luego
+\[
+\overline{S}(f,P_n)-\underline{S}(f,P_n)=
+\sum\limits_{i=0}^{n-1} (M_i-m_i)(x_i-x_{i-1})=
+\sum\limits_{i=0}^{n-1}  
+\frac{b-a}{n}\frac{b-a}{n}=\frac{(b-a)^2}{n}
+\]
+y tomando $n$ suficientemente grande vemos que $\overline{S}(f,P_n)-\underline{S}(f,P_n)$ es menor que $\epsilon$.
+
+Hasta aqu\'i, por aplicaci\'on del Primer Criterio de Integrabilidad,  hemos probado que $f(x)=x$ es integrable. 
+
+Para justificar el valor de la integral operamos del siguiente modo
+\[
+\begin{split}
+\overline{S}(f,P_n)=&
+\sum\limits_{i=0}^{n-1} M_i(x_i-x_{i-1})
+\\
+=&\sum\limits_{i=0}^{n-1} x_i(x_i-x_{i-1})=\sum\limits_{i=0}^{n-1}
+\left(a+\frac{i}{n}(b-a) \right)\frac{b-a}{n}
+\\
+=&a(b-a)+\left(\frac{b-a}{n} \right)^2\sum\limits_{i=0}^{n-1} i
+\\
+=& a(b-a)+\left(\frac{b-a}{n} \right)^2 \frac{n(n+1)}{2}
+\\
+=&(b-a)\left(a+\frac{n+1}{2n} (b-a)\right).
+\end{split}
+\]
+Ahora observamos que 
+$\lim\limits_{n \to \infty} \overline{S}(f,P_n)=\frac{b^2-a^2}{2}$
+Se llega a la misma conclusi\'on con $\underline{S}(f,P_n)$.
+
+Luego, como 
+\[
+\underline{S}(f,P_n)\leq \int_a^b f(x)\,dx \leq \overline{S}(f,P_n),
+\]
+haciendo $n \to \infty$ obtenemos el valor buscado.
+\end{demo}
+
+
+
 \end{ejemplo}
 
 
@@ -304,7 +351,78 @@ Asumamos ahora que se satisface \eqref{eq:Crit1Int}. Entonces
 \[
  \int_a^b x^m dx=\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.
 \]
-\textcolor{red}{COMPLETAR}
+
+\begin{demo}
+Podr\'iamos usar particiones uniformes, pero eso nos obligar\'ia a hallar f\'ormulas para $\sum\limits_{i=0}^i^m$. Usando particiones no uniformes evitamos ese inconveniente. 
+
+Tomamos $n \in \nn$ y 
+\[
+q=\sqrt[n]{\frac{b}{a}}>1.
+\]
+Consideramos $P_n=\{x_0,x_1,\ldots,x_n\}$ tal que
+\[
+x_i=aq^i, \;\;i=0,1,\ldots,n.
+\]
+entonces se tiene
+\[
+x_i-x_{i-1}=aq^{i-1}(q-1).
+\]
+Supongamos que $m>0$, entonces
+\[
+m_i=\inf\limits_{[x_{i-1},x_i]} x^m=x_{i-1}^m=a^mq^{m(i-1)}, \;\;i=1,2,\ldots,n.
+\]
+Similarmente, 
+\[
+M_i=a^mq^{mi},\;\;i=1,2,\ldots,n.
+\]
+Ahora, 
+\[
+\begin{split}
+\overline{S}(f,P_n)=&
+\sum\limits_{i=1}^n a^m q^{mi} aq^{i-1}(q-1)
+\\
+=&\frac{a^{m+1}(q-1)}{q}
+\sum\limits_{i=1}^n (q^{m+1})^i
+\\
+=& \frac{a^{m+1}(q-1)}{q}q^{m+1}
+\sum\limits_{i=0}^{n-1} (q^{m+1})^i
+\\
+=& a^{m+1}(q-1) q^m 
+\frac{q^{(m+1)n }-1}{q^{m+1}-1}
+\\
+=&
+a^{m+1}  \frac{q-1}{q^{m+1}-1} q^m \left[ \left(\frac{b}{a}\right)^{m+1}-1\right]
+.
+\end{split}
+\]
+Ahora, como $\lim\limits_{n \to \infty} q=1$ y 
+$
+\lim\limits_{n \to \infty} \frac{q^{m+1}-1}{q-1}=m+1
+$, entonces
+\[
+\lim\limits_{n \to \infty} \overline{S}(f,P_n)=a^{m+1}
+\frac{\left(\frac{b}{a}\right)^{m+1}-1}{m+1}=\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.
+\]
+Procediendo de manera similar, se obtiene
+\[
+\lim\limits_{n \to \infty} \underline{S}(f,P_n)=
+%a^{m+1}
+%\frac{\left(\frac{b}{a}\right)^{m+1}-1}{m+1}=
+\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.
+\]
+El razonamiento se completa con 
+\[
+\lim\limits_{n \to \infty}
+\overline{S}(f,P_n)-\underline{S}(f, P_n)=0.
+\]
+Luego, $\forall \epsilon>0$ existe $N\in \nn$ tal que si $n>N$ entonces
+\[\overline{S}(f,P_n)-\underline{S}(f, P_n)<\epsilon.\]
+
+Si $m<0$  y $m \neq -1$, trabajando de manera an\'aloga obtenemos el mismo resultado. 
+
+Finalmente, $f(x)=x^m$ es integrable  y, como en el Ejemplo \ref{ejemplo:integral-de-x}, se tiene
+\[\int_a^b x^m dx=\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.\]
+\end{demo}
 \end{ejemplo}
 
 \begin{ejercicio}{} Sea $0< a<b$  y $f(x)=1/x$. Como en el ejemplo \ref{ej:int x^n}  para $n\in\nn$ tomamos $q=(b/a)^{1/n}$ y 
@@ -327,13 +445,14 @@ Inferir que $f$ es integrable en $[a,b]$ y
 \[
  \int_a^b \sen x dx=-(\cos(b)-\cos(a)).
 \]
+\textcolor{red}{COMPLETAR!!!}
 \end{ejemplo}
 
 
 
 \begin{ejercicio}{} Sea $0\leq a<b\leq \pi$. Demostrar que
 \[
- \int_a^b \cos x dx=\sin(b)-\sin(a).
+ \int_a^b \cos x dx=\sen(b)-\sen(a).
 \]
 \end{ejercicio}
 

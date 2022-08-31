@@ -113,8 +113,8 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 
 \begin{ejer}{} Demostrar que los siguientes ejemplos definen álgebras de conjuntos.
  \begin{enumerate}
-  \item La colección de todas las uniones de una cantidad finita de intervalos de $\mathbb{R}$, donde por intervalo inlcuímos tanto acotados como  no y tanto abiertos como cerrados como ninguno de ambos.
-  \item Como en el ejemplo anterior, pero con los extremos de los intervalos en $\mathbb{Z}\cup \{\pm \infty\}$ o $\mathbb{Q}\cup \{\pm \infty\}$.
+  \item La colección de todas las uniones de una cantidad finita de intervalos de $\mathbb{R}$, donde por intervalo entendemos tanto acotados como  no y tanto abiertos como cerrados o ninguno de ambos.
+  \item Como en el ejemplo anterior, pero con los extremos de los intervalos en $\mathbb{Z}\cup \{\pm \infty\}$ ó $\mathbb{Q}\cup \{\pm \infty\}$.
     \item Más generalmente aún, como en los ejemplos anteriores, pero con los extremos de los intervalos en $A\cup \{\pm \infty\}$, donde $A\subset\mathbb{R}$.
  \end{enumerate}
 \end{ejer}
@@ -122,8 +122,8 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 
 \begin{ejer}{} Demostrar que los siguientes ejemplos definen clases monótonas.
  \begin{enumerate}
-  \item La colección de todos los intervalos de $\mathbb{R}$ de la forma $(a,+\infty)$ o $[a,+\infty)$ con $a\in [-\infty,+\infty)$.
-  \item En $\mathbb{R}^n$ la colección de de todas las bolas, tanto cerradas o abiertas, de centro $0$ y radio $r\in[0,+\infty]$. 
+  \item La colección de todos los intervalos de $\mathbb{R}$ de la forma $(a,+\infty)$ ó $[a,+\infty)$ con $a\in [-\infty,+\infty)$.
+  \item En $\mathbb{R}^n$ la colección de de todas las bolas, tanto cerradas como abiertas, de centro $0$ y radio $r\in[0,+\infty]$. 
   \item La colección de todos los subgrupos de un grupo dado $G$. 
  \end{enumerate}
 \end{ejer}
@@ -134,8 +134,8 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
 \end{ejer}
 
 
-\begin{ejer}{} Supongamos $\mathscr{A}$ un álgebra que  satisface  $\bigcup\limits_{n=1}^{\infty} E_n\in \mathscr{A},$
-si $E_n \in \mathscr{A}$ para $ n=1,2,\ldots$ son mutuamente disjuntos. Probar que $\mathscr{A}$ es $\sigma$-álgebra.
+\begin{ejer}{} Supongamos que $\mathscr{A}$ es un álgebra que  satisface  $\bigcup\limits_{n=1}^{\infty} E_n\in \mathscr{A},$
+si $E_n \in \mathscr{A}$ para $ n=1,2,\ldots$ y  mutuamente disjuntos. Probar que $\mathscr{A}$ es $\sigma$-álgebra.
  
 \end{ejer}
 	
@@ -147,18 +147,18 @@ es álgebra.
 \end{ejer}
 
 
-\begin{ejer}[Medida de conteo]{def:med_cont} Sea $X$ es un conjunto y $\mathscr{A}=\mathcal{P}(X)$ la colección de todos los subconjuntos de $X$. Para $A\in\mathscr{A}$ escribamos $\mu(A)=\#A$, cuando $A$ es finito, y $\mu(A)=+\infty$ cuando $A$ no es finito. Demostrar que el triple $(X,\mathscr{A},\mu)$ es espacio de medida.
+\begin{ejer}[Medida de conteo]{def:med_cont} Sea $X$  un conjunto y $\mathscr{A}=\mathcal{P}(X)$ la colección de todos los subconjuntos de $X$. Para $A\in\mathscr{A}$, escribamos $\mu(A)=\#A$ cuando $A$ es finito, y $\mu(A)=+\infty$ cuando $A$ no es finito. Demostrar que el triple $(X,\mathscr{A},\mu)$ es espacio de medida.
  
 \end{ejer}
  
  
-\begin{ejer}{def:med_cont} Sea $X=\mathbb{N}$  y $\mathscr{A}=\mathcal{P}(\mathbb{N})$ la colección de todos los subconjuntos de $\mathbb{N}$. Supongamos dada una función $f:\mathbb{N}\to [0,+\infty]$. Para $A\in\mathscr{A}$ escribamos 
+\begin{ejer}{def:med_cont} Sea $X=\mathbb{N}$  y $\mathscr{A}=\mathcal{P}(\mathbb{N})$ la colección de todos los subconjuntos de $\mathbb{N}$. Supongamos que dada una función $f:\mathbb{N}\to [0,+\infty]$, para $A\in\mathscr{A}$ escribimos 
 \[\mu(A)=\sum_{n\in A}f(n), \] 
 Demostrar que el triple $(\mathbb{N},\mathscr{A},\mu)$ es espacio de medida. ¿Qué resulta $\mu$ si $f(n)=1$ para todo $n$? ¿Qué condición debe satisfacer $f$ para que $\mu(A)<\infty$ para todo $A\subset\mathbb{N}$?
  
 \end{ejer}
 
-\begin{ejer}{}  Sea $(X,\mathscr{A},\mu)$ espacio de medida. Demostrar que se satisface las siguientes relaciones
+\begin{ejer}{}  Sea $(X,\mathscr{A},\mu)$ espacio de medida. Demostrar que se satisfacen las siguientes relaciones
 \begin{enumerate}
  \item $\mu(\emptyset)=0$.
  \item $\mu(A\cup B)+\mu(A\cap B)=\mu(A)+\mu(B)$.
@@ -167,22 +167,25 @@ Demostrar que el triple $(\mathbb{N},\mathscr{A},\mu)$ es espacio de medida. ¿Q
 \end{ejer}
 
 
-\begin{ejer}{def:med_cont_mult3} Sea $X=\mathbb{N}$  y $\mathscr{A}=\mathcal{P}(\mathbb{N})$ la colección de todos los subconjuntos de $\mathbb{N}$. Sea $k$ un natural fijo. Para $A\subset\mathbb{N}$ escribir
-
+\begin{ejer}{def:med_cont_mult3} Sean $X=\mathbb{N}$  y $\mathscr{A}=\mathcal{P}(\mathbb{N})$ la colección de todos los subconjuntos de $\mathbb{N}$. Sea $k$ un natural fijo. Para $A\subset\mathbb{N}$ escribimos
 \[
  \mu(A)=\#\{ n\in A :  k|n \},
 \]
-es decir $\mu(A)$ cuenta cuantos multiplos de $k$ hay en $A$. Demostrar que $\mu$ es medida. Demostrar que esta medida es una instancia de las medidas introducidas en \eqref {def:med_cont}. 
+es decir $\mu(A)$ cuenta cuántos múltiplos de $k$ hay en $A$. Demostrar que: 
+\begin{enumerate}
+    \item $\mu$ es medida;
+    \item $\mu$ es una instancia de las medidas introducidas en \eqref {def:med_cont}. 
+\end{enumerate}
 \end{ejer}
 
 
 \begin{ejer}[Delta de dirac]{ejer:delta_dirac}
  Sea $X$ un conjunto no vacío cualquiera, $a\in X$ un punto fijo y $\mathscr{A}=\mathcal{P}(X)$. Definimos $\delta_a:\mathscr{A}\to [0,+\infty]$ por
  \[
-  \delta_a(A)=\left\{\begin{array}{ll} 1 &\text{ si } a\in A\\0 &\text{ si } a\notin A\end{array}\right.
+  \delta_a(A)=\left\{\begin{array}{ll} 1 &\text{ si } a\in A\\0 &\text{ si } a\notin A.\end{array}\right.
  \]
  Demostrar que $(X,\mathscr{A},\delta)$ es un espacio de medida. La medida $\delta_a$
-se denomina \emph{$\delta$ de Dirac}\index{$\delta$ de Dirac}\index[personas]{Dirac}. 
+se denomina \emph{$\delta$ de Dirac}. 
 \end{ejer}
  
 
@@ -216,14 +219,14 @@ Probar que:
 
 \begin{ejer}{} Sea 
 $$g(x)=\left\{
-            \begin{array}{cc}
+            \begin{array}{cl}
              -1  & \hbox{ si } x<0\\
              x  & \hbox{ si } 0\leq x < 1\\
              x^2  &   \hbox{ si } 1\leq x 
             \end{array}
        \right.
 $$
-Sea $\mu_g$ la medida de Lebesgue-Stieltjes que genera $g$. Calcular 
+y sea $\mu_g$ la medida de Lebesgue-Stieltjes que genera $g$. Calcular 
 $\mu_g([-1,2])$
 \end{ejer}
 
