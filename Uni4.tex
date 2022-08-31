@@ -445,7 +445,89 @@ Inferir que $f$ es integrable en $[a,b]$ y
 \[
  \int_a^b \sen x dx=-(\cos(b)-\cos(a)).
 \]
-\textcolor{red}{COMPLETAR!!!}
+\begin{demo}
+Usamos particiones equiespaciadas  $P_n=\{x_0,x_1,\ldots, x_n\}$
+tal que 
+\[
+x_i=a+\frac{i}{n}(b-a),\;\;i=0,1,\ldots,n;
+\]
+entonces
+\[
+x_i-x_{i-1}=\frac{1}{n},
+\]
+y como $f(x)=\sen x$ es creciente en $[a,b]$ se tiene que 
+\[
+M_i=\sen x_i\:\:\mbox{ y }\;\; m_i=\sen x_{i-1}.
+\]
+Definimos $h:=\frac{b-a}{n}$ y obtenemos 
+\[
+\overline{S}(f,P_n)=
+h\sum\limits_{i=1}^n\sen \left( a+\frac{i}{n}(b-a)\right)
+=h\sum\limits_{i=1}^n \sen(a+ih).
+\]
+Una t\'ecnica usual para calcular sumas consiste en expresar los t\'erminos de la suma como diferencia de otras expresiones. Es as\'i que, a continuaci\'on usaremos la f\'ormula
+\[
+2\sen u \sen v =\cos(u-v)-\cos (u+v)
+\]
+con $u=a+ib$ y $v=h/2$, de donde obtenemos
+\[
+2 \sen(a+ib) \sen \frac{h}{2}=
+\cos\left[a+\left(i-\frac{1}{2}\right)h\right] - 
+\cos \left[a+\left(i+\frac{i}{2}\right)h\right].
+\]
+Luego, podemos re-escribir $\overline{S}(f,P_n)$ como
+\[
+\begin{split}
+\overline{S}(f,P_n)=&h \frac{1}{2 \sen \frac{h}{2}}
+\sum\limits_{i=1}^n 
+\cos\left[a+\left(i-\frac{1}{2}\right)h\right] - 
+\cos \left[a+\left(i+\frac{i}{2}\right)h\right]
+\\
+=&
+\frac{h}{2 \sen \frac{h}{2}}
+\left\{
+\cos\left(a+\frac{h}{2}\right)-\cos\left(a+\frac{3}{2}h\right)+
+\cos\left( a+\frac{3}{2}h\right)\right.
+\\
+\left.
+-&\cos\left(a+\frac{5}{2}h\right)+
+\cos\left(a+\frac{5}{2}h\right)-\cos\left(a+\frac{7}{2}h\right)+\ldots 
+\right.
+\\
+\left.
+-&\cos\left[a+\left(n-\frac{1}{2}\right)h \right]
++\cos\left[a+\left(n-\frac{1}{2}\right)h \right]-
+\cos\left(a+nh+\frac{h}{2}\right)\right\} 
+\\ 
+=&
+\frac{h}{2 \sen \frac{h}{2}}
+\left\{
+\cos\left(a+\frac{h}{2}\right)-\cos\left(b+\frac{h}{2}\right)
+\right\}.
+\end{split}
+\]
+Cuando $n \to \infty$, se tiene que $h \to 0$ y 
+\[
+\lim\limits_{n\to \infty}  
+\frac{h}{2 \sen \frac{h}{2}} =
+\lim\limits_{h\to 0}  
+\frac{1}{\frac{ \sen \frac{h}{2}}{\frac{h}{2}}}=1.
+\]
+As\'i, llegamos a 
+\[\lim\limits_{n\to \infty}  
+\overline{S}(f,P_n)=\cos a -\cos b.
+\]
+De manera similar, se consigue 
+\[\lim\limits_{n\to \infty}  
+\underline{S}(f,P_n)=\cos a -\cos b.
+\]
+Por el argumento empleado en los ejemplos anteriores, la funci\'on $f(x)=\sen x$ resulta integrable y 
+\[
+\int_a^b \sen x\,dx=\cos a -\cos b=-\big[\cos x \big|_a^b.
+\]
+La f\'ormula vale para cualesquiera valores de $a$ y $b$. La limitaci\'on $0\leq a<b\leq \pi/2$ se puso para simplificar el razonamiento. En otro caso, habr\'ia que distinguir los subintervalos de $[a,b]$ donde $f(x)=\sen x$ es creciente de donde es decreciente.
+\end{demo}
+
 \end{ejemplo}
 
 

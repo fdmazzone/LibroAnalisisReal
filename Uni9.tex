@@ -1,0 +1,147 @@
+\chapter{Espacios $L^p$}
+
+\section{El espacio de funciones integrables}
+Sea
+$
+L^1=L^1(E)=
+\{
+f|\mbox{ es integrable en } E
+\}.
+$
+
+$L^1(E)$ es un espacio vectorial donde se define la relaci\'on de equivalencia
+\[
+f \sim g \Longleftrightarrow f=g \;\mbox{ en c.t.p. de } E.
+\]   
+
+ 
+La clase de equivalencia de $f$  que suele notarse con ``$(f)$'', pero en un abuso de notaci\'on, se indicar\'a  $f$
+y $L^1(E)/_{\sim}$ se denotar\'a con $L^1(E)$.
+
+Para $f\in L^1(E)$, definimos
+\[
+\|f\|_1=\int_E|f(x)|\,dx.
+\]
+
+$\| \cdot \|_1$ es una funci\'on no negativa sobre $L^1(E)$ que cumple
+\begin{enumerate}
+    \item [H1)] $\|f+g\|_1\leq \|f\|_1+\|g\|_1$.
+    \item [H2)] $\|\lambda f\|_1=|\lambda|\|f\|_1$.
+    \item [H3)] $\|f\|_1=0$ si y s\'olo si f=0.
+\end{enumerate}
+
+As\'i $(L^1(E),\|\cdot\|_1)$ es un espacio normado. 
+
+Y se define 
+\[
+d(f,g)=\|f-g\|_1.
+\]
+
+Si un espacio normado es completo se denomina espacio de Banach. 
+
+\begin{teorema}{}\label{teorema:L1-completo}
+$L^1(E)$ es un espacio de Banach.
+\end{teorema}
+
+\begin{demo}
+En la prueba 
+%del Teorema\ref{teorema:L1-completo}, 
+usaremos el siguiente ejercicio.
+
+\begin{ejercicio}{}
+Sea $(X,\| \cdot\|)$ un espacio normado. \\
+$(X,\| \cdot\|)$ es un espacio de Banach si y s\'olo si cada vez que 
+\[
+\sum\limits_{n=1}^{\infty} \|x_n\|<\infty,
+\]
+existe $x \in X$ tal que $\sum\limits_{n=1}^{\infty} x_n$.
+\end{ejercicio}
+
+Sea pues $f_i \in L^1(E)$ tal que 
+\[
+\sum\limits_{i=1}^{\infty} \|f_i\|_1<\infty.
+\]
+
+Sea \[ \Phi(x)=\sum\limits_{i=1}^{\infty} |f_i(x)|.\]
+
+$\Phi \in L^1(E)$ y entonces $\Phi$ es finita en casi todo punto. Por lo tanto, 
+\[
+S(x)=\sum\limits_{i=1}^{\infty} f_i(x),
+\]
+est\'a bien definida excepto sobre un conjunto de medida nula.
+%
+Adem\'as $|S|\leq \Phi$ y  $S\in L^1(E)$.
+%
+Ahora, si 
+\[
+S_j(x)=\sum\limits_{i=1}^j f_i(x),
+\]
+tenemos que $S_j \to S$ en c.t.p. y $|S_j-S|\leq 2\Phi \in L^1(E)$ y por lo tanto, por el Teorema de la Convergencia Mayorada de Lebesgue \ref{ AUN NO ESTA EN APUNTE}, 
+\[
+\|S_j-S\|_1=\int_E |S_j-S|\,dx \to 0 \mbox{ cuando } j \to \infty.
+\]
+\end{demo}
+
+\begin{teorema}{}
+Sea $f_i \in L^1(E)$ tal que $f_i \xrightarrow{L^1(E)} f$, entonces existe una subsucesi\'on $f_{i_k}$ tal que $f_{i_k}\to f$ en c.t.p.
+\end{teorema}
+
+\begin{demo}
+Por la desigualdad de Chebyshev, se tiene
+\[
+m(\{x:|f(x)-f_i(x)|>\epsilon \})\leq 
+\frac{1}{\epsilon}\int_E |f(x)-f_i(x)|\,dx \xrightarrow{i \to \infty}0.
+\]
+\'Esto muestra que si $f_i \xrightarrow{L^1(E)} f$ entonces
+$f_i \xrightarrow{m} f$.
+Luego, existe una subsucesi\'on $f_{i_k}\to f$ en c.t.p.
+\end{demo}
+
+\subsection{Conjuntos densos en $L^1(E)$}
+
+\begin{teorema}[Simples $\Rightarrow$ densas en $L^1(E)$]{}
+El conjunto de las funciones simples es denso en $L^1(E)$.
+\end{teorema}
+
+\begin{demo}
+Sea $f\in L^1(E)$. Existe una sucesi\'on $\{f_i\}$ de funciones simples tal que $|f_i|\leq |f|$ y $f_i \to f$. Luego, $f_i \in L^1(E)$ y $|f-f_i|\leq 2|f|$. As\'i, por el Teorema de la Convergencia Mayorada de Lebesgue \ref{FALTA}, $f_i \to f$ en $L^1(E)$.
+\end{demo}
+
+\begin{definicion}{}
+Diremos que $\varphi$ es una funci\'on escalonada si 
+$\varphi=\sum\limits_{i=1}^N \alpha_i \chi_{I_i}$
+con $I_i$ intervalos.
+\end{definicion}
+
+\begin{teorema}[Escalonadas $\Rightarrow$ densas en $L^1(E)$]{}
+El conjunto de las funciones escalonadas es denso en $L^1(E)$.
+\end{teorema}
+
+\begin{demo}
+Bastar\'ia ver que $\chi_{E_0}$ es l\'imite de funciones simples para cada $E_0\subset E$ con $m(E_0)<\infty$.
+Ahora bien, ya se demostr\'o que existe una sucesi\'on  de conjuntos elementales $A_k$, i.e. $A_k=\bigcup\limits_{j=1}^{N_k} I_j^k$ tales que 
+\[
+m\left(E_0\Delta A_k\right) \to 0,
+\]
+siendo
+\[
+m\left(E_0\Delta A_k\right)=
+\int \left|\chi_E-\chi_{A_k}\right|\,dx=
+\bigintss \left|
+\chi_E-\sum\limits_{j=1}^{N_k} \chi_{I_j^k}
+\right|\,dx.
+\]
+\end{demo}
+
+\begin{ejercicio}{}
+El conjunto de las funciones continuas con soporte compacto es denso en $L^1(\rr^n)$.
+\end{ejercicio}
+
+\begin{ejercicio}{}
+$L^1(E)$ es separable.
+\end{ejercicio}
+
+\section{Funciones esencialmente acotadas}
+
+
+\section{Funciones de cuadrado integrable}
