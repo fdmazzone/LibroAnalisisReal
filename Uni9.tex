@@ -1,11 +1,11 @@
 \chapter{Espacios $L^p$}
 
-\section{El espacio de funciones integrables}
+\section{Espacio de funciones integrables}
 Sea
 $
 L^1=L^1(E)=
 \{
-f|\mbox{ es integrable en } E
+f:\mbox{ es integrable en } E
 \}.
 $
 
@@ -31,13 +31,12 @@ $\| \cdot \|_1$ es una funci\'on no negativa sobre $L^1(E)$ que cumple
 \end{enumerate}
 
 As\'i $(L^1(E),\|\cdot\|_1)$ es un espacio normado. 
-
 Y se define 
 \[
 d(f,g)=\|f-g\|_1.
 \]
 
-Si un espacio normado es completo se denomina espacio de Banach. 
+Si un espacio normado es completo se denomina espacio de \emph{Banach}. 
 
 \begin{teorema}{}\label{teorema:L1-completo}
 $L^1(E)$ es un espacio de Banach.
@@ -141,7 +140,381 @@ El conjunto de las funciones continuas con soporte compacto es denso en $L^1(\rr
 $L^1(E)$ es separable.
 \end{ejercicio}
 
-\section{Funciones esencialmente acotadas}
+\section{Espacio de funciones esencialmente acotadas}
+
+La función medible $f$ es esencialmente acotada sobre $E$ si existe $M>0$ tal que
+\begin{equation}\label{eq:defi-norma-infinito}
+|f(x)|\leq M \mbox { en c.t.p. de  } E.
+\end{equation}
+
+$M$ se llama cota esencial de $f$.  Si $f$ es esencialmente acotada sobre $E$, denotamos por $\|f\|_{\infty}$ al \'infimo de los $M$ que satisfacen \eqref{eq:defi-norma-infinito}.
+
+\begin{ejercicio}{}
+$\|f\|_{\infty}$ es cota esencial de $f$ y de hecho es la m\'a chica de las cotas.
+\end{ejercicio}
 
 
-\section{Funciones de cuadrado integrable}
+Si $f$ no es esencialmente acotada ponemos $\|f\|_{\infty}=\infty$.
+
+Notamos con $L^{\infty}(E)$ al conjunto de todas las funciones esencialmente acotadas.
+
+\begin{ejercicio}{}
+\begin{enumerate}
+    \item $L^{\infty}(E)$ es espacio vectorial.
+    \item $\left(L^{\infty}(E),\|\cdot\|_{\infty}\right)$ es un espacio de Banach.
+    \item Las funciones simples son densas en $L^{\infty}(E)$.
+\end{enumerate}
+\end{ejercicio}
+
+\begin{ejemplo}{}
+Las funciones escalonadas no son densas  en $L^{\infty}(E)$.
+
+Por ejemplo, si $\varphi$ es escalera en $\rr$ se tiene  $\|\chi_{\qq}-\varphi\|_{\infty}\geq \frac{1}{2}$. 
+
+\textbf{EN LAS NOTAS MANUSCRITAS APARECE ALGO ASI...QUE NO SE VE BIEN..FALTA ALGO...!!!}
+
+En efecto, si tomamos un abierto $G$ tal que $\qq\subset G$ y $|G|<\frac{1}{2}$.
+
+\[ 
+\left|\frac{1}{2}-\alpha_n\right|\leq \|f-\varphi_n \|_{\infty}<\frac{1}{2}
+\]
+\end{ejemplo}
+
+Si $f\in L^1(E)$ y $g \in L^{\infty}(E)$ entonces $fg\in L^{\infty}(E)$
+y 
+\[
+\int_E |fg|\,dx \leq \|f\|_1\|g\|_{\infty}.
+\]
+As\'i est\'a bien definida la funci\'on 
+\[
+\begin{split}
+\ell_g:L^1(E)\to \rr\\
+\ell_g(f)=\int_E fg\,dx.
+\end{split}
+\]
+$\ell_g$ es lineal y verifica 
+\[
+|\ell_g(f)|\leq \|f\|_1 \|g\|_{\infty}.
+\]
+
+Diremos que una funci\'on lineal $T$ de un espacio normado $X$ en un espacio normado $Y$ es acotada si existe $M>0$ tal que 
+\[
+\|Tx\|_Y \leq M \|x\|_X.
+\]
+
+\begin{proposicion}{}
+$T$ es acotada si y s\'olo si $T$ es continua.
+\end{proposicion}
+
+\begin{demo}
+$\Rightarrow)$ Sean $\epsilon>0,$  $\delta=\frac{\epsilon}{M}$ y 
+$\|x-y\|_X <\epsilon.$
+Entonces
+\[
+\|Tx-Ty\|_Y = \|T(x-y)\|_Y \leq M \|x-y\|_X<\epsilon.
+\]
+$\Leftarrow)$ $T(0)=0$ y $T$ es continua en cero. Luego, existe $\delta>0$ tal que si 
+\[
+\|x\|_X \Rightarrow \|Tx\|_Y<1.
+\]
+Sea $x$ cualquiera, entonces $\left\|\frac{\delta}{2} \frac{x}{\|x\|_X}\right\|_X<\delta$. 
+Luego, 
+\[
+\left\|T\left( \frac{\delta}{2} \frac{x}{\|x\|_X}   \right)\right\|_Y
+\]
+entonces
+\[ 
+\|Tx\|_Y \leq \frac{2}{\delta}\|x\|_X.
+\]
+\end{demo}
+
+Al conjunto de todas las funciones lineales y acotadas entre $X$ e $Y$ se lo denota $L(X,Y)$.
+
+$L(X,Y)$ es espacio vectorial y podemos definir la norma
+\[
+\begin{split}
+\|T\|=&\sup\left\{ \|Tx\|: \|x\|\leq 1\right\}\\
+=&\sup\left\{ \|Tx\|: \|x\| = 1\right\}\\
+=&\sup\left\{ \frac{\|Tx\|}{\|x\|}: x \in X\right\}\\
+=&\inf\left\{ M: \|Tx\|\leq M \|x\|\;\forall x \in X\right\}.
+\end{split}
+\]
+
+\begin{ejercicio}{}
+Probar la equivalencia entre las definiciones de $\|T\|.$
+\end{ejercicio}
+
+\begin{ejercicio}{}
+Si $Y$ es completo, entonces $L(X,Y)$ tambi\'en lo es.
+\end{ejercicio}
+
+As\'i $L(X,\rr)$ es un espacio de Banach que se llama \emph{dual} de $X$ y se denota por $X^*$,
+
+Diremos que $X$ e $Y$ son isom\'etricos si existe un isomorfismo $T:X\to Y$ tal que $\|Tx\|_Y=\|x\|_X$. 
+
+Escribiremos $X \cong Y$.
+
+\begin{teorema}{teo:dual-de-L1}
+$(L^1)^* \cong L^{\infty}.$
+\\
+Com\'unmente se escribe, por abuso de notaci\'on, $(L^1)^{*}=L^{\infty}$.
+\end{teorema}
+
+\begin{demo}
+Consideremos
+\[
+\begin{split}
+\ell:L^{\infty}  & \longrightarrow (L^1)^*
+\\
+g & \longmapsto \ell_g.
+\end{split}
+\]
+Ahora 
+\[
+\|\ell(g)\|_{(L^1)^*}=\|\ell_g\|_{(L^1)^*}=
+\sup\limits_{\|f\|_1 =1} |\ell_g(f)| \leq 
+\sup \limits_{\|f\|_1=1} \|g\|_{\infty} \|f\|_1 =\|g\|_{\infty}.
+\]
+Sea ahora $g$ no nula, entonces dado $\epsilon>0$ tenemos
+\[
+m\left(\{x: |g|>\|g\|_{\infty}-\epsilon|  \}\right)>0.
+\]
+Si $A \subset \left(\{x \big|\; |g|>\|g\|_{\infty}-\epsilon|  \}\right)$
+con $0<m(A)<\infty$ y definimos 
+\[
+f=\sgn(g) \frac{1}{m(A)} \chi_A,
+\]
+entonces
+\[
+\begin{split}
+    \|\ell_g\|_{(L^1)^*} \geq& \ell_g(f)=\int_E gf\,dx 
+    \\
+    &= \frac{1}{m(A)} \int_A |g|\,dx\geq \|g\|_{\infty}-\epsilon.
+\end{split}
+\]
+Luego, $\|\ell_g\|_{(L^1)^*}=\|g\|_{\infty}$.
+
+La prueba de la segunda parte del teorema se ver\'a m\'as adelante.
+\end{demo}
+
+\section{Espacio de funciones de cuadrado integrable}
+
+Denotamos por $L^2(E)$ al conjunto de todas las funciones $f$ medibles sobre $E$ tales que 
+\[ 
+\int_E |f|^2\,dx <\infty.
+\]
+Si $f,g \in L^2(E)$ entonces $fg \in  L^1(E)$ pues
+\[
+fg \leq \frac{1}{2}\left(f^2+g^2\right).
+\]
+Luego, $(f+g)^2 \in L^1(E)$ y entonces se dice que $L^2(E)$ es espacio vectorial. 
+
+Para $f,g\in L^2(E),$ definimos 
+\[
+(f,g)=\int_E fg\,dx.
+\]
+
+$(\, ,\, )$ es un producto escalar o interno sobre $\rr$, \'esto es, 
+$(\, ,\, )$ satisface
+\begin{enumerate}
+    \item $(f,g+h)=(f,g)+(f,h)$,
+    \item $(f,g)=(g,f)$,
+    \item $(f,f)\geq 0$,
+    \item $(f,f)=0$ si y s\'olo si $f=0$.
+\end{enumerate}
+
+Si ponemos $\|f\|_2=(f,f)^{1/2}$, obtenemos una norma y se satisface la desigualdad de Cauchy-Schwartz
+\[
+(f,g)\leq \| f \|_2\|g\|_2.
+\]
+Un espacio vectorial $H$ sobre el que se tiene definido un producto escalar $(\, ,\, )$ el cual da origen a una norma que hace a $H$ completo se llama espacio de \emph{Hilbert}.
+
+\begin{teorema}{}
+$L^2(E)$ es espacio de Hilbert.
+\end{teorema}
+
+\begin{demo}{}
+Resta ver la completitud. 
+
+Sea $f_n$ una sucesi\'on de Cauchy, entonces 
+dado $\epsilon>0$ tenemos que 
+\[
+m\left(\left\{x: |f_n(x)-f_m(x)|>\epsilon \right\} \right)
+\leq \frac{1}{\epsilon^2} \int_E |f_n(x)-f_m(x)|^2\,dx.
+\]
+As\'i, $\{f_n\}$ es fundamental en medida. Por lo tanto, 
+existe $f$ tal que $f_n \xrightarrow[]{m} f$ y 
+existe una subsucesi\'on $\{n_k\}$ tal que $f_{n_k}\to f$ en c.t.p.de $E$.
+
+A continuaci\'on veremos  que $f \in L^2(E)$ y $f_n \to f$ en $L^2(E)$.
+
+Como $\{f_n\}$ es sucesi\'on de Cauchy en $L^2(E)$, entonces est\'a acotada en $L^2(E)$, o sea, existe $M>0$ tal que $\|f\|_2\leq M$. 
+Luego, por el Lema de Fatou \ref{PONER LA REFERENCIA!!!}, 
+\[
+\int_E |f|^2\,dx\leq \liminf\limits_{k \to \infty} \int_E |f_{n_k}|^2\,dx \leq M^2.
+\]
+Nuevamente, por el Lema de Fatou, llegamos a 
+\[
+\int_E |f_n-f|^2\,dx\leq \liminf\limits_{k \to \infty} \int_E |f_n-f_{n_k}|^2\,dx \leq \epsilon,
+\]
+si $n$ es grande.
+\end{demo}
+
+\subsection{Algunos hechos sobre espacios de Hilbert}
+
+\begin{teorema}{}\label{teo:existe-proyeccion-sobre-H}
+Sean $H$ un espacio de Hilbert,  $M$ un subsespacio cerrado de $H$ y  $x \in H$. Entonces existe $m \in M$ tal que 
+\[
+\|x-m\| \leq \|x-h\|\; \forall h \in M.
+\]
+\end{teorema}
+
+\begin{demo}
+Sea $m_k \in M$ tal que   \textbf{CHEQUEAR LA SIGUIENTE FORMULA!!!, en el pdf NO SE VE BIEN!!!}
+\[ \|x-m_k\| \leq  d\|x_1\|+\frac{1}{k}. \]
+Utilizamos la \emph{Identidad del Paralelogramo}
+\[ 
+\left\| \frac{x+y}{2} \right\|^2 +\left\| \frac{x-y}{2} \right\|^2
+= \frac{1}{2}\left(\| x \|^2+ \|y\|^2  \right), 
+\]
+con los vectores $x-m_k$
+\[ 
+\left\| \frac{x-m_k+x-m_j}{2} \right\|^2 +\left\| \frac{x-m_k-(x-m_j)}{2} \right\|^2
+= \frac{1}{2}\left(\| x+m_k \|^2+ \|x-m_j\|^2  \right), 
+\]
+y obtenemos
+\[
+\left\| \frac{m_j-m_k}{2} \right\|^2 \leq \frac{1}{2} \left(d_k^2 +d_j^2\right)-d^2
+\xrightarrow[]{k,j \to \infty}0.
+\]
+De este modo, resulta que $\{m_j\}$ es una sucesi\'on de Cauchy, entonces $m_j \to m$ 
+y se satisface lo pedido.
+\end{demo}
+
+\begin{definicion}{}
+$m$ del Teorema \ref{teo:existe-proyeccion-sobre-H} se llama la proyecci\'on de $x$ sobre $M$ y se denota $P_M(x)$.
+\end{definicion}
+
+\begin{teorema}{}
+Sean $H$ y $M$ como en el Teorema \ref{teo:existe-proyeccion-sobre-H}. 
+Entonces son equivalentes
+\begin{enumerate}
+    \item $m=P_M(x)$,
+    \item $x-m \perp M$, o sea  $(x-m,h =0)$ $\forall h \in M$.
+\end{enumerate}
+\end{teorema}
+
+\begin{demo}
+$1) \Rightarrow 2)$
+Sea $h\in M$. Entonces
+\[
+\begin{split}
+\|x-(m+\lambda h)  \|^2 \geq \| x-m\|^2 \Leftrightarrow
+\\
+\|x-m\|^2-2\lambda (x-m,h)+\lambda^2 \|h\|^2\geq \|x-m\|^2.
+\end{split}
+\]
+A partir de aqu\'i, se deduce que $(x-m,h)\geq 0$. Luego, como \'esto vale para $-h$ se concluye $2)$.
+
+$2) \Rightarrow 1)$ Sea $h\in M$. Luego
+\[
+\|x-m\|^2=(x-m,x-m)=(x-m,x-h)\leq \|x-m\| \|x-h\|.
+\]
+Si $v \in H$ entonces $\ell_v: H \to \rr$ definida por $\ell_v(u)=(u,v)$
+satisface $l_v \in H^*$.
+\end{demo}
+
+
+\begin{teorema}{}[Representaci\'on de Riesz]
+La aplicaci\'on $v \longmapsto \ell_v$ es una isometr\'ia suryectiva de
+$H$ en $H^*$.
+\end{teorema}
+
+\begin{demo}
+Se tiene 
+\[
+\|\ell_v\|=\sup\limits_{\|u\|\leq 1} \ell_v(u) =
+\sup\limits_{\|v\|\leq 1} (u,v)\leq \|v\|.
+\]
+Adem\'as
+\[
+\|\ell_v\|\geq \left\|\ell_v\left(\frac{v}{\|v\|}\right) \right\|
+=\|v\|.
+\]
+Claramente, $\ell$ es lineal. Resta ver que $\ell$ es suryectiva. 
+
+Sea $\ell \in H^*$ y supongamos que $\ell \neq 0$. Definimos
+\[
+N=\{ x \in H: \ell(x)=0  \}.
+\]
+Como $\ell $ es lineal y continua, $N$ es un subespacio cerrado y $N \neq H$. Sea $y_0 \notin N$. Existe $x \in N$ tal que \[y:=y_0-x \perp N.\]
+Podemos suponer $\|y\|=1$. 
+Sea $x \in H$ entonces
+\[
+x=\left( x- \frac{\ell(x)}{\ell(y)} y \right)+\frac{\ell(x)}{\ell(y)} y=:
+u+\alpha y.
+\]
+Notar que $u \in N$. Sea $v=\ell(y) y$ entonces
+\[
+\ell(\alpha y)=(\alpha y,v).
+\]
+Si $x \in N$ entonces $(v,x)=0$. Luego, $\forall x \in H$ tenemos
+\[
+\ell(x)=\ell(u)+\ell(\alpha y)=(u,v)+(\alpha y,v)=(x,v).
+\]
+\end{demo}
+
+\begin{lema}{lem:fg-en-L-infinito-para-f-en-L1}
+Si 
+$
+\int_E |fg|\,dx <\infty
+$
+para toda $f \in L^1(E)$, entonces $g \in L^{\infty}(E)$.
+\end{lema}
+
+\begin{demo}
+Supongamos que $g \notin L^{\infty}(E)$. Sea $A_i$ tal que $0<m(A_i)<\infty$ y 
+\[
+A_i\subset \left\{x: 2^i< |g(x)|\right\}.
+\]
+Consideramos  \[f = \sum\limits_{i=1}^{\infty} \frac{1}{2^im(A_i)} \chi_{A_i} \] tal que $f \in L^1(E)$. 
+Luego, $|fg| \notin L^1(E)$.
+\end{demo}
+
+Ahora completaremos la demostraci\'on de
+%l Teorema \ref{teo:dual-de-L1}: 
+$(L^1)^*=L^{\infty}$.
+
+\begin{demo}{}[Segunda parte de la prueba del Teorema \ref{teo:dual-de-L1}]
+Sea $\ell \in (L^1)^*$. Supongamos que $m(E)<\infty$.
+Por la desigualdad de Cauchy-Schwarz tenemos
+\[
+|\ell(f)|\leq \|\ell\|\|f\|_1=\|\ell\| \int_E |f|\,dx 
+\leq \|\ell\| \left[m(E)\right]^{1/2}\|f\|_2, 
+\]
+si $f \in L^2(E)$.
+Entonces $\ell$ define un elemento de $(L^2)^*$. Luego, existe $g \in L^2(E)$ con 
+\[
+\ell(f)=\int_E fg\,dx=\ell_g(f), \;\forall f \in L^2(E).
+\]
+Como $\ell$ es lineal y continua, 
+\[
+\int_E |fg|\,dx \leq \|\ell\| \|f\|_1, \;\forall f \in L^2(E).
+\]
+Si $f \in L^1(E)$, definimos $f_n=\min\{n, |f|\}$. Luego,  se tiene que $f_n \in L^2(E)$ y $f_n \nearrow |f|$. Entonces, por el Teorema de Beppo-Levi \ref{REFERENCIA}, se obtiene
+\[
+\int_E |f| |g|\,dx =\lim\limits_{n \to \infty} \int_E f_n g\,dx 
+\leq \lim\limits_{n \to \infty} \|\ell\| \|f_n\|_1
+=\|\ell\| \|f\|_1.\]
+Por el Lema \ref{lem:fg-en-L-infinito-para-f-en-L1}, resulta que $g \in L^{\infty}(E)$.
+Como $L^2 \cap L^1$ es denso en $L^1$ tenemos $\ell-\ell_g \in L^1$.
+
+Si $m(E)=\infty$, escribimos $E=\bigcup\limits_{k=1}^{\infty} E_k$
+con $m(E_k)<\infty$ y $E_k \cap E_j=\emptyset$ si $k \neq j$.
+\end{demo}
+
+
+
+
+
+\section{Finalmente...los espacios $L^p$}
