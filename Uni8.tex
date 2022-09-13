@@ -641,4 +641,135 @@ La otra desigualdad es inmediata.
                     
                     La siguiente propiedad se llama \emph{continuidad absoluta}.
                     
+                    \begin{teorema}{}
+                    Sea $f \in L(\rr^n)$, entonces $\forall \epsilon>0$ \;$\exists \delta >0$ tal que 
+                    \[
+                    m(E)<\delta \Longrightarrow |\Phi(E)|<\epsilon.
+                    \]
+                    \end{teorema}
                     
+                    \begin{demo}
+                    Se puede suponer que $f\geq 0$. \\
+                    Sea $f_k=\min\{f,k\}$, entonces $f_k \nearrow f$.
+                    Por el Teorema de Beppo-Levi (Teorema \ref{teo:Beppo-Levi}) se tiene que 
+                    $\int_E f_k \nearrow \int_E f$ y por tanto
+                    $
+                    \int_E f-f_k \to 0.
+                    $
+                    As\'i, existe $k \in \nn$ tal que 
+                    \[
+                    \int_E f-f_k < \frac{\epsilon}{2}.
+                    \]
+                    Sea $\delta <\frac{\epsilon}{2k}$. Luego, si $m(E)<\delta$ entonces 
+                    \[
+                    \int_E f =\int_E f-f_k +\int_E f_k <\frac{\epsilon}{2}+km(E)<\epsilon. 
+                    \]
+                    \end{demo}
+                    
+                    \section{Comparaci\'on con la integral de Riemann}
+                    
+                    Sea $f$ acotada en $[a,b]\subset \rr$. 
+                    Si $a=x_0<x_1<x_2<\ldots<x_N=b$, llamamos suma inferior de Riemann $s$ y suma superior de Riemann $S$ a 
+                    \[
+                    s=\sum\limits_{i=1}^N m_i (x_i-x_{i-1})  \;\;\mbox{ y }\;\;
+                     S=\sum\limits_{i=1}^N M_i (x_i-x_{i-1}),
+                    \]
+                    respectivamente, donde 
+                    \[
+                    m_i=\inf\limits_{[x_{i-1},x_i]} f\;\;\mbox{ y }\;\;
+                    M_i=\sup\limits_{[x_{i-1},x_i]} f.
+                    \]
+                    
+                    Una funci\'on $f$ se llama integrable seg\'un Riemann si y s\'olo si
+                    $\forall \epsilon>0$ existe una partici\'on para la cual 
+                    \[
+                    S-s<\epsilon.
+                    \]
+                    
+                    
+                    La integral de Riemann se define 
+                    \[ \R\, \int_a^b f =\sup s = \inf S. \]
+                    
+                    \begin{teorema}{}
+                    Si $f$ es integrable Riemann sobre $[a,b]$, entonces
+                    $f$ es medible e integrable  Lebesgue. Adem\'as, 
+                    \[
+                    \R  \,\int_a^b f = \int_a^b f.
+                    \]
+                    \end{teorema}
+                    
+                    \begin{demo}
+        Si $a=x_0<x_1<x_2<\ldots<x_N=b$, definimos las funciones escalonadas 
+        \[
+        \varphi(x)=\sum\limits_{i=1}^N m_i \chi_{J_i} \;\;\mbox{ y }\;\;
+        \psi(x)=\sum\limits_{i=1}^N M_i \chi_{J_i} 
+        \]
+        donde 
+        $J_i=[x_{i-1},x_i]$. Entonces $\varphi \leq f \leq psi$ en c.t.p. de $[a,b]$.
+        
+        Si $f$ es integrable Riemann, existen dos sucesiones de funciones escaleras $\varphi_k$ y $\psi_k$ tales que 
+        $\varphi_k \leq f \leq \psi_k$ y 
+        \[
+        \int_a^b \psi_k -\varphi_k <\frac{1}{k}.
+        \]
+        Adem\'as, si $g=\sup\varphi_k$ y $h=\inf \psi_k$, entonces
+        $g$ y $h$ son borelianas y $g\leq f\leq h$.
+        Adem\'as
+        \[
+        \int_a^b \varphi_k \leq \int_a^b f \leq \int_a^b \psi_k
+        \]
+        y 
+        \[
+        \R\,\int_a^b \varphi_k \leq\; \R\, \int_a^b f \leq\; \R\, \int_a^b \psi_k,
+        \]
+        de donde
+        \[
+        \left|
+        \int_a^b f -\; \R\,\int_a^b f
+        \right|\leq 
+        \int_a^b \psi_k - \varphi_k <\frac{1}{k}.
+        \]
+                            \end{demo}
+                            
+                            \section{Integraci\'on parcial: Teorema de Fubini}
+                            
+        Si $u \in \rr^{n+m}$, pondremos $u=(x,y)$
+        con $x \in \rr^n$ e $y \in \rr^m$. 
+        
+        Si $E\subset \rr^{n+m}$ e $y\in \rr^n$, entonces
+        \[
+        E_x=\{y \in \rr^m: (x,y)in E\},
+        \]
+        se llama la \emph{secci\'on} de $E$ en $x$.
+                An\'alogamente, se define $E_y$.
+        
+        Se puede demostrar que 
+        \[
+        \left(\bigcup\limits_{k=1}^{\infty} E_k \right)_x
+        = \bigcup\limits_{k=1}^{\infty} \left(E_k\right)_x\]
+        y
+        \[
+        \left(\bigcap\limits_{k=1}^{\infty} E_k \right)_x
+        = \bigcap\limits_{k=1}^{\infty} \left(E_k\right)_x,\]
+        para cualquier sucesi\'on de conjuntos $E_k$ contenidos en $\rr^{n+m}$. 
+        
+        Si $E_1\subset E_2$ entonces 
+        \[
+        \left(E_1\right)_x  \subset   \left(E_2\right)_x   
+       \; \mbox{ y }\;
+        \left(E_1-E_2\right)_x=\left(E_1\right)_x -\left(E_2\right)_x.
+        \]
+        
+        \begin{teorema}{}[Principio de Cavalieri]
+        Sea $E$ medible en $\rr^{n+m}$, entonces
+        \begin{enumerate}
+            \item $E_x$ es medible de $\rr^{n+m}$ en c.t.p. $x \in \rr^n$;
+            \item $m\left(E_x\right)$ es medible como funci\'on de $x$;
+            \item $m(E)=\int m\left(E_x\right)\, dx$.
+        \end{enumerate}
+        \end{teorema}
+        
+        \begin{demo}
+        SEGUIR DESDE LA PAGINA 7 DEL PDF INTEGRAL DE LEBESGUE B!
+                
+        \end{demo}
