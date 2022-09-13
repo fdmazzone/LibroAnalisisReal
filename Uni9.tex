@@ -518,3 +518,176 @@ con $m(E_k)<\infty$ y $E_k \cap E_j=\emptyset$ si $k \neq j$.
 
 
 \section{Finalmente...los espacios $L^p$}
+
+Sea $1\leq p<\infty$.  Dado $E$ medible y $f:E\to \rr$, definimos 
+\[
+\|f\|_p=\left\{ \int_E |f(x)|^p\,dx \right\}^{\frac{1}{p}}.
+\]
+
+Las funciones que verifican $\|f\|_p<\infty$ forman la clase $L^p(E)$.
+
+$L^p(E)$ es un espacio normado con $\|\cdot \|_p$ como norma. A  continuaci\'on, demostraremos la desigualdad triangular. 
+
+Supondremos que $\|f\|_p,\|g\|_p>0$. Como $t^p$ es convexa para $1\leq <\infty$ tenemos 
+\[
+\left( \frac{|f(x)|+|g(x)|}{\|f\|_p+\|g\|_p}   \right)^p \leq 
+\frac{\|f\|_p}{\|f\|_p+\|g\|_p} \frac{|f|^p}{\|f(x)\|_p}+  
+\frac{\|g\|_p}{\|f\|_p+\|g\|_p} \frac{|g(x)|^p}{\|g\|_p}.
+\]
+Integrando sobre $E$ obtenemos
+\[
+\int_E \left(\frac{|f(x)|+|g(x)|}{\|f\|_p+\|g\|_p}\right)^p \,dx\leq 1.
+\]
+A partir de aqu\'i, despejando se deduce la desigualdad triangular tambi\'en llamada \emph{desigualdad de Minkowski}.
+
+\begin{ejercicio}{}
+$L^p(E)$ es espacio de Banach.
+\end{ejercicio}
+
+Sean $1<p<\infty$ y $q$ tal que $\frac{1}{p}+\frac{1}{q}=1$. \\$q$ se llama exponente conjugado de $p$ y satisface  $1<q<\infty$.
+
+\begin{lema}{}
+ Si $a,b\geq 0$ se cumple que
+\[ab\leq \frac{a^p}{p}+\frac{b^q}{q}.\]
+\end{lema}
+
+\begin{demo}
+Empleando propiedades de las funciones exponenciales y logar\'itmicas se puede escribir
+\[
+ab=e^{\ln a} e^{\ln b}=e^{\frac{\ln a^p}{p}} e^{\frac{\ln b^p}{p}}=
+e^{\frac{\ln a^p}{p}+\frac{\ln b^p}{p}}.
+\]
+Dado que $e^x$ es funci\'on convexa, se tiene que 
+\[
+e^{\frac{\ln a^p}{p}+\frac{\ln b^p}{p}}
+\leq 
+\frac{1}{p} e^{\ln a^p}+\frac{1}{q}e^{\ln b^q}=\frac{a^p}{p}+\frac{b^q}{q}.
+\]
+\end{demo}
+
+Si ahora $f \in L^p$ y $g \in L^q$, reemplazamos $a$ por $\frac{|f(x)|}{\|f\|_p}$ y $b$ por $\frac{|g(x)|}{\|g\|_p}$,   
+integramos sobre $E$ y obtenemos
+\[
+\int_E \frac{|f(x)|}{\|f\|_p} \frac{|g(x)|}{\|g\|_p} \,dx \leq \frac{1}{p}+\fraC{1}{q}=1.
+\]
+A partir de aqu\'i, deducimos que $fg\in L^1(E)$ y se satisface 
+\[
+\int_E fg \,dx \leq \|f\|_p \|g\|_q, \mbox{ \textbf{Desigualdad de H\"older.}}
+\]
+
+Otra desigualdad importante es la  que se presenta a continuaci\'on.
+
+\begin{lema}{}[Desigualdad de Jensen]
+ Sea $f \in L^1(E)$ con $0<m(E)<\infty$ y sea $\varphi:\rr \to \rr$ convexa. Entonces
+ \[
+ \varphi\left( \frac{1}{m(E)}\int_E f(x)\,dx \right) \leq \frac{1}{m(E)} \int_E \varphi(f)\,dx.
+ \]
+ \end{lema}
+
+\begin{demo}
+Como $\varphi$ es funci\'on convexa, para todo $x_0\in \rr$ existe $a\in \rr$ tal que 
+\[
+\varphi(x)\geq \varphi(x_0)+a(x-x_0).
+\]
+Luego,
+\[
+\begin{split}
+\frac{1}{m(E)} \int_E \varphi(f)\,dx &\geq 
+\frac{1}{m(E)}\int_E \varphi(x_0)+a(f(x)-x_0)\,dx
+\\
+&=\varphi(x_0)+a\frac{1}{m(E)}\int_E f(x)\,dx -ax_0.
+\end{split}
+\]
+Ahora, tomamos $x_0=\frac{1}{m(E)} \int_E f(x)\,dx$ y  conseguimos la desigualdad buscada.
+\end{demo}
+
+\begin{teorema}{}
+Sea $f$ medible sobre $E$ y $1\leq p\leq \infty$.
+Entonces
+\begin{enumerate}
+    \item Si $f \in L^p$, entonces 
+   \begin{equation}\label{eq:defi-alternativa-norma-p}
+        \|f \|_p=\sup\limits_{g} \int_E fg\, dx,
+   \end{equation}
+   donde el supremo se toma sobre todas las funciones $g$ tales que
+   $\|g\|_q\leq 1$.
+   \item Si el supremo en \eqref{eq:defi-alternativa-norma-p} es finito entonces  $f \in L^p$ y dicho supremo es $\|f \|_p$.
+   \end{enumerate}
+\end{teorema}
+
+\begin{demo}
+El caso $p=\infty$ ya fue analizado, as\'i que veremos el caso $1\leq p<\infty$.
+\begin{enumerate}
+    \item Por la desigualdad de H\"older tenemos
+    \[\sup\limits_{\|g\|_q\leq 1} \int_E fg\,dx \leq \|f\|_p.\]
+    Supongamos que $f \neq 0$, pues $f=0$ es trivial.
+    Sea $g= \frac{|f|^{p-1}}{\|f\|_p^{p-1}} \sgn f$, entonces
+    $g \in L^q$ y $\|g\|_q\leq 1$ y 
+    \[ \int_E fg\, dx=\|f\|_p. \]
+    \item Supongamos que $f\geq 0$ tal que $\|f\|_p=\infty.$
+    Definimos 
+    \[
+    f_k(x)=\left\{
+    \begin{array}{ll}
+       0  &    \mbox{ si } |x|\geq k
+       \\
+    \min\{f(x),k\}     &  \mbox{ si } |x|\leq k,
+    \end{array}
+    \right.
+    \]    
+    entonces $f_k \in L^p$ y por el Teorema de Beppo-Levi \ref{LO QUE CORRESPONDA}, tenemos
+    $\|f_k\|_p \nearrow \|f\|_p=\infty. $
+    Sea  $g_k\in L^q$ con $\|g_k\|_q=1$ y 
+    \[
+    \int_E f_g g_k\, dx=\|f_k\|_p.
+    \] 
+    Luego, 
+    \[
+    \sup\limits_{\|g_k\|_q\leq 1} \int_E fg\,dx \geq 
+    \int_E fg_k\,dx \geq \int_E f_k g_k \,dx=\|f\|_p \nearrow\infty.
+    \]
+        \end{enumerate}
+\end{demo}
+
+
+Notar que si $g \in L^q$, entonces
+\[\begin{split}
+\ell_g: L^p &\longrightarrow \rr
+\\
+f &\longmapsto \int_E fg\,dx,
+\end{split}
+\]
+es una funcional lineal acotada. 
+
+\begin{teorema}{}[Representaci\'on de Riesz]
+\[
+[L^p(E)]^*=L^q(E).\]
+\end{teorema}
+
+\section{Funci\'on maximal de Hardy-Littlewood y teorema de difrenciaci\'on de Lebesgue}
+
+
+\subsection{Un lema de cubrimiento}
+
+\begin{lema}{}
+Sea $E \subset \rr^n$ medible y supongamos que $E$ es cubierto por una uni\'on de bolas $B_i$, con $i\in I$, de di\'ametro acotado. Entonces  existe una subfamilia de bolas $B_1,B_2,\ldots,$ de la familia dada, disjuntas dos a dos y  tal que 
+\[
+\sum\limits_{k} m(B_k) \leq Cm(E),
+\]
+donde $C$ depende de la dimensi\'on $n$ ($5^-n$ funciona).
+\end{lema}
+
+\begin{demo}
+Sea $B_1$ tal que 
+\[
+\diametro B_1 \geq \frac{1}{2} \sup\limits_{i \in I} \diametro B_i.
+\]
+Una vez que hemos elegido $B_k$, seleccionamos $B_{k+1}$ de modo que 
+\[
+\diametro B_{b_1}\geq \frac{1}{2} \diametro B_i,
+\]
+para toda $B_i$ que ....
+\end{demo}
+
+\textbf{
+LAS NOTAS MANUSCRITAS SUBIDAS AL MOODLE LLEGAN HASTA AC\'A!!!!}

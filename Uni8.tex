@@ -1,1 +1,426 @@
 \chapter{Integral de Lebesgue}
+
+\section{Definici\'on y propiedades inmediatas}
+
+\begin{definicion}{defi:integral-de-Lebesgue}
+Sean $E\subset \rr^n$,  $f:\rr^n\to \overline{\rr}$  y $f\geq 0$ sobre $E$ medible. 
+\\
+La integral de Lebesgue de $f$ se define  mediante
+\[
+\int_E f(x)\.dx=\sup\left\{ \sum\limits_{i=1}^{N} m(E_i) \right\},
+\]
+donde el supremo se toma sobre toda descomposici\'on del conjunto $E$ en uni\'on de conjuntos medibles $E_i$ y mutuamente disjuntos,  siendo 
+\[\alpha_i =\inf\limits_{E_i}f.\]
+\end{definicion}
+
+Se usa la convenci\'on $0{.}(+\infty)=+\infty{.}0=0.$
+
+De la Definici\'on \ref{defi:integral-de-Lebesgue} se deduce que si $f\equiv c\in \rr$ sobre $E$, 
+entonces
+\[ \int f\,dx=c m(E).\]
+
+\begin{teorema}{}
+Si $E=A\cup B$ y $f\geq 0$ en $E$, entonces
+\[
+\int_E f=\int_A f +\int_B f.
+\]
+\end{teorema}
+
+\begin{demo}
+Sean $E=\bigcup\limits_{i=1}^N E_i$ y $\alpha_i=\inf\limits_{E_i} f$.
+  $A_i=A\cap E_i$ y $B_i=B\cap E_i$ y llamamos $\beta_i=\inf\limits_{A_i} f$ y $\gamma_i=\inf\limits_{B_i} f$. 
+Entonces $\alpha_i \leq \beta_i$, $\alpha_i\leq \gamma_i$ y 
+\[
+\begin{split}
+\sum\limits_{i=1}^N \alpha_i m(E_i)=
+&\sum\limits_{i=1}^N \alpha_i (m(A_i)+m(B_i))
+\\
+\leq & 
+\sum\limits_{i=1}^N \beta_i m(A_i)+\sum\limits_{i=1}^N \gamma_i m(B_i)
+\\
+\leq & \int_A f\,dx +\int_B f\,dx. 
+\end{split}
+\]
+Luego 
+\[\int_E f \leq \int_A f +\int B f.
+\]
+Sean $A=\bigcup\limits_{i=1}^N A_i$, $B=\bigcup\limits_{i=1}^M B_i$, $\beta_i$ y $\gamma_i$ como antes. 
+Entonces 
+\[
+\sum \limits_{i=1}^N \beta_i m(A_i) +\sum\limits_{i=1}^M \gamma_i m(B_i) \leq \int_E f.
+\]
+Luego
+\[
+\int_A f + \int_B f \leq \int_E f.
+\]
+\end{demo}
+
+\begin{itemize}
+    \item Si $0\leq f\leq g$, entonces 
+    \[\int_E f \leq \int_E g,\] 
+    pues $\inf\limits_{E_i} f \leq \inf\limits_{E_i} g.$
+    \item Si $f\geq 0$ sobre $E$ y $A\subset E$, entonces \[\int_A f \leq \int_E f,\] pues 
+    $\int_E f=\int_A f +\int_{E-A} f$.
+    \item Si $m(E)=0$ y $f\geq 0$ sobre $E$, entonces
+    \[\int_E f =0.\]
+    \item Si $f=g$ en c.t.p. de $E$, entonces
+    \[\int_E f =\int_E g.\]
+    \begin{demo}
+    Sea $A=\{f \neq g\}$ entonces $m(A)=0$ y 
+    \[\int_E f =\int_{E-A} f =\int_{E-A} g=\int_E g.\]
+    \end{demo}
+    \item Si $f\geq 0$ en $E$, entonces
+    \[\int_E  f = \int_{\rr^n}  f \chi_E\,dx.\]
+    \item 
+    Cuando $E= \rr^n$, escribimos 
+    \[\int_{\rr^n} f = \int f.\]
+    \item Si $E=(a,b)\subset \rr$, ponemos
+     \[\int_{E} f = \int_a^b f.\]
+    \end{itemize}
+    
+    \section{Integral de funciones simples}
+    
+    \begin{teorema}{}
+    Sean $E=E_1 \dot{\cup} E_2\dot{\cup} \ldots \dot{\cup} E_N$ y 
+    $\beta_i \in \rr,\; i=1,2,\ldots,N$, $\beta_i\geq 0$. Luego, 
+    \[
+    \int_E \sum\limits_{i=1}^N \beta_i \chi_{E_i}=
+    \sum\limits_{i=1}^N \beta_i m(E_i)
+    \]
+    \end{teorema}
+    
+    \begin{demo}
+    \[
+    \int_E \sum\limits_{i=1}^N \beta_i \chi_{E_i}=
+    \sum\limits_{j=1}^N \int_{E_j} \sum\limits_{i=1}^N \beta_i \chi_{E_i} =\sum\limits_{j=1}^N \beta_j m(E_j).
+    \]
+    \end{demo}
+    
+    \begin{teorema}{}
+    Si $\varphi$  y $\psi$ son funciones simples no negativas y $c\in \rr^+$, entonces
+    \[
+            \int_E (\varphi+\psi) &= \int_E \varphi +\int_E \psi \;\;\mbox{  y   }\;\;
+        \int_E c\varphi &=c\int_E \varphi.
+    \]
+    \end{teorema}
+    
+    \begin{demo}
+    Sean $\varphi=\sum\limits_{i=1}^N \alpha_i \chi_{E_i}$ y $\psi=\sum\limits_{j=1}^M \beta_j \chi_{F_j}$. 
+    Tenemos 
+    \[
+    \varphi+\psi=
+    \sum\limits_{i=1}^N\sum\limits_{j=1}^M (\alpha_i+\beta_j) \chi_{E_i \cap F_j},
+    \]
+    y entonces
+    \[
+    \begin{split}
+    \int_E \varphi+\psi=& 
+    \sum\limits_{i=1}^N\sum\limits_{j=1}^M (\alpha_i+\beta_j) m(E_i \cap F_j)
+    \\
+    =&\sum\limits_{i=1}^N \alpha_i \sum\limits_{j=1}^M m(E_i \cap F_j)+
+    \sum\limits_{j=1}^M \beta_j \sum\limits_{i=1}^N m(E_i \cap F_j)
+    \\
+    =&\int_E \varphi +\int_E \psi.
+    \end{split}
+        \]
+    Como $c\varphi=\sum\limits_{i=1}^N c \alpha_i \chi_{E_i}$, luego
+    \[
+    \int_E c\varphi = \sum\limits_{i=1}^N c\alpha_i m(E_i)=\alpha \int_E \varphi.
+    \]
+    \end{demo}
+    
+    \begin{teorema}{}
+    Si $f\geq 0$, entonces
+    \[\int_E f = \sup\limits_{0\leq \varphi\leq f} \int_E \varphi.\]
+    \end{teorema}
+    
+    \begin{demo}
+    Sean $E=E_1\cup E_2\cup\ldots \cup E_N$ y $\alpha_i=\inf\limits_{E_i} f$. 
+    Supongamos que $\alpha_i<\infty$. Luego, si $\varphi=\sum\limits_{i=1}^N \alpha_i \chi_{E_i}$ tenemos 
+    \[
+    \int_E \varphi =\sum\limits_{i=1}^N \alpha_i m(E_i)\;\;
+    \mbox{ y }\;\; 0\leq \varphi \leq f.
+    \]
+    En general, para $k\in \nn$ definamos 
+    \[\alpha_{ik}=\min\{k,\alpha_i\}\]
+    y 
+    \[ \varphi_k=\sum\limits_{i=1}^n \alpha_{ik} \chi_{E_i}.\]
+    Ahora, $0\leq \varphi_k \leq f$ y $\alpha_{i1}\leq \alpha_{i2}\leq \ldots \nearrow \alpha_i$. 
+    LUego 
+    \[
+    \begin{split}
+    \sum\limits_{i=1}^N \alpha_i m(E_i)=&
+    \lim\limits_{k \to \infty} \sum\limits_{i=1}^N \alpha_{ik} m(E_i)
+    \\
+    =&\lim\limits_{k \to \infty} \int_E \varphi_k 
+     \leq  \sup\limits_{0\leq \varphi \leq f} \int_E \varphi.
+    \end{split}
+    \]
+    Luego
+    \[
+    \int_E f \leq \sup\limits_{0\leq \varphi \leq f} \int_E \varphi.
+    \]    
+    La otra desigualdad es inmediata.
+    \end{demo}
+    
+    
+    \begin{lema}{}
+    Sean $f_1\leq f_2\leq \ldots$ funciones no negativas y $\varphi$ funci\'on simple no negativa tal que 
+    \[
+    \varphi \leq \lim\limits_{k \tp \infty} f_k.
+    \]
+    \end{lema}
+    
+\begin{demo}
+Sean $0\leq \alpha_1< \alpha_2<\ldots < \alpha_N$ los distintos valores ordenados que toma $\varphi$ y sea 
+\[  
+A_i=\{\varphi=\alpha_i\}.
+\]
+Supongamos probado el lema cuando $\alpha_1>0$. Entonces, sale para $\alpha_1=0$, pues aplicando el caso probado en $E-A_1$ tenemos 
+\[
+\int_E \varphi =\int_{E-A_1}\varphi 
+\leq \lim\limits_{k\to \infty} \int_{E-A_1} f_k
+\leq \lim\limits_{k \to \infty} \int_E f_k.
+\]
+Supongamos ahora que $\alpha_1>0$.\\ Sea $0<\epsilon$ con $0<\epsilon<\alpha_1$.
+Luego $\varphi-\epsilon$ es una funci\'on simple que toma los valores $\alpha_i-\epsilon$ sobre $A_i$. 
+Poniendo 
+\[
+E_k=\{\alpha \in E: f_k(x)> \varphi (x)-\epsilon \}.
+\]
+Por hip\'otesis
+\[
+E_k \subset E_{k+1}  \;\mbox { y }\; \bigcup\limits_{k=1}^{\infty}E_k
+=E.\]
+Luego $m(E_k) \to m(E)$ cuando $k \to \infty$.
+
+Se presentan dos casos
+\begin{enumerate}
+    \item Si $m(E)<\infty$, tenemos $m(E-E_k) \xrightarrow[]{k \to \infty}0$
+     y 
+    \[
+    \begin{split}
+    \int_E f_k \geq \int_{E_k} f_k &\geq \int_{E_k} \varphi(x) -\epsilon
+    \\
+    &=\int_E \varphi(x)-\epsilon -\int_{E-E_k}\varphi(x)-\epsilon
+    \\
+    &\geq \int_E \varphi -\epsilon m(E)-(\alpha_N-\epsilon)m(E-E_k).
+    \end{split}
+         \]
+    Luego 
+    \[
+    \lim\limits_{k \to \infty} \int_E f_k \geq \int_E \varphi-\epsilon m(E).
+    \]
+    Como $\epsilon$ es arbitrario, se obtiene la desigualdad del lema.
+    \item Si $m(E)=\infty$, consideramos $m(E_k)\nearrow +\infty$
+    y obtenemos
+    \[
+    \int_E f_k \geq \int_{E_k} f_k 
+    \geq \int_{E_k} \varphi-\epsilon \geq (\alpha_1-\epsilon)m(E_k)\nearrow +\infty, 
+    \]
+    lo cual lleva a la desigualdad del lema.
+\end{enumerate}
+\end{demo}
+
+\section{Paso al l\'imite bajo el signo de integral}
+
+\begin{teorema}{teo:Beppo-Levi}[Beppo-Levi]
+Sea $0\leq f_1\leq f_2\leq\ldots \nearrow f$. 
+Entonces
+\[ \int_E f =
+\lim\limits_{k \to \infty} \int_E f_k.\]
+\end{teorema}
+    
+    \begin{demo}
+    Sea $\varphi$ funci\'on simple tal que $0\leq \varphi \leq f$. Luego
+    \[ \varphi \leq \lim\limits_{k \to \infty} f_k,\]
+    y por tanto
+    \[
+\int_E \varphi \leq \lim\limits_{k \to \infty} \int_E f_k.
+    \]
+    As\'i, llegamos a 
+    \[
+    \int_E f=
+    \sup\limits_{0\leq \varphi\leq f} \int_E \varphi
+    \leq \lim\limits_{k \to \infty} \int_E f_k.
+    \]
+La otra desigualdad es inmediata. 
+    \end{demo}
+    
+    
+    \begin{teorema}{}
+    Si $f,g\geq 0$ y $c \in \rr$, entonces
+    \[ 
+    \int_E (f+g)= \int_E f+\int_E g \;\;\;\mbox{ y }\;\;\;
+    \int_E cf=c\int_E f.
+    \]
+    \end{teorema}
+    
+     \begin{demo}
+     Sean $\varphi_k$ y $\psi_k$ funciones simples tales que $\varphi_k \nearrow f$ y $\psi_k \nearrow g$.
+     Luego $\varphi_k +\psi_k \nearrow f+g$ y entonces
+     \[
+     \begin{split}
+         \int_E f+g =&\lim\limits_{k \to \infty} \int_E \varphi_k +\psi_k
+         \\
+         =&\lim\limits_{k \to \infty}\int_E \varphi_k
+         +
+         \lim\limits_{k \to \infty}\int_E \psi_k
+         \\
+         =&\int_E f +\int_E g.
+     \end{split}
+     \]
+          \end{demo}
+          
+          \begin{corolario}{cor:Beppo-Levi}
+          Si $f_k\geq 0$, $k=1,2,\ldots,$ entonces
+          \[
+          \int_E \sum\limits_{k=1}^{\infty} f_k
+          =
+          \sum\limits_{k=1}^{\infty} \int_E f_k.
+          \]
+          \end{corolario}
+          
+          \begin{demo}
+          Sean $S_N=\sum\limits_{k=1}^N f_k$ y 
+          $s=\sum\limits_{k=1}^{\infty} f_k=\lim\limits_{N \to \infty} S_N$. \\Luego
+          $0\leq S_1 \leq S_2 \leq \ldots \nearrow s$. 
+          De este modo, 
+          \[
+          \begin{split}
+          \int_E s=&\lim\limits_{N \to \infty} \int_E S_N
+          \\
+          =&\lim\limits_{N \to  \infty} \sum\limits_{k=1}^N \int_E f_k
+          = \sum\limits_{k=1}^{\infty} \int_E f_k.
+          \end{split}
+          \]
+                    \end{demo}
+                    
+                    
+                    \begin{lema}{lema:Fatou}[Lema de Fatou]
+                    Si $f_k\geq 0$, entonces
+                    \[
+                    \int_E \liminf\limits_{k \to \infty} f_k
+                    \leq 
+                    \liminf\limits_{k\to \infty} \int_E f_k.
+                    \]
+                    \end{lema}
+                    
+                    \begin{demo}
+                    Sean 
+                    \[
+                    g(x)=\liminf\limits_{k \to \infty} f_k\;\;
+                    \mbox{  y }\;\;
+                      g_k(x)=\inf\limits_{j\geq k} f_j.
+                    \]
+                    As\'i, 
+                    $g_1\leq g_2\leq \ldots \nearrow g $ y 
+                    \[ g(x)=\sup\limits_{k} g_k(x)=\lim\limits_{k \to \infty} g_k(x).  
+                    \]
+                    Por el Teorema \ref{teo:Beppo-Levi} y como $g_k \leq f_k$, se tiene 
+                    \[
+                    %\begin{split}
+                    \int_E g=&\lim\limits_{k \to \infty} \int_E g_k
+                    =\liminf\limits_{k \to \infty} \int_E g_k
+                   % \\
+                    \leq \liminf\limits_{k \to \infty} \int_E f_k.
+                    %\end{split}
+                    \]
+                    \end{demo}
+                    
+                    
+                    \begin{corolario}{cor:Fatou}
+                    Si $f_k \to f$ en $E$, entonces
+                    \[
+                    \int_E f \leq \liminf\limits_{k \to \infty}\int_E f_k.
+                    \]
+                    \end{corolario}
+                    
+                    \section{Integrales de funciones de distinto signo}
+                    
+                    \begin{definicion}{}
+                    Si $f=f^+-f^-$, diremos que $f$ es integrable sobre $E$ si y s\'olo si
+                    \[
+                    \int_E f^+ \;\;\mbox{ y }\;\;
+                    \int_E f^-
+                    \]
+                    son finitas. 
+                    
+                    En este caso, escribimos
+                    \[
+                    \int_E f =\int_E f^+ - \int_E f^-.
+                    \]
+                    \end{definicion}
+                    
+                    \begin{teorema}{}
+                    $f$ es integrable sobre $E$ si y s\'olo si $|f|$ lo es.  Y, en este caso, vale
+                    \[
+                    \left|\int_E f\right|\leq \int_E |f|.
+                    \]
+                    \end{teorema}
+                    
+                    \begin{demo}
+                    $\Rightarrow)$
+                    Como $|f|=f^++f^-$, si $f$ es integrable entonces $|f|$ tambi\'en los es. 
+                    
+                    $\Leftarrow)$
+                    Si $|f|$ es integrable, como $f^+\leq |f|$ y $f^-\leq |f|$, entonces $f$ tambi\'en resulta integrable.
+                    \end{demo}
+                    
+                    \begin{teorema}{teo:diferencia-de-integrables}
+                    Si $f_1,f_2\geq 0$ son integrables sobre $E$ y $f=f_1-f_2$, entonces $f$ es integrable y 
+                    \[\int_E f_1-f_2 = \int_E f_1 - \int_E f_2.\]
+                    \end{teorema}
+                    
+                    \begin{demo}
+                    A partir de  que $f^+\leq f_1$ y $f^-f_2$ se deduce que $f$ es integrable.  
+                    \\
+                    Como $f=f^+-f^-=f_1-f_2$ entonces 
+                    $f^+ + f_2=f_1 + f^-$ y 
+                    \[
+                    \int_E f^+ + \int_E f_2=
+                    \int_E f_1 + \int_E f^-.
+                    \]
+                    \end{demo}
+                    
+                    \begin{teorema}{}
+                    Si $f\geq 0$ es integrable y $|g|\leq f$, entonces $g$ es integrable. 
+                    \end{teorema}
+                    
+                    \begin{demo}
+                     La prueba sale a partir de que 
+                    $g^+\leq f$ y $g^- \leq f$.
+                    \end{demo}
+                   
+                   \begin{teorema}{}
+                   Si $f$ y $g$ son integrables sobre $E$ y $c\in \rr$, entonces $f+g$ y $cf$ son integrables sobre $E$. Adem\'as, 
+                   \[
+                   \int_E f+g =\int_E f +\int_E g
+                   \;\;\mbox{ y }\;\;
+                   \int_E cf =c\int_E f.
+                   \]
+                 \end{teorema}
+                    
+                    \begin{demo}
+                     Como $f+g=f^+ + g^+ -(f^-+g^-)$, aplicando el Teorema \ref{teo:diferencia-de-integrables} se obtiene que $f+g$ es integrable y         \[
+                     \begin{split}
+                     \int_E f+g =&\int_E f^{+} +g^{+}  - \int_E f^{-} + g^{-}
+                     \\
+                     =&\int_E f^{+} +\int_E g^{+}  - \int_E f^{-} -\int_E g^{-}
+                     \\
+                     =&\int_E f + \int_E g.
+                     \end{split}
+                     \]
+                     
+                     Si $c\geq 0$, entonces $cf=cf^{+}-cf^{-}$ y el resultado se obtiene por el Teorema \ref{teo:diferencia-de-integrables}.
+                     
+                     Si $c<0$, el resultado se obtiene a partir de que $cf=(-c)f^{-}-(-c)f^{+}$.
+                    \end{demo}
+                    
+                    \begin{corolario}{}
+                    Si $f$ y $g$ son integrables tales que $f\leq g$, entonces 
+                    \[\int_E f \leq \int_E g.\]
+                    \end{corolario}
+                    
+                    
+                    SEGUIR DESDE LA PAGINA 13 DEL PDF INTEGRAL DE LEBESGUE A.
