@@ -423,4 +423,222 @@ La otra desigualdad es inmediata.
                     \end{corolario}
                     
                     
-                    SEGUIR DESDE LA PAGINA 13 DEL PDF INTEGRAL DE LEBESGUE A.
+                    As\'i, 
+                    \[
+                    L(E)=\{
+                    f: f\;\mbox{ es integrable sobre }\;E
+                    \}
+                    \]
+                    es un espacio vectorial y la aplicaci\'on
+                    \[
+                    f \longmapsto \int_E f
+                    \]
+                    es una aplicaci\'on lineal.
+                    
+                    \section{Convergencia Mayorada}
+                    
+                    
+                    Si $f_k$ son integrables sobre $E$ y $f_k \to f$ en c.t.p. de $E$ siendo $f$  integrable en $E$, \textbf{en general no es cierto} que 
+                    \[
+                    \int_E f_k \to \int_E f.
+                    \]
+                    
+                    \begin{ejemplo}{}
+                    Si $f_k=k \chi_{(0,\frac{1}{k})}$ entonces $f_k \to 0$ puntualmente en $(0,1)$. Sin embargo,
+                     \[
+                    \int_{(0,1)} f_k = 1,\;\; \forall k\in \nn.
+                    \]
+                     y por lo tanto 
+                     \[
+                    \int_{(0,1)} f_k  \nrightarrow \int_{(0,1)} f.
+                    \]
+                    \end{ejemplo}
+                    
+                    \begin{teorema}{}[Convergencia Mayorada de Lebesgue]
+                    Sea $\Phi$ func\'ion integrable sore $E$. 
+                    Si $f_k$ son funciones integrables tales que 
+                    \[|f_k|\leq \Phi\;\mbox{ en }\;E,\]    
+                    entonces
+                    $g=\liminf f_k$, $h=\limsup
+                    f_k$ son integrables sobre $E$ y 
+                    \[
+                    \int_E \liminf f_k \leq 
+                    \liminf \int_E f_k \leq\limsup \int_E f_k
+                    \leq \int_E h.
+                    \]
+                    \end{teorema}
+                    
+                    \begin{demo}
+                    Por hip\'otesis se tiene que $-\Phi \leq f_k \leq \Phi$, a partir de lo cual se deduce que 
+                    $-\Phi \leq g\leq \Phi$ y  $-\Phi \leq h\leq \Phi$ y por lo tanto $g$ y $h$ resultan integrables sobre $E$.
+                    
+                    Por otra parte,  $f_k+\Phi \geq 0$ y $\Phi-f_k\geq 0$ y 
+                    \[\begin{split}
+                    \liminf\limits_{k \to \infty} (f_k+\Phi)=g+\Phi
+                    \\
+                    \liminf\limits_{k \to \infty} (\Phi-f_k)=\Phi-h.
+                    \end{split}
+                    \]
+                    Ahora, por el Lema de Fatou (Lema \ref{lema:Fatou}) tenemos
+                    \[
+                    \int_E g + \int_E \Phi =
+                    \int_E g+\Phi \leq \liminf\limits_{k \to \infty} \int_E f_k +\Phi=
+                    \liminf\limits_{k \to \infty} \int_E f_k +\int_E \Phi.
+                    \]
+                    Luego 
+                    \[
+                    \int_E g \leq \liminf \int_E f_k.
+                    \]
+                    La otra desigualdad se obtiene de manera an\'aloga.
+                    \end{demo}
+                    
+                    \begin{corolario}{cor:conv-mayorada}
+                    Si $f_k \to f$ en cada punto de $E$ y $|f_k|\leq \Phi \in L(E)$, entonces $f \in L(E)$ y 
+                    \[
+                    \lim\limits_{k \to \infty}\int_E f_k = \int_E f.
+                    \]
+                    \end{corolario}
+                    
+                    
+                    \section{La integral y los conjuntos de medida nula}
+                    
+                    Si $f,g\geq 0$ y $f=g$ en c.t.p de $E$, entonces
+                    \[
+                    \int_E f =\int_E g.
+                    \]
+                    
+                    En particular, sobre un conjunto de medida nula cualquier $f$ medible e integrable  con integral que vale 0.
+                    
+                    Usaremos la \textbf{desigualdad de Chebyshev} que establece que si $f$ es medible sobre $E$ se cumple 
+                    \[
+                    m\left(\{ x\in E: |f(x)|>\lambda\}\right) \leq \frac{1}{\lambda} \int_E |f|.
+                    \]
+                    La prueba de la desigualdad de Chebyshev es sencilla, a saber, 
+                    \[
+                    \int_E |f| \geq \int_{\{|f|\geq \lambda\}} |f|
+                    \geq \lambda m\left(\{|f|\geq \lambda\}\right).
+                    \]
+                    
+                    \begin{teorema}{}
+                    Si $f\geq 0$ sobre $E$ y $\int_E f=0$, entonces $f=0$ en c.t.p. de $E$.
+                    \end{teorema}
+                    
+                    \begin{demo}
+                    Sean $Z_k=\{f >\frac{1}{k}\}$ y $Z=\{f>0\}$, entonces 
+                    \[
+                    Z=\bigcup\limits_{k=1}^{\infty} Z_k.
+                    \]
+                    Ahora, 
+                    \[
+                    m(Z_k)=m\left(\left\{f>\frac{1}{k}\right\}\right)\leq k \int_E f=0,
+                    \]
+                    y en consecuencia  $m(Z)=0$.
+                    \end{demo}
+                    
+                    \section{ Invariancia bajo traslaciones }
+                    
+                    \begin{teorema}
+                Sea $f\geq 0$, entonces $\forall h \in \rr^n$ se tiene
+                \begin{enumerate}
+                    \item \label{it:invariancia-f-x+h} $\int f(x+h) =\int f(x)$,
+                    \item \label{it:invariancia-f-y-E-x+h} $\int_E f(x+h) =\int_{E+h} f(x)$.
+                \end{enumerate}
+                    \end{teorema}
+                    
+                    \begin{demo}
+                    \begin{enumerate}
+                        \item 
+                    \begin{itemize}
+                        \item Si $f=\chi_E$, entonces 
+                        $f(x+h)=\chi_E (x+h) =\chi_{E-h}(x).$
+                        As\'i, 
+                        \[
+                        \int f(x+h)= \int \chi_{E-h} (x) =m(E-h)
+                        \]
+                        y 
+                        \[
+                        \int f(x) = \int \chi_E(x)=m(E),
+                        \]
+                        y son iguales
+                        \item Si $f$ es simple, entonces 
+                        \[  f=\sum\limits_{i=1}^N \alpha_i f_i, \;\; \alpha_i\geq 0,\;f_i=\chi_{E_i}.
+                        \]
+                        Luego, 
+                        \[
+                        \int f(x+h) =\sum\limits_{i=1}^N \alpha_i \int f_i(x+h)=
+                        \sum\limits_{i=1}^N \alpha_i \int_{E_i} f_i= \int f.
+                        \]
+                        \item Sea $f$ arbitraria no negativa y sean $\varphi_k$ funciones simples no negativas tales que $\varphi_k \nearrow f$. Luego, 
+                        \[
+                        \varphi_k(x+h)\to f(x+h), \;\;\forall x \in \rr^n.
+                        \]
+                        Por el Teorema de Beppo-Levi (Teorema \ref{teo:Beppo-Levi}), se tiene
+                        \[
+                        \int f(x+h)\,dx=\lim\limits_{k \to \infty} \int \varphi_k(x+h)\,dx=
+                        \lim\limits_{k\to \infty} \int \varphi_k(x) =\int f.
+                        \]
+                    \end{itemize}
+                    As\'i queda demostrado el item \ref{it:invariancia-f-x+h}.
+                    \item es consecuencia del item \ref{it:invariancia-f-x+h}. En efecto, 
+                    \[\begin{split} 
+                    \int_E f(x+h) \,dx=& \int \chi_{E+h}(x+h) f(x+h) \,dx
+                    \\
+                    =&
+                    \int \chi_{E+h} (x) f(x)\,dx 
+                    \\
+                    =&
+                    \int_{E+h} f(x)\,dx.
+                    \end{split}\]
+                    \end{enumerate}
+                    Por \'ultimo, los item \ref{it:invariancia-f-x+h} y   \ref{it:invariancia-f-y-E-x+h} son ciertos para $f\in L(E)$,  a partir de la usual descomposici\'on de $f$ dada por $f=f^{+}-f^{-}$.
+                    \end{demo}
+                    
+                    \section{La integral como funci\'on de conjunto}
+                    
+                    \textbf{FALTA DEFINIR $\mathcal{M}$ o RECORDARLO!!!} 
+                    
+                    Sea $f\in L(\rr)$ y definimos $\Phi: \mathcal{M} \to \rr$
+                    por
+                    \[
+                    \Phi(E)=\int_E f.
+                    \]
+                    
+                    $\Phi$ se llama integral indefinida de $f$.
+                    
+                    \begin{teorema}{}
+                    Si $E_j \in \mathcal{M}$ son mutuamente disjuntos y sea
+                    $E=\bigcup\limits_{j=1}^{\infty}E_j$, entonces
+                    \[\Phi(E)=\sum\limits_{j=1}^{\infty} \Phi(E_j).\]
+                    \end{teorema}
+                    
+                    \begin{demo}
+                    Si $f\geq 0$, tenemos 
+                    $\sum\limits_{j=1}^{\infty} \chi_{E_j}=\chi_E$ y luego
+                    \[
+                    \Phi(E)=\int_E f = \int f \chi_E =\int \sum\limits_j f \chi_{E_j}=\sum\limits_{j} \int f \chi_{E_j}=\sum\limits_j \Phi(E_j).
+                    \]
+                    Si $f \in L(E)$, trabajamos con  $f=f^{+}-f^{-}$ donde 
+                    $f^+$ y $f^-$ son funciones medibles no negativas.
+                    \end{demo}
+                    
+                    \begin{definicion}{}
+                    Si $X$ es un conjunto y $\Sigma$ es una sigma-\'algebra de subconjuntos de $X$. 
+                    Una funci\'on $\mu:\Sigma \to \rr^+$ se llama medida si
+                    \begin{enumerate}
+                        \item $\mu(\emptyset)=0,$
+                        \item $\mu(\bigcup\limits_j E_j) = \sum\limits_j \mu(E_j)$, donde $E_j \in \Sigma$ y son mutuamente disjuntos.
+                    \end{enumerate}
+                    \end{definicion}
+                    
+                    
+                    Para una medida valen los teoremas de convergencia mon\'otona de conjuntos, se puede definir una integral y \emph{casi todo} lo visto para la medida de Lebesgue es v\'alido. Una propiedad que no siempre es cierta es la invariancia por traslaciones.
+                    
+                    Ahora bien,  $\Phi$ es una medida. 
+                    La pregunta que surge es ?`ser\'a toda medida sobre
+                    $\mathcal{M}$ de la forma de $\Phi$ para alguna $f$?\\
+                    La respuesta a esta pregunta ser\'a dada por el \textbf{Teorema de Radom-Nikodim}.
+                    
+                    
+                    La siguiente propiedad se llama \emph{continuidad absoluta}.
+                    
+                    

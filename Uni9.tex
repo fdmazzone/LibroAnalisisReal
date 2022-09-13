@@ -75,7 +75,7 @@ Ahora, si
 \[
 S_j(x)=\sum\limits_{i=1}^j f_i(x),
 \]
-tenemos que $S_j \to S$ en c.t.p. y $|S_j-S|\leq 2\Phi \in L^1(E)$ y por lo tanto, por el Teorema de la Convergencia Mayorada de Lebesgue \ref{ AUN NO ESTA EN APUNTE}, 
+tenemos que $S_j \to S$ en c.t.p. y $|S_j-S|\leq 2\Phi \in L^1(E)$ y por lo tanto, por Convergencia Mayorada de Lebesgue (Corolario \ref{cor:conv-mayorada}), 
 \[
 \|S_j-S\|_1=\int_E |S_j-S|\,dx \to 0 \mbox{ cuando } j \to \infty.
 \]
@@ -103,7 +103,7 @@ El conjunto de las funciones simples es denso en $L^1(E)$.
 \end{teorema}
 
 \begin{demo}
-Sea $f\in L^1(E)$. Existe una sucesi\'on $\{f_i\}$ de funciones simples tal que $|f_i|\leq |f|$ y $f_i \to f$. Luego, $f_i \in L^1(E)$ y $|f-f_i|\leq 2|f|$. As\'i, por el Teorema de la Convergencia Mayorada de Lebesgue \ref{FALTA}, $f_i \to f$ en $L^1(E)$.
+Sea $f\in L^1(E)$. Existe una sucesi\'on $\{f_i\}$ de funciones simples tal que $|f_i|\leq |f|$ y $f_i \to f$. Luego, $f_i \in L^1(E)$ y $|f-f_i|\leq 2|f|$. As\'i, por  Convergencia Mayorada de Lebesgue (Corolario \ref{cor:conv-mayorada}), $f_i \to f$ en $L^1(E)$.
 \end{demo}
 
 \begin{definicion}{}
@@ -323,7 +323,7 @@ $(\, ,\, )$ satisface
     \item $(f,f)=0$ si y s\'olo si $f=0$.
 \end{enumerate}
 
-Si ponemos $\|f\|_2=(f,f)^{1/2}$, obtenemos una norma y se satisface la desigualdad de Cauchy-Schwartz
+Si ponemos $\|f\|_2=(f,f)^{1/2}$, obtenemos una norma y se satisface la desigualdad de Cauchy-Schwarz
 \[
 (f,g)\leq \| f \|_2\|g\|_2.
 \]
@@ -349,11 +349,11 @@ existe una subsucesi\'on $\{n_k\}$ tal que $f_{n_k}\to f$ en c.t.p.de $E$.
 A continuaci\'on veremos  que $f \in L^2(E)$ y $f_n \to f$ en $L^2(E)$.
 
 Como $\{f_n\}$ es sucesi\'on de Cauchy en $L^2(E)$, entonces est\'a acotada en $L^2(E)$, o sea, existe $M>0$ tal que $\|f\|_2\leq M$. 
-Luego, por el Lema de Fatou \ref{PONER LA REFERENCIA!!!}, 
+Luego, por el Lema de Fatou (Lema \ref{lema:Fatou}), 
 \[
 \int_E |f|^2\,dx\leq \liminf\limits_{k \to \infty} \int_E |f_{n_k}|^2\,dx \leq M^2.
 \]
-Nuevamente, por el Lema de Fatou, llegamos a 
+Nuevamente, por el Lema de Fatou (Lema \ref{lema:Fatou}), llegamos a 
 \[
 \int_E |f_n-f|^2\,dx\leq \liminf\limits_{k \to \infty} \int_E |f_n-f_{n_k}|^2\,dx \leq \epsilon,
 \]
@@ -501,7 +501,7 @@ Como $\ell$ es lineal y continua,
 \[
 \int_E |fg|\,dx \leq \|\ell\| \|f\|_1, \;\forall f \in L^2(E).
 \]
-Si $f \in L^1(E)$, definimos $f_n=\min\{n, |f|\}$. Luego,  se tiene que $f_n \in L^2(E)$ y $f_n \nearrow |f|$. Entonces, por el Teorema de Beppo-Levi \ref{REFERENCIA}, se obtiene
+Si $f \in L^1(E)$, definimos $f_n=\min\{n, |f|\}$. Luego,  se tiene que $f_n \in L^2(E)$ y $f_n \nearrow |f|$. Entonces, por el Teorema de Beppo-Levi (Teorema \ref{teo:Beppo-Levi}), se obtiene
 \[
 \int_E |f| |g|\,dx =\lim\limits_{n \to \infty} \int_E f_n g\,dx 
 \leq \lim\limits_{n \to \infty} \|\ell\| \|f_n\|_1
@@ -635,7 +635,7 @@ El caso $p=\infty$ ya fue analizado, as\'i que veremos el caso $1\leq p<\infty$.
     \end{array}
     \right.
     \]    
-    entonces $f_k \in L^p$ y por el Teorema de Beppo-Levi \ref{LO QUE CORRESPONDA}, tenemos
+    entonces $f_k \in L^p$ y por el Teorema de Beppo-Levi (Teorema \ref{teo:Beppo-Levi}), tenemos
     $\|f_k\|_p \nearrow \|f\|_p=\infty. $
     Sea  $g_k\in L^q$ con $\|g_k\|_q=1$ y 
     \[
