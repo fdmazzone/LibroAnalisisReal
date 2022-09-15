@@ -537,7 +537,7 @@ La otra desigualdad es inmediata.
                     
                     \section{ Invariancia bajo traslaciones }
                     
-                    \begin{teorema}
+                    \begin{teorema}{}
                 Sea $f\geq 0$, entonces $\forall h \in \rr^n$ se tiene
                 \begin{enumerate}
                     \item \label{it:invariancia-f-x+h} $\int f(x+h) =\int f(x)$,
@@ -770,6 +770,228 @@ La otra desigualdad es inmediata.
         \end{teorema}
         
         \begin{demo}
-        SEGUIR DESDE LA PAGINA 7 DEL PDF INTEGRAL DE LEBESGUE B!
-                
+        \emph{Primer Paso)} Si $E$ es un intervalo de $\rr^{n+m}$, supongamos que $E=I\times J$ con $I$ intervalo de $\rr^n$, $J$ intervalo de $\rr^m$, entonces $E_x=J$ $\forall x \in I$ y $E_x=\emptyset$ si $x \notin I$.
+        As\'i, $E_x$ es conjunto medible $\forall x \in I$, $m(E_x)=\chi_I m(J)$ es funci\'on medible  en $x$ y 
+        \[
+        \int m(E_x)\,dx=m(J)m(I)=m(E).
+        \]
+        \emph{Segundo Paso)} Si $E$ es abierto, entonces $E_x=\bigcup\limits_{k=1}^{\infty} (I_k)_x$ con $I_k$ intervalos mutuamente disjuntos y donde $E_x=\bigcup\limits_{k=1}^{\infty} \left(I_k\right)_x$. 
+        As\'i $E_x$ es conjunto medible. Adem\'as, 
+        \[
+        m(E_x)=\sum\limits_{k=1}^{\infty} m\left((I_k)_x\right)
+        \]
+        es una funci\'on medible de $x$ y 
+        \[
+        \int m(E_x)=\sum\limits_{k=1}^{\infty} \int m\left((I_k)_x\right)\,dx=
+        \sum\limits_{k=1}^{\infty} m(I_k)=m(E).
+        \]
+        \emph{Tercer Paso)} Si $E$ es un conjunto acotado y de tipo $G_{\delta}$, entonces existe una bola $B$ y una sucesi\'on de conjuntos abiertos $G_k$ tales que 
+        \[
+        E\subset B\;\mbox{  y   }\;E=\bigcap\limits_{k=1}^{\infty}G_k.
+        \]
+        Tomando $G_k^{'}=B\cap G_1\cap \ldots \cap G_k$, podemos suponer
+        \[B\supset G_1 \supset \ldots \supset E.\]
+        Ahora, se tiene que 
+        \[
+        E_x=\bigcap\limits_{k=1}^{\infty} \left(G_k\right)_x
+        \]
+        es conjunto medible y 
+        \[
+        m(E_x)=\lim\limits_{k \to \infty} m\left((G_k)_x\right)
+        \]
+        es funci\'on medible de $x$. Adem\'as, 
+        \[
+        m\left((G_k)_x\right)\leq m(B_x)\in L(\rr^n).
+        \]
+        A continuaci\'on, por aplicaci\'on de Convergencia Mayorada (Corolario \ref{cor:conv-mayorada}), se obtiene 
+        \[
+        \int m(E_x)\,dx =\lim\limits_{k \to \infty} \int m\left((G_k)_x\right)\,dx =\lim\limits_{k \to \infty} m(G_k)=m(E).
+        \]
+        \emph{Cuarto Paso)}
+        Supongamos que  $E$ es un conjunto de tipo $G_{\delta}$. 
+        Sean $B_k=B(0,k)$ y $E_k=E\cap B_k \in G_{\delta}$, entonces $E=\bigcup\limits_{k=1}^{\infty} E_k$ y $E_1\subset E_2\subset \ldots$ Luego
+        \[
+        E_x=\bigcup\limits_{k=1}^{\infty} \left(E_k\right)_x
+        \;\mbox{ y }\;
+        (E_1)_x \subset (E_2)_x \subset \ldots
+        \]
+        De este modo, resulta que $E_x$ es conjunto medible y 
+        \[m(E_x) = \lim\limits_{k \to \infty} m((E_k)_x).\]
+                Como $m((E_k))_x$ es una sucesi\'on mon\'otona creciente de funciones medibles, por el Teorema de Beppo-Levi (Teorema \ref{teo:Beppo-Levi}) llegamos a 
+     \[\int m(E_x)\,dx=\lim\limits_{k \to \infty} \int m\left(\left(E_k\right)_x\right)\,dx=
+     \lim\limits_{k \to \infty} m(E_k)=m(E).
+                    \]
+    \emph{Quinto Paso)} Sea $E$ un conjunto de medida nula. Luego, existe $H\in G_{\delta}$ tal que $E\subset H$ y $m(H)=0$.
+    A partir de 
+    \[
+    \int m(H_x)\,dx=m(H)=0,
+    \]
+    se tiene que $0\leq m(E_x)\leq m(H_x)=0$ en c.t.p. $x$. Luego, $m(E_x)=0$
+    en c.t.p. $x$ y por lo tanto es funci\'on medible en $x$.
+    Adem\'as, 
+    \[
+    \int m(E_x)\,dx \leq \int m(H_x)\,dx=0=m(E).\]
+
+ \emph{Sexto Paso)} Sea $E$ medible. Entonces existen $H\in G_{\delta}$ y $Z$ de medida nula tal que $E=H-Z$. 
+ Luego
+ \[E_x=H_x -Z_x\]
+ y $m(Z_x)=0$ en c.t.p. $x$, de donde $E_x$ es un conjunto medible en c.t.p. $X$ y 
+ \[
+ m(E_x)=m(H_x)-m(Z_x)=m(H_x)\;\mbox{  en c.t.p. } x.
+ \]
+ Es as\'i que, $m(E_x)$ es funci\'on medible siempre que $E_x$ sea medible y 
+ definimos $m(E_x)=0$ para el caso en que $E_x$ no sea medible. Por \'ultimo,  \[
+ \int m(E_x)\,dx=\int m(H_x)\,dx=m(H)=m(E).
+ \]
+\end{demo}
+
+\begin{ejemplo}{}
+\begin{enumerate}
+    \item 
+Sea $H$ un hiperplano de ecuaci\'on $a_1x_1+\ldots+a_nx_n=a$. 
+\\Veamos por inducci\'on que $m(H)=0$.
+
+El caso $n=1$ es trivial. 
+Supongamos que $(a_2,a_3,\ldots,a_n)\neq 0$, luego 
+\[H_{x_1}=\{(x_2,\ldots,x_n)| a_2x_2+\ldots+a_nx_n=a-a_1x_1\}\]
+y 
+\[
+m(H)=\int m(H_{x_1})\,dx_1=0.
+\]
+\item El simple $S$ de altura $a$ es $x_1+x_2+\ldots+x_n\leq a$ con $x_i\geq 0$. 
+
+Veamos por inducci\'on que $m(S)=\frac{a^n}{n!}$. 
+
+El caso $n=1$ es trivial. Para  $n>1$, se tiene que $S_{x_1}=\emptyset$ si $x_1\notin [0,a]$ y si $x_1 \in [0,a]$ entonces 
+$S_{x_1}=\{(x_2,\ldots,x_n)|x_2+\dots+x_n\leq a-x_1 \}$ es el simple de altura $a-x_1$. Luego, 
+\[
+m(S)=\int_0^a m(S_{x_1})\,dx_1= \int_0^a \frac{(a-x_1)^{n-1}}{(n-1)!}\,dx_1=\frac{a^n}{n!}.
+\]     
+\end{enumerate}   
+\end{ejemplo}
+   
+   
+   \begin{teorema}{teo:Fubini-Tonelli}[Fubini-Tonelli]
+   Si $f(u)=f(x,y)$ es medible no negativa sobre $\rr^{n+m}$, entonces
+   \begin{enumerate}
+       \item $f(x,y)$ es medible en $y$ para c.t.p. $x$;
+       \item $g(x)=\int_{\rr^n} f(x,y)\,dy$ es medible sobre $\rr^n$;
+       \item 
+       \[
+       \int g(x)\,dx=\int dx \int f(x,y)\,dy=\int f(u)\,du.
+       \]
+   \end{enumerate}
+      \end{teorema}     
+      
+      \begin{demo}
+      \emph{Paso 1)}
+      Si $f=\chi_E$, vale  \[ \chi_E(x,y)=\chi_{E_x} (y).\]
+      $E_x$ es medible en c.t.p. $x$. As\'i, $f$ es medible en $y$ para c.t.p. $x$. Adem\'as
+      \[
+       \int\,dx \int \chi_{E_x}(y)\,dy =
+       \int m(E_x)\,dx =m(E)=\int f(u)\,du.
+      \]
+      
+       \emph{Paso 2)}
+       Si $f$ es simple, entonces 
+       \[f(x,y)=\sum\limits_{k=1}^N \alpha_k f_k(x,y),\]
+       donde $\alpha_k\geq 0$ y $f_k$ son funciones caracter\'isticas 
+       $\chi_{E_k}$.
+       
+       Por el \emph{Paso 1)}, $f_k(x,y)$ es medible en $y$ y $x$ est\'a en un conjunto de la forma $\rr^n-Z_k$, donde $m(Z_k)=0$. 
+       Ahora, llamando $Z=\bigcup\limits_{k=1}^{N} Z_k$, $f$ es medible en $y$ siempre que $x \in \rr^n-Z$. O sea, $f$ resulta medible en $y$ para c.t.p. $x \in \rr^n$.
+
+       Si $x \in \rr^n-Z$, la funci\'on 
+       \[
+       g(x)=\int f(x,y)\,dy=\sum\limits_{k=1}^N \alpha_k \int f_k(x,y)\,dy
+       \]
+        es medible.  Adem\'as, por el \emph{Paso 1)}, 
+        \[
+        \int g(x)\,dx=
+        \sum\limits_{k=1}^N \alpha_k \int\, dx \int f_k(x,y)\,dy
+        =
+        \sum\limits_{k=1}^N \alpha_k \int f_k(u)\,du=\int f(u)\,du.
+        \]
+        
+        \emph{Paso 3)}
+        Si $f$ es medible no negativa, existe una sucesi\'on de funciones simples $f_k:\rr^{n+m}\to \rr$ tales que $0\leq f_1\leq f_2\leq \ldots$ y $f_k(u)\nearrow f(u)$ $\forall u\in \rr^{n+m}$.
+        Dado que $f_k$ es simple, existe $Z_k$ tal que $f_k(x,y)$ es medible en $y$  si $x \notin Z_k$. 
+        \\
+        Sea $Z=\bigcup\limits_{k=1}^N Z_k$, entonces $m(Z)=0$ y cada $f_k(x,y)$ es medible en $y$ si $x \notin Z$. As\'i, $f$ es medible  en $y$ $\forall x \notin Z$. 
+        Aplicando el Teorema de Beppo-Levi (Teorema \ref{teo:Beppo-Levi}), si $x \notin Z$  se tiene que
+        \[
+        g(x)=\int f(x,y)\,dy=\lim\limits_{k\to \infty} \int f_k(x,y)\,dy,
+        \]      
+        y $g$ es medible tomando la precauci\'on de definir $g=0$ en $Z$.
+        \\
+        Por \'ultimo, aplicando nuevamente  el Teorema de Beppo-Levi (Teorema \ref{teo:Beppo-Levi}), obtenemos
+        \[
+        \int g(x)\,dx=\lim\limits_{k \to \infty} \int\,dx \int f_k(x,y)\,dy
+        =\lim\limits_{k \to \infty} \int f_k(u)\,du
+        =\int f(u)\,du.
+        \]
         \end{demo}
+        
+        \begin{teorema}{}[Fubini]
+        Si $f(u)=f(x,y) \in L(\rr^{n+m})$, entonces
+        \begin{enumerate}
+            \item para casi todo $x$, $f(x,y)$ es integrable en $y$;
+            \item la funci\'on $g(x)=\int f(x,y)\,dy$ es integrable en $x$;
+            \item \[
+            \int g(x)\,dx=\int \,dx \int f(x,y)\,dy=\int f(u)\,du
+            \]
+        \end{enumerate}
+                \end{teorema}
+               
+                
+                \begin{demo}
+                 Por aplicaci\'on del Teorema de Fubini-Tonelli (Teorema \ref{teo:Fubini-Tonelli}) se tiene que 
+                 \[
+                 \int\,dx \int f^{+}(x,y)\,dy=\int f^{+}(u)\,du<\infty
+                 \]
+                 y 
+                 \[
+                  \int\,dx \int f^{-}(x,y)\,dy=\int f^{-}(u)\,du<\infty.
+                 \]
+                 Las funciones no negativas
+\[
+g_1(x)=\int f^{+}(x,y)\,dy\; \mbox{ y }\; 
+g_2(x)=\int f^{-}(x,y)\,dy
+\]
+son integrables y por ende finitas en casi todo punto. 
+Luego, 
+\[g(x)=\int f(x,y)\,dy=g_1(x)-g_2(x)
+\]
+es integrable en $y$ para casi todo $x$. Adem\'as, $g \in L(\rr^n)$ y 
+\[
+\int g(x)\,dx=\int g_1(x)\,dx - \int g_2(x)\,dx=\int f^{+}(u)\,du - \int f^{-}(u)\,du=\int f(u)\,du.
+\]
+                \end{demo}
+                
+                \begin{corolario}{}
+Si $f$ satisface que 
+\[
+\int\,dx \int |f(x,y)|\,dy<\infty\; \mbox{ \'o }\;
+\int\,dy \int |f(x,y)|\,dx<\infty,
+\]
+vale el Teorema de Fubini.
+\end{corolario}
+        
+        
+Si $f$ es integrable sobre un conjunto $E\subset \rr^{n+m}$, la integral de $f$ sobre $E$ se calcula por medio de la f\'ormula
+\[
+\int_E f(u)\,du=\int\,dx \int_{E_x} f(x,y)\,dy.
+\]
+
+En efecto, $f\chi_E$ es integrable sobre todo el espacio $\rr^{n+m}$ y por consiguiente
+\[
+\begin{split}
+\int_E f(u)\,du &=\int\int_E f(x,y)\,dx\,dy
+\\
+&=\int\int \chi_E(x,y)f(x,y)\,dx\,dy
+\\
+&=\int\,dx\int \chi_{E_x(y)}f(x,y)\,dy
+\\
+&=\int\,dx\int_{E_x} f(x,y)\,dy.
+\end{split}
+\]
