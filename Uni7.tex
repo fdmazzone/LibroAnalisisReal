@@ -1,2 +1,144 @@
 \chapter{Funciones medibles
 }
+
+\section{Introducci\'on???}
+
+\textbf{ Copiado de acuerdo al orden de las notas manuscritas...parece que falta algo para el contexto...o reordenarlo...}
+
+\textbf{Habr\'ia que definir $\mathcal{M}$ o referenciar la definici\'on del cap\'itulo  de conjuntos medibles...si existiese!!!}
+
+\begin{definicion}{}
+$f$ es medible si y s\'olo si $f^{-1}((a,\infty)) \in \mathcal{M}$. 
+\end{definicion}
+
+\begin{teorema}{}
+Si $H$ es boreliano y $f$ es medible, entonces $f^{-1}(H)$ es medible.
+\end{teorema}
+
+\begin{demo}{}
+Sea $\mathcal{M}^{'}=\{ H: f^{-1}(H)\;\mbox{ es medible}\}$.
+$\mathcal{M}^{'}$ es $\sigma$-\'algebra y $\mathscr{I}\subset \mathcal{M}^{'}$.
+Por lo tanto, $\mathscr{B}(\rr^n) \subset \mathcal{M}$.
+\end{demo}
+
+\begin{definicion}{}
+Diremos que $H \subset \overline{R}$ es boreliano de la recta extendida si $H-\{ -\infty, \infty\} \in \mathscr{B}(\rr)$.
+\end{definicion}
+
+\begin{teorema}{}
+Si $f:\rr^n \to \overline{\rr}$ es medible si y s\'olo si $f^{-1}(H) \in \mathcal{M}$ cada vez que $H$ es boreliano de $\overline{\rr}$.
+\end{teorema}
+
+\begin{demo}
+$\Leftarrow)$ Inmediata a partir de la definici\'on.
+
+$\Rightarrow)$ Se tiene que 
+\[
+\{f=+\infty\}=\bigcap\limits_{k=1}^{\infty} \{f \geq k\}
+\;\;\mbox{ y }\;\;
+\{f=-\infty\}=\bigcap\limits_{k=1}^{\infty} \{f \leq -k\}.
+\]
+Si $H$ es boreliano de $\rr$, supongamos que $H=H^{'}\cup \{+\infty\}$ y $H^{'}$ es conjunto medible de $\rr$.
+Luego, $f^{-1}(H)=f^{-1}(H^{'})\cup \{f=+\infty\}$ es medible.
+\end{demo}
+
+
+\section{Funciones medibles sobre una $\sigma$-\'algebra}
+
+\begin{definicion}{}
+Si $\Sigma$ es una $\sigma$-\'algebra de $\rr^n$, diremos que $f:\rr^n\to \overline{\rr}$ es $\sigma$-medible si 
+\[\{f>a\} \in \Sigma\;\;\;\;\forall a \in \rr.\]
+\end{definicion}
+
+\begin{proposicion}{}
+$f:\rr^n \to \overline{\rr}$ es $\Sigma$-medible si y s\'olo si
+$f^{-1}(H)\in \Sigma$ cuando $H$ es boreliano de $\overline{\rr}$.
+\end{proposicion}
+
+Cuando $\Sigma=\mahtcal{M}$, decimos que $f$ es \emph{medible}.
+
+Cuando $\Sigma=\mahtscr{B}$, llamamos a $f$ \emph{medible Borel} o funci\'on \emph{boreliana}.
+
+\begin{ejercicio}{}
+Si $f$ es semicontinua inferiormente, entonces $f$ es medible. 
+\end{ejercicio}
+
+Ahora, estudiaremos $g\circ f$ cuando 
+$\rr^n \xrightarrow{f}\overline{\rr} \xrightarrow {g} \overline{\rr}$.
+
+\begin{definicion}{}
+Diremos que $g: \rr^n \to \overline{\rr}$ es boreliana si $g^{-1}(M)$ es boreliano de $\overline{\rr}$ cuando $M$ lo es.
+\end{definicion}
+
+Luego, si $f:\rr^n \to \overline{\rr}$ es medible y $g:\overline{\rr} \to \overline{\rr}$ es boreliana, entonces $g\circ f$ es medible.
+
+Tambi\'en, se tiene que si $f$ es medible entonces $|f|$, $|f|^2$, $\log|f|$ y $e^f$ son medibles. 
+
+Si $f$ y $g$ son medibles, entonces $\{f<g\}$ es medible pues
+\[
+\{f<g\}=\bigcup\limits_{q \in \qq} \{ f<q\} \cap \{ g>q\}.
+\]
+\begin{proposicion}{}
+Si $f$ y $g$ son medibles con respecto a $\Sigma$ y si $c\in \rr$, entonces
+$f+g$, $cf$ y $fg$ son medibles.
+\end{proposicion}
+
+\begin{demo}{}
+Supondremos que todas las funciones son finitas.
+
+Veamos que 
+\[
+\{
+f+g>a\}=\bigcup\limits_{r \in \qq} \{ a>r\} \cap \{q>a-r\}.
+\}
+\]
+Si $f(x)+g(x)>a$ entonces existe $r \in \qq$ tal que 
+\[
+f(x)>r>a-g(x),\;\;\mbox{ es decir }\;\; 
+f(x)>r\;\mbox{ y }\; g(x)>a-r.
+\]
+Rec\'iprocamente, si para alg\'un $r\in \qq$ se tiene que $f(x)>r$ y $g(x)>a-r$, entonces $f(x)+g(x)>a$.
+
+Si $c\in \rr$, entonces
+\[
+\{cf>a\}=
+\left\{
+\begin{array}{ll}
+f>\frac{a}{c}&c>0
+\\
+f<\frac{a}{c}&c<0
+\\
+\emptyset\;\'o\;\rr^n &c=0
+\end{array}
+\right.
+\]
+
+Ahora, como 
+\[
+fg=\frac{1}{4}[(f+g)^2-(f-g)^2]
+\]
+luego $fg$ es medible con respecto a $\Sigma$. 
+
+Para estudiar el cociente entre funciones medibles, denotamos por $1/f$
+la funci\'on que toma el valor $\frac{1}{f(x}$ si $f(x)\neq 0$ y el valor $0$ si $f(x)=0$.
+
+Ahora, como 
+\[
+\left\{\frac{1}{f}>a\right\}
+=
+\left \{
+\begin{array}{ll}
+ \{f>0\} \cap \{f<\frac{1}{a}\}    &  a>0 
+ \\
+ \{ f>0\} \cup  (\{f<\frac{1}{a}\} \cap \{f<0\}) \cup \{f=0\}
+     & a<0, 
+\end{array}
+\right.
+\]
+a partir de que $f$ es medible se tiene que  $1/f$ es medible. 
+
+\section{Sucesiones de funciones medibles}
+
+\end{demo}
+
+
