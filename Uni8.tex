@@ -98,9 +98,10 @@ Luego
     
     \begin{teorema}{}
     Si $\varphi$  y $\psi$ son funciones simples no negativas y $c\in \rr^+$, entonces
-    \[
-            \int_E (\varphi+\psi) &= \int_E \varphi +\int_E \psi \;\;\mbox{  y   }\;\;
+    \[\begin{split}
+            \int_E (\varphi+\psi) &= \int_E \varphi +\int_E \psi \;\;\mbox{  y   }\;\;\\
         \int_E c\varphi &=c\int_E \varphi.
+        \end{split}
     \]
     \end{teorema}
     
@@ -167,7 +168,7 @@ Luego
     \begin{lema}{}
     Sean $f_1\leq f_2\leq \ldots$ funciones no negativas y $\varphi$ funci\'on simple no negativa tal que 
     \[
-    \varphi \leq \lim\limits_{k \tp \infty} f_k.
+    \varphi \leq \lim\limits_{k \to \infty} f_k.
     \]
     \end{lema}
     
@@ -320,7 +321,7 @@ La otra desigualdad es inmediata.
                     Por el Teorema \ref{teo:Beppo-Levi} y como $g_k \leq f_k$, se tiene 
                     \[
                     %\begin{split}
-                    \int_E g=&\lim\limits_{k \to \infty} \int_E g_k
+                    \int_E g=\lim\limits_{k \to \infty} \int_E g_k
                     =\liminf\limits_{k \to \infty} \int_E g_k
                    % \\
                     \leq \liminf\limits_{k \to \infty} \int_E f_k.
@@ -575,7 +576,7 @@ La otra desigualdad es inmediata.
                         Por el Teorema de Beppo-Levi (Teorema \ref{teo:Beppo-Levi}), se tiene
                         \[
                         \int f(x+h)\,dx=\lim\limits_{k \to \infty} \int \varphi_k(x+h)\,dx=
-                        \lim\limits_{k\to \infty} \int \varphi_k(x) =\int f.
+                        \lim\limits_{k\to \infty} \int \varphi_k(x) =\int f(x)\,dx.
                         \]
                     \end{itemize}
                     As\'i queda demostrado el item \ref{it:invariancia-f-x+h}.
@@ -738,7 +739,7 @@ La otra desigualdad es inmediata.
         
         Si $E\subset \rr^{n+m}$ e $y\in \rr^n$, entonces
         \[
-        E_x=\{y \in \rr^m: (x,y)in E\},
+        E_x=\{y \in \rr^m: (x,y)\in E\},
         \]
         se llama la \emph{secci\'on} de $E$ en $x$.
                 An\'alogamente, se define $E_y$.
@@ -964,7 +965,10 @@ Luego,
 \]
 es integrable en $y$ para casi todo $x$. Adem\'as, $g \in L(\rr^n)$ y 
 \[
-\int g(x)\,dx=\int g_1(x)\,dx - \int g_2(x)\,dx=\int f^{+}(u)\,du - \int f^{-}(u)\,du=\int f(u)\,du.
+\begin{split}
+\int g(x)\,dx&=\int g_1(x)\,dx - \int g_2(x)\,dx
+\\&=\int f^{+}(u)\,du - \int f^{-}(u)\,du=\int f(u)\,du.
+\end{split}
 \]
                 \end{demo}
                 

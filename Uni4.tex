@@ -344,16 +344,16 @@ haciendo $n \to \infty$ obtenemos el valor buscado.
 \[
  \int_a^b x^2 dx=\frac{b^3}{3}-\frac{a^3}{3}.
 \]
-{\em Ayuda:} Usar particiones uniformes y la fórmula $\sum_{i=1}^nn^2= n(n+1)(2n+1)/6$.
+{\em Ayuda:} Usar particiones uniformes y la fórmula $\sum_{i=1}^n n^2= n(n+1)(2n+1)/6$.
 \end{ejercicio}
 
 \begin{ejemplo}{ej:int x^n} Sea $0< a<b$ y $m\in\mathbb{Z}$, $m\neq -1$,  veamos que 
 \[
- \int_a^b x^m dx=\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.
+ \int_a^b x^m \,dx=\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.
 \]
 
 \begin{demo}
-Podr\'iamos usar particiones uniformes, pero eso nos obligar\'ia a hallar f\'ormulas para $\sum\limits_{i=0}^i^m$. Usando particiones no uniformes evitamos ese inconveniente. 
+Podr\'iamos usar particiones uniformes, pero eso nos obligar\'ia a hallar f\'ormulas para $\sum\limits_{i=0}^{i^m}$. Usando particiones no uniformes evitamos ese inconveniente. 
 
 Tomamos $n \in \nn$ y 
 \[
@@ -369,7 +369,7 @@ x_i-x_{i-1}=aq^{i-1}(q-1).
 \]
 Supongamos que $m>0$, entonces
 \[
-m_i=\inf\limits_{[x_{i-1},x_i]} x^m=x_{i-1}^m=a^mq^{m(i-1)}, \;\;i=1,2,\ldots,n.
+m_i=\inf\limits_{[x_{i-1},x_i]} x^m=x_{i-1}^m=a^m q^{m(i-1)}, \;\;i=1,2,\ldots,n.
 \]
 Similarmente, 
 \[
@@ -391,8 +391,7 @@ Ahora,
 \frac{q^{(m+1)n }-1}{q^{m+1}-1}
 \\
 =&
-a^{m+1}  \frac{q-1}{q^{m+1}-1} q^m \left[ \left(\frac{b}{a}\right)^{m+1}-1\right]
-.
+a^{m+1}  \frac{q-1}{q^{m+1}-1} q^m \left[ \left(\frac{b}{a}\right)^{m+1}-1.\right]
 \end{split}
 \]
 Ahora, como $\lim\limits_{n \to \infty} q=1$ y 
@@ -478,31 +477,32 @@ con $u=a+ib$ y $v=h/2$, de donde obtenemos
 Luego, podemos re-escribir $\overline{S}(f,P_n)$ como
 \[
 \begin{split}
-\overline{S}(f,P_n)=&h \frac{1}{2 \sen \frac{h}{2}}
+\overline{S}(f,P_n)=
+&h \frac{1}{2 \sen\frac{h}{2} }
 \sum\limits_{i=1}^n 
-\cos\left[a+\left(i-\frac{1}{2}\right)h\right] - 
-\cos \left[a+\left(i+\frac{i}{2}\right)h\right]
+\cos\left[a+\left(i-\frac{1}{2}\right) h\right] - 
+\cos \left[a+\left(i+\frac{i}{2}\right) h\right]
 \\
 =&
-\frac{h}{2 \sen \frac{h}{2}}
+\frac{h}{2 \sen\frac{h}{2}}
 \left\{
 \cos\left(a+\frac{h}{2}\right)-\cos\left(a+\frac{3}{2}h\right)+
-\cos\left( a+\frac{3}{2}h\right)\right.
-\\
-\left.
--&\cos\left(a+\frac{5}{2}h\right)+
-\cos\left(a+\frac{5}{2}h\right)-\cos\left(a+\frac{7}{2}h\right)+\ldots 
+\cos\left( a+\frac{3}{2}h\right)
 \right.
 \\
-\left.
+-&\cos\left(a+\frac{5}{2}h\right)+
+\cos\left(a+\frac{5}{2}h\right)-
+\cos\left( a+\frac{7}{2}h \right)
++\ldots 
+\\
 -&\cos\left[a+\left(n-\frac{1}{2}\right)h \right]
 +\cos\left[a+\left(n-\frac{1}{2}\right)h \right]-
-\cos\left(a+nh+\frac{h}{2}\right)\right\} 
+\left.\cos\left(a+nh+\frac{h}{2}\right)\right\}
 \\ 
 =&
-\frac{h}{2 \sen \frac{h}{2}}
+\frac{h}{2 \sen\frac{h}{2}}
 \left\{
-\cos\left(a+\frac{h}{2}\right)-\cos\left(b+\frac{h}{2}\right)
+\cos\left(a+\frac{h}{2}\right) -\cos \left(b+\frac{h}{2}\right)
 \right\}.
 \end{split}
 \]
@@ -656,10 +656,13 @@ Así finalmente
 \end{multline*}
 En la segunda sumatoria usamos las acontaciones $M_i-m_i\leq 2M$ y $(x_i-x_{i-1})<\delta$ y tomamos en cuenta que la cantidad de términos es a lo sumo $m$. En la primer sumatoria usamos las estimaciones \eqref{eq:2drite_estima_suma}. Así obtenemos
 
-\begin{multline*}\label{eq:crite2_cuentas}
+\begin{multline*}
+%\label{eq:crite2_cuentas}
  \overline{S}(P;f)-\underline{S}(P;f)
- \leq \sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1}-2\delta)+ 2M\delta m\\ 
- . =\sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1})+ \sum_{j=1}^m m^*_j 2\delta +2M\delta m\\ 
+ \leq \sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1}-2\delta)+ 2M\delta m
+ \\
+ =\sum_{j=1}^m  M^*_j(y_j-y_{j-1})-\sum_{j=1}^m  m^*_j(y_j-y_{j-1})+ \sum_{j=1}^m m^*_j 2\delta +2M\delta m
+ \\ 
  = \overline{S}(P^*;f)-\underline{S}(P^*;f)+4Mm\delta<\epsilon
 \end{multline*}
  

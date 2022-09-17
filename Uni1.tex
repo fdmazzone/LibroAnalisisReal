@@ -357,8 +357,8 @@ lo sumo numerable.
 \begin{demo} Sea $A\subset B$, con $B$ a lo sumo numerable. Se puede suponer
 que $B\subset \nn$. ?`Por qué? También podemos suponer que
 $A$ es infinito, puesto que si fuera finito no habría nada
-que probar. Definimos una función $f:\nn\longrightarrow A$ por
-induccion. Puesto que los números naturales son bien ordenados,
+que probar. Definimos una función $f:\nn \longrightarrow A$ por
+inducción. Puesto que los números naturales son bien ordenados,
 tenemos que $A$ tiene un primer elemento, digamos, $a_1$.
 Definamos
 \[f(1)=a_1.\]
@@ -394,19 +394,26 @@ una biyección entre los enteros positivos y los naturales pares
 y entre los enteros negativos y los naturales impares. La
 función es la siguiente:
 
-\[f(x)=\left\{
-\begin{array}{ll}
+\[f(x)=
+\left\{
+\begin{array}{rl}
     2x+2, & \hbox{si $x\geq 0$;} \\
     -2x-1, & \hbox{si $x<0$.} \\
 \end{array}
-\right.\] Dejamos como ejercicio demostrar que, efectivamente, la
+\right.
+\] 
+Dejamos como ejercicio demostrar que, efectivamente, la
 función $f$ es una biyección entre $\nn$ y $\mathbb{Z}$.
 \end{demo}
 
 \begin{proposicion}{NxNesnum} El conjunto $\nn\times\nn$ es numerable.
 \end{proposicion}
-\begin{demo} La demostración de este enunciado ya no es tan
-sencilla. La idea se la debemos a G. Cantor. Primero presentaremos un razonamiento \href{https://es.wikipedia.org/wiki/Heur%C3%ADstica}{heurístico}  de
+
+\begin{demo} 
+La demostración de este enunciado ya no es tan
+sencilla. La idea se la debemos a G. Cantor. Primero presentaremos un razonamiento 
+\href{https://es.wikipedia.org/wiki/Heur\%C3\%ADstica}{heurístico} 
+de
 la construcción de la biyección entre $\nn\times\nn$
  y $\nn$. En rigor de verdad, a los efectos lógicos de la demostración, toda esta parte de la demostración
  se podría obviar; pudiéndose dar la fórmula
@@ -459,7 +466,7 @@ Obsérvese que
 $j$-ésimo}.
 \end{equation}
 Por ejemplo: el grupo cuarto tiene por su último elemento el 10,
-que es igual a 4.5/2. Tambien tenemos que todos los pares
+que es igual a 4.5/2. También tenemos que todos los pares
 ordenados sobre la misma diagonal, tienen la característica
 de que sus componentes suman lo mismo. Numeremos las diagonales,
 de izquierda a derecha, empezando por 1. Así tenemos que la
@@ -474,15 +481,15 @@ j+k-1=\text{el número de la diagonal a la que pertenece } (j,k).
 $j$-ésima con el grupo $j$-ésimo de naturales. Notar que, en
 virtud de ~\eqref{numfinal}, tenemos que
 \begin{equation}\label{numdiag2}
-\begin{split}\frac{(j+k-1)(j+k)}{2}=&\text{es el último número}\\
- & \text{del agrupamiento $j+k-1$-ésimo}.\\
+\begin{split}
+\frac{(j+k-1)(j+k)}{2}=&\text{es el último número}\\
+                       &\text{del agrupamiento $j+k-1$-ésimo}.\\
 \end{split}
 \end{equation}
 Así, si al primer miembro de ~\eqref{numdiag2} le restamos
 $(j-1)$, obtenemos el número que ocupa el lugar $j$ (contando de
-atras para adelante) del agrupamiento $j+k-1$ de naturales. Con
-esto probamos que la función que queriamos construir es:
-
+atrás para adelante) del agrupamiento $j+k-1$ de naturales. Con
+esto probamos que la función que queríamos construir es:
 
 \begin{equation}\label{forfinal}
 f(j,k):=\frac{(j+k-1)(j+k)}{2}-j+1.
@@ -544,7 +551,8 @@ y $\alpha_1$, $\alpha_2$,...,$\alpha_j$ son enteros positivos.
 \begin{demo} \emph{alternativa de la Proposición \ref{NxNesnum}}
 Definimos la siguiente función
 
-\[\begin{split}
+\[
+\begin{split}
 f:\nn\times\nn&\longrightarrow\nn\\
  (n,m)&\longrightarrow 2^n3^m\\
  \end{split}.
@@ -653,16 +661,21 @@ es a lo sumo numerable.
 
 \begin{demo} Como vimos, para cada $i\in I$ existe una función
 suryectiva $f_i:\nn\longrightarrow A_i$. Definimos:
-\[\begin{split}
-      f:\nn\times I &\longrightarrow \bigcup_{i\in I}A_i\\
-         (n,i)&\longmapsto f_i(n).\\
+\[
+\begin{split}
+      f:\nn\times I & \longrightarrow \bigcup\limits_{i\in I} A_i
+      \\
+    (n,i) & \longmapsto f_i(n).
+         \\
  \end{split}
 \]
 Esta función es suryectiva, pues si
-\[a\in\bigcup_{i\in I}A_i,\]
-entonces $a\in A_{i_0}$, para algún $i_0$; ahora, utilizando la
-suryectividad de $f_{i_0}$, obtenemos un $n\in\nn$ tal que
-$f_{i_0}(n)=a$. Es decir $f(n,i_0)=a$. Esto prueba que $f$  es
+\[a \in \bigcup\limits_{i\in I} A_i,\]
+entonces $a \in A_{i_0} $, para algún $i_0$; 
+ahora, utilizando la
+suryectividad de $f_{i_0}$, obtenemos un $n \in\nn$ tal que
+$f_{i_0}(n)=a$. 
+Es decir $f(n,i_0)=a$. Esto prueba que $f$  es
 suryectiva. Ahora, como $\nn\times I$ es a lo sumo numerable, en
 rigor es numerable, y por la Proposición \vref{numinysur},
 obtenemos la tesis.

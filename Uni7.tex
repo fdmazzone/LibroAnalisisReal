@@ -3,9 +3,9 @@
 
 \section{Introducci\'on???}
 
-\textbf{ Copiado de acuerdo al orden de las notas manuscritas...parece que falta algo para el contexto...o reordenarlo...}
+\textbf{ Copiado de acuerdo al orden de las notas manuscritas...parece que falta algo para el contexto...}
 
-\textbf{Habr\'ia que definir $\mathcal{M}$ o referenciar la definici\'on del cap\'itulo  de conjuntos medibles...si existiese!!!}
+\textbf{Habr\'ia que definir $\mathcal{M}$ o referenciar la definici\'on del cap\'itulo  de conjuntos medibles...si existiese...ese  capitulo no esta completo}
 
 \begin{definicion}{}
 $f$ es medible si y s\'olo si $f^{-1}((a,\infty)) \in \mathcal{M}$. 
@@ -30,7 +30,7 @@ Si $f:\rr^n \to \overline{\rr}$ es medible si y s\'olo si $f^{-1}(H) \in \mathca
 \end{teorema}
 
 \begin{demo}
-$\Leftarrow)$ Inmediata a partir de la definici\'on.
+$\Leftarrow)$ Inmediata a partir de la definici\'on de funci\'on medible.
 
 $\Rightarrow)$ Se tiene que 
 \[
@@ -55,9 +55,10 @@ $f:\rr^n \to \overline{\rr}$ es $\Sigma$-medible si y s\'olo si
 $f^{-1}(H)\in \Sigma$ cuando $H$ es boreliano de $\overline{\rr}$.
 \end{proposicion}
 
-Cuando $\Sigma=\mahtcal{M}$, decimos que $f$ es \emph{medible}.
+Cuando $\Sigma=\mathcal{M}$, decimos que $f$ es \emph{medible}.
 
-Cuando $\Sigma=\mahtscr{B}$, llamamos a $f$ \emph{medible Borel} o funci\'on \emph{boreliana}.
+Cuando $\Sigma=\mathscr{B}$, llamamos a $f$ \emph{medible Borel} 
+o funci\'on \emph{boreliana}.
 
 \begin{ejercicio}{}
 Si $f$ es semicontinua inferiormente, entonces $f$ es medible. 
@@ -78,12 +79,12 @@ Si $f$ y $g$ son medibles, entonces $\{f<g\}$ es medible pues
 \[
 \{f<g\}=\bigcup\limits_{q \in \qq} \{ f<q\} \cap \{ g>q\}.
 \]
-\begin{proposicion}{}
+\begin{teorema}{teo:propiedades-func-medibles}
 Si $f$ y $g$ son medibles con respecto a $\Sigma$ y si $c\in \rr$, entonces
 $f+g$, $cf$ y $fg$ son medibles.
-\end{proposicion}
+\end{teorema}
 
-\begin{demo}{}
+\begin{demo}
 Supondremos que todas las funciones son finitas.
 
 Veamos que 
@@ -105,10 +106,12 @@ Si $c\in \rr$, entonces
 \left\{
 \begin{array}{ll}
 f>\frac{a}{c}&c>0
+\medskip
 \\
 f<\frac{a}{c}&c<0
+\medskip
 \\
-\emptyset\;\'o\;\rr^n &c=0
+\emptyset\;\mbox{ \'o }\;\rr^n &c=0.
 \end{array}
 \right.
 \]
@@ -119,8 +122,8 @@ fg=\frac{1}{4}[(f+g)^2-(f-g)^2]
 \]
 luego $fg$ es medible con respecto a $\Sigma$. 
 
-Para estudiar el cociente entre funciones medibles, denotamos por $1/f$
-la funci\'on que toma el valor $\frac{1}{f(x}$ si $f(x)\neq 0$ y el valor $0$ si $f(x)=0$.
+Para estudiar el cociente entre funciones medibles, denotamos por $\frac{1}{f}$
+la funci\'on que toma el valor $\frac{1}{f(x)}$ si $f(x)\neq 0$ y el valor $0$ si $f(x)=0$.
 
 Ahora, como 
 \[
@@ -129,6 +132,7 @@ Ahora, como
 \left \{
 \begin{array}{ll}
  \{f>0\} \cap \{f<\frac{1}{a}\}    &  a>0 
+ \medskip
  \\
  \{ f>0\} \cup  (\{f<\frac{1}{a}\} \cap \{f<0\}) \cup \{f=0\}
      & a<0, 
@@ -136,9 +140,182 @@ Ahora, como
 \right.
 \]
 a partir de que $f$ es medible se tiene que  $1/f$ es medible. 
+\end{demo}
 
 \section{Sucesiones de funciones medibles}
 
+\begin{proposicion}{prop:inf-y-sup-medibles}
+Si $\{f_k\}$ es una sucesi\'on de funciones medibles con respecto a $\Sigma$, 
+entonces
+\[
+g(x)=\inf\limits_{k} f_k(x) \;\;\mbox{ y }\;\; h(x)=\sup\limits_{k} f_k(x) 
+\]
+son $\Sigma$-medibles. 
+\end{proposicion}
+
+
+La demostraci\'on se deduce de las f\'ormulas
+\[
+\{h>a \}=\bigcup_{k=1}^{\infty} \{f_k>a\}
+\;\;\mbox{ y }\;\;
+\{g<a \}=\bigcup_{k=1}^{\infty} \{f_k<a\}.
+\]
+
+\begin{proposicion}{prop:liminf-y-limsup-medibles}
+Si $\{f_k\}$ es una sucesi\'on de funciones $\Sigma$-medibles, entonces
+\[
+g(x)=\liminf\limits_{k \to \infty} f_k(x)
+\;\;\mbox{ y }
+\;\;
+h(x)=\limsup\limits_{k \to \infty} f_k(x)
+\]
+son   medibles con respecto a $\Sigma$.
+\end{proposicion}
+
+
+La prueba resulta de aplicar la Proposici\'on \ref{prop:inf-y-sup-medibles}
+a las relaciones 
+\[
+g(x)=\sup\limits_{j} \inf\limits_{k\geq j} f_k(x)
+\;\;\mbox{ y }\;\;
+h(x)=\inf\limits_{j}\sup\limits_{k \geq j} f_k(x).
+\]
+
+\begin{corolario}{}
+Si $f_k(x) \to f(x)$ y $\{f_k\}$ es una sucesi\'on de funciones $\Sigma$-medibles, entonces $f$ es medible con respecto a $\Sigma$.
+\end{corolario}
+
+A continuaci\'on, completamos la demostraci\'on del Teorema\ref{teo:propiedades-func-medibles} que se reliz\'o suponiendo
+que tanto $f$ como $g$ son finitas. 
+Para evitar esa restricci\'on, ahora consideramos la sucesi\'on de funciones $\varphi_k:\overline{\rr} \to \overline{\rr}$ definidas por
+\[
+\varphi_k(t)=
+\left\{
+\begin{array}{rl}
+   t  &  \mbox{si } |t|\leq k \\
+   k  &  \mbox{si } t>k\\
+   -k &  \mbox{si } t<-k.
+\end{array}
+\right.
+\]
+Cada $\varphi_k$ es una funci\'on boreliana pues la restricci\'on de $\varphi$ a $\rr$ es continua. Adem\'as, para cada $t\in \overline{\rr}$, 
+se tiene que $\varphi_k \to t$ cuando $k \to \infty$. Entonces, las funciones
+\[
+f_k=\varphi_k \circ f \;\;\mbox{ y }
+\;\;
+g_k=\varphi_k \circ g,
+\]
+son medibles con respecto a $\Sigma$, finitas y convergen puntualmente a $f$ y $g$ respectivamente, cuando $k  \to \infty$. Luego, las funciones 
+\[
+f+g=\lim\limits_{k \to \infty} (f_k +g_k)
+\;\;\mbox{ y }\;\;
+fg=\lim\limits_{k \to \infty} f_kg_k,
+\]
+resultan medibles a partir de la aplicaci\'on de la Proposici\'on \ref{prop:liminf-y-limsup-medibles}.
+
+\section{Funciones simples}
+Definimos la funci\'on caracter\'istica  $\chi_E$ de un conjunto $E \subset \rr^n$ mediante
+\[
+\chi_E(x)=
+\left\{
+\begin{array}{ll}
+   1  & \mbox{si } x \in E \\
+   0  & \mbox{si } x \notin E.
+\end{array}
+\right.
+\]
+
+Se tiene la siguiente propiedad
+\begin{itemize}
+    \item $\chi_E$ es medible  si y s\'olo si $E$ es medible.
+\end{itemize}
+
+
+\begin{definicion}{defi:funcion-simple}
+Una funci\'on medible y finita  $\varphi:\rr^n \to \rr$ 
+se llama \emph{simple} si el conjunto de todos sus valores es finito, es decir, si $\varphi$ es medible y la imagen  $\varphi(\rr^n)$ es un subconjunto finito de $\rr$.
+\end{definicion}
+
+A partir de la Definici\'on \ref{defi:funcion-simple}, se tiene que si $\varphi,\psi$ son funciones simples y $c \in \rr$, entonces $\varphi + \psi$, $c\varphi$,  $\varphi \psi$ son simples.
+
+Si $\varphi(\rr^n)=\{\alpha_1,\ldots,\alpha_N\}$, entonces $E_i=\varphi^{-1}(\{\alpha_i\})$ son medibles y 
+\[
+\varphi=\sum\limits_{i=1}^N \alpha_i \chi_{E_i}.
+\]
+Las funciones simples desempe\~nan un papel muy importante en la teor\'ia de integraci\'on en virtud del siguiente teorema.
+
+\begin{teorema}{teo:simples-convergen-a-medible}
+Si $f:\rr^n \to \overline{\rr}$ es una funci\'on medible no negativa, entonces existe una sucesi\'on $\{\varphi_k\}$ de funciones simples tal que
+\[
+\varphi_1\leq \varphi_2 \leq \varphi_3\leq \ldots \;\;\mbox{ y }\;\;
+f(x)=\lim\limits_{k \to \infty} \varphi_k(x)
+\]
+en cada punto $x \in \rr^n$.
+\end{teorema}
+
+\begin{demo}
+Para $k \in \nn$, dividimos $[0,2^k)$ en $k2^k$ intervalos disjuntos
+\[
+\left[\frac{i-1}{2^k},\frac{i}{2^k}\right), \;\;i=1,2,\ldots,k2^k.
+\]
+Definimos $g_k:\overline{\rr} \to \overline{\rr}$ por
+\[
+g_k(x)=
+\left\{
+\begin{array}{ll}
+    \frac{i-1}{2^k} & \mbox{si }\; 0\leq t\leq k, \;\; (i-1)/2^k\leq t< i/2^k, 
+    \medskip
+    \\
+    k     & \mbox{si }\;t\geq k
+    \medskip
+    \\
+    0     & \mbox{si }\; t<0.
+\end{array}
+\right.
+\]
+Las funciones $g_k$ son borelianas, no negativas y verifican
+\[
+0\leq g_1\leq g_2\leq \ldots,\;\mbox{ y }\;\;
+\lim\limits_{k \to \infty} g_k(t)=t, \;\;\mbox{ en } [0, +\infty].
+\]
+Las funciones $\varphi_k = g_k \circ f$ son simples y verifican  el teorema.
 \end{demo}
 
+\begin{observacion}{}
+\begin{enumerate}
+    \item Si $f$ es medible con respecto a una $\sigma$-\'algebra $\Sigma$, entonces las funciones $\varphi_k$ del Teorema \ref{teo:simples-convergen-a-medible} son tambi\'en medibles con respecto a $\Sigma$.
+    \item Multiplicando a las $\varphi_k$ por $\chi_{B(0,k)}$ se obtiene una sucesi\'on de  funciones $\psi_k$ que verifican las hip\'otesis del Teorema \ref{teo:simples-convergen-a-medible} y que tienen soporte compacto.
+    \item Si $f$ es acotada y positiva,  la convergencia es uniforme.
+\end{enumerate}
+\end{observacion}
 
+\section{Partes positiva y negativa}
+
+Si $f$ es medible, tambi\'en lo son 
+\[
+f^+=\sup\{0,f \}\;\;\mbox{ y }\;\;f^{-}=\sup\{0,-f\}
+\]
+llamadas partes positiva y negativa de $f$.
+
+Se verifica que 
+\[
+f=f^{+}-f^{-}\;\;\mbox{ y }\;\; |f|=f^{+}+f^{-}.
+\]
+
+\begin{teorema}{}
+Si $f$ es medible y $f=f_1-f_2$, con $f_i\geq 0$ para $i=1,2$, entonces
+$f^{+}\leq f_1$ y $f^{-}\leq f_2$.
+\end{teorema}
+
+\begin{demo}
+Se tiene que $f\leq f_1$ de donde $f^+=\sup\{ f,0\}\leq f_1$. 
+
+Adem\'as, $-f \leq f_2$. Luego, $f^{-}\leq f_2$
+\end{demo}
+
+Si $f$ es medible,  aplicando el Teorema \ref{teo:simples-convergen-a-medible} a $f^+$ y $f^{-}$, 
+existen funciones simples $\varphi_k,\psi_k$ tales que $\varphi_k \to f^+$
+y $\psi_k \to f^{-}$. Luego, 
+$\varphi_k - \psi_k \to f$, y adem\'as, $|\varphi_k-\psi_k|\leq \varphi_k+\psi_k \leq f^{+}+f^{-}=|f|$.
+
+\section{Propiedades verdaderas en casi todo punto}
