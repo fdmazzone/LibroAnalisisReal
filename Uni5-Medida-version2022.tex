@@ -1,0 +1,405 @@
+\chapter{Medida de Lebesgue -  versi\'on 2022}
+
+\section{Preliminares}
+Sea $\rr^d$ el espacio eucl\'ideo de dimensi\'on $d$. 
+
+Si $x \in \rr^d$, entonces $x=(x_1,x_2,\ldots,x_d)$ siendo $x_i\in \rr$.
+
+La \emph{norma} de $x$ se define como $|x|=\left(x_1^2+x_2^2+\ldots+x_d^2\right)^{1/2}$ y la \emph{distancia} de $x$ a $y$
+se calcula mediante $d(x,y)=|x-y|$.
+
+Si $E\subset \rr^d$, el \emph{complemento} de $E$ es 
+$E^C=\left\{ x:x\notin E\right\}$.
+
+Si $E,F\subset \rr^d,$ se tiene que 
+$$E-F=E\cap F^C=\left\{x: x\in E \wedge x \notin F\right\}$$ y 
+$$d(E,F)=\inf \left\{d(x,y):x\in E, y \in F \right\}.$$
+
+Si $E \subset \rr^d$, entonces $\diametro(E)=\sup\left\{ d(x,y): x,y \in E \right\}$.
+
+Ahora, la \emph{bola abierta} de centro $x$ y radio $r$ est\'a dada por \[B_r(x)=\left\{y \in \rr^d: d(x,y)<r  \right\}.\]
+
+Si $E \subset \in \rr^d$ se dice \emph{abierto} si $\forall x \in E$, $\exists r>0:$\, $B(x,r)\subset E$. 
+
+Y $F \subset \rr^d$ se denomina \emph{cerrado} si y s\'olo si $F^C$ es abierto.
+
+\begin{itemize}
+    \item Si $\{E_{\lambda}\}_{\lambda \in \Lambda}$ son abiertos $\Rightarrow$ $ \bigcup\limits_{\lambda \in \Lambda} E_{\lambda}$ 
+    es abierto. 
+    \item Si $\Lambda$ es finito $\Rightarrow$ $ \bigcap\limits_{\lambda \in \Lambda} E_{\lambda}$ es abierto.
+    \item Si los conjuntos $E_{\lambda}$ son cerrados, se obtienen conjuntos cerrados \emph{intercambiando} uniones por intersecciones.
+\end{itemize}
+
+Si $E \subset \rr^d$ se dice \emph{acotado} si $E\subset B$ para alguna bola $B$.
+
+Y, $E \subset \rr^d $ es \emph{compacto} si es cerrado y acotado.
+
+
+\begin{teorema}{}[Cubrimiento Heine-Borel]
+Si $E \subset \rr^d$ es compacto y $E\subset \bigcup\limits_{\alpha} \mathcal{O}_{\alpha}$
+con $\mathcal{O}_{\alpha}$ abiertos $\forall \alpha$, entonces existen finitos $\alpha:\alpha_1,\alpha_2, \ldots,\alpha_N$, tal que 
+$E \subset \bigcup\limits_{i=1}^N \mathcal{O}_{\alpha_i}$.
+\end{teorema}
+
+\begin{itemize}
+    \item $x \in \rr^d$ es un \emph{punto l\'imite} \'o \emph{punto de clausura} de $E\subset \rr^d$
+    si $\forall r>0$,\; $B(x,r)\cap E \neq \emptyset$.
+    \item $x \in \rr^d$ es un \emph{punto aislado} de $E\subset \rr^d$ si $\exists r>0$ tal que $B(x,r)\cap E=\{x\}$.
+    \item $x \in \rr^d$ es \emph{interior} a $E$ si $\exists r>0$ tal que $B(x,r) \subset E$.
+\end{itemize}
+
+Luego, se definen los siguientes conjuntos 
+\begin{itemize}
+    \item $E^{\circ}=\left\{x| x \;\mbox{ es interior a }\; E \right\}$.
+    \item $\overline{E}=\left\{x| x \;\mbox{ es punto l\'imite de }\; E \right\}$.
+    \item     $\partial E=\overline{E}-E^{\circ}$.
+\end{itemize}
+
+\begin{ejercicio}{}
+\begin{enumerate}
+    \item $\overline{E}$ es cerrado;
+    \item $E$ es cerrado si y s\'olo su $E=\overline{E}$;
+    \item $E$ es abierto si  s\'olo su $E=E^{\circ}$;
+    \item $\partial E = \partial E^C$;
+    \item $E^{\circ} = \overline{E^C}$.
+\end{enumerate}
+\end{ejercicio}
+
+Por \'ultimo, un conjunto $E \subset \rr^d$ se llama \emph{perfecto} si no tiene puntos aislados.
+
+\section{Rect\'angulos y cubos}
+\begin{definicion}{}
+$R \subset \rr^d$ es un \emph{rect\'angulo} si 
+\[
+R=[a_1,b_1]\times\ldots\times [a_n,b_n],
+\]
+donde $a_j\leq b_j$, para $j=1,2,\ldots,d$.
+\end{definicion}
+
+\begin{observacion}{}
+Por definici\'on un rect\'angulo $R$ es cerrado y tiene lados paralelos a los ejes. Si 
+\begin{itemize}
+    \item $d=1$, $R$ es un intervalo cerrado;
+    \item $d=2$, $R$ es un rect\'angulo cerrado con lados paralelos a los ejes;
+    \item $d=3$. $R$ es un paralelep\'ipedo.
+\end{itemize}
+\end{observacion}
+
+Si $R$ es rect\'angulo tal que la longitud de lado es $b_i-a_i$, $i=1,\ldots,d$, entonces el \emph{Volumen} de $R$ est\'a dado por
+\[
+|R|=(b_1-a_1)\ldots(b_d-a_d).
+\]
+
+\begin{itemize}
+    \item Un \emph{rect\'angulo abierto} se define del modo natural.
+    \item Un \emph{cubo} es un rect\'angulo con todos los lados de la misma longitud $l$. \\
+    Si $Q$ es un cubo con lados de longitud $l$, entonces $|Q|=l^d$.
+\end{itemize}
+
+Una familia de rect\'angulos $\{R_{\lambda}\}_{\lambda \in \Lambda}$ se dice \emph{casi disjunta} si 
+\[
+R_{\lambda_1}^{\circ} \cap R_{\lambda_2}^{\circ}=\emptyset, \;\; \lambda_1,\lambda_2 \in \Lambda.
+\]
+
+Para $N>0$, consideramos el conjunto 
+\[
+\frac{1}{N}\zz=\left\{ \frac{m}{N}: m\in \zz   \right\}.
+\]
+
+\textbf{AGREGAR DIBUJITO DE LOS VALORES DEL CONJUNTO.}
+
+
+Sea $I$ un intervalo de $\rr$ con longitud $l$. Queremos estimar 
+\[
+\# \left(I \cap \frac{1}{N}\zz \right).
+\]
+
+\begin{lema}{lema:cantidad-puntos-en-intervalo}
+\[
+Nl-1 \leq \# \left(I \cap \frac{1}{N}\zz \right) \leq Nl+1.\]
+\end{lema}
+
+\begin{demo}
+
+Supongamos que $k=\# \left(I \cap \frac{1}{N}\zz \right)$.
+
+Si $k>0$ y $a_1,\ldots,a_k \in I \cap \frac{1}{N}\zz$ tales que 
+$a_1<a_2<\ldots<a_k$ y $a_1=\frac{J}{N},a_2=\frac{J+1}{N},\ldots,a_k=\frac{J+k-1}{N}$, con 
+$I=[a,b]$. 
+
+Por un lado, se tiene que
+\[
+a\leq \frac{J}{N}\leq \frac{J+k-1}{N}\leq b \Rightarrow
+\frac{k-1}{N}\leq b-a=l.
+\]
+Por otro, 
+\[
+\frac{J-1}{N}< a\leq b<\frac{J+k}{N} \Rightarrow
+l=b-a< \frac{k+1}{N}.
+\]
+\end{demo}
+
+\begin{ejercicio}{}
+Probar el Lema \ref{lema:cantidad-puntos-en-intervalo} para el caso $k=0$.
+\end{ejercicio}
+
+\begin{corolario}{}
+Si $I$ es un intervalo de longitud $l$, entonces
+\[
+\lim\limits_{N \to \infty} \frac{1}{N}\# \left(I \cap \frac{1}{N}\zz \right)=l=|I|.
+\]
+\end{corolario}
+
+Si $R$ es un rect\'angulo de $\rr^d$ con 
+\[
+R=\underbrace{[a_1,b_1]}_{I_1}\times \ldots \times \underbrace{[a_d,b_d]}_{I_d},
+\]
+entonces 
+\[
+\#\left(R \cap \frac{1}{N}\zz^d \right)=
+\# \left(I_1 \cap \frac{1}{N}\zz \right)\ldots
+\# \left(I_d \cap \frac{1}{N}\zz \right)
+\]
+y por tanto
+\[
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(R \cap \frac{1}{N}\zz^d \right)
+=|R|.
+\]
+Como 
+\[
+\# \left(R^{\circ} \cap \frac{1}{N}\zz^d \right) 
+\leq
+\# \left(R \cap \frac{1}{N}\zz^d \right)
+\leq 
+\# \left(R^{\circ} \cap \frac{1}{N}\zz^d \right) +2^d.
+\]
+Tambi\'en tenemos que 
+\[
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(R^{\circ} \cap \frac{1}{N}\zz^d \right)
+=|R|.
+\]
+
+\begin{corolario}{}
+Si $R$ es un rect\'angulo y $R= \bigcup\limits_{j=1}^M R_j$ con 
+$\{R_j\}_{j=1}^M$ una familia casi disjunta de rect\'angulos, entonces
+\[
+|R|=\sum\limits_{j=1}^M |R_j|.
+\]
+\end{corolario}
+
+\begin{demo}
+$\leq)$
+\[
+\begin{split}
+|R|=&
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(R \cap \frac{1}{N}\zz^d \right)
+\\
+\leq & 
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\sum\limits_{j=1}^M 
+\# \left(R_j \cap \frac{1}{N}\zz^d \right)
+\\
+=&
+\sum\limits_{j=1}^M 
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(R_j \cap \frac{1}{N}\zz^d \right)
+\\
+=&
+\sum\limits_{j=1}^M |R_j|.
+\end{split}
+\]
+
+$\geq) $
+\[\begin{split}
+\sum\limits_{j=1}^M |R_j|=&
+ \sum\limits_{j=1}^M
+\lim\limits_{N \to \infty} 
+\frac{1}{N^d} \# \left(R_j^{\circ} \cap \frac{1}{N}\zz^d \right)
+\\
+=&
+\lim\limits_{N \to \infty} 
+\frac{1}{N^d} 
+\sum\limits_{j=1}^M
+\# \left(R_j^{\circ} \cap \frac{1}{N}\zz^d \right)
+\\
+=&
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(\left(\bigcup\limits_{j=1}^M  R_j^{\circ}\right)
+\cap \frac{1}{N} \zz^d\right)
+\\
+\leq& |R|.
+\end{split}
+\]
+\end{demo}
+
+\begin{lema}{lema:medida-rectangulo-incluido-en-union}
+Si $R$ es rect\'angulo y $R\subset \bigcup\limits_{j=1}^M R_j$ donde
+$R_j$ son rect\'angulos, entonces
+\[
+|R|\leq \sum\limits_{j=1}^M |R_j|. 
+\]
+\end{lema}
+
+\begin{demo}
+La prueba de este lema que como ejercicio para el lector. 
+\end{demo}
+
+
+\begin{ejercicio}{}
+Demostrar el  Lema \ref{lema:medida-rectangulo-incluido-en-union}.
+\end{ejercicio}
+
+
+\begin{teorema}{teo:abierto-union-intervalos-abiertos-disj}
+Todo conjunto abierto $\mathcal{O}$ de $\rr$ es uni\'on numerable \emph{\'unica} de intervalos abiertos disjuntos.
+\end{teorema}
+
+\begin{demo}
+Sea $x \in \mathcal{O}$ y definimos 
+\[
+I_x=\bigcup \left\{  
+I:\,I\mbox{ es intervalo abierto, }\, I\subset \mathcal{O}, x \in I
+\right\}.
+\]
+\begin{enumerate}
+    \item $I_x$ es abierto.
+    \item $I_x$ es intervalo. En efecto, si $y,z\in I$ $\Rightarrow \exists\, I_1,I_2$ intervalos tales que $I_1,I_2\subset \mathcal{O}$, 
+    $x \in I_1\cap I_2$, $y \in I_1$ y $z\in I_2$. 
+    Entonces $I_1\cup I_2$ es intervalo e $I_1\cup I_2 \in \mathcal{O}$. Luego  $[y,z]\subset I_x$. 
+    \item Si $I_x \cap I_y \neq \emptyset \Rightarrow I_x=I_y$.
+    \'Esto se obtiene a partir de que $I_x \cup I_y$ es intervalo.
+    \item\label{it:cantidad-numerable-intervalos} Hay a lo sumo una cantidad numerable de intervalos disjuntos.
+    \item \label{it:desc-unica}La descomposici\'on en intervalos abiertos disjuntos es \'unica.
+    \end{enumerate}
+\end{demo}
+
+\begin{ejercicio}{}
+Demostrar  los apartados \ref{it:cantidad-numerable-intervalos} y \ref{it:desc-unica} de la prueba del Teorema \ref{teo:abierto-union-intervalos-abiertos-disj}.
+\end{ejercicio}
+
+
+La generalizaci\'on a $\rr^d$ con $d>1$ presenta algunas dificultades.
+
+\begin{teorema}{}
+Todo conjunto abierto de $\rr^d$ puede escribirse como uni\'on numerable de cubos casi disjuntos.
+\end{teorema}
+
+\begin{demo}
+Sea $\mathcal{O}\in \rr^d$ abierto. Vamos a construir una familia $\mathcal{G}$ de cubos casi disjuntos con $\mathcal{O}=\bigcup\limits_{Q \in \mathcal{G}} Q$.
+
+Procedemos inductivamente en etapas, 
+
+\underline{Primera etapa.}
+Consideremos la familia de cubos con v\'ertices en $\zz^d$ que cubre $\rr^d$.
+\\
+Todos aquellos cubos que quedan contenidos en $\mathcal{O}$ se agregan a $\mathcal{G}$.  Los  cubos  que son disjuntos con $\mathcal{O}$ se tiran y los que tienen parte en $\mathcal{O}$ y en $\mathcal{O}^C$ se dejan  como candidatos.
+
+\underline{$k$-\'esima  etapa.}
+Tomamos los candidatos de la etapa $k-1$, dividimos sus lados en $2$ y procedemos como en la primera etapa. 
+
+\textbf{
+AGREGAR DIBUJITOS!!!!}
+
+La familia $\mathcal{G}$ es numerable y casi disjunta. 
+
+Sea $x\in \mathcal{O}$. Luego,  $x$ pertenece a un cubo $Q$ de cada etapa $N$ cuyos lados miden $2^{-N}$. Si $N$ es suficientemente grande, se tiene  $Q\subset \mathcal{O}$. Entonces, o bien, $Q$ es agregado a $\mathcal{G}$ en la etapa $N$ o un padre de $Q$ fue agregado en una etapa anterior.
+ \end{demo}
+ 
+ \section{Expresiones s-\'adicas}
+ 
+ El objetivo de esta secci\'on es representar n\'umeros reales mediante series num\'ericas.
+ 
+ Sea $d=2,3,\ldots$. 
+ 
+ Supongamos que $x \in [0,1)$. Dividamos el intervalo  $[0,1]$ en $d$ partes iguales, o sea, 
+ \[
+ 0<\frac{1}{d}<\frac{2}{d}<\ldots<\frac{d-1}{d}<1.
+ \]
+ Ahora, existe un \'unico $j$ tal que 
+ \[
+ x \in \left[\frac{j}{d}, \frac{j-1}{d}\right).
+ \]
+ A ese valor de $j$ lo llamamos $a_1$. 
+ Y, observamos que \[ \left|x-\frac{a_1}{d}\right|<\frac{1}{d}.\]
+ 
+ A continuaci\'on,  dividimos $\left[\frac{a_1}{j}, \frac{a_1+1}{j} \right)$ en $d$ partes iguales y obtenemos
+ \[
+ \frac{a_1}{d}<\frac{a_1}{d}+\frac{1}{d^2}<\frac{a_1}{d}+\frac{2}{d^2}
+ < \ldots<\frac{a_1}{d}+\frac{d-1}{d^2}<\frac{a_1+1}{d}.
+ \]
+ Nuevamente, hay un \'unico $j$ tal que 
+ \[x \in \left[\frac{a_1}{d}+\frac{j}{d^2}, \frac{a_1}{d}+\frac{j+1}{d^2}\right).
+ \]
+ Ahora, llamamos $a_2$  a ese valor de $j$. Y notamos que 
+ \[
+ \left|x-\left(\frac{a_1}{d}+\frac{a_2}{d^2}\right)\right|<\frac{1}{d^2}.
+ \]
+ Continuando con este procedimiento, obtenemos una sucesi\'on $a_1,a_2,\ldots,a_n$ tal que 
+ \[
+ \left|  
+ x-\left( \frac{a_1}{d}+\frac{a_2}{d^2}+\ldots+\frac{a_n}{d^n}\right)
+ \right|<\frac{1}{d^n}.
+ \]
+ De este modo, habremos encontrado $a_j \in \{ 0,1,2,\ldots,d-1\}$ tales que 
+ \begin{equation}\label{eq:expresion-d-adica}
+ x=\sum\limits_{j=1}^{\infty} \frac{a_j}{d^j}.
+ \end{equation}
+ El desarrollo dado por  \eqref{eq:expresion-d-adica} se denomina \emph{expresi\'on  d-\'adica} de $x$. 
+ 
+ Cuando $d=10$, \eqref{eq:expresion-d-adica} se llama \emph{expresi\'on decimal}.
+ 
+Mientras que si $d=2$, \eqref{eq:expresion-d-adica} se denomina \emph{expresi\'on binaria}.
+ 
+La expresi\'on d-\'adica \eqref{eq:expresion-d-adica} suele escribirse
+\[
+x=\left(0.a_1a_2\ldots\right)_d.
+\]
+
+Lamentablemente, la expresi\'on d-\'adica de $x$ no es \'unica. El problema se presenta con las sucesiones que toman el valor $d-1$ de un momento en adelante, pues
+\[
+\sum\limits_{j=k}^{\infty} \frac{d-1}{d^j}=
+\frac{d-1}{d^k} \sum\limits_{j=0}^{\infty} \frac{1}{d^j}=
+\frac{d-1}{d^k} \frac{1}{1-\frac{1}{d}}=\frac{1}{d^{k-1}}.
+\]
+Luego
+\[
+\left(0.a_1a_2\ldots a_{k-1} (d-1) (d-1)\dots\right)_d =
+\left(0.a_1a_2\ldots (a_{k-1} +1) 0\dots\right)_d.
+\]
+ Si $a_{k-1}+1=d$, entonces 
+ \[
+ \left(0.a_1a_2\ldots (a_{k-1} +1)\dots\right)_d=
+ \left(0.a_1a_2\ldots (a_{k-2} +1) 0\dots\right)_d.
+\]
+Si $a_{k-2}+1=d$, se procede de la misma manera. 
+
+
+ \subsection{Conjunto de Cantor}
+ Sea $\mathscr{C}_0=[0,1]$. 
+ Entonces
+ \[
+ \begin{split}
+ &\mathscr{C}_1=[0,1]-\left(\frac{1}{3},\frac{2}{3}\right)
+ \\
+  &\mathscr{C}_2=\mathscr{C}_1-\left(\frac{1}{9},\frac{2}{9}\right)
+   -\left(\frac{7}{9},\frac{8}{9}\right)
+   \\
+   &\vdots
+   \\
+   &\mathscr{C}=\bigcap\limits_{k=1}^{\infty} \mathscr{C}_k.
+ \end{split}
+ \]
+ 
+ \begin{proposicion}{prop:conjunto-Cantor-propiedades}
+ $\mathscr{C}$ es compacto, totalmente disconexo y perfecto. 
+ Adem\'as, $\# \mathscr{C}=\# \rr$.
+ \end{proposicion}
+ 
+ \begin{ejercicio}{}
+ Demostrar la Proposici\'on \ref{prop:conjunto-Cantor-propiedades}.
+ \end{ejercicio}
+ 
+ \section{Medida exterior}
