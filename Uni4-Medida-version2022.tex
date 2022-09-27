@@ -1,0 +1,70 @@
+\chapter{Medida de Lebesgue -  versi\'on 2022}
+
+\section{Preliminares}
+Sea $\rr^d$ el espacio eucl\'ideo de dimensi\'on $d$. 
+
+Si $x \in \rr^d$, entonces $x=(x_1,x_2,\ldots,x_d)$ siendo $x_i\in \rr$.
+
+La \emph{norma} de $x$ se define como $|x|=\left(x_1^2+x_2^2+\ldots+x_d^2\right)^{1/2}$ y la \emph{distancia} de $x$ a $y$
+se calcula mediante $d(x,y)=|x-y|$.
+
+Si $E\subset \rr^d$, el \emph{complemento} de $E$ es 
+$E^C=\left\{ x:x\notin E\right\}$.
+
+Si $E,F\subset \rr^d,$ se tiene que 
+$$E-F=E\cap F^C=\left\{x: x\in E \wedge x \notin F\right\}$$ y 
+$$d(E,F)=\inf \left\{d(x,y):x\in E, y \in F \right\}.$$
+
+Si $E \subset \rr^d$, entonces $\diametro(E)=\sup\left\{ d(x,y): x,y \in E \right\}$.
+
+Ahora, la \emph{bola abierta} de centro $x$ y radio $r$ est\'a dada por \[B_r(x)=\left\{y \in \rr^d: d(x,y)<r  \right\}.\]
+
+Si $E \subset \in \rr^d$ se dice \emph{abierto} si $\forall x \in E$, $\exists r>0:$\, $B(x,r)\subset E$. 
+
+Y $F \subset \rr^d$ se denomina \emph{cerrado} si y s\'olo si $F^C$ es abierto.
+
+\begin{itemize}
+    \item Si $\{E_{\lambda}\}_{\lambda \in \Lambda}$ son abiertos $\Rightarrow$ $ \bigcup\limits_{\lambda \in \Lambda} E_{\lambda}$ 
+    es abierto. 
+    \item Si $\Lambda$ es finito $\Rightarrow$ $ \bigcap\limits_{\lambda \in \Lambda} E_{\lambda}$ es abierto.
+    \item Si los conjuntos $E_{\lambda}$ son cerrados, se obtienen conjuntos cerrados \emph{intercambiando} uniones por intersecciones.
+\end{itemize}
+
+Si $E \subset \rr^d$ se dice \emph{acotado} si $E\subset B$ para alguna bola $B$.
+
+Y, $E \subset \rr^d $ es \emph{compacto} si es cerrado y acotado.
+
+
+\begin{teorema}{}[Cubrimiento Heine-Borel]
+Si $E \subset \rr^d$ es compacto y $E\subset \bigcup\limits_{\alpha} \mathcal{O}_{\alpha}$
+con $\mathcal{O}_{\alpha}$ abiertos $\forall \alpha$, entonces existen finitos $\alpha:\alpha_1,\alpha_2, \ldots,\alpha_N$, tal que 
+$E \subset \bigcup\limits_{i=1}^N \mathcal{O}_{\alpha_i}$.
+\end{teorema}
+
+\begin{itemize}
+    \item $x \in \rr^d$ es un \emph{punto l\'imite} \'o \emph{punto de clausura} de $E\subset \rr^d$
+    si $\forall r>0$,\; $B(x,r)\cap E \neq \emptyset$.
+    \item $x \in \rr^d$ es un \emph{punto aislado} de $E\subset \rr^d$ si $\exists r>0$ tal que $B(x,r)\cap E=\{x\}$.
+    \item $x \in \rr^d$ es \emph{interior} a $E$ si $\exists r>0$ tal que $B(x,r) \subset E$.
+\end{itemize}
+
+Luego, se definen los siguientes conjuntos 
+\begin{itemize}
+    \item $E^{\circ}=\left\{x| x \;\mbox{ es interior a }\; E \right\}$.
+    \item $\overline{E}=\left\{x| x \;\mbox{ es punto l\'imite de }\; E \right\}$.
+    \item     $\partial E=\overline{E}-E^{\circ}$.
+\end{itemize}
+
+\begin{ejercicio}{}
+\begin{enumerate}
+    \item $\overline{E}$ es cerrado;
+    \item $E$ es cerrado si y s\'olo su $E=\overline{E}$;
+    \item $E$ es abierto si  s\'olo su $E=E^{\circ}$;
+    \item $\partial E = \partial E^C$;
+    \item $E^{\circ} = \overline{E^C}$.
+\end{enumerate}
+\end{ejercicio}
+
+Por \'ultimo, un conjunto $E \subset \rr^d$ se llama \emph{perfecto} si no tiene puntos aislados.
+
+\section{Rect\'angulos y cubos}
