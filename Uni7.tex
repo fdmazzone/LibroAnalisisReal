@@ -319,3 +319,175 @@ y $\psi_k \to f^{-}$. Luego,
 $\varphi_k - \psi_k \to f$, y adem\'as, $|\varphi_k-\psi_k|\leq \varphi_k+\psi_k \leq f^{+}+f^{-}=|f|$.
 
 \section{Propiedades verdaderas en casi todo punto}
+
+Si $P$ es una propiedad sobre puntos de $\rr^n$ ($P(x)$) diremos que $P$ es verdadera en casi todo punto si $P(x)$ es verdadera excepto, posiblemente, en un conjunto de medida cero. 
+
+As\'i, por ejemplo:
+\begin{enumerate}
+    \item Casi todo n\'umero es irracional.
+    \item  Si $f$ y $g$ son funciones definidas sobre todo $\rr^n$, diremos que $f=g$ en casi todo punto si $f(x)=g(x)$ para todo  
+    $x \notin E$  siendo la  $m(E)=0$.
+\end{enumerate}
+
+\begin{teorema}{}
+Si $h=0$ en c.t.p., entonces $h$ es medible.
+\end{teorema}
+
+\begin{demo}
+Sea $Z=\{h \neq 0\}$. 
+
+Si $a \geq 0$, entonces $\{h>a\}\subset Z$ y por tanto $m(\{h>a\})=0.$ Luego, $\{h>a\} \in \mathscr{M}$.
+
+Si $a < 0$, se tiene que  $\{h\leq a\}\subset Z$. Ahora,  como $\{h>a\}=\rr^n-\{h\leq a\}$, entonces  $\{h>a\} \in \mathscr{M}$ por ser complemento de un conjunto medible.
+\end{demo}
+
+
+
+\begin{corolario}{}
+Si $f$ es medible y $f=g$ en c.t.p., entonces $g$ es medible. 
+\end{corolario}
+
+
+Ser\'a frecuente decir que $f_k(x) \to f(x)$ en c.t.p.
+
+\begin{teorema}{}
+Si $f_k \to f$ en c.t.p. y las funciones $f_k$ son medibles, entonces 
+$f$ es medible.
+\end{teorema}
+
+\begin{demo}
+La funci\'on $g=\liminf\limits_{k \to \infty} f_k$ es medible y $g=f$ en c.t.p.
+\end{demo}
+
+Si $f$ y $g$ son medibles, definimos $f \sim g$ si $f=g$ en c.t.p.
+
+Entonces, $\sim$ es una relaci\'on de equivalencia. Adem\'as, si $f\sim h$ y $g \sim g$, entonces $f+g\sim h+g$ y $fg\sim hg$.
+
+Si $f=g$ en c.t.p., entonces $f$ es esencialmente igual a $g$.
+
+\section{Convergencia en medida}
+
+Si para cada $x\in \rr^n$ tenemos una propiedad, enunciado o afirmaci\'on $P(x)$ que puede ser tildada de  verdadera o falsa, escribiremos $E(P)$ para denotar $E\cap \{x:\,P(x)\}$.
+
+\begin{definicion}{}
+Sean $f_k$ y $f$  medibles sobre $E$.\\
+Se dice que $f_k$ converge en medida a $f$ si $\forall \delta>0$ se tiene que 
+\[
+m(E(|f_k-f|\geq \delta))\xrightarrow[k \to \infty]{} 0.
+\]
+Notaremos: $f_k \xrightarrow[]{m} f$.
+\end{definicion}
+
+\begin{teorema}{}
+Si $f_k \xrightarrow[]{m}f$ y $f_k \xrightarrow[]{m} g$, entonces
+$f=g$ en c.t.p.
+\end{teorema}
+
+\begin{demo}
+A partir de que 
+\[
+\{|f-g|\geq \delta\} \subset 
+\left\{|f-f_k|\geq\frac{\delta}{2}\right\} \cup \left\{|f_k-g|\geq\frac{\delta}{2}\right\}, 
+\]
+se tiene que 
+\[
+m\left(E\left(|f-g|\geq \delta\right)\right)\leq 
+m\left(E\left(|f-f_k|\geq \frac{\delta}{2}\right)\right)+
+m\left(E\left(|f_k-g|\geq \frac{\delta}{2}\right)\right) \xrightarrow[k \to \infty]{} 0.
+\]
+Luego, 
+\[
+m(\{|f\neq g|\})=
+m\left( \bigcup\limits_{k=1}^{\infty} \left\{|f-g|\geq \frac{1}{k}  \right\} \right)=0.
+\]
+As\'i, $f=g$ en c.t.p.
+\end{demo}
+
+
+\begin{teorema}{teo:conv-puntual-implica-medida}
+Si $m(E)<\infty$ y $f_k \to f$ en c.t.p. de $E$, entonces 
+$f_k \xrightarrow[]{m}f$.
+\end{teorema}
+
+
+\begin{demo}
+Sea $Z$ el conjunto de puntos donde $f_k$ no tiende a $f$. Entonces $m(z)=0$. 
+
+Dado $\delta>0$, definimos 
+\[
+B_j=\bigcup\limits_{k=j}^{\infty} E(|f_k-f|\geq \delta).
+\]
+ y se tiene que $ \bigcap\limits_{j=1}^{\infty} B_j=Z.$
+ Luego, $m(B_j)\to 0$ cuando $j \to \infty$.
+ 
+ Como si $k \geq j$, se tiene que $E(|f_k-f|\geq \delta )\subset B_j$.
+Luego $m(E(|f_k-f|\geq \delta))\to 0$ cuando $k \to \infty$
+y por lo tanto $f_k \xrightarrow[]{m}f.$
+\end{demo}
+
+\begin{observacion}{}
+\begin{enumerate}
+    \item Si $m(E)=+\infty$, el Teorema \ref{teo:conv-puntual-implica-medida} no es cierto. 
+    Por ejemplo,  $f_k=\chi_{B(0,k)} \to 1$ en c.t.p., mientras que 
+    $m(E(|f_k-1|=1 ))=m(\rr^n-B(0,k))= +\infty$\; $\forall k\in \nn$.
+    \item La rec\'iproca del Teorema \ref{teo:conv-puntual-implica-medida} no es cierta. 
+    Basta tomar $f_{k_n}=\chi_{\left[\frac{k}{2^n}, \frac{k+1}{2^n}\right)}$ con 
+    $k=0,1, \ldots, 2^{n-1}$ y $n=1,2,\ldots$
+\end{enumerate}
+\end{observacion}{}
+
+\begin{definicion}{}
+Diremos que $f_k$ es fundamental en medida sobre $E$ si $\forall \delta>0$ se tiene que 
+\[
+m(E(|f_k-f|\geq \delta))\xrightarrow[k,j \to \infty]{} 0.
+\]
+\end{definicion}
+
+\begin{observacion}{}
+Si $f_k \xrightarrow[]{m}f$ y $f$ es finita, entonces $f_k$ es fundamental en medida. 
+\end{observacion}
+
+
+
+\begin{teorema}{}
+Si $f_k$ es fundamental en medida sobre $E$, entonces existe una subsucesi\'on $k_j$ y una funci\'on $f$ medible sobre $E$ tal que $f_{k_j}\to f$ en c.t.p. de $E$. Adem\'as, $f$ es finita y $f_f=k \xrightarrow[]{m}f$.
+\end{teorema}
+
+\begin{demo}
+Para cada $i>0$, existe $k_i\in \nn$ tal que 
+\[
+m\left(E\left(|f_k-f|\geq \frac{1}{2^i}\right)\right)\leq
+\frac{1}{2^i},
+\]
+para $k_j\geq k_i$.
+Podemos suponer que $k_1<k_2<\ldots$. Sea 
+\[
+E_i=E\left(   |f_{i} -f_{i+1}|\geq \frac{1}{2^i}\right)
+\]
+y tenemos que $m(E_i)<\frac{1}{2^i}$. 
+
+Sea 
+\[ Z=\bigcap\limits_{j=1}^{\infty}\bigcup\limits_{i=j}^{\infty} E_i
+=\limsup\limits_{i \to \infty} E_i.
+\]
+Ahora, $m(Z)=0$. 
+
+Si $x \in E-Z$, existe un $j$ tal que $x \notin E_i$ para $i\geq j$, es decir, 
+\[
+x\in E\left( \left|f_{k_i}-f_{k_{i+1}}\right|<\frac{1}{2^i}\right).
+\]
+Luego, la serie
+\begin{equation}\label{eq:serie-telesc-conv-med-a-puntual}
+f_{k_1}(x)+\left(f_{k_2}(x)-f_{k_1}(x)\right)+\ldots
+\end{equation}
+converge absolutamente en $E-Z$.
+
+Sea $f(x)$ la suma de \eqref{eq:serie-telesc-conv-med-a-puntual} en $E-Z$ y sea $f(x)=0$ en $Z$. A partir de la definici\'on de $f$ es claro que $f$ es finita. Adem\'as, pasando a sumas parciales, tenemos
+\[
+f(x)=\lim\limits_{i \to \infty} f_{k_i}(x)\;\mbox{ en c.t.p. de } \,E.
+\]
+
+A continuaci\'on, veamos que $f_{k_i} \xrightarrow[]{m} f$.
+
+
+\end{demo}
