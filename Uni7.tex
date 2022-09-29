@@ -5,10 +5,10 @@
 
 \textbf{ Copiado de acuerdo al orden de las notas manuscritas...parece que falta algo para el contexto...}
 
-\textbf{Habr\'ia que definir $\mathcal{M}$ o referenciar la definici\'on del cap\'itulo  de conjuntos medibles...si existiese...ese  capitulo no esta completo}
+\textbf{Controlar que se defini\'o  $\mathscr{M}$ o referenciar la definici\'on del cap\'itulo  de conjuntos medibles...si existiese...}
 
 \begin{definicion}{}
-$f$ es medible si y s\'olo si $f^{-1}((a,\infty)) \in \mathcal{M}$. 
+$f$ es medible si y s\'olo si $f^{-1}((a,\infty)) \in \mathscr{M}$. 
 \end{definicion}
 
 \begin{teorema}{}
@@ -16,9 +16,9 @@ Si $H$ es boreliano y $f$ es medible, entonces $f^{-1}(H)$ es medible.
 \end{teorema}
 
 \begin{demo}{}
-Sea $\mathcal{M}^{'}=\{ H: f^{-1}(H)\;\mbox{ es medible}\}$.
-$\mathcal{M}^{'}$ es $\sigma$-\'algebra y $\mathscr{I}\subset \mathcal{M}^{'}$.
-Por lo tanto, $\mathscr{B}(\rr^n) \subset \mathcal{M}$.
+Sea $\mathscr{M}^{'}=\{ H: f^{-1}(H)\;\mbox{ es medible}\}$.
+$\mathscr{M}^{'}$ es $\sigma$-\'algebra y $\mathscr{I}\subset \mathscr{M}^{'}$.
+Por lo tanto, $\mathscr{B}(\rr^n) \subset \mathscr{M}$.
 \end{demo}
 
 \begin{definicion}{}
@@ -26,7 +26,7 @@ Diremos que $H \subset \overline{R}$ es boreliano de la recta extendida si $H-\{
 \end{definicion}
 
 \begin{teorema}{}
-Si $f:\rr^n \to \overline{\rr}$ es medible si y s\'olo si $f^{-1}(H) \in \mathcal{M}$ cada vez que $H$ es boreliano de $\overline{\rr}$.
+Si $f:\rr^n \to \overline{\rr}$ es medible si y s\'olo si $f^{-1}(H) \in \mathscr{M}$ cada vez que $H$ es boreliano de $\overline{\rr}$.
 \end{teorema}
 
 \begin{demo}
@@ -55,7 +55,7 @@ $f:\rr^n \to \overline{\rr}$ es $\Sigma$-medible si y s\'olo si
 $f^{-1}(H)\in \Sigma$ cuando $H$ es boreliano de $\overline{\rr}$.
 \end{proposicion}
 
-Cuando $\Sigma=\mathcal{M}$, decimos que $f$ es \emph{medible}.
+Cuando $\Sigma=\mathscr{M}$, decimos que $f$ es \emph{medible}.
 
 Cuando $\Sigma=\mathscr{B}$, llamamos a $f$ \emph{medible Borel} 
 o funci\'on \emph{boreliana}.
@@ -185,7 +185,7 @@ h(x)=\inf\limits_{j}\sup\limits_{k \geq j} f_k(x).
 Si $f_k(x) \to f(x)$ y $\{f_k\}$ es una sucesi\'on de funciones $\Sigma$-medibles, entonces $f$ es medible con respecto a $\Sigma$.
 \end{corolario}
 
-A continuaci\'on, completamos la demostraci\'on del Teorema\ref{teo:propiedades-func-medibles} que se reliz\'o suponiendo
+A continuaci\'on, completamos la demostraci\'on del Teorema \ref{teo:propiedades-func-medibles} que se reliz\'o suponiendo
 que tanto $f$ como $g$ son finitas. 
 Para evitar esa restricci\'on, ahora consideramos la sucesi\'on de funciones $\varphi_k:\overline{\rr} \to \overline{\rr}$ definidas por
 \[
@@ -295,7 +295,7 @@ Si $f$ es medible, tambi\'en lo son
 \[
 f^+=\sup\{0,f \}\;\;\mbox{ y }\;\;f^{-}=\sup\{0,-f\}
 \]
-llamadas partes positiva y negativa de $f$.
+llamadas \emph{parte positiva} y \emph{parte negativa} de $f$.
 
 Se verifica que 
 \[
@@ -397,7 +397,7 @@ m\left(E\left(|f_k-g|\geq \frac{\delta}{2}\right)\right) \xrightarrow[k \to \inf
 \]
 Luego, 
 \[
-m(\{|f\neq g|\})=
+m(\{f\neq g\})=
 m\left( \bigcup\limits_{k=1}^{\infty} \left\{|f-g|\geq \frac{1}{k}  \right\} \right)=0.
 \]
 As\'i, $f=g$ en c.t.p.
@@ -439,7 +439,7 @@ y por lo tanto $f_k \xrightarrow[]{m}f.$
 \begin{definicion}{}
 Diremos que $f_k$ es fundamental en medida sobre $E$ si $\forall \delta>0$ se tiene que 
 \[
-m(E(|f_k-f|\geq \delta))\xrightarrow[k,j \to \infty]{} 0.
+m\left(E\left(\left|f_k-f\right|\geq \delta\right)\right)\xrightarrow[k,j \to \infty]{} 0.
 \]
 \end{definicion}
 
@@ -450,7 +450,7 @@ Si $f_k \xrightarrow[]{m}f$ y $f$ es finita, entonces $f_k$ es fundamental en me
 
 
 \begin{teorema}{}
-Si $f_k$ es fundamental en medida sobre $E$, entonces existe una subsucesi\'on $k_j$ y una funci\'on $f$ medible sobre $E$ tal que $f_{k_j}\to f$ en c.t.p. de $E$. Adem\'as, $f$ es finita y $f_f=k \xrightarrow[]{m}f$.
+Si $f_k$ es fundamental en medida sobre $E$, entonces existe una subsucesi\'on $k_j$ y una funci\'on $f$ medible sobre $E$ tal que $f_{k_j}\to f$ en c.t.p. de $E$. Adem\'as, $f$ es finita y $f_{k} \xrightarrow[]{m}f$.
 \end{teorema}
 
 \begin{demo}
@@ -489,5 +489,66 @@ f(x)=\lim\limits_{i \to \infty} f_{k_i}(x)\;\mbox{ en c.t.p. de } \,E.
 
 A continuaci\'on, veamos que $f_{k_i} \xrightarrow[]{m} f$.
 
+Sea $\delta>0$ y elijamos $j$ tal que $\frac{1}{2^{j-1}}<\delta$. 
+Si  $x\notin Z$, entonces 
+\[
+f(x)=
+f_{k_j}(x)+\left(f_{k_{j+1}}(x)-f_{k_j}(x)\right)+\ldots.
+\]
+As\'i
+\[
+E\left(\left|f(x)-f_{k_j}(x)  \right|\geq \delta\right)\subset 
+Z\cup \left(\bigcup\limits_{i\geq j} E_i\right)
+\]
+de donde
+\[
+m\left(
+E\left(\left|f(x)-f_{k_j}(x)  \right|\geq \delta\right)
+\right)
+\leq \sum\limits_{i\geq j} m(E_i)=\frac{1}{2^{j-1}}.
+\]
+De este modo, obtenemos $f_{k_j} \xrightarrow[]{m} f$.
 
+Por \'ultimo, a partir de 
+\[
+E\left(|f_k-f|\right)\subset 
+E\left(|f_k -f_{k_j}|\geq \frac{\delta}{2}\right) \cup
+E\left(|f_{k_j} -f|\geq \frac{\delta}{2}\right),
+\]
+tomando $k$ y $k_j$ grandes, deducimos
+\[
+m\left(E\left(\left|f_k-f\right|\geq \delta\right)\right)< \epsilon
+\]
+para valores de $k$ grandes. En consecuencia, $f_k \xrightarrow[]{m}f$.
 \end{demo}
+
+\section{Funci\'on singular de Cantor}
+
+El conjunto de Cantor se define como 
+\[
+P=\bigcap\limits_{n=1}^{\infty} F_n,
+\]
+donde $F_n$ es la uni\'on de $2^n$ intervalos cerrados y disjuntos contenidos en el $[0,1]$.
+
+El conjunto $[0,1]-F_n$ es la uni\'on de $2^n-1$ intervalos abiertos disjuntos. Si los numeramos de izquierda a derecha, formamos los intervalos abiertos $J_{n,i}$, para $i=1,2,\ldots, 2^n-1$ y se tiene la relaci\'on
+\[ 
+J_{n,i}=J_{n+1,2i}.
+\]
+
+Sea $\varphi_n$ la funci\'on que toma los siguientes valores
+$\varphi_n(0)=0$, $\varphi_n(1)=1$, $\varphi_n(x)=\frac{i}{2^n}$ en $J_{n,i}$, es lineal entre los $F_n$ y es continua.
+
+Tenemos que $\varphi_{n+1}=\varphi_n$ en  $J_{n,i}$   y adem\'as
+\[
+\left|\varphi_{n+1} -\varphi_n\right|<\frac{1}{2^{n+1}},
+\]
+en cada punto de $[0,1]$.
+Luego, la serie
+\[
+\varphi_1+(\varphi_2-\varphi_1)+(\varphi_3-\varphi_2)+\ldots
+\]
+converge uniformemente a una funci\'on continua $\varphi$ que se llama 
+\emph{funci\'on singular de Cantor}. 
+
+Es claro que $\varphi$ es mon\'otona creciente y su restricci\'on a cualquiera de los intervalos $J_{n,i}$ es constante.
+
