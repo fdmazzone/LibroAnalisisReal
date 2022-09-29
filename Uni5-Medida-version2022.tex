@@ -178,6 +178,10 @@ Como
 \leq 
 \# \left(R^{\circ} \cap \frac{1}{N}\zz^d \right) +2^d.
 \]
+
+\textbf{EN LA HOJA 7B DE LAS NOTAS DE CLASE HAY UNA DEDUCCI\'ON DEL $2^d$. AGREGAR!!!}
+
+
 Tambi\'en tenemos que 
 \[
 \lim\limits_{N \to \infty} \frac{1}{N^d}
@@ -407,3 +411,272 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
  \end{ejercicio}
  
  \section{Medida exterior}
+ 
+ \begin{definicion}{}
+ Dado $E\subset \rr^d$, su \emph{medida exterior} est\'a dada por 
+ \[
+ m_*(E)=\inf \sum\limits_{j=1}^{\infty} |Q_j|,
+ \]
+ donde el \'infimo se toma obre todos los cubrimientos  $E\subset \bigcup\limits_{j=1}^{\infty} Q_j$ de $E$ por medio de cubos.
+ \end{definicion}
+ 
+ Claramente $0\leq m_{*}(E)\leq +\infty$
+ 
+ \begin{observacion}{}
+ \begin{enumerate}
+    \item  Es importante permitir uniones infinitas.
+     \item Se pueden usar cubrimientos por rect\'angulos o bolas.
+ \end{enumerate}
+  \end{observacion}
+  
+  \begin{ejemplo}{}
+  La medida exterior de un punto es cero.
+  \end{ejemplo}
+  
+  \begin{ejemplo}{ejem:medida-ext-cubo}
+  Si $Q$ es un cubo, entonces \[m_{*}(Q)=|Q|.\] 
+  
+  $\leq)$
+  Como $Q$ se cubre a s\'i mismo, se tiene que $m_{*}(Q)\leq |Q|$.
+  
+  $\geq)$ 
+  Sea $\left\{Q_j\right\}_{j=1}^{\infty}$ un cubrimiento por cubos de $Q$. Construyamos cubos abiertos $S_j \supset Q_j$ tal que 
+  \[
+  |S_j|\leq (1+\epsilon) |Q_j|.
+  \]
+  Como $Q$ es compacto, hay finitos $S_j$ que cubren $Q$, entonces
+  \[
+  Q\subset \bigcup\limits_{j=1}^N S_j \subset 
+  \bigcup\limits_{j=1}^N \overline{S_j}.
+  \]
+  Por el Lema \ref{lema:medida-rectangulo-incluido-en-union}, tenemos
+  \[
+  \begin{split}
+  |Q|\leq 
+  \sum\limits_{j=1}^N |\overline{S_j}|&=
+  \sum\limits_{j=1}^N |S_j|
+  \\
+  &\leq (1+\epsilon) \sum\limits_{j=1}^N |Q_j|\\
+  &\leq   (1+\epsilon) \sum\limits_{j=1}^{\infty} |Q_j|.
+  \end{split}
+  \]
+  Como $\epsilon$ es arbitrario, obtenemos
+  \[
+  |Q|\leq \sum\limits_{j=1}^{\infty} |Q_j|.
+  \]
+  \end{ejemplo}
+  
+  \begin{ejemplo}{}
+  Si $R\subset \rr^d$ es un rect\'angulo, entonces \[m_{*}(R)=|R|.\]
+  
+  $\geq)$
+  Como en el Ejemplo \ref{ejem:medida-ext-cubo}, se tiene que 
+  $|R|\leq m_{*}(R)$.
+  
+  $\leq)$ Sea $R=I_1\times I_2\times\ldots \times I_d$. Entonces
+  \[
+  \begin{split}
+  |R|&=\lim\limits_{N\to \infty}
+  \frac{1}{N^d} \#\left(R \cap \frac{1}{N}\zz^d \right)
+  \\
+  &=\lim\limits_{N\to \infty}
+  \frac{1}{N} \#\left(I_1 \cap \frac{1}{N}\zz \right)\ldots 
+  \left(I_d \cap \frac{1}{N}\zz \right).
+  \end{split}
+  \]
+  Si $I_j\cap \frac{1}{N}\zz=
+  \left\{
+  \frac{\alpha_j}{N},\frac{\alpha_j+1}{N},
+  \ldots, \frac{\alpha_j+\beta_j-1}{N}
+  \right\}$, entonces
+  \[
+  \#\left( I_j \cap \frac{1}{N} \zz \right)=\beta_j.
+    \]
+    Sea $\mathscr{G}_N$ la familia de rect\'angulos que generan
+    \[
+    \frac{\alpha_j-1}{N},\frac{\alpha_j}{N},\ldots,\frac{\alpha_j+\beta_j}{N}.
+    \]
+  Hay $(\beta_1+2),\ldots, (\beta_d+2)$ de ellos y miden $\frac{1}{N^d}$.
+  Luego, 
+  \[
+  |R|=\lim\limits_{N\to \infty}
+  \]
+  Pero
+  \[
+  \begin{split}
+  m_{*}(R)
+  &\leq 
+  \lim\limits_{N\to \infty} \sum\limits_{Q \in \mathscr{G}_N} |Q|
+  \\
+  &=\lim\limits_{N \to \infty} \frac{(\beta_1+2)\ldots (\beta_N+2)}{N^d}
+  \\
+  &=
+  \lim\limits_{N \to \infty}
+  \left\{ 
+  \frac{\beta_1\beta_2\ldots\beta_d}{N^d}
+  \right.
+  \\
+  &+\frac{2}{N^d}(\beta_2\ldots\beta_d+\beta_1\beta_3\ldots\beta_d+\ldots+\beta_1\beta_2\ldots\beta_{d-1})
+  \\
+  &+\left.
+  \frac{4}{N^d}(\beta_3\ldots \beta_d+\ldots+\beta_1\ldots\beta_{d-2})\right\}
+  \\
+  &=|R|
+  \end{split}
+  \]
+  \end{ejemplo}
+  
+  \begin{ejemplo}{}
+  $m_{*}(\rr^d)=+\infty$.
+  
+  Un cubrimiento de $\rr^d$ es un cubrimiento de cualquier cubo $Q$ de modo que 
+  \[
+  |Q|=m_{*}(Q)\leq m_{*}(\rr^d).
+  \]
+  Podemos encontrar un cubo $Q_k$ de $\rr^d$ tal que $|Q_k|\xrightarrow[k \to \infty]{} +\infty$.
+  
+  Por ejemplo, $Q_k=[0,k]^d=
+  \underbrace{[0,k]\times[0,k]\times \ldots \times [0,k]}_{d\;\mbox{ intervalos de }\rr}$ con $|Q_k|=k^d$.
+    \end{ejemplo}
+    
+    \begin{ejemplo}{}
+    Si $\mathscr{C}$ es el conjunto de Cantor, entonces $m_{*}(\mathscr{C})=0$.
+    \begin{demo}
+    Se tiene que $\mathscr{C}\subset \mathscr{C}_k$ donde $\mathscr{C}_k$ es una uni\'on de $2^k$ intervalos de longitud $\frac{1}{3^k}$. 
+    Luego, 
+    \[
+    m_{*}(\mathscr{C})\leq \left(\frac{2}{3}\right)^k \xrightarrow[k \to \infty]{}0.
+    \]
+    \end{demo}
+    $\mathscr{C}$ es un  conjunto \emph{infinito no numerable} de $\rr$     con medida exterior nula.
+    \end{ejemplo}
+    
+    \begin{ejemplo}{}
+    $m_{*}(\qq)=0$.
+    \textbf{COPIAR LA JUSTIFICACION QUE ESTA EN EL PDF!!!}
+    \end{ejemplo}
+    
+    \subsection{Propiedades de la medida exterior}
+    
+    \begin{observacion}{}
+    Sea $E \subset \rr^d$ tal que  $m_*(E)<+\infty$. 
+    Entonces, dado $\epsilon>0$, existe un cubrimiento por cubos  tal que $E \subset \bigcup\limits_{j=1}^{\infty} Q_j$ y 
+    \[
+    \sum\limits_{j=1}^{\infty} m_{*}(Q_j)< m_{*}(E)+\epsilon.
+    \]
+
+    Si $m_{*}(E)=+\infty$, se tiene
+    \[
+    \sum\limits_{j=1}^{\infty} m_{*}(Q_j)\leq m_{*}(E)+\epsilon.
+    \]
+    \end{observacion}
+        
+    \begin{observacion}{}[Monoton\'ia]
+    Si $E_1\subset E_2$, entonces $m_{*}(E_1)\leq m_{*}(E_2)$.
+    
+    El resultado se obtiene a partir de que 
+    \[
+   \left \{ \sum\limits_{j=1}^{\infty} |Q_j|: E_2\subset \bigcup\limits_{j=1}^{\infty} Q_j
+    \right\}
+    \subset
+     \left\{ \sum\limits_{j=1}^{\infty} |Q_j|: E_1\subset \bigcup\limits_{j=1}^{\infty} Q_j
+    \right\}.
+    \]
+    \end{observacion}
+    
+    \begin{observacion}{}[Numerable $\sigma$-sub-aditividad]
+    Si $E=\bigcup\limits_{j=1}^{\infty} E_j$, entonces 
+    \[m_{*}(E)\leq \sum\limits_{j=1}^{\infty} m_{*}(E_j).\]
+    \begin{demo}
+    Podemos suponer que $m_{*}(E_j)<\infty$.
+    
+    Sean  $\{Q_{j,k}\}_{k=1}^{\infty}$ las familias de cubos tales que 
+    \[
+    \sum\limits_{k=1}^{\infty} |Q_{jk}|<m_{*}(E_j)+\frac{\epsilon}{2^j}.
+    \]
+    Luego $\{Q_{jk}\}_{j, k=1}^{\infty}$ es un cubrimiento por cubos de $\bigcup\limits_{j=1}^{\infty} E_j$
+    y por ende de $E$. 
+    Luego, 
+    \[
+    m_{*}(E)\leq \sum\limits_{j,k=1}^{\infty} |Q_{jk}|=
+    \sum\limits_{j=1}^{\infty} \sum\limits_{k=1}^{\infty} |Q_{jk}|
+    \leq \sum\limits_{j=1}^{\infty} m_{*}(E_j)+\epsilon.
+    \]
+       \end{demo}
+        \underline{Recordar que:} si $\alpha_{jk}\geq 0$ y $\sum\limits_{j,k=1}^{\infty} \alpha_{jk}<\infty$, entonces
+    \[
+    \sum\limits_{j,k=1}^{\infty} \alpha_{jk}=
+    \sum\limits_{j=1}^{\infty} \sum\limits_{k=1}^{\infty}\alpha_{jk}.
+    \]
+    \end{observacion}
+    
+    \begin{observacion}{}
+    Si $R\subset \rr^d$, entonces
+    \[
+    m_{*}(E)=
+    \inf\{
+    m_{*}(\mathcal{O}): \mathcal{O}\supset E\;\mbox{ y }\;\mathcal{O}\;\mbox{ abierto} 
+    \}.
+    \]
+    
+    \begin{demo}
+    $\leq)$
+    Sale a partir de la monoton\'ia pues $E \subset \mathscr{O}$ implica $m_{*}(E)\leq m_{*}(\mathscr{O})$.
+    
+    $\geq)$
+    Sea $\epsilon>0$. Luego, existen cubos  $Q_j$  tales que $E\subset \bigcup\limits_{j=1}^{\infty}Q_j$ y 
+    \[
+    \sum\limits_{j=1}^{\infty} m_{*}(Q_j)< m_{*}(E)+\frac{\epsilon}{2}.
+    \]
+    Sean $\widetilde{Q}_j$ cubos abiertos tales que $Q_j \subset \widetilde{Q}_j$ y 
+    \[
+    m_{*}(Q_j)\leq m_{*}(\widetilde{Q}_j)<m_{*}(Q_j)+\frac{\epsilon}{2}.
+    \]
+    Entonces 
+    $\mathcal{O}=\bigcup\limits_{j=1}^{\infty} \widetilde{Q}_j$         es abierto y 
+        \[
+        \begin{split}
+        m_{*}(\mathscr{O})
+        &\leq \sum\limits_{j=1}^{\infty}m_{*}(\widetilde{Q}_j)
+        \\
+        &<  \sum\limits_{j=1}^{\infty} m_{*}(Q_j)+\frac{\epsilon}{2}
+        \\
+        &<m_{*}(E)+\epsilon.
+        \end{split}
+        \]
+    \end{demo}
+    \end{observacion}
+    
+    \begin{observacion}{}
+    Si $E=E_1\cup E_2$ con $d(E_1,E_2)>0$, entonces
+    \[
+    m_{*}(E)=m_{*}(E_1)+m_{*}(E_2).
+    \]
+    \begin{demo}
+    $\leq) $
+    
+    $\geq)$
+    \end{demo}
+    \end{observacion}
+    
+\begin{observacion}\label{obs:sigma-aditividad-medida-ext}
+Si $E=\bigcup\limits_{j=1}^{\infty} Q_j$ con $Q_j$ casi disjuntos, entonces
+\[
+m_{*}(E)=\sum\limits_{j=1}^{\infty} m_{*}(Q_j).\]
+\begin{demo}
+xxx
+\end{demo}
+
+\end{observacion}
+
+La demostraci\'on de la Observaci\'on \ref{obs:sigma-aditividad-medida-ext} se aplica a los conjuntos abiertos pues si
+$\mathcal{O}$ es abierto, entonces
+\[
+\mathcal{O}=\bigcup\limits_{j=1}^{\infty} Q_j,
+\]
+donde los cubos $Q_j$ son casi disjuntos.
+
+
+
+
+\section{Conjuntos medibles y medida de Lebesgue}
