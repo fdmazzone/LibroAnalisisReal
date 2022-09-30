@@ -777,3 +777,182 @@ Luego, por \ref{it:conj-medida-cero-medible}, $F$ es medible.
 \begin{observacion}{}
 $\mathscr{C}$ es medible.
 \end{observacion}
+
+\begin{proposicion}{prop:union-num-medibles-es-medible}
+Si $E_j$, $j=1,2,\ldots,$ son medibles, entonces $\bigcup\limits_{j=1}^{\infty} E_j$ 
+es medible.
+\end{proposicion}
+
+\begin{demo}
+Dado $\epsilon>0$, existe $\mathcal{O}_j$ abiertos tal que $\mathcal{O}_j\supset E_j$, para $j=1,2,\dots$
+y 
+\[
+m_{*}(\mathcal{O}_j-E_j)<\frac{\epsilon}{2^j}.
+\]
+Ahora, $\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j$ es abierto y $\bigcup\limits_{j=1}^{\infty} E_j \subset \bigcup\limits_{j=1}^{\infty} \mathcal{O}_j$.
+
+Adem\'as, 
+\[
+\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j-\bigcup\limits_{j=1}^{\infty} E_j
+\subset
+\bigcup\limits_{j=1}^{\infty}\left( \mathcal{O}_j- E_j\right).
+\]
+Entonces
+\[
+\begin{split}
+m_{*}\left(\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j-\bigcup\limits_{j=1}^{\infty} E_j)\right)
+&\leq
+m_{*}\left(\bigcup\limits_{j=1}^{\infty}\left( \mathcal{O}_j- E_j\right)\right)
+\\
+&\leq 
+\sum\limits_{j=1}^{\infty} m_{*}\left( \mathcal{O}_j- E_j\right)<
+\sum\limits_{j=1}^{\infty} \frac{\epsilon}{2^j}=
+\epsilon.
+\end{split}
+\]
+\end{demo}
+
+\begin{ejercicio}{ejer:cerrado-y-compacto-disj-dist-pos}
+Sea $(X,d)$ un espacio m\'etrico. Si $E$ es compacto, $F$ cerrado y $E\cap F=\emptyset$, entonces $d(E,F)>0$.
+\end{ejercicio}
+
+\begin{proposicion}{}
+Los conjuntos cerrados son medibles.
+\end{proposicion}
+
+\begin{demo}{}
+En primer lugar, supongamos que $E$ es cerrado y  acotado, entonces $m_{*}(E)<\infty$. 
+
+Sea $\epsilon>0$. Luego, existe un abierto $\mathcal{O}$ tal que 
+$E\subset \mathcal{O}$ y 
+\[
+m_{*}(\mathcal{O})<m_{*}(E)+\epsilon.
+\]
+A su vez, $\mathcal{O}-E$ es abierto y 
+\[
+\mathcal{O}-E=\bigcup\limits_{j=1}^{\infty} Q_j
+\]
+siendo $Q_j$ cubos disjuntos. 
+
+El conjunto 
+\[
+K=\bigcup\limits_{j=1}^N Q_j
+\]
+es compacto para todo $N \in \{1,2,\ldots\}$ y $K\cap E=\emptyset$ con $E$ cerrado.
+Entonces, por el Ejercicio \ref{ejer:cerrado-y-compacto-disj-dist-pos},  $d(K,E)>0$. Luego, 
+\[
+m_{*}(\mathcal{O})\geq  m_{*}(K\cup E)=m_{*}(K)+m_{*}(E)=
+\sum\limits_{j=1}^N m_{*}(Q_j)+m_{*}(E),
+\]
+de donde
+\[
+\sum\limits_{j=1}^N m_{*}(Q_j) \leq m_{*}(\mathcal{O})-m_{*}(E)<\epsilon.
+\]
+Haciendo $\epsilon\to 0$, conseguimos
+\[
+\sum\limits_{j=1}^{\infty} m_{*}(Q_j)\leq \epsilon.
+\]
+Por \'ultimo, 
+\[
+m_{*}(\mathcal{O}-E)\leq \sum\limits_{j=1}^{\infty} m_{*}(Q_j)\leq \epsilon.
+\]
+
+Si $E$ no es acotado, constru\'imos  los conjuntos $E_k=E\cap \overline{B(0,k)}$ que son cerrados y acotados y, por lo demostrado en primer lugar, resultan medibles.
+Finalmente, por aplicaci\'on de la Proposici\'on \ref{prop:union-num-medibles-es-medible}, 
+$E=\bigcup\limits_{k=1}^{\infty}E_k$ es medible, . 
+\end{demo}
+
+\begin{proposicion}{prop:diferencia-medible-subcjto-medida0}
+Si $E$ es medible y $F\subset E$ con $m_{*}(F)=0$, entonces
+$E-F$ es medible.
+\end{proposicion}
+
+\begin{demo}{}
+Sean $\epsilon>0$ y $\mathcal{O}$ abierto con 
+\[
+m_{*}(\mathcal{O}-E)<\epsilon.
+\]
+Como
+\[
+\mathcal{O}-(E-F)\subset (\mathcal{O}-E)\cup F, 
+\]
+por la monoton\'ia de $m_{*}$ y la hip\'otesis sobre la medida de $F$, llegamos a 
+\[
+m_{*}\left(\mathcal{O}-(E-F)\right)\leq m_{*}(\mathcal{O}-E)+m_{*}(F)<\epsilon.
+\]
+\end{demo}
+
+\begin{corolario}{}
+Si $E$ es medible  y $m_{*}(E \Delta F)=0$, entonces $F$ es medible.
+\end{corolario}
+
+\begin{demo}{}
+La prueba se obtiene expresando al conjunto $F$ como uni\'on de conjuntos medibles. A saber, 
+\[
+F=\underbrace{(F-E)}_{\mbox{medible}} \cup 
+\left( 
+\overbrace{E-\underbrace{(E-F)}_{\mbox{medible}}}^{\mbox{medible}}\right)
+\]
+donde $F-E$ y $E-F$ son conjuntos de medida exterior nula y 
+$E-(E-F)$  es medible por aplicaci\'on de la Proposici\'on \ref{prop:diferencia-medible-subcjto-medida0}.
+\end{demo}
+
+
+\begin{proposicion}{}
+$E$ es medible, entonces $E^C$ es medible.
+\end{proposicion}
+
+\begin{demo}{}
+Para cada $n \in \nn$, existe un conjunto abierto $\mathcal{O}_n \supset E$ y tal que 
+\[
+m_{*}(\mathcal{O}_n-E)<\frac{1}{n}.
+\]
+Los conjuntos $\mathcal{O}_n^C$ son cerrados y por ende medibles. \\
+Sea $S=\bigcup\limits_{n=1}^{\infty} \mathcal{O}_n^C$, entonces $S$ es medible y $S\subset E^C$ pues $\mathcal{O}_n^C \subset E^C$ $\forall n\in \nn$.
+
+Adem\'as, 
+\[
+m_{*}(E^C-S)\leq m_{*}(\mathcal{O}_n-E)<\frac{1}{n} \xrightarrow[ n \to \infty]{} 0.
+\]
+Es as\'i que,   $m_{*}(E^c-S)=0$. Luego,  por la Proposici\'on \ref{prop:diferencia-medible-subcjto-medida0}, $E^C$ es medible.
+\end{demo}
+
+\begin{proposicion}{}
+Si los conjuntos $E_j$, para $j=1,2,\ldots,$ son medibles, entonces
+$\bigcap\limits_{j=1}^{\infty}E_j$ es medible.
+\end{proposicion}
+
+\begin{demo}
+Cada $E_j$ es medible, entonces $E_j^C$ es medible para cada $j=1,2,\ldots$. Luego $\bigcup\limits_{j=1}^{\infty} E_j^C$ es medible y tambi\'en lo es su complemento 
+$ \left(\bigcup\limits_{j=1}^{\infty} E_j^C\right)^C$.
+
+Por otra parte,  a partir de las Leyes de De Morgan, se tiene la siguiente igualdad
+\[
+\bigcap\limits_{j=1}^{\infty}E_j= 
+\left( \bigcup\limits_{j=1}^{\infty} E_j^C\right)^C,
+\]
+y por lo tanto, la intersecci\'on numerable de conjuntos medibles  resulta medible.
+\end{demo}
+
+
+No consideraremos uniones ni intersecciones no numerables.
+
+\begin{proposicion}{}
+Si $E$ es medible, $\forall \epsilon>0$ existe un conjunto cerrado $F\subset E$ con
+\[
+m_{*}(E-F)<\epsilon.
+\]
+\end{proposicion}
+
+\begin{demo}
+$E^C$ es medible, entonces dado $\epsilon>0$ existe un abierto $\mathcal{O}$ tal que $E^C \subset \mathcal{O}$ y 
+\[
+m_{*}(\mathcal{O}-E^C)<\epsilon.
+\]
+A su vez, $\mathcal{O}^C$ es cerrado y $\mathcal{O}^C\subset E$. 
+Y, como $\mathcal{O}-E^C=E-\mathcal{O}^C$, entonces
+\[
+m_{*}(E-\mathcal{O}^C)<\epsilon.
+\]
+Basta tomar $F=\mathcal{O}^C$ para obtener el resultado propuesto.
+\end{demo}
