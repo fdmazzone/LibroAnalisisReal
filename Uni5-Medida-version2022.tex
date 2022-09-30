@@ -499,7 +499,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
   Hay $(\beta_1+2),\ldots, (\beta_d+2)$ de ellos y miden $\frac{1}{N^d}$.
   Luego, 
   \[
-  |R|=\lim\limits_{N\to \infty}
+  |R|=\lim\limits_{N\to \infty} \frac{\beta_1}{N}\ldots \frac{\beta_d}{N}.
   \]
   Pero
   \[
@@ -584,7 +584,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
     \]
     \end{observacion}
     
-    \begin{observacion}{}[Numerable $\sigma$-sub-aditividad]
+    \begin{observacion}{}[Numerable $\sigma$-sub-aditividad]\label{obs:sigma-subaditividad}
     Si $E=\bigcup\limits_{j=1}^{\infty} E_j$, entonces 
     \[m_{*}(E)\leq \sum\limits_{j=1}^{\infty} m_{*}(E_j).\]
     \begin{demo}
@@ -610,7 +610,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
     \]
     \end{observacion}
     
-    \begin{observacion}{}
+    \begin{observacion}{}\label{obs:def-medida-ext-abierto}
     Si $R\subset \rr^d$, entonces
     \[
     m_{*}(E)=
@@ -648,23 +648,80 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
     \end{observacion}
     
     \begin{observacion}{}
-    Si $E=E_1\cup E_2$ con $d(E_1,E_2)>0$, entonces
+       Si $E=E_1\cup E_2$ con $d(E_1,E_2)>0$, entonces
     \[
     m_{*}(E)=m_{*}(E_1)+m_{*}(E_2).
     \]
     \begin{demo}
-    $\leq) $
+    $\leq)$ Inmediata a partir de la Observaci\'on \ref{obs:sigma-subaditividad}.
     
     $\geq)$
+          Si $m_{*}(E)=\infty$,  la desigualdad es trivial. 
+          
+          Supongamos que $m_{*}(E)<\infty$. \\
+    Sea $0<\delta <d(E_1, E_2)$ y sea $\epsilon>0$.
+    Consideremos un cubrimiento de $E$ tal que 
+    \[E\subset \bigcup\limits_{j=1}^{\infty} Q_j\;\mbox{  y }\;
+    \sum\limits_{j=1}^{\infty} m_{*}(Q_j)<m_{*}(E)+\epsilon.\]
+    Podemos suponer que $\diametro(Q_j)<\delta$, porque de no presentarse el caso, dividimos en m\'as cubos hasta lograr el di\'ametro requerido.
+    \\
+    Entonces, cada cubo $Q_j$ puede intersecar a s\'olo uno de los conjuntos $E_1$ \'o $E_2$.
+
+    Sean \[
+    J_1=\left\{j|Q_j \cap E_1\neq \emptyset\right\}
+        \]
+        y 
+    \[
+    J_2=\nn-J_1.
+    \]
+Entonces
+    \[
+E_1\subset \bigcup\limits_{j\in J_1} Q_j \;\;\mbox { y }\;\;
+E_2\subset \bigcup\limits_{j \in J_2} Q_j.
+    \]
+    Luego, obtenemos
+    \[
+    m_{*}(E)+\epsilon>\sum\limits_{j=1}^{\infty} m_{*}(Q_j)
+    =\sum\limits_{j \in J_1} m_{*}(Q_j)+\sum\limits_{j\in J_2} m_{*}(Q_j)
+    \geq 
+    m_{*}(E_1)+m_{*}(E_2).
+    \]
     \end{demo}
     \end{observacion}
     
 \begin{observacion}\label{obs:sigma-aditividad-medida-ext}
-Si $E=\bigcup\limits_{j=1}^{\infty} Q_j$ con $Q_j$ casi disjuntos, entonces
+Si $E=\bigcup\limits_{j=1}^{\infty} Q_j$ con los  $Q_j$ casi disjuntos, entonces
 \[
 m_{*}(E)=\sum\limits_{j=1}^{\infty} m_{*}(Q_j).\]
 \begin{demo}
-xxx
+$\leq)$ Inmediata a partir de la Observaci\'on \ref{obs:sigma-subaditividad}.
+
+$\geq)$
+Sea $\epsilon>0$ y sean $\widetilde{Q}_j\subset Q_j^{\circ}$ cubos cerrados tales que 
+\[
+m_{*}(\widetilde{Q}_j)>m_{*}(Q_j^{\circ})-\frac{\epsilon}{2^j}.
+\]
+Entonces $d(\widetilde{Q}_{j_1},\widetilde{Q}_{j_2})>0$.
+Luego, 
+\[
+%\begin{split}
+m_{*}(E) =m_{*}\left(\bigcup\limits_{j=1}^{\infty} Q_j\right)
+\geq m_{*}\left(\bigcup\limits_{j=1}^{N} Q_j\right)
+%\\
+\geq m_{*}\left(\bigcup\limits_{j=1}^{N} \widetilde{Q}_j\right)
+=\sum\limits_{j=1}^N m_{*}(\widetilde{Q}_j),
+%\end{split}
+\]
+a partir de lo cual tenemos
+\[
+m_{*}(E)\geq \lim\limits_{N\to \infty}\sum\limits_{j=1}^N  m_{*}(\widetilde{Q}_j)
+=\sum\limits_{j=1}^{\infty} m_{*}(\widetilde{Q}_j)
+\geq 
+\sum\limits_{j=1}^{\infty} \left( m_{*}({Q}_j^{\circ})-\frac{\epsilon}{2^j}\right)
+=
+\sum\limits_{j=1}^{\infty} m_{*}({Q}_j)-\epsilon.
+\]
+La desigualdad buscada se consigue haciendo $\epsilon \to 0$.
 \end{demo}
 
 \end{observacion}
@@ -677,6 +734,46 @@ $\mathcal{O}$ es abierto, entonces
 donde los cubos $Q_j$ son casi disjuntos.
 
 
-
-
 \section{Conjuntos medibles y medida de Lebesgue}
+
+\begin{definicion}{}
+Un conjunto $E\subset \rr^d$ se llama medible si $\forall \epsilon>0$ existe un abierto $\mathcal{O}\supset E$
+con 
+\[
+m_{*}(\mathcal{O}-E)<\epsilon.
+\]
+\end{definicion}
+
+Si $E$ es medible, se define $m(E):=m_{*}(E)$.
+
+\begin{proposicion}{}
+Si $\mathcal{O}$ es abierto, entonces $\mathcal{O}$ es medible.
+\end{proposicion}
+
+\begin{proposicion}{}
+\begin{enumerate}
+    \item\label{it:conj-medida-cero-medible} Si $m_{*}(E)=0$, entonces $E$ es medible. 
+    \item Si $F\subset E$ y $m_{*}(E)=0$, entonces $F$ es medible.
+\end{enumerate}
+\end{proposicion}
+
+\begin{demo}
+\begin{enumerate}
+    \item Por la Observaci\'on \ref{obs:def-medida-ext-abierto}, 
+    dado $\epsilon>0$, existe $\mathcal{O}$ abierto tal que 
+    \[
+    m_{*}(\mathcal{O})<m_{*}(E)+\epsilon.
+    \]
+    Ahora, como $\mathcal{O}-E \subset \mathcal{O}$ y $m_{*}(E)=0$, entonces 
+    \[
+    m_{*}(\mathcal{O}-E)<\epsilon.
+    \]
+
+\item  A partir de que $F\subset E$ y $m_{*}(E)=0$, se tiene que $m_{*}(F)=0$. 
+Luego, por \ref{it:conj-medida-cero-medible}, $F$ es medible.
+\end{enumerate}
+\end{demo}
+
+\begin{observacion}{}
+$\mathscr{C}$ es medible.
+\end{observacion}
