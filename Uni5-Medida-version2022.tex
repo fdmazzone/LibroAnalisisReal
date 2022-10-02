@@ -1,7 +1,7 @@
 \chapter{Medida de Lebesgue -  versi\'on 2022}
 
 COMPLETAR CON DATA DE LA  VERSION PDF DE LAS NOTAS DE CLASES QUE TIENEN
-ALGUNO AGREGADOS EN COLORES!!!
+ AGREGADOS EN COLORES!!!
 
 
 \section{Preliminares}
@@ -553,7 +553,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
     
     \begin{ejemplo}{}
     $m_{*}(\qq)=0$.
-    \textbf{COPIAR LA JUSTIFICACION QUE ESTA EN EL PDF!!!}
+    \textbf{LA JUSTIFICACION ESTA EN EL PDF!!!}
     \end{ejemplo}
     
     \subsection{Propiedades de la medida exterior}
@@ -736,7 +736,7 @@ donde los cubos $Q_j$ son casi disjuntos.
 
 \section{Conjuntos medibles y medida de Lebesgue}
 
-\begin{definicion}{}
+\begin{definicion}{def:conjunto-medible-x-abierto}
 Un conjunto $E\subset \rr^d$ se llama medible si $\forall \epsilon>0$ existe un abierto $\mathcal{O}\supset E$
 con 
 \[
@@ -937,7 +937,7 @@ y por lo tanto, la intersecci\'on numerable de conjuntos medibles  resulta medib
 
 No consideraremos uniones ni intersecciones no numerables.
 
-\begin{proposicion}{}
+\begin{proposicion}{prop:medible-aprox-x-cerrado}
 Si $E$ es medible, $\forall \epsilon>0$ existe un conjunto cerrado $F\subset E$ con
 \[
 m_{*}(E-F)<\epsilon.
@@ -956,3 +956,353 @@ m_{*}(E-\mathcal{O}^C)<\epsilon.
 \]
 Basta tomar $F=\mathcal{O}^C$ para obtener el resultado propuesto.
 \end{demo}
+
+\begin{teorema}{}
+Si $E_j$, para $j=1,2,\ldots$ son conjuntos medibles y disjuntos, entonces
+\[
+m(E)=\sum\limits_{j=1}^{\infty} m(E_j).
+\]
+\end{teorema}
+
+\begin{demo}{}
+$\leq)$
+Inmediata a partir de la $\sigma$-subaditividad de $m_{*}$.
+
+$\geq )$
+Supongamos que cada $E_j$ es acotado y sea $F_j\subset E_j$ cerrado con 
+\[
+m_{*}(E_j-F_j)<\frac{\epsilon}{2^j}.
+\]
+A partir de la subaditividad de $m_{*}$ y que $E_j=(E_j-F_j)\cup F_j$, se deduce que
+\[
+m_{*}(E_j)<m_{*}(F_j)+\frac{\epsilon}{2^j}.\]
+Los conjuntos $F_j$ son compactos y disjuntos, entonces
+$d(E_j,F_k)>0$ si $j\neq k$ y se tiene que
+\[
+m\left(\bigcup\limits_{j=1}^{N} F_j\right)=
+\sum\limits_{j=1}^N m(F_j).
+\]
+Luego, 
+\[
+m(E)\geq m\left( \bigcup\limits_{j=1}^N F_j\right)=
+\sum\limits_{j=1}^N m(F_j)\geq \sum\limits_{j=1}^N m(E_j)-\epsilon.
+\]
+Haciendo $N\to \infty$ y como $\epsilon>0$ es arbitrario, se consigue
+\[
+\sum\limits_{j=1}^{\infty}m(E_j)\leq m(E).
+\]
+
+En el caso general, consideramos cubos $Q_j$ tales que $Q_j\subset Q_{j+1}$ y 
+\[
+\rr^n=\bigcup\limits_{j=1}^{\infty} Q_j.
+\]
+Ahora, ponemos $E_{jk}=E_j\cap (Q_k-Q_{k+1})$ para $k\geq 2$.
+Los conjuntos $E_{jk}$ son acotados, medibles, disjuntos y permiten expresar
+\[
+E=\bigcup\limits_{j=1}^{\infty} E_j=
+\bigcup\limits_{j=1}^{\infty} \bigcup\limits_{k=2}^{\infty} E_{jk}.
+\]
+Luego, aplicando el resultado obtenido para  conjuntos acotados obtenemos
+\[
+m(E)=\sum\limits_{j=1}^{\infty}\sum\limits_{k=2}^{\infty}m(E_{jk})=
+\sum\limits_{j=1}^{\infty} m(E_j).
+\]
+\end{demo}
+
+\begin{corolario}{cor:medida-diferencia-inclusion-finita}
+Si $F\subset E$ son medibles y $m(F)<\infty$, entonces
+\[
+m(E-F)=m(E)-m(F).
+\]
+\end{corolario}
+
+\begin{definicion}{}
+Si $E_j\subset \rr^n$, $E_j\subset E_{j+1}$ y $E=\bigcup\limits_{j=1}^{\infty} E_j$, escribiremos $E_j \nearrow E$.
+
+Si en cambio, $E_j\supset E_{j+1}$ y $E=\bigcap\limits_{j=1}^{\infty} E_j$, pondremos $E_j \searrow E$.
+\end{definicion}
+
+\begin{corolario}{cor:medida-union-inters-encajados}
+Sean $E_j$, para $j=1,2,\ldots$, conjuntos medibles en $\rr^d$. 
+\begin{enumerate}
+    \item \label{it:medida-union-encajados} Si $E_j\nearrow E$, entonces $m(E)=\lim\limits_{j \to \infty} m(E_j)$.
+    \item \label{it:medida-interseccion-encajados} Si $E_j \searrow E$ y $m(E_j)<\infty$ para alg\'un $j$, entonces $m(E)=\lim\limits_{j \to \infty} m(E_j)$.
+\end{enumerate}
+\end{corolario}
+
+\begin{demo}{}
+\begin{enumerate}
+    \item Sean $G_1=E_1$,\; $G_2=E_2-E_1$, \ldots
+    
+    Los conjuntos $G_j$ son medibles y mutuamente disjuntos. Adem\'as, 
+    \[
+    \bigcup\limits_{j=1}^{N}G_j =E_N\;\;\;
+    \mbox{ y }\;\;\;
+    \bigcup\limits_{j=1}^{\infty}G_j 
+    =\bigcup\limits_{j=1}^{\infty} E_j=E.
+    \]
+    Entonces, 
+    \[\begin{split}
+    m(E)&=\sum\limits_{j=1}^{\infty}m(G_j)=
+    \lim\limits_{N \to \infty} \sum\limits_{j=1}^N m(G_j)\\
+    &=
+    \lim\limits_{N \to \infty} m\left(\bigcup\limits_{j=1}^N G_j\right)=\lim\limits_{N\to \infty}m(E_N).
+    \end{split}
+    \]
+    \item Asumamos que $m(E_1)<\infty$.
+    
+    Sean $G_j=E_{1}-E_j$ para $j\geq 1$. Entonces 
+    $G_j \subset G_{j+1}$ y 
+    \[
+    \bigcup\limits_{j=1}^{\infty} G_j=
+    \bigcup\limits_{j=1}^{\infty} E_{1}\cap E_j^C=
+    E_1 \cap \bigcup\limits_{j=1}^{\infty} E_j^C=
+    E_1 \cap\left( \bigcap\limits_{j=1}^{\infty} E_j \right)^C=
+    E_1 -  \bigcap\limits_{j=1}^{\infty} E_j.
+    \]
+    Luego, por el item \ref{it:medida-union-encajados} y el Corolario \ref{cor:medida-diferencia-inclusion-finita}, tenemos
+    \[
+    m(E_1)- \lim\limits_{j \to \infty} m(E_j)=
+    \lim\limits_{j \to \infty} m(G_j)=
+    m\left(\bigcup\limits_{j=1}^{\infty} G_j\right)=
+    m(E_1)-m\left(\bigcap\limits_{j=1}^{\infty} E_j\right).
+        \]
+     Por \'ultimo, como $m(E_1)<\infty$, llegamos a
+     \[
+     \lim\limits_{j \to \infty} m(E_j)=m\left(\bigcap\limits_{j=1}^{\infty} E_j\right).
+     \]
+\end{enumerate}
+\end{demo}
+
+\begin{observacion}{}
+El item \ref{it:medida-interseccion-encajados} del Corolario \ref{cor:medida-union-inters-encajados} es  falso si se quita la hip\'otesis $m(E_j)<\infty$. 
+Por ejemplo, si $E_j=(j, +\infty)$, con $j\in \nn$.
+\end{observacion}
+
+\begin{teorema}{}
+Sea $E\subset \rr^d$ medible. Entonces, dado $\epsilon>0$ 
+\begin{enumerate}
+    \item existe $\mathcal{O}\subset \rr^d$ abierto tal que $m(\mathcal{O}-E)<\epsilon$;
+    \item existe $F\subset \rr^d$ cerrado tal que $m(E-F)<\epsilon$;
+    \item si $m(E)<\infty$, existe $K \subset E$ compacto tal que 
+    $m(E-K)<\epsilon$;
+    \item si $m(E)<\infty$, existen cubos $Q_j$, $j=1,2,\dots$ tal que 
+    \[
+    m\left(E\Delta \bigcup\limits_{j=1}^N Q_j\right)<\epsilon.
+    \]
+\end{enumerate}
+\end{teorema}
+
+\begin{demo}
+\begin{enumerate}
+    \item Definici\'on \ref{def:conjunto-medible-x-abierto}.
+    \item Proposici\'on \ref{prop:medible-aprox-x-cerrado}.
+    \item Sea $F\subset E$ cerrado tal que 
+    $m(E-F)\leq \frac{\epsilon}{2}<\epsilon$. \\
+    Sean $Q_n=[-n,n]^d$ cubos de $\rr^d$. Entonces, 
+    \[
+    Q_n\cap F \nearrow F \;\; \mbox{ y }\;\; E-Q_n\cap F \searrow E-F.
+    \]
+ y tenemos
+    \[
+    \lim\limits_{n \to \infty}m\left(E-Q_n\cap F\right)=m(E-F)\leq \frac{\epsilon}{2}.
+    \]
+    Luego, existe $n\in \nn$ tal que $m(E-Q_n\cap F)<\epsilon$, 
+    siendo $Q_n\cap F$ compacto de $\rr^d$.
+    \item Sean $Q_j$ cubos de $\rr^d$ con  
+    \[
+    E\subset \bigcup\limits_{j=1}^{\infty} Q_j\;\; \mbox{ y }\;\;
+    \sum\limits_{j=1}^{\infty} |Q_j|<m(E)+\frac{\epsilon}{2}.
+    \]
+    Como $m_{*}(E)<\infty$, la serie $\sum\limits_{j=1}^{\infty} |Q_j|$
+    converge y por tanto existe $N\in \nn$ tal que 
+    \[\sum\limits_{N+1}^{\infty} |Q_j|\leq \frac{\epsilon}{2}.\]
+    Luego, 
+    \[
+    \begin{split}
+    m\left(E\Delta \bigcup\limits_{j=1}^N Q_j\right)&\leq 
+    m\left(\bigcup\limits_{j=N+1}^{\infty} Q_j\right)+m\left(\bigcup\limits_{j=1}^{\infty} Q_j-E\right)
+    \\
+    &\leq 
+    \frac{\epsilon}{2}+\sum\limits_{j=1}^{\infty}|Q_j|-m(E)<
+    \epsilon.
+    \end{split}
+    \]
+    \end{enumerate}
+\end{demo}
+
+Ahora, dado $h\in \rr^d$, pondremos
+\[
+T_h(x)=x+h\;\;\mbox{ y }\;\; T_h(E)=E+h.
+\]
+Y, si $\delta \in \rr^+$, notaremos $\delta x=\delta {.} x$.
+
+\begin{teorema}{teo:medida-traslacion-dilatacion}
+$E$ es medible si y s\'olo si $E+h$  y $\delta E$ son medibles.
+Adem\'as, 
+\begin{enumerate}
+    \item $m(E+h)=m(E)$;
+    \item $m(\delta E)=\delta^d m(E)$.
+\end{enumerate}
+\end{teorema}
+
+\begin{demo}
+La prueba queda como ejercicio.
+\end{demo}
+
+\begin{ejercicio}{}
+Probar el Teorema \ref{teo:medida-traslacion-dilatacion}.
+\end{ejercicio}
+
+\section{$\sigma$-\'Algebras}
+
+\begin{definicion}{}
+Sea $X$ un conjunto. 
+\\
+Un conjunto $\mathscr{A}$ de subconjuntos de $X$, 
+$\mathscr{A}\subset \mathscr{P}(X)$, se llama una $\sigma$-\'algebra si \begin{enumerate}
+    \item $\emptyset \in \mathscr{A}$;
+    \item si $E_j\in \mathscr{A}$, para $j=1,2,\ldots$, entonces
+    $\bigcup\limits_{j=1}^{\infty} E_j \in \mathscr{A}$;
+    \item si $E\in \mathscr{A}$ entonces $E^c \in \mathscr{A}$.
+\end{enumerate}
+\end{definicion}
+
+
+\begin{ejemplo}{ejem-sigma-algebras}
+\begin{enumerate}
+    \item $\mathscr{A}=\mathscr{P}(X)$ es $\sigma$-\'algebra.
+    \item El conjunto de los conjuntos medibles $\mathscr{M}$ es una $\sigma$-\'algebra.
+    \item\label{it:sigma-algebra-cjto-a-lo-s-numerable} $\mathscr{A}=\left\{E\subset \rr| \;E \;\mbox{ es a lo sumo numerable \'o } \; E^C \;\mbox{ es a lo sumo numerable}  \right\}$
+    es $\sigma$-\'algebra.
+\end{enumerate}
+\end{ejemplo}
+
+
+\begin{ejercicio}{}
+Probar que  $\mathscr{A}$ definida en el item \ref{it:sigma-algebra-cjto-a-lo-s-numerable} del Ejemplo \ref{ejem-sigma-algebras} es $\sigma$-\'algebra.
+\end{ejercicio}
+
+Sea  $I$ un conjunto de \'indices.
+Si $\mathscr{A}_i$, $i \in I$,  son $\sigma$-\'algebras de subconjuntos de $X$, entonces $\bigcap\limits_{i \in I} \mathscr{A}_i$ es $\sigma$-\'algebra. 
+
+Dado $\mathscr{C}\subset \mathscr{P}(X)$, la \emph{$\sigma$-\'algebra
+generada} por $\mathscr{C}$ se define como
+\[\sigma(\mathscr{C})=\bigcap\left\{\mathscr{A}:\;\mathscr{A}\;\mbox{ es $\sigma$ \'algebra }, \mathscr{C} \subset \mathscr{A} \right \}
+\]
+
+
+Sea $\mathscr{G}=\{\mathcal{O}\subset \rr^d: \mathcal{O} \mbox{ es abierto} \}$, se define la $\sigma$-\emph{\;algebra de Borel} como
+\[
+\sigma(\mathscr{G})=:\mathscr{B}(\rr^d).
+\]
+
+Como el conjunto de los conjuntos medibles $\mathscr{M}$ es una $\sigma$-\'algebra, entonces $\sigma(\mathscr{G})\subset \mathscr{M}$.
+Pero, $\sigma(\mathscr{G})\neq \mathscr{M}$.
+
+Si $\mathcal{O}_n$, para $n=1,2,\ldots$ son abiertos, el conjunto
+$\bigcap\limits_{n=1}^{\infty} \mathcal{O}_n$ no es necesariamente abierto. Pero, s\'i ocurre que $\bigcap\limits_{n=1}^{\infty} \mathcal{O}_n \in \mathscr{B}(\rr^d)$. 
+A la clase de estos conjuntos se la llama $G_{\delta}$.
+O sea, 
+\[
+G_{\delta}=\left\{  
+G:\; G=\bigcap\limits_{n=1}^{\infty} \mathcal{O}_n,\; \mathcal{O}_n \mbox{ abiertos}
+\right\}.
+\]
+
+
+De manera dual, se define la clase $F_{\sigma}$ por
+\[
+F_{\sigma}=\left\{  
+F:\; F=\bigcup\limits_{n=1}^{\infty} F_n,\; F_n \mbox{ cerrados}
+\right\}.
+\]
+%%
+Luego,  $G_{\delta}, F_{\sigma} \subset \mathscr{B}(\rr^d)$.
+
+\begin{definicion}{}
+Si $\mathscr{A}$  es $\sigma$-\'algebra y $\mu:\mathscr{A} \to \rr^+$ satisface
+\[\mu\left(\bigcup\limits_{j=1}^{\infty}E_j \right)
+=\sum\limits_{j=1}^{\infty}\mu(E_j),
+\]
+siendo $E_j$ conjuntos mutuamente disjuntos, 
+entonces se dice que $\mu$ es una \emph{medida}.
+
+Adem\'as, se supone que $\mu(\emptyset)=0$.
+\end{definicion}
+
+
+\begin{teorema}{}
+Son equivalentes
+\begin{enumerate}
+    \item $E\subset \rr^d$ es medible.
+    \item $E=G-Z$, con $G\in G_{\delta}$ y $m(Z)=0$.
+    \item $E=F\cup Z$, con $F \in F_{\sigma}$ y $m(Z)=0$.
+\end{enumerate}
+\end{teorema}
+
+\begin{demo}{}
+1.$\Rightarrow$ 2.
+Sean $\mathcal{O}_n$ abiertos tales que $E\subset \mathcal{O}_n$ y 
+\[
+m(\mathcal{O}_n-E)\leq \frac{1}{n}.
+\]
+Luego, $G=\bigcap\limits_{n=1}^{\infty} \mathcal{O}_n \in G_{\delta}$, 
+y si llamamos $Z=G-E$, se tiene que 
+\[m(Z)=
+m(G-E)\leq m(\mathcal{O}_n-E)\leq \frac{1}{n}\xrightarrow[n \to \infty]{}0.
+\]
+
+2.$\Rightarrow$ 3.
+Si $E$ es medible, entonces $E^C$ es medible. Ahora bien,  por el item 2., $E^C=G-Z$ con $G \in G_{\delta}$  y $m(Z)=0$. 
+
+Supongamos que $G=\bigcap\limits_{j=1}^{\infty} \mathcal{O}_j$ 
+con $\mathcal{O}_j$ abiertos.
+Luego, 
+\[E^C=\bigcap\limits_{j=1}^{\infty} \mathcal{O}_j \cap Z^C;
+\]
+tomando complemento miembro a miembro, obtenemos
+\[
+E=\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j^C \cup Z=F\cup Z,
+\]
+siendo $F \in F_{\sigma}$ y $m(Z)=0$.
+
+3.$\Rightarrow$ 1. $F$ y $Z$ son conjuntos medibles, entonces $E$ es medible.
+\end{demo}
+
+
+\section{Conjuntos no medibles}
+
+Sea $E=[0,1]$. 
+Definimos una relaci\'on en $E$ mediante
+\[
+x \sim y \Longleftrightarrow  x-y\in \qq.
+\]
+$\sim$ es una relaci\'on de equivalencia.
+
+Por el axioma de elecci\'on, formamos un  conjunto $\mathcal{N}$ que se obtiene eligiendo  un elemento de cada clase de equivalencia de la relaci\'on $\sim$.
+
+Sea ahora 
+\[
+\qq \cap [-1,1] 
+=\{r_1,r_2,\ldots \}.
+\] 
+
+Si $(\mathcal{N}+r_1)\cap (\mathcal{N}+r_2)\neq \emptyset$, 
+existen $x,y\in \mathcal{N}$ tal que $x+r_1=y+r_2$. Entonces 
+$x \sim y \Rightarrow x=y \Rightarrow r_1=r_2$.
+%%
+Luego, $\mathcal{N}+r_k$ son mutuamente disjuntos.
+
+Sea $a=m_{*}(\mathcal{N})$. 
+%%
+Se tiene  
+\[
+E\subset \bigcup\limits_{k=1}^{\infty} \mathcal{N}+r_k
+\subset [-1,2]. 
+\]
+Si $\mathcal{N}$ fuese medible, cada $\mathcal{N}+r_k$ tambi\'en lo ser\'ia y 
+\[
+1=m(E)\leq \sum\limits_{k=1}^{\infty}m(\mathcal{N}+r_k)=a+a+\ldots\leq 3. 
+\]
+!`Absurdo! Puesto que $a+a+\ldots=+\infty$.

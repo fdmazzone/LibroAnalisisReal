@@ -5,7 +5,7 @@
 
 \textbf{ Copiado de acuerdo al orden de las notas manuscritas...parece que falta algo para el contexto...}
 
-\textbf{Controlar que se defini\'o  $\mathscr{M}$ o referenciar la definici\'on del cap\'itulo  de conjuntos medibles...si existiese...}
+
 
 \begin{definicion}{}
 $f$ es medible si y s\'olo si $f^{-1}((a,\infty)) \in \mathscr{M}$. 
@@ -91,14 +91,13 @@ Veamos que
 \[
 \{
 f+g>a\}=\bigcup\limits_{r \in \qq} \{ a>r\} \cap \{q>a-r\}.
-\}
 \]
-Si $f(x)+g(x)>a$ entonces existe $r \in \qq$ tal que 
+Si $f(x)+g(x)>a,$ entonces existe $r \in \qq$ tal que 
 \[
 f(x)>r>a-g(x),\;\;\mbox{ es decir }\;\; 
 f(x)>r\;\mbox{ y }\; g(x)>a-r.
 \]
-Rec\'iprocamente, si para alg\'un $r\in \qq$ se tiene que $f(x)>r$ y $g(x)>a-r$, entonces $f(x)+g(x)>a$.
+Rec\'iprocamente, si para alg\'un $r\in \qq$ se tiene que $f(x)>r$ y $g(x)>a-r$, luego $f(x)+g(x)>a$.
 
 Si $c\in \rr$, entonces
 \[
@@ -391,9 +390,12 @@ A partir de que
 \]
 se tiene que 
 \[
-m\left(E\left(|f-g|\geq \delta\right)\right)\leq 
-m\left(E\left(|f-f_k|\geq \frac{\delta}{2}\right)\right)+
+\begin{split}
+&m\left(E\left(|f-g|\geq \delta\right)\right)\leq 
+\\
+&m\left(E\left(|f-f_k|\geq \frac{\delta}{2}\right)\right)+
 m\left(E\left(|f_k-g|\geq \frac{\delta}{2}\right)\right) \xrightarrow[k \to \infty]{} 0.
+\end{split}
 \]
 Luego, 
 \[

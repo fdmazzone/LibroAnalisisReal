@@ -25,7 +25,7 @@ La noción de medida abstracta es muy fructífera pues unifica multitud de insta
  \begin{enumerate}
   \item $\emptyset\in\mathscr{A}$.
   \item $A\in\mathscr{A}\Rightarrow A^c\in\mathscr{A}$.
-  \item $A_i\in\mathscr{A}$, $i=1,\ldots,n$, $\Rightarrow\bigcup_{i=1}^nA_i\in\mathscr{A}$.
+  \item $A_i\in\mathscr{A}$, $i=1,\ldots,n$, $\Rightarrow\bigcup\limits_{i=1}^n A_i\in\mathscr{A}$.
  \end{enumerate}
 
 \end{definicion}
@@ -42,15 +42,15 @@ La noción de medida abstracta es muy fructífera pues unifica multitud de insta
  \begin{enumerate}
   \item $\emptyset\in\mathscr{A}$.
   \item $A\in\mathscr{A}\Rightarrow A^c\in\mathscr{A}$.
-  \item $A_i\in\mathscr{A}$, $i=1,\ldots,n$, $\Rightarrow\bigcap_{i=1}^nA_i\in\mathscr{A}$.
+  \item $A_i\in\mathscr{A}$, $i=1,\ldots,n$, $\Rightarrow\bigcap\limits_{i=1}^nA_i\in\mathscr{A}$.
  \end{enumerate}
 \end{ejercicio}
 
 \begin{definicion}[Clases monótonas]{def:clase_monotona} \index{Clases monótonas}
  Sea $X$ un conjunto y $\mathscr{A}\subset\mathcal{P}(X)$. El conjunto $\mathscr{A}$ se llamará   \emph{clase monótona} si
  \begin{enumerate}
-  \item $A_i\in\mathscr{A}$, $A_i\subset A_{i+1}$, $i=1,2,\ldots\Rightarrow \bigcup_{i=1}^{\infty}A_i\in\mathscr{A}$. 
-    \item $A_i\in\mathscr{A}$, $A_i\supset A_{i+1}$, $i=1,2,\ldots\Rightarrow \bigcap_{i=1}^{\infty}A_i\in\mathscr{A}$. 
+  \item $A_i\in\mathscr{A}$, $A_i\subset A_{i+1}$, $i=1,2,\ldots\Rightarrow \bigcup\limits_{i=1}^{\infty}A_i\in\mathscr{A}$. 
+    \item $A_i\in\mathscr{A}$, $A_i\supset A_{i+1}$, $i=1,2,\ldots\Rightarrow \bigcap\limits_{i=1}^{\infty}A_i\in\mathscr{A}$. 
  \end{enumerate}
 
 \end{definicion}
@@ -69,7 +69,7 @@ Recordemos del capítulo anterior.
  \begin{enumerate}
   \item $\emptyset\in\mathscr{A}$.
   \item $A\in\mathscr{A}\Rightarrow A^c\in\mathscr{A}$.
-  \item $A_i\in\mathscr{A}$, $i=1,\ldots$, $\Rightarrow\bigcup_{i=1}^{\infty}A_i\in\mathscr{A}$.
+  \item $A_i\in\mathscr{A}$, $i=1,\ldots$, $\Rightarrow\bigcup\limits_{i=1}^{\infty}A_i\in\mathscr{A}$.
  \end{enumerate}
 
 \end{definicion}
@@ -80,10 +80,8 @@ Recordemos del capítulo anterior.
 \end{ejercicio}
 \begin{ejercicio}{ejer:sigma_alg_equiv} Demostrar que  $\mathscr{A}$ es $\sigma$-álgebra si y sólo si es álgebra y satisface que 
 \begin{itemize}
- \item $E_n\in\mathscr{A}$, $n=1,2,\ldots$ y $E_i\cap E_j=\emptyset$, cuando $i\neq j$ implican que $\bigcup_{n=1}^{\infty} E_n\in\mathscr{A}$.
+ \item $E_n\in\mathscr{A}$, $n=1,2,\ldots$ y $E_i\cap E_j=\emptyset$, cuando $i\neq j$ implican que $\bigcup\limits_{n=1}^{\infty} E_n\in\mathscr{A}$.
 \end{itemize}
-
- 
 \end{ejercicio}
 
 
@@ -193,7 +191,7 @@ Sea $X$ un conjunto no vacío. Una función $\mu^\star:\mathcal{P}(X)\to [0,+\in
   \begin{description}
    \item[] $\mu^\star(\emptyset)=0$. 
    \item[Monotonía.] $A_1\subset A_2\Rightarrow \mu^\star(A_1)\leq \mu^\star(A_2)$ 
-   \item[$\sigma$-subaditividad.] $A_j\subset X$, $j=1,2,\ldots$, $\Rightarrow  \mu^\star\left(\bigcup_{j=1}^{\infty}A_j\right)\leq\sum_{j=1}^{\infty}\mu^\star(A_j)$.
+   \item[$\sigma$-subaditividad.] $A_j\subset X$, $j=1,2,\ldots$, $\Rightarrow  \mu^\star\left(\bigcup\limits_{j=1}^{\infty}A_j\right)\leq\sum_{j=1}^{\infty}\mu^\star(A_j)$.
    \end{description}
 
 
@@ -253,7 +251,7 @@ Supongamos que $E_1\cap E_2=\emptyset$. Tomando $A= E_1\cup E_2$ en \eqref{eq:co
  \]
  \end{ejercicio}
 
-Siguiendo con la demostración, sean $E_n\in\mathscr{A}$, $n=1,2,\ldots$ una colección numerables de conjuntos mutuamente disjuntos en $\mathscr{A}$. Tomemos $G_n=\bigcup_{j=1}^nE_j$ y $G=\bigcup_{j=1}^{\infty}E_j$.
+Siguiendo con la demostración, sean $E_n\in\mathscr{A}$, $n=1,2,\ldots$ una colección numerables de conjuntos mutuamente disjuntos en $\mathscr{A}$. Tomemos $G_n=\bigcup\limits_{j=1}^nE_j$ y $G=\bigcup\limits_{j=1}^{\infty}E_j$.
 
 Como $\mathscr{A}$ es un álgebra, $G_n\in\mathscr{A}$. Además usando sucesivamente la condición de Carathéodory
 \begin{equation}\label{eq:dem_cara1}
@@ -296,8 +294,8 @@ Como la desigualdad inversa a la anterior es siempre cierta por la $\sigma$-suba
 \begin{definicion}[Premedida]{defi:premedida}
  Sea $X$ un cojunto no vacío y $\mathscr{A}_0$ un álgebra de subconjuntos de $X$. Diremos que una función $\mu_0: \mathscr{A}_0\to [0,+\infty]$ es una \textbf{premedida}\index{Premedida} si satisface que
  \begin{itemize}
-  \item  Si $E_j\in\mathscr{A}_0$, $j=1,2,\ldots$ son mutuamente disjuntos y $\bigcup_{j=1}^{\infty}E_j\in\mathscr{A}_0$ entonces
-  \[\mu_0\left(\bigcup_{j=1}^{\infty} E_j\right) = \sum_{j=1}^{\infty}  \mu_0\left(E_j\right)\]
+  \item  Si $E_j\in\mathscr{A}_0$, $j=1,2,\ldots$ son mutuamente disjuntos y $\bigcup\limits_{j=1}^{\infty}E_j\in\mathscr{A}_0$ entonces
+  \[\mu_0\left(\bigcup\limits_{j=1}^{\infty} E_j\right) = \sum\limits_{j=1}^{\infty}  \mu_0\left(E_j\right)\]
 \end{itemize}
 
   
@@ -310,7 +308,7 @@ Podemos construir medidas a partir de premedidas.
 \begin{lema}{lem:extension}
  Sea $\mu_0$ una premedida sobre el álgebra  $\mathscr{A}_0$ de subconjuntos de $X$. Definimos  $\mu^\star:\mathcal{P}(X)\to [0,+\infty]$ por
  \begin{equation}\label{eq:defi_med_ext}
-  \mu^\star(E)=\inf\left\{ \sum_{j=1}^{\infty}\mu_0(E_j)\mid E\subset \bigcup_{j=1}^{\infty}E_j, E_j\in\mathcal{A}_0  \right\}
+  \mu^\star(E)=\inf\left\{ \sum\limits_{j=1}^{\infty}\mu_0(E_j)\mid E\subset \bigcup\limits_{j=1}^{\infty}E_j, E_j\in\mathcal{A}_0  \right\}
  \end{equation}
  Entonces $\mu^\star$ es una medida exterior que satisface que $\mu^\star(E)=\mu_0(E)$ para todo $E\in\mathcal{A}_0$ y que todo conjunto 
 $E\in\mathcal{A}_0$ es medible en el sentido de Carathéodory. 
@@ -328,15 +326,15 @@ Veamos que la restricción de $\mu_{*}$ to $\mathcal{A}$ coincide con $\mu_{0}$.
 $$
 E_{k}^{\prime}=E \cap\left(E_{k}-\bigcup_{j=1}^{k-1} E_{j}\right)
 .$$
-Los conjuntos $E_{k}^{\prime}$ son mutuamente disjuntos, $E_{k}^{\prime}\in \mathcal{A}, E_{k}^{\prime} \subset E_{k}$ y $E=\bigcup_{k=1}^{\infty} E_{k}^{\prime}$. Por la definición de premedida:
+Los conjuntos $E_{k}^{\prime}$ son mutuamente disjuntos, $E_{k}^{\prime}\in \mathcal{A}, E_{k}^{\prime} \subset E_{k}$ y $E=\bigcup\limits_{k=1}^{\infty} E_{k}^{\prime}$. Por la definición de premedida:
 $$
 \mu_{0}(E)=\sum_{k=1}^{\infty} \mu_{0}\left(E_{k}^{\prime}\right) \leq \sum_{k=1}^{\infty} \mu_{0}\left(E_{k}\right)
 $$
 Luego  $\mu_{0}(E) \leq \mu_{*}(E)$.
 
-Por último probemos que los conjuntos en $\mathcal{A}$ son medibles para $\mu_{*}$. Sea $A\subset X$, $E \in \mathcal{A}$ y $\epsilon>0$. Por definición existen  $E_{1}, E_{2}, \ldots$ en $\mathcal{A}$ con $A \subset \bigcup_{j=1}^{\infty} E_{j}$ y
+Por último probemos que los conjuntos en $\mathcal{A}$ son medibles para $\mu_{*}$. Sea $A\subset X$, $E \in \mathcal{A}$ y $\epsilon>0$. Por definición existen  $E_{1}, E_{2}, \ldots$ en $\mathcal{A}$ con $A \subset \bigcup\limits_{j=1}^{\infty} E_{j}$ y
 $$
-\sum_{j=1}^{\infty} \mu_{0}\left(E_{j}\right) \leq \mu_{*}(A)+\epsilon
+\sum\limits_{j=1}^{\infty} \mu_{0}\left(E_{j}\right) \leq \mu_{*}(A)+\epsilon
 $$
 Como $\mu_{0}$  finitamente  aditiva en $\mathcal{A}$ 
 $$
@@ -352,7 +350,7 @@ $\epsilon$ es arbitrario,  $\mu_{*}(A) \geq \mu_{*}(E \cap A)+\mu_{*}\left(E^{c}
 \begin{teorema}[Extensión premedidas]{teo:extension}
   Sea $\mu_0$ una premedida sobre el álgebra  $\mathscr{A}_0$ de subconjuntos de $X$. Entonces existe una extensión $\mu$ de $\mu_0$ a la $\sigma$-algebra   $\mathscr{A}$ generada por  $\mathscr{A}_0$.
 \end{teorema}
-\begin{proof}  La medida exterior $\mu_{*}$ inducida po $\mu_{0}$ define una medida $\mu$ sobre la $\sigma$-álgebra de los conjuntos medibles según  Carathéodory. Por el Lema anterior  $\mu$ es medida sobre $\mathscr{A}$ que extiende $\mu_{0}$. 
+\begin{proof}  La medida exterior $\mu_{*}$ inducida por $\mu_{0}$ define una medida $\mu$ sobre la $\sigma$-álgebra de los conjuntos medibles según  Carathéodory. Por el Lema anterior  $\mu$ es medida sobre $\mathscr{A}$ que extiende $\mu_{0}$. 
 
 \end{proof}
 
@@ -373,7 +371,7 @@ $\epsilon$ es arbitrario,  $\mu_{*}(A) \geq \mu_{*}(E \cap A)+\mu_{*}\left(E^{c}
 
 Haremos una construcción más general  que produce una gran familia de medidas en $\mathbb{R}$ cuyo dominio es el $\sigma$-álgebra de Borel $\mathcal{B}_{\mathbb {R}}$. Tales medidas se denominan \emph{medidas de Borel}\index{medida!Borel} en $\mathbb{R}$.
 
-Para motivar las ideas, supongamos que $\mu$ es una medida de Borel finita en $\mathbb{R}$, y sea $F(x)=\mu((-\infty, x])$ . La función $F$  se llama la \emph{función de distribución}\index{función!distribución} de $\mu$.  Entonces $F$ es creciente a y continua a la derecha, ya que $(-\infty, x]=\bigcap_{1}^{\infty}\left(-\infty, x_{n}\right]$ siempre que $x_{n} \searrow x$.  Además, si $b>a,(-\infty, b]=(-\infty, a] \cup(a, b]$, entonces $\mu((a, b])=F(b) -F(a)$. Nuestro procedimiento será darle la vuelta a este proceso y construir una medida $\mu$ a partir de una función creciente continua por la derecha $F$. El caso especial $F(x)=x$ producirá la medida habitual de Lebesgue.
+Para motivar las ideas, supongamos que $\mu$ es una medida de Borel finita en $\mathbb{R}$, y sea $F(x)=\mu((-\infty, x])$ . La función $F$  se llama la \emph{función de distribución}\index{función!distribución} de $\mu$.  Entonces $F$ es creciente a y continua a la derecha, ya que $(-\infty, x]=\bigcap\limits_{n=1}^{\infty}\left(-\infty, x_{n}\right]$ siempre que $x_{n} \searrow x$.  Además, si $b>a,(-\infty, b]=(-\infty, a] \cup(a, b]$, entonces $\mu((a, b])=F(b) -F(a)$. Nuestro procedimiento será darle la vuelta a este proceso y construir una medida $\mu$ a partir de una función creciente continua por la derecha $F$. El caso especial $F(x)=x$ producirá la medida habitual de Lebesgue.
 
 Los bloques de construcción de nuestra teoría serán los intervalos abiertos por la izquierda y cerrados por la derecha en $\mathbb{R}$, es decir, conjuntos de la forma $(a, b]$ o $(a, \infty)$ o $\varnothing$, donde $-\infty \leq a<b<\infty$. En esta sección nos referiremos a tales conjuntos como intervalos semi-abiertos. Claramente, la intersección de dos intervalos semi-abiertos es un intervalo semi-abierto, y el complemento de un intervalo semi-abierto es un intervalo semi-abierto o la unión disjunta de dos intervalos semi-abiertos. La colección $\mathcal{A}$ de uniones disjuntas finitas de intervalos semi-abiertos es un álgebra, y la $\sigma$-álgebra generada por $\mathcal{A}$ es la $\sigma$-algebra de Borel  $\mathcal{B}_{\mathbb{R}}$.
 
@@ -387,17 +385,17 @@ y sea $\mu_{0}(\varnothing)=0$. Entonces $\mu_{0}$ es una premedida en el álgeb
 \end{proposicion}
 
 \begin{proof}
- Primero debemos verificar que $\mu_{0}$ esté bien definida, ya que los elementos de $\mathcal{A}$ se pueden representar en más de una forma como uniones disjuntas de intervalos semi-abiertos. Si $\left\{\left(a_{j}, b_{j}\right]\right\}_{1}^{n}$ son disjuntos y $\bigcup_{1}^{n}\left( a_{j}, b_{j}\right]=(a, b]$, entonces, quizás después de volver a etiquetar el índice $j$, debemos tener $a=a_{1}<b_{1}=a_{2 }<b_{2}=\ldots<b_{n}=b$, entonces $\sum_{1}^{n}\left[F\left(b_{j}\right)-F\left(a_{ j}\right)\right]=$ $F(b)-F(a)$. Más generalmente, si $\left\{I_{i}\right\}_{1}^{n}$ y $ \left\{J_{j}\right\}_{1}^{m}$ son dos familias  finitas de intervalos semi-abiertos disjuntos tales que $\bigcup_{1}^{n} I_{i}=\bigcup_{1}^{n} J_{j}$:
+ Primero debemos verificar que $\mu_{0}$ esté bien definida, ya que los elementos de $\mathcal{A}$ se pueden representar en más de una forma como uniones disjuntas de intervalos semi-abiertos. Si $\left\{\left(a_{j}, b_{j}\right]\right\}_{j=1}^{n}$ son disjuntos y $\bigcup\limits_{j=1}^{n}\left( a_{j}, b_{j}\right]=(a, b]$, entonces, quizás después de volver a etiquetar el índice $j$, debemos tener $a=a_{1}<b_{1}=a_{2 }<b_{2}=\ldots<b_{n}=b$, entonces $\sum\limits_{j=1}^{n}\left[F\left(b_{j}\right)-F\left(a_{ j}\right)\right]=$ $F(b)-F(a)$. Más generalmente, si $\left\{I_{i}\right\}_{j=1}^{n}$ y $ \left\{J_{j}\right\}_{j=1}^{m}$ son dos familias  finitas de intervalos semi-abiertos disjuntos tales que $\bigcup\limits_{j=1}^{n} I_{i}=\bigcup\limits_{j=1}^{n} J_{j}$:
  
 $$
 \sum_{i} \mu_{0}\left(I_{i}\right)=\sum_{i, j} \mu_{0}\left(I_{i} \cap J_{j}\right)= \sum_{j} \mu_{0}\left(J_{j}\right) .
 $$
 Por lo tanto, $\mu_{0}$ está bien definida y es finitamente aditiva por construcción.
-Queda por demostrar que si $\left\{I_{j}\right\}_{1}^{\infty}$ es una secuencia de intervalos semi-abiertos disjuntos con $\bigcup_{1}^{\infty} I_ {j} \in$ $\mathcal{A}$ entonces $\mu_{0}\left(\bigcup_{1}^{\infty} I_{j}\right)=\sum_{1}^{\infty } \mu_{0}\left(I_{j}\right)$. Dado que $\bigcup_{1}^{\infty} I_{j}$ es una unión finita de  intervalos semi-abiertos, la sucesión $\left\{I_{j}\right\}_{1}^{\infty} $ se puede dividir en un número finito de subsucesiones de modo que la unión de los intervalos en cada subsucesión sea un único intervalo semi-abierto. Al considerar cada subsucesión por separado y usar la aditividad finita de $\mu_{0}$, podemos suponer que $\bigcup_{1}^{\infty} I_{j}$ es un intervalo semi-abierto $I=(a, b]$. En este caso, tenemos
+Queda por demostrar que si $\left\{I_{j}\right\}_{j=1}^{\infty}$ es una secuencia de intervalos semi-abiertos disjuntos con $\bigcup\limits_{j=1}^{\infty} I_{j} \in$ $\mathcal{A}$ entonces $\mu_{0}\left(\bigcup\limits_{j=1}^{\infty} I_{j}\right)=\sum\limits_{j=1}^{\infty } \mu_{0}\left(I_{j}\right)$. Dado que $\bigcup\limits_{j=1}^{\infty} I_{j}$ es una unión finita de  intervalos semi-abiertos, la sucesión $\left\{I_{j}\right\}_{j=1}^{\infty} $ se puede dividir en un número finito de subsucesiones de modo que la unión de los intervalos en cada subsucesión sea un único intervalo semi-abierto. Al considerar cada subsucesión por separado y usar la aditividad finita de $\mu_{0}$, podemos suponer que $\bigcup\limits_{j=1}^{\infty} I_{j}$ es un intervalo semi-abierto $I=(a, b]$. En este caso, tenemos
 $$
 \mu_{0}(I)=\mu_{0}\left(\bigcup_{1}^{n} I_{j}\right)+\mu_{0}\left(I \backslash \bigcup_{1} ^{n} I_{j}\right) \geq \mu_{0}\left(\bigcup_{1}^{n} I_{j}\right)=\sum_{1}^{n} \mu_{ 0}\left(I_{j}\right) .
 $$
-Haciendo $n \rightarrow \infty$, obtenemos $\mu_{0}(I) \geq \sum_{1}^{\infty} \mu_0\left(I_{j}\right)$. 
+Haciendo $n \rightarrow \infty$, obtenemos $\mu_{0}(I) \geq \sum\limits_{j=1}^{\infty} \mu_0\left(I_{j}\right)$. 
 
 Para probar la desigualdad inversa, supongamos primero que $a$ y $b$ son finitos, y fijemos $\epsilon>0$. Como $F$ es continua por la derecha, existe $\delta>0$ tal que $F(a+\delta)-F(a)<\epsilon$, y si $I_{j}=\left(a_{j} , b_{j}\right]$, para cada $j$ existe $\delta_{j}>0$ tal que $F\left(b_{j}+\delta_{j}\right)-F\left(b_{j}\right)<\epsilon 2^{-j}$ Los intervalos abiertos $\left(a_{j}, b_{j}+\delta_{j}\right)$ cubren el conjunto compacto $[a+\delta, b]$, por lo que hay un sub-cubrimiento finito. Al descartar cualquier $\left(a_{j}, b_{j}+\delta_{j}\right)$ que esté contenido en uno más grande y reetiquetando el índice $j$, podemos suponer que 
 \begin{itemize}
@@ -409,15 +407,15 @@ $$
 \begin{aligned}
 \mu_{0}(I) &<F(b)-F(a+\delta)+\epsilon \\
 & \leq F\left(b_{N}+\delta_{N}\right)-F\left(a_{1}\right)+\epsilon \\
-&=F\left(b_{N}+\delta_{N}\right)-F\left(a_{N}\right)+\sum_{1}^{N-1}\left[F\left( a_{j+1}\right)-F\left(a_{j}\right)\right]+\epsilon \\
-& \leq F\left(b_{N}+\delta_{N}\right)-F\left(a_{N}\right)+\sum_{1}^{N-1}\left[F\left (b_{j}+\delta_{j}\right)-F\left(a_{j}\right)\right]+\epsilon \\
-&<\sum_{1}^{N}\left[F\left(b_{j}\right)+\epsilon 2^{-j}-F\left(a_{j}\right)\right]+ \epsilon \\
-&<\sum_{1}^{\infty} \mu\left(I_{j}\right)+2 \epsilon .
+&=F\left(b_{N}+\delta_{N}\right)-F\left(a_{N}\right)+\sum\limits_{j=1}^{N-1}\left[F\left( a_{j+1}\right)-F\left(a_{j}\right)\right]+\epsilon \\
+& \leq F\left(b_{N}+\delta_{N}\right)-F\left(a_{N}\right)+\sum\limits_{j=1}^{N-1}\left[F\left (b_{j}+\delta_{j}\right)-F\left(a_{j}\right)\right]+\epsilon \\
+&<\sum\limits_{j=1}^{N}\left[F\left(b_{j}\right)+\epsilon 2^{-j}-F\left(a_{j}\right)\right]+ \epsilon \\
+&<\sum\limits_{j=1}^{\infty} \mu\left(I_{j}\right)+2 \epsilon .
 \end{aligned}
 $$
 Dado que $\epsilon$ es arbitrario, demostramos el resultado cuando $a$ y $b$ son finitos. 
 
-Si $a=-\infty$, para cualquier $M<\infty$ los intervalos $\left(a_{j}, b_{j}+\delta_{j}\right)$ cubren $[-M, b]$ , por lo que el mismo razonamiento da $F(b)-F(-M) \leq \sum_{1}^{\infty} \mu_{0}\left(I_{j}\right)+2 \epsilon$, mientras que si $b=\infty$, para cualquier $M<\infty$ obtenemos igualmente $F(M)-F(a) \leq \sum_{1}^{\infty} \mu_{0}\left( I_{j}\right)+2 \epsilon$. El resultado deseado sigue entonces dejando $\epsilon \rightarrow 0$ y $M \rightarrow \infty$.
+Si $a=-\infty$, para cualquier $M<\infty$ los intervalos $\left(a_{j}, b_{j}+\delta_{j}\right)$ cubren $[-M, b]$ , por lo que el mismo razonamiento da $F(b)-F(-M) \leq \sum\limits_{j=1}^{\infty} \mu_{0}\left(I_{j}\right)+2 \epsilon$, mientras que si $b=\infty$, para cualquier $M<\infty$ obtenemos igualmente $F(M)-F(a) \leq \sum\limits_{j=1}^{\infty} \mu_{0}\left( I_{j}\right)+2 \epsilon$. El resultado deseado sigue entonces dejando $\epsilon \rightarrow 0$ y $M \rightarrow \infty$.
 \end{proof}
 
 
@@ -480,25 +478,25 @@ Hemos sido capaces de definir una medida sobre subconjuntos de $\rr$ que posee  
 
 
 
-\begin{ejercicio}{} Supongamos que $A\times B$ es un rectángulo medible que es unión disjunta $\bigcup_{j=1}^{\infty}A_j\times B_j$ de otros rectángulos medibles $A_j\times B_j$, $j=1,\ldots$.  Demostrar que 
+\begin{ejercicio}{} Supongamos que $A\times B$ es un rectángulo medible que es unión disjunta $\bigcup\limits_{j=1}^{\infty}A_j\times B_j$ de otros rectángulos medibles $A_j\times B_j$, $j=1,\ldots$.  Demostrar que 
 \begin{equation}\label{eq:chis_prod}
- \rchi_{A}\rchi_{B}=\sum_{j=1}^{\infty} \rchi_{A_j}\rchi_{B_j} 
+ \rchi_{A}\rchi_{B}=\sum\limits_{j=1}^{\infty} \rchi_{A_j}\rchi_{B_j} 
 \end{equation}
 
 \end{ejercicio}
 
-\begin{proposicion}{} Supongamos que $A\times B$ es un rectángulo medible que es unión disjunta $\bigcup_{j=1}^{\infty}A_j\times B_j$ de otros rectángulos medibles $A_j\times B_j$, $j=1,\ldots$.  Entonces
+\begin{proposicion}{} Supongamos que $A\times B$ es un rectángulo medible que es unión disjunta $\bigcup\limits_{j=1}^{\infty}A_j\times B_j$ de otros rectángulos medibles $A_j\times B_j$, $j=1,\ldots$.  Entonces
 \begin{equation}\label{eq:chis_prod}
- \mu_0(A\times B)=\sum_{j=1}^{\infty} \mu_0(A_j\times B_j). 
+ \mu_0(A\times B)=\sum\limits_{j=1}^{\infty} \mu_0(A_j\times B_j). 
 \end{equation}
 
 \end{proposicion}
 
 
 \begin{definicion}{}
-Si $C\in\mathscr{A}_0$ con $C=\bigcup_{j=1}^{n}A_j\times B_j$, $A_j\times B_j=\emptyset$, si $i\neq j$, definimos 
+Si $C\in\mathscr{A}_0$ con $C=\bigcup\limits_{j=1}^{n}A_j\times B_j$, $A_j\times B_j=\emptyset$, si $i\neq j$, definimos 
 \[
- \mu_0(C)=\sum_{j=1}^{n}\mu_0(A_j\times B_j)
+ \mu_0(C)=\sum\limits_{j=1}^{n}\mu_0(A_j\times B_j)
 \]
 
 \end{definicion}
@@ -507,7 +505,7 @@ Si $C\in\mathscr{A}_0$ con $C=\bigcup_{j=1}^{n}A_j\times B_j$, $A_j\times B_j=\e
 
 
 
-\begin{proposicion}[Buena definición]{} La función $\mu_0$ esta bien definida, i.e. si $C$ admite dos representaciones distintas   $C=\bigcup_{j=1}^{n}A_j\times B_j=\bigcup_{j=1}^{n}A'_j\times B'_j$ como unión de rectángulos medibles mutuamente disjuntos entonces
+\begin{proposicion}[Buena definición]{} La función $\mu_0$ esta bien definida, i.e. si $C$ admite dos representaciones distintas   $C=\bigcup\limits_{j=1}^{n}A_j\times B_j=\bigcup\limits_{j=1}^{n}A'_j\times B'_j$ como unión de rectángulos medibles mutuamente disjuntos entonces
  \[
 \sum_{j=1}^{n}\mu_0(A_j\times B_j)=\sum_{j=1}^{n}\mu_0(A'_j\times B'_j)
 \]
