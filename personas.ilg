@@ -1,6 +1,6 @@
-This is makeindex, version 2.15 [TeX Live 2017] (kpathsea + Thai support).
-Scanning input file personas.idx....done (16 entries accepted, 0 rejected).
-Sorting entries....done (75 comparisons).
-Generating output file personas.ind....done (44 lines written, 0 warnings).
+This is makeindex, version 2.15 [TeX Live 2019] (kpathsea + Thai support).
+Scanning input file personas.idx....done (20 entries accepted, 0 rejected).
+Sorting entries....done (97 comparisons).
+Generating output file personas.ind....done (47 lines written, 0 warnings).
 Output written in personas.ind.
 Transcript written in personas.ilg.
