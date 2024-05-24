@@ -23,7 +23,7 @@ Si $E \subset \rr^d$, entonces $\diametro(E)=\sup\left\{ d(x,y): x,y \in E \righ
 
 Ahora, la \emph{bola abierta} de centro $x$ y radio $r$ est\'a dada por \[B_r(x)=\left\{y \in \rr^d: d(x,y)<r  \right\}.\]
 
-Si $E \subset \in \rr^d$ se dice \emph{abierto} si $\forall x \in E$, $\exists r>0:$\, $B(x,r)\subset E$. 
+Si $E \subset  \rr^d$ se dice \emph{abierto} si $\forall x \in E$, $\exists r>0:$\, $B(x,r)\subset E$. 
 
 Y $F \subset \rr^d$ se denomina \emph{cerrado} si y s\'olo si $F^C$ es abierto.
 
@@ -75,7 +75,7 @@ Por \'ultimo, un conjunto $E \subset \rr^d$ se llama \emph{perfecto} si no tiene
 \begin{definicion}{}
 $R \subset \rr^d$ es un \emph{rect\'angulo} si 
 \[
-R=[a_1,b_1]\times\ldots\times [a_n,b_n],
+R=[a_1,b_1]\times\ldots\times [a_d,b_d],
 \]
 donde $a_j\leq b_j$, para $j=1,2,\ldots,d$.
 \end{definicion}
@@ -102,7 +102,7 @@ Si $R$ es rect\'angulo tal que la longitud de lado es $b_i-a_i$, $i=1,\ldots,d$,
 
 Una familia de rect\'angulos $\{R_{\lambda}\}_{\lambda \in \Lambda}$ se dice \emph{casi disjunta} si 
 \[
-R_{\lambda_1}^{\circ} \cap R_{\lambda_2}^{\circ}=\emptyset, \;\; \lambda_1,\lambda_2 \in \Lambda.
+R_{\lambda_1}^{\circ} \cap R_{\lambda_2}^{\circ}=\emptyset, \;\; \lambda_1,\lambda_2 \in \Lambda\quad \lambda_1\neq\lambda_2 .
 \]
 
 Para $N>0$, consideramos el conjunto 
@@ -161,7 +161,7 @@ R=\underbrace{[a_1,b_1]}_{I_1}\times \ldots \times \underbrace{[a_d,b_d]}_{I_d},
 entonces 
 \[
 \#\left(R \cap \frac{1}{N}\zz^d \right)=
-\# \left(I_1 \cap \frac{1}{N}\zz \right)\ldots
+\# \left(I_1 \cap \frac{1}{N}\zz \right)\cdots
 \# \left(I_d \cap \frac{1}{N}\zz \right)
 \]
 y por tanto
@@ -176,7 +176,7 @@ Como
 \leq
 \# \left(R \cap \frac{1}{N}\zz^d \right)
 \leq 
-\# \left(R^{\circ} \cap \frac{1}{N}\zz^d \right) +2^d.
+\# \left(R^{\circ} \cap \frac{1}{N}\zz^d \right) +2^d. (\text{mal})
 \]
 
 \textbf{EN LA HOJA 7B DE LAS NOTAS DE CLASE HAY UNA DEDUCCI\'ON DEL $2^d$. AGREGAR!!!}
@@ -328,12 +328,12 @@ Sea $x\in \mathcal{O}$. Luego,  $x$ pertenece a un cubo $Q$ de cada etapa $N$ cu
  \]
  Ahora, existe un \'unico $j$ tal que 
  \[
- x \in \left[\frac{j}{d}, \frac{j-1}{d}\right).
+ x \in \left[\frac{j}{d}, \frac{j+1}{d}\right).
  \]
  A ese valor de $j$ lo llamamos $a_1$. 
  Y, observamos que \[ \left|x-\frac{a_1}{d}\right|<\frac{1}{d}.\]
  
- A continuaci\'on,  dividimos $\left[\frac{a_1}{j}, \frac{a_1+1}{j} \right)$ en $d$ partes iguales y obtenemos
+ A continuaci\'on,  dividimos $\left[\frac{a_1}{d}, \frac{a_1+1}{d} \right)$ en $d$ partes iguales y obtenemos
  \[
  \frac{a_1}{d}<\frac{a_1}{d}+\frac{1}{d^2}<\frac{a_1}{d}+\frac{2}{d^2}
  < \ldots<\frac{a_1}{d}+\frac{d-1}{d^2}<\frac{a_1+1}{d}.
@@ -401,9 +401,18 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
  \end{split}
  \]
  
- \begin{proposicion}{prop:conjunto-Cantor-propiedades}
- $\mathscr{C}$ es compacto, totalmente disconexo y perfecto. 
- Adem\'as, $\# \mathscr{C}=\# \rr$.
+ \begin{proposicion}{prop:conjunto-Cantor-propiedades} $\mathscr{C}$ es 
+ 
+ \begin{enumerate}
+  \item  compacto,
+  \item totalmente disconexo 
+  \item perfecto
+  \item $x\in \mathscr{C}$ si y solo si $x$ se puede expresar en desarrollo $3$-ádico $x=(0.a_1a_2\ldots)_3$ donde $\forall i: a_i\neq 1$. Oservar el ``se puede''.
+  \item Adem\'as, $\# \mathscr{C}=\# \rr$.
+ \end{enumerate}
+
+ 
+
  \end{proposicion}
  
  \begin{ejercicio}{}
@@ -480,7 +489,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
   \frac{1}{N^d} \#\left(R \cap \frac{1}{N}\zz^d \right)
   \\
   &=\lim\limits_{N\to \infty}
-  \frac{1}{N} \#\left(I_1 \cap \frac{1}{N}\zz \right)\ldots 
+  \frac{1}{N^d} \#\left(I_1 \cap \frac{1}{N}\zz \right)\ldots 
   \left(I_d \cap \frac{1}{N}\zz \right).
   \end{split}
   \]
@@ -492,11 +501,11 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
   \[
   \#\left( I_j \cap \frac{1}{N} \zz \right)=\beta_j.
     \]
-    Sea $\mathscr{G}_N$ la familia de rect\'angulos que generan
+    Sea $\mathscr{G}_N$ la familia de cubos que generan
     \[
     \frac{\alpha_j-1}{N},\frac{\alpha_j}{N},\ldots,\frac{\alpha_j+\beta_j}{N}.
     \]
-  Hay $(\beta_1+2),\ldots, (\beta_d+2)$ de ellos y miden $\frac{1}{N^d}$.
+  Hay $(\beta_1+1)\cdots (\beta_d+1)$ de ellos y miden $\frac{1}{N^d}$.
   Luego, 
   \[
   |R|=\lim\limits_{N\to \infty} \frac{\beta_1}{N}\ldots \frac{\beta_d}{N}.
@@ -508,18 +517,18 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
   &\leq 
   \lim\limits_{N\to \infty} \sum\limits_{Q \in \mathscr{G}_N} |Q|
   \\
-  &=\lim\limits_{N \to \infty} \frac{(\beta_1+2)\ldots (\beta_N+2)}{N^d}
+  &=\lim\limits_{N \to \infty} \frac{(\beta_1+1)\cdots (\beta_d+1)}{N^d}
   \\
   &=
   \lim\limits_{N \to \infty}
   \left\{ 
-  \frac{\beta_1\beta_2\ldots\beta_d}{N^d}
+  \frac{\beta_1\beta_2\cdots\beta_d}{N^d}
   \right.
   \\
-  &+\frac{2}{N^d}(\beta_2\ldots\beta_d+\beta_1\beta_3\ldots\beta_d+\ldots+\beta_1\beta_2\ldots\beta_{d-1})
+  &+\frac{1}{N^d}(\beta_2\ldots\beta_d+\beta_1\beta_3\cdots\beta_d+\ldots+\beta_1\beta_2\ldots\beta_{d-1})
   \\
   &+\left.
-  \frac{4}{N^d}(\beta_3\ldots \beta_d+\ldots+\beta_1\ldots\beta_{d-2})\right\}
+  \frac{2}{N^d}(\beta_3\ldots \beta_d+\ldots+\beta_1\cdots\beta_{d-2})+\cdots \right\} 
   \\
   &=|R|
   \end{split}
@@ -564,11 +573,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
     \[
     \sum\limits_{j=1}^{\infty} m_{*}(Q_j)< m_{*}(E)+\epsilon.
     \]
-
-    Si $m_{*}(E)=+\infty$, se tiene
-    \[
-    \sum\limits_{j=1}^{\infty} m_{*}(Q_j)\leq m_{*}(E)+\epsilon.
-    \]
+ 
     \end{observacion}
         
     \begin{observacion}{}[Monoton\'ia]
@@ -611,7 +616,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
     \end{observacion}
     
     \begin{observacion}{}\label{obs:def-medida-ext-abierto}
-    Si $R\subset \rr^d$, entonces
+    Si $E\subset \rr^d$, entonces
     \[
     m_{*}(E)=
     \inf\{
@@ -630,7 +635,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
     \]
     Sean $\widetilde{Q}_j$ cubos abiertos tales que $Q_j \subset \widetilde{Q}_j$ y 
     \[
-    m_{*}(Q_j)\leq m_{*}(\widetilde{Q}_j)<m_{*}(Q_j)+\frac{\epsilon}{2}.
+    m_{*}(Q_j)\leq m_{*}(\widetilde{Q}_j)<m_{*}(Q_j)+\frac{\epsilon}{2^j}.
     \]
     Entonces 
     $\mathcal{O}=\bigcup\limits_{j=1}^{\infty} \widetilde{Q}_j$         es abierto y 
@@ -639,7 +644,7 @@ Si $a_{k-2}+1=d$, se procede de la misma manera.
         m_{*}(\mathscr{O})
         &\leq \sum\limits_{j=1}^{\infty}m_{*}(\widetilde{Q}_j)
         \\
-        &<  \sum\limits_{j=1}^{\infty} m_{*}(Q_j)+\frac{\epsilon}{2}
+        &<  \sum\limits_{j=1}^{\infty} \left\{m_{*}(Q_j)+\frac{\epsilon}{2^j}\right\}
         \\
         &<m_{*}(E)+\epsilon.
         \end{split}
@@ -690,7 +695,7 @@ E_2\subset \bigcup\limits_{j \in J_2} Q_j.
     \end{observacion}
     
 \begin{observacion}\label{obs:sigma-aditividad-medida-ext}
-Si $E=\bigcup\limits_{j=1}^{\infty} Q_j$ con los  $Q_j$ casi disjuntos, entonces
+Si $E=\bigcup\limits_{j=1}^{\infty} Q_j$ con cubos $Q_j$ casi disjuntos, entonces
 \[
 m_{*}(E)=\sum\limits_{j=1}^{\infty} m_{*}(Q_j).\]
 \begin{demo}
@@ -699,7 +704,7 @@ $\leq)$ Inmediata a partir de la Observaci\'on \ref{obs:sigma-subaditividad}.
 $\geq)$
 Sea $\epsilon>0$ y sean $\widetilde{Q}_j\subset Q_j^{\circ}$ cubos cerrados tales que 
 \[
-m_{*}(\widetilde{Q}_j)>m_{*}(Q_j^{\circ})-\frac{\epsilon}{2^j}.
+m_{*}(\widetilde{Q}_j)>m_{*}(Q_j )-\frac{\epsilon}{2^j}.
 \]
 Entonces $d(\widetilde{Q}_{j_1},\widetilde{Q}_{j_2})>0$.
 Luego, 
@@ -717,7 +722,7 @@ a partir de lo cual tenemos
 m_{*}(E)\geq \lim\limits_{N\to \infty}\sum\limits_{j=1}^N  m_{*}(\widetilde{Q}_j)
 =\sum\limits_{j=1}^{\infty} m_{*}(\widetilde{Q}_j)
 \geq 
-\sum\limits_{j=1}^{\infty} \left( m_{*}({Q}_j^{\circ})-\frac{\epsilon}{2^j}\right)
+\sum\limits_{j=1}^{\infty} \left( m_{*}({Q}_j )-\frac{\epsilon}{2^j}\right)
 =
 \sum\limits_{j=1}^{\infty} m_{*}({Q}_j)-\epsilon.
 \]
@@ -760,7 +765,7 @@ Si $\mathcal{O}$ es abierto, entonces $\mathcal{O}$ es medible.
 \begin{demo}
 \begin{enumerate}
     \item Por la Observaci\'on \ref{obs:def-medida-ext-abierto}, 
-    dado $\epsilon>0$, existe $\mathcal{O}$ abierto tal que 
+    dado $\epsilon>0$, existe $\mathcal{O}$ abierto con $\mathcal{O}\supset E$ tal que 
     \[
     m_{*}(\mathcal{O})<m_{*}(E)+\epsilon.
     \]
@@ -832,7 +837,7 @@ A su vez, $\mathcal{O}-E$ es abierto y
 \[
 \mathcal{O}-E=\bigcup\limits_{j=1}^{\infty} Q_j
 \]
-siendo $Q_j$ cubos disjuntos. 
+siendo $Q_j$ cubos casi disjuntos. 
 
 El conjunto 
 \[
@@ -848,7 +853,7 @@ de donde
 \[
 \sum\limits_{j=1}^N m_{*}(Q_j) \leq m_{*}(\mathcal{O})-m_{*}(E)<\epsilon.
 \]
-Haciendo $\epsilon\to 0$, conseguimos
+Haciendo $N\to \infty$, conseguimos
 \[
 \sum\limits_{j=1}^{\infty} m_{*}(Q_j)\leq \epsilon.
 \]
@@ -958,9 +963,9 @@ Basta tomar $F=\mathcal{O}^C$ para obtener el resultado propuesto.
 \end{demo}
 
 \begin{teorema}{}
-Si $E_j$, para $j=1,2,\ldots$ son conjuntos medibles y disjuntos, entonces
+Si $E_j$, para $j=1,2,\ldots$ son conjuntos medibles y mutuamente disjuntos, entonces si $E=\bigcup\limits_{j=1}^\infty E_j$ vale que
 \[
-m(E)=\sum\limits_{j=1}^{\infty} m(E_j).
+m( E)=\sum\limits_{j=1}^{\infty} m(E_j).
 \]
 \end{teorema}
 
@@ -977,7 +982,7 @@ A partir de la subaditividad de $m_{*}$ y que $E_j=(E_j-F_j)\cup F_j$, se deduce
 \[
 m_{*}(E_j)<m_{*}(F_j)+\frac{\epsilon}{2^j}.\]
 Los conjuntos $F_j$ son compactos y disjuntos, entonces
-$d(E_j,F_k)>0$ si $j\neq k$ y se tiene que
+$d(F_j,F_k)>0$ si $j\neq k$ y se tiene que
 \[
 m\left(\bigcup\limits_{j=1}^{N} F_j\right)=
 \sum\limits_{j=1}^N m(F_j).
@@ -994,17 +999,17 @@ Haciendo $N\to \infty$ y como $\epsilon>0$ es arbitrario, se consigue
 
 En el caso general, consideramos cubos $Q_j$ tales que $Q_j\subset Q_{j+1}$ y 
 \[
-\rr^n=\bigcup\limits_{j=1}^{\infty} Q_j.
+\rr^d=\bigcup\limits_{j=1}^{\infty} Q_j.
 \]
-Ahora, ponemos $E_{jk}=E_j\cap (Q_k-Q_{k+1})$ para $k\geq 2$.
+Tomamos $Q_0=\emptyset$. Ahora, ponemos $E_{jk}=E_j\cap (Q_{k+1}-Q_{k})$ para $k\geq 0$.
 Los conjuntos $E_{jk}$ son acotados, medibles, disjuntos y permiten expresar
 \[
 E=\bigcup\limits_{j=1}^{\infty} E_j=
-\bigcup\limits_{j=1}^{\infty} \bigcup\limits_{k=2}^{\infty} E_{jk}.
+\bigcup\limits_{j=1}^{\infty} \bigcup\limits_{k=0}^{\infty} E_{jk}.
 \]
 Luego, aplicando el resultado obtenido para  conjuntos acotados obtenemos
 \[
-m(E)=\sum\limits_{j=1}^{\infty}\sum\limits_{k=2}^{\infty}m(E_{jk})=
+m(E)=\sum\limits_{j=1}^{\infty}\sum\limits_{k=0}^{\infty}m(E_{jk})=
 \sum\limits_{j=1}^{\infty} m(E_j).
 \]
 \end{demo}
@@ -1062,11 +1067,9 @@ Sean $E_j$, para $j=1,2,\ldots$, conjuntos medibles en $\rr^d$.
     \]
     Luego, por el item \ref{it:medida-union-encajados} y el Corolario \ref{cor:medida-diferencia-inclusion-finita}, tenemos
     \[
-    m(E_1)- \lim\limits_{j \to \infty} m(E_j)=
-    \lim\limits_{j \to \infty} m(G_j)=
-    m\left(\bigcup\limits_{j=1}^{\infty} G_j\right)=
-    m(E_1)-m\left(\bigcap\limits_{j=1}^{\infty} E_j\right).
-        \]
+   m(E_1) - m( \bigcap\limits_{j=1}^{\infty} E_j)= m(E_1 -  \bigcap\limits_{j=1}^{\infty} E_j)=
+    \lim\limits_{j \to \infty} m(G_j)=\lim\limits_{j \to \infty} m(E_1)-m(E_j)=
+      m(E_1)-\lim\limits_{j \to \infty}m(E_j)=\]
      Por \'ultimo, como $m(E_1)<\infty$, llegamos a
      \[
      \lim\limits_{j \to \infty} m(E_j)=m\left(\bigcap\limits_{j=1}^{\infty} E_j\right).
@@ -1135,7 +1138,7 @@ Ahora, dado $h\in \rr^d$, pondremos
 \[
 T_h(x)=x+h\;\;\mbox{ y }\;\; T_h(E)=E+h.
 \]
-Y, si $\delta \in \rr^+$, notaremos $\delta x=\delta {.} x$.
+Y, si $\delta \in \rr^+$, notaremos $\delta x=\delta \cdot x$.
 
 \begin{teorema}{teo:medida-traslacion-dilatacion}
 $E$ es medible si y s\'olo si $E+h$  y $\delta E$ son medibles.
@@ -1221,7 +1224,7 @@ F:\; F=\bigcup\limits_{n=1}^{\infty} F_n,\; F_n \mbox{ cerrados}
 Luego,  $G_{\delta}, F_{\sigma} \subset \mathscr{B}(\rr^d)$.
 
 \begin{definicion}{}
-Si $\mathscr{A}$  es $\sigma$-\'algebra y $\mu:\mathscr{A} \to \rr^+$ satisface
+Si $\mathscr{A}$  es $\sigma$-\'algebra y $\mu:\mathscr{A} \to \overline{\rr}^+=\rr^+\cup\{+\infty\}$ satisface
 \[\mu\left(\bigcup\limits_{j=1}^{\infty}E_j \right)
 =\sum\limits_{j=1}^{\infty}\mu(E_j),
 \]
@@ -1231,6 +1234,8 @@ entonces se dice que $\mu$ es una \emph{medida}.
 Adem\'as, se supone que $\mu(\emptyset)=0$.
 \end{definicion}
 
+
+\section{Caracterización de conjuntos medibles}
 
 \begin{teorema}{}
 Son equivalentes
@@ -1253,8 +1258,8 @@ y si llamamos $Z=G-E$, se tiene que
 m(G-E)\leq m(\mathcal{O}_n-E)\leq \frac{1}{n}\xrightarrow[n \to \infty]{}0.
 \]
 
-2.$\Rightarrow$ 3.
-Si $E$ es medible, entonces $E^C$ es medible. Ahora bien,  por el item 2., $E^C=G-Z$ con $G \in G_{\delta}$  y $m(Z)=0$. 
+1.$\Rightarrow$ 3.
+Si $E$ es medible, entonces $E^C$ es medible. Ahora bien, como 1.$\Rightarrow$ 2, $E^C=G-Z$ con $G \in G_{\delta}$  y $m(Z)=0$. 
 
 Supongamos que $G=\bigcap\limits_{j=1}^{\infty} \mathcal{O}_j$ 
 con $\mathcal{O}_j$ abiertos.
@@ -1268,6 +1273,9 @@ E=\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j^C \cup Z=F\cup Z,
 siendo $F \in F_{\sigma}$ y $m(Z)=0$.
 
 3.$\Rightarrow$ 1. $F$ y $Z$ son conjuntos medibles, entonces $E$ es medible.
+
+2.$\Rightarrow$ 1. es similar
+
 \end{demo}
 
 

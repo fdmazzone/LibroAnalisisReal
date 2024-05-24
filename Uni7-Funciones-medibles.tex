@@ -1,18 +1,35 @@
 \chapter{Funciones medibles
 }
 
-\section{Introducci\'on???}
+\section{Introducci\'on}
 
-\textbf{ Copiado de acuerdo al orden de las notas manuscritas...parece que falta algo para el contexto...}
+\begin{definicion}{} Definimos la recta extendida $\overline{\rr}$ como el conjunto $\rr\cup\{\infty,-\infty\}$. 
+Diremos que $H \subset \overline{\rr}$ es boreliano de la recta extendida si $H-\{ -\infty, \infty\} \in \mathscr{B}(\rr)$.
+\end{definicion}
+ 
+
+ Si $f:\mathbb{R}^d\to\overline{\mathbb{R}}$, y  $a\in\mathbb{R}$, definimos
+ 
+$$
+\{f>a\}=\left\{x \in \mathbb{R}^n: f(x)>a\right\}=f^{-1}((a, \infty]) .
+$$
+
+Análogamente se definen los conjuntos
+$$
+\{f \geq a\}, \quad\{f<a\}, \quad\{f \leq a\},
+$$
+que corresponden, respectivamente, a las desigualdades $f(x) \geq a, f(x)<a$ y $f(x) \leq a$. El símbolo $\{f=a\}$ indica el conjunto formado por todos los puntos donde $f$ toma el valor $a$.
 
 
 
-\begin{definicion}{}
-$f$ es medible si y s\'olo si $f^{-1}((a,\infty)) \in \mathscr{M}$. 
+
+
+\begin{definicion}{}Diremos que $f:\mathbb{R}^d\to\overline{\mathbb{R}}$  es una función medible si $\{f \geq a\}$ es un subconjunto medible del espacio $\mathbb{R}^d$ es decir, si para cada número real $a$, se verifica
+ que   $f^{-1}([a,\infty]) \in \mathscr{M}$. 
 \end{definicion}
 
 \begin{teorema}{}
-Si $H$ es boreliano y $f$ es medible, entonces $f^{-1}(H)$ es medible.
+Si $H$ es boreliano de $\rr$ y $f$ es medible, entonces $f^{-1}(H)$ es medible.
 \end{teorema}
 
 \begin{demo}{}
@@ -21,9 +38,7 @@ $\mathscr{M}^{'}$ es $\sigma$-\'algebra y $\mathscr{I}\subset \mathscr{M}^{'}$.
 Por lo tanto, $\mathscr{B}(\rr^n) \subset \mathscr{M}$.
 \end{demo}
 
-\begin{definicion}{}
-Diremos que $H \subset \overline{R}$ es boreliano de la recta extendida si $H-\{ -\infty, \infty\} \in \mathscr{B}(\rr)$.
-\end{definicion}
+
 
 \begin{teorema}{}
 Si $f:\rr^n \to \overline{\rr}$ es medible si y s\'olo si $f^{-1}(H) \in \mathscr{M}$ cada vez que $H$ es boreliano de $\overline{\rr}$.
@@ -38,7 +53,7 @@ $\Rightarrow)$ Se tiene que
 \;\;\mbox{ y }\;\;
 \{f=-\infty\}=\bigcap\limits_{k=1}^{\infty} \{f \leq -k\}.
 \]
-Si $H$ es boreliano de $\rr$, supongamos que $H=H^{'}\cup \{+\infty\}$ y $H^{'}$ es conjunto medible de $\rr$.
+Si $H$ es boreliano de $\overline{\rr}$, supongamos que $H=H^{'}\cup \{+\infty\}$ y $H^{'}$ es conjunto medible Borel de $\rr$.
 Luego, $f^{-1}(H)=f^{-1}(H^{'})\cup \{f=+\infty\}$ es medible.
 \end{demo}
 
@@ -46,7 +61,7 @@ Luego, $f^{-1}(H)=f^{-1}(H^{'})\cup \{f=+\infty\}$ es medible.
 \section{Funciones medibles sobre una $\sigma$-\'algebra}
 
 \begin{definicion}{}
-Si $\Sigma$ es una $\sigma$-\'algebra de $\rr^n$, diremos que $f:\rr^n\to \overline{\rr}$ es $\sigma$-medible si 
+Si $\Sigma$ es una $\sigma$-\'algebra de $\rr^n$, diremos que $f:\rr^n\to \overline{\rr}$ es $\Sigma$-medible si 
 \[\{f>a\} \in \Sigma\;\;\;\;\forall a \in \rr.\]
 \end{definicion}
 
@@ -68,7 +83,7 @@ Ahora, estudiaremos $g\circ f$ cuando
 $\rr^n \xrightarrow{f}\overline{\rr} \xrightarrow {g} \overline{\rr}$.
 
 \begin{definicion}{}
-Diremos que $g: \rr^n \to \overline{\rr}$ es boreliana si $g^{-1}(M)$ es boreliano de $\overline{\rr}$ cuando $M$ lo es.
+Diremos que $g: \overline{\rr} \to \overline{\rr}$ es boreliana si $g^{-1}(M)$ es boreliano de $\overline{\rr}$ cuando $M$ lo es.
 \end{definicion}
 
 Luego, si $f:\rr^n \to \overline{\rr}$ es medible y $g:\overline{\rr} \to \overline{\rr}$ es boreliana, entonces $g\circ f$ es medible.
@@ -80,7 +95,7 @@ Si $f$ y $g$ son medibles, entonces $\{f<g\}$ es medible pues
 \{f<g\}=\bigcup\limits_{q \in \qq} \{ f<q\} \cap \{ g>q\}.
 \]
 \begin{teorema}{teo:propiedades-func-medibles}
-Si $f$ y $g$ son medibles con respecto a $\Sigma$ y si $c\in \rr$, entonces
+Si $f$ y $g$ son medibles  con respecto a $\Sigma$ y finitas y si $c\in \rr$, entonces
 $f+g$, $cf$ y $fg$ son medibles.
 \end{teorema}
 
@@ -90,7 +105,7 @@ Supondremos que todas las funciones son finitas.
 Veamos que 
 \[
 \{
-f+g>a\}=\bigcup\limits_{r \in \qq} \{ a>r\} \cap \{q>a-r\}.
+f+g>a\}=\bigcup\limits_{r \in \qq} \{ f>r\} \cap \{g>a-r\}.
 \]
 Si $f(x)+g(x)>a,$ entonces existe $r \in \qq$ tal que 
 \[
@@ -104,10 +119,10 @@ Si $c\in \rr$, entonces
 \{cf>a\}=
 \left\{
 \begin{array}{ll}
-f>\frac{a}{c}&c>0
+\{f>\frac{a}{c}\}&c>0
 \medskip
 \\
-f<\frac{a}{c}&c<0
+\{f<\frac{a}{c}\}&c<0
 \medskip
 \\
 \emptyset\;\mbox{ \'o }\;\rr^n &c=0.
@@ -253,7 +268,7 @@ en cada punto $x \in \rr^n$.
 \end{teorema}
 
 \begin{demo}
-Para $k \in \nn$, dividimos $[0,2^k)$ en $k2^k$ intervalos disjuntos
+Para $k \in \nn$, dividimos $[0,k)$ en $k2^k$ intervalos disjuntos
 \[
 \left[\frac{i-1}{2^k},\frac{i}{2^k}\right), \;\;i=1,2,\ldots,k2^k.
 \]
@@ -360,7 +375,7 @@ La funci\'on $g=\liminf\limits_{k \to \infty} f_k$ es medible y $g=f$ en c.t.p.
 
 Si $f$ y $g$ son medibles, definimos $f \sim g$ si $f=g$ en c.t.p.
 
-Entonces, $\sim$ es una relaci\'on de equivalencia. Adem\'as, si $f\sim h$ y $g \sim g$, entonces $f+g\sim h+g$ y $fg\sim hg$.
+Entonces, $\sim$ es una relaci\'on de equivalencia. Adem\'as, si $f_1\sim f_2$ y $g_1 \sim g_2$, entonces $f_1+g_1\sim f_2+g_2$ y $f_1g_1\sim f_2g_2$.
 
 Si $f=g$ en c.t.p., entonces $f$ es esencialmente igual a $g$.
 
@@ -413,13 +428,13 @@ $f_k \xrightarrow[]{m}f$.
 
 
 \begin{demo}
-Sea $Z$ el conjunto de puntos donde $f_k$ no tiende a $f$. Entonces $m(z)=0$. 
+Sea $Z$ el conjunto de puntos donde $f_k$ no tiende a $f$. Entonces $m(Z)=0$. 
 
 Dado $\delta>0$, definimos 
 \[
 B_j=\bigcup\limits_{k=j}^{\infty} E(|f_k-f|\geq \delta).
 \]
- y se tiene que $ \bigcap\limits_{j=1}^{\infty} B_j=Z.$
+ y se tiene que $ \bigcap\limits_{j=1}^{\infty} B_j\subset Z.$
  Luego, $m(B_j)\to 0$ cuando $j \to \infty$.
  
  Como si $k \geq j$, se tiene que $E(|f_k-f|\geq \delta )\subset B_j$.
@@ -441,7 +456,7 @@ y por lo tanto $f_k \xrightarrow[]{m}f.$
 \begin{definicion}{}
 Diremos que $f_k$ es fundamental en medida sobre $E$ si $\forall \delta>0$ se tiene que 
 \[
-m\left(E\left(\left|f_k-f\right|\geq \delta\right)\right)\xrightarrow[k,j \to \infty]{} 0.
+m\left(E\left(\left|f_k-f_j\right|\geq \delta\right)\right)\xrightarrow[k,j \to \infty]{} 0.
 \]
 \end{definicion}
 
@@ -458,15 +473,15 @@ Si $f_k$ es fundamental en medida sobre $E$, entonces existe una subsucesi\'on $
 \begin{demo}
 Para cada $i>0$, existe $k_i\in \nn$ tal que 
 \[
-m\left(E\left(|f_k-f|\geq \frac{1}{2^i}\right)\right)\leq
+m\left(E\left(|f_k-f_{k'}|\geq \frac{1}{2^i}\right)\right)\leq
 \frac{1}{2^i},
 \]
-para $k_j\geq k_i$.
+para $k,k'\geq k_i$.
 Podemos suponer que $k_1<k_2<\ldots$. Sea 
 \[
-E_i=E\left(   |f_{i} -f_{i+1}|\geq \frac{1}{2^i}\right)
+E_i=E\left(   |f_{k_i} -f_{k_{i+1}}|\geq \frac{1}{2^i}\right).
 \]
-y tenemos que $m(E_i)<\frac{1}{2^i}$. 
+Tenemos que $m(E_i)<\frac{1}{2^i}$. 
 
 Sea 
 \[ Z=\bigcap\limits_{j=1}^{\infty}\bigcup\limits_{i=j}^{\infty} E_i

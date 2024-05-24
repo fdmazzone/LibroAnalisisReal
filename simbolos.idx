@@ -1,12 +1,12 @@
-\indexentry{$A\cup B$}{5}
-\indexentry{$A\cap B$}{5}
-\indexentry{$A-B$}{5}
-\indexentry{$A^c$}{5}
-\indexentry{$A\bigtriangleup B$}{5}
-\indexentry{$(a,b)$}{5}
-\indexentry{$f:A\longrightarrow B$}{6}
-\indexentry{$B^A$}{6}
-\indexentry{$\bigcup_{i\in I}A_i$}{7}
-\indexentry{$\bigcap_{i\in I}A_i$}{7}
-\indexentry{$A\thicksim B$}{8}
-\indexentry{$\aleph_0$}{20}
+\indexentry{$A\cup B$}{4}
+\indexentry{$A\cap B$}{4}
+\indexentry{$A-B$}{4}
+\indexentry{$A^c$}{4}
+\indexentry{$A\bigtriangleup B$}{4}
+\indexentry{$(a,b)$}{4}
+\indexentry{$f:A\longrightarrow B$}{5}
+\indexentry{$B^A$}{5}
+\indexentry{$\bigcup_{i\in I}A_i$}{6}
+\indexentry{$\bigcap_{i\in I}A_i$}{6}
+\indexentry{$A\thicksim B$}{7}
+\indexentry{$\aleph_0$}{19}

@@ -563,7 +563,7 @@ El concepto de interior de un conjunto tiene su dual
 correspondiente.
 \begin{definicion}{} Sea $(X,d)$ un e.m.. La clausura de un conjunto $A\subset
 X$ se define y denota como se ve a continuación:
-\[\C{A}:=(\text{Ext}(A))^c=\bigl[(A^c)^0\bigr]^c.\]
+\[\Cl{A}:=(\text{Ext}(A))^c=\bigl[(A^c)^0\bigr]^c.\]
 \end{definicion}
 
  En $\rr^2$ con la métrica euclidea podemos visualizar la
@@ -582,11 +582,11 @@ un conjunto.
 \begin{proposicion}{pro,clausura} Sea $(X,d)$ un e.m. y $A\subset X$. Son
 equivalentes:
 \begin{itemize}
-\item[a)] $x\in \C{A}$.
+\item[a)] $x\in \Cl{A}$.
 \item[b)] $\forall r>0: B(x,r)\cap A\neq\emptyset$.
 \end{itemize}
 \end{proposicion}
-\begin{demo}Veamos primero que a)$\Rightarrow$b). Sea $x\in \C{A}$. Por
+\begin{demo}Veamos primero que a)$\Rightarrow$b). Sea $x\in \Cl{A}$. Por
 definición $x\notin (A^c)^0$. Así, por definición de
 conjunto interior, tenemos que para todo $r>0$, $B(x,r)\nsubseteq
 A^c$. Es decir que para todo $r>0$ existe $y=y_r\in B(x,r)\cap A$.
@@ -607,13 +607,13 @@ correspondientes para la clausura.
 \begin{teorema}{} Sean $(X,d)$ un e.m., $A$ y $B$ subconjuntos de
 $X$. Entonces tenemos que:
 \begin{itemize}
-\item[a)] $A\subset \C{A}$.
-\item[b)] El conjunto $\C{A}$ es el menor conjunto cerrado que
+\item[a)] $A\subset \Cl{A}$.
+\item[b)] El conjunto $\Cl{A}$ es el menor conjunto cerrado que
 contiene a $A$.
-\item[c)] $\C{\C{A}}=\C{A}$.
-\item[d)] Si $A\subset B$ entonces $\C{A}\subset \C{B}$.
-\item[e)]$\C{A\cup B}=\C{A}\cup \C{B}$.
-\item[f)]$x\in \C{A}\Leftrightarrow d(x,A)=0$
+\item[c)] $\Cl{\Cl{A}}=\Cl{A}$.
+\item[d)] Si $A\subset B$ entonces $\Cl{A}\subset \Cl{B}$.
+\item[e)]$\Cl{A\cup B}=\Cl{A}\cup \Cl{B}$.
+\item[f)]$x\in \Cl{A}\Leftrightarrow d(x,A)=0$
 \end{itemize}
 \end{teorema}
 \begin{demo} Veamos a) cuya propiedad dual es que $C^0\subset C$.
@@ -623,37 +623,37 @@ En efecto, tenemos que:
 Ahora, tomando complementos a ambos miembros\footnote{La
 operación de complemento invierte las inclusiones}, obtenemos
 que:
-\[\C{A}=\bigl[(A^c)^0\bigr]^c\supset (A^c)^c=A.\]
+\[\Cl{A}=\bigl[(A^c)^0\bigr]^c\supset (A^c)^c=A.\]
 Esto prueba a).
 
-Veamos b). El conjunto $\C{A}$ es cerrado pues es el complemento
+Veamos b). El conjunto $\Cl{A}$ es cerrado pues es el complemento
 del abierto $(A^c)^0$. Sea $F$ un conjunto cerrado que contiene a
-$A$, hay que demostrar que $F\supset \C{A}$. Entonces, tomando
+$A$, hay que demostrar que $F\supset \Cl{A}$. Entonces, tomando
 complemento, tenemos que $F^c$ es un abierto contenido en $A^c$.
 Como $(A^c)^0$ es el mayor abierto contenido en $A^c$, tenemos que
 $F^c\subset (A^c)^0$. Ahora tomemos complemento a esta última
 inclusión y obtenemos
-\[F\supset \bigl[(A^c)^0\bigr]^c=\C{A},\]
+\[F\supset \bigl[(A^c)^0\bigr]^c=\Cl{A},\]
 que es lo que queríamos demostrar.
 
 Como corolario de b), obtenemos que  $A$ es cerrado si, y solo si,
-$\C{A}=A$. A su vez, como corolario de esto, obtemos c) y d).
+$\Cl{A}=A$. A su vez, como corolario de esto, obtemos c) y d).
 
 Veamos e). Tenemos que:
 
 \begin{align}
-  \C{A\cup B}&=\bigl[(A\cup B)^c)^0\bigr]^c         &\qquad &\text{Definición clausura}\notag \\
+  \Cl{A\cup B}&=\bigl[(A\cup B)^c)^0\bigr]^c         &\qquad &\text{Definición clausura}\notag \\
 			 &=\bigl[(A^c\cap B^c)^0\bigr]^c    &&\text{Leyes de de         Morgan}\notag\\
 			 &=\bigl[(A^c)^0\cap (B^c)^0)\bigr]^c &&\text{Propiedad dual del interior}\notag\\
 			 &=\bigl[(A^c)^0\bigr]^c\cup \bigl[(B^c)^0)\bigr]^c &&\text{Leyes de de Morgan}\notag\\
-			 &= \C{A}\cup \C{B}                     &&\text{Definición de
+			 &= \Cl{A}\cup \Cl{B}                     &&\text{Definición de
 			 clausura}\notag
   \end{align}
 
 
 Que es lo que queríamos demostrar.
 
-Por último demostremos f). Si $x\in \C{A}$ entonces, como
+Por último demostremos f). Si $x\in \Cl{A}$ entonces, como
 consecuancia de la proposición \vref{pro,clausura}, tenemos que
 para todo $n\in\nn$ existe un $y_n\in A$ tal que $d(x,y_n)<1/n$,
 ver figura \vref{fig,incf)}.
@@ -668,7 +668,7 @@ Recíprocamente, si $d(x,A)=0$ entonces, por definición del
 ínfimo, para todo $r>0$ existe un $y=y_r\in A$ tal que
 $d(x,y)<r$. Así tenemos que $B(x,r)\cap A\neq \emptyset$,
 para todo $r>0$. Esto, como sabemos, es equivalente a afirmar que
-$x\in \C{A}$.
+$x\in \Cl{A}$.
 \end{demo}
 
 Por último estamos interesados en definir aquellos puntos que
@@ -752,22 +752,22 @@ propiedades:
 \begin{itemize}
 	\item[a)] Si $A\subset X$ es finito, entonces $X-A$ es abierto.
 	\item[b)] Si $A\subset X$ es abierto, entonces para todo
-	conjunto $B$ se tiene que $A\cap \C{B}\subset \C{A\cap B}$.
-	\item[c)] Si $A$ es abierto entonces $A\subset (\C{A})^0$.
-	\item[d)] Si $A$ es cerrado entonces $(\C{A})^0\subset A$.
+	conjunto $B$ se tiene que $A\cap \Cl{B}\subset \Cl{A\cap B}$.
+	\item[c)] Si $A$ es abierto entonces $A\subset (\Cl{A})^0$.
+	\item[d)] Si $A$ es cerrado entonces $(\Cl{A})^0\subset A$.
 	\item[e)]
-	$(\C{A})^0=\C{\biggl(\C{\bigl((\C{A})^0\bigr)}\biggr)}$.
+	$(\Cl{A})^0=\Cl{\biggl(\Cl{\bigl((\Cl{A})^0\bigr)}\biggr)}$.
 	\item[f)]
-	$\C{(A^0)}=\C{\biggl(\C{\bigl(\C{(A^0)}\bigr)^0}\biggr)}$.
-	\item[g)] $A^0=\bigl(\C{A^c}\bigr)^c$.
-	\item[h)] $\partial A=\C{A}-A^0$.
-	\item[i)] $\text{Ext}(A)=(\C{A})^c$.
+	$\Cl{(A^0)}=\Cl{\biggl(\Cl{\bigl(\Cl{(A^0)}\bigr)^0}\biggr)}$.
+	\item[g)] $A^0=\bigl(\Cl{A^c}\bigr)^c$.
+	\item[h)] $\partial A=\Cl{A}-A^0$.
+	\item[i)] $\text{Ext}(A)=(\Cl{A})^c$.
 	\item[j)] $\partial A^0\subset \partial A$ y $\partial
-	\C{A}\subset \partial A$.
+	\Cl{A}\subset \partial A$.
 	\item[k)] $\partial (A\cup B)\subset \partial A\cup\partial
-	B$, Si $\C{A}\cap\C{B}=\emptyset$ entonces vale la igualdad en
+	B$, Si $\Cl{A}\cap\Cl{B}=\emptyset$ entonces vale la igualdad en
 	la anterior inclusión.
-	\item[l)] $d(A,B)=d(\C{A},\C{B})$, donde por definición:
+	\item[l)] $d(A,B)=d(\Cl{A},\Cl{B})$, donde por definición:
 	\[
 		d(A,B):=\inf\limits_{x\in A,y\in B}d(x,y).
 	\]
@@ -776,10 +776,10 @@ propiedades:
 \begin{ejercicio}{} Dar ejemplos de:
 \begin{itemize}
 \item[a)] $A$ y $B$ abiertos de $\rr$ tales que los siguientes
-conjuntos sean todos diferentes: $\C{A}\cap \C{B}$, $\C{A\cap B}$,
-$\C{A}\cap B$, $A\cap \C{B}$.
+conjuntos sean todos diferentes: $\Cl{A}\cap \Cl{B}$, $\Cl{A\cap B}$,
+$\Cl{A}\cap B$, $A\cap \Cl{B}$.
 \item[b)] $A$ y $B$ intervalos de $\rr$ tales que
-$A\cap\C{B}\nsubseteq \C{A\cap B}$.
+$A\cap\Cl{B}\nsubseteq \Cl{A\cap B}$.
 \item[c)] $A\subset \rr^2$ tal que $\partial A=A$.
 \item[d)] $A$ y $B$ subconjuntos de $\rr^2$ tales que entre los
 siguientes conjuntos no valga ninguna inclusión: $\partial
@@ -813,7 +813,7 @@ Sea $X$ un e.m. ultramétrico. Demostrar que:
 $d(x,z)=\max\{d(x,y),d(y,z)\}$.
 \item[b)] Si $y\in B(x,r)$ entonces $B(x,r)=B(y,r)$. Como
 consecuencia las bolas abiertas son también conjuntos cerrados.
-\item[c)] Si $y\in\C{B(x,r)}$ entonces $\C{B(y,r)}=\C{B(x,r)}$.
+\item[c)] Si $y\in\Cl{B(x,r)}$ entonces $\Cl{B(y,r)}=\Cl{B(x,r)}$.
 Las bolas cerradas son, también, conjuntos abiertos.
 
 \item[d)] Si dos bolas tienen intersección no vacía
@@ -1760,18 +1760,18 @@ visto, en términos de sucesiones. Por ejemplo, el concepto de
 clausura y continuidad.
 
 \begin{proposicion}{} Sea $(X,d)$ un e.m. y $A\subset X$. Entonces
-$a\in\C{A}$ si, y solo si, existe una sucesion $a_n\in A$ tal que
+$a\in\Cl{A}$ si, y solo si, existe una sucesion $a_n\in A$ tal que
 $a_n\rightarrow a$.
 \end{proposicion}
-\begin{demo} Supongamos que $a\in\C{A}$, entonces, para todo
+\begin{demo} Supongamos que $a\in\Cl{A}$, entonces, para todo
 $n\in\nn$ se tiene que $B(a,1/n)\cap A\neq\emptyset$. Sea, pues,
 $a_n\in B(a,1/n)\cap A$. Se puede ver, sin dificultad, que
 $a_n\rightarrow a$. Rec\'{\i}procamente, supongamos que existe la
 sucesión $\{a_n\}$. Si $U$ es un entorno arbitrario de $a$,
-entonces, puesto que $a\in\C{A}$, tenemos que, para ciertos $n$,
+entonces, puesto que $a\in\Cl{A}$, tenemos que, para ciertos $n$,
 $a_n\in U$, luego, estos $a_n$, estan en la intersección de $U$
 con $A$, lo que implica que esta es no vac\'{\i}a. Eso prueba que
-$a\in\C{A}$.
+$a\in\Cl{A}$.
 \end{demo}
 
 \subsection{Sucesiones de Cauchy, espacios métricos completos}
@@ -2303,7 +2303,7 @@ Puede demostrarse que la distancia de cualquiera de las funciones
 de la sucesión a otra es igual a 1 y que $f_n\in K(0,1)$. Sea
 $C:=\{f_n:n\in\nn\}$, observemos que como subespacio $C$ resulta
 ser un e.m. discreto, as\'{\i}, por el Ejemplo anterior y el
-Ejercicio \vref{ejer,subpreespre}, $\C{B(0,1)}$ no puede ser
+Ejercicio \vref{ejer,subpreespre}, $\Cl{B(0,1)}$ no puede ser
 totalmente acotado.
 \end{ejemplo}
 
@@ -2749,7 +2749,7 @@ Demostrar que una funci\'on $f:X\to Y$ continua es constante.
 \end{ejercicio}
 
 \begin{ejercicio}{} Sean $A$ y $B$ subconjuntos conexos de un e.m.
-Demostra que si $\C{A}\cap B\neq\emptyset$ entonces $A\cup B$ es
+Demostra que si $\Cl{A}\cap B\neq\emptyset$ entonces $A\cup B$ es
 conexo.
 \end{ejercicio}
 

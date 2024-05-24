@@ -7,7 +7,7 @@ Sean $E\subset \rr^n$,  $f:\rr^n\to \overline{\rr}$  y $f\geq 0$ sobre $E$ medib
 \\
 La integral de Lebesgue de $f$ se define  mediante
 \[
-\int_E f(x)\.dx=\sup\left\{ \sum\limits_{i=1}^{N} m(E_i) \right\},
+\int_E f(x)\.dx=\sup\left\{ \sum\limits_{i=1}^{N}\alpha_i m(E_i) \right\},
 \]
 donde el supremo se toma sobre toda descomposici\'on del conjunto $E$ en uni\'on de conjuntos medibles $E_i$ y mutuamente disjuntos,  siendo 
 \[\alpha_i =\inf\limits_{E_i}f.\]
@@ -20,7 +20,7 @@ entonces
 \[ \int f\,dx=c m(E).\]
 
 \begin{teorema}{}
-Si $E=A\cup B$ y $f\geq 0$ en $E$, entonces
+Si $E=A\cup B$, $A\cap B=\emptyset$  y $f\geq 0$ en $E$, entonces
 \[
 \int_E f=\int_A f +\int_B f.
 \]
@@ -170,6 +170,11 @@ Luego
     \[
     \varphi \leq \lim\limits_{k \to \infty} f_k.
     \]
+   Entonces  
+        \[
+    \int_E\varphi \leq \lim\limits_{k \to \infty} \int_Ef_k.
+    \]
+   
     \end{lema}
     
 \begin{demo}

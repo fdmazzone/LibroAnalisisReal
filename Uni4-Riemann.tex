@@ -319,9 +319,9 @@ Para justificar el valor de la integral operamos del siguiente modo
 \\
 =&a(b-a)+\left(\frac{b-a}{n} \right)^2\sum\limits_{i=0}^{n-1} i
 \\
-=& a(b-a)+\left(\frac{b-a}{n} \right)^2 \frac{n(n+1)}{2}
+=& a(b-a)+\left(\frac{b-a}{n} \right)^2 \frac{(n-1)n}{2}
 \\
-=&(b-a)\left(a+\frac{n+1}{2n} (b-a)\right).
+=&(b-a)\left(a+\frac{n-1}{2n} (b-a)\right).
 \end{split}
 \]
 Ahora observamos que 
@@ -344,7 +344,7 @@ haciendo $n \to \infty$ obtenemos el valor buscado.
 \[
  \int_a^b x^2 dx=\frac{b^3}{3}-\frac{a^3}{3}.
 \]
-{\em Ayuda:} Usar particiones uniformes y la fórmula $\sum_{i=1}^n n^2= n(n+1)(2n+1)/6$.
+{\em Ayuda:} Usar particiones uniformes y la fórmula $\sum_{i=1}^n i^2= n(n+1)(2n+1)/6$.
 \end{ejercicio}
 
 \begin{ejemplo}{ej:int x^n} Sea $0< a<b$ y $m\in\mathbb{Z}$, $m\neq -1$,  veamos que 
@@ -353,7 +353,7 @@ haciendo $n \to \infty$ obtenemos el valor buscado.
 \]
 
 \begin{demo}
-Podr\'iamos usar particiones uniformes, pero eso nos obligar\'ia a hallar f\'ormulas para $\sum\limits_{i=0}^{i^m}$. Usando particiones no uniformes evitamos ese inconveniente. 
+Podr\'iamos usar particiones uniformes, pero eso nos obligar\'ia a hallar f\'ormulas para $\sum\limits_{i=0}^n{i^m}$. Usando particiones no uniformes evitamos ese inconveniente. 
 
 Tomamos $n \in \nn$ y 
 \[
@@ -673,9 +673,9 @@ En la segunda sumatoria usamos las acontaciones $M_i-m_i\leq 2M$ y $(x_i-x_{i-1}
 \section{Integrabilidad y continuidad}
 
 
-\begin{definicion}{}[Uniforme continuidad] \index{continuidad!uniforme} Sean $(X,d)$ e $(Y,d')$ espacios métricos con $X$ compacto. Diremos que $f:X\to Y$ es uniformememnte continua si 
+\begin{definicion}{}[Uniforme continuidad] \index{continuidad!uniforme} Sean $(X,d)$ e $(Y,d')$ espacios métricos. Diremos que $f:X\to Y$ es uniformemente continua si 
 \[
- \forall\varepsilon>0\exists \delta>0:d(x,y)\delta\Rightarrow d'(f(x),f(y))<\varepsilon.
+ \forall\varepsilon>0\exists \delta>0:d(x,y)<\delta\Rightarrow d'(f(x),f(y))<\varepsilon.
 \]
 
  
@@ -716,14 +716,13 @@ Es discontinua en $[-1,1]$ pero integrable.  \textcolor{red}{JUSTIFICAR}
 \end{ejemplo}
 
 
-
-\marginnote{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/dirichlet.png}\\
-Función de Dirichlet}
 \begin{ejemplo}{}[Función de Dirichlet] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
 \[
  f(x)=\begin{cases} 1 & \text{ si } x\in\mathbb{Q}\\0 & \text{ si }   x\notin\mathbb{Q}\\
 \end{cases}
 \]
+\marginpar{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/dirichlet.png}\\
+Función de Dirichlet}
 Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUSTIFICAR}
 \end{ejemplo}
 
@@ -739,7 +738,7 @@ Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUS
  \begin{center}
 \input{imagenes/oscilacion.pdf_tex}
  \end{center}
- \caption{Áreas de otras figuras elementales.}\label{fig:paral-trig}
+ \caption{Oscilación $w(f,I)$}\label{fig:paral-trig}
 \end{figure}
 
 \begin{ejemplo}{} 
@@ -843,11 +842,11 @@ y
  
 \end{proposicion}
 
-\begin{ejemplo}{} Para la función de Dirichlet y para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=\{x_1,\ldots,x_n\}$ y $R(P,f,\sigma)=[0,1]$
+\begin{ejemplo}{} Para la función de Dirichlet y para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=\{1,\ldots,n\}$ y $R(P,f,\sigma)=1$
  
 \end{ejemplo}
 
-\begin{ejemplo}{} Para la función de Heavside,   para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=i$, donde $i$ es el índice para el que $i\in (x_{i-1},x_i]$ y $R(P,F,\sigma)=x_i-x_{i-1}$.
+\begin{ejemplo}{} Para la función de Heavside,   para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=i$, donde $i$ es el índice para el que $0\in (x_{i-1},x_i]$ y $R(P,F,\sigma)=x_i-x_{i-1}$.
  
 \end{ejemplo}
 
@@ -871,15 +870,15 @@ Deducimos
  R(P,f,\sigma)=\sum_{i\in I_{\sigma}}(x_i-x_{i-1})<\varepsilon.
 \]
 
-Para el recíproco, tomemos $\varepsilon>0$. Como $f$ es acotada, existe $M>0$ tal que $|f|\leq M$.  Observar que  $M$ satisface $M_i-m_i\leq 2M$. Vamos a tomar $\sigma=\varepsilon/2(b-a)$ y tomamos $\delta>0$ que satisface la condición necesaria del teorema para ese $\sigma$ y con $\varepsilon/4M$ en lugar de $\varepsilon$. Definimos 
+Para el recíproco, tomemos $\varepsilon>0$. Como $f$ es acotada, existe $M>0$ tal que $|f|\leq M$.  Observar que  $M$ satisface $M_i-m_i\leq 2M$. Vamos a tomar $\sigma=\varepsilon/2(b-a)$ y tomamos $\delta>0$ que satisface la condición necesaria del teorema para ese $\sigma$ y con $\varepsilon/4M$ en lugar de $\varepsilon$. Recordemos
 \[
- I=\{i \left|{f}\right. w(f,[x_{i-1},x_i])\geq \sigma\}
+ I_\sigma=\{i \left|{f}\right. w(f,[x_{i-1},x_i])\geq \sigma\}
 \]
 Entonces 
 
 \begin{multline*}\label{eq:3criteb}
- \overline{S}(P;f)-\underline{S}(P;f)= \sum_{i\in I} (M_i-m_i)(x_i-x_{i-1})+\sum_{i\notin I} (M_i-m_i)(x_i-x_{i-1})\\
- \leq 2M\sum_{i\in I}  (x_i-x_{i-1})+ \sigma \sum_{i\in I}  (x_i-x_{i-1})<\varepsilon
+ \overline{S}(P;f)-\underline{S}(P;f)= \sum_{i\in I_\sigma} (M_i-m_i)(x_i-x_{i-1})+\sum_{i\notin I_\sigma} (M_i-m_i)(x_i-x_{i-1})\\
+ \leq 2M\sum_{i\in I_\sigma}  (x_i-x_{i-1})+ \sigma \sum_{i\in I_\sigma}  (x_i-x_{i-1})<\varepsilon
 \end{multline*}
 
  
@@ -888,7 +887,31 @@ Entonces
 
 
 
-\begin{ejemplo}{} Discutir los ejemplos Dirichlet, Heavside, Continuas, escalera discontinua
+\begin{ejemplo}{} Discutir los ejemplos Thomae, Dirichlet, Heaveside, Continuas, escalera discontinua.  
+
+
+En el caso de escalera discontinua, sea $\sigma,\epsilon>0$ cualesquiera.  Elijamos $N$ suficientemente grande para que 
+\[\frac{1}{2^N}<\sigma.\]
+Tomemos 
+\[\delta:=\frac{\epsilon}{N}\inf\{d(q_i,q_j)\mid i,j=1,\ldots , N\}.\]
+Sea $P=\{x_0,\ldots, x_n\}$ una partición tal que
+\[\max(x_i-x_{i-1})<\delta.\]
+Entonces cada intervalo $[x_{i-1},x_i]$ contiene a lo sumo un $q_i$, $i=1,\ldots,N$. Luego hay exactamente $N$ intervalos  $[x_{i-1},x_i]$  conteniendo un $q_i$, $i=1,\ldots,N$.   Si el intervalo $[x_{j-1},x_j]$ no contiene ningun $q_i$, $i=1,\ldots,N$, entonces solo contiene $q_j$ con $j\geq N+1$. Entonces
+
+\[
+\begin{split}
+ w(f, [x_{j-1},x_j])&=f(x_j)-f(_{j-1})\\
+&=\sum_{n=1}^{\infty}\frac{1}{2^n}H(x_j-q_n)-\sum_{n=1}^{\infty}\frac{1}{2^n}H(x_{j-1}-q_n)\\
+&=\sum_{\{n\mid x_j\geq q_n\}}\frac{1}{2^j}-\sum_{\{n\mid x_{j-1}\geq q_n\}}\frac{1}{2^j}\\
+&=\sum_{\{n\mid q_n\in (x_{j-1}, x_j] \}}\frac{1}{2^j}\\
+&\leq \sum_{i=N+1}^\infty \frac{1}{2^i}=\frac{1}{2^N}<\sigma
+\end{split}
+\]
+
+Consecuentemente, si un intervalo $[x_{j-1},x_j]$ satisface que  $w(f, [x_{j-1},x_j])>\sigma$, debe ocurrir que $[x_{j-1},x_j]$ contenga un  $q_i$, $i=1,\ldots,N$. Como hay $N$ de estos intervalos 
+\[
+ R(P,f,\sigma)=\sum_{i\in I_{\sigma}}(x_i-x_{i-1})\leq N\delta<\epsilon. \qed
+\]
  
 \end{ejemplo}
 
@@ -907,7 +930,7 @@ Entonces
 
 Definimos la función de Riemann:
 \[
- f(x)=\sum_{n=1}^{\infty}\frac{((x))}{n^2}.
+ f(x)=\sum_{n=1}^{\infty}\frac{((nx))}{n^2}.
 \]
 
 \begin{figure}[H]
@@ -955,7 +978,7 @@ Entonces $y\in B(x_k;r_{x_k})\subset  G_j$. Hemos probado $A\subset G_j$.
 \end{equation}
  
 \end{lema}
-\begin{proof} Si $x\in [a,b]$, debe existir un intervalo abierto relativo a $[a,b]$,  $I_x$ tal que $w(f,I_x)<\epsilon$. La colección $\{I_x\}_{x\in [a,b]}$ forma un cubrimiento del compacto $[a,b]$. Sea $\delta$ un número de Lebesgue de este cubrimiento, que lo tiene en virtud del Lema \ref{lem:cubri_lebesgue}. Sea una partición $P=\{x_0,\ldots,x_n\}$ tal que $(x_i-x_{i-1})<\delta$. Dicho de otra forma $\operatorname{diam}( [x_{i-1},x_i])<\delta$. De modo que para cada subintervalo $[x_{i-1},x_i]$ de la partición existe un $I_x$ con $[x_{i-1},x_i]\subset I_x$. Entonces 
+\begin{proof} Si $x\in [a,b]$, debe existir un intervalo abierto relativo a $[a,b]$,  $I_x$ tal que $x\in I_x$ y $w(f,I_x)<\epsilon$. La colección $\{I_x\}_{x\in [a,b]}$ forma un cubrimiento del compacto $[a,b]$. Sea $\delta$ un número de Lebesgue de este cubrimiento, que lo tiene en virtud del Lema \ref{lem:cubri_lebesgue}. Sea una partición $P=\{x_0,\ldots,x_n\}$ tal que $(x_i-x_{i-1})<\delta$. Dicho de otra forma $\operatorname{diam}( [x_{i-1},x_i])<\delta$. De modo que para cada subintervalo $[x_{i-1},x_i]$ de la partición existe un $I_x$ con $[x_{i-1},x_i]\subset I_x$. Entonces 
 \[
  M_i-m_i:=\sup\limits_{[x_{i-1},x_i]} f-\inf\limits_{[x_{i-1},x_i]} f=w(f,[x_{i-1},x_i])\leq w(f,I_x)<\varepsilon.
 \]
@@ -972,11 +995,11 @@ Finalmente
 
 
 
- \begin{definicion}[Contenido exterior]{}\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ (x_{i-1},x_i)\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n(x_{i-1},x_i)$.
+ \begin{definicion}[Contenido exterior]{}\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ (a_i,b_i)\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n(a_{i},b_i)$.
  
  El \emph{contenido exterior} de $S$ se define por 
  \[
-  c_e(S)=\inf \sum_{i=1}^n (x_i-x_{i-1}),
+  c_e(S)=\inf \sum_{i=1}^n (b_i-a_i),
  \]
 donde el ínfimo es tomado sobre todos los cubrimientos finitos de $S$.
   
@@ -1057,7 +1080,7 @@ Aplicando \eqref{eq:hankel_conj=}
    
 \section{Integrales impropias}
 Se denomina \emph{integrales impropias}\index{integral!impropia} a la integral de funciones no acotadas o a integrales sobre intervalos no acotados. Tales integrales requieren de una definición especial.
-\begin{definicion}{def:int_impropia}[Integral impropia función no-acotada] Supongamos $a<c<b$ y que $f:[a,b]\to\rr$ es una función integrable sobre $[a,c-\varepsilon]$ y sobre $[c+\varepsilon]$ para todo $\varepsilon>0$. Si los siguientes límites existen
+\begin{definicion}{def:int_impropia}[Integral impropia función no-acotada] Supongamos $a<c<b$ y que $f:[a,b]\to\rr$ es una función integrable sobre $[a,c-\varepsilon]$ y sobre $[c+\varepsilon,b]$ para todo $\varepsilon>0$. Si los siguientes límites existen
 
 \[
  \lim_{\varepsilon\to 0}\int_a^{c-\varepsilon}f(x)dx,\quad \lim_{\varepsilon\to 0}\int_{c+\varepsilon}^bf(x)dx,
@@ -1096,7 +1119,7 @@ Análogamente se definen integrales sobre intervalos no-acotados de la forma $(-
  \begin{equation*}\label{eq:primi1}
   \phi(x)=\int_a^{x}f(x)dx.
  \end{equation*}
-Etonces $\phi$ es derivable en cada punto de continuidad de $f$ y vale que
+Entonces $\phi$ es derivable en cada punto de continuidad de $f$ y vale que
  \begin{equation}\label{eq:primi2}
   \phi'(x)=f(x).
  \end{equation}
@@ -1106,12 +1129,8 @@ Etonces $\phi$ es derivable en cada punto de continuidad de $f$ y vale que
 \begin{corolario}{teo:fund_calc}[Regla de Barrow]
  Sea $f:[a,b]\to\rr$ continua y $\phi$ una función que satisface $\phi'(x)=f(x)$. Entonces
  \begin{equation}\label{eq:barrow}
-  \int_a^{x}f(x)dx=\phi(b)-\phi(a).
+  \int_a^{b}f(x)dx=\phi(b)-\phi(a).
  \end{equation}
-Etonces $\phi$ es derivable en cada punto de continuidad de $f$ y vale que
- \begin{equation*}\label{eq:primi2}
-  \phi'(x)=f(x).
- \end{equation*}
 \end{corolario}
 
 
