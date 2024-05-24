@@ -473,13 +473,13 @@ Si $f_k$ es fundamental en medida sobre $E$, entonces existe una subsucesi\'on $
 \begin{demo}
 Para cada $i>0$, existe $k_i\in \nn$ tal que 
 \[
-m\left(E\left(|f_k-f_{k'}|\geq \frac{1}{2^i}\right)\right)\leq
+m\left(E\left(|f_k-f_j|\geq \frac{1}{2^i}\right)\right)\leq
 \frac{1}{2^i},
 \]
-para $k,k'\geq k_i$.
+para $k,j\geq k_i$.
 Podemos suponer que $k_1<k_2<\ldots$. Sea 
 \[
-E_i=E\left(   |f_{k_i} -f_{k_{i+1}}|\geq \frac{1}{2^i}\right).
+E_i=E\left(   |f_{k_i} -f_{k_{i+1}}|\geq \frac{1}{2^i}\right)
 \]
 Tenemos que $m(E_i)<\frac{1}{2^i}$. 
 
@@ -528,7 +528,7 @@ De este modo, obtenemos $f_{k_j} \xrightarrow[]{m} f$.
 
 Por \'ultimo, a partir de 
 \[
-E\left(|f_k-f|\right)\subset 
+E\left(|f_k-f|\geq\delta\right)\subset 
 E\left(|f_k -f_{k_j}|\geq \frac{\delta}{2}\right) \cup
 E\left(|f_{k_j} -f|\geq \frac{\delta}{2}\right),
 \]
