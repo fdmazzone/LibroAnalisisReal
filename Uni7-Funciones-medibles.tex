@@ -9,7 +9,7 @@ Diremos que $H \subset \overline{\rr}$ es boreliano de la recta extendida si $H-
  
 
  Si $f:\mathbb{R}^d\to\overline{\mathbb{R}}$, y  $a\in\mathbb{R}$, definimos
- 
+
 $$
 \{f>a\}=\left\{x \in \mathbb{R}^n: f(x)>a\right\}=f^{-1}((a, \infty]) .
 $$
@@ -24,6 +24,8 @@ que corresponden, respectivamente, a las desigualdades $f(x) \geq a, f(x)<a$ y $
 
 
 
+
+
 \begin{definicion}{}Diremos que $f:\mathbb{R}^d\to\overline{\mathbb{R}}$  es una función medible si $\{f \geq a\}$ es un subconjunto medible del espacio $\mathbb{R}^d$ es decir, si para cada número real $a$, se verifica
  que   $f^{-1}([a,\infty]) \in \mathscr{M}$. 
 \end{definicion}
@@ -32,10 +34,9 @@ que corresponden, respectivamente, a las desigualdades $f(x) \geq a, f(x)<a$ y $
 Si $H$ es boreliano de $\rr$ y $f$ es medible, entonces $f^{-1}(H)$ es medible.
 \end{teorema}
 
-\begin{demo}{}
-Sea $\mathscr{M}^{'}=\{ H: f^{-1}(H)\;\mbox{ es medible}\}$.\\
-$\mathscr{M}^{'}$ es $\sigma$-\'algebra y $\mathscr{I}\subset \mathscr{M}^{'}$.
-Por lo tanto, $\mathscr{B}(\rr^n) \subset \mathscr{M}$.
+
+\begin{demo}{} Se define la clase  $\mathscr{M}'=\{ H: f^{-1}(H)\;\mbox{ es medible}\}$ y  se prueba que 
+$\mathscr{M}^{'}$ es $\sigma$-\'algebra de $\mathbb{R}$ que contiene a los abiertos. Esto implica que  $\mathscr{B}(\rr^n) \subset \mathscr{M}$, que es lo que hay que demostrar.
 \end{demo}
 
 
@@ -55,7 +56,33 @@ $\Rightarrow)$ Se tiene que
 \]
 Si $H$ es boreliano de $\overline{\rr}$, supongamos que $H=H^{'}\cup \{+\infty\}$ y $H^{'}$ es conjunto medible Borel de $\rr$.
 Luego, $f^{-1}(H)=f^{-1}(H^{'})\cup \{f=+\infty\}$ es medible.
+
+$$
+\Leftrightarrow \text { Si } a \in \mathbb{R} \forall=[a,+\infty]=[a,+\infty) \cup<\infty
+$$
+
+$[a,+\infty)$ es corrodo de $\mathbb{R}$ eutorcos $[a,+\infty)$ es Borelianos, Entowos $[a,+\infty]$ es Borclicionode $\overline{\mathbb{R}}$
+
+$$
+M_e \Rightarrow f^{-1}(川)=f^{-1}([\varepsilon,+\infty])=\{f \rightrightarrows a\}
+$$
+$$
+\Rightarrow \quad f^{-1}(\{\infty\})=f^{-1}\left(\bigcap_{m=1}^{\infty}[m,+\infty]\right)=\bigcap_{n=1}^{\infty} f^{-1}([n,+\infty])
+$$
+
+
+Cach $f^{-1}([m,+\infty])=\left\langle f \geqslant n\left\{\in M_e\right.\right.$
+Comolosióm $\left.f^{-1}(\varepsilon \infty)\right) \in M_{\varepsilon}$. Aucúlogamente
+
+$$
+\left.f^{-1}(\varepsilon-\infty\}\right) \in \mu_e
+$$
+
+sea $H \in B(\overline{\mathbb{R}})=\{B \mid B$ brelianos $\overline{\mathbb{R}}\}$
+
 \end{demo}
+
+
 
 
 \section{Funciones medibles sobre una $\sigma$-\'algebra}
@@ -568,4 +595,5 @@ converge uniformemente a una funci\'on continua $\varphi$ que se llama
 \emph{funci\'on singular de Cantor}. 
 
 Es claro que $\varphi$ es mon\'otona creciente y su restricci\'on a cualquiera de los intervalos $J_{n,i}$ es constante.
+ 
 

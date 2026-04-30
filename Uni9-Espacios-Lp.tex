@@ -150,7 +150,7 @@ La función medible $f$ es esencialmente acotada sobre $E$ si existe $M>0$ tal q
 $M$ se llama cota esencial de $f$.  Si $f$ es esencialmente acotada sobre $E$, denotamos por $\|f\|_{\infty}$ al \'infimo de los $M$ que satisfacen \eqref{eq:defi-norma-infinito}.
 
 \begin{ejercicio}{}
-$\|f\|_{\infty}$ es cota esencial de $f$ y de hecho es la m\'a chica de las cotas.
+$\|f\|_{\infty}$ es cota esencial de $f$ y de hecho es la m\'as chica de las cotas.
 \end{ejercicio}
 
 
@@ -167,18 +167,9 @@ Notamos con $L^{\infty}(E)$ al conjunto de todas las funciones esencialmente aco
 \end{ejercicio}
 
 \begin{ejemplo}{}
-Las funciones escalonadas no son densas  en $L^{\infty}(E)$.
+Las funciones escalonadas no son densas  en $L^{\infty}(E)$. Por ejemplo, si $\varphi$ es escalera en $\rr$ se tiene  $\|1-\varphi\|_{\infty}\geq 1$. 
 
-Por ejemplo, si $\varphi$ es escalera en $\rr$ se tiene  $\|\chi_{\qq}-\varphi\|_{\infty}\geq \frac{1}{2}$. 
-
-\textbf{EN LAS NOTAS MANUSCRITAS APARECE ALGO ASI...QUE NO SE VE BIEN..FALTA ALGO...!!!}
-
-En efecto, si tomamos un abierto $G$ tal que $\qq\subset G$ y $|G|<\frac{1}{2}$.
-
-\[ 
-\left|\frac{1}{2}-\alpha_n\right|\leq \|f-\varphi_n \|_{\infty}<\frac{1}{2}
-\]
-\end{ejemplo}
+ \end{ejemplo}
 
 Si $f\in L^1(E)$ y $g \in L^{\infty}(E)$ entonces $fg\in L^{\infty}(E)$
 y 
@@ -370,8 +361,8 @@ Sean $H$ un espacio de Hilbert,  $M$ un subsespacio cerrado de $H$ y  $x \in H$.
 \end{teorema}
 
 \begin{demo}
-Sea $m_k \in M$ tal que   \textbf{CHEQUEAR LA SIGUIENTE FORMULA!!!, en el pdf NO SE VE BIEN!!!}
-\[ \|x-m_k\| \leq  d\|x_1\|+\frac{1}{k}. \]
+Sea $m_k \in M$ tal que  
+\[d_k:= \|x-m_k\| \leq  d(x,H)+\frac{1}{k}=:d+\frac{1}{k}. \]
 Utilizamos la \emph{Identidad del Paralelogramo}
 \[ 
 \left\| \frac{x+y}{2} \right\|^2 +\left\| \frac{x-y}{2} \right\|^2
@@ -380,7 +371,7 @@ Utilizamos la \emph{Identidad del Paralelogramo}
 con los vectores $x-m_k$
 \[ 
 \left\| \frac{x-m_k+x-m_j}{2} \right\|^2 +\left\| \frac{x-m_k-(x-m_j)}{2} \right\|^2
-= \frac{1}{2}\left(\| x+m_k \|^2+ \|x-m_j\|^2  \right), 
+= \frac{1}{2}\left(\| x-m_k \|^2+ \|x-m_j\|^2  \right), 
 \]
 y obtenemos
 \[
@@ -400,7 +391,7 @@ Sean $H$ y $M$ como en el Teorema \ref{teo:existe-proyeccion-sobre-H}.
 Entonces son equivalentes
 \begin{enumerate}
     \item $m=P_M(x)$,
-    \item $x-m \perp M$, o sea  $(x-m,h =0)$ $\forall h \in M$.
+    \item $x-m \perp M$, o sea  $(x-m,h )=0$ $\forall h \in M$.
 \end{enumerate}
 \end{teorema}
 
@@ -414,15 +405,18 @@ Sea $h\in M$. Entonces
 \|x-m\|^2-2\lambda (x-m,h)+\lambda^2 \|h\|^2\geq \|x-m\|^2.
 \end{split}
 \]
-A partir de aqu\'i, se deduce que $(x-m,h)\geq 0$. Luego, como \'esto vale para $-h$ se concluye $2)$.
+A partir de aqu\'i, se deduce que $(x-m,h)\leq 0$. Luego, como \'esto vale para $-h$ se concluye $2)$.
 
 $2) \Rightarrow 1)$ Sea $h\in M$. Luego
 \[
 \|x-m\|^2=(x-m,x-m)=(x-m,x-h)\leq \|x-m\| \|x-h\|.
 \]
+Dividiendo por $\|x-m\|$ se deduce el enunciado
+
+\end{demo}
+
 Si $v \in H$ entonces $\ell_v: H \to \rr$ definida por $\ell_v(u)=(u,v)$
 satisface $l_v \in H^*$.
-\end{demo}
 
 
 \begin{teorema}{}[Representaci\'on de Riesz]
@@ -507,7 +501,7 @@ Si $f \in L^1(E)$, definimos $f_n=\min\{n, |f|\}$. Luego,  se tiene que $f_n \in
 \leq \lim\limits_{n \to \infty} \|\ell\| \|f_n\|_1
 =\|\ell\| \|f\|_1.\]
 Por el Lema \ref{lem:fg-en-L-infinito-para-f-en-L1}, resulta que $g \in L^{\infty}(E)$.
-Como $L^2 \cap L^1$ es denso en $L^1$ tenemos $\ell-\ell_g \in L^1$.
+Como $L^2 \cap L^1$ es denso en $L^1$ tenemos $\ell=\ell_g$ en $L^1$.
 
 Si $m(E)=\infty$, escribimos $E=\bigcup\limits_{k=1}^{\infty} E_k$
 con $m(E_k)<\infty$ y $E_k \cap E_j=\emptyset$ si $k \neq j$.
@@ -528,7 +522,7 @@ Las funciones que verifican $\|f\|_p<\infty$ forman la clase $L^p(E)$.
 
 $L^p(E)$ es un espacio normado con $\|\cdot \|_p$ como norma. A  continuaci\'on, demostraremos la desigualdad triangular. 
 
-Supondremos que $\|f\|_p,\|g\|_p>0$. Como $t^p$ es convexa para $1\leq <\infty$ tenemos 
+Supondremos que $\|f\|_p,\|g\|_p>0$. Como $t^p$ es convexa para $1\leq p <\infty$ tenemos 
 \[
 \left( \frac{|f(x)|+|g(x)|}{\|f\|_p+\|g\|_p}   \right)^p \leq 
 \frac{\|f\|_p}{\|f\|_p+\|g\|_p} \frac{|f|^p}{\|f(x)\|_p}+  
@@ -643,8 +637,8 @@ El caso $p=\infty$ ya fue analizado, as\'i que veremos el caso $1\leq p<\infty$.
     \] 
     Luego, 
     \[
-    \sup\limits_{\|g_k\|_q\leq 1} \int_E fg\,dx \geq 
-    \int_E fg_k\,dx \geq \int_E f_k g_k \,dx=\|f\|_p \nearrow\infty.
+    \sup\limits_{\|g\|_q\leq 1} \int_E fg\,dx \geq 
+    \int_E fg_k\,dx \geq \int_E f_k g_k \,dx=\|f_k\|_p \nearrow\infty.
     \]
         \end{enumerate}
 \end{demo}
@@ -663,31 +657,31 @@ es una funcional lineal acotada.
 \[
 [L^p(E)]^*=L^q(E).\]
 \end{teorema}
-
-\section{Funci\'on maximal de Hardy-Littlewood y teorema de difrenciaci\'on de Lebesgue}
-
-
-\subsection{Un lema de cubrimiento}
-
-\begin{lema}{}
-Sea $E \subset \rr^n$ medible y supongamos que $E$ es cubierto por una uni\'on de bolas $B_i$, con $i\in I$, de di\'ametro acotado. Entonces  existe una subfamilia de bolas $B_1,B_2,\ldots,$ de la familia dada, disjuntas dos a dos y  tal que 
-\[
-\sum\limits_{k} m(B_k) \leq Cm(E),
-\]
-donde $C$ depende de la dimensi\'on $n$ ($5^-n$ funciona).
-\end{lema}
-
-\begin{demo}
-Sea $B_1$ tal que 
-\[
-\diametro B_1 \geq \frac{1}{2} \sup\limits_{i \in I} \diametro B_i.
-\]
-Una vez que hemos elegido $B_k$, seleccionamos $B_{k+1}$ de modo que 
-\[
-\diametro B_{b_1}\geq \frac{1}{2} \diametro B_i,
-\]
-para toda $B_i$ que ....
-\end{demo}
-
-\textbf{
-LAS NOTAS MANUSCRITAS SUBIDAS AL MOODLE LLEGAN HASTA AC\'A!!!!}
+% 
+% \section{Funci\'on maximal de Hardy-Littlewood y teorema de difrenciaci\'on de Lebesgue}
+% 
+% 
+% \subsection{Un lema de cubrimiento}
+% 
+% \begin{lema}{}
+% Sea $E \subset \rr^n$ medible y supongamos que $E$ es cubierto por una uni\'on de bolas $B_i$, con $i\in I$, de di\'ametro acotado. Entonces  existe una subfamilia de bolas $B_1,B_2,\ldots,$ de la familia dada, disjuntas dos a dos y  tal que 
+% \[
+% \sum\limits_{k} m(B_k) \leq Cm(E),
+% \]
+% donde $C$ depende de la dimensi\'on $n$ ($5^-n$ funciona).
+% \end{lema}
+% 
+% \begin{demo}
+% Sea $B_1$ tal que 
+% \[
+% \diametro B_1 \geq \frac{1}{2} \sup\limits_{i \in I} \diametro B_i.
+% \]
+% Una vez que hemos elegido $B_k$, seleccionamos $B_{k+1}$ de modo que 
+% \[
+% \diametro B_{b_1}\geq \frac{1}{2} \diametro B_i,
+% \]
+% para toda $B_i$ que ....
+% \end{demo}
+% 
+% \textbf{
+% LAS NOTAS MANUSCRITAS SUBIDAS AL MOODLE LLEGAN HASTA AC\'A!!!!}

@@ -23,6 +23,7 @@ layouthoffset=0mm, left=2.5cm, right=2.5cm,marginparwidth=0cm]{geometry}
  \setromanfont{Roboto Condensed}
  \usepackage{float}
  \usepackage{mathrsfs} 
+ \usepackage{enumitem}
 %
 %
 % \renewcommand{\familydefault}{\sfdefault}
@@ -307,72 +308,6 @@ Hallar $E_{\delta}$.
 \end{enumerate}
 \end{ejer}
 
-%\begin{ejer} {}*
-%\begin{enumerate} 
-%\item Dada la sucesión
-%{
-%\extrarowheight = -0.5ex
-%\renewcommand{\arraystretch}{2.0}
-%$f_k(x)=\left\{
-%\begin{array}{cl}
-%k^2x &\mbox{si }x\in[0,\frac{1}{k}]
-%\\
-%-k^2x+2k &\mbox{si } x\in \left[\frac{1}{k},\frac{2}{k}\right] %
-%\\
-%&\mbox{en otro caso,}
-%\end{array}
-%\right.
-%$}\\
-%comprobar que $f_k \to 0$ en $[0,1]$. 
-%?`Qué se puede decir acerca de la convergencia uniforme en %$[0,1]$?
-%\item Sea $f_k=\chi_{(0,\frac{1}{k})}$ con $k\in\nn$. 
-%Probar que $\{f_k\}_{\{k\in\nn\}}$ converge puntualmente a $0$ %pero que no converge uniformemente
-%excepto un conjunto de medida nula.
-%\end{enumerate}
-%\end{ejer}
-
-%\begin{ejer}{}  
-%Considerar la funci\'on 
-%$f(x)=\left\lfloor \frac{1}{x}\right\rfloor+\left\lfloor %\frac{1}{x-1}\right\rfloor$
-%para $x \in [0,1]$.
-%\begin{enumerate}
-%\item Demostrar que $f$ es medible.
-%\item Seg\'un el \textit{Teorema de Lusin} existe  un conjunto %compacto $E_{\varepsilon}\subset [0,1]$
-%tal que $m\left([0,1]-E_{\varepsilon}\right)<\epsilon$ y %$f\left.\right|_{E_{\varepsilon}}$ es continua.
-%Hallar un conjunto $E_{\varepsilon}$.
-%\end{enumerate}
-%\end{ejer}
-
-
-%\begin{ejer}{}
-% Probar que toda función medible $f$ coincide en c.t.p con una %función boreliana.
-%\\
-%\underline{Sugerencia:} suponer %primero que $f$ es la función %característica de un conjunto
-%medible; luego, que $f$ es una %función simple;   finalmente que %$f\geq 0$.
-%\end{ejer}
-
-
-
-
-
-%\begin{ejer}{}
-%Calcular $\underline{f_k}$, $\overline{f_k}$, $\limsup f_k$, %$\liminf f_k$ y $\lim f_k$ cuando sea
-%apropiado para las siguientes sucesiones de funciones:
-%\begin{enumerate}
-%\item
-%$f_k(x)=x^k$, \; para $0\leq x\leq 1.$
-%\item $f_{2k}(x)=\left(1+\frac{x}{2k}\right)^{2k}$, %$f_{2k-1}(x)=\left(1-\frac{x}{2k-1}\right)^{2k-1}$, \;para %$0\leq x<\infty$.
-%%\item $f_k(x)=\left\{ 
-%%\begin{array}{ll}
-%%1&x=\frac{i}{j}, \;i+j=k,\; 0\leq x\leq 1
-%%\\
-%%0& \mbox{en otro caso.}
-%%\end{array}
-%%\right.$
-%\end{enumerate}
-%\end{ejer}
-
-
 
 \begin{ejer}{} Probar que si $f_k \stackrel{m}{\rightarrow}f$ \;y\; $g_k \stackrel{m}{\rightarrow}g$, entonces \;
 $f_k+g_k \stackrel{m}{\rightarrow}f+g$.  
@@ -407,6 +342,23 @@ se deduce \;$\limsup\limits_{{k\rightarrow \infty}\atop} \lambda_{f_k}(t)\leq \l
 \;$\lambda_f(t)\leq \liminf\limits_{k\rightarrow \infty} \lambda_{f_k}(t).\;$
 	\end{enumerate}
 \end{ejer}
+
+
+\begin{ejer}{} \emph{(Ejemplo de conjunto medible no boreliano)}. Considérese la función $\psi$ definida por la fórmula $\psi(x)=x+\varphi(x)$, donde $\varphi$ es la función singular de Cantor.
+Mostrar que:
+
+\begin{enumerate}[label=\alph*)]
+\item $\psi$ es estrictamente creciente y continua; su inversa $\psi^{-1}$ tiene las mismas propiedades.
+\item para cada conjunto boreliano $B \subset R, \psi(B)$ y $\psi^{-1}(B)$ son borelianos.
+\item $\psi([0,1])=[0,2]$
+\item poniendo $G=[0,1]-P$ (complemento del conjunto ternario relativo a $[0,1])$ se tiene $m(\psi(G))=m(G)=1$.
+\item $m(\psi(P))=1$.
+\item existe un conjunto no medible $V \subset \psi(P)$.
+\item $\psi^{-1}(V)$ es medible Lebesgue pero no es medible Borel.
+ \end{enumerate}
+\end{ejer}
+
+
 
 %======================================================================================
 

@@ -2,7 +2,7 @@
 %=====================================================================
 %CAPITULO I
 %=======================================================================
-\chapter{Conjuntos}
+\chapter{Conjuntos}\label{cap:cardinalidad}
 \marginpar{
 \begin{center}
  \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Hilbert.jpg}\\
@@ -423,17 +423,17 @@ la construcción de la biyección entre $\nn\times\nn$
 
 
  Dispongamos del conjunto $\nn\times\nn$ en un arreglo del tipo
-de una matríz infinita, como sigue:
-\[\begin{diagram}
-(1,1)   & \rTo        & (1,2)  &                      & (1,3)  &                      & (1,4) &\dots\\
-        & \ldTo(2,2)  &        &\ldTo(2,2)\ruTo(4,2)  &        & \ldTo(2,2)\ruTo(6,4) &        &     \\
-(2,1)   &             & (2,2)  &                      & (2,3)  &                      &        &      \\
-        &\ldTo(2,2)   &        & \ldTo(2,2)           &        & \ddots               &        &      \\
-(3,1)   &             &(3,2)   &                      &        &                      &        &      \\
-        & \ldTo(2,2)  &        &   \ddots             &        &                      &        &      \\
- (4,1)  &             &        &                      &        &                      &        &      \\
- \vdots &             &        &                      &        &                      &        &      \\
-\end{diagram}\]
+de una matríz infinita como se muestra en la figura \ref{fig:NxN}.
+\begin{figure}
+
+  \begin{center}
+ \includegraphics[scale=.3]{imagenes/NxN-numerable.png}
+ % NxN-numerable.png: 749x599 px, 72dpi, 26.42x21.13 cm, bb=0 0 749 599
+\end{center}
+  \caption{Demostración de que $\mathbb{N}\times \mathbb{N}$ es numerable}\label{fig:NxN}
+\end{figure}
+
+
 Notar que, además de colocar los pares ordenados, hemos colocado
 algunas flechas. Estas flechas indican un camino. Este es el
 camino que seguiremos  para enumerar los pares ordenados.
@@ -692,7 +692,7 @@ conjunto de los numeros reales.
 \begin{teorema}{realnonum} El conjunto $\mathbb{R}$ no es
 a lo sumo numerable.
 \end{teorema}
-\begin{demo} \marginpar{El arguemnto de esta demostración se conoce como \href{https://es.wikipedia.org/wiki/Argumento_de_la_diagonal_de_Cantor}{argumento diagonal de Cantor}. Es un técnica de demostración ideada por George Cantor. Actualmente es  utilizada frecuentemente para resolver otros tipos problemas}Supongamos, por el contrario, que $\mathbb{R}$ es a
+\begin{demo} \marginpar{El arguemnto de esta demostración se conoce como \href{https://es.wikipedia.org/wiki/Argumento_de_la_diagonal_de_Cantor}{argumento diagonal de Cantor}. Es una técnica de demostración ideada por George Cantor. Actualmente es  utilizada frecuentemente para resolver otros tipos problemas}Supongamos, por el contrario, que $\mathbb{R}$ es a
 lo sumo numerable. En virtud de la Proposición
 \vref{subconjunto}, tendríamos que el intervalo $[0,1)$
 sería también a lo sumo numerable. Como él es infinito

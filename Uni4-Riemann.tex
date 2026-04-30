@@ -1,10 +1,10 @@
-\chapter{Integral de Riemann}
+\chapter{Integral de Riemann}\label{chap:riemann}
 
 \section{Introducción}
 
 \begin{quotation}
 \marginpar{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Riemann.jpeg}\\
-Bernhard Riemann 1826-1866. Fue un matemático alemán que realizó contribuciones muy importantes al análisis y la geometría diferencial, algunas de las cuales allanaron el camino para el desarrollo más avanzado de la relatividad general. Su nombre está conectado con la función zeta, la hipótesis de Riemann, la integral de Riemann, el lema de Riemann, las variedades de Riemann, las superficies de Riemann y la geometría de Riemann. 
+<<Bernhard Riemann 1826-1866.\index[personas]{Riemann|textbf} Fue un matemático alemán que realizó contribuciones muy importantes al análisis y la geometría diferencial, algunas de las cuales allanaron el camino para el desarrollo más avanzado de la relatividad general. Su nombre está conectado con la función zeta, la hipótesis de Riemann, la integral de Riemann, el lema de Riemann, las variedades de Riemann, las superficies de Riemann y la geometría de Riemann.>> 
 \flushright{Wikipedia}} 
 << Bernard Riemann recibió su doctorado en 1851, su \emph{Habilitación} en 1854. La habilitación confiere el reconocimiento de la capacidad de crear sustanciales contribuciones en la investigación más allá de la tesis doctoral, y es un prerequisito necesario para ocupar un cargo de profesor en una universidad Alemana. Riemann eligió como tema  de habilitación el problema de las series de Fourier. Su tesis fue titulada \emph{\"Uber die Darstellbarkeit einer Function durch eine trigonometrische Reine} (Sobre la representación de una función por series trigonométricas) y respondía la pregunta:  Cuándo una función definida en el intervalo $(-\pi,\pi)$ puede ser respresentada por la serie trigonométrica $a_0/2+\sum_{n=1}^{\infty}[a_n\cos(nx)+b_n\sen(nx)]$? 
 En este trabajo  es donde hallamos   la Integral de Riemann, introducida en una sección corta antes del nucleo principal de la tesis, como parte del trabajo preparatorio que él necesitó desarrollar antes de abordar el problema de representabilidad por series trigonométricas. >> 
@@ -15,15 +15,15 @@ En este trabajo  es donde hallamos   la Integral de Riemann, introducida en una 
 \end{flushright}
 
 
-En este capítulo vamos a desarrollar el concepto de la integral de Riemman. Vamos a exponer la definición de esta integral dada por J. G. Darboux. Discutiremos las propiedades de la intergal, sus alcances y límites. Preparamos así el camino para la introducción de la integral de Lebesgue. 
+En este capítulo vamos a desarrollar el concepto de la integral de Riemann. Vamos a exponer la definición de esta integral dada por J. G. Darboux. Discutiremos las propiedades de la intergal, sus alcances y límites. Preparamos así el camino para la introducción de la integral de Lebesgue. La exposición que seguimos está fuertemente influída por \cite{bressoud2008radical}.
 \marginpar{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/Darboux.jpg}\\
-Jean G. Darboux  1842-1917. Matemático frances. Su trabajo se desarrolló en el análisis (integración, ecuaciones diferenciales parciales) y geometría diferencial (estudio de curvas y superficies).  
+<<Jean G. Darboux  1842-1917. \index[personas]{Darboux|textbf}Matemático frances. Su trabajo se desarrolló en el análisis (integración, ecuaciones diferenciales parciales) y geometría diferencial (estudio de curvas y superficies).>>  
 \flushright{Wikipedia}} 
 
-Debemos advertir  al alumno que en este curso dejaremos un poco de lado las cuestiones procedimentales de cómo calcular integrales, aspecto que seguramente abordó en cursos anteriores y del cual nos vamos a valer. Tampoco debe esperar que las actividades prácticas se centren en esa dirección. El objetivo del capítulo es recordar y profundizar nuestro conocimiento de la integral de Riemann. No es nuestra intención que el material sea auto contenido. Algunas propiedades sólo las enunciaremos sin demostración pues seguramente estas demostraciones faltantes son parte de curso previos.   Nuestro principal objetivo aquí es discutir la materia conceptual ligada a la integral y cómo es previsible las actividades prácticas estarán orientadas con ese propósito. Por ejemplo, un problema que nos planteamos y que guiará la exposición es el de caracterizar las funciones integrables Riemann. Nos interesa este problema pues  resolverlo entraña el desarrollo de la noción de medida de  Lebesgue, que es el principal concepto abordado en este libro.
+Debemos advertir  al alumno que en este curso dejaremos un poco de lado las cuestiones procedimentales de cómo calcular integrales, aspecto que seguramente abordó en cursos anteriores y de lo cual nos vamos a valer. Tampoco debe esperar que las actividades prácticas se centren en esa dirección. El objetivo del capítulo es recordar y profundizar nuestro conocimiento de la integral de Riemann. No es nuestra intención que el material sea auto contenido. Algunas propiedades sólo las enunciaremos sin demostración pues seguramente estas demostraciones faltantes son parte de curso previos.   Nuestro principal objetivo aquí es discutir la materia conceptual ligada a la integral y cómo es previsible las actividades prácticas estarán orientadas con ese propósito. Por ejemplo, un problema que nos planteamos y que guiará la exposición es el de caracterizar las funciones integrables Riemann. Nos interesa este problema pues  resolverlo entraña el desarrollo de la noción de medida de  Lebesgue, que es el principal concepto abordado en este libro.
 
 
-La integral encuentra su motivación en diversos problemas. Aparece cuando se busca el centro de masas de un determinado cuerpo, cuando se quieren hallar longitudes de arco, volúmenes, cuando se quiere reconstruir el movimiento de cuerpo conocida su velocidad. En general, cuando se quiere reconstruir determinada propiedad de un conjunto, cuando es conocida esta proiedad sobre regiones infinitesimales.  La integral es utilizada en incontables teorías matemáticas, como ser el mencionado már arriba relativo a las series de Fourier. 
+La integral encuentra su motivación en diversos problemas. Aparece cuando se busca el centro de masas de un determinado cuerpo, cuando se quieren hallar longitudes de arco, volúmenes, cuando se quiere reconstruir el movimiento de cuerpo conocida su velocidad. En general, cuando se quiere reconstruir determinada propiedad de un conjunto, cuando es conocida esta proiedad sobre regiones infinitesimales.  La integral es utilizada en incontables teorías matemáticas, como ser el mencionado más arriba relativo a las series de Fourier. 
 
 Quizás el 
 problema más simple donde aparece la integral es el que utilizaremos como motivación para introducirla y es el concepto de área.  Vamos a tratar de reconstruir este concepto desde su base, esto es analizando la noción de área de figuras tan simples como rectángulos, triángulos, etc. 
@@ -38,20 +38,20 @@ El cálculo de áreas es necesario en multitud de actividades humanas, por ejemp
  
 
 
-Por \emph{figuras elementales}\index{figura!elemental} planas nos referimos a rectángulos, triángulos, trapecios, etc. Sin duda el alumno  debe estar  muy familiarizado con las áreas de estas figuras, el área de un rectángulo viene dada por la conocida fórmula $b\times h$, donde $b$ es la base del rectángulo y $h$ su altura.  Ahora bien, ¿Cómo 
-se llega a esta fórmula? Porque esta fórmula es apropiada para calcular el precio de un terreno por ejemplo. En esta sección vamos a justificar esta fórmula a partir de algunos hechos elementales.
+Por \emph{figuras elementales}\index{figura elemental} planas nos referimos a rectángulos, triángulos, trapecios, etc. Sin duda el alumno  debe estar  muy familiarizado con las áreas de estas figuras, el área de un rectángulo viene dada por la conocida fórmula $b\times h$, donde $b$ es la base del rectángulo y $h$ su altura.  Ahora bien, ¿Cómo 
+se llega a esta fórmula? ¿Por qué esta fórmula es aceptada para estimar el valor de un terreno? En esta sección vamos a justificar esta fórmula a partir de algunos hechos elementales.
 
 
 
-Vamos a considerar un plano $\mathcal{P}$. En este plano $\mathcal{P}$ supondremos fijada una unidad de longitud.  Pretendemos asignar un área a las figuras, es decir a los subconjuntos, de $\mathcal{P}$. De ahora en más, cómo es usual en esta materia  nos referiremos a \emph{medida}\index{medida} en lugar de área. La medida es un concepto más general  que el concepto de área. No obstante en el contexto en que estamos actualmente son sinónimos.  
+Vamos a considerar un plano $\mathcal{P}$. En este plano $\mathcal{P}$ supondremos fijada una unidad de longitud.  Pretendemos asignar un área a las figuras, es decir a los subconjuntos, de $\mathcal{P}$. De ahora en mas, como es usual en esta materia  nos referiremos a \emph{medida}\index{medida} en lugar de área. La medida es un concepto más general  que el concepto de área. No obstante en el contexto en que estamos actualmente son sinónimos.  
 
-Queremos construir pues una función $m$ tal que $m(A)$ represente la medida  de  $A\subset\mathcal{P}$. Ahora bien ¿qué podemos usar de guía con ese objetivo? Si, como dijimos,  desconocemos todas las fórmulas previamente aprendidas, sobre que partimos para construir la medida o área. La respuesta es que tomaremos como principio rector  ciertas propiedades que son deseables  que una medida satisfaga. Ellas son las  siguientes. 
+Queremos construir pues una función $m$ tal que $m(A)$ represente la medida  de  $A\subset\mathcal{P}$. Ahora bien, ¿qué podemos usar de guía con ese objetivo? Si, como dijimos,  desconocemos todas las fórmulas previamente aprendidas, ¿sobre qué partimos para construir la medida o área? La respuesta es que tomaremos como principio rector  ciertas propiedades que son deseables  que una medida satisfaga. Postularemos estas propiedades como principios e inferiremos que estos permiten caracterizar el concepto de área.  
 
 
 
 
 \begin{description}
- \item[Positividad.] debería ser una magnitud no negativa.  
+ \item[Positividad.] $m(A)$ debería ser una magnitud no negativa.  
  \item[Invariancia por movimientos rígidos.] Si una región es transformada en otra por medio de un movimiento rígido, ambas regiones deberían tener la misma área. Otra manera de expresar esta propiedad es diciendo que dos figuras \emph{congruentes}\index{congruencia} tienen la misma área. 
  \item[Aditividad.] Si una región $A$ es la unión de cierta cantidad de regiones más chicas mutuamente disjuntas $A_i$, $i=1,\ldots,n$, la medida   de $A$ es la suma de las medidas de los $A_i$.
 \end{description}
@@ -65,7 +65,7 @@ Queremos construir pues una función $m$ tal que $m(A)$ represente la medida  de
 
 Utilizando la segunda y tercer propiedad se pueden relacionar el área del rectángulo de la figura \ref{fig:rect_descop} con las cuatro regiones en la que es dividido.
 
-Como veremos a lo largo de la materia la propiedad de aditividad debe ser estudiada con cuidado, esto ocurre por las intrincadas maneras en que una región puede ser unión de otras regiones. A lo largo de esta materia elaboraremos una  teoría que nos dará una descripción  precisa de a que conjuntos podemos asignarle una medida de modo que las propiedades previas sean consistentes. 
+Como veremos a lo largo de la materia la propiedad de aditividad debe ser estudiada con cuidado, esto ocurre por las intrincadas maneras en que una región puede ser unión de otras regiones. A lo largo de esta materia elaboraremos una  teoría que nos dará una descripción  precisa de a qué conjuntos podemos asignarle una medida de modo que las propiedades previas sean consistentes. 
 
 Por el momento veamos como las propiedades anteriores determinan practicamente de manera unívoca la medida de regiones elementales planas.  
 
@@ -81,24 +81,26 @@ Descubrimos así que nuestra medida deberá tener adicionalmente la siguiente pr
  \item[Monotonía.] Si $A\subset B$ entonces $m(A)\leq m(B)$. 
 \end{description}
 \marginpar{ Podríamos por ejemplo elegir el círculo de radio uno como unidad de área. Así ya no tendríamos el problema de ese número raro $\pi$ que aparece en la fórmula del área del círculo. ¡El área de cualquier círculo sería igual a su radio al cuadrado! Claro que aparecería $\pi$  en la fórmula del área del cuadrado de lado 1. Nos tapamos los pies y se destapa el cuerpo.}
-Es claro que si logramos construir una medida que satisfaga las propiedades anteriores cualquier multiplo por un número real positivo  de ella seguirá cumpliendo las propiedades. Esto es una manera de expresar el hecho que podemos usar diferentes unidades de medición. Esta cuestión se sortea proponiendo la unidad de medida. Esta unidad es completamente arbitraria, ud. podría elegir su figura plana preferida como unidad de área.   Cómo es habitual, elijamos el cuadrado cuyos lados miden la unidad de longitud supuesto que esta unidad fue previamente establecida. 
+Es claro que si logramos construir una medida que satisfaga las propiedades anteriores cualquier multiplo por un número real positivo  de ella seguirá cumpliendo las propiedades. Esto es una manera de expresar el hecho que podemos usar diferentes unidades de medición. Esta cuestión se sortea proponiendo la unidad de medida. Esta unidad es completamente arbitraria. Podríamos elegir cualquier figura plana   como unidad de área.   Es habitual elegir el cuadrado cuyos lados miden la unidad de longitud como la unidad de área. Para ello obviamente deberíamos haber establecido previamente la unidad de longitud. 
 
 
-Supongamos ahora que tenemos un rectángulo $R$ de un lado igual a la unidad y el otro de longitud racional $n/m$, $n,m\in\mathbb{N}$. Veamos que las propiedades de las medidas determinan el área de este rectángulo. Sea $Q$ un cuadrado de lados iguales a 1. Luego $m(Q)=1$, por suposición.  Primero observar que si dividimos un lado de $Q$ en $m$ segmentos iguales de longitud $1/m$, queda dividido el cuadrado en $m$ rectángulos $R_1,\ldots,R_m$ (ver figura en el margen), todos ellos  congruentes entre si, de modo que todos tienen la misma medida, digamos $m(R_1)$.  De modo que por la aditividad debe ocurrir que $m(R_1)=\cdots =m(R_m))=1/m$. Recordemos nuestra pretención de inferir la medida de un rectángulo $R$ de lado 1 y otro $n/m$. Este rectángulo esta compuesto de $n$ rectángulos congruentes a los $R_i$, $i=1,\ldots,m$, nuevamente por la aditividad inferimos que $m(R)=n/m$. Notar que $n/m$ es la base por la altura de $R$.
-
-Sea ahora una rectángulo $R$ con un lado unidad y el otro un real cualquiera $l>0$. Existen sendas sucesiones $0<q_k,p_k\in\mathbb{Q}$, $k\in\mathbb{N}$, tales que $q_1\leq q_2\leq\cdots \leq l \leq \cdots\leq p_2\leq p_1$ y $\lim_{k\to\infty}q_k =\lim_{k\to\infty} p_k=l$. Consideremos una dos sucesiones de rectángulos $R_k$ y $S_k$ que comparten el lado de $R$ igual a la unidad, mientras que los otros lados de $R_k$ y $S_k$ son iguales a $q_k$ y $p_k$ respectivamente. Luego por la monotonía
+Supongamos ahora que tenemos un rectángulo $R$ de un lado igual a la unidad y el otro de longitud racional $n/m$, $n,m\in\mathbb{N}$. Veamos que las propiedades de las medidas determinan el área de este rectángulo. Sea $Q$ un cuadrado de lados iguales a 1. Luego $m(Q)=1$, por suposición.  Primero observar que si dividimos un lado de $Q$ en $m$ segmentos iguales de longitud $1/m$, queda dividido el cuadrado en $m$ rectángulos $R_1,\ldots,R_m$ (ver figura \ref{fig:desc_cuad}), todos ellos  congruentes entre si, de modo que todos tienen la misma medida, digamos $m(R_1)$.  De modo que por la aditividad debe ocurrir que $m(R_1)=\cdots =m(R_m)=1/m$. Recordemos nuestra pretención de inferir la medida de un rectángulo $R$ de lado 1 y otro $n/m$. Este rectángulo esta compuesto de $n$ rectángulos congruentes a los $R_i$, $i=1,\ldots,m$, nuevamente por la aditividad inferimos que $m(R)=n/m$. Notar que $n/m$ es la base por la altura de $R$.
+ \begin{figure}[h]
+ \centering
+   \input{imagenes/CuadSubd.tikz}
+   
+\caption{Descomposición del cuadrado $Q$}\label{fig:desc_cuad}
+ \end{figure}
+Sea ahora una rectángulo $R$ con un lado unidad y el otro un real cualquiera $l>0$. Existen sendas sucesiones $0<q_k,p_k\in\mathbb{Q}$, $k\in\mathbb{N}$, tales que $q_1\leq q_2\leq\cdots \leq l \leq \cdots\leq p_2\leq p_1$ y $\lim_{k\to\infty}q_k =\lim_{k\to\infty} p_k=l$. Consideremos   dos sucesiones de rectángulos $R_k$ y $S_k$ que comparten el lado de $R$ igual a la unidad, mientras que los otros lados de $R_k$ y $S_k$ son iguales a $q_k$ y $p_k$ respectivamente. Luego por la monotonía
 \[
- q_k=m(R_k)\leq m(R) \leq m(S_k)\leq p_k.
+ q_k=m(R_k)\leq m(R) \leq m(S_k)= p_k.
 \]
 Tomando límite cuando $k\to\infty$ inferimos que $m(R)=l$. 
 
 
 
 
-\marginpar{
- \input{imagenes/CuadSubd.tikz}\\
- Descomposición del cuadrado $Q$
- } 
+ 
 A partir de las propiedades fundamentales que postulamos para la medida o área inferimos la famosa fórmula del área de un rectángulo en el caso que uno de los lados sea igual a la unidad. Si ahora tenemos un rectángulo arbitrario, hay que fijar un lado y repetir el análisis previo con el segundo lado. Se llega de este modo a justificar la fórmula del área para un  rectángulo arbitrario. 
 
 
@@ -120,7 +122,7 @@ En esta sección abordaremos el problema del área de regiones planas. Vamos a c
 Nuestra primera aproximación será la que propuso Bernhard Riemann en 1854, pero seguiremos  el enfoque de Jean Darboux. En esta parte de nuestra exposición consideraremos subconjuntos de $\mathbb{R}^2$ de un tipo especial, concretamente a conjuntos que quedan encerrados entre la gráfica de una función y del eje coordenadas $x$. Esto nos lleva alconcepto de integral. 
 
 
-\begin{definicion}[Partición]{} Sea $[a,b]$ un intervalo. Una {\em partición}\index{Partición} $P$ es un conjunto ordenado y finito de puntos, donde el primer elemento es $a$ y el último $b$. Es decir $P=\{x_0,x_1,\ldots,x_n\}$, donde $a=x_0<x_1<\cdots<x_n=b$. 
+\begin{definicion}[Partición]{} Sea $[a,b]$ un intervalo. Una {\em partición}\index{partición|textbf} $P$ es un conjunto ordenado y finito de puntos, donde el primer elemento es $a$ y el último $b$. Es decir $P=\{x_0,x_1,\ldots,x_n\}$, donde $a=x_0<x_1<\cdots<x_n=b$. 
  
 \end{definicion}
 
@@ -130,16 +132,16 @@ Nuestra primera aproximación será la que propuso Bernhard Riemann en 1854, per
 \begin{definicion}[Sumas de Darboux]{} Sea $f:[a,b]\to\mathbb{R}$ una función acotada y $P=\{x_0,x_1,\ldots,x_n\}$ una partición de $[a,b]$. Consideremos las siguientes magnitudes
 \begin{equation}\label{eq:Mi-mi}
  \begin{split}
-    m_i&:=\inf\{f(x)| x\in [x_{i-1},x_i]\}\\
-    M_i&:=\sup\{f(x)| x\in [x_{i-1},x_i]\}\\
+    m_i&:=\inf\{f(x)| x\in [x_{i-1},x_i]\},\quad i=1,\ldots,n\\
+    M_i&:=\sup\{f(x)| x\in [x_{i-1},x_i]\},\quad i=1,\ldots,n\\
  \end{split}
 \end{equation}
 
-Definimos la \emph{Suma superior de Darboux}\index{Suma superior} como
+Definimos la \emph{suma superior de Darboux}\index{suma!superior|textbf} como \index[simbolos]{$ \overline{S}(P,f)$|textbf}
 \[
  \overline{S}(P,f)=\sum_{i=1}^nM_i(x_i-x_{i-1}),
 \]
-y la \emph{Suma inferior de Darboux}\index{Suma inferiorr} como
+y la \emph{suma inferior de Darboux}\index{suma!inferior|textbf} como \index[simbolos]{$ \underline{S}(P,f)$|textbf}
 \[
  \underline{S}(P,f)=\sum_{i=1}^nm_i(x_i-x_{i-1}),
 \] 
@@ -188,12 +190,12 @@ Usando inducción podemos generalizar el resultado anterior como muestra el sigu
  \]
  Inferir que para cualesquiera $P,P'$ (sin importar que una este o no contenida dentro de la otra)
    \[
-\underline{S}(P,f)\leq \overline{S}(P,f).
+\underline{S}(P,f)\leq \overline{S}(P',f).
  \]
  
 \end{ejercicio}
 
-\begin{definicion}[Funciones integrables]{def:int_riemann} Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Diremos que $f$ es {\em integrable Riemann} \index{Integrable!Riemann} si 
+\begin{definicion}[Funciones integrables]{def:int_riemann} Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Diremos que $f$ es {\em integrable Riemann} \index{función!integrable Riemann|textbf} si 
 \begin{equation}\label{eq:integrable}
  \sup\left\{\underline{S}(P,f)| P \text{ partición de }[a,b]\right\}=\inf\left\{\overline{S}(P,f)| P \text{ partición de }[a,b]\right\}
 \end{equation}
@@ -235,7 +237,7 @@ Cuando no haya lugar a confusión, por ejemplo a lo largo de este capítulo, omi
 
 Es útil tener un símbolo que nos represente el supremo y el ínfimo en la Definición \ref{def:int_riemann}.
 
-\begin{definicion}[Integrables de Darboux]{def:int_dar}
+\begin{definicion}[Integrales de Darboux]{def:int_dar}\index{integral!Darboux|textbf}
  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Definimos la integral \emph{superior e inferior de Darboux} \index{integral!Darboux} como
 \begin{equation}\label{eq:darboux_sup}
  (\mathop{D})\overline{\int_a^b}f(x)dx=\inf\left\{\overline{S}(P,f)| P \text{ partición de }[a,b]\right\}.
@@ -247,19 +249,36 @@ y
 \end{definicion}
 
 Apelando a estos conceptos se tiene que $f$ es integrable Riemann si y sólo si 
+\marginpar{\paragraph{Caracterización supremo:} sea $A\subset\mathbb{R}$ entonces $\alpha=\sup A\iff$
+\begin{itemize}
+ \item $\alpha$  es cota superior de $A$.  
+ \item $\forall\varepsilon>0\exists a^*\in A: \alpha-\varepsilon< a^*\leq\alpha.$  
+\end{itemize}
+}
 \begin{equation}\label{eq:darboux_riemann}
  (\mathop{D})\overline{\int_a^b}f(x)dx= (\mathop{D})\underline{\int_a^b}f(x)dx .
  \end{equation}
-
  
-\begin{teorema}[Primer criterio de integrabilidad]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ es integrable si y solo si para todo $\epsilon>0$ existe una partición $P$ tal que 
-\begin{equation}\label{eq:Crit1Int}
+ 
+El objetivo  central de esta unidad es caracterizar a las funciones integrables Riemann. No es tan sencillo verificar por medio de la definición si una función es integrable en ese sentido, es por ello que intentaremos encontrar criterios cada vez más sencillos de usar que nos permitan decidir si una función es integrable Riemann.
+
+\marginpar{\paragraph{Caracterización ínfimo:} sea $A\subset\mathbb{R}$ entonces $\alpha=\inf A\iff$
+\begin{itemize}
+ \item $\alpha$  es cota inferior de $A$.  
+ \item $\forall\varepsilon>0\exists a^*\in A: \alpha\leq  a^*<\alpha+\varepsilon.$  
+\end{itemize}
+} 
+\begin{teorema}[Primer Criterio de Integrabilidad]{}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ es integrable si y solo si para todo $\epsilon>0$ existe una partición $P$ tal que 
+
+\begin{equation}\label{eq:Crit0Int}
  \overline{S}(P;f)-\underline{S}(P;f)<\epsilon.
 \end{equation}
  
 \end{teorema}
 
-\begin{demo} Veamos la parte ``solo si''. Si $f$ es integrable satisface \eqref{eq:integrable}. Si $\varepsilon>0$, usando la caracterización \eqref{lem:sup-inf-carac} (\textcolor{red}{debería haber una intro con estas propiedades}) tenemos que existen particiones $P'$ y $P''$ tales que:
+\begin{demo} Veamos la parte ``solo si''. Si $f$ es integrable satisface \eqref{eq:integrable}. Si $\varepsilon>0$, 
+
+usando las caracterizaciones del supremo e ínfimo que recordamos en el margen,     tenemos que existen particiones $P'$ y $P''$ tales que:
 
 
 \begin{eqnarray*}
@@ -272,16 +291,22 @@ Sea ahora la partición $P=P'\cup P''$. Por el ejercicio \eqref{ej:sumas-darboux
  \overline{S}(P;f)-\frac{\varepsilon}{2}\leq \overline{S}(P';f)-\frac{\varepsilon}{2}<\int_a^bf(x)dx<\underline{S}(P'';f)+\frac{\varepsilon}{2}
  \leq \underline{S}(P;f)+\frac{\varepsilon}{2}
 \end{multline*}
-Así tenemos \eqref{eq:Crit1Int}. 
+Así tenemos \eqref{eq:Crit0Int}. 
 
-Asumamos ahora que se satisface \eqref{eq:Crit1Int}. Entonces 
+Asumamos ahora que se satisface \eqref{eq:Crit0Int}. Entonces 
 
  \[
    (\mathop{D})\overline{\int_a^b}f(x)dx\leq \overline{S}(P;f)<
    \underline{S}(P;f)+\varepsilon<(\mathop{D})\underline{\int_a^b}f(x)dx +\varepsilon.
  \]
+ Como $\varepsilon$ es arbitrario concluímos que  \marginpar{Vamos a usar en reiteradas oportunidades que si uno tiene dos cantidades $A$ y $B$ tales que para todo $\varepsilon>$ se verifica que $A\leq B+\varepsilon$ entonces debe ocurrir que $A\leq B$.}
+ \[
+   (\mathop{D})\overline{\int_a^b}f(x)d=(D)\underline{\int_a^b}f(x)dx  .
+ \] 
 \end{demo}
 
+
+Vamos a valernos del Primer Criterio de Integrabilidad para justificar el valor de  algunas integrales. Observar que no es necesario  conocer el valor de la integral para poder utilizar este  criterio para deducir si una función es integrable. Sin embargo el criterio no ayuda a hallar ese valor.
 
 \begin{ejemplo}{ejemplo:integral-de-x} Sea $0\leq a<b$ veamos que 
 \[
@@ -290,12 +315,12 @@ Asumamos ahora que se satisface \eqref{eq:Crit1Int}. Entonces
 \begin{demo}
 Sea $n \in \nn$.
 Consideramos particiones uniformes $P_n=\{x_0,x_1,\ldots,x_n\}$ tales que
-\[x_k=a+\frac{k}{n}(b-a),\;\;  k=0,1,\ldots,n.\]
+\[x_i=a+\frac{i}{n}(b-a),\;\;  i=0,1,\ldots,n.\]
 Definimos
 \[\begin{split}
-m_i&=\inf\limits_{[x_{i-1},x_i]}f(x)=x_{i-1}=a+\frac{i-1}{n}(b-a),
+m_i&=\inf\limits_{[x_{i-1},x_i]}f(x)=x_{i-1}=a+\frac{i-1}{n}(b-a),\;\;  i=1,\ldots,n,
 \\
-M_i&=\sup\limits_{[x_{i-1},x_i]}f(x)=x_{i}=a+\frac{i}{n}(b-a).
+M_i&=\sup\limits_{[x_{i-1},x_i]}f(x)=x_{i}=a+\frac{i}{n}(b-a)\;\;  i=1,\ldots,n.
 \end{split}\]
 Luego
 \[
@@ -304,11 +329,16 @@ Luego
 \sum\limits_{i=0}^{n-1}  
 \frac{b-a}{n}\frac{b-a}{n}=\frac{(b-a)^2}{n}
 \]
-y tomando $n$ suficientemente grande vemos que $\overline{S}(f,P_n)-\underline{S}(f,P_n)$ es menor que $\epsilon$.
+y tomando $n$ suficientemente grande vemos que $\overline{S}(f,P_n)-\underline{S}(f,P_n)$ es menor que cualquier $\epsilon>0$.
 
 Hasta aqu\'i, por aplicaci\'on del Primer Criterio de Integrabilidad,  hemos probado que $f(x)=x$ es integrable. 
 
 Para justificar el valor de la integral operamos del siguiente modo
+
+\paragraph{}
+
+\marginpar{Vamos a usar la conocida fórmula:
+$$\sum\limits_{i=0}^{n-1} i=\frac{(n-1)n}{2}.$$}
 \[
 \begin{split}
 \overline{S}(f,P_n)=&
@@ -347,13 +377,13 @@ haciendo $n \to \infty$ obtenemos el valor buscado.
 {\em Ayuda:} Usar particiones uniformes y la fórmula $\sum_{i=1}^n i^2= n(n+1)(2n+1)/6$.
 \end{ejercicio}
 
-\begin{ejemplo}{ej:int x^n} Sea $0< a<b$ y $m\in\mathbb{Z}$, $m\neq -1$,  veamos que 
+\begin{ejemplo}{ej:int x^n} Sea $0< a<b$ y $m\in\mathbb{R}$, $m\neq -1$,  veamos que 
 \[
  \int_a^b x^m \,dx=\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.
 \]
 
 \begin{demo}
-Podr\'iamos usar particiones uniformes, pero eso nos obligar\'ia a hallar f\'ormulas para $\sum\limits_{i=0}^n{i^m}$. Usando particiones no uniformes evitamos ese inconveniente. 
+Podr\'iamos usar particiones uniformes, pero eso nos obligar\'ia a hallar f\'ormulas para $\sum\limits_{i=0}^n{i^m}$. Usando ciertas particiones no uniformes convenientemente elegidas evitamos esto. 
 
 Tomamos $n \in \nn$ y 
 \[
@@ -375,7 +405,9 @@ Similarmente,
 \[
 M_i=a^mq^{mi},\;\;i=1,2,\ldots,n.
 \]
-Ahora, 
+Ahora, \marginpar{Fórmula para la suma de la progresión geométrica:
+$$1+r+\dots +r^n=\frac{1-r^{n+1}}{1-r}.$$
+}
 \[
 \begin{split}
 \overline{S}(f,P_n)=&
@@ -416,13 +448,16 @@ El razonamiento se completa con
 \]
 Luego, $\forall \epsilon>0$ existe $N\in \nn$ tal que si $n>N$ entonces
 \[\overline{S}(f,P_n)-\underline{S}(f, P_n)<\epsilon.\]
-
-Si $m<0$  y $m \neq -1$, trabajando de manera an\'aloga obtenemos el mismo resultado. 
-
-Finalmente, $f(x)=x^m$ es integrable  y, como en el Ejemplo \ref{ejemplo:integral-de-x}, se tiene
+Demostrando que $f$ es integrable y se tiene
 \[\int_a^b x^m dx=\frac{b^{m+1}}{m+1}-\frac{a^{m+1}}{m+1}.\]
+El caso  $m<0$  y $m \neq -1$ se resuelve de manera an\'aloga
 \end{demo}
 \end{ejemplo}
+
+\begin{observa} Al mismo resultado se llega asumiendo $a<b<0$ o $m>0$  y $a\leq 0\leq b$. El caso $1\neq m<0$  y $a\leq 0\leq b$ requiere considerar integrales impropias dado que la función $f(x)=x^m$ es no acotada bajo ese supuesto. 
+ 
+\end{observa}
+
 
 \begin{ejercicio}{} Sea $0< a<b$  y $f(x)=1/x$. Como en el ejemplo \ref{ej:int x^n}  para $n\in\nn$ tomamos $q=(b/a)^{1/n}$ y 
 \[P_n=\{a,qa,q^2a,\ldots, aq^{n-1},b\}.\]  
@@ -439,6 +474,28 @@ Inferir que $f$ es integrable en $[a,b]$ y
 \]
 \end{ejercicio}
 
+El siguiente ejemplo nos muestra que no todas las funciones son integrables.
+
+
+
+\begin{ejemplo}{}[Función de Dirichlet]\marginpar{\begin{center}\includegraphics[scale=.4]{imagenes/Dirichlet.jpg}\end{center}  <<Johann Peter Gustav Lejeune Dirichlet  fue un matemático alemán al que se le atribuye la definición "formal" moderna de una función. >>  (Wikipedia)} Es la función $f:[0,1]\to\mathbb{R}$ definida por 
+\[
+ f(x)=\begin{cases} 1 & \text{ si } x\in\mathbb{Q}\\0 & \text{ si }   x\notin\mathbb{Q}\\
+\end{cases}
+\]
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=.5]{imagenes/dirichlet.png}
+ \caption{Una idea aproximada del gráfico de la función de Dirichlet}
+\end{figure}
+Veamos que $f$ es discontinua en todo punto y no integrable. La discontinuidad es consecuencia que cualquiera sea el punto $x_0\in [a,b]$ y cualquiera sea el número $\delta>0$ tendremos que en el intervalo $(x_0-\delta,x_0+\delta)$ (hay que considerar una mitad de este intervalo en caso que $x_0$ sea un extremos del intervalo $[a,b]$) habrá tanto números racionales como irracionales y por consiguiente habrá puntos cuya imagen es $1$ y otros que es cero. Así, es falso  que pueda conseguirse que $|f(x)-f(x_0) |<\varepsilon$ para todo $\varepsilon<1/2$. 
+
+La no integrabilidad surje del hecho que, nuevamente por la densidad tanto de los números racionales como la de los irracionales, tendremos que para cualquier partición $P$, los números $m_i$ serán siempre $0$ y los $M_i$ siempre uno, por consiguiente
+\[\overline{S}(f,P_n)-\underline{S}(f, P_n)=1,\]
+que implica la no intgerabilidad por contradecirse el segundo criterio.
+
+\end{ejemplo}
 
 \begin{ejemplo}{} Sea $0\leq a<b\leq \pi/2$, veamos que
 \[
@@ -452,7 +509,7 @@ x_i=a+\frac{i}{n}(b-a),\;\;i=0,1,\ldots,n;
 \]
 entonces
 \[
-x_i-x_{i-1}=\frac{1}{n},
+x_i-x_{i-1}=\frac{b-a}{n},
 \]
 y como $f(x)=\sen x$ es creciente en $[a,b]$ se tiene que 
 \[
@@ -468,11 +525,11 @@ Una t\'ecnica usual para calcular sumas consiste en expresar los t\'erminos de l
 \[
 2\sen u \sen v =\cos(u-v)-\cos (u+v)
 \]
-con $u=a+ib$ y $v=h/2$, de donde obtenemos
+con $u=a+ih$ y $v=h/2$, de donde obtenemos
 \[
-2 \sen(a+ib) \sen \frac{h}{2}=
+2 \sen(a+ih) \sen \frac{h}{2}=
 \cos\left[a+\left(i-\frac{1}{2}\right)h\right] - 
-\cos \left[a+\left(i+\frac{i}{2}\right)h\right].
+\cos \left[a+\left(i+\frac{1}{2}\right)h\right].
 \]
 Luego, podemos re-escribir $\overline{S}(f,P_n)$ como
 \[
@@ -481,7 +538,7 @@ Luego, podemos re-escribir $\overline{S}(f,P_n)$ como
 &h \frac{1}{2 \sen\frac{h}{2} }
 \sum\limits_{i=1}^n 
 \cos\left[a+\left(i-\frac{1}{2}\right) h\right] - 
-\cos \left[a+\left(i+\frac{i}{2}\right) h\right]
+\cos \left[a+\left(i+\frac{1}{2}\right) h\right]
 \\
 =&
 \frac{h}{2 \sen\frac{h}{2}}
@@ -583,7 +640,7 @@ donde $F$ es una función que satisface $F'=f$.
 
 
  
-\begin{teorema}[Segundo criterio de integrabilidad]{teo:2-crite}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ sea integrable si y solo si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
+\begin{teorema}[Segundo Criterio de Integrabilidad]{teo:2-crite}  Sea $f:[a,b]\to\mathbb{R}$ una función acotada. Entonces  $f$ es integrable si y solo si para todo $\epsilon>0$ existe un $\delta>0$ tal que para cualquier partición $P$ que satisface
 \[\max_i\{x_i-x_{i-1}\}<\delta,\]
 se tiene que
 \begin{equation}\label{eq:Crit1Int}
@@ -595,7 +652,7 @@ se tiene que
 \[
  \overline{S}(f;P^*)-\underline{S}(f;P^*)<\frac{\epsilon}{2}.
 \]
-Como $f$ es integrable es acotada, por consiguiente existe $M>0$ tal que
+Como $f$ es acotada, existe $M>0$ tal que
 \[
  |f|\leq M.
 \]
@@ -646,7 +703,7 @@ Entonces, tomando en consideración la figura \ref{fig:crite2}:
  \caption{Demostración 2° criterio}\label{fig:crite2}
 \end{figure}
 
-Cuando  $i\notin I $  existe $j$ tal que $x_{i-1}<y_j<x_i$. 
+Cuando  $i\notin I $  existe $j$ tal que $x_{i-1}<y_j<x_i$ y por consiguiente hay a los sumo $m$ índices $i$ tal que   $i\notin I $. 
 
 Así finalmente
 
@@ -669,81 +726,165 @@ En la segunda sumatoria usamos las acontaciones $M_i-m_i\leq 2M$ y $(x_i-x_{i-1}
 \end{demo}
 
 
+\begin{observa} El criterio anterior es claramente más difícil de verificar pues requiere demostrar que un conjunto de particiones tiene la propiedad  \eqref{eq:Crit1Int} a diferencia del primer criterio donde sólo era menester mostrar que existía una partición con la propiedad. El segundo criterio se revela más útil usándolo para obtener consecuencias de la integrabilidad más que como medio de prueba de la misma. 
+ 
+\end{observa}
+
+
 
 \section{Integrabilidad y continuidad}
 
+Recordemos la definición de continuidad uniforme dada en Definicion \ref{def:cont_unif} y  el Ejercicio \ref{ej:cont=>unif_cont}.
+ 
+ 
+\begin{teorema}{} 
+Si $f:[a,b]\to\mathbb{R}$ es continua entonces es integrable. 
 
-\begin{definicion}{}[Uniforme continuidad] \index{continuidad!uniforme} Sean $(X,d)$ e $(Y,d')$ espacios métricos. Diremos que $f:X\to Y$ es uniformemente continua si 
-\[
- \forall\varepsilon>0\exists \delta>0:d(x,y)<\delta\Rightarrow d'(f(x),f(y))<\varepsilon.
-\]
+\end{teorema}
+
 
  
-\end{definicion}
-
-\begin{teorema}{}[Uniforme continuidad] 
- Sean $(X,d)$ e $(Y,d')$ espacios métricos con $X$ compacto. Si $f:X\to Y$ es continua entonces es uniformemente continua.
-
-\end{teorema}
-
-\begin{teorema}[Continuidad implica integrabilidad]{}  Si $f:[a,b]\to\mathbb{R}$ es una función continua entonces es integrable.
-\end{teorema}
-\begin{demo}  Apliquemos la definición de continuidad uniforme con $\varepsilon/(b-a)$ en lugar de $\varepsilon$. Sea $P=\{x_1,\ldots,x_n\}$ una partición tal que
+\begin{demo}  Por el Ejercicio \ref{ej:cont=>unif_cont} sabemos que $f$ es uniformemente continua.  Sea $P=\{x_1,\ldots,x_n\}$ una partición tal que
 \[
- \max_{i=1,\ldots,n}(x_i-x_{i-1})<\delta.
+ \max_{i=1,\ldots,n}(x_i-x_{i-1})<\delta,
 \]
-Como $f$ es continua $f$ alcanza su máximo y mínimo en $[x_{i-1},x_i]$. Luego existen $x^*,x_*\in [x_{i-1},x_i]$ con $M_i^*=f(x^*)$ y $m_i^*=f(x_*)$.  Luego
+donde $\delta>0$ satisface  la definición de continuidad uniforme con $\varepsilon/(b-a)$ en lugar de $\varepsilon$.
+Como $f$ es continua, $f$ alcanza su máximo y mínimo en $[x_{i-1},x_i]$. Luego existen $x^*,x_*\in [x_{i-1},x_i]$ con $M_i=f(x^*)$ y $m_i=f(x_*)$.  Entonces 
 \[
  M_i-m_i=f(x^*)-f(x_*)<\varepsilon/(b-a).
  \]
-Entonces 
+De allí
 \[
- \overline{S}(P;f)-\underline{S}(P;f)=\sum_{i=1}^n(M_i-m_i)(x_i-x_{i-1})\leq \frac{\varepsilon}{(b-a)}\sum_{i=1}^n (x_i-x_{i-1})=\varepsilon.
+ \overline{S}(P;f)-\underline{S}(P;f)=\sum_{i=1}^n(M_i-m_i)(x_i-x_{i-1})\leq \frac{\varepsilon}{(b-a)}\sum_{i=1}^n (x_i-x_{i-1})=\varepsilon,
 \]
-
-
- \end{demo}
+lo que verifica el Segundo Criterio de Integrabilidad
+\end{demo}
 
  
-¿Qué ocurre con las funciones discontinuas? 
+¿Qué ocurre con las funciones discontinuas? El teorema anterior revela algún grado de conexión entre la integrabilidad y la continuidad, podríamos preguntarnos si ambos conceptos son equivalentes. Lamentablemente esto no es el caso, como nos muestra el siguiente ejemplo.
 
-\begin{ejemplo}{}[Función de Heavside] Es la función
+\begin{ejemplo}{}[Función de Heaviside] \index{función!Heavside|textbf}\marginpar{\begin{center}\includegraphics[scale=.4]{imagenes/Heaviside.jpg}\end{center}  <<Oliver Heaviside, fue un físico, ingeniero eléctrico y matemático inglés. Introdujo los números complejos en el análisis de circuitos, inventó una nueva técnica para resolver ecuaciones diferenciales (equivalente a la transformada de Laplace), desarrolló de forma independiente el cálculo de vectores, y reescribió las ecuaciones de Maxwell en el formato comúnmente usado hoy en día.>>  (Wikipedia)} Es la función
 \[
  H(x)=\begin{cases}0 & \text{ si } x<0\\1 & \text{ si } x\geq 0\end{cases}.
 \]
-Es discontinua en $[-1,1]$ pero integrable.  \textcolor{red}{JUSTIFICAR}
+Es discontinua en $[-1,1]$ pero integrable.  Para justificar esta afirmación tomemos $\varepsilon>0$ y consideremos la partición $P=\{-1,-\varepsilon/2,\varepsilon/2,1\}$. Entonces 
+\begin{multline*}
+ \overline{S}(P;f)-\underline{S}(P;f)\\
+ =(0-0)(-\varepsilon/2-(-1))+(1-0)(\varepsilon/2-(-\varepsilon/2))+(1-1)(1-\varepsilon/2)\leq \varepsilon.
+\end{multline*}
+ 
+Hemos demostrado que $f$ es integrable. Además
+\[
+ 1-\varepsilon/2=\overline{S}(P;f)\leq \int_{-1}^1f(x)dx \leq  \overline{S}(P;f)=1+\varepsilon/2.
+\]
+Como $\varepsilon$ es arbitrario, concluímos que
+\[
+ \int_{-1}^1f(x)dx=1.
+\]
+
  
 \end{ejemplo}
 
 
-\begin{ejemplo}{}[Función de Dirichlet] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
+
+
+
+Ahora introduciremos una función que juega un papel importante en la teoría de la integral de Riemann.
+
+\begin{ejemplo}{ejem:ome_thomae}[Función de Thomae] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
 \[
- f(x)=\begin{cases} 1 & \text{ si } x\in\mathbb{Q}\\0 & \text{ si }   x\notin\mathbb{Q}\\
+ f(x)=\begin{cases} \frac{1}{q} & \text{ si } x=\frac{p}{q},p,q\in\mathbb{Z}, \text{m.c.d}(p,q)=1
+ \\0 & \text{ si }   x\notin\mathbb{Q}\\
 \end{cases}
 \]
-\marginpar{\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/dirichlet.png}\\
-Función de Dirichlet}
-Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUSTIFICAR}
+
+\begin{figure}[H]
+\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/thomae.png}\\
+\caption{Un gráfico aproximado de la función de Thomae}
+\end{figure}
+
+Veamos que esta función es integrable en $[0,1]$. Sea $\varepsilon>0$. Tomemos $q^*\in\mathbb{N}$ tal que $1/q^*\leq \varepsilon/2$.  
+
+Consideremos el conjunto $F$ de todas las fracciones del $[0,1]$ cuyo denominador no supera a $q^*$. El conjunto $F$  es finito,  de hecho:
+\begin{equation}\label{eq:conj_F}
+  F:=\left\{\frac12,\frac13,\frac23,\ldots,\frac{1}{q^*},\ldots,\frac{q^*-1}{q^*} \right\}.
+\end{equation}
+Por consiguiente $\#F\leq (q^*-1)q^*/2=:N$.  
+
+Sea $\delta:=\varepsilon/4N$ y $P=\{x_0,\ldots,x:_n\}$ una partición tal que $(x_i-x_{i-1})<\delta$, $i=1,\ldots,n$. 
+
+Definimos
+  
+  \[
+   I =\left\{i\mid F\cap  [x_{i-1},x_i]\neq\emptyset  \right \}.
+  \]
+  Como un punto puede estar a lo sumo en dos intervalos de una partición, tendremos que $\# I \leq 2N.$
+
+
+
+Observar que $0=m_i\leq M_i\leq 1 $, $i=1,\ldots,n$. Se puede ver que si $i\not \in    I $ entonces $M_i\leq \varepsilon/2$.
+
+
+Usando todo lo observado 
+
+\begin{multline*}
+ \overline{S}(P;f)-\underline{S}(P;f)=\sum_{i=1}^n(M_i-m_i)(x_i-x_{i-1})\\ =\sum_{i\in I}(M_i-m_i)(x_i-x_{i-1})+\sum_{i\notin I} (M_i-m_i)(x_i-x_{i-1})\\
+ \leq 2N\delta+\frac{\varepsilon}{2}\sum_{i=1}^n(x_i-x_{i-1})<\varepsilon
+\end{multline*}
+    
+
 \end{ejemplo}
+
+
+
+\begin{ejercicio}{ejem:ome_mono2}[Funciones monótononas]  Si $f$ es una función monótona   en $I=[a,b]$ entonces $f$ es integrable
+ 
+\end{ejercicio}
+
+
+
+ \begin{ejemplo}{}[Escalera discontinua] Sea $\mathbb{Q}\cap [0,1]=\{q_1,q_2,\ldots\}$ una numeración de los racionales del $[0,1]$. Definamos $f:[0,1]\to\mathbb{R}$ como
+ \begin{equation}\label{eq:esc_disc}
+  f(x)=\sum_{n=1}^{\infty}\frac{1}{2^n}H(x-q_n),
+ \end{equation}
+donde $H$ es la función de \emph{Heavside}.
+
+Observar que la función de Heaviside tiene la forma de un escalón. La funciones $x\mapsto \frac{1}{2^n}H(x-q_n)$ tienen una gráfica en forma de escalón pero trasladado y de altura $1/2^n$. La suma de todas las  funciones de este tipo cuando $q_n$ se mueve en todos los racionales de $[0,1]$  es la gráfica, por cierto bastante dificil de concebir en la imaginación, de una escalera con peldaños en un conjunto que es denso. Ver figura \ref{fig:esc_disc}. 
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=.5]{imagenes/escalera_disc.png}
+ % escalera_disc.png: 667x622 px, 100dpi, 16.94x15.80 cm, bb=0 0 480 448
+ \label{fig:esc_disc}\caption{Gráfica de la función escalera discontinua. Se usaron otros valores, en lugar de $1/2^n$ para resaltar el aspecto de la gráfica.}
+\end{figure}
+
+Por el $M$-test de Weiertrass, Teorema \ref{teo:m-test},  \marginpar{ \textbf{M-test:} Si $X$ es espacio métrico y $f_n:X\to\mathbb{R}$ una sucesión de funciones. Si existen números  $M_n\geq 0$ tales que $|f_n|\leq M_n$ y $\sum_{n=1}^\infty M_n<\infty$} y puesto que $|1/2^nH(x-q_n)|\leq 1/2^n$ vemos que la serie \eqref{eq:esc_disc} converge uniformemente. Cada término en esta serie es una función continua sobre el conjunto de números irracionales, entonces, por el Teorema \ref{teo:unif=>cont} tendremos que $f$ es también continua en $x$ cuando $x\notin\mathbb{Q}$. Si en cambio $x\in\mathbb{Q}$, un término de la serie, y sólo uno, es discontinuo en $x$, concretamente el término que satisfaga $q_n=x$. Ese término es una función discontinua a salto finito. El resto de los términos resultan ser funciones continuas. De modo que $f$ se puede escribir como una función continua \marginpar{La suma de una función continua en $x=a$ más una discontinua es discontinua.}en $x$ más otra discontinua a salto finito, la suma $f(x)$ es una función necesariamente discontinua. En conlusión $f$ es continua en $x$ si y solo si $x\notin \mathbb{Q}$. 
+
+Finalmente 
+ $f$ es monotona no decreciente puesto que cada sumando que la compone tiene esa propiedad. Esto último implica que $f$ es integrable.
+\end{ejemplo}
+
 
 
  \section{Criterio integrabilidad de Riemann}
+  
  
-\begin{definicion}[Oscilación]{} Sea $f:[a,b]\to\mathbb{R}$ acotada y $E\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación! sobre conjunto} de $f$ en $E$ por 
+\begin{definicion}[Oscilación]{def:osc_conj} Sea $f:[a,b]\to\mathbb{R}$ acotada y $E\subset [a,b]$. Definimos la \emph{oscilación}\index{oscilación! sobre conjunto} de $f$ en $E$ por 
 \[
  w(f,E)=\sup\{f(x)| x\in E\}-\inf\{f(x)| x\in E\}.
 \]
 \end{definicion}
 \begin{figure}[h]
  \begin{center}
+ \def\svgwidth{6cm}
 \input{imagenes/oscilacion.pdf_tex}
  \end{center}
  \caption{Oscilación $w(f,I)$}\label{fig:paral-trig}
 \end{figure}
 
-\begin{ejemplo}{} 
+\begin{ejemplo}{ej:diri+heavi1} 
 \begin{enumerate}
- \item Para la función de Dirichlet $w(f,I)=1$ para todo $I$ con interior no vacío.
+ \item Para la función de Dirichlet $w(f,I)=1$ para todo $I$ con interior no vacío, puesto que todo conjunto abierto contiene tanto números racionales como irracionales.
  \item Para la función de Heavside e $I=[\alpha,\beta]$
  \[
   w(f,I)=\begin{cases}
@@ -755,72 +896,45 @@ Veamos que $f$ es discontinua en todo punto y no integrable. \textcolor{red}{JUS
 \end{ejemplo}
 
 
+ 
 
 
+\begin{ejemplo}{ejem:ome_thomae}[Oscilación función de Thomae] Supongamos $I$ un intervalo tal que  $I^0\neq\emptyset$  e $I\subset [0,1]$. Consideremos el subconjunto de $\mathbb{N}$ definido por 
+$$A=\left\{q\in\mathbb{N}\mid \exists p\in\mathbb{N}: \frac{p}{q}\in I^0\right\}.$$
+Por la buena ordenación de $\mathbb{N}$, $A$ tiene un primer elemento. De esta manera identificamos la(s) fracción(es) dentro de $I^0$ con el denominador más pequeño. Esas fracciones corresponderan a los números donde la función de Thomae alcanza un máximo. Como el valor mínimo de la función en un conjunto abierto es siempre $0$, por la densidad de los números irracionales, tendremos que:  
 
+     \begin{equation}\label{eq:osc_tho}
+      w(f,I)=1/q^*,\quad  q^*=\min A. 
+     \end{equation}
 
-\begin{ejemplo}{}[Función de Thomae] Es la función $f:[0,1]\to\mathbb{R}$ definida por 
-\[
- f(x)=\begin{cases} \frac{1}{q} & \text{ si } x=\frac{p}{q},p,q\in\mathbb{Z}, \text{m.c.d}(p,q)=1
- \\0 & \text{ si }   x\notin\mathbb{Q}\\
-\end{cases}
-\]
-
-\begin{figure}[H]
-\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{imagenes/thomae.png}\\
-\caption{Función de Thomae}
-\end{figure}
-
-
-Si $I^o\neq\emptyset$, $f$ la función de Thomae e $I\subset [0,1]$ entonces 
-     $ w(f,I)=1/q^*$, donde $q^*$ es el mínimo valor de $q$ para el que existe $p\leq q$ tal que $p/q\in I$. \textcolor{red}{Justificar}
 
 
 \end{ejemplo}
-
- \begin{ejemplo}{}[Escalera discontinua] Sea $\mathbb{Q}\cap [0,1]=\{q_1,q_2,\ldots\}$ una numeración de los racionales del $[0,1]$. Definamos $f:[0,1]\to\mathbb{R}$ como
- \[
-  f(x)=\sum_{n=1}^{\infty}\frac{1}{2^n}H(x-q_n),
- \]
-donde $H$ es la función de \emph{Heavside}\index{Heavside}. 
-
-Veamos que $f$ es monotona no decreciente y discontinua en todo punto de $[0,1]\cap \mathbb{Q}$. 
- Para la función escalera discontinua e $I\subset [0,1]$ abierto
-  \[
-   w(f,I)=\sum_{q_n\in I}\frac{1}{2^n}.
-  \]
-  \textcolor{red}{JUSTIFICAR}
-
-
-\end{ejemplo}
-
-
-
-
-
-
-
-
-
-
-\begin{definicion}{}[Oscilación en un punto] Sea $f:[a,b]\to\rr$ y $x\in [a,b]$, definimos la  \emph{oscilación}\index{oscilación! en un punto} de $f$ en $x$ como
-
-\[
- \omega(f;x)=\inf\limits_{x\in G}\omega(f;G).
-\]
-Donde el $\inf$ se toma sobre todos los $G$ abiertos relativos a $[a,b]$ con $x\in G$.  
 
  
-\end{definicion}
 
-\begin{ejercicio}{}
- Demostrar que $f$ es continua en $x$ si y sólo si $\omega(f;x)=0$.
+\begin{ejercicio}{ejem:ome_mono}[Oscilación funciones monótononas]  Si $f$ es una función monótona   en $I=[a,b]$ entonces $w(f,I)=f(b)-f(a)$.
 \end{ejercicio}
 
+ \begin{ejemplo}{}[Escalera discontinua]  Aplicando el ejemplo \ref{ejem:ome_mono}  a la función escalera discontinua,  tenemos que para $I=[a,b]\subset [0,1]$ 
+  \[
+   w(f,I)=f(b)-f(a)= \sum_{q_n\leq  b}\frac{1}{2^n}-\sum_{q_n\leq  a}\frac{1}{2^n}=\sum_{a<q_n\leq  b}\frac{1}{2^n}.
+  \]
 
 
 
-\begin{definicion}{} Sea $f:[a,b]\to\mathbb{R}$ acotada, $\sigma>0$ y $P=\{x_0,x_1,\ldots,x_n\}$ una partición. Definimos
+\end{ejemplo}
+
+
+
+
+
+
+
+
+
+
+\begin{definicion}{def:i_sigma} Sea $f:[a,b]\to\mathbb{R}$ acotada, $\sigma>0$ y $P=\{x_0,x_1,\ldots,x_n\}$ una partición. Definimos
 \[
  I_{\sigma}:=\{i\in\{1,\ldots,n\}|w(f,[x_{i-1},x_i])\geq\sigma\}.
 \]
@@ -832,9 +946,17 @@ y
 
 
 
+\begin{figure}[h]
+\begin{center}
+\def\svgwidth{10cm}
+\input{imagenes/variaciones.pdf_tex}
+\end{center}
+ \caption{ Definición \ref{def:i_sigma}. En la situación de la gráfica $I_{\sigma}=\{1\}$ y $R(P,f,\sigma)=x_1-x_0$.}
+\end{figure}
 
 
-\begin{proposicion}{} Si $f$ es continua en $[a,b]$ para todo $\sigma>0$ existe $\delta>0$ tal que 
+
+\begin{proposicion}{prop:R_cont} Si $f$ es continua en $[a,b]$ para todo $\sigma>0$ existe $\delta>0$ tal que para toda partición $P=\{x_0,\dots,x_n\}$ del intervalo $[a,b]$:
 \[
 \max_i(x_i-x_{i-1})<\delta\Rightarrow I_{\sigma}=\emptyset\Rightarrow R(P,f,\sigma)=0. 
 \]
@@ -842,15 +964,33 @@ y
  
 \end{proposicion}
 
-\begin{ejemplo}{} Para la función de Dirichlet y para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=\{1,\ldots,n\}$ y $R(P,f,\sigma)=1$
+\begin{proof} Sea $\sigma>0$. Como $f$ es continua sobre un compacto por el Ejercicio \ref{ej:cont=>unif_cont} sabemos que $f$ es uniformemente continua. Luego existe $\delta>0$  tal que si $|x-y|<\delta$ entonces $|f(x)-f(y)|<\sigma$. Sea  $P=\{x_0,\dots,x_n\}$ partición del intervalo $[a,b]$ tal que $\max_i(x_i-x_{i-1})<\delta$. Como $f$ es continua en cada compacto $[x_{i-1},x_i]$, por el ejercicio \ref{ejer:comp=>alcanzamax}, $f$ alcanza un máximo en algún punto $x^*$ y un mínimo en $x_*$. Luego, como $|x^*-x_*|<\delta$, 
+$$\omega(f,[x_{i-1},x_i])=\sup_{[x_{i-1},x_i]}f - \inf_{[x_{i-1},x_i]}f=f(x^*)-f(x_*)<\sigma.$$ 
+Enconsecuencia $I_{\sigma}=\emptyset$ y esto implica $R(P,f,\sigma)=0$. 
+\end{proof}
+
+
+
+\begin{ejemplo}{ejem:R_dirich}[Función de Dirichlet] Si $f$ es  la función de Dirichlet y para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=\{1,\ldots,n\}$ y $R(P,f,\sigma)=1$. Para justificar esta observación, consideremos una partición $0=x_0<\cdots<x_n=1$. Usando el Ejemplo \ref{ej:diri+heavi1} deducimos  que $\omega(f,[x_{i-1},x_i])=1 $, luego  $I_{\sigma}$ contiene todos los índices $i$. Por otro lado
+\[
+ R(P,f,\sigma)=\sum_{i=1}^n(x_i-x_{i-1})=1. 
+\]
+
  
 \end{ejemplo}
 
-\begin{ejemplo}{} Para la función de Heavside,   para todo $0<\sigma<1$ y para toda partición de $[0,1]$ tenemos $I_{\sigma}=i$, donde $i$ es el índice para el que $0\in (x_{i-1},x_i]$ y $R(P,F,\sigma)=x_i-x_{i-1}$.
+\begin{ejemplo}{ejem:R_heavi}[ Función de Heaviside]  Para esta función teniendo en cuenta el  Ejemplo \ref{ej:diri+heavi1}  para toda partición de $[-1,1]$ tenemos:
+ \[
+  w(f,[x_{i-1},x_i])=\begin{cases}
+          1 & \text{ si } 0\in (x_{i-1},x_i]\\
+          0 & \text{ si } 0\notin (x_{i-1},x_i]\\
+         \end{cases}
+ \]
+Así, cuando $0<\sigma<1$ vemos que $I_{\sigma}=i$, donde $i$ es el índice para el que $0\in (x_{i-1},x_i]$ y $R(P,F,\sigma)=x_i-x_{i-1}$.
  
 \end{ejemplo}
 
-\begin{teorema}[Criterio de integrabilidad de Riemann]{teo:crite_riemann} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ tal que que para cualquier partición $P$ que satisface
+\begin{teorema}[Criterio de integrabilidad de Riemann (CIR)]{teo:crite_riemann} Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si  para todo $\epsilon>0$ y $\sigma>0$ existe $\delta>0$ tal que que para cualquier partición $P$ que satisface
 \[\max_i\{x_i-x_{i-1}\}<\delta,\]
 se tiene que
 \[R(P,f,\sigma)<\epsilon.\]
@@ -872,102 +1012,117 @@ Deducimos
 
 Para el recíproco, tomemos $\varepsilon>0$. Como $f$ es acotada, existe $M>0$ tal que $|f|\leq M$.  Observar que  $M$ satisface $M_i-m_i\leq 2M$. Vamos a tomar $\sigma=\varepsilon/2(b-a)$ y tomamos $\delta>0$ que satisface la condición necesaria del teorema para ese $\sigma$ y con $\varepsilon/4M$ en lugar de $\varepsilon$. Recordemos
 \[
- I_\sigma=\{i \left|{f}\right. w(f,[x_{i-1},x_i])\geq \sigma\}
+ I_\sigma=\{i \left| w(f,[x_{i-1},x_i])\geq \sigma\right.\}.
 \]
 Entonces 
 
 \begin{multline*}\label{eq:3criteb}
  \overline{S}(P;f)-\underline{S}(P;f)= \sum_{i\in I_\sigma} (M_i-m_i)(x_i-x_{i-1})+\sum_{i\notin I_\sigma} (M_i-m_i)(x_i-x_{i-1})\\
- \leq 2M\sum_{i\in I_\sigma}  (x_i-x_{i-1})+ \sigma \sum_{i\in I_\sigma}  (x_i-x_{i-1})<\varepsilon
+ \leq 2M\sum_{i\in I_\sigma}  (x_i-x_{i-1})+ \sigma \sum_{i\notin I_\sigma}  (x_i-x_{i-1})<\varepsilon
 \end{multline*}
 
  
 \end{proof}
 
+\begin{observa} Usando el CIR y la Proposición \ref{prop:R_cont} vemos de manera inmediata nuevamente que las funciones continuas son integrables. 
+ 
+\end{observa}
 
 
 
-\begin{ejemplo}{} Discutir los ejemplos Thomae, Dirichlet, Heaveside, Continuas, escalera discontinua.  
-
-
-En el caso de escalera discontinua, sea $\sigma,\epsilon>0$ cualesquiera.  Elijamos $N$ suficientemente grande para que 
-\[\frac{1}{2^N}<\sigma.\]
-Tomemos 
-\[\delta:=\frac{\epsilon}{N}\inf\{d(q_i,q_j)\mid i,j=1,\ldots , N\}.\]
-Sea $P=\{x_0,\ldots, x_n\}$ una partición tal que
-\[\max(x_i-x_{i-1})<\delta.\]
-Entonces cada intervalo $[x_{i-1},x_i]$ contiene a lo sumo un $q_i$, $i=1,\ldots,N$. Luego hay exactamente $N$ intervalos  $[x_{i-1},x_i]$  conteniendo un $q_i$, $i=1,\ldots,N$.   Si el intervalo $[x_{j-1},x_j]$ no contiene ningun $q_i$, $i=1,\ldots,N$, entonces solo contiene $q_j$ con $j\geq N+1$. Entonces
-
-\[
-\begin{split}
- w(f, [x_{j-1},x_j])&=f(x_j)-f(_{j-1})\\
-&=\sum_{n=1}^{\infty}\frac{1}{2^n}H(x_j-q_n)-\sum_{n=1}^{\infty}\frac{1}{2^n}H(x_{j-1}-q_n)\\
-&=\sum_{\{n\mid x_j\geq q_n\}}\frac{1}{2^j}-\sum_{\{n\mid x_{j-1}\geq q_n\}}\frac{1}{2^j}\\
-&=\sum_{\{n\mid q_n\in (x_{j-1}, x_j] \}}\frac{1}{2^j}\\
-&\leq \sum_{i=N+1}^\infty \frac{1}{2^i}=\frac{1}{2^N}<\sigma
-\end{split}
-\]
-
-Consecuentemente, si un intervalo $[x_{j-1},x_j]$ satisface que  $w(f, [x_{j-1},x_j])>\sigma$, debe ocurrir que $[x_{j-1},x_j]$ contenga un  $q_i$, $i=1,\ldots,N$. Como hay $N$ de estos intervalos 
-\[
- R(P,f,\sigma)=\sum_{i\in I_{\sigma}}(x_i-x_{i-1})\leq N\delta<\epsilon. \qed
-\]
+\begin{ejemplo}{}[Función de Dirichlet] Como vimos en el ejemplo \ref{ejem:R_dirich},   es imposible tener $R(P,f,\sigma)<\sigma$  cuando $\sigma<1$. Entonces,  el CIR nos dice de manera inmediata que la función de Dirichlet es no intergale.  
  
 \end{ejemplo}
 
-\begin{ejemplo}[Función de Riemann]{} Definimos
-\[
- ((x))=x-[x+0.5]
-\]
-
-\begin{figure}[H]
-\begin{center}
-\adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{imagenes/serrucho.pdf}\\
- \caption{Función serrucho}
-\end{center}
- \end{figure}
 
 
-Definimos la función de Riemann:
-\[
- f(x)=\sum_{n=1}^{\infty}\frac{((nx))}{n^2}.
-\]
-
-\begin{figure}[H]
-\begin{center}
-\adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{imagenes/funcRiemann.png}\\
-\caption{Función de Riemann}
- \end{center}
- \end{figure}
- 
-Demostramos que la función de Riemann es discontinua en los racionales $p/q$ donde $\text{m.c.d}(p,q)=1$ y $q$ par. Es integrable en $[0,1]$.  
- 
+\begin{ejemplo}{}[Función de Heaviside] Sea $\sigma,\varepsilon>0$ y tomemos $\delta<\varepsilon$. Sin perder generalidad asumamos $\sigma<1$. Fue mostrado en el ejemplo \ref{ejem:R_heavi} que para cualquier partición $P$ de $[-1,1]$ tal que $\max_i\{x_i-x_{i-1}\}<\delta$, si $0\in(x_{i-1},x_i]$ entonces se tiene  $R(P,f,\sigma)=x_i-x_{i-1} <\varepsilon$. En consecuencia el CIR implica que $f$ es integrable en $[-1,1]$. 
 \end{ejemplo}
+
+
+\begin{proposicion}{prop:monotona=<integrable} Si $f:[a,b]\to\mathbb{R}$ es monótona y acotada entonces es integrable Riemann.
+ 
+\end{proposicion}
+
+\begin{proof} Sin perder generalidad podemos asumir que $f$ es monótona no decreciente. Sea $\sigma,\varepsilon>0$ arbitrarios. Tomemos
+\[
+ \delta<\frac{\sigma\varepsilon}{f(b)-f(a)}.
+\]
+
+Denotando, como en el capítulo \ref{cap:cardinalidad}, $\# I_\sigma$ al cardinal (cantidad de elementos) de $I_\sigma$:
+\begin{empheq}{align*}
+    \sigma \# I_\sigma & =\sum_{i\in I_\sigma}\sigma & \text{} \\
+    &\leq \sum_{i\in I_\sigma} \omega(f,[x_{i-1},x_i])  & \text{(Definición de $I_\sigma$)} \\
+    &\leq \sum_{i\in I_\sigma}(f(x_i)-f(x_{i-1})) & \text{(Ejemplo \ref{ejem:ome_mono})}\\
+    &\leq \sum_{i=1}^n(f(x_i)-f(x_{i-1})) & \text{(pues $f(x_i)-f(x_{i-1})\geq 0$)}\\
+     &=f(b)-f(a) & \text{(suma telescópica)}\\
+\end{empheq}
+Comparando el primer y último miembro de estas desigualdades inferimos que
+\[
+ \# I_\sigma \leq \frac{f(b)-f(a)}{\sigma}.
+\]
+ Entonces 
+ \[
+  R(P,f,\sigma)=\sum_{i\in I_{\sigma}}(x_i-x_{i-1})\leq  \# I_\sigma\delta<\varepsilon,
+ \]
+que es lo que debíamos probar \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{ejemplo}{}[Escalera discontinua]  Cómo esta función es monótona no decreciente la proposición anterior nos dice que es integrable.   
+\end{ejemplo}
+
+\marginpar{ El símbolo $:=$ es una definición o asignación. Si decimos $A:=B$ simplemente decimos que estamos definiendo un nuevo objeto $A$ igual a uno $B$ que disponíamos de antes. Por lo tanto no se requiere ninguna justificación para escribir $A:=B$} 
+
+
+
+
+
+
+
 
 
 \section{Criterio de Hankel}
 
-\begin{lema}{lem:cubri_lebesgue}[Cubrimiento de Lebesgue] Sea $(X,d)$ un espacio métrico compacto, $\{G_i\}_{i\in\mathscr{I}}$ un cubrimiento de $X$ por conjuntos abiertos: i.e.
+
+Vamos a definir ahora el concepto de oscilación en un punto.
+
+
+\begin{definicion}{}[Oscilación en un punto] Sea $f:[a,b]\to\rr$ y $x\in [a,b]$, definimos la  \emph{oscilación}\index{oscilación! en un punto} de $f$ en $x$ como
+
 \[
- X=\bigcup_{i\in\mathscr{I}}G_i.
+ \omega(f;x)=\inf\limits_{x\in G}\omega(f,G).
 \]
-Existe un $\delta>0$ tal que si $A\subset X$ es un conjunto con $\operatorname{diam}(A)<\delta$ entonces existe $i\in\mathscr{I}$ tal que $A\subset G_i$. El número $\delta$ se suele llama  \emph{número de Lebesgue} \emph{número de Lebesgue} del cubrimiento.
+Donde el $\inf$ se toma sobre todos los $G$ abiertos relativos a $[a,b]$ con $x\in G$.  
+
  
-\end{lema}
-\begin{proof} Sea $x\in X$. Existe $i_x\in\mathscr{I}$ tal que $x\in G_{i_x}$. Como $G_{i_x}$ es abierto, existe $r_x$ tal que $B(x;r_x)\subset G_{i_x}$. La colección de bolas $\{B(x;r_x/2)\}_{x\in X}$ es un cubrimiento de $X$. Como $X$ es compacto, existen una cantidad finita $\{x_1,\ldots,x_n\}$ de puntos tales que
-\[
- X=\bigcup_{i=1}^n B(x_i;r_{x_i}/2).
-\]
-Tomemos 
-\[
- \delta=\min_{i=1,\ldots,n}\frac{r_{x_i}}{2}.
-\]
-Sea ahora $A\subset X$ con $\operatorname{diam}(A)<\delta$. Tomemos cualquier $x\in A$. Debe existir $k=1,\ldots,n$ tal que $x\in B(x_k;r_{x_k}/2)\subset B(x_k;r_{x_k})\subset G_j$, donde por simplicidad pusimos $j=i_{x_k}$. Sea ahora $y$ otro punto en $A$. Entonces tenemos
-\[
- d(y,x_k)\leq d(y,x)+d(x,x_k)\leq\delta + \frac{r_{x_k}}{2}\leq\frac{r_{x_k}}{2}+ \frac{r_{x_k}}{2}=r_{x_k}
-\]
-Entonces $y\in B(x_k;r_{x_k})\subset  G_j$. Hemos probado $A\subset G_j$. 
-\end{proof}
+\end{definicion}
+
+
+\begin{observa} Notar el siguiente hecho que puede prestarse a confusión. La anterior definición nos permite hablar de oscilación en el punto $x$. La Definición \ref{def:osc_conj} permite referirnos a la oscilación en el conjunto unitario  $\omega(f,\{x\})$. Ambos conceptos pueden ser distintos, de hecho  trivialmente  $\omega(f,\{x\})$ es siempre $0$, mientras que  $\omega(f,x)$ no lo es siempre. El siguiente ejercicio nos caracteriza los puntos donde  $\omega(f,x)=0$.
+ 
+\end{observa}
+
+
+\begin{ejercicio}{ejer:osc_cont}
+ Demostrar que 
+\begin{enumerate}[label=\emph{\alph*})]
+ \item  $f$ es continua en $x$ si y sólo si $\omega(f;x)=0$.
+ \item $f$ es discontinua a salto finito en $a$ entonces 
+ $$\omega(f;a)=|\lim\limits_{x\to a^-}f(x)-\lim\limits_{x\to a^+}f(x)|.$$
+ \end{enumerate}
+ 
+\end{ejercicio}
 
 
 
@@ -978,14 +1133,17 @@ Entonces $y\in B(x_k;r_{x_k})\subset  G_j$. Hemos probado $A\subset G_j$.
 \end{equation}
  
 \end{lema}
-\begin{proof} Si $x\in [a,b]$, debe existir un intervalo abierto relativo a $[a,b]$,  $I_x$ tal que $x\in I_x$ y $w(f,I_x)<\epsilon$. La colección $\{I_x\}_{x\in [a,b]}$ forma un cubrimiento del compacto $[a,b]$. Sea $\delta$ un número de Lebesgue de este cubrimiento, que lo tiene en virtud del Lema \ref{lem:cubri_lebesgue}. Sea una partición $P=\{x_0,\ldots,x_n\}$ tal que $(x_i-x_{i-1})<\delta$. Dicho de otra forma $\operatorname{diam}( [x_{i-1},x_i])<\delta$. De modo que para cada subintervalo $[x_{i-1},x_i]$ de la partición existe un $I_x$ con $[x_{i-1},x_i]\subset I_x$. Entonces 
+\begin{proof} Si $x\in [a,b]$, debe existir un intervalo abierto relativo a $[a,b]$,  $I_x$ tal que $x\in I_x$ y $w(f,I_x)<\epsilon$. La colección $\{I_x\}_{x\in [a,b]}$ forma un cubrimiento del compacto $[a,b]$. Sea $\delta$ un número de Lebesgue de este cubrimiento, que lo tiene en virtud del Lema \ref{lem:cubri_lebesgue2}. Sea una partición $P=\{x_0,\ldots,x_n\}$ tal que $(x_i-x_{i-1})<\delta$. Dicho de otra forma $\operatorname{diam}( [x_{i-1},x_i])<\delta$. De modo que para cada subintervalo $[x_{i-1},x_i]$ de la partición existe un $I_x$ con $[x_{i-1},x_i]\subset I_x$. Entonces 
 \[
  M_i-m_i:=\sup\limits_{[x_{i-1},x_i]} f-\inf\limits_{[x_{i-1},x_i]} f=w(f,[x_{i-1},x_i])\leq w(f,I_x)<\varepsilon.
 \]
 Finalmente
-\[
- \overline{S}(P;f)-\underline{S}(P;f)=\sum_{i=1}^n( M_i-m_i)(x_i-x_{i-1})<\varepsilon\sum_{i=1}^n(x_i-x_{i-1})=\varepsilon(b-a).
-\]
+\begin{multline*}
+  \overline{S}(P;f)-\underline{S}(P;f)=\sum_{i=1}^n( M_i-m_i)(x_i-x_{i-1})\\
+           <\varepsilon\sum_{i=1}^n(x_i-x_{i-1})=\varepsilon(b-a).
+\end{multline*}
+
+
 
 
  
@@ -995,26 +1153,62 @@ Finalmente
 
 
 
- \begin{definicion}[Contenido exterior]{}\index{Contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ (a_i,b_i)\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n(a_{i},b_i)$.
+ \begin{definicion}[Contenido exterior]{}\index{contenido exterior} Sea $S\subset\mathbb{R}$. Un \emph{cubrimiento finito}\index{cubrimiento finito} de $S$ es una colección de intervalos $\left\{ (a_i,b_i)\right\}_{i=1,\ldots,n}$ tal que $S\subset \cup_{i=1}^n(a_{i},b_i)$.
  
  El \emph{contenido exterior} de $S$ se define por 
- \[
+ \begin{equation}\label{eq:def_cont_e}
   c_e(S)=\inf \sum_{i=1}^n (b_i-a_i),
- \]
+ \end{equation}
 donde el ínfimo es tomado sobre todos los cubrimientos finitos de $S$.
   
  \end{definicion}
  
- \begin{ejemplo}{} Si $S$ es un conjunto finito $c_e(S)=0$.
+ \begin{proposicion}{prop:cont_ext_todo_int} En la definición de contenido exterior se puede reemplazar el cubrimiento por intervalos abiertos por intervalos cerrados y el resultado es el mismo. De hecho se puede sustituir por cualquier tipo de intervalos, cerrado, semicerrados, etc. 
+  
+ \end{proposicion}
+
+ \begin{proof} Hasta tanto probemos que son iguales, demos un  nombre distinto al concepto que resultaría  si reemplazamos en la definición de  contenido exterior los  intervalos abiertos por intervalos cerrados, digamos 
+   \[
+  f_e(S)=\inf \sum_{i=1}^n (b_i-a_i),\quad \text{donde } S \subset \cup_{i=1}^n[a_{i},b_i].
+ \]
+ 
+ Si tomamos un cubrimiento por intervalos  abiertos de $S$, las clausuras de esos intervalos  abiertos son obviamente un cubrimiento de $S$. Esta observación explica que $f_e(S)\leq c_e(S)$. 
+ 
+ Restaría que justifiquemos la desigualdad $f_e(S)\geq c_e(S)$.  Para ello consideremos cualquier cubrimiento $S \subset \cup_{i=1}^n[a_{i},b_i]$ por intervalos cerrados y $\varepsilon>0$. Los intervalos abiertos $(a_{i}-\varepsilon/2n,b_i+\varepsilon/2n)$, $i=1,\ldots,n$ forman un cubrimiento de $S$. Además
+ \[
+   c_e(S)\leq \sum_{i=1}^n (b_i+\varepsilon/2n-a_i-\varepsilon/2n)=\varepsilon+\sum_{i=1}^n (b_i-a_i).   
+ \]
+Si tomamos ínfimo sobre todos los cubrimientos de $S$ por intervalos cerrados, deducimos que $c_e(S)\leq f_e(S)+\varepsilon$ y, como $\varepsilon$ es arbitrario inferimos la desigualdad que necesitabamos probar.  \end{proof}
+
+ 
+ 
+ 
+ \begin{ejemplo}{} Si $S$ es un conjunto finito $c_e(S)=0$. En efecto, si $S=\{s_1,\ldots,s_n\}$ consideramos el cubrimiento de $S$ por los intervalos cerrados $[s_i,s_i]$. Inferimos $c_e(S)\leq \sum_{i=1}^nS_i-s_i=0$. Como siempre $c_e(S)\geq 0$ se concluye la afirmación.  
   
  \end{ejemplo}
 
- \begin{ejemplo}{} Si $S=[a,b]$ entonces  $c_e(S)=b-a$. \textcolor{red}{JUSTIFICAR}
-    
- \end{ejemplo}
- \begin{ejemplo}{} Sa $\{x_n\}$ una sucesión convergente al punto $x$. Si $S=\{x_n| n=1,\dots\}\cup\{x\}$ entonces  $c_e(S)=0$. \textcolor{red}{JUSTIFICAR}
-    
- \end{ejemplo}
+ \begin{proposicion}{prop:con_ext_int} Si $S=[a,b]$ entonces  $c_e(S)=b-a$ 
+\end{proposicion}
+
+\begin{proof} Notar que como el propio intervalo $[a,b]$ se cubre a si mismo, entonces $c_e([a,b])\leq b-a$. Demostremos la desigualdad en la otra dirección. Cómo es habitual en este tipo de razonamiento, vamos a demostrar que para todo $\varepsilon>0$,  $b-a<c_e([a,b])+\varepsilon$. 
+
+Sea $\varepsilon>0$. Podemos hallar un cumbrimiento por intervalos abiertos $\{(a_i,b_i)\}_{i=1}^n$ de $[a,b]$ tal que
+\begin{equation}\label{eq:con_int} \sum_{i=1}^n(b_i-a_i)<c_e([a,b])+\varepsilon.\end{equation}
+
+Si hubiese un índice $i$ que satisfaciese que $(a_i,b_i)\subset\bigcup_{j\neq i}(a_j,b_j)$, podríamos eliminar el intervalo correspondiente a ese indice, los intervalos restantes continuarían siendo un cubrimiento y seguiría cumpliendose la desigualdad \eqref{eq:con_int}. 
+
+Si no se diera el caso, podríamos re-enumerar los intervalos en el cubrimiento de modo que 
+$$a_1<a_2<\cdots .$$\marginpar{ Notar que no puede haber dos $a_j$ repetidos puesto que en ese caso habría un intervalo que se cubriría por otro. }
+Los $b_j$ respectivos deben cumplir que $a_{j+1}<b_{j}$, de lo contrario, si $a_{j+1}> b_j$ tendríamos que $b_j$ no sería cubierto por ningún intervalo. Entonces, debe ocurrir que $a_1<a$ y $b<b_n$ y por lo tanto
+\begin{multline*}
+ b-a\leq b_n-a_1<b_n\underbrace{-a_{n}+b_{n-1}}_{>0}\underbrace{-a_{n-1}+b_{n-2}}_{>0}-\cdots \underbrace{-a_2+b_1}_{>0}-a_1\\
+=\sum_{i=1}^n(b_i-a_i)<c_e([a,b])+\varepsilon.
+\end{multline*}
+\end{proof}
+
+
+ \begin{ejercicio}{} Sea $\{x_n\}$ una sucesión convergente al punto $x$. Si $S=\{x_n| n=1,\dots\}\cup\{x\}$ entonces  $c_e(S)=0$.  
+  \end{ejercicio}
  
  
  \begin{teorema}[Criterio de integrabilidad de Hankel]{teo:hankel}  Sea $f$ acotada en $[a,b]$ entonces $f$ es integrable si y sólo si para todo $\sigma>0$ el conjunto 
@@ -1045,7 +1239,7 @@ Para ver que la condición es necesaria vamos a ver que para todo $\sigma>0$ y p
 \begin{equation}\label{eq:hankel_final}
  c_e(S_\sigma)<\varepsilon.
 \end{equation}
-Como $\varepsilon$ es arbitrario no que mas opción que $c_e(S_\sigma)=0$. Tomemos pues $\sigma,\varepsilon>0$. Por el criterio de integrabilidad de Riemann Teorema \ref{teo:crite_riemann}, aplicado a $\sigma/2$ en lugar de $\sigma$, encontramos una partición $P$ tal que si 
+Como $\varepsilon$ es arbitrario no queda mas opción que $c_e(S_\sigma)=0$. Tomemos pues $\sigma,\varepsilon>0$. Por el CIR (Teorema \ref{teo:crite_riemann}), aplicado a $\sigma/2$ en lugar de $\sigma$, encontramos una partición $P$\marginpar{El criterio afirma que hay infinitas particiones en esas condiciones, pero elegimos una arbitraria} tal que si 
 \[
  I_{\sigma/2}:=\{i|w(f,[x_{i-1},x_i])\geq\sigma/2\},
 \] 
@@ -1058,7 +1252,7 @@ Si $i\notin I_{\sigma/2}$ entonces $w(f,[x_{i-1},x_i])<\sigma/2$. De esto se ded
  \{x| w(f,x)>\sigma\}\subset \bigcup_{i\in I_{\sigma/2}}[x_{i-1},x_i].
 \end{equation}
 
-Si esta afirmación fuese falsa existiría $x$ con $w(f,x)>\sigma$ y $x\notin [x_{i-1},x_i]$ para ningún $i\in I_{\sigma/2}$. De modo que debe ocurrir que $x\in   [x_{i-1},x_i]$ con $i\notin I_{\sigma/2}$. Si fuese el caso que  $x\in   (x_{i-1},x_i)$ entonces  $w(f,x)<\sigma/2<\sigma$ que es una contradicción. De modo que $x$ sólo puede pertenecer a puntos extremos de intervalos  $[x_{i-1},x_i]$ con  $i\notin I_{\sigma/2}$. Debería ser la situación que $x=x_i$ con $i,(i+1)\notin I_{\sigma/2}$. Entonces si $y,z  \in (x_{i-1},x_{i+1})$ Pueden ocurrir esencialmente dos situaciones i) que $y,z$ esten en el mismo subintervalo, digamos  $y,z \in (x_{i-1},x_{i}]$ en cuyo caso
+Si esta afirmación fuese falsa existiría $x$ con $w(f,x)>\sigma$ y $x\notin [x_{i-1},x_i]$ para ningún $i\in I_{\sigma/2}$. De modo que debe ocurrir que $x\in   [x_{i-1},x_i]$ con $i\notin I_{\sigma/2}$. Si fuese el caso que  $x\in   (x_{i-1},x_i)$ entonces  $w(f,x)<\sigma/2<\sigma$ que es una contradicción. De modo que $x$ sólo puede pertenecer a puntos extremos de intervalos  $[x_{i-1},x_i]$ con  $i\notin I_{\sigma/2}$. Debería ser la situación que $x=x_i$ con $i,(i+1)\notin I_{\sigma/2}$. Entonces si $y,z  \in (x_{i-1},x_{i+1})$,  pueden ocurrir esencialmente dos situaciones i) que $y,z$ esten en el mismo subintervalo, digamos  $y,z \in (x_{i-1},x_{i}]$ en cuyo caso
 \[
  f(y)-f(z)\leq w(f, [x_{i-1},x_{i}])<\sigma/2.
 \]
@@ -1068,7 +1262,7 @@ ii) o que esten en diferentes, digamos $y\in  (x_{i-1},x_{i}]$ y $z \in [x_{i},x
  \leq w(f,[x_{i-1},x_i])+w(f,[x_{i},x_{i+1}])\leq\frac{\sigma}{2}+\frac{\sigma}{2}=\sigma.
 \end{multline*}
 
-En cualquier situación $f(y)-f(z)\leq\sigma$. Tomando supremo sobre $y$ e infimo sobre $z$ concluímos que $w(f,x)\leq w(f,(x_{i-1},x_{i+1}))<\sigma$, que es una contradicción que termina por probar la inclusión  \eqref{eq:hankel_conj=}. 
+En cualquier situación $f(y)-f(z)\leq\sigma$. Tomando supremo sobre $y$ e infimo sobre $z$ concluímos que $w(f,x)\leq w(f,(x_{i-1},x_{i+1}))\leq \sigma$, que es una contradicción que termina por probar la inclusión  \eqref{eq:hankel_conj=}. 
 
 Aplicando \eqref{eq:hankel_conj=}
 \[
@@ -1076,7 +1270,38 @@ Aplicando \eqref{eq:hankel_conj=}
 \] 
 \end{proof}
 
-   
+
+\begin{ejemplo}{}[Funciones monótonas acotadas] Supongamos $f:[a,b]\to\mathbb{R}$ monótona no-decreciente. \marginpar{El hecho que $f(b),f(a)\in\mathbb{R}$ ya la hace acotada a la función}   Las funciones monótonas siempre tienen límites laterales\marginpar{Vamos a denotar los límites laterales $f(x^+)$ y $f(x^-)$.}, de modo que   tienen discontinuidades solo de salto finito. Sea $\sigma>0$ y supongamos 
+que $a<x_1<\ldots<x_n<b$ son puntos en $S_\sigma$ distintos con $x_1<\cdots < x_n$. Como $f$ es monótona no-decreciente se satisface que
+\[
+ f(a)\leq f(x_1^-) \leq f(x_1^+)\leq f(x_2^-) \leq f(x_2^+)\leq\cdots \leq f(x_n^-) \leq f(x_n^+)\leq f(b).
+\]
+De aquí se infiere que 
+
+$$n\sigma \leq \underbrace{f(x_1^+) -f(x_1^-)}_{\omega(f,x_1)} + \underbrace{f(x_2^+) - f(x_2^-)}_{\omega(f,x_2)}+\cdots + \underbrace{f(x_n^+) -f(x_n^-)}_{\omega(f,x_n)}\leq f(b)-f(a).
+$$
+
+Concluímos que el número $(f(b)-f(a))/\sigma+2$\marginpar{El agregado del  número $2$ es para considerar los extremos $a$ y $b$ que no están incluídos en el razonamiento.}  es la máxima cantidad de puntos distintos que podemos tomar en $S_\sigma$. Esto implica que $S_\sigma$ es finito y por ende tiene contenido exterior cero.  
+
+ 
+\end{ejemplo}
+
+\begin{ejemplo}{}[Función de Thomae] Esta función es discontinua cuando $x=p/q\in\qq$. ¿Cuál será la oscilación allí? La cantidad de fracciones con denominador menor o igual a $q$ es finita. \marginpar{Recordar el conjunto $F$ de \eqref{eq:conj_F}} Como un conjunto finito de puntos es totalmente disconexo, \marginpar{Totalmente disconexo: todo punto es aislado} podemos encontrar $\delta>0$ tal que si $y=p'/q'\in \left[(x-\delta,x+\delta)-\{x\}\right]\cap \qq$ entonces $q'>q$. Entonces, recordando la fórmula \eqref{eq:osc_tho}, tendremos que 
+$$\omega(f,x)\leq \omega(f, (x-\delta,x+\delta)\leq \frac{1}{q}.$$
+La desigualdad contraria es también cierta (¿Por qué?). Consecuentemente $\omega(f,x)=1/q$. Entonces
+\[
+ S_\sigma=\left\{\frac{p}{q}\in \qq\cap[0,1]\mid q\leq\sigma\right\}.
+\]
+Este conjunto es finito de allí tiene contenido exterior nulo lo que termina probando otra vez, esta usando el criterio de Hankel, que la función es integrable.
+ 
+\end{ejemplo}
+
+
+
+El criterio de Hankel es un poco más fácil de aplicar que los anteriores criterios. Observar que el conjunto $S_\sigma$ es subconjunto de los puntos de discontiuidad de $f$, llamemos a éste conjunto $D$. Por consiguiente, si $D$ tuviese contenido  exterior cero, lo mismo ocurriría con $S_\sigma$ y $f$ sería intergable. Uno podría aventurar que el recíproco es cierto, es decir si una función es integrable, el conjunto de puntos de continuidad tienen contenido exterior cero.  Pero este  no es el caso, como muestran la función escalera discontinua o la función de Thomae. El conjunto $D$ en ambos casos es $\qq\cap [0,1]$ y en la pŕactica se demostrará que ese conjunto tiene contenido exterior igual a $1$. El deseo de reemplazar el conjunto $S_\sigma$ por $D$ en el enunciado proviene del hecho que es más amigable hablar de puntos de discontinuidad que de puntos en $S_\sigma$, que para colmo hay que considerarlos para cualquier $\sigma$. Pero, por lo manifestado, no es posible considerar solo $D$ al menos si usamos el contenido exterior. Como veremos más adelante, la respuesta definitiva a la cuestión de la integrabilidad Riemann la lograremos usando la medida de Lebesgue, adelantándonos un poco, diremos con la ayuda de ese concepto tendremos el enunciado muy simple  que una función es integrable Riemann si y solo si el conjunto $D$ tiene medida exterior nula. 
+
+
+
    
 \section{Integrales impropias}
 Se denomina \emph{integrales impropias}\index{integral!impropia} a la integral de funciones no acotadas o a integrales sobre intervalos no acotados. Tales integrales requieren de una definición especial.
@@ -1134,7 +1359,46 @@ Entonces $\phi$ es derivable en cada punto de continuidad de $f$ y vale que
 \end{corolario}
 
 
-\section{Función de Volterra}
+\iffalse
+
+\section{Otros ejemplos}
+
+\subsection{Función de Reimann}
+
+
+
+
+\begin{ejemplo}[Función de Riemann]{} Definimos
+\[
+ ((x))=x-[x+0.5]
+\]
+
+\begin{figure}[H]
+\begin{center}
+\adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{imagenes/serrucho.pdf}\\
+ \caption{Función serrucho}
+\end{center}
+ \end{figure}
+
+
+Definimos la función de Riemann:
+\[
+ f(x)=\sum_{n=1}^{\infty}\frac{((nx))}{n^2}.
+\]
+
+\begin{figure}[H]
+\begin{center}
+\adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{imagenes/funcRiemann.png}\\
+\caption{Función de Riemann}
+ \end{center}
+ \end{figure}
+ 
+Demostramos que la función de Riemann es discontinua en los racionales $p/q$ donde $\text{m.c.d}(p,q)=1$ y $q$ par. Es integrable en $[0,1]$.  
+ 
+\end{ejemplo}
+
+
+\subsection{Función de Volterra}
 
 \begin{pyblock}
 import numpy as np
@@ -1223,4 +1487,4 @@ plt.plot(x,y)
 
 
 \section{Integral de Riemann y pasos al límite}
-
+\fi

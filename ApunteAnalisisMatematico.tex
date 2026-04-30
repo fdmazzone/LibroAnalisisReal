@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Paquetes%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage{empheq}
+\usepackage{empheq}
 \usepackage[spanish]{babel}
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{enumerate}
@@ -58,7 +58,7 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm]{geometry}
     }
 \usepackage{upquote} % Upright quotes for verbatim code
 \usepackage{eurosym} % defines \euro
-\usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+%\usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
 \usepackage{fancyvrb} % verbatim replacement that allows latex
 \usepackage{grffile} % extends the file name processing of package graphics 
                          % to support a larger range 
@@ -74,6 +74,17 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm]{geometry}
 \usepackage{mathrsfs}
 
 \usepackage{bigints}
+\usepackage{appendix}
+\usepackage{ccicons}
+
+
+%%%%%%%%%%%%Configuracion Apéndices %%%%%%%%%%%%%%%%%%%%%%%%55555  
+\AtBeginEnvironment{subappendices}{%
+\chapter*{Apéndices}
+\addcontentsline{toc}{chapter}{Apéndices}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+}
 
 %%%%%%%%%% Nuevos Entornos-Comandos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %\input{entornos_comandos.tex}
@@ -82,6 +93,8 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm]{geometry}
 %%%%%%%%%%%%% Configuracion para notebook importadas
 
 \input{python/jupyter_config.tex}
+\graphicspath{{./imagenes/}}
+
 
 %%%%%%%%%%%%Configuración Encabezados Página
 \fancyfoot{}
@@ -150,25 +163,27 @@ layouthoffset=10mm, left=1.5cm, right=6.2cm,marginparwidth=3.5cm]{geometry}
 \pagestyle{fancy}
 
 %
- \maketitle
- \tableofcontents
+  \maketitle
+\tableofcontents
 %
 
 %\include{prologo}
 %%%%=====Me tomé el atrevimiento de  RENOMBRAR los archivos de acuerdo al contenido. El número de la unidad no me alcanza para ubicar los temas.
 
-\include{Uni0-Reales}
-\include{Uni1-Conjuntos}
-\include{Uni2-Topologia}
-\include{Uni3-Sucesiones-funciones}====SE PODRÍA COLOCAR EL MATERIAL DE LA 1RA UNIDAD DE COMPLEMENTOS DE ANÁLISIS QUE ESTÁ BASADO EN TUS APUNTES, EL RUDIN CHICO Y OTROS LIBROS QUE USAMOS EN TOP II..
-\include{Uni4-Riemann}
+%\include{Uni0-Reales}
+%\include{Uni1-Conjuntos}
+% \include{Uni2-Topologia}
+%
+% \include{Uni3-Sucesiones-funciones}
+%\include{Uni4-Riemann}
 \include{Uni5-Medida}
-\include{Uni5-Medida-version2022}
-\include{Uni7-Funciones-medibles}
-  \include{Uni8-Integral-Lebesgue}
- \include{Uni9-Espacios-Lp}
-  \include{Uni6-Medida-abstracta}
-%  
+%\include{borrar}
+% %
+%\include{Uni7-Funciones-medibles}
+%     \include{Uni8-Integral-Lebesgue}
+%    \include{Uni9-Espacios-Lp}
+%  \include{Uni6-Medida-abstracta}
+
 % \include{apendice}
 % \include{Apendice0}
  

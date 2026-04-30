@@ -179,6 +179,7 @@ linewidth=2pt,topline=true,tikzsetting={shading=exersicebackground}}
 \renewcommand{\theejemplo}{\arabic{chapter}.\arabic{section}.\arabic{ejemplo}}
 \newenvironment{ejemplo}[2][]{%
 \refstepcounter{ejemplo}%
+\vspace{\baselineskip} % Añadir un espacio vertical igual a una línea de texto
 \relax\noindent\textbf{Ejemplo~\theejemplo}\label{#2}
 }{}
 
@@ -188,7 +189,7 @@ linewidth=2pt,topline=true,tikzsetting={shading=exersicebackground}}
 \renewcommand{\theobservacion}{\arabic{chapter}.\arabic{section}.\arabic{observacion}}
 \newenvironment{observacion}{%
 \refstepcounter{observacion}%
-\relax\noindent\textbf{Observacion~\theobservacion}
+\relax\noindent\textbf{Observación~\theobservacion}
 }{}
 
 %%%%%%%%%%%%%%%Secciones%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5

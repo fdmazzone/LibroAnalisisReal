@@ -126,28 +126,24 @@ Luego
         \]
     Como $c\varphi=\sum\limits_{i=1}^N c \alpha_i \chi_{E_i}$, luego
     \[
-    \int_E c\varphi = \sum\limits_{i=1}^N c\alpha_i m(E_i)=\alpha \int_E \varphi.
+    \int_E c\varphi = \sum\limits_{i=1}^N c\alpha_i m(E_i)=c\int_E \varphi.
     \]
     \end{demo}
     
     \begin{teorema}{}
     Si $f\geq 0$, entonces
     \[\int_E f = \sup\limits_{0\leq \varphi\leq f} \int_E \varphi.\]
+    El supremo se toma sobre todas las funciones simples $\varphi$.
+    
     \end{teorema}
     
     \begin{demo}
-    Sean $E=E_1\cup E_2\cup\ldots \cup E_N$ y $\alpha_i=\inf\limits_{E_i} f$. 
-    Supongamos que $\alpha_i<\infty$. Luego, si $\varphi=\sum\limits_{i=1}^N \alpha_i \chi_{E_i}$ tenemos 
-    \[
-    \int_E \varphi =\sum\limits_{i=1}^N \alpha_i m(E_i)\;\;
-    \mbox{ y }\;\; 0\leq \varphi \leq f.
-    \]
-    En general, para $k\in \nn$ definamos 
+    Sean $E=E_1\cup E_2\cup\ldots \cup E_N$ y $\alpha_i=\inf\limits_{E_i} f$. Para $k\in \nn$ definamos 
     \[\alpha_{ik}=\min\{k,\alpha_i\}\]
     y 
     \[ \varphi_k=\sum\limits_{i=1}^n \alpha_{ik} \chi_{E_i}.\]
     Ahora, $0\leq \varphi_k \leq f$ y $\alpha_{i1}\leq \alpha_{i2}\leq \ldots \nearrow \alpha_i$. 
-    LUego 
+    Luego 
     \[
     \begin{split}
     \sum\limits_{i=1}^N \alpha_i m(E_i)=&
@@ -192,7 +188,7 @@ Supongamos ahora que $\alpha_1>0$.\\ Sea $0<\epsilon$ con $0<\epsilon<\alpha_1$.
 Luego $\varphi-\epsilon$ es una funci\'on simple que toma los valores $\alpha_i-\epsilon$ sobre $A_i$. 
 Poniendo 
 \[
-E_k=\{\alpha \in E: f_k(x)> \varphi (x)-\epsilon \}.
+E_k=\{x\in E: f_k(x)> \varphi (x)-\epsilon \}.
 \]
 Por hip\'otesis
 \[
@@ -379,7 +375,7 @@ La otra desigualdad es inmediata.
                     \end{teorema}
                     
                     \begin{demo}
-                    A partir de  que $f^+\leq f_1$ y $f^-f_2$ se deduce que $f$ es integrable.  
+                    A partir de  que $f^+\leq f_1$ y $f^-\leq f_2$ se deduce que $f$ es integrable.  
                     \\
                     Como $f=f^+-f^-=f_1-f_2$ entonces 
                     $f^+ + f_2=f_1 + f^-$ y 
@@ -572,7 +568,7 @@ La otra desigualdad es inmediata.
                         Luego, 
                         \[
                         \int f(x+h) =\sum\limits_{i=1}^N \alpha_i \int f_i(x+h)=
-                        \sum\limits_{i=1}^N \alpha_i \int_{E_i} f_i= \int f.
+                        \sum\limits_{i=1}^N \alpha_i \int f_i= \int f.
                         \]
                         \item Sea $f$ arbitraria no negativa y sean $\varphi_k$ funciones simples no negativas tales que $\varphi_k \nearrow f$. Luego, 
                         \[
@@ -601,7 +597,7 @@ La otra desigualdad es inmediata.
                     
                     \section{La integral como funci\'on de conjunto}
                     
-                    \textbf{FALTA DEFINIR $\mathcal{M}$ o RECORDARLO!!!} 
+                    
                     
                     Sea $f\in L(\rr)$ y definimos $\Phi: \mathcal{M} \to \rr$
                     por
@@ -629,7 +625,7 @@ La otra desigualdad es inmediata.
                     
                     \begin{definicion}{}
                     Si $X$ es un conjunto y $\Sigma$ es una sigma-\'algebra de subconjuntos de $X$. 
-                    Una funci\'on $\mu:\Sigma \to \rr^+$ se llama medida si
+                    Una funci\'on $\mu:\Sigma \to \rr$ se llama \emph{medida con signo}\index{medida con signo} si
                     \begin{enumerate}
                         \item $\mu(\emptyset)=0,$
                         \item $\mu(\bigcup\limits_j E_j) = \sum\limits_j \mu(E_j)$, donde $E_j \in \Sigma$ y son mutuamente disjuntos.
@@ -637,10 +633,10 @@ La otra desigualdad es inmediata.
                     \end{definicion}
                     
                     
-                    Para una medida valen los teoremas de convergencia mon\'otona de conjuntos, se puede definir una integral y \emph{casi todo} lo visto para la medida de Lebesgue es v\'alido. Una propiedad que no siempre es cierta es la invariancia por traslaciones.
+                    Para una medida con signo valen los teoremas de convergencia mon\'otona de conjuntos, se puede definir una integral y \emph{casi todo} lo visto para la medida de Lebesgue es v\'alido. Una propiedad que no siempre es cierta es la invariancia por traslaciones.
                     
-                    Ahora bien,  $\Phi$ es una medida. 
-                    La pregunta que surge es ?`ser\'a toda medida sobre
+                    Ahora bien,  $\Phi$ es una medida con signo. 
+                    La pregunta que surge es ?`ser\'a toda medida con signo sobre
                     $\mathcal{M}$ de la forma de $\Phi$ para alguna $f$?\\
                     La respuesta a esta pregunta ser\'a dada por el \textbf{Teorema de Radom-Nikodim}.
                     
@@ -704,29 +700,38 @@ La otra desigualdad es inmediata.
                     \]
                     \end{teorema}
                     
-                    \begin{demo}
-        Si $a=x_0<x_1<x_2<\ldots<x_N=b$, definimos las funciones escalonadas 
-        \[
-        \varphi(x)=\sum\limits_{i=1}^N m_i \chi_{J_i} \;\;\mbox{ y }\;\;
-        \psi(x)=\sum\limits_{i=1}^N M_i \chi_{J_i} 
+                    \begin{demo}      
+        Si $f$ es integrable Riemann, entonces para todo $k\in\mathbb{N}$  existe una partición $a=x_0^k<x_1^k<x_2^k<\ldots<x_N^k=b$ tal que 
+        
+        $$S-s=\sum_{i=1}^N(M_i^k-m_i^k)(x_{i}^k-x_{i-1}^k)<\frac{1}{k}.$$
+        
+        Consideramos   las funciones escaleras $\varphi_k$ y $\psi_k$ definidas por
+        
+       \[
+        \varphi_k(x)=\sum\limits_{i=1}^N m_i^k \chi_{J^k_i} \;\;\mbox{ y }\;\;
+        \psi_k(x)=\sum\limits_{i=1}^N M_i^k \chi_{J_i^k} 
         \]
         donde 
-        $J_i=[x_{i-1},x_i]$. Entonces $\varphi \leq f \leq psi$ en c.t.p. de $[a,b]$.
-        
-        Si $f$ es integrable Riemann, existen dos sucesiones de funciones escaleras $\varphi_k$ y $\psi_k$ tales que 
-        $\varphi_k \leq f \leq \psi_k$ y 
+        $J_i^k=[x^k_{i-1},x^k_i]$. Entonces $\varphi_k \leq f \leq \psi_k$ en c.t.p. de $[a,b]$ y 
         \[
         \int_a^b \psi_k -\varphi_k <\frac{1}{k}.
         \]
-        Adem\'as, si $g=\sup\varphi_k$ y $h=\inf \psi_k$, entonces
-        $g$ y $h$ son borelianas y $g\leq f\leq h$.
-        Adem\'as
+        Sean  $g=\sup\varphi_k$ y $h=\inf \psi_k$. Las funciones       $g$ y $h$ son borelianas y $g\leq f\leq h$. Entonces 
+        
+        
+        $$ \int_a^b \varphi_k \leq \int_a^b g \leq \int_a^b f\leq \int_a^b h   \leq \int_a^b \psi_k $$
+       De allí se concluye
+       
+        $$\int_a^b h- g   \leq \int_a^b \psi_k -\int_a^b \varphi_k \leq \frac{1}{k}. $$
+        En con secuencia, puesto que $h-g\geq 0$ c.t.p., se deduce que $h=g$ en c.t.p y por ende $f=h=g$ en c.t.p. Esto último implica que $f$ es boreliana y de allí medible.
+        
+        Por otro lado, por la monotonían de la integral de Lebesgue
         \[
-        \int_a^b \varphi_k \leq \int_a^b f \leq \int_a^b \psi_k
+        \int_a^b \varphi_k \leq \int_a^b f \leq \int_a^b \psi_k.
         \]
-        y 
+        Y por la definición de integral de Riemann
         \[
-        \R\,\int_a^b \varphi_k \leq\; \R\, \int_a^b f \leq\; \R\, \int_a^b \psi_k,
+        \int_a^b \varphi_k \leq\;  \R \,\int_a^b f \leq\;  \int_a^b \psi_k,
         \]
         de donde
         \[
@@ -769,19 +774,19 @@ La otra desigualdad es inmediata.
         \begin{teorema}{}[Principio de Cavalieri]
         Sea $E$ medible en $\rr^{n+m}$, entonces
         \begin{enumerate}
-            \item $E_x$ es medible de $\rr^{n+m}$ en c.t.p. $x \in \rr^n$;
+            \item $E_x$ es medible de $\rr^{m}$ en c.t.p. $x \in \rr^n$;
             \item $m\left(E_x\right)$ es medible como funci\'on de $x$;
             \item $m(E)=\int m\left(E_x\right)\, dx$.
         \end{enumerate}
         \end{teorema}
         
         \begin{demo}
-        \emph{Primer Paso)} Si $E$ es un intervalo de $\rr^{n+m}$, supongamos que $E=I\times J$ con $I$ intervalo de $\rr^n$, $J$ intervalo de $\rr^m$, entonces $E_x=J$ $\forall x \in I$ y $E_x=\emptyset$ si $x \notin I$.
+        \emph{Primer Paso)} Si $E$ es un rectángulo de $\rr^{n+m}$, supongamos que $E=I\times J$ con $I$ rectángulo de $\rr^n$, $J$ rectángulo de $\rr^m$, entonces $E_x=J$ $\forall x \in I$ y $E_x=\emptyset$ si $x \notin I$.
         As\'i, $E_x$ es conjunto medible $\forall x \in I$, $m(E_x)=\chi_I m(J)$ es funci\'on medible  en $x$ y 
         \[
         \int m(E_x)\,dx=m(J)m(I)=m(E).
         \]
-        \emph{Segundo Paso)} Si $E$ es abierto, entonces $E_x=\bigcup\limits_{k=1}^{\infty} (I_k)_x$ con $I_k$ intervalos mutuamente disjuntos y donde $E_x=\bigcup\limits_{k=1}^{\infty} \left(I_k\right)_x$. 
+        \emph{Segundo Paso)} Si $E$ es abierto, entonces $E_x=\bigcup\limits_{k=1}^{\infty} (I_k)_x$ con $I_k$ rectángulos mutuamente disjuntos y donde $E_x=\bigcup\limits_{k=1}^{\infty} \left(I_k\right)_x$. 
         As\'i $E_x$ es conjunto medible. Adem\'as, 
         \[
         m(E_x)=\sum\limits_{k=1}^{\infty} m\left((I_k)_x\right)

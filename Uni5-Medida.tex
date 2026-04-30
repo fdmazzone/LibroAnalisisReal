@@ -1,387 +1,1388 @@
-\chapter{Medida de Lebesgue en $\mathbb{R}$}
-
-\section{Longitud de intervalos}
+\chapter{Medida de Lebesgue  }
 
 
+\section{$d$-rectángulos}
+Como es usual denotamos por $\rr^d$ el espacio eucl\'ideo de dimensi\'on $d$. Si $x \in \rr^d$, escribimos $x=(x_1,x_2,\ldots,x_d)$ siendo $x_i\in \rr$.
+La \emph{norma} de $x$ se define como $|x|=\left(x_1^2+x_2^2+\ldots+x_d^2\right)^{1/2}$ y la \emph{distancia} de $x$ a $y$
+se calcula mediante $d(x,y)=|x-y|$.  Si $E,F\subset \rr^d,$ se define la distancia entre estos conjuntos por
+$$d(E,F)=\inf \left\{d(x,y):x\in E, y \in F \right\}$$ y si $E \subset \rr^d$, definímos el diámetros de $E$ de la siguiente forma
+$$\diametro(E)=\sup\left\{ d(x,y): x,y \in E \right\}.$$
+ 
+\begin{definicion}{}
+$R \subset \rr^d$ es un \emph{$d$-rect\'angulo cerrado}\index{$d$-rectángulo} si 
+\[
+R=[a_1,b_1]\times\ldots\times [a_d,b_d],
+\]
+donde $a_j\leq b_j$, para $j=1,2,\ldots,d$. Si $R$ es $d$-rect\'angulo  el \emph{$d$-volumen}\index{$d$-volumen} de $R$ est\'a dado por
+\begin{empheq}{equation}\label{eq:vol_rect}
+|R|=(b_1-a_1)\ldots(b_d-a_d).
+\end{empheq}
+\end{definicion}
+
+\begin{observacion}{}
+Notar que los $d$-rectángulos que estamos considerando en la definición tienen la particularidad, además de ser cerrados y que tienen lados \marginpar{Por lado de un $d$-rectángulo nos referimos, por ejemplo, a la proyección del $d$-rectángulo en la dirección de una coordenada $x_j$  sobre el subespacio de dimensión $d-1$ generado por los restantes ejes de coordenadas $\{x_i\}_{ i\neq j}$. Este conjunto resulta en un segmento de recta solo cuando $d=2$}. Si
+\begin{itemize}
+    \item $d=1$, $R$ es un intervalo cerrado;
+    \item $d=2$, $R$ es un rect\'angulo cerrado con lados paralelos a los ejes;
+    \item $d=3$. $R$ es un paralelep\'ipedo con caras paralelas a los planos coordenados.
+    \item Un \emph{$d$-rect\'angulo abierto} se define del modo natural y en general hablaremos de \emph{$d$-rectángulo} en $\rr^d$ como el producto cartesiano de $d$ intervalos (de cualquier tipo, abiertos cerrados, semicerrados).  El $d$-volumen del $d$-rectángulo abierto $R=(a_1,b_1)\times\cdots\times (b_d,a_d)$ se define  también por medio de la fórmula \eqref{eq:vol_rect}, por lo tanto el $d$-volumen de un $d$-rectángulo cerrado coincide con el del $d$-rectángulo abierto con los mismos extremos. 
+\end{itemize}
+\end{observacion}
 
 
-
-\section{Contexto}
-
-Medida exterior
-
-
-{Volúmen de rectángulos}
-  Sea $R=[a_1,b_1]\times\ldots\times [a_n,b_n]\subset\rr^d$ un rectángulo cerrado
-  \[|R|:=(b_1-a_1)\cdots(b_n-a_n).\]
-
-
-{Medida exterior, definición}
-  Sea $E\subset\rr^d$,
-  \[\boxed{m_*(E):=\inf\left\{\sum_{j=1}^{\infty}|Q_j|\left| E\subset\bigcup_{j=1}^{\infty}Q_j, Q_j\text{ cubo cerrado }, j\in\mathbb{N}\right.\right\}}\]   
-
-		
-
-
-Medida exterior, propiedades
-
-{Propiedades}
-  \begin{description}
-   \item[Monotonía:] $E_1\subset E_2\Rightarrow m_*(E_1)\leq m_*(E_2)$ 
-   \item[$\sigma$-subaditividad:] $E_j\in\rr^d$, $j=1,2,\ldots$, $\Rightarrow \boxed{ m_*\left(\bigcup_{j=1}^{\infty}E_j\right)\leq\sum_{j=1}^{\infty}m_*(E_j)}$
-   \item[$\sigma$-aditividad:] \emph{No se pudo demostrar la igualdad cuando los $E_j$ son mutuamente disjuntos}  
-   \item[Regularidad:] $m_*(E)=\inf\{m_*(G)|G\text{ es abierto } G\supset E\}$.
-  \end{description}
-
-
-
-
-		
-
-
-
-Conjuntos medibles
-
-{Definición}
-  $E\subset\rr^d$ se llama \emph{medible Lebesgue} si para todo $\epsilon>0$ existe $G\subset\rr^d$ abierto, $G\supset E$ tal que
-  \[\boxed{m_*(G-E)<\epsilon}.\]
-  Si $E$ es medible
-  \[m(E):=m_*(E).\]
-
-
-
-Conjuntos medibles, propiedades
-
-{Propiedades}
-    \begin{enumerate}
-   \item Los conjuntos abiertos son medibles 
-   \item Los conjuntos nulos ($m_*(Z)=0$) son medibles
-   \item Las uniones e intersecciones numerables y las diferencias de 
-conjuntos medibles resultan en conjuntos medibles.
-   \item\textbf{$\sigma$-aditividad.} $E_j\in\rr^d$, $j=1,2,\ldots$, son 
-medibles y $E_j\cap E_i=\emptyset$, $j\neq i$,  $\Rightarrow \boxed{ 
-m\left(\bigcup_{j=1}^{\infty}E_j\right)=\sum_{j=1}^{\infty}m(E_j)}$  
-
-  \end{enumerate}
-  
-
-
-
-
-% \section{Estructura conjuntos medibles}
-% Estructura significados (RAE)}
-% 
-% 
-%   \begin{enumerate}
-%     \item Disposición o modo de estar relacionadas las distintas partes de un conjunto.
-%   
-%     \item Distribución y orden de las partes importantes de un edificio.
-% 
-%     \item Distribución y orden con que está compuesta una obra de ingenio, como un poema, una historia, etc.
-% 
-%     \item Armadura, generalmente de acero u hormigón armado, que, fija al suelo, sirve de sustentación a un edificio.
-%   \end{enumerate}
-% 
-% 
-
-Problema
-  {Problema}
-   Podemos describir un conjunto medible como una estructura integrada por partes? Idealmente estas partes deberían ser más familiares y fáciles de caracterizar.
-  
-
-
-\subsection{Aproximación}
-\underline{Aproximación} por ``estructuras'' específicas
-  {Teorema (Aproximación de conjuntos medibles)} Si $E$ es medible Lebesgue y $\epsilon$ es cualquier número real positivo:
-  \begin{enumerate}
-   \item\textbf{Abiertos por exceso.} Existe un abierto $G$ con $E\subset G$ y $m(G-E)<\epsilon$.
-   \item\textbf{Cerrados por defecto.} Existe un cerrado $F$ con 
-$F\subset E$ y $m(E-F)<\epsilon$.
-   \item \textbf{Compacto por defecto.} Si $m(E)<\infty$, existe un compacto $K$ con $E\supset K$ y $m(E-K)<\epsilon$.
-   \item\textbf{Elementales} Si $m(E)<\infty$, existe una unión finita de cubos cerrados   $K=\bigcup_{j=1}^NQ_j$ tal que $m(E\triangle K)<\epsilon$.
-  \end{enumerate}
+\begin{definicion}{def:cubo}
+    Un \emph{$d$-cubo}\index{$d$-cubo} es un rect\'angulo con todos los lados de la misma longitud $l$. En ese caso $|Q|=l^d$.
+\end{definicion}
 
     
-  
-  
-
-
-
-Demostración Teorema Aproximación
-1) Definición de conjunto medible.
-
-2) Aplicando 1), existe un abierto $G$ con  $G\supset E^c$ y 
-\[\epsilon>m(G-E^c)=m(E\cap G)=m(E-G^c).\]
-Debemos tomar $F=G^c$, que es cerrado y $F\subset E$.
-
-3) Por 2)  Sea $F$ cerrado que aproxima a $E$ por defecto con error a lo sumo $\epsilon$:
-\[m(E-F)<\epsilon.\]
-Sea $K_n$, $n=1,\ldots$,su colección favorita de compactos con 
-\[K_1\subset K_2\subset\cdots \quad\text{y}\quad \rr^d=\bigcup_{n=1}^{\infty}K_n.
-\]
-Mi favorito: $K_n:=\{x:|x|\leq n\}$. 
-
-
-Demostración Teorema Aproximación
-3) (continuación) Entonces $F_n:=F\cap K_n$ es compacto y
-\[E-F_1\supset E-F_2\supset\cdots\quad\text{ y } \bigcap_{n=1}^{\infty}(E-F_n)=E-F.\]
-
-Como $m(E-F_1)\leq m(E)<\infty$, el teorema de convergencia monótona de conjuntos 
-\[\lim_{n\to\infty}m(E-F_n)=m(E-F)<\epsilon.\]
-Luego existe un $n$ suficientemente grande para que 
-\[m(E-F_n)<\epsilon.\]
-
-
-
-Demostración Teorema Aproximación
-4) Sean $Q_j$, $j=1,2,\ldots$, cubos con 
-\[E\subset\bigcup_{j=1}^{\infty}Q_j,\quad \sum_{j=1}^{\infty}m(Q_j)<m(E)+\frac{\epsilon}{2}.\]
-Como $m(E)<\infty$ la serie converge $\Rightarrow$ existe $N>0$ con 
-\[\sum_{j=N+1}^{\infty}m(Q_j)<\frac{\epsilon}{2}.\]
-Sea el cerrado
-\[F=\bigcup_{j=1}^{N}Q_j\]
-
-
-
-Demostración Teorema Aproximación
-
-Entonces
+\begin{definicion}{def:casi_disj}
+ Una familia de rect\'angulos $\{R_{\lambda}\}_{\lambda \in \Lambda}$ se dice \emph{casi disjunta}\index{casi disjunta} si 
 \[
- \begin{split}
-  m(E\triangle F)&=m(E-F)+m(F-E)\\
-		 &\leq m\left(\bigcup_{j=N+1}^{\infty}Q_j\right)+m\left(\bigcup_{j=1}^{\infty}Q_j-E\right)\\
-		 &\leq\sum_{j=N+1}^{\infty}m(Q_j)+\sum_{j=1}^{\infty}m(Q_j)-m(E)\\
-		 &<\epsilon
- \end{split}
+R_{\lambda_1}^{\circ} \cap R_{\lambda_2}^{\circ}=\emptyset, \;\; \lambda_1,\lambda_2 \in \Lambda\quad \lambda_1\neq\lambda_2 .
 \]
+\end{definicion}
+
+Ahora, siguiendo a T. Tao \cite{tao2011introduction}, vamos a introducir otro método de calcular volumenes. En principio lo aplicaremos a $d$-rectángulos pero luego veremos que es posible usarlo en conjuntos más generales. Básicamente consiste en contar cuántos elementos de una grilla contiene el conjunto.  
+
+Para $N>0$, consideramos el conjunto 
+\[
+\frac{1}{N}\zz=\left\{ \frac{m}{N}: m\in \zz   \right\}.
+\]
+Dado un conjunto $A$ la técnica descripta por T. Tao consiste  en contar cuantos elementos del conjunto anterior hay en $\frac{1}{N}\zz$ (ver figura \ref{fig:grilla1}).
+\begin{figure}[H]
+ \begin{center}
+  \def\svgwidth{12cm}
+\input{imagenes/grilla.pdf_tex}
+ \end{center}
+ \caption{$\#\frac{1}{N}\mathbb{Z}\cap (a,b)=5$}\label{fig:grilla1}
+\end{figure}
+
+
+ 
+\begin{lema}{lema:cantidad-puntos-en-intervalo}Sea $I$ un intervalo de $\rr$ con longitud $l$. Entonces
+\[
+Nl-1 \leq \# \left(I \cap \frac{1}{N}\zz \right) \leq Nl+1.\]
+\end{lema}
+
+\begin{demo} Supongamos que $k=\# \left(I \cap \frac{1}{N}\zz \right)$.  Si $k>0$ y $a_1,\ldots,a_k \in I \cap \frac{1}{N}\zz$ tales que 
+$a_1<a_2<\ldots<a_k$ y $a_1=\frac{j}{N},a_2=\frac{j+1}{N},\ldots,a_k=\frac{j+k-1}{N}$. Sean $a$ y $b$ los extremos de $I$.  Por un lado, se tiene que
+\[
+a\leq \frac{j}{N}\leq \frac{j+k-1}{N}\leq b \Rightarrow
+\frac{k-1}{N}\leq b-a=l.
+\]
+Por otro, 
+\[
+\frac{j-1}{N}< a\leq b<\frac{j+k}{N} \Rightarrow
+l=b-a< \frac{k+1}{N}.
+\]
+\end{demo}
+
+\begin{observacion} Notar que la demostración del teorema anterior contempla tanto el caso de intervalos abiertos como cerrados, de cualquier tipo en general. 
+ 
+\end{observacion}
 
 
 
-\subsection{Conjuntos $G_{\delta}$ y $F_{\sigma}$}
-Definición $G_{\delta}$ y $F_{\sigma}$
-Hasta el momento no hemos expresado un conjunto medible como una 
-estructura, sino que lo hemos aproximado, en un cierto sentido, por conjuntos 
-con  estructuras determinadas. Para lograr el objetivo necesitamos introducir 
-nuevos tipos de conjuntos.
+\begin{ejercicio}{}
+Probar el Lema \ref{lema:cantidad-puntos-en-intervalo} para el caso $k=0$.
+\end{ejercicio}
 
-{Definición  $G_{\delta}$ y $F_{\sigma}$}
- Un conjunto que es una intersección numerable de abiertos se denomina de clase $G_{\delta}$. El complemento de un conjunto de clase  $G_{\delta}$ se denomina de clase $F_{\sigma}$. 
+\begin{corolario}{}
+Si $I$ es un intervalo de longitud $l$, entonces
+\[
+\lim\limits_{N \to \infty} \frac{1}{N}\# \left(I \cap \frac{1}{N}\zz \right)=l=|I|.
+\]
+\end{corolario}\begin{demo} Es inmediata a partir del Lema \ref{lema:cantidad-puntos-en-intervalo}. \end{demo}
+
+El resultado en el Lema \ref{lema:cantidad-puntos-en-intervalo} se puede generalizar a más dimensiones.
+
+\begin{proposicion}{prop:tao_form}
+ Sea $R=[a_1,b_1]\times \cdots \times [a_d,b_d]=:I_1\times\cdots\times I_d$  un $d$-rectángulo de $\rr^d$ con $a_1<b_1$, $a_2<b_2$,\ldots, $a_d<b_d$.  Entonces 
+ \[
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(R \cap \frac{1}{N}\zz^d \right)
+=|R|.
+\]
+\end{proposicion}
+
+\begin{observacion} La proposición se mantiene verdadera con $d$-rectángulos de cualquier tipo.
+ \end{observacion}
+
+
+\begin{proof} Como la cantidad de puntos de la grilla que contiene el $d$-rectángulo $R$ es el producto de las cantidades de la grilla en $\rr$ que contiene cada lado de $R$ (ver figura \ref{fig:grilla2d}) entonces, escribiendo $l_j=b_j-a_j$,   
+\begin{multline*}
+ \lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(R \cap \frac{1}{N}\zz^d \right)=\lim\limits_{N \to \infty}\frac{1}{N}\# \left(I_1 \cap \frac{1}{N}\zz \right)\times \cdots
+\frac{1}{N}\# \left(I_d \cap \frac{1}{N}\zz \right)\\
+=  l_1\times\cdots\times l_d=|R|.
+\end{multline*}
+% 
+% 
+%  \[
+% \#\left(R \cap \frac{1}{N}\zz^d \right)=
+% \# \left(I_1 \cap \frac{1}{N}\zz \right)\cdots
+% \# \left(I_d \cap \frac{1}{N}\zz \right)
+% \]
+
+% Como 
+% \[
+% \# \left(R^{\circ} \cap \frac{1}{N}\zz^d \right) 
+% \leq
+% \# \left(R \cap \frac{1}{N}\zz^d \right)
+% \leq 
+% \# \left(R^{\circ} \cap \frac{1}{N}\zz^d \right) +2^d. (\text{mal})
+% \]
+% 
+% 
+\begin{figure}[H]
+ \begin{center}
+  \def\svgwidth{8cm}
+\input{imagenes/grilla2d.pdf_tex}
+ \end{center}
+ \caption{La cantidad de puntos de la grilla que contiene el $d$-rectángulo $R$ es el producto de las cantidades de la grilla en $\rr$ que contiene cada lado de $R$.  }\label{fig:grilla2d}
+\end{figure}
+\end{proof}
+
+
+
+
+\begin{corolario}{}
+Si $R$ es un $d$-rectángulo y $R= \bigcup\limits_{j=1}^M R_j$ con 
+$\{R_j\}_{j=1}^M$ una familia casi disjunta de $d$-rectángulos, entonces
+\[
+|R|=\sum\limits_{j=1}^M |R_j|.
+\]
+\end{corolario}
+
+\begin{demo}
+$\leq)$ Vamos a usar que el cardinal de una unión de conjuntos finitos es menor o igual que la suma de los cardinales y que vale la igualdad cuando los conjuntos son mutuamente disjuntos. Escribamos las propiedades para referenciarlas:
+
+\begin{empheq}{align}
+ \#(A_1\cup\cdots\cup A_M) & \leq \#A_1+\cdots +\# A_M && \label{eq:card_union1}\\
+ \#(A_1\cup\cdots\cup A_M) & = \#A_1+\cdots +\# A_M&& \text{si } A_i\cap A_j=\emptyset, i\neq j \label{eq:card_union2}
+\end{empheq}
+
+
+
+
+\begin{empheq}{align*}
+|R|=&
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(R \cap \frac{1}{N}\zz^d \right)&&
+\\
+\leq & 
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\sum\limits_{j=1}^M\# \left(R_j \cap \frac{1}{N}\zz^d \right)&& (\text{Por \eqref{eq:card_union1}})
+\\
+=&
+\sum\limits_{j=1}^M 
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(R_j \cap \frac{1}{N}\zz^d \right)
+&&\\
+=&
+\sum\limits_{j=1}^M |R_j|.&&
+\end{empheq}
+
+$\geq) $
+\begin{empheq}{align*}
+\sum\limits_{j=1}^M |R_j|=&
+ \sum\limits_{j=1}^M
+\lim\limits_{N \to \infty} 
+\frac{1}{N^d} \# \left(R_j^{\circ} \cap \frac{1}{N}\zz^d \right)&& (|R_j|=|R_j^\circ|)
+\\
+=&
+\lim\limits_{N \to \infty} 
+\frac{1}{N^d} 
+\sum\limits_{j=1}^M
+\# \left(R_j^{\circ} \cap \frac{1}{N}\zz^d \right)
+&&\\
+=&
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(\left(\bigcup\limits_{j=1}^M  R_j^{\circ}\right)
+\cap \frac{1}{N} \zz^d\right)&&(\text{Por }\eqref{eq:card_union2})
+\\
+\leq &
+\lim\limits_{N \to \infty} \frac{1}{N^d}
+\# \left(\left(\bigcup\limits_{j=1}^M  R_j\right)
+\cap \frac{1}{N} \zz^d\right)&& (\text{Si } A\subset B\Rightarrow \#A\leq \#B)\\
+=& |R|.&&
+\end{empheq}
+
+\end{demo}
+
+\begin{lema}{lema:medida-rectangulo-incluido-en-union}
+Si $R$ es $d$-rectángulo y $R\subset \bigcup\limits_{j=1}^M R_j$ donde
+$R_j$ son $d$-rectángulos, entonces
+\[
+|R|\leq \sum\limits_{j=1}^M |R_j|. 
+\]
+\end{lema}
+
+\begin{ejercicio}{}
+Demostrar el  Lema \ref{lema:medida-rectangulo-incluido-en-union}.
+\end{ejercicio}
+
+
+\section{Descomposición de conjuntos abiertos}
+
+Una herramienta fundamental para el desqarrollo de la teoría de la medida es el hecho que los conjuntos abiertos se pueden expresar como unión de $d$-rectángulos. Este hecho lo indagamos en esta sección. El caso $d=1$ y $d>1$ presentan diferencias, por ese motivo los contemplamos en enunciados diferentes.  
+
+
+\begin{teorema}{teo:abierto-union-intervalos-abiertos-disj}
+Todo conjunto abierto $\mathcal{O}$ de $\rr$ es uni\'on de una cantidad a lo sumo numerable de intervalos abiertos disjuntos. Esta descomposición de $\mathcal{O}$ es única.
+\end{teorema}
+
+\begin{demo} De la teoría topológica se sabe que  las componentes conexas de $\mathcal{O}$ son conjuntos conexos, abiertos (por lo tanto son intervalos abiertos)  y mutuamente disjuntos.  Además $\mathcal{O}$ es la unión de sus componentes conexas. De allí deducimos que  $\mathcal{O}=\bigcup_{i\in F}I_i$, donde $I_i$ son intervalos abiertos y $F$ un conjunto de índices. Pero $F$ debe ser a lo sumo numerable, pues si $i\in F$ puedo encontrar un número racional $q_i$ en $I_i$. Conseguimos así una función $i\mapsto q_i$, que es inyectiva, pues no puedo tomar un mismo racional en dos componentes conexas distintas dado que son disjuntas. Nos queda así definida una función inyectiva de $F$ en $\qq$ y por  la Proposición \ref{numinysur} esto nos dice que $F$ es a lo sumo numerable.
+
+Para ver la unicidad de la descomposición, supongamos que $\mathcal{O}$ es unión de la familia $J_i$, $i\in F$, de intervalos abiertos mutuamente disjuntos. Sea el índice $i$ y $x\in I_i$. Como una componete conexa es el mayor conexo contenido, en este caso, en $\mathcal{O}$, tendremos que $I_x\supset J_i$, donde $I_x$ es la componente conexa de $x$.   Si estos conjuntos no  fuesen iguales $I_x\setminus J_i$ estaría contenido en  $\bigcup_{i'\neq i} J_{i'}$. Esta última unión es un conjunto abierto disjunto de $J_i$. Consecuentemente $I_x$ estaría contenido en la unión de dos abiertos $G_1=J_i$ y   $G_2=\bigcup_{i'\neq i} J_{i'}$, disjuntos y cada uno de ellos con intersección no vacía con $I_x$. Esto contradice que $I_x$ es conexo. \end{demo}
+
  
 
-\textbf{Observación:} $F$ es $F_{\sigma}$ si es unión  numerable de conjunto cerrados.
 
+La generalizaci\'on a $\rr^d$ con $d>1$ presenta algunas dificultades. El enunciado es ligeramente diferente y la unicidad ya no vale. 
 
+\begin{teorema}{}
+Todo conjunto abierto de $\rr^d$ puede escribirse como uni\'on numerable de $d$-cubos casi disjuntos.
+\end{teorema}
 
+\begin{demo}
+Sea $\mathcal{O}\subset \rr^d$ abierto. Vamos a construir una familia $\mathcal{G}$ de $d$-cubos casi disjuntos con $\mathcal{O}=\bigcup\limits_{Q \in \mathcal{G}} Q$.
 
+Procedemos inductivamente en etapas, 
 
+\noindent\underline{Primera etapa.}
+Consideremos la familia de $d$-cubos con v\'ertices en $\zz^d$ que cubre $\rr^d$.  Todos aquellos $d$-cubos que quedan contenidos en $\mathcal{O}$ se agregan a $\mathcal{G}$.  Los  $d$-cubos  que son disjuntos con $\mathcal{O}$ se tiran y los que tienen parte en $\mathcal{O}$ y en $\mathcal{O}^c$ se dejan  como candidatos.
 
-Ejemplos $G_{\delta}$ y $F_{\sigma}$
-\begin{ejemplo}{}
-  Obviamente todo abierto es $G_{\delta}$.
- \end{ejemplo}
- \begin{ejemplo}{}
-   Si $-\infty<a<b<\infty$, $[a,b]=\bigcap_{n=1}^{\infty}(a-\frac{1}{n},b+\frac{1}{n})$. Así todo intervalo compacto es $G_{\delta}$.
+\noindent\underline{$k$-\'esima  etapa.} Tomamos los candidatos de la etapa $k-1$, dividimos sus lados en $2$ y procedemos como en la primera etapa. 
+
+\begin{figure}[H]
+ \begin{center}
+  \def\svgwidth{8cm}
+\input{imagenes/descomp.pdf_tex}
+ \end{center}
+ \caption{Los $d$-cubos amarillos son elegidos en la primera etapa de la subdivisión, los rojos en la segunda.  }\label{fig:descomp}
+\end{figure}
+ 
+
+La familia $\mathcal{G}$ es a lo sumo numerable dado que en cada etapa se agregan una cantidad a lo sumo numerable de $d$-cubos. Es casi disjunta puesto que los $d$-cubos que generamos solo se intersecan en su frontera. 
+
+Además $\mathcal{O}=\bigcup\limits_{Q \in \mathcal{G}} Q$. Para justificar esta afirmación tomemos  $x\in \mathcal{O}$. Luego,  $x$ pertenece a un $d$-cubo $Q$ de cada etapa $N$ cuyos lados miden $2^{-N}$. Como $\mathcal{O}$ es abierto, existe $r>0$ tal que $B(x,r)\subset\mathcal{O}$. Si $N$ es suficientemente grande, se tiene  $Q\subset B(x,r)\subset \mathcal{O}$. Entonces, o bien, $Q$ es agregado a $\mathcal{G}$ en la etapa $N$ o un ``padre'' de $Q$ fue agregado en una etapa anterior. En cualquier caso $x\in \bigcup\limits_{Q \in \mathcal{G}} Q$.
+ \end{demo}
+ 
+ 
+ \section{Conjunto de Cantor}
+ 
+ El conjunto de Cantor es un ejemplo de conjunto \emph{fractal}\index{fractal} \marginpar{ \includegraphics[scale=.3]{Romanescu.JPG} 
+ \\
+ Los conjuntos fractales son conjuntos con la particularidad que presentan patrones que se reproducen a escalas infinitamente pequeñas. En la figura una representación fractal para un romanescu, una espacie de coliflor. Rlunaro (Wikipedia) \ccbysa \href{https://creativecommons.org/licenses/by-sa/3.0/}{\small \url{https://creativecommons.org/licenses/by-sa/3.0/}}
+ }
+fue introducido por Georg Cantor en 1883  aunque había sido considerado con anterioridad por un matemático dublinés, H. J. S. Smith. Presenta algunas propiedades notables en el terreno de la Teoría de la Medida, por ejemplo ser una subconjunto de $\rr$ infinito no numerable y de medida nula.  
+ 
+ 
+ El conjunto  se construye  comenzando con un intervalo cerrado y retirándolo el tercio central. Este proceso lo aplicamos de manera sucesiva a los distintos intervalos que se van formando. Más específicamente: 
+ 
+ Comenzamos escribiendo  $\mathscr{C}_0=[0,1]$. Entonces definimos
+ \begin{empheq}{align*}
+ \mathscr{C}_1&=[0,1]-\left(\frac{1}{3},\frac{2}{3}\right)
+ \\
+  \mathscr{C}_2&=\mathscr{C}_1-\left(\frac{1}{9},\frac{2}{9}\right)
+   -\left(\frac{7}{9},\frac{8}{9}\right)
+   \\
+   &\vdots
+ \end{empheq}
+
+ Cada conjunto $\mathscr{C}_n$ consta de $2^n$ intervalos cerrados de longitud $\frac{1}{3^{n-1}}$. El \emph{conjunto de Cantor}\index{conjunto!Cantor} se define de la siguiente manera
+ 
+ \begin{empheq}{equation}\label{eq:conj_cantor}
+\mathscr{C}=\bigcap\limits_{k=1}^{\infty} \mathscr{C}_k.
+ \end{empheq}
+
+ \begin{figure}[H]
+  \begin{center}
    
+   \includegraphics[scale=.5]{Conjunto_de_Cantor.png}
+   
+  \end{center}
+\caption{Distintas etapas en la construcción del conjunto de Cantor. \\
+Figura realizada por M.Romero Schmidkte, especialmente para la Enciclopedia Libre y para la Wikipedia. 
+\ccbysa\,\, \href{https://creativecommons.org/licenses/by-sa/3.0/}{\small \url{https://creativecommons.org/licenses/by-sa/3.0/}}}\label{fig:conjunto_cantor}
+ \end{figure}
+
+ 
+ \begin{proposicion}{prop:conjunto-Cantor-propiedades}[Propiedades del conjunto de Cantor] El conjunto $\mathscr{C}$ satisface las siguientes propiedades: 
+ 
+ \begin{enumerate}[label=\emph{\alph*})]
+  \item\label{inc:cantor1} Es compacto.
+  \item\label{inc:cantor2} Es totalmente disconexo, es decir si $A\subset\mathscr{C}$ es conexo, entonces $A$ es un conjunto unitario. 
+  \item\label{inc:cantor3} Es perfecto, es decir no tiene puntos aislados o, equivalentemente, todo punto es de acumulación. 
+  \item\label{inc:cantor4} $x\in \mathscr{C}$ si y solo si $x$ se puede expresar en desarrollo $3$-ádico $x=(0.a_1a_2\ldots)_3$ donde $\forall i: a_i\neq 1$.
+  \item\label{inc:cantor5} Adem\'as, $\# \mathscr{C}=\# \rr$.
+ \end{enumerate}
+ \end{proposicion}
+ \marginpar{Hay que tener presente que las expresiones $s$-ádicas no són únicas, por ejemplo $(0.1)_3$ es una expresión ternaria para $1/3$. Nos equivocaríamos en decir que $1/3\notin\mathscr{C}$ puesto que un desarrollo ternario de él usa un $1$, pues también es cierto que $(0.02222\ldots)_3$ es un desarrollo de $1/3$. Luego $1/3$ tiene un desarrollo que no usa unos y la caracterización dice que $x\in\mathscr{C}$ si y solo si $x$ se \emph{puede} desarrollar sin $1$. Hay que enfatizar el ``puede'' }
+ 
+ \begin{demo} \ref{inc:cantor1} Como  $\mathscr{C}$ es intersección de conjuntos compactos es compacto en si mismo. 
+  
+  \ref{inc:cantor2} Supongamos que  $A\subset\mathscr{C}$ es conexo y que $\#A\geq 2$. Sean $x,y\in A$, con $x\neq y$. Existe $n$ suficientemente grande de modo que $|x-y|\geq 1/3^n$. Entonces $x$ e $y$ deben estar en intervalos diferentes de $\mathscr{C}_n$ y por consiguiente entre $x$ e $y$ debe haber un punto $z$ no perteneciente a $\mathscr{C}$. De esta manera $A\subset (-\infty,z)\cup (z,\infty)$, $A\cap(-\infty,z)\neq\emptyset\neq A\cap (z,\infty)$, lo que contradice que $A$ sea conexo.
+ 
+  \ref{inc:cantor3} Habíamos observado  que cada conjunto $\mathscr{C}_n$ era una unión de $2^n$ intervalos cerrados disjuntos de longitud $1/3^n$, digamos $[a^n_i,b^n_i]$, $i=1,\ldots,2^n$. Notar que como nunca son removidos los extremos $a_i$ y $b_i$ de los intervalos cerrados que forman las distintas etapas, estos extremos pertenecen a todos los conjuntos $\mathscr{C}_n$ y, consecuentemente, al conjunto de Cantor. Si tomamos $x\in\mathscr{C}$, tendremos que para todo $n$ existira un $i$ tal que $x\in[a^n_i,b^n_i]$. Como $a^n_i<b^n_i$, $x$ debe ser distinto de alguno de los dos extremos. Llamemos $x_n$ al extremo de $[a^n_i,b^n_i]$ distinto de $x$. Como $b^n_i-a^n_i=1/3^n\to 0$, cuando $n\to\infty$, concluímos que $x_n\to x$, cuando $n\to\infty$ y $x_n\neq x$, vale decir $x$ es punto de acumulación de $\mathscr{C}$.  
+  
+  \ref{inc:cantor4} La expresión $3$-ádica de un número $x$ en el intervalo $(1/3,2/3)$ es $(x)_3=0.1\ldots$. El uno en el primer lugar del desarrollo ternario es obligado. De esta manera, cuando extrajimos el intervalo $(1/3,2/3)$, removimos del $[0,1]$ todos aquellos números que necesitan forsozamente un $1$ en el primer lugar decimal. De la misma manera, cuando retiramos los intervalos $(1/9,2/9)$ y $(7/9,8/9)$ nos desprendimos de todos aquellos números que sobrevivieron de la primera etapa y que requieren un $1$ en el segundo lugar decimal. En general, en la etapa $n$ removemos todos aquellos números de $\mathscr{C}_{n-1}$ que necesitan un $1$ en el lugar $n$ para ser expresados en base $3$. Así la intersección de todos los $\mathscr{C}_n$ coincide con el conjuntos de números del $[0,1]$ que se pueden escribir si usar $1$ en base $3$.
+  
+  \ref{inc:cantor5} Definimos una función $f:\mathbb{C}\to [0,1]$ de la siguiente manera, consideramos el número binario base $2$) que resulta de reemplazar cada $2$ en el desarrollo ternario de $x$ por un $1$ (los ceros los dejamos). Esta función es biyectiva.  
+ \end{demo}
+
+
+ \section{Medida exterior}
+
+ Estamos en condiciones de definir una medida muy general sobre conjuntos. La idea central subyacente en la definición se debe a H. Lebesgue y consiste, como en la integral de Riemann, en usar conjuntos de medidas conocidas (rectángulos) para definir mediante aproximaciones la medida de cualquier conjunto. La novedad en la definición introducida por Lebesgue es que nos vamos a permitir usar una cantidad numerable de rectángulos en lugar de una cantidad finita usada  en la integral de Riemann. De esta manera se va a definir un instrumento mucho más potente.     
+  \marginpar{\includegraphics[scale=.35]{Lebesgue.jpeg} \\
+ <<Lebesgue es fundamentalmente conocido por sus aportes a la teoría de la medida y de la integral. A partir de trabajos de otros matemáticos como Émile Borel y Camille Jordan, Lebesgue realizó importantes contribuciones a la teoría de la medida en 1901. Al año siguiente, en su tesis Intégrale, longueur, aire (Integral, longitud, área) presentada en la Universidad de Nancy, definió la integral de Lebesgue, que generaliza la noción de la integral de Riemann extendiendo el concepto de área bajo una curva para incluir funciones discontinuas.>>
+ (wikipedia)
+ }
+ \subsection{Definición y ejemplos}
+ 
+
+ \begin{definicion}{}
+ Dado $E\subset \rr^d$, su \emph{medida exterior}\index{medida!exterior} se define por 
+ \[
+ m_*(E)=\inf \sum\limits_{j=1}^{\infty} |Q_j|,
+ \]
+ donde el \'infimo se toma sobre todos los cubrimientos  $E\subset \bigcup\limits_{j=1}^{\infty} Q_j$ de $E$ por medio de $d$-cubos.
+ \end{definicion}
+ 
+ 
+
+
+ \begin{observacion}{}
+ \begin{enumerate}
+
+ \item En $d=1$ la definición de medida exterior rememora al contenido exterior.   La diferencia, que no resulta menor, es que nos permitimos cubrir a $E$ con  una cantidad numerable de intervalos.
+ \item La serie  en la definición podría  ser divergente. Como consiste de términos positivos eso ocurriría cuando las sumas parciales de ella tiendan a infinito. En ese caso se dice que el conjunto tiene medida infinito ($m(E)=\infty$).
+ \item $m_*(\emptyset)=0$. 
+ \item Claramente $0\leq m_{*}(E)\leq +\infty$. 
+     \item Se podría en la definición usar cubrimientos por $d$-rectángulos  y el resultado sería el mismo.
+     \item La definición es muy general, tiene el mérito  de asignarle una medida exterior a todo subcojunto de $\rr^d$. Sin embargo, no es sencilla de aplicar, por eso en general se usan métodos indirectos de calcular medidas.
+     \item Más adelante descubriremos que la medida exterior carece de la  propiedad de aditividad, que en el capítulo anterior mencionamos como una propiedad importante (quizás la más) que debería satisfacer cualquier concepto de medida. Por suerte restringiendo la medida exterior a ciertos subconjuntos vamos a conseguir resolver este inconveniente.
+     \item El ínfimo en la definición generalmente se alcanza, al menos se aproxima tanto como se quiera, utilizando cubrimientos eficientes de $E$.  Un cubrimiento de $E$   es eficiente  si contiene poco de $E^c$ y si los cubos que lo componene no se solapan, de modo de no cubrir dos veces una misma parte.
+     \item La medida exterior satisface la propiedad de monotonía, es decir si $E_1\subset E_2$ entonces $m_*(E_1)\leq m_*(E_2)$. Para justificar esto basta decir que un cubrimiento de $E_2$ lo es también de $E_1$.
+ \end{enumerate}
+  \end{observacion}
+
+
+  \begin{ejemplo}{ejem:triag} Consideremos el triángulo $T$ en $\rr^2$ de vértices $(0,0)$, $(1,0)$, $(0,1)$. Sabemos que este triángulo tiene área $\frac12$. Nuestra definición de medida debiera producir ese resultado. Si dividimos los ejes en segmentos de longitud $\frac{1}{n}$, se forman $2$-cubos casi disjuntos (ver figura \ref{ejem:triag}). Con $n(n+1)/2$ de estos $2$-cubos (pintados en amarillo en la figura) cubrimos el triángulo. Cada uno de ellos tiene volúmen $\frac{1}{n^2}$. Si numeramos estos $2$-cubos de alguna forma y los llamamos $Q_j$, tendremos
+  \[
+   m_*(T)\leq \sum_{j=1}^{n(n+1)/2}|Q_j|=\sum_{j=1}^{n(n+1)/2}\frac{1}{n^2}=\frac{n(n+1)}{2n^2}.
+  \]
+  Entonces, tomando límite:
+  \[
+   m_*(T)\leq \lim_{n\to\infty}\frac{n(n+1)}{2n^2}=\frac12.   
+  \]
+  Más adelante justificaremos que vale la desigualdad $m_*(T)\geq\frac12$.
+
+\end{ejemplo}
+
+
+%
+\begin{figure}[h]
+ \begin{center}
+ \def\svgwidth{8cm}
+\input{imagenes/medida_triag.pdf_tex}
+  \end{center}
+  \caption{Ejemplo  \ref{ejem:triag}}\label{fig:descomp}
+ \end{figure}
+
+
+  \begin{ejemplo}{}
+  La medida exterior de un punto es cero ($m_*(\{x\})=0$). Esta afirmación es trivial puesto que, al fin y al cabo, un punto es en si mismo un $d$-cubo $Q$ con todos su lados de longitud $0$. De modo que  $0\leq  m_*(\{x\}))\leq m_*(Q)=0$ y de esto se infiere lo enunciado.
   \end{ejemplo}
   
-   \begin{ejemplo}{}
-     $\mathbb{Q}$ es $F_{\sigma}$ pues es la unión numerable de conjuntos unitarios, que son cerrados. Por consiguiente, los irracionales $\rr-\mathbb{Q}$ es $G_{\delta}$. 
-    \end{ejemplo}
-
-
-      \begin{ejemplo}{}
-     $\mathbb{Q}$ no es $G_{\delta}$. Este hecho no es sencillo de demostrar y requiere un teorema profundo
-    \end{ejemplo} 
-    
-
-Ejemplos $G_{\delta}$ y $F_{\sigma}$
-    
-
-
-
-{Teorema de Baire}
- Si $(X,d)$ es un espacio métrico completo y $U_n\subset X$, $n=1,2,\ldots$, son abiertos y densos de $X$, entonces $\bigcap_{n=1}^{\infty}U_n$ es denso.  
-
-
-Si $\mathbb{Q}$ fuese  $G_{\delta}$ y $U_n$ fuesen abiertos con $\mathbb{Q}=\bigcap_{n=1}^{\infty}U_n$, entonces cada $U_n$ es denso. Si ahora $\mathbb{Q}=\{q_1,q_2,\ldots\}$ y  ponemos $W_n=\rr-\{q_n\}$, entonces cada $W_n$ es abierto y denso. Si ponemos $\{V_n\}_{n=1}^{\infty}=\{U_n\}_{n=1}^{\infty}\cup \{W_n\}_{n=1}^{\infty}$, entonces 
- $\{V_n\}_{n=1}^{\infty}$ es una colección de abiertos densos de $\rr$ que contradice el teorema de Baire pues
- \[\bigcap_{n=1}^{\infty}V_n=\bigcap_{n=1}^{\infty}U_n\cap \bigcap_{n=1}^{\infty}W_n=\mathbb{Q}\cap(\rr-\mathbb{Q})=\emptyset.\]
-
-
-
-Teorema estructura conjuntos medibles
-
-{Teorema}
- Sea $E\subset\rr^d$. Son equivalentes
- \begin{enumerate}
-  \item $E$ es medible,
-  \item Existe $H\subset\rr^d$ de clase $G_{\delta}$ y $Z$ nulo tal que $E=H- Z$.
-  \item Existe $F\subset\rr^d$ de clase $F_{\sigma}$ y $Z$ nulo tal que $E=F\cup Z$.
+  \begin{ejemplo}{ejem:medida-ext-cubo}
+  Si $Q$ es un $d$-cubo, entonces \[m_{*}(Q)=|Q|.\] 
   
- \end{enumerate}
+  \noindent $\leq)$   Como $Q$ se cubre a s\'i mismo, se tiene que $m_{*}(Q)\leq |Q|$.
+  
+  \noindent  $\geq)$ 
+  Sea $\left\{Q_j\right\}_{j=1}^{\infty}$ un cubrimiento por $d$-cubos de $Q$. Construyamos $d$-cubos abiertos $S_j \supset Q_j$ tal que 
+  \[
+  |S_j|\leq (1+\epsilon) |Q_j|.
+  \]
+  Como $Q$ es compacto, hay finitos $S_j$ que cubren $Q$, entonces
+  \[
+  Q\subset \bigcup\limits_{j=1}^N S_j \subset 
+  \bigcup\limits_{j=1}^N \overline{S_j}.
+  \]
+  Por el Lema \ref{lema:medida-rectangulo-incluido-en-union}, tenemos
+  \[
+  |Q|\leq 
+  \sum\limits_{j=1}^N |\overline{S_j}|=
+     \leq (1+\epsilon) \sum\limits_{j=1}^N |Q_j|\leq   (1+\epsilon) \sum\limits_{j=1}^{\infty} |Q_j|.
+  \]
+  Como $\epsilon$ es arbitrario, obtenemos
+  \[
+  |Q|\leq \sum\limits_{j=1}^{\infty} |Q_j|.
+  \]
+  Ahora tomando ínfimo sobre los cubrimientos conseguimos $|Q|\leq m_*(Q)$.
+  \end{ejemplo}
 
 
+  \begin{ejemplo}{}
+  Si $R\subset \rr^d$ es un $d$-rectángulo, entonces \[m_{*}(R)=|R|.\]
+  
+   \noindent  $\geq)$
+  La misma demostración del Ejemplo \ref{ejem:medida-ext-cubo} sirve para demostrar que
+  $|R|\leq m_{*}(R)$.
+  
+    \noindent $\leq)$ Sea $R=I_1\times I_2\times\ldots \times I_d$. Entonces
+  \[
+  |R|=\lim\limits_{N\to \infty}
+  \frac{1}{N^d} \#\left(R \cap \frac{1}{N}\zz^d \right)
+  =\lim\limits_{N\to \infty}
+  \frac{1}{N^d} \#\left(I_1 \cap \frac{1}{N}\zz \right)\cdots 
+  \left(I_d \cap \frac{1}{N}\zz \right).
+  \]
+  Si $I_j\cap \frac{1}{N}\zz=
+  \left\{
+  \frac{\alpha_j}{N},\frac{\alpha_j+1}{N},
+  \ldots, \frac{\alpha_j+\beta_j-1}{N}
+  \right\}$, entonces
+  \[
+  \#\left( I_j \cap \frac{1}{N} \zz \right)=\beta_j.
+    \]
+    Sea $\mathscr{G}_N$ la familia de $d$-cubos que generan
+    \[
+    \frac{\alpha_j-1}{N},\frac{\alpha_j}{N},\ldots,\frac{\alpha_j+\beta_j}{N}.
+    \]
+  Hay $(\beta_1+1)\cdots (\beta_d+1)$ de ellos y miden $\frac{1}{N^d}$.
+  Luego, 
+  \[
+  |R|=\lim\limits_{N\to \infty} \frac{\beta_1}{N}\ldots \frac{\beta_d}{N}.
+  \]
+  Pero
+  
+  \begin{multline*}
+  m_{*}(R)
+  \leq 
+  \lim\limits_{N\to \infty} \sum\limits_{Q \in \mathscr{G}_N} |Q|\\
+  =\lim\limits_{N \to \infty} \frac{(\beta_1+1)\cdots (\beta_d+1)}{N^d}=
+    \lim\limits_{N \to \infty}
+  \left\{ 
+  \frac{\beta_1\beta_2\cdots\beta_d}{N^d}
+ +\frac{1}{N^d}P\right\} 
+    \end{multline*}
+  donde $P$ contiene términos que son producto de algunos de los $\beta_j$ pero no todos. Como $\beta_j/N$ converge a la longitud de $I_j$ cuando $N\to\infty$, tenemos que $P/N^d\to 0$ cuando $N\to\infty$. De allí, haciendo tender $N\to\infty$ en la desigualdad anterior conseguimos $m_*(R)\leq |R|$.
+  
+  \end{ejemplo}
+
+
+  \begin{ejemplo}{}
+  $m_{*}(\rr^d)=+\infty$.
+
+  Un cubrimiento de $\rr^d$ es un cubrimiento de cualquier $d$-cubo $Q$ de modo que 
+  \[
+  |Q|=m_{*}(Q)\leq m_{*}(\rr^d).
+  \]
+  Podemos encontrar un $d$-cubo $Q_k$ de $\rr^d$ tal que $|Q_k|\xrightarrow[k \to \infty]{} +\infty$.
+ Por ejemplo, $Q_k=[0,k]^d=
+  \underbrace{[0,k]\times[0,k]\times \ldots \times [0,k]}_{d\;\mbox{ intervalos de }\rr}$ con $|Q_k|=k^d$.
+    \end{ejemplo}
+    
+    
 
 
 
     
-
-
-Demostración teorema estructura conjuntos medibles
-
-Claramente items 2 y 3 implican el 1.
-
-
-1$\Rightarrow$ 2. Sean $n\in\mathbb{N}$ y  $G_n\supset E$ abiertos tales que
-\[m(G_n-E)<\frac{1}{n}.\]
-y sean 
-\[H=\bigcap_{n=1}^{\infty} G_n\quad\text{y}\quad Z=H-E.\]
-$H$ es $G_{\delta}$, $E\subset H$  y
-\[m(Z)=m(H-E)\leq m(G_n-E)<\frac{1}{n}.\]
-Como $n$ es arbitrario $m(Z)=0$. 
-
-
-Demostración teorema estructura conjuntos medibles
-Restaría ver 1 $\Rightarrow$ 3. Si $E$ es medible, $E^c$ es medible y, por 1 $\Rightarrow$ 2, 
-\[E^c=H-Z,\quad m(Z)=0.\]
-
-Si $F=H^c$, tomando complementos tenemos
-
-\[E=F\cup Z.\]
-\qed
-
+        \begin{ejemplo}{} Si $A\subset \rr$ es numerable, entonces $m_*(A)=0$. En particular $m_{*}(\qq)=0$. Supongamos $A=\{x_1,x_2,\ldots\}$. Como los puntos pueden ser pensados  como $d$-cubos de lados de longitudes $0$, tenemos que $Q_j=\{x_j\}$, $j=1,\ldots$ son $d$-cubos que cubre a $A$ y entonces $m_*(A)\leq\sum |Q_j|=0$. 
+    \end{ejemplo}
+    
+    \begin{ejemplo}{}
+    Si $\mathscr{C}$ es el conjunto de Cantor, entonces $m_{*}(\mathscr{C})=0$.
+Pues se tiene que $\mathscr{C}\subset \mathscr{C}_k$ donde $\mathscr{C}_k$ es una uni\'on de $2^k$ intervalos de longitud $\frac{1}{3^k}$.
+    Luego, 
+    \[
+    m_{*}(\mathscr{C})\leq \left(\frac{2}{3}\right)^k \xrightarrow[k \to \infty]{}0.
+    \]
+    $\mathscr{C}$ es un  conjunto \emph{infinito no numerable} de $\rr$     con medida exterior nula.
+    \end{ejemplo}
+    
 
 
 
     
-
-
-\subsection{Conjuntos de Borel}
-$\sigma$-álgebras
-
-{Definición}
- Una colección de subconjuntos de un conjunto dado $X$,  $\mathscr{A}\subset\mathcal{P}(X)$ se denomina $\sigma$-algebra si
- \begin{enumerate}
-  \item $\emptyset\in\mathscr{A}$,
-  \item $A\in \mathscr{A}\Rightarrow A^c\in\mathscr{A}$,
-  \item $A_i\in \mathscr{A}$, $i=1,2,\ldots$, $\Rightarrow \bigcup_{i=1}^{\infty}A_i\in\mathscr{A}$
- \end{enumerate}
-
-
-
-\textbf{Observaciones:} Si $\mathscr{A}$ es una $\sigma$-algebra 
-\begin{enumerate}
- \item $X=\emptyset^c\in\mathscr{A}$,
- \item  $A_i\in \mathscr{A}$, $i=1,2,\ldots$, $\Rightarrow$
- $A_i^c\in \mathscr{A}$, $i=1,2,\ldots$, $\Rightarrow$ $\bigcup_{i=1}^{\infty}A_i^c\in\mathscr{A}$  $\Rightarrow$ $\bigcap_{i=1}^{\infty}A_i\in\mathscr{A}$ 
- \end{enumerate}
-
-
-
-$\sigma$-álgebras, ejemplos
- \begin{ejemplo}{}
-\begin{enumerate}
- \item  Triviales $\mathscr{A}=\mathcal{P}(X)$ y $\mathscr{A}=\{\emptyset,X\}$.
- \item  El conjunto $\mathscr{M}=\mathscr{M}(\rr^d)$ de todos los subconjuntos medibles Lebesgue de $\rr^d$
- \item El conjunto de los abiertos, cerrados, las clases $G_{\delta}$ y $F_{\sigma}$ no forman $\sigma$-algebras. Es decir, no tenemos clases caracterizadas por propiedades topológicas que sean ejemplos de $\sigma$-algebras    Cómo remediarlo? 
+    \subsection{Propiedades de la medida exterior}
+    
+    \begin{observacion}{}
+    Sea $E \subset \rr^d$ tal que  $m_*(E)<+\infty$. 
+    Entonces, por propiedades del ínfimo,  dado $\epsilon>0$, existen $d$-cubos $Q_j$  tales que $E \subset \bigcup\limits_{j=1}^{\infty} Q_j$ y
+    \[
+    \sum\limits_{j=1}^{\infty} m_{*}(Q_j)< m_{*}(E)+\epsilon.
+    \]
  
-\end{enumerate}
+    \end{observacion}
+
+    \begin{observacion}{}[Monoton\'ia] Habíamos ya mencionado esta propiedad. Nos explayamos un poco más. 
+    Si $E_1\subset E_2$, entonces $m_{*}(E_1)\leq m_{*}(E_2)$.
+    
+    El resultado se obtiene a partir de que 
+    \[
+   \left \{ \sum\limits_{j=1}^{\infty} |Q_j|: E_2\subset \bigcup\limits_{j=1}^{\infty} Q_j
+    \right\}
+    \subset
+     \left\{ \sum\limits_{j=1}^{\infty} |Q_j|: E_1\subset \bigcup\limits_{j=1}^{\infty} Q_j
+    \right\}.
+    \]
+    \end{observacion}
+ \marginpar{En teoría de la medida se suele usar la letra griega $\sigma$ antepuesta a alguna propiedad, por ejemplo $\sigma$-subaditiva. El significado de la $\sigma$ es que la propiedad vale para cantidades numerables. Por ejemplo $\sigma$-aditividad se refiere a uniones numerables, mientras que aditividad a secas se refiere uniones en  cantidades finitas de conjuntos}
+    \begin{proposicion}{obs:sigma-subaditividad} [$\sigma$-sub-aditividad]Si $E=\bigcup\limits_{j=1}^{\infty} E_j$, entonces
+    \[m_{*}(E)\leq \sum\limits_{j=1}^{\infty} m_{*}(E_j).\]
+\end{proposicion}
+
+
+
+
+    \begin{demo}   Sea $\epsilon>0$.  Podemos suponer que $m_{*}(E_j)<\infty$, pues de lo contrario la desigualdad es trivial.
+   Sean  $\{Q_{j,k}\}_{k=1}^{\infty}$ las familias de $d$-cubos tales que 
+    \[
+    \sum\limits_{k=1}^{\infty} |Q_{jk}|<m_{*}(E_j)+\frac{\epsilon}{2^j}.
+    \]
+    Luego $\{Q_{jk}\}_{j, k=1}^{\infty}$ es un cubrimiento por $d$-cubos de $\bigcup\limits_{j=1}^{\infty} E_j$
+    y por ende de $E$. 
+    Entonces,     \marginpar{Las sumas con doble índice satisfacen la siguiente propiedad:
+    \\si $\alpha_{jk}\geq 0$   entonces
+    \begin{multline*}
+    \sum\limits_{j,k=1}^{\infty} \alpha_{jk}=
+    \sum\limits_{j=1}^{\infty} \sum\limits_{k=1}^{\infty}\alpha_{jk}\\=
+    \sum\limits_{k=1}^{\infty} \sum\limits_{j=1}^{\infty}\alpha_{jk}.
+    \end{multline*}}
+    \[
+    m_{*}(E)\leq \sum\limits_{j,k=1}^{\infty} |Q_{jk}|=
+    \sum\limits_{j=1}^{\infty} \sum\limits_{k=1}^{\infty} |Q_{jk}|
+    \leq \sum\limits_{j=1}^{\infty} m_{*}(E_j)+\epsilon.
+    \]
+
+
+    \end{demo}
+    
+
+
+
+    \begin{proposicion}{obs:def-medida-ext-abierto}
+    Si $E\subset \rr^d$, entonces
+    \[
+    m_{*}(E)=
+    \inf\{
+    m_{*}(\mathcal{O}): \mathcal{O}\supset E\;\mbox{ y }\;\mathcal{O}\;\mbox{ abierto} 
+    \}.
+    \]
+    \end{proposicion}
+    \begin{demo}
+    $\leq)$
+    Sale a partir de la monoton\'ia pues $E \subset \mathscr{O}$ implica $m_{*}(E)\leq m_{*}(\mathscr{O})$.
+    
+    \noindent $\geq)$ Nuevamente, se puede asumir $m_*(E)<\infty$, pues de no ocurrir esto la desigualdad sería trivialmente cierta.
+    Sea $\epsilon>0$. Existen $d$-cubos  $Q_j$  tales que $E\subset \bigcup\limits_{j=1}^{\infty}Q_j$ y
+    \[
+    \sum\limits_{j=1}^{\infty} m_{*}(Q_j)< m_{*}(E)+\frac{\epsilon}{2}.
+    \]
+    Sean $\widetilde{Q}_j$ \marginpar{Para un $d$-cubo cerrado $Q$ y $\varepsilon>0$ existe un $d$-cubo abierto $\widetilde{Q}$ que lo contiene y tal que $m_*(\widetilde{Q})<m_*(Q)+\varepsilon$. Los detalles de la demostración de este hecho los dejamos al lector} $d$-cubos abiertos tales que $Q_j \subset \widetilde{Q}_j$ y 
+    \[
+    m_{*}(Q_j)\leq m_{*}(\widetilde{Q}_j)<m_{*}(Q_j)+\frac{\epsilon}{ 2^{j+1}.
+    \]
+    Entonces 
+    $\mathcal{O}=\bigcup\limits_{j=1}^{\infty} \widetilde{Q}_j$         es abierto y 
+        \[
+        m_{*}(\mathscr{O})
+        \leq \sum\limits_{j=1}^{\infty}m_{*}(\widetilde{Q}_j)
+      <  \sum\limits_{j=1}^{\infty} \left\{m_{*}(Q_j)+\frac{\epsilon}{2^j}\right\}
+       <m_{*}(E)+\epsilon.
+         \]
+    \end{demo}
+    
+    
+    \begin{proposicion}{}
+        Si $E=E_1\cup E_2$ con $d(E_1,E_2)>0$, entonces
+    \[
+    m_{*}(E)=m_{*}(E_1)+m_{*}(E_2).
+    \]
+    \end{proposicion}
+
+    
+    \begin{demo}
+    \noindent$\leq)$ Inmediata a partir de la Proposición \ref{obs:sigma-subaditividad}.
+    
+    \noindent$\geq)$
+          Si $m_{*}(E)=\infty$,  la desigualdad es trivial.          Supongamos que $m_{*}(E)<\infty$.     Sea $\delta>0$ tal que $\delta <d(E_1, E_2)$ y sea $\epsilon>0$.
+    Consideremos un cubrimiento de $E$ tal que 
+    \[E\subset \bigcup\limits_{j=1}^{\infty} Q_j\;\mbox{  y }\;
+    \sum\limits_{j=1}^{\infty} m_{*}(Q_j)<m_{*}(E)+\epsilon.\]
+    Podemos suponer que $\diametro(Q_j)<\delta$, porque de no presentarse el caso, dividimos en m\'as $d$-cubos hasta lograr el di\'ametro requerido.
+    Entonces, cada $d$-cubo $Q_j$ puede intersecar a s\'olo uno de los conjuntos $E_1$ \'o $E_2$.
+
+    Sean \[
+    J_1=\left\{j|Q_j \cap E_1\neq \emptyset\right\}\quad\text{        y 
+    }\quad
+    J_2=\nn-J_1.
+    \]
+Entonces
+    \[
+E_1\subset \bigcup\limits_{j\in J_1} Q_j \;\;\mbox { y }\;\;
+E_2\subset \bigcup\limits_{j \in J_2} Q_j.
+    \]
+    Luego, obtenemos
+    \[
+    m_{*}(E)+\epsilon>\sum\limits_{j=1}^{\infty} m_{*}(Q_j)
+    =\sum\limits_{j \in J_1} m_{*}(Q_j)+\sum\limits_{j\in J_2} m_{*}(Q_j)
+    \geq 
+    m_{*}(E_1)+m_{*}(E_2).
+    \]
+    \end{demo}
+\begin{observacion}\label{obs:aditividad-cubos}  Por inducción podemos generalizar la proposición anterior de la siguiente manera:     Si $E=\bigcup_{j=1}^NE_j$ con $d(E_j,E_i)>0$ cuando $i\neq j$, entonces
+    \[
+    m_{*}(E)=\sum_{j=1}^Nm_{*}(E_j).
+    \]
+ \end{observacion}
  
- \end{ejemplo}
-
-
-
- $\sigma$-álgebra generada
-
-
-{Ejercicio} Si  $\{\mathscr{A}_i\}_{i\in I}$ es una colección de $\sigma$-álgebras  (reparar en que $I$ es arbitrario) del conjunto $X$, entonces $\bigcap_{i\in I}\mathscr{A}_i$ es $\sigma$-álgebra.
-
-
-
-{Definicion} Dado un subconjunto $\mathcal{C}$ de subconjuntos de $X$, $\mathcal{C}\subset\mathcal{P}(X)$, definimos la $\sigma$-álgebra generada por $\mathcal{C}$ como
-\[\langle\mathcal{C}\rangle=\bigcap\{\mathscr{A}| \mathcal{C}\subset \mathscr{A}\text{ y } \mathscr{A} \text{ es $\sigma$-algebra}\}.\]
-
-
-{Ejercicio} $\langle\mathcal{C}\rangle$ es la menor $\sigma$-algebra que contiene a $ \mathcal{C}$.
-
-
-
-
-Definición
- {Definición} Sea $\mathcal{G}=\mathcal{G}(\rr^d)$ la colección de todos los conjuntos abiertos de $\rr^d$. Definimos la $\sigma$-algebra de Borel  $\mathscr{B}=\mathscr{B}(\rr^d)$ como  $\mathscr{B}=\langle \mathcal{G} \rangle$ 
-
-
-{Ejercicio} Demostrar que la $\sigma$-algebra  $\mathscr{B}$ es también generada por:
-\begin{enumerate}
- \item Los subconjuntos cerrados de $\rr^d$.
- \item Los subconjuntos compactos de $\rr^d$.
- \item Las bolas abiertas (o cerradas) de $\rr^d$.
- \item Los cubos de $\rr^d$.
-\end{enumerate}
-
  
-
-Observaciones
- \begin{enumerate}
- \item Claramente $G_{\delta},F_{\sigma}\subset\mathscr{B}$.
- \item La definición de conjuntos de Borel es notable, pues definimos los conjuntos de Borel, definiendo  la estructura que los contiene. Esto se manifiesta cuando se intenta demostrar alguna propiedad de los borelianos. 
-\end{enumerate}
- \begin{ejemplo}{}
- Si $f:\rr^d\to\rr$ es continua y $B\in\mathscr{B}(\rr)$ entonces $f^{-1}(B)\in \mathscr{B}(\rr^d)$. 
-\end{ejemplo}
- \textbf{Dem.} Definimos
+ Lemes Sea (XLd) un espaciométrico. $E_r F C X$, con E comperado y Fcerrato $y E \cap F=\phi$, entorces $d(E, F)>0$.
+Dem Si $d(E, F)=0$ existo $\alpha_\mu \in E$ $y_n \in F: d\left(x_m, y_n\right) \rightarrow 0, C_{\text {owo }}$ Fes compacto, $\exists\left(m_k\right) \subset(x)$ y $\exists \alpha \in \bar{B}, x_{m_k} \rightarrow x$ $\left.\lim _{k \rightarrow \infty} d\left(y_{m_k}, x\right)=\lim _{k \rightarrow \infty} d\left(y_{k_k}, k_{m_b}\right)+d x_{r_k} x\right)=0$ Pero $y_{m_k} \in \overline{\text { y }}$ y $F$ es cerrado. Entoricos $x \in F$ Asi $E_n F_{\neq \phi}$, esto es contradivcciś.
+    
+\begin{proposicion}{obs:sigma-aditividad-medida-ext}
+ Si $E=\bigcup\limits_{j=1}^{\infty} Q_j$ con $d$-cubos $Q_j$ casi disjuntos, entonces
 \[
- \mathscr{A}=\{A\subset\rr|f^{-1}(A)\in  \mathscr{B}(\rr^d)\}.
+m_{*}(E)=\sum\limits_{j=1}^{\infty} m_{*}(Q_j).\]
+\end{proposicion}
+
+
+\begin{demo}
+$\leq)$ Inmediata a partir de la Proposición \ref{obs:sigma-subaditividad}.
+
+\noindent$\geq)$
+Sea $\epsilon>0$ y sean $\widetilde{Q}_j\subset Q_j^{\circ}$ $d$-cubos \marginpar{Para un $d$-cubo abierto $Q$ y $\varepsilon>0$ existe un $d$-cubo cerrado $\widetilde{Q}$ contenido en $Q$ y tal que $m_*(\widetilde{Q})>m_*(Q)-\varepsilon$. Los detalles de la demostración de este hecho los dejamos al lector} cerrados tales que 
+\[
+m_{*}(\widetilde{Q}_j)>m_{*}(Q_j )-\frac{\epsilon}{2^j}.
+\]
+Entonces (ver nota al margen) $d(\widetilde{Q}_{j_1},\widetilde{Q}_{j_2})>0$ \marginpar{Si $K$ y $F$ son subconjuntos compactos y disjuntos de un espacio métrico entonces $d(K,F)>0$.} .
+Luego, por la Observación \ref{obs:aditividad-cubos}, 
+\[
+\begin{split}
+m_{*}(E) =m_{*}\left(\bigcup\limits_{j=1}^{\infty} Q_j\right)
+\geq m_{*}\left(\bigcup\limits_{j=1}^{N} Q_j\right)
+\\
+\geq m_{*}\left(\bigcup\limits_{j=1}^{N} \widetilde{Q}_j\right)
+=\sum\limits_{j=1}^N m_{*}(\widetilde{Q}_j),
+\end{split}
+\]
+a partir de lo cual tenemos
+\[
+m_{*}(E)\geq \lim\limits_{N\to \infty}\sum\limits_{j=1}^N  m_{*}(\widetilde{Q}_j)
+=\sum\limits_{j=1}^{\infty} m_{*}(\widetilde{Q}_j)
+\geq 
+\sum\limits_{j=1}^{\infty} \left( m_{*}({Q}_j )-\frac{\epsilon}{2^j}\right)
+=
+\sum\limits_{j=1}^{\infty} m_{*}({Q}_j)-\epsilon.
+\]
+La desigualdad buscada se consigue haciendo $\epsilon \to 0$.
+\end{demo}
+
+ 
+
+La  Proposición \ref{obs:sigma-aditividad-medida-ext} se puede  aplicar a conjuntos abiertos pues si
+$\mathcal{O}$ es abierto, entonces existen $d$-cubos tales que
+\[
+\mathcal{O}=\bigcup\limits_{j=1}^{\infty} Q_j,
+\]
+donde los $d$-cubos $Q_j$ son casi disjuntos.
+
+
+
+
+\section{Conjuntos medibles y medida de Lebesgue}
+
+Como se puede observar no hemos probado la propiedadad de aditividad, o para ser exactos la probamos cuando hay una distancia positiva entre conjuntos. El caso es que la propiedad de aditividad es falsa en general. Sin embargo,  la medida exterior es aditiva sobre una clase bastante amplia de conjuntos que caracterizaremos en la  siguiente definición.
+
+\begin{definicion}{def:conjunto-medible-x-abierto}
+Un conjunto $E\subset \rr^d$ se llama medible si $\forall \epsilon>0$ existe un abierto $\mathcal{O}\supset E$
+con 
+\[
+m_{*}(\mathcal{O}-E)<\epsilon.
+\]
+Si $E$ es medible, escribiremos $m(E):=m_{*}(E)$ y a $m(E)$ la llamaremos simplemente \emph{medida}\index{medida} de $E$. La función $m$ definida sobre los conjuntos medibles se llama medida de Lebesgue \index{medida!Lebesgue}.
+\end{definicion}
+
+Como $m_*(\emptyset)=0$ la demostración de la siguiente proposición es trivial. 
+
+\begin{proposicion}{prop:abierto=>medible}
+Si $\mathcal{O}$ es abierto, entonces $\mathcal{O}$ es medible.
+\end{proposicion}
+
+ 
+\begin{proposicion}{}
+ Si $F\subset E$ y $m_{*}(E)=0$, entonces $F$ es medible. En particular $E$ es medible.
+\end{proposicion}
+
+\begin{demo}
+  Por la Proposición \ref{obs:def-medida-ext-abierto}, 
+    dado $\epsilon>0$, existe $\mathcal{O}$ abierto con $\mathcal{O}\supset E$ tal que 
+    \[
+    m_{*}(\mathcal{O})<m_{*}(E)+\epsilon.
+    \]
+    Ahora, como $\mathcal{O}-E \subset \mathcal{O}$ y $m_{*}(E)=0$, entonces 
+    \[
+    m_{*}(\mathcal{O}-E)<\epsilon.
+    \]
+ 
+\end{demo}
+
+\begin{observacion}{}
+$\mathscr{C}$ es medible.
+\end{observacion}
+
+
+
+\begin{proposicion}{prop:union-num-medibles-es-medible}
+Si $E_j$, $j=1,2,\ldots,$ son medibles, entonces $\bigcup\limits_{j=1}^{\infty} E_j$ 
+es medible.
+\end{proposicion}
+
+\begin{demo}
+Dado $\epsilon>0$, existe $\mathcal{O}_j$ abiertos tal que $\mathcal{O}_j\supset E_j$, para $j=1,2,\dots$
+y 
+\[
+m_{*}(\mathcal{O}_j-E_j)<\frac{\epsilon}{2^j}.
+\]
+Ahora, $\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j$ es abierto y $\bigcup\limits_{j=1}^{\infty} E_j \subset \bigcup\limits_{j=1}^{\infty} \mathcal{O}_j$.
+Adem\'as, 
+\[
+\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j-\bigcup\limits_{j=1}^{\infty} E_j
+\subset
+\bigcup\limits_{j=1}^{\infty}\left( \mathcal{O}_j- E_j\right).
+\]
+Entonces
+\[
+\begin{split}
+m_{*}\left(\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j-\bigcup\limits_{j=1}^{\infty} E_j\right)
+&\leq
+m_{*}\left(\bigcup\limits_{j=1}^{\infty}\left( \mathcal{O}_j- E_j\right)\right)
+\\
+&\leq 
+\sum\limits_{j=1}^{\infty} m_{*}\left( \mathcal{O}_j- E_j\right)<
+\sum\limits_{j=1}^{\infty} \frac{\epsilon}{2^j}=
+\epsilon.
+\end{split}
+\]
+\end{demo}
+
+
+\begin{proposicion}{}
+Los conjuntos cerrados son medibles.
+\end{proposicion}
+
+\begin{demo}{}
+En primer lugar, supongamos que $E$ es cerrado y  acotado, entonces $m_{*}(E)<\infty$. 
+
+Sea $\epsilon>0$. Luego, existe un abierto $\mathcal{O}$ tal que 
+$E\subset \mathcal{O}$ y 
+\[
+m_{*}(\mathcal{O})<m_{*}(E)+\epsilon.
+\]
+A su vez, $\mathcal{O}-E$ es abierto y 
+\[
+\mathcal{O}-E=\bigcup\limits_{j=1}^{\infty} Q_j
+\]
+siendo $Q_j$ $d$-cubos casi disjuntos. 
+
+El conjunto 
+\[
+K=\bigcup\limits_{j=1}^N Q_j
+\]
+es compacto para todo $N \in \{1,2,\ldots\}$ y $K\cap E=\emptyset$ con $E$ cerrado.
+Entonces, ver nota al margen, \marginpar{ \textbf{Teorema} Si $(X,d)$ un espacio m\'etrico. Si $E$ es compacto, $F$ cerrado y $E\cap F=\emptyset$, entonces $d(E,F)>0$.} $d(K,E)>0$. Luego, 
+\[
+m_{*}(\mathcal{O})\geq  m_{*}(K\cup E)=m_{*}(K)+m_{*}(E)=
+\sum\limits_{j=1}^N m_{*}(Q_j)+m_{*}(E),
+\]
+de donde
+\[
+\sum\limits_{j=1}^N m_{*}(Q_j) \leq m_{*}(\mathcal{O})-m_{*}(E)<\epsilon.
+\]
+Haciendo $N\to \infty$, conseguimos
+\[
+\sum\limits_{j=1}^{\infty} m_{*}(Q_j)\leq \epsilon.
+\]
+Por \'ultimo, 
+\[
+m_{*}(\mathcal{O}-E)\leq \sum\limits_{j=1}^{\infty} m_{*}(Q_j)\leq \epsilon.
 \]
 
-\begin{ejercicio}{} $\mathscr{A}$ es una $\sigma$-algebra que contiene a los abiertos.
- \end{ejercicio}
+Si $E$ no es acotado, constru\'imos  los conjuntos $E_k=E\cap \overline{B(0,k)}$ que son cerrados y acotados y, por lo demostrado en primer lugar, resultan medibles.
+Finalmente, por aplicaci\'on de la Proposici\'on \ref{prop:union-num-medibles-es-medible}, 
+$E=\bigcup\limits_{k=1}^{\infty}E_k$ es medible, . 
+\end{demo}
+
+\begin{proposicion}{prop:diferencia-medible-subcjto-medida0}
+Si $E$ es medible y $F\subset E$ con $m_{*}(F)=0$, entonces
+$E-F$ es medible.
+\end{proposicion}
+
+\begin{demo}{}
+Sean $\epsilon>0$ y $\mathcal{O}$ abierto con 
+\[
+m_{*}(\mathcal{O}-E)<\epsilon.
+\]
+Como
+\[
+\mathcal{O}-(E-F)\subset (\mathcal{O}-E)\cup F, 
+\]
+por la monoton\'ia de $m_{*}$ y la hip\'otesis sobre la medida de $F$, llegamos a 
+\[
+m_{*}\left(\mathcal{O}-(E-F)\right)\leq m_{*}(\mathcal{O}-E)+m_{*}(F)<\epsilon.
+\]
+\end{demo}
+
+\begin{corolario}{}
+Si $E$ es medible  y $m_{*}(E \Delta F)=0$, entonces $F$ es medible.
+\end{corolario}
+
+\begin{demo}{}
+La prueba se obtiene expresando al conjunto $F$ como uni\'on de conjuntos medibles. A saber, 
+\[
+F=\underbrace{(F-E)}_{\mbox{medible}} \cup 
+\left( 
+\overbrace{E-\underbrace{(E-F)}_{\mbox{medible}}}^{\mbox{medible}}\right)
+\]
+donde $F-E$ y $E-F$ son conjuntos de medida exterior nula y 
+$E-(E-F)$  es medible por aplicaci\'on de la Proposici\'on \ref{prop:diferencia-medible-subcjto-medida0}.
+\end{demo}
 
 
+\begin{proposicion}{}
+$E$ es medible, entonces $E^c$ es medible.
+\end{proposicion}
 
-Entonces $\mathscr{B}(\rr)\subset \mathscr{A}$, que equivale a lo que queremos demostrar.
+\begin{demo}{}
+Para cada $n \in \nn$, existe un conjunto abierto $\mathcal{O}_n \supset E$ y tal que 
+\[
+m_{*}(\mathcal{O}_n-E)<\frac{1}{n}.
+\]
+Los conjuntos $\mathcal{O}_n^c$ son cerrados y por ende medibles. \\
+Sea $S=\bigcup\limits_{n=1}^{\infty} \mathcal{O}_n^c$, entonces $S$ es medible y $S\subset E^c$ pues $\mathcal{O}_n^c \subset E^c$ $\forall n\in \nn$.
+
+Adem\'as, 
+\[
+m_{*}(E^c-S)\leq m_{*}(\mathcal{O}_n-E)<\frac{1}{n} \xrightarrow[ n \to \infty]{} 0.
+\]
+Es as\'i que,   $m_{*}(E^c-S)=0$. Luego,  por la Proposici\'on \ref{prop:diferencia-medible-subcjto-medida0}, $E^c$ es medible.
+\end{demo}
+
+\begin{proposicion}{}
+Si los conjuntos $E_j$, para $j=1,2,\ldots,$ son medibles, entonces
+$\bigcap\limits_{j=1}^{\infty}E_j$ es medible.
+\end{proposicion}
+
+\begin{demo}
+Cada $E_j$ es medible, entonces $E_j^c$ es medible para cada $j=1,2,\ldots$. Luego $\bigcup\limits_{j=1}^{\infty} E_j^c$ es medible y tambi\'en lo es su complemento 
+$ \left(\bigcup\limits_{j=1}^{\infty} E_j^c\right)^c$.
+
+Por otra parte,  a partir de las Leyes de De Morgan, se tiene la siguiente igualdad
+\[
+\bigcap\limits_{j=1}^{\infty}E_j= 
+\left( \bigcup\limits_{j=1}^{\infty} E_j^c\right)^c,
+\]
+y por lo tanto, la intersecci\'on numerable de conjuntos medibles  resulta medible.
+\end{demo}
+
+\begin{observacion} En teoría de la medida casi siempre consideramos uniones de familias numerables de conjuntos.  
+ 
+\end{observacion}
 
 
+\begin{proposicion}{prop:medible-aprox-x-cerrado}
+Si $E$ es medible, $\forall \epsilon>0$ existe un conjunto cerrado $F\subset E$ con
+\[
+m_{*}(E-F)<\epsilon.
+\]
+\end{proposicion}
 
 
-Borelianos y medibles
+\begin{demo}
+$E^c$ es medible, entonces dado $\epsilon>0$ existe un abierto $\mathcal{O}$ tal que $E^c \subset \mathcal{O}$ y 
+\[
+m_{*}(\mathcal{O}-E^c)<\epsilon.
+\]
+A su vez, $\mathcal{O}^c$ es cerrado y $\mathcal{O}^c\subset E$. 
+Y, como $\mathcal{O}-E^c=E-\mathcal{O}^c$, entonces
+\[
+m_{*}(E-\mathcal{O}^c)<\epsilon.
+\]
+Basta tomar $F=\mathcal{O}^c$ para obtener el resultado propuesto.
+\end{demo}
 
-{Corolario}
- Sea $E\subset\rr^d$. Son equivalentes
- \begin{enumerate}
-  \item $E$ es medible,
-  \item Existe $B\in\mathscr{B}(\rr^d)$ y $Z$ nulo tal que $E=B\cup Z$.
+\begin{teorema}{teo:sigma-aditiva}
+Si $E_j$, para $j=1,2,\ldots$ son conjuntos medibles y mutuamente disjuntos, entonces si $E=\bigcup\limits_{j=1}^\infty E_j$ vale que
+\[
+m( E)=\sum\limits_{j=1}^{\infty} m(E_j).
+\]
+\end{teorema}
+
+\begin{demo}{}
+$\leq)$
+Inmediata a partir de la $\sigma$-subaditividad de $m_{*}$.
+
+$\geq )$
+Supongamos que cada $E_j$ es acotado y sea $F_j\subset E_j$ cerrado con 
+\[
+m_{*}(E_j-F_j)<\frac{\epsilon}{2^j}.
+\]
+A partir de la subaditividad de $m_{*}$ y que $E_j=(E_j-F_j)\cup F_j$, se deduce que
+\[
+m_{*}(E_j)<m_{*}(F_j)+\frac{\epsilon}{2^j}.\]
+Los conjuntos $F_j$ son compactos y disjuntos, entonces
+$d(F_j,F_k)>0$ si $j\neq k$ y se tiene que
+\[
+m\left(\bigcup\limits_{j=1}^{N} F_j\right)=
+\sum\limits_{j=1}^N m(F_j).
+\]
+Luego, 
+\[
+m(E)\geq m\left( \bigcup\limits_{j=1}^N F_j\right)=
+\sum\limits_{j=1}^N m(F_j)\geq \sum\limits_{j=1}^N m(E_j)-\epsilon.
+\]
+Haciendo $N\to \infty$ y como $\epsilon>0$ es arbitrario, se consigue
+\[
+\sum\limits_{j=1}^{\infty}m(E_j)\leq m(E).
+\]
+
+En el caso general, consideramos $d$-cubos $Q_j$ tales que $Q_j\subset Q_{j+1}$ y 
+\[
+\rr^d=\bigcup\limits_{j=1}^{\infty} Q_j.
+\]
+Tomamos $Q_0=\emptyset$. Ahora, ponemos $E_{jk}=E_j\cap (Q_{k+1}-Q_{k})$ para $k\geq 0$.
+Los conjuntos $E_{jk}$ son acotados, medibles, disjuntos y permiten expresar
+\[
+E=\bigcup\limits_{j=1}^{\infty} E_j=
+\bigcup\limits_{j=1}^{\infty} \bigcup\limits_{k=0}^{\infty} E_{jk}.
+\]
+Luego, aplicando el resultado obtenido para  conjuntos acotados obtenemos
+\[
+m(E)=\sum\limits_{j=1}^{\infty}\sum\limits_{k=0}^{\infty}m(E_{jk})=
+\sum\limits_{j=1}^{\infty} m(E_j).
+\]
+\end{demo}
+
+
+  \begin{ejemplo}{ejem:triag2} Retomemos el ejemplo \ref{ejem:triag} y justifiquemos que el triángulo $T$ en $\rr^2$ de vértices $(0,0)$, $(1,0)$, $(0,1)$ satisface $m(T)=1/2$. Consideramos la sucesión de $2$-cubos de la figura \ref{fig:descomp2}. Empezamos por inscribir en el triángulo un $2$-cubo $Q_{11}$ de lado $1/2$. Quedan dos triángulos que no son cubiertos por $Q_{11}$, alli inscribimos dos $2$-cubos $Q_{21}$ y $Q_{22}$ de lado $1/4$. Ahora quedan 4 triángulos y nuevamente inscribimos allí 4 $2$-cubos de lado $1/8$. El proceso se prolonga al infinito, en la etapa $n$ inscribimos $2^{n-1}$ $2$-cubos de lado $1/2^n$. Lo interiores de estos $2$-cubos $Q_{ij}^\circ$ son mutuamente disjuntos y están contenidos en el triángulo. Podemos aplicar  el Teorema \ref{teo:sigma-aditiva} para obtener
   
- \end{enumerate}
+  \[
+   m(T)\geq m\left( \bigcup_{i=1}^\infty\bigcup_{j=1}^{2^{i-1}}Q_{ij}\right)=\sum_{i=1}^\infty\sum_{j=1}^{2^{i-1}} m\left( Q_{ij}  \right)=
+   \sum_{i=1}^\infty\sum_{j=1}^{2^{i-1}} \frac{1}{4^i}=\frac12.  \]
+
+    
+    
+    
+
+ \begin{figure}[H]
+ \begin{center}
+  \def\svgwidth{8cm}
+\input{imagenes/medida_triag2.pdf_tex}
+ \end{center}
+ \caption{Ejemplo \ref{ejem:triag2}}\label{fig:descomp2}
+\end{figure}  
+  \end{ejemplo}
 
 
- 
 
 
-\subsection{Preguntas}
-Pregunta 1
-\centerline{¿$\boxed{\mathscr{B}=\mathscr{M}}$?}
-
-\textbf{Respuesta:} no.  
-
-Se justifica más adelante, depende de la construcción de un $A\subset\rr$ con $A\notin \mathscr{M}$ y usa la función de Cantor. 
-
+\begin{corolario}{cor:medida-diferencia-inclusion-finita}
+Si $F\subset E$ son medibles y $m(F)<\infty$, entonces 
+\[
+m(E-F)=m(E)-m(F).
+\]
+\end{corolario}
 
 
-Pregunta 2
- Así como definimos los conjuntos $G_{\delta}$ y $F_{\sigma}$ podemos considerar 
+\marginpar{No hay que perder de vista que cuando manipulamos medidas ellas pueden ser $\infty$. Hay que tener cuidado cuando uno despeja en expresiones donde puede haber términos iguales a $\infty$. En particular, por ejemplo, no se puede ``pasar restando'' infinitos. Es por eso la hipótesis $m_*(F)<\infty$}
+\begin{demo}
+ Como 
+ \[
+  m_*(E)=m_*(E-F\cup F)=m_*(E-F)+m_*(F),
+ \]
+despejando obtenemos el resultado.
+\end{demo}
+
+
+
+\begin{definicion}{}
+Si $E_j\subset \rr^d$, $E_j\subset E_{j+1}$ y $E=\bigcup\limits_{j=1}^{\infty} E_j$, escribiremos $E_j \nearrow E$.
+
+Si en cambio, $E_j\supset E_{j+1}$ y $E=\bigcap\limits_{j=1}^{\infty} E_j$, pondremos $E_j \searrow E$.
+\end{definicion}
+
+\begin{corolario}{cor:medida-union-inters-encajados}
+Sean $E_j$, para $j=1,2,\ldots$, conjuntos medibles en $\rr^d$. 
 \begin{enumerate}
- \item Uniones numerables de conjuntos de clase  $G_{\delta}$:   $G_{\delta\sigma}$,
- \item Intersecciones numerables de conjuntos de clase  $F_{\sigma}$:   $F_{\sigma\delta}$,
- \item $\vdots$
+    \item \label{it:medida-union-encajados} Si $E_j\nearrow E$, entonces $m(E)=\lim\limits_{j \to \infty} m(E_j)$.
+    \item \label{it:medida-interseccion-encajados} Si $E_j \searrow E$ y $m(E_j)<\infty$ para alg\'un $j$, entonces $m(E)=\lim\limits_{j \to \infty} m(E_j)$.
 \end{enumerate}
+\end{corolario}
+
+
+
+\begin{demo}{}
+\begin{enumerate}
+    \item Sean $G_1=E_1$,\; $G_2=E_2-E_1$, \ldots
+    
+    Los conjuntos $G_j$ son medibles y mutuamente disjuntos. Adem\'as, 
+    \[
+    \bigcup\limits_{j=1}^{N}G_j =E_N\;\;\;
+    \mbox{ y }\;\;\;
+    \bigcup\limits_{j=1}^{\infty}G_j 
+    =\bigcup\limits_{j=1}^{\infty} E_j=E.
+    \]
+    Entonces, 
+    \[\begin{split}
+    m(E)&=\sum\limits_{j=1}^{\infty}m(G_j)=
+    \lim\limits_{N \to \infty} \sum\limits_{j=1}^N m(G_j)\\
+    &=
+    \lim\limits_{N \to \infty} m\left(\bigcup\limits_{j=1}^N G_j\right)=\lim\limits_{N\to \infty}m(E_N).
+    \end{split}
+    \]
+    \item Asumamos que $m(E_1)<\infty$.
+    
+    Sean $G_j=E_{1}-E_j$ para $j\geq 1$. Entonces 
+    $G_j \subset G_{j+1}$ y 
+    \[
+    \bigcup\limits_{j=1}^{\infty} G_j=
+    \bigcup\limits_{j=1}^{\infty} E_{1}\cap E_j^c=
+    E_1 \cap \bigcup\limits_{j=1}^{\infty} E_j^c=
+    E_1 \cap\left( \bigcap\limits_{j=1}^{\infty} E_j \right)^c=
+    E_1 -  \bigcap\limits_{j=1}^{\infty} E_j.
+    \]
+    Luego, por el item \ref{it:medida-union-encajados} y el Corolario \ref{cor:medida-diferencia-inclusion-finita}, tenemos
+    \begin{multline*}
+     m(E_1) - m( \bigcap\limits_{j=1}^{\infty} E_j)= m(E_1 -  \bigcap\limits_{j=1}^{\infty} E_j)\\=
+    \lim\limits_{j \to \infty} m(G_j)=\lim\limits_{j \to \infty} m(E_1)-m(E_j)=
+      m(E_1)-\lim\limits_{j \to \infty}m(E_j)
+    \end{multline*}
  
-¿Podríamos continuando este proceso construir $\mathscr{B}$?
+     Por \'ultimo, como $m(E_1)<\infty$, llegamos a
+     \[
+     \lim\limits_{j \to \infty} m(E_j)=m\left(\bigcap\limits_{j=1}^{\infty} E_j\right).
+     \]
+\end{enumerate}
+\end{demo}
+
+\begin{observacion}{}
+El item \ref{it:medida-interseccion-encajados} del Corolario \ref{cor:medida-union-inters-encajados} es  falso si se quita la hip\'otesis $m(E_j)<\infty$. 
+Por ejemplo, si $E_j=(j, +\infty)$, con $j\in \nn$.
+\end{observacion}
+
+\begin{teorema}{}
+Sea $E\subset \rr^d$ medible. Entonces, dado $\epsilon>0$ 
+\begin{enumerate}
+    \item existe $\mathcal{O}\subset \rr^d$ abierto tal que $m(\mathcal{O}-E)<\epsilon$;
+    \item existe $F\subset \rr^d$ cerrado tal que $m(E-F)<\epsilon$;
+    \item si $m(E)<\infty$, existe $K \subset E$ compacto tal que 
+    $m(E-K)<\epsilon$;
+    \item si $m(E)<\infty$, existen $d$-cubos $Q_j$, $j=1,2,\dots$ tal que 
+    \[
+    m\left(E\Delta \bigcup\limits_{j=1}^N Q_j\right)<\epsilon.
+    \]
+\end{enumerate}
+\end{teorema}
+
+
+
+\begin{demo}
+\begin{enumerate}
+    \item Definici\'on \ref{def:conjunto-medible-x-abierto}.
+    \item Proposici\'on \ref{prop:medible-aprox-x-cerrado}.
+    \item Sea $F\subset E$ cerrado tal que 
+    $m(E-F)\leq \frac{\epsilon}{2}<\epsilon$. \\
+    Sean $Q_n=[-n,n]^d$ $d$-cubos de $\rr^d$. Entonces, 
+    \[
+    Q_n\cap F \nearrow F \;\; \mbox{ y }\;\; E-Q_n\cap F \searrow E-F.
+    \]
+ y tenemos
+    \[
+    \lim\limits_{n \to \infty}m\left(E-Q_n\cap F\right)=m(E-F)\leq \frac{\epsilon}{2}.
+    \]
+    Luego, existe $n\in \nn$ tal que $m(E-Q_n\cap F)<\epsilon$, 
+    siendo $Q_n\cap F$ compacto de $\rr^d$.
+    \item Sean $Q_j$ $d$-cubos de $\rr^d$ con  
+    \[
+    E\subset \bigcup\limits_{j=1}^{\infty} Q_j\;\; \mbox{ y }\;\;
+    \sum\limits_{j=1}^{\infty} |Q_j|<m(E)+\frac{\epsilon}{2}.
+    \]
+    Como $m_{*}(E)<\infty$, la serie $\sum\limits_{j=1}^{\infty} |Q_j|$
+    converge y por tanto existe $N\in \nn$ tal que 
+    \[\sum\limits_{N+1}^{\infty} |Q_j|\leq \frac{\epsilon}{2}.\]
+    Luego, 
+    \[
+    \begin{split}
+    m\left(E\Delta \bigcup\limits_{j=1}^N Q_j\right)&\leq 
+    m\left(\bigcup\limits_{j=N+1}^{\infty} Q_j\right)+m\left(\bigcup\limits_{j=1}^{\infty} Q_j-E\right)
+    \\
+    &\leq 
+    \frac{\epsilon}{2}+\sum\limits_{j=1}^{\infty}|Q_j|-m(E)<
+    \epsilon.
+    \end{split}
+    \]
+    \end{enumerate}
+\end{demo}
+
+Ahora, dado $h\in \rr^d$, pondremos
+\[
+T_h(x)=x+h\;\;\mbox{ y }\;\; T_h(E)=E+h.
+\]
+Y, si $\delta \in \rr^+$, notaremos $\delta x=\delta \cdot x$.
+
+\begin{teorema}{teo:medida-traslacion-dilatacion}
+$E$ es medible si y s\'olo si $E+h$  y $\delta E$ son medibles.
+Adem\'as, 
+\begin{enumerate}
+    \item $m(E+h)=m(E)$;
+    \item $m(\delta E)=\delta^d m(E)$.
+\end{enumerate}
+\end{teorema}
+
+\begin{demo}
+La prueba queda como ejercicio.
+\end{demo}
+
+\begin{ejercicio}{}
+Probar el Teorema \ref{teo:medida-traslacion-dilatacion}.
+\end{ejercicio}
+
+\section{$\sigma$-\'Algebras}
+
+\begin{definicion}{}
+Sea $X$ un conjunto. 
+\\
+Un conjunto $\mathscr{A}$ de subconjuntos de $X$, 
+$\mathscr{A}\subset \mathscr{P}(X)$, se llama una $\sigma$-\'algebra si \begin{enumerate}
+    \item $\emptyset \in \mathscr{A}$;
+    \item si $E_j\in \mathscr{A}$, para $j=1,2,\ldots$, entonces
+    $\bigcup\limits_{j=1}^{\infty} E_j \in \mathscr{A}$;
+    \item si $E\in \mathscr{A}$ entonces $E^c \in \mathscr{A}$.
+\end{enumerate}
+\end{definicion}
+
+
+\begin{ejemplo}{ejem-sigma-algebras}
+\begin{enumerate}
+    \item $\mathscr{A}=\mathscr{P}(X)$ es $\sigma$-\'algebra.
+    \item El conjunto de los conjuntos medibles $\mathscr{M}$ es una $\sigma$-\'algebra.
+    \item\label{it:sigma-algebra-cjto-a-lo-s-numerable} $\mathscr{A}=\left\{E\subset \rr| \;E \;\mbox{ es a lo sumo numerable \'o } \; E^c \;\mbox{ es a lo sumo numerable}  \right\}$
+    es $\sigma$-\'algebra.
+\end{enumerate}
+\end{ejemplo}
+
+
+\begin{ejercicio}{}
+Probar que  $\mathscr{A}$ definida en el item \ref{it:sigma-algebra-cjto-a-lo-s-numerable} del Ejemplo \ref{ejem-sigma-algebras} es $\sigma$-\'algebra.
+\end{ejercicio}
+
+Sea  $I$ un conjunto de \'indices.
+Si $\mathscr{A}_i$, $i \in I$,  son $\sigma$-\'algebras de subconjuntos de $X$, entonces $\bigcap\limits_{i \in I} \mathscr{A}_i$ es $\sigma$-\'algebra. 
+
+Dado $\mathscr{C}\subset \mathscr{P}(X)$, la \emph{$\sigma$-\'algebra
+generada} por $\mathscr{C}$ se define como
+\[\sigma(\mathscr{C})=\bigcap\left\{\mathscr{A}:\;\mathscr{A}\;\mbox{ es $\sigma$ \'algebra }, \mathscr{C} \subset \mathscr{A} \right \}
+\]
+
+
+Sea $\mathscr{G}=\{\mathcal{O}\subset \rr^d: \mathcal{O} \mbox{ es abierto} \}$, se define la $\sigma$-\emph{\;algebra de Borel} como
+\[
+\sigma(\mathscr{G})=:\mathscr{B}(\rr^d).
+\]
+
+Como el conjunto de los conjuntos medibles $\mathscr{M}$ es una $\sigma$-\'algebra, entonces $\sigma(\mathscr{G})\subset \mathscr{M}$.
+Pero, $\sigma(\mathscr{G})\neq \mathscr{M}$.
+
+Si $\mathcal{O}_n$, para $n=1,2,\ldots$ son abiertos, el conjunto
+$\bigcap\limits_{n=1}^{\infty} \mathcal{O}_n$ no es necesariamente abierto. Pero, s\'i ocurre que $\bigcap\limits_{n=1}^{\infty} \mathcal{O}_n \in \mathscr{B}(\rr^d)$. 
+A la clase de estos conjuntos se la llama $G_{\delta}$.
+O sea, 
+\[
+G_{\delta}=\left\{  
+G:\; G=\bigcap\limits_{n=1}^{\infty} \mathcal{O}_n,\; \mathcal{O}_n \mbox{ abiertos}
+\right\}.
+\]
+
+
+De manera dual, se define la clase $F_{\sigma}$ por
+\[
+F_{\sigma}=\left\{  
+F:\; F=\bigcup\limits_{n=1}^{\infty} F_n,\; F_n \mbox{ cerrados}
+\right\}.
+\]
+%%
+Luego,  $G_{\delta}, F_{\sigma} \subset \mathscr{B}(\rr^d)$.
+
+\begin{definicion}{}
+Si $\mathscr{A}$  es $\sigma$-\'algebra y $\mu:\mathscr{A} \to \overline{\rr}^+=\rr^+\cup\{+\infty\}$ satisface
+\[\mu\left(\bigcup\limits_{j=1}^{\infty}E_j \right)
+=\sum\limits_{j=1}^{\infty}\mu(E_j),
+\]
+siendo $E_j$ conjuntos mutuamente disjuntos, 
+entonces se dice que $\mu$ es una \emph{medida}.
+
+Adem\'as, se supone que $\mu(\emptyset)=0$.
+\end{definicion}
+
+
+\section{Caracterización de conjuntos medibles}
+
+\begin{teorema}{}
+Son equivalentes
+\begin{enumerate}
+    \item $E\subset \rr^d$ es medible.
+    \item $E=G-Z$, con $G\in G_{\delta}$ y $m(Z)=0$.
+    \item $E=F\cup Z$, con $F \in F_{\sigma}$ y $m(Z)=0$.
+\end{enumerate}
+\end{teorema}
+
+\begin{demo}{}
+1.$\Rightarrow$ 2.
+Sean $\mathcal{O}_n$ abiertos tales que $E\subset \mathcal{O}_n$ y 
+\[
+m(\mathcal{O}_n-E)\leq \frac{1}{n}.
+\]
+Luego, $G=\bigcap\limits_{n=1}^{\infty} \mathcal{O}_n \in G_{\delta}$, 
+y si llamamos $Z=G-E$, se tiene que 
+\[m(Z)=
+m(G-E)\leq m(\mathcal{O}_n-E)\leq \frac{1}{n}\xrightarrow[n \to \infty]{}0.
+\]
+
+1.$\Rightarrow$ 3.
+Si $E$ es medible, entonces $E^c$ es medible. Ahora bien, como 1.$\Rightarrow$ 2, $E^c=G-Z$ con $G \in G_{\delta}$  y $m(Z)=0$. 
+
+Supongamos que $G=\bigcap\limits_{j=1}^{\infty} \mathcal{O}_j$ 
+con $\mathcal{O}_j$ abiertos.
+Luego, 
+\[E^c=\bigcap\limits_{j=1}^{\infty} \mathcal{O}_j \cap Z^c;
+\]
+tomando complemento miembro a miembro, obtenemos
+\[
+E=\bigcup\limits_{j=1}^{\infty} \mathcal{O}_j^c \cup Z=F\cup Z,
+\]
+siendo $F \in F_{\sigma}$ y $m(Z)=0$.
+
+3.$\Rightarrow$ 1. $F$ y $Z$ son conjuntos medibles, entonces $E$ es medible.
+
+2.$\Rightarrow$ 1. es similar
+
+\end{demo}
+
+
+\section{Conjuntos no medibles}
+
+Sea $E=[0,1]$. 
+Definimos una relaci\'on en $E$ mediante
+\[
+x \sim y \Longleftrightarrow  x-y\in \qq.
+\]
+$\sim$ es una relaci\'on de equivalencia.
+
+Por el axioma de elecci\'on, formamos un  conjunto $\mathcal{N}$ que se obtiene eligiendo  un elemento de cada clase de equivalencia de la relaci\'on $\sim$.
+
+Sea ahora 
+\[
+\qq \cap [-1,1] 
+=\{r_1,r_2,\ldots \}.
+\] 
+
+Si $(\mathcal{N}+r_1)\cap (\mathcal{N}+r_2)\neq \emptyset$, 
+existen $x,y\in \mathcal{N}$ tal que $x+r_1=y+r_2$. Entonces 
+$x \sim y \Rightarrow x=y \Rightarrow r_1=r_2$.
+%%
+Luego, $\mathcal{N}+r_k$ son mutuamente disjuntos.
+
+Sea $a=m_{*}(\mathcal{N})$. 
+%%
+Se tiene  
+\[
+E\subset \bigcup\limits_{k=1}^{\infty} \mathcal{N}+r_k
+\subset [-1,2]. 
+\]
+Si $\mathcal{N}$ fuese medible, cada $\mathcal{N}+r_k$ tambi\'en lo ser\'ia y 
+\[
+1=m(E)\leq \sum\limits_{k=1}^{\infty}m(\mathcal{N}+r_k)=a+a+\ldots\leq 3. 
+\]
+¡Absurdo! Puesto que $a+a+\ldots=+\infty$.
+
+
+
+
+\begin{subappendices}
+  \section{Expresiones s-\'adicas}
  
+ El objetivo de esta secci\'on es representar n\'umeros reales mediante series num\'ericas.
  
- \textbf{Respuesta:} Si, con muchas sutilesas lógicas. Se necesita el concepto de ordinal e inducción transfinita.  Estamos en el terreno de la teoría descriptiva de conjuntos.
+ Sea $d=2,3,\ldots$. 
+ 
+ Supongamos que $x \in [0,1)$. Dividamos el intervalo  $[0,1]$ en $d$ partes iguales, o sea, 
+ \[
+ 0<\frac{1}{d}<\frac{2}{d}<\ldots<\frac{d-1}{d}<1.
+ \]
+ Ahora, existe un \'unico $j$ tal que 
+ \[
+ x \in \left[\frac{j}{d}, \frac{j+1}{d}\right).
+ \]
+ A ese valor de $j$ lo llamamos $a_1$. 
+ Y, observamos que \[ \left|x-\frac{a_1}{d}\right|<\frac{1}{d}.\]
+ 
+ A continuaci\'on,  dividimos $\left[\frac{a_1}{d}, \frac{a_1+1}{d} \right)$ en $d$ partes iguales y obtenemos
+ \[
+ \frac{a_1}{d}<\frac{a_1}{d}+\frac{1}{d^2}<\frac{a_1}{d}+\frac{2}{d^2}
+ < \ldots<\frac{a_1}{d}+\frac{d-1}{d^2}<\frac{a_1+1}{d}.
+ \]
+ Nuevamente, hay un \'unico $j$ tal que 
+ \[x \in \left[\frac{a_1}{d}+\frac{j}{d^2}, \frac{a_1}{d}+\frac{j+1}{d^2}\right).
+ \]
+ Ahora, llamamos $a_2$  a ese valor de $j$. Y notamos que 
+ \[
+ \left|x-\left(\frac{a_1}{d}+\frac{a_2}{d^2}\right)\right|<\frac{1}{d^2}.
+ \]
+ Continuando con este procedimiento, obtenemos una sucesi\'on $a_1,a_2,\ldots,a_n$ tal que 
+ \[
+ \left|  
+ x-\left( \frac{a_1}{d}+\frac{a_2}{d^2}+\ldots+\frac{a_n}{d^n}\right)
+ \right|<\frac{1}{d^n}.
+ \]
+ De este modo, habremos encontrado $a_j \in \{ 0,1,2,\ldots,d-1\}$ tales que 
+ \begin{equation}\label{eq:expresion-d-adica}
+ x=\sum\limits_{j=1}^{\infty} \frac{a_j}{d^j}.
+ \end{equation}
+ El desarrollo dado por  \eqref{eq:expresion-d-adica} se denomina \emph{expresi\'on  d-\'adica} de $x$. 
+ 
+ Cuando $d=10$, \eqref{eq:expresion-d-adica} se llama \emph{expresi\'on decimal}.
+ 
+Mientras que si $d=2$, \eqref{eq:expresion-d-adica} se denomina \emph{expresi\'on binaria}.
+ 
+La expresi\'on d-\'adica \eqref{eq:expresion-d-adica} suele escribirse
+\[
+x=\left(0.a_1a_2\ldots\right)_d.
+\]
 
+Lamentablemente, la expresi\'on d-\'adica de $x$ no es \'unica. El problema se presenta con las sucesiones que toman el valor $d-1$ de un momento en adelante, pues
+\[
+\sum\limits_{j=k}^{\infty} \frac{d-1}{d^j}=
+\frac{d-1}{d^k} \sum\limits_{j=0}^{\infty} \frac{1}{d^j}=
+\frac{d-1}{d^k} \frac{1}{1-\frac{1}{d}}=\frac{1}{d^{k-1}}.
+\]
+Luego
+\[
+\left(0.a_1a_2\ldots a_{k-1} (d-1) (d-1)\dots\right)_d =
+\left(0.a_1a_2\ldots (a_{k-1} +1) 0\dots\right)_d.
+\]
+ Si $a_{k-1}+1=d$, entonces 
+ \[
+ \left(0.a_1a_2\ldots (a_{k-1} +1)\dots\right)_d=
+ \left(0.a_1a_2\ldots (a_{k-2} +1) 0\dots\right)_d.
+\]
+Si $a_{k-2}+1=d$, se procede de la misma manera. 
 
+\end{subappendices}
 
-
-
+ 

@@ -13,9 +13,9 @@
 \end{center}
 \small
 Maurice René Fréchet; (Maligny, 2 de septiembre de 1878 - París, 4 de junio de 1973) fue un matemático francés. Trabajó en topología, teoría de la probabilidad y la estadística. 
-Sus trabajos en análisis funcional lo empujaron a buscar un marco más general que el espacio euclídeo introduciendo la noción de espacio métrico\index[personas]{Frechet}. 
+Sus trabajos en análisis funcional lo empujaron a buscar un marco más general que el espacio euclídeo introduciendo la noción de espacio métrico\index[personas]{Frechet|textbf}. 
 }
-Uno de los conceptos fundamentales de la matemática es la noción de \index{Distancia}\emph{distancia}. Esta noción está presente en multitud de actividades humanas, desde el comercio a la descripción del cosmos. En matemática medimos distancias en el plano y en el espacio y en las representaciones algebraicas de ellos  $\rr^2$ y $\rr^3$. Más generalmente  en \index{Espacio Euclideano} \emph{espacios euclideanos} $n$-dimensionales $\rr^n$. Desde comienzos del siglo XX los matemáticos fueron extendiendo la noción de distancia a conjuntos compuestos de los más diversos entes, matrices, funciones, funciones que actúan sobre funciones, etc. Esta ubicuidad y multiplicidad del concepto de distancia justifica un tratamiento axiomático de él.
+Uno de los conceptos fundamentales de la matemática es la noción de \index{distancia|textbf}\emph{distancia}. Esta noción está presente en multitud de actividades humanas, desde el comercio a la descripción del cosmos. En matemática medimos distancias en el plano y en el espacio y en las representaciones algebraicas de ellos  $\rr^2$ y $\rr^3$. Más generalmente  en \index{espacio!euclideano} \emph{espacios euclideanos} $n$-dimensionales $\rr^n$. Desde comienzos del siglo XX los matemáticos fueron extendiendo la noción de distancia a conjuntos compuestos de los más diversos entes, matrices, funciones, funciones que actúan sobre funciones, etc. Esta ubicuidad y multiplicidad del concepto de distancia justifica un tratamiento axiomático de él.
 
 
 
@@ -25,7 +25,7 @@ Uno de los conceptos fundamentales de la matemática es la noción de \index{Dis
 
 
 \begin{definicion}{} Sea $X$ un conjunto y $d:X\times X\rightarrow
-\mathbb{R}$ una función. Diremos que $d$ es una \index{Métrica}\emph{métrica} o \emph{distancia}
+\mathbb{R}$ una función. Diremos que $d$ es una \index{métrica}\emph{métrica} o \emph{distancia}
 sobre $X$ si satisface las siguientes propiedades:
 	  \begin{itemize}
 		   \item[i)]$\forall x \forall y: d(x,y)=0\Leftrightarrow x=y$.
@@ -34,7 +34,7 @@ sobre $X$ si satisface las siguientes propiedades:
 				d(x,y)+d(x,z)$.
 	  \end{itemize}
 Si $d$ es una métrica sobre $X$ diremos, entonces, que el par
-$(X,d)$ es un \index{Espacio métrico}\emph{espacio métrico}.
+$(X,d)$ es un \index{espacio!métrico|textbf}\emph{espacio métrico}.
 \end{definicion}
 \marginnote{
 \begin{center}
@@ -42,7 +42,7 @@ $(X,d)$ es un \index{Espacio métrico}\emph{espacio métrico}.
 Desigualdad triangular
 \end{center}
 }
-La desigualdad iii) en la definición anterior se denomina\index{Desigualdad triágular}
+La desigualdad iii) en la definición anterior se denomina\index{desigualdad!triángular|textbf}
 \emph{desigualdad triágular}, esto debido a que se la puede
 pensar como la relación entre un lado de un triágulo y la suma
 de los otros dos, ver figura  en el margen.
@@ -69,7 +69,7 @@ distancia $d$ definida por
 donde $\mathbf{x}=(x_1,\dots,x_n)$ e $\mathbf{y}=(y_1,\dots,y_n)$.
 Dejamos al alumno la demostración de que $d$ es una métrica,
 ver Ejercicio \vref{ejmeteuclidea}. Esta métrica es conocida
-como \emph{métrica euclidea}\index{Métrica!euclidea} y es la métrica con la que estamos más familiarizados.
+como \emph{métrica euclidea}\index{métrica!euclidea|textbf} y es la métrica con la que estamos más familiarizados.
 \end{ejemplo}
 
 
@@ -85,8 +85,8 @@ función definida por:
 \right.
 \]
 es una métrica. Esta métrica se denomina \emph{métrica
-discreta}.\index{Métrica!
-discreta}
+discreta}.\index{métrica!
+discreta|textbf}
 \end{ejemplo}
 
 \begin{ejemplo}{ejem,distsobrecont} Dado un conjunto $X$,
@@ -184,7 +184,7 @@ Se puede asumir que $d_g(P,Q)+d_g(R,Q)\leq \pi$ de lo contrario la desigualdad t
 \subsection{Bolas, esferas y diámetro}
 Definido lo que es una métrica y un espacio métrico, pasamos a
 definir algunas entidades de carácter geométrico, esta son el
-concepto de \emph{bola}, \emph{esfera} y \emph{diámetro}.\index{Bola} \index{Esfera}  \index{Diámetro}
+concepto de \emph{bola}, \emph{esfera} y \emph{diámetro}.\index{bola|textbf} \index{esfera|textbf}  \index{diámetro|textbf}
 
 \begin{definicion}{} Sea $(X,d)$ un espacio métrico, $x\in X$ y
 $r>0$.
@@ -1399,7 +1399,7 @@ continuas es continua.
 Otro concepto importante es el de función uniformemente
 continua.
 
-\begin{definicion}{} Sea $f$ una función entre dos e.m. $(X,d)$ e $(Y,d')$.
+\begin{definicion}{def:cont_unif} Sea $f$ una función entre dos e.m. $(X,d)$ e $(Y,d')$.
 Diremos que $f$ es \emph{uniformemente continua} si para todo
 $\epsilon>0$ existe un $\delta>0$ tal que
 $d'(f(x),f(y))<\epsilon$, si $d(x,y)<\delta$.
@@ -1681,7 +1681,7 @@ Una propiedad importante de los espacios métricos es la
 completitud. En esta unidad introducimos esta propiedad e
 indagamos algunas de sus consecuencias.
 \subsection{Sucesiones}
-\begin{definicion}{} Una \index{Sucesión}\emph{sucesión} en un e.m. $(X,d)$ es una
+\begin{definicion}{} Una \index{Sucesión|textbf}\emph{sucesión} en un e.m. $(X,d)$ es una
 función $f:\nn\rightarrow X$.
 \end{definicion}
 
@@ -1985,7 +1985,7 @@ y dado que $F_{k}$ es cerrado y $x_{n} \longrightarrow x_{0}$ como $n \rightarro
 
 
 \subsection{Teorema de Baire}
-\index[personas]{Baire}
+\index[personas]{Baire|textbf}
 \begin{definicion}{}[Conjuntos nunca densos, categorías de Baire] Sea $(X, d)$ un espacio métrico. 
 \begin{enumerate}
  \item Se dice que un subconjunto $Y \subset X$ es \emph{nunca denso}\index{conjunto!nunca denso} o \emph{magro}\index{conjunto!magro} cuando $(\bar{Y})^{\circ}=\emptyset$.
@@ -2506,14 +2506,12 @@ $B(x_n,1/2^n)$ por un sólo $G_{\lambda}$, recordemos que estas
 bolas no se cubrían por finitos $G_{\lambda}$. (ya terminamos,
 !`por fin!)
  \end{demo}
-
  
- \textcolor{red}{Ojo! está repetido}
 \begin{lema}{lem:cubri_lebesgue2}[Cubrimiento de Lebesgue] Sea $(X,d)$ un espacio métrico compacto, $\{G_i\}_{i\in\mathscr{I}}$ un cubrimiento de $X$ por conjuntos abiertos: i.e.
 \[
  X=\bigcup_{i\in\mathscr{I}}G_i.
 \]
-Entonces existe un $\delta>0$ tal que si $A\subset X$ es un conjunto con $\operatorname{diam}(A)<\delta$ entonces existe $i\in\mathscr{I}$ tal que $A\subset G_i$. El número $\delta$ se suele llama  \emph{número de Lebesgue} \emph{número de Lebesgue} del cubrimiento.
+Entonces existe un $\delta>0$ tal que si $A\subset X$ es un conjunto con $\operatorname{diam}(A)<\delta$ entonces existe $i\in\mathscr{I}$ tal que $A\subset G_i$. El número $\delta$ se suele llama  \emph{número de Lebesgue} \index{número! Lebesgue} del cubrimiento.
  
 \end{lema}
 \begin{proof} Sea $x\in X$. Existe $i_x\in\mathscr{I}$ tal que $x\in G_{i_x}$. Como $G_{i_x}$ es abierto, existe $r_x$ tal que $B(x;r_x)\subset G_{i_x}$. La colección de bolas $\{B(x;r_x/2)\}_{x\in X}$ es un cubrimiento de $X$. Como $X$ es compacto, existen una cantidad finita $\{x_1,\ldots,x_n\}$ de puntos tales que
@@ -2554,7 +2552,7 @@ finita de bolas de radio $\epsilon$.
 acotado.
 \end{ejercicio}
 
-\begin{ejercicio}{} Demostrar que si $f:(X,d)\to (Y,d')$ es continua
+\begin{ejercicio}{ejer:comp=>alcanzamax} Demostrar que si $f:(X,d)\to (Y,d')$ es continua
 y $X$ compacto entonces $f(X)$ es compacto. Como corolario,
 demostrar que si $f:X\to\mathbb{R}$ y $X$ es compacto entonces $f$
 alcanza un máximo y un mínimo.
@@ -2608,14 +2606,7 @@ compactos no vacios, tales que $K_n\supset K_{n+1}$. Demostrar que
 $\bigcap_{n\in\nn}K_n\neq\emptyset$.
 \end{ejercicio}
 
-\begin{ejercicio}{} Sea $(X,d)$ un e.m. compacto y $\{U_i\}_{i\in
-I}$ un cubrimiento por abiertos de $X$. Demostrar que existe un
-$\epsilon>0$ tal que toda bola de radio $\epsilon$ est\'a
-contenida en, al menos, un $U_i$. \emph{Sugerencia} Para cada
-$x\in X$ elegir $r_x$ tal que $B(x,r_x)$ esta contenida en alg\'un
-$U_i$. Tomar un subcubrimiento finito de estas bolas y luego
-considerar $\epsilon$ como el m\'{\i}nimo de las mitades de los
-radios de las bolas del subcubrimiento.
+\begin{ejercicio}{ej:cont=>unif_cont} Demostrar que si $f:X\to Y$ es continua y $X$ es compacto entonces $f$ es uniformemente continua.
 \end{ejercicio}
 
  
