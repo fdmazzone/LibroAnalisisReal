@@ -1,4 +1,6 @@
-This is makeindex, version 2.17 [TeX Live 2023] (kpathsea + Thai support).
-Scanning input file simbolos.idx...done (0 entries accepted, 0 rejected).
-Nothing written in simbolos.ind.
+This is makeindex, version 2.15 [TeX Live 2019] (kpathsea + Thai support).
+Scanning input file simbolos.idx....done (14 entries accepted, 0 rejected).
+Sorting entries....done (56 comparisons).
+Generating output file simbolos.ind....done (18 lines written, 0 warnings).
+Output written in simbolos.ind.
 Transcript written in simbolos.ilg.
